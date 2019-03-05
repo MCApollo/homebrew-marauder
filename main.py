@@ -148,7 +148,7 @@ def _convert(location=None, file=None):
     with open(file, 'r') as infile:
         data = json.load(infile)
         data['install'] = install.parse(data['install'])
-        _data = data  # Keep a copy of the old data.
+        _data = data['install']  # Keep a copy of the old data.
         depends = ', '.join([x['depend'] for x in data['depends']])
 
     while True:
@@ -225,7 +225,7 @@ def _convert(location=None, file=None):
             continue
         elif choice == '3':  # Write
             data['marauder'] = data['install']
-            data['install'] = _data['install']
+            data['install'] = _data
             with open(file, 'w') as fp:
                 json.dump(data, fp, indent=4)
                 print(f'Wrote to {file}')
