@@ -1,0 +1,25 @@
+{
+    "name": "Mpop",
+    "description": "POP3 client",
+    "url": "https://marlam.de/mpop/releases/mpop-1.2.8.tar.xz",
+    "mirror": null,
+    "homepage": "https://marlam.de/mpop/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.8"
+}

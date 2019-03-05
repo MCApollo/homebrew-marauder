@@ -1,0 +1,22 @@
+{
+    "name": "TtyClock",
+    "description": "Digital clock in ncurses",
+    "url": "https://github.com/xorg62/tty-clock/archive/v2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/xorg62/tty-clock",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-lncurses\"",
+        "system \"make\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "2.3"
+}

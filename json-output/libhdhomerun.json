@@ -1,0 +1,18 @@
+{
+    "name": "Libhdhomerun",
+    "description": "C library for controlling SiliconDust HDHomeRun TV tuners",
+    "url": "https://download.silicondust.com/hdhomerun/libhdhomerun_20180817.tgz",
+    "mirror": null,
+    "homepage": "https://www.silicondust.com/support/linux/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"hdhomerun_config\"",
+        "lib.install \"libhdhomerun.dylib\"",
+        "include.install Dir[\"hdhomerun*.h\"]"
+    ],
+    "version": "20180817"
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Libshout",
+    "description": "Data and connectivity library for the icecast server",
+    "url": "https://downloads.xiph.org/releases/libshout/libshout-2.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://icecast.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "speex",
+            "build-depend": false
+        },
+        {
+            "depend": "theora",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.1"
+}

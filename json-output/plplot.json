@@ -1,0 +1,59 @@
+{
+    "name": "Plplot",
+    "description": "Cross-platform software package for creating scientific plots",
+    "url": "https://downloads.sourceforge.net/project/plplot/plplot/5.14.0%20Source/plplot-5.14.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://plplot.sourceforge.io",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %w[",
+        "-DPL_HAVE_QHULL=OFF",
+        "-DENABLE_ada=OFF",
+        "-DENABLE_d=OFF",
+        "-DENABLE_qt=OFF",
+        "-DENABLE_lua=OFF",
+        "-DENABLE_tk=OFF",
+        "-DENABLE_python=OFF",
+        "-DENABLE_tcl=OFF",
+        "-DPLD_xcairo=OFF",
+        "-DPLD_wxwidgets=OFF",
+        "-DENABLE_wxwidgets=OFF",
+        "-DENABLE_DYNDRIVERS=OFF",
+        "-DENABLE_java=OFF",
+        "-DPLD_xwin=OFF",
+        "]",
+        "mkdir \"plplot-build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.14.0"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Tnef",
+    "description": "Microsoft MS-TNEF attachment unpacker",
+    "url": "https://github.com/verdammelt/tnef/archive/1.4.17.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/verdammelt/tnef",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-i\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.17"
+}

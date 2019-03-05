@@ -1,0 +1,24 @@
+{
+    "name": "Bc",
+    "description": "Arbitrary precision numeric processing language",
+    "url": "https://ftp.gnu.org/gnu/bc/bc-1.07.1.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/bc/bc-1.07.1.tar.gz",
+    "homepage": "https://www.gnu.org/software/bc/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.delete(\"BC_ENV_ARGS\")",
+        "system \"./configure\",",
+        "\"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--infodir=#{info}\",",
+        "\"--mandir=#{man}\",",
+        "\"--with-libedit\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.07.1"
+}

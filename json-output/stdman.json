@@ -1,0 +1,16 @@
+{
+    "name": "Stdman",
+    "description": "Formatted C++11/14/17 stdlib man pages from cppreference.com",
+    "url": "https://github.com/jeaye/stdman/archive/2018.03.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jeaye/stdman",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2018.03.11"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Ed",
+    "description": "Classic UNIX line editor",
+    "url": "https://ftp.gnu.org/gnu/ed/ed-1.15.tar.lz",
+    "mirror": "https://ftpmirror.gnu.org/ed/ed-1.15.tar.lz",
+    "homepage": "https://www.gnu.org/software/ed/ed.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--program-prefix=g\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "%w[ed red].each do |prog|",
+        "(libexec/\"gnubin\").install_symlink bin/\"g#{prog}\" => prog",
+        "(libexec/\"gnuman/man1\").install_symlink man1/\"g#{prog}.1\" => \"#{prog}.1\""
+    ],
+    "version": "1.15"
+}

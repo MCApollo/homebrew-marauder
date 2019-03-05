@@ -1,0 +1,35 @@
+{
+    "name": "Cmusfm",
+    "description": "Last.fm standalone scrobbler for the cmus music player",
+    "url": "https://github.com/Arkq/cmusfm/archive/v0.3.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Arkq/cmusfm",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libfaketime",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"--install\"",
+        "mkdir \"build\" do",
+        "system \"../configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\", \"--disable-silent-rules\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.3"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "YamlCpp",
+    "description": "C++ YAML parser and emitter for YAML 1.2 spec",
+    "url": "https://github.com/jbeder/yaml-cpp/archive/yaml-cpp-0.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jbeder/yaml-cpp",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/jbeder/yaml-cpp/commit/5e79f5eed3d86125468681116e92814d2cf40067.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args, \"-DBUILD_SHARED_LIBS=ON\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.2"
+}

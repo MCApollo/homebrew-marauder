@@ -1,0 +1,34 @@
+{
+    "name": "Unpaper",
+    "description": "Post-processing for scanned/photocopied books",
+    "url": "https://www.flameeyes.eu/files/unpaper-6.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.flameeyes.eu/projects/unpaper",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-i\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.1"
+}

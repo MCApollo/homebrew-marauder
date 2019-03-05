@@ -1,0 +1,37 @@
+{
+    "name": "Pinfo",
+    "description": "User-friendly, console-based viewer for Info documents",
+    "url": "https://mirrorservice.org/sites/distfiles.macports.org/pinfo/pinfo-0.6.10.tar.bz2",
+    "mirror": null,
+    "homepage": "https://packages.debian.org/sid/pinfo",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"--force\", \"--install\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.10"
+}

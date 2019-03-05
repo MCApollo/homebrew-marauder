@@ -1,0 +1,40 @@
+{
+    "name": "Jack",
+    "description": "Audio Connection Kit",
+    "url": "http://jackaudio.org/downloads/jack-audio-connection-kit-0.125.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://jackaudio.org",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "berkeley-db",
+            "build-depend": false
+        },
+        {
+            "depend": "libsamplerate",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "sdk = MacOS.sdk_path_if_needed ? MacOS.sdk_path : \"\"",
+        "inreplace Dir[\"drivers/coreaudio/Makefile.{am,in}\"],",
+        "\"/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h\",",
+        "\"#{sdk}/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h\"",
+        "inreplace \"configure\", \"-mmacosx-version-min=10.4\",",
+        "\"-mmacosx-version-min=#{MacOS.version}\"",
+        "ENV[\"LINKFLAGS\"] = ENV.ldflags",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.125.0"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Greed",
+    "description": "Game of consumption",
+    "url": "http://www.catb.org/~esr/greed/greed-4.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.catb.org/~esr/greed/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", \"/usr/share/man/man6\", man6",
+        "bin.mkpath",
+        "man6.mkpath",
+        "(var/\"greed\").mkpath",
+        "system \"make\", \"SFILE=#{var}/greed/greed.hs\"",
+        "system \"make\", \"install\", \"BIN=#{bin}\""
+    ],
+    "version": "4.2"
+}

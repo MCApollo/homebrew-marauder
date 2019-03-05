@@ -1,0 +1,27 @@
+{
+    "name": "Binaryen",
+    "description": "Compiler infrastructure and toolchain library for WebAssembly",
+    "url": "https://github.com/WebAssembly/binaryen/archive/version_71.tar.gz",
+    "mirror": null,
+    "homepage": "https://webassembly.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"test/\""
+    ],
+    "version": "version71"
+}

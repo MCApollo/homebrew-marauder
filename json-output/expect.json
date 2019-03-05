@@ -1,0 +1,41 @@
+{
+    "name": "Expect",
+    "description": "Program that can automate interactive applications",
+    "url": "https://downloads.sourceforge.net/project/expect/Expect/5.45.4/expect5.45.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://expect.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--exec-prefix=#{prefix}",
+        "--mandir=#{man}",
+        "--enable-shared",
+        "--enable-64bit",
+        "--with-tcl=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework",
+        "]",
+        "ENV.prepend \"CFLAGS\", \"-I#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework/Versions/8.5/Headers/tcl-private\"",
+        "system \"autoreconf\", \"--force\", \"--install\", \"--verbose\"",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "lib.install_symlink Dir[lib/\"expect*/libexpect*\"]"
+    ],
+    "version": "5.45.4"
+}

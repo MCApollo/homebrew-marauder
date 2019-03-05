@@ -1,0 +1,15 @@
+{
+    "name": "Shellshare",
+    "description": "Live Terminal Broadcast",
+    "url": "https://github.com/vitorbaptista/shellshare/archive/v1.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://shellshare.net",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"public/bin/shellshare\""
+    ],
+    "version": "1.0.3"
+}

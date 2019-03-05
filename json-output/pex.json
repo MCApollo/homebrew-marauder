@@ -1,0 +1,20 @@
+{
+    "name": "Pex",
+    "description": "Package manager for PostgreSQL",
+    "url": "https://github.com/petere/pex/archive/1.20140409.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/petere/pex",
+    "depends": [
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"prefix=#{prefix}\", \"mandir=#{man}\""
+    ],
+    "version": "1.20140409"
+}

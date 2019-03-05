@@ -1,0 +1,25 @@
+{
+    "name": "Clamz",
+    "description": "Download MP3 files from Amazon",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/clamz/clamz-0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/clamz/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5"
+}

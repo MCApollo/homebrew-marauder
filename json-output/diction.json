@@ -1,0 +1,17 @@
+{
+    "name": "Diction",
+    "description": "GNU diction and style",
+    "url": "https://ftp.gnu.org/gnu/diction/diction-1.11.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/diction/diction-1.11.tar.gz",
+    "homepage": "https://www.gnu.org/software/diction/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.11"
+}

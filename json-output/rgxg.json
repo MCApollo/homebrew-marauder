@@ -1,0 +1,16 @@
+{
+    "name": "Rgxg",
+    "description": "C library and command-line tool to generate (extended) regular expressions",
+    "url": "https://github.com/rgxg/rgxg/releases/download/v0.1.1/rgxg-0.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://rgxg.github.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.1"
+}

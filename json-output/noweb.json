@@ -1,0 +1,35 @@
+{
+    "name": "Noweb",
+    "description": "WEB-like literate-programming tool",
+    "url": "https://deb.debian.org/debian/pool/main/n/noweb/noweb_2.11b.orig.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cs.tufts.edu/~nr/noweb/",
+    "depends": [
+        {
+            "depend": "icon",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"bash\", \"awkname\", \"awk\"",
+        "system \"make LIBSRC=icon ICONC=icont CFLAGS='-U_POSIX_C_SOURCE -D_POSIX_C_SOURCE=1'\"",
+        "bin.mkpath",
+        "lib.mkpath",
+        "man.mkpath",
+        "texpath.mkpath",
+        "system \"make\", \"install\", \"BIN=#{bin}\",",
+        "\"LIB=#{lib}\",",
+        "\"MAN=#{man}\",",
+        "\"TEXINPUTS=#{texpath}\"",
+        "cd \"icon\" do",
+        "system \"make\", \"install\", \"BIN=#{bin}\",",
+        "\"LIB=#{lib}\",",
+        "\"MAN=#{man}\",",
+        "\"TEXINPUTS=#{texpath}\""
+    ],
+    "version": "2.11"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "PostgresqlAT96",
+    "description": "Object-relational database system",
+    "url": "https://ftp.postgresql.org/pub/source/v9.6.11/postgresql-9.6.11.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.postgresql.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"log\").mkpath",
+        "(var/name).mkpath",
+        "unless File.exist? \"#{var}/#{name}/PG_VERSION\"",
+        "system \"#{bin}/initdb\", \"#{var}/#{name}\""
+    ],
+    "version": "9.6.11"
+}

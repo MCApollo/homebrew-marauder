@@ -1,0 +1,41 @@
+{
+    "name": "Maxima",
+    "description": "Computer algebra system",
+    "url": "https://downloads.sourceforge.net/project/maxima/Maxima-source/5.42.2-source/maxima-5.42.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://maxima.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "sbcl",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gnuplot",
+            "build-depend": false
+        },
+        {
+            "depend": "rlwrap",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"LANG\"] = \"C\" ",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-gettext\",",
+        "\"--enable-sbcl\",",
+        "\"--enable-sbcl-exec\",",
+        "\"--with-sbcl=#{Formula[\"sbcl\"].opt_bin}/sbcl\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.42.2"
+}

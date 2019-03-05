@@ -1,0 +1,47 @@
+{
+    "name": "Ctail",
+    "description": "Tool for operating tail across large clusters of machines",
+    "url": "https://github.com/pquerna/ctail/archive/ctail-0.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pquerna/ctail",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "apr",
+            "build-depend": false
+        },
+        {
+            "depend": "apr-util",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "byobu",
+            "reason": "both install `ctail` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-debug\",",
+        "\"--with-apr=#{Formula[\"apr\"].opt_bin}\",",
+        "\"--with-apr-util=#{Formula[\"apr-util\"].opt_bin}\"",
+        "system \"make\", \"LIBTOOL=glibtool --tag=CC\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.0"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Jags",
+    "description": "Just Another Gibbs Sampler for Bayesian MCMC simulation",
+    "url": "https://downloads.sourceforge.net/project/mcmc-jags/JAGS/4.x/Source/JAGS-4.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://mcmc-jags.sourceforge.io",
+    "depends": [
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.3.0"
+}

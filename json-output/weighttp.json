@@ -1,0 +1,22 @@
+{
+    "name": "Weighttp",
+    "description": "Webserver benchmarking tool that supports multithreading",
+    "url": "https://github.com/lighttpd/weighttp/archive/weighttp-0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://redmine.lighttpd.net/projects/weighttp/wiki",
+    "depends": [
+        {
+            "depend": "libev",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\"",
+        "system \"./waf\", \"build\"",
+        "bin.install \"build/default/weighttp\""
+    ],
+    "version": "0.4"
+}

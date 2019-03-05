@@ -1,0 +1,17 @@
+{
+    "name": "Nacl",
+    "description": "Network communication, encryption, decryption, signatures library",
+    "url": "https://hyperelliptic.org/nacl/nacl-20110221.tar.bz2",
+    "mirror": "https://deb.debian.org/debian/pool/main/n/nacl/nacl_20110221.orig.tar.bz2",
+    "homepage": "https://nacl.cr.yp.to/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"do\" do |s|",
+        "s.gsub! 'exec >\"$top/log\"', 'exec | tee \"$top/log\"'",
+        "s.gsub! /^shorthostname=`.*$/, \"shorthostname=brew\""
+    ],
+    "version": "20110221"
+}

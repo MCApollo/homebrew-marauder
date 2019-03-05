@@ -1,0 +1,15 @@
+{
+    "name": "SchemaEvolutionManager",
+    "description": "Manage postgresql database schema migrations",
+    "url": "https://github.com/mbryzek/schema-evolution-manager/archive/0.9.41.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mbryzek/schema-evolution-manager",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./install.sh\", prefix"
+    ],
+    "version": "0.9.41"
+}

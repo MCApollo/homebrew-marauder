@@ -1,0 +1,19 @@
+{
+    "name": "Hashcash",
+    "description": "Proof-of-work algorithm to counter denial-of-service (DoS) attacks",
+    "url": "http://hashcash.org/source/hashcash-1.22.tgz",
+    "mirror": null,
+    "homepage": "http://hashcash.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\",",
+        "\"PACKAGER=HOMEBREW\",",
+        "\"INSTALL_PATH=#{bin}\",",
+        "\"MAN_INSTALL_PATH=#{man1}\",",
+        "\"DOC_INSTALL_PATH=#{doc}\""
+    ],
+    "version": "1.22"
+}

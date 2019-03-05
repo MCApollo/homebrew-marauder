@@ -1,0 +1,51 @@
+{
+    "name": "Avrdude",
+    "description": "Atmel AVR MCU programmer",
+    "url": "https://download.savannah.gnu.org/releases/avrdude/avrdude-6.3.tar.gz",
+    "mirror": "https://download-mirror.savannah.gnu.org/releases/avrdude/avrdude-6.3.tar.gz",
+    "homepage": "https://savannah.nongnu.org/projects/avrdude/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "libelf",
+            "build-depend": false
+        },
+        {
+            "depend": "libftdi0",
+            "build-depend": false
+        },
+        {
+            "depend": "libhid",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb-compat",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "inreplace \"bootstrap\", /libtoolize/, \"glibtoolize\"",
+        "system \"./bootstrap\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.3"
+}

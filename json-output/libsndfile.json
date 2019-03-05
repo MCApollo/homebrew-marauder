@@ -1,0 +1,46 @@
+{
+    "name": "Libsndfile",
+    "description": "C library for files containing sampled sound",
+    "url": "http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.28.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.mega-nerd.com/libsndfile/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.28"
+}

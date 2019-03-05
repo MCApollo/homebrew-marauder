@@ -1,0 +1,62 @@
+{
+    "name": "Xsd",
+    "description": "XML Data Binding for C++",
+    "url": "https://www.codesynthesis.com/download/xsd/4.0/xsd-4.0.0+dep.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.codesynthesis.com/products/xsd/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mono",
+            "reason": "both install `xsd` binaries"
+        }
+    ],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/libxsd-frontend/xsd-frontend/semantic-graph/elements.cxx b/libxsd-frontend/xsd-frontend/semantic-graph/elements.cxx\n",
+                "index fa48a9a..59994ae 100644\n",
+                "--- a/libxsd-frontend/xsd-frontend/semantic-graph/elements.cxx\n",
+                "+++ b/libxsd-frontend/xsd-frontend/semantic-graph/elements.cxx\n",
+                "@@ -2,6 +2,7 @@\n",
+                " // copyright : Copyright (c) 2005-2014 Code Synthesis Tools CC\n",
+                " // license   : GNU GPL v2 + exceptions; see accompanying LICENSE file\n",
+                "\n",
+                "+#include <iostream>\n",
+                " #include <algorithm>\n",
+                "\n",
+                " #include <cutl/compiler/type-info.hxx>\n",
+                "diff --git a/xsd/examples/cxx/tree/makefile b/xsd/examples/cxx/tree/makefile\n",
+                "index 172195a..d8c8198 100644\n",
+                "--- a/xsd/examples/cxx/tree/makefile\n",
+                "+++ b/xsd/examples/cxx/tree/makefile\n",
+                "@@ -39,7 +39,7 @@ $(install): $(addprefix $(out_base)/,$(addsuffix /.install,$(all_examples)))\n",
+                " $(dist): $(addprefix $(out_base)/,$(addsuffix /.dist,$(all_examples)))\n",
+                "        $(call install-data,$(src_base)/README,$(dist_prefix)/$(path)/README)\n",
+                "\n",
+                "-$(dist-win): export dirs := $(shell find $(src_base) -type d -exec test -f {}/driver.cxx ';' -printf '%P ')\n",
+                "+$(dist-win): export dirs := $(shell find \"$(src_base)\" -type d -exec test -f {}/driver.cxx ';' -exec bash -c 'd=\"{}\"; printf \"%s \" \"${d#'\"$(src_base)\"'/}\"' \";\")\n",
+                " $(dist-win): |$(out_root)/.dist-pre\n",
+                " $(dist-win): $(addprefix $(out_base)/,$(addsuffix /.dist-win,$(all_examples)))\n",
+                "        $(call install-data,$(src_base)/README,$(dist_prefix)/$(path)/README.txt)\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV.append \"LDFLAGS\", `pkg-config --libs --static xerces-c`.chomp",
+        "ENV.cxx11",
+        "system \"make\", \"install\", \"install_prefix=#{prefix}\""
+    ],
+    "version": "4.0.0"
+}

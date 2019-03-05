@@ -1,0 +1,18 @@
+{
+    "name": "Cuba",
+    "description": "Library for multidimensional numerical integration",
+    "url": "http://www.feynarts.de/cuba/Cuba-4.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.feynarts.de/cuba/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize ",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"demo\""
+    ],
+    "version": "4.2"
+}

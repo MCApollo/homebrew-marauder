@@ -1,0 +1,21 @@
+{
+    "name": "Pigz",
+    "description": "Parallel gzip",
+    "url": "https://zlib.net/pigz/pigz-2.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://zlib.net/pigz/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if MacOS.version == :el_capitan && MacOS::Xcode.version >= \"8.0\"",
+        "inreplace \"pigz.c\", \"ZLIB_VERNUM >= 0x1260\", \"ZLIB_VERNUM >= 0x9999\"",
+        "end",
+        "system \"make\", \"CC=#{ENV.cc}\", \"CFLAGS=#{ENV.cflags}\"",
+        "bin.install \"pigz\", \"unpigz\"",
+        "man1.install \"pigz.1\"",
+        "man1.install_symlink \"pigz.1\" => \"unpigz.1\""
+    ],
+    "version": "2.4"
+}

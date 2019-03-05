@@ -1,0 +1,21 @@
+{
+    "name": "GradleCompletion",
+    "description": "Bash and Zsh completion for Gradle",
+    "url": "https://github.com/gradle/gradle-completion/archive/v1.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://gradle.org/",
+    "depends": [
+        {
+            "depend": "bash-completion",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"gradle-completion.bash\" => \"gradle\"",
+        "zsh_completion.install \"_gradle\" => \"_gradle\""
+    ],
+    "version": "1.4.1"
+}

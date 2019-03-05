@@ -1,0 +1,44 @@
+{
+    "name": "Plowshare",
+    "description": "Download/upload tool for popular file sharing websites",
+    "url": "https://github.com/mcrapet/plowshare/archive/v2.1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mcrapet/plowshare",
+    "depends": [
+        {
+            "depend": "bash",
+            "build-depend": false
+        },
+        {
+            "depend": "coreutils",
+            "build-depend": false
+        },
+        {
+            "depend": "feh",
+            "build-depend": false
+        },
+        {
+            "depend": "gnu-sed",
+            "build-depend": false
+        },
+        {
+            "depend": "libcaca",
+            "build-depend": false
+        },
+        {
+            "depend": "recode",
+            "build-depend": false
+        },
+        {
+            "depend": "spidermonkey",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"patch_gnused\", \"GNU_SED=#{Formula[\"gnu-sed\"].opt_bin}/gsed\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.1.7"
+}

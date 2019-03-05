@@ -1,0 +1,37 @@
+{
+    "name": "Inspectrum",
+    "description": "Offline radio signal analyser",
+    "url": "https://github.com/miek/inspectrum/archive/v0.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/miek/inspectrum",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        },
+        {
+            "depend": "liquid-dsp",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.2"
+}

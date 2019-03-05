@@ -1,0 +1,20 @@
+{
+    "name": "Duply",
+    "description": "Frontend to the duplicity backup system",
+    "url": "https://downloads.sourceforge.net/project/ftplicity/duply%20%28simple%20duplicity%29/2.1.x/duply_2.1.tgz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/ftplicity/",
+    "depends": [
+        {
+            "depend": "duplicity",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"duply\""
+    ],
+    "version": "2.1"
+}

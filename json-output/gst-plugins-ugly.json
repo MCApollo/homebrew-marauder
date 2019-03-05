@@ -1,0 +1,90 @@
+{
+    "name": "GstPluginsUgly",
+    "description": "Library for constructing graphs of media-handling components",
+    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-ugly/gst-plugins-ugly-1.14.4.tar.xz",
+    "mirror": null,
+    "homepage": "https://gstreamer.freedesktop.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gst-plugins-base",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "lame",
+            "build-depend": false
+        },
+        {
+            "depend": "libmms",
+            "build-depend": false
+        },
+        {
+            "depend": "libshout",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        },
+        {
+            "depend": "theora",
+            "build-depend": false
+        },
+        {
+            "depend": "x264",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--mandir=#{man}",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-amrnb",
+        "--disable-amrwb",
+        "]",
+        "if build.head?",
+        "ENV[\"NOCONFIGURE\"] = \"yes\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14.4"
+}

@@ -1,0 +1,54 @@
+{
+    "name": "John",
+    "description": "Featureful UNIX password cracker",
+    "url": "https://www.openwall.com/john/j/john-1.8.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.openwall.com/john/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "john-jumbo",
+            "reason": "both install the same binaries"
+        }
+    ],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/src/params.h\t2012-08-30 13:24:18.000000000 -0500\n",
+                "+++ b/src/params.h\t2012-08-30 13:25:13.000000000 -0500\n",
+                "@@ -70,15 +70,15 @@\n",
+                "  * notes above.\n",
+                "  */\n",
+                " #ifndef JOHN_SYSTEMWIDE\n",
+                "-#define JOHN_SYSTEMWIDE\t\t\t0\n",
+                "+#define JOHN_SYSTEMWIDE\t\t\t1\n",
+                " #endif\n",
+                " \n",
+                " #if JOHN_SYSTEMWIDE\n",
+                " #ifndef JOHN_SYSTEMWIDE_EXEC /* please refer to the notes above */\n",
+                "-#define JOHN_SYSTEMWIDE_EXEC\t\t\"/usr/libexec/john\"\n",
+                "+#define JOHN_SYSTEMWIDE_EXEC\t\t\"HOMEBREW_PREFIX/share/john\"\n",
+                " #endif\n",
+                " #ifndef JOHN_SYSTEMWIDE_HOME\n",
+                "-#define JOHN_SYSTEMWIDE_HOME\t\t\"/usr/share/john\"\n",
+                "+#define JOHN_SYSTEMWIDE_HOME\t\t\"HOMEBREW_PREFIX/share/john\"\n",
+                " #endif\n",
+                " #define JOHN_PRIVATE_HOME\t\t\"~/.john\"\n",
+                " #endif\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"-C\", \"src\", \"clean\", \"CC=#{ENV.cc}\", \"macosx-x86-64\"",
+        "rm \"README\"",
+        "prefix.install \"doc/README\"",
+        "doc.install Dir[\"doc/*\"]",
+        "libexec.install Dir[\"run/*\"]",
+        "bin.install_symlink libexec/\"john\"",
+        "mv libexec/\"john.conf\", libexec/\"john.ini\""
+    ],
+    "version": "1.8.0"
+}

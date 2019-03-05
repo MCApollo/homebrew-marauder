@@ -1,0 +1,44 @@
+{
+    "name": "Nuxeo",
+    "description": "Enterprise Content Management",
+    "url": "https://cdn.nuxeo.com/nuxeo-10.10/nuxeo-server-10.10-tomcat.zip",
+    "mirror": null,
+    "homepage": "https://nuxeo.github.io/",
+    "depends": [
+        {
+            "depend": "exiftool",
+            "build-depend": false
+        },
+        {
+            "depend": "ghostscript",
+            "build-depend": false
+        },
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        },
+        {
+            "depend": "libwpd",
+            "build-depend": false
+        },
+        {
+            "depend": "poppler",
+            "build-depend": false
+        },
+        {
+            "depend": "ufraw",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"log/nuxeo\").mkpath",
+        "(var/\"lib/nuxeo/data\").mkpath",
+        "(var/\"run/nuxeo\").mkpath",
+        "(var/\"cache/nuxeo/packages\").mkpath",
+        "libexec.install_symlink var/\"cache/nuxeo/packages\""
+    ],
+    "version": "10.10"
+}

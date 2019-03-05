@@ -1,0 +1,17 @@
+{
+    "name": "Treecc",
+    "description": "Aspect-oriented approach to writing compilers",
+    "url": "https://download.savannah.gnu.org/releases/dotgnu-pnet/treecc-0.3.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://gnu.org/software/dotgnu/treecc/treecc.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "bin.install \"treecc\""
+    ],
+    "version": "0.3.10"
+}

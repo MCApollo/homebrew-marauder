@@ -1,0 +1,34 @@
+{
+    "name": "LibsvgCairo",
+    "description": "SVG rendering library using Cairo",
+    "url": "https://cairographics.org/snapshots/libsvg-cairo-0.1.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://cairographics.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libsvg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--disable-debug\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.6"
+}

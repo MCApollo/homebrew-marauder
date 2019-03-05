@@ -1,0 +1,15 @@
+{
+    "name": "ZshAutosuggestions",
+    "description": "Fish-like fast/unobtrusive autosuggestions for zsh",
+    "url": "https://github.com/zsh-users/zsh-autosuggestions/archive/v0.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/zsh-users/zsh-autosuggestions",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pkgshare.install \"zsh-autosuggestions.zsh\""
+    ],
+    "version": "0.5.0"
+}

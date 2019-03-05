@@ -1,0 +1,16 @@
+{
+    "name": "Log4c",
+    "description": "Logging Framework for C",
+    "url": "https://downloads.sourceforge.net/project/log4c/log4c/1.2.4/log4c-1.2.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://log4c.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.4"
+}

@@ -1,0 +1,28 @@
+{
+    "name": "BwmNg",
+    "description": "Console-based live network and disk I/O bandwidth monitor",
+    "url": "https://github.com/vgropp/bwm-ng/archive/v0.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gropp.org/?id=projects&sub=bwm-ng",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CFLAGS\", \"-std=gnu89\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.2"
+}

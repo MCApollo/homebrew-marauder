@@ -1,0 +1,37 @@
+{
+    "name": "Gpsim",
+    "description": "Simulator for Microchip",
+    "url": "https://downloads.sourceforge.net/project/gpsim/gpsim/0.30.0/gpsim-0.30.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://gpsim.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "gputils",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "popt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-gui\",",
+        "\"--disable-shared\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"all\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.30.0"
+}

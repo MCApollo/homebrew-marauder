@@ -1,0 +1,40 @@
+{
+    "name": "Schismtracker",
+    "description": "Portable reimplementation of Impulse Tracker",
+    "url": "https://github.com/schismtracker/schismtracker/archive/20181223.tar.gz",
+    "mirror": null,
+    "homepage": "http://schismtracker.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "demo_mods",
+            "url": "https://files.scene.org/get:us-http/mirrors/modsoulbrother/vim/vim-best-of.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-ivf\"",
+        "mkdir \"build\" do",
+        "mkdir \"auto\"",
+        "system \"../configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20181223"
+}

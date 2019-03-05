@@ -1,0 +1,37 @@
+{
+    "name": "Ocp",
+    "description": "UNIX port of the Open Cubic Player",
+    "url": "https://downloads.sourceforge.net/project/opencubicplayer/ocp-0.1.21/ocp-0.1.21.tar.bz2",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/opencubicplayer/",
+    "depends": [
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "mad",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--without-x11",
+        "--without-sdl",
+        "--without-desktop_file_install",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.21"
+}

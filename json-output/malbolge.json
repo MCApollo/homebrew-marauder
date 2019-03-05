@@ -1,0 +1,26 @@
+{
+    "name": "Malbolge",
+    "description": "Deliberately difficult to program esoteric programming language",
+    "url": "https://esoteric.sange.fi/orphaned/malbolge/malbolge.c",
+    "mirror": null,
+    "homepage": "https://esoteric.sange.fi/orphaned/malbolge/README.txt",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- /malbolge.c\n",
+                "+++ /malbolge.c \n",
+                "25d24\n",
+                "< #include <malloc.h>\n"
+            ]
+        }
+    ],
+    "install": [
+        "system ENV.cxx, \"malbolge.c\", \"-o\", \"malbolge\"",
+        "bin.install \"malbolge\""
+    ],
+    "version": "1.0-u"
+}

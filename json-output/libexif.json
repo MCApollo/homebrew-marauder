@@ -1,0 +1,16 @@
+{
+    "name": "Libexif",
+    "description": "EXIF parsing library",
+    "url": "https://downloads.sourceforge.net/project/libexif/libexif/0.6.21/libexif-0.6.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://libexif.github.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.21"
+}

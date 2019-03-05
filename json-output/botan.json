@@ -1,0 +1,36 @@
+{
+    "name": "Botan",
+    "description": "Cryptographic algorithms and formats library in C++",
+    "url": "https://botan.randombit.net/releases/Botan-2.9.0.tgz",
+    "mirror": null,
+    "homepage": "https://botan.randombit.net/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--docdir=share/doc",
+        "--cpu=#{MacOS.preferred_arch}",
+        "--cc=#{ENV.compiler}",
+        "--os=darwin",
+        "--with-openssl",
+        "--with-zlib",
+        "--with-bzip2",
+        "]",
+        "system \"./configure.py\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.9.0"
+}

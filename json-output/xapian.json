@@ -1,0 +1,18 @@
+{
+    "name": "Xapian",
+    "description": "C++ search engine library",
+    "url": "https://oligarchy.co.uk/xapian/1.4.7/xapian-core-1.4.7.tar.xz",
+    "mirror": "https://fossies.org/linux/www/xapian-core-1.4.7.tar.xz",
+    "homepage": "https://xapian.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.7"
+}

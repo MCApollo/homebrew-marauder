@@ -1,0 +1,16 @@
+{
+    "name": "Checkstyle",
+    "description": "Check Java source against a coding standard",
+    "url": "https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.18/checkstyle-8.18-all.jar",
+    "mirror": null,
+    "homepage": "https://checkstyle.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"checkstyle-#{version}-all.jar\"",
+        "bin.write_jar_script libexec/\"checkstyle-#{version}-all.jar\", \"checkstyle\""
+    ],
+    "version": "8.18"
+}

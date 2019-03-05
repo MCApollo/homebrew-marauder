@@ -1,0 +1,17 @@
+{
+    "name": "Adns",
+    "description": "C/C++ resolver library and DNS resolver utilities",
+    "url": "https://www.chiark.greenend.org.uk/~ian/adns/ftp/adns-1.5.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.chiark.greenend.org.uk/~ian/adns/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dynamic\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.1"
+}

@@ -1,0 +1,79 @@
+{
+    "name": "Moc",
+    "description": "Terminal-based music player",
+    "url": "http://ftp.daper.net/pub/soft/moc/stable/moc-2.5.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://moc.daper.net/",
+    "depends": [
+        {
+            "depend": "popt",
+            "build-depend": false
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "berkeley-db",
+            "build-depend": false
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "jack",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "ncurses",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/01-codec-2.5.2.patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/02-codecpar-2.5.2.patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/03-defines-2.5.2.patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/04-lockmgr-2.5.2.patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/514941c/moc/05-audio4-2.5.2.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-debug\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.5.2"
+}

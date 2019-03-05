@@ -1,0 +1,37 @@
+{
+    "name": "Libdvdread",
+    "description": "C library for reading DVD-video images",
+    "url": "https://download.videolan.org/pub/videolan/libdvdread/6.0.0/libdvdread-6.0.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.videolan.org/developers/libdvdnav.html",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "libdvdcss",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CFLAGS\", \"-DHAVE_DVDCSS_DVDCSS_H\"",
+        "ENV.append \"LDFLAGS\", \"-ldvdcss\"",
+        "system \"autoreconf\", \"-if\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.0.0"
+}

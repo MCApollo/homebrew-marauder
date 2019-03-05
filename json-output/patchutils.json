@@ -1,0 +1,35 @@
+{
+    "name": "Patchutils",
+    "description": "Small collection of programs that operate on patch files",
+    "url": "http://cyberelk.net/tim/data/patchutils/stable/patchutils-0.3.4.tar.xz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/p/patchutils/patchutils_0.3.4.orig.tar.xz",
+    "homepage": "http://cyberelk.net/tim/software/patchutils/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "docbook",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\" if build.head?",
+        "system \"./bootstrap\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.4"
+}

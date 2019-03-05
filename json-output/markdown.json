@@ -1,0 +1,24 @@
+{
+    "name": "Markdown",
+    "description": "Text-to-HTML conversion tool",
+    "url": "https://daringfireball.net/projects/downloads/Markdown_1.0.1.zip",
+    "mirror": null,
+    "homepage": "https://daringfireball.net/projects/markdown/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "discount",
+            "reason": "both install `markdown` binaries"
+        },
+        {
+            "conflict": "multimarkdown",
+            "reason": "both install `markdown` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "bin.install \"Markdown.pl\" => \"markdown\""
+    ],
+    "version": "1.0.1"
+}

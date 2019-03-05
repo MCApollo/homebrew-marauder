@@ -1,0 +1,28 @@
+{
+    "name": "Nudoku",
+    "description": "ncurses based sudoku game",
+    "url": "https://github.com/jubalh/nudoku/archive/1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://jubalh.github.io/nudoku/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.0"
+}

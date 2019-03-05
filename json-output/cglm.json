@@ -1,0 +1,32 @@
+{
+    "name": "Cglm",
+    "description": "Optimized OpenGL/Graphics Math (glm) for C",
+    "url": "https://github.com/recp/cglm/archive/v0.5.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/recp/cglm",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.3"
+}

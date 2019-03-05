@@ -1,0 +1,32 @@
+{
+    "name": "Shivavg",
+    "description": "OpenGL based ANSI C implementation of the OpenVG standard",
+    "url": "https://downloads.sourceforge.net/project/shivavg/ShivaVG/0.2.1/ShivaVG-0.2.1.zip",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/shivavg/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"/bin/sh\", \"autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-example-all=no\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.1"
+}

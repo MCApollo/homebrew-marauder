@@ -1,0 +1,24 @@
+{
+    "name": "Elixir",
+    "description": "Functional metaprogramming aware language built on Erlang VM",
+    "url": "https://github.com/elixir-lang/elixir/archive/v1.8.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://elixir-lang.org/",
+    "depends": [
+        {
+            "depend": "erlang",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install Dir[\"bin/*\"] - Dir[\"bin/*.{bat,ps1}\"]",
+        "Dir.glob(\"lib/*/ebin\") do |path|",
+        "app = File.basename(File.dirname(path))",
+        "(lib/app).install path"
+    ],
+    "version": "1.8.1"
+}

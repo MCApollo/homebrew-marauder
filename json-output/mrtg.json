@@ -1,0 +1,21 @@
+{
+    "name": "Mrtg",
+    "description": "Multi router traffic grapher",
+    "url": "https://oss.oetiker.ch/mrtg/pub/mrtg-2.17.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://oss.oetiker.ch/mrtg/",
+    "depends": [
+        {
+            "depend": "gd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.17.7"
+}

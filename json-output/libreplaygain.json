@@ -1,0 +1,22 @@
+{
+    "name": "Libreplaygain",
+    "description": "Library to implement ReplayGain standard for audio",
+    "url": "https://files.musepack.net/source/libreplaygain_r475.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.musepack.net/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "include.install \"include/replaygain/\""
+    ],
+    "version": "475"
+}

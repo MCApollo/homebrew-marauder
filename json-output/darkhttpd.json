@@ -1,0 +1,16 @@
+{
+    "name": "Darkhttpd",
+    "description": "Small static webserver without CGI",
+    "url": "https://unix4lyfe.org/darkhttpd/darkhttpd-1.12.tar.bz2",
+    "mirror": null,
+    "homepage": "https://unix4lyfe.org/darkhttpd/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"darkhttpd\""
+    ],
+    "version": "1.12"
+}

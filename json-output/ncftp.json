@@ -1,0 +1,20 @@
+{
+    "name": "Ncftp",
+    "description": "FTP client with an advanced user interface",
+    "url": "ftp://ftp.ncftp.com/ncftp/ncftp-3.2.6-src.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/ncftp-3.2.6-src.tar.gz",
+    "homepage": "https://www.ncftp.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-universal\",",
+        "\"--disable-precomp\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.6"
+}

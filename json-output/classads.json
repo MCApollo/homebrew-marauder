@@ -1,0 +1,21 @@
+{
+    "name": "Classads",
+    "description": "Classified Advertisements (used by HTCondor Central Manager)",
+    "url": "http://ftp.cs.wisc.edu/condor/classad/c++/classads-1.0.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://research.cs.wisc.edu/htcondor/classad/",
+    "depends": [
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--enable-namespace\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.10"
+}

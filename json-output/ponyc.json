@@ -1,0 +1,35 @@
+{
+    "name": "Ponyc",
+    "description": "Object-oriented, actor-model, capabilities-secure programming language",
+    "url": "https://github.com/ponylang/ponyc/archive/0.27.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.ponylang.org/",
+    "depends": [
+        {
+            "depend": "libressl",
+            "build-depend": false
+        },
+        {
+            "depend": "llvm",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "ENV[\"LLVM_CONFIG\"] = \"#{Formula[\"llvm\"].opt_bin}/llvm-config\"",
+        "system \"make\", \"install\", \"verbose=1\", \"config=release\",",
+        "\"ponydir=#{prefix}\", \"prefix=\""
+    ],
+    "version": "0.27.0"
+}

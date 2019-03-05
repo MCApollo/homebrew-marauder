@@ -1,0 +1,26 @@
+{
+    "name": "Redstore",
+    "description": "Lightweight RDF triplestore powered by Redland",
+    "url": "https://www.aelius.com/njh/redstore/redstore-0.5.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.aelius.com/njh/redstore/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "redland",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.4"
+}

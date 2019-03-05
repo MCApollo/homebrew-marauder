@@ -1,0 +1,46 @@
+{
+    "name": "I386ElfGcc",
+    "description": "The GNU compiler collection for i386-elf",
+    "url": "https://mirrors.nju.edu.cn/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://gcc.gnu.org",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "i386-elf-binutils",
+            "build-depend": false
+        },
+        {
+            "depend": "libmpc",
+            "build-depend": false
+        },
+        {
+            "depend": "mpfr",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"i386-elf-gcc-build\" do",
+        "system \"../configure\", \"--target=i386-elf\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-isl\",",
+        "\"--disable-multilib\",",
+        "\"--disable-nls\",",
+        "\"--disable-werror\",",
+        "\"--without-headers\",",
+        "\"--with-as=#{Formula[\"i386-elf-binutils\"].bin}/i386-elf-as\",",
+        "\"--with-ld=#{Formula[\"i386-elf-binutils\"].bin}/i386-elf-ld\",",
+        "\"--enable-languages=c,c++\"",
+        "system \"make\", \"all-gcc\"",
+        "system \"make\", \"install-gcc\"",
+        "system \"make\", \"all-target-libgcc\"",
+        "system \"make\", \"install-target-libgcc\""
+    ],
+    "version": "8.2.0"
+}

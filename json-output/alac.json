@@ -1,0 +1,16 @@
+{
+    "name": "Alac",
+    "description": "Basic decoder for Apple Lossless Audio Codec files (ALAC)",
+    "url": "https://web.archive.org/web/20150510210401/craz.net/programs/itunes/files/alac_decoder-0.2.0.tgz",
+    "mirror": null,
+    "homepage": "https://web.archive.org/web/20150319040222/craz.net/programs/itunes/alac.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CFLAGS=#{ENV.cflags}\", \"CC=#{ENV.cc}\"",
+        "bin.install \"alac\""
+    ],
+    "version": "0.2.0"
+}

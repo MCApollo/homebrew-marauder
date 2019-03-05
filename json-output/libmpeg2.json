@@ -1,0 +1,23 @@
+{
+    "name": "Libmpeg2",
+    "description": "Library to decode mpeg-2 and mpeg-1 video streams",
+    "url": "https://libmpeg2.sourceforge.io/files/libmpeg2-0.5.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://libmpeg2.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append_to_cflags \"-std=gnu89\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.1"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Jansson",
+    "description": "C library for encoding, decoding, and manipulating JSON",
+    "url": "http://www.digip.org/jansson/releases/jansson-2.12.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.digip.org/jansson/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.12"
+}

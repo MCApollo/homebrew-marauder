@@ -1,0 +1,17 @@
+{
+    "name": "Check",
+    "description": "C unit testing framework",
+    "url": "https://github.com/libcheck/check/releases/download/0.12.0/check-0.12.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://libcheck.github.io/check/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.12.0"
+}

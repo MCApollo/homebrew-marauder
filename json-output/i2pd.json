@@ -1,0 +1,36 @@
+{
+    "name": "I2pd",
+    "description": "Full-featured C++ implementation of I2P client",
+    "url": "https://github.com/PurpleI2P/i2pd/archive/2.23.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://i2pd.website/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "miniupnpc",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl@1.1",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "datadir = var/\"lib/i2pd\"",
+        "if datadir.exist?",
+        "rm datadir/\"certificates\"",
+        "datadir.install_symlink pkgshare/\"certificates\"",
+        "else",
+        "datadir.dirname.mkpath",
+        "datadir.install_symlink pkgshare/\"certificates\", etc/\"i2pd/i2pd.conf\", etc/\"i2pd/subscriptions.txt\", etc/\"i2pd/tunnels.conf\"",
+        "end",
+        "(var/\"log/i2pd\").mkpath"
+    ],
+    "version": "2.23.0"
+}

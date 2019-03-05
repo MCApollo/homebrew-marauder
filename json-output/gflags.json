@@ -1,0 +1,22 @@
+{
+    "name": "Gflags",
+    "description": "Library for processing command-line flags",
+    "url": "https://github.com/gflags/gflags/archive/v2.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://gflags.github.io/gflags/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"buildroot\" do",
+        "system \"cmake\", \"..\", *std_cmake_args, \"-DBUILD_SHARED_LIBS=ON\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2.2"
+}

@@ -1,0 +1,49 @@
+{
+    "name": "Libraw",
+    "description": "Library for reading RAW files from digital photo cameras",
+    "url": "https://www.libraw.org/data/LibRaw-0.19.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libraw.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jasper",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libomp",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "librawtestfile",
+            "url": "https://www.rawsamples.ch/raws/nikon/d1/RAW_NIKON_D1.NEF"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"ac_cv_prog_c_openmp=-Xpreprocessor -fopenmp\",",
+        "\"ac_cv_prog_cxx_openmp=-Xpreprocessor -fopenmp\",",
+        "\"LDFLAGS=-lomp\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "doc.install Dir[\"doc/*\"]",
+        "prefix.install \"samples\""
+    ],
+    "version": "0.19.2"
+}

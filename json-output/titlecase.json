@@ -1,0 +1,15 @@
+{
+    "name": "Titlecase",
+    "description": "Script to convert text to title case",
+    "url": "https://github.com/ap/titlecase/archive/v1.004.tar.gz",
+    "mirror": null,
+    "homepage": "http://plasmasturm.org/code/titlecase/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"titlecase\""
+    ],
+    "version": "1.004"
+}

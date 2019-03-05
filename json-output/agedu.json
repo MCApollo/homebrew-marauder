@@ -1,0 +1,30 @@
+{
+    "name": "Agedu",
+    "description": "Unix utility for tracking down wasted disk space",
+    "url": "https://www.chiark.greenend.org.uk/~sgtatham/agedu/agedu-20180918.80c7beb.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/agedu/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "halibut",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./mkauto.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20180918.80"
+}

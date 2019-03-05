@@ -1,0 +1,31 @@
+{
+    "name": "ArpScan",
+    "description": "ARP scanning and fingerprinting tool",
+    "url": "https://github.com/royhills/arp-scan/archive/1.9.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/royhills/arp-scan",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libpcap",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9.5"
+}

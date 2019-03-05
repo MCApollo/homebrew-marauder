@@ -1,0 +1,31 @@
+{
+    "name": "Libdmtx",
+    "description": "Data Matrix library",
+    "url": "https://github.com/dmtx/libdmtx/archive/v0.7.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://libdmtx.sourceforge.io",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.5"
+}

@@ -1,0 +1,106 @@
+{
+    "name": "Vips",
+    "description": "Image processing library",
+    "url": "https://github.com/libvips/libvips/releases/download/v8.7.4/vips-8.7.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/libvips/libvips",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "giflib",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libexif",
+            "build-depend": false
+        },
+        {
+            "depend": "libgsf",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "librsvg",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        },
+        {
+            "depend": "openexr",
+            "build-depend": false
+        },
+        {
+            "depend": "openslide",
+            "build-depend": false
+        },
+        {
+            "depend": "orc",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        },
+        {
+            "depend": "poppler",
+            "build-depend": false
+        },
+        {
+            "depend": "webp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--with-magick",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "8.7.4"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "Sloccount",
+    "description": "Count lines of code in many languages",
+    "url": "https://www.dwheeler.com/sloccount/sloccount-2.26.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.dwheeler.com/sloccount/",
+    "depends": [
+        {
+            "depend": "md5sha1sum",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/break_filelist b/break_filelist\n",
+                "index ad2de47..ff854e0 100755\n",
+                "--- a/break_filelist\n",
+                "+++ b/break_filelist\n",
+                "@@ -205,6 +205,7 @@ $noisy = 0;            # Set to 1 if you want noisy reports.\n",
+                "   \"hs\" => \"haskell\", \"lhs\" => \"haskell\",\n",
+                "    # ???: .pco is Oracle Cobol\n",
+                "   \"jsp\" => \"jsp\",  # Java server pages\n",
+                "+  \"erl\" => \"erlang\",\n",
+                " );\n"
+            ]
+        }
+    ],
+    "install": [
+        "rm \"makefile.orig\" ",
+        "bin.mkpath ",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "(bin+\"erlang_count\").write \"#!/bin/sh\\ngeneric_count '%' $@\""
+    ],
+    "version": "2.26"
+}

@@ -1,0 +1,37 @@
+{
+    "name": "GlobusToolkit",
+    "description": "Toolkit used for building grids",
+    "url": "https://downloads.globus.org/toolkit/gt6/stable/installers/src/globus_toolkit-6.0.1531931206.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.globus.org/toolkit/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "ENV[\"MACOSX_DEPLOYMENT_TARGET\"] = MacOS.version",
+        "man.mkpath",
+        "system \"./configure\", \"--prefix=#{libexec}\",",
+        "\"--mandir=#{man}\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "bins = Dir[\"#{libexec}/bin/*\"].select { |f| File.executable? f }",
+        "bin.write_exec_script bins"
+    ],
+    "version": "6.0.1531931206"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "Orbit",
+    "description": "CORBA 2.4-compliant object request broker (ORB)",
+    "url": "https://download.gnome.org/sources/ORBit2/2.14/ORBit2-2.14.19.tar.bz2",
+    "mirror": null,
+    "homepage": "https://projects.gnome.org/ORBit2",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libidl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/6b7eaf2b/orbit/patch-linc2-src-Makefile.in.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/6b7eaf2b/orbit/patch-configure.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.14.19"
+}

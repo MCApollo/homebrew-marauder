@@ -1,0 +1,66 @@
+{
+    "name": "Libgda",
+    "description": "Provides unified data access to the GNOME project",
+    "url": "https://download.gnome.org/sources/libgda/5.2/libgda-5.2.8.tar.xz",
+    "mirror": null,
+    "homepage": "http://www.gnome-db.org/",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "itstool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "libgee",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-binreloc\",",
+        "\"--disable-gtk-doc\",",
+        "\"--without-java\",",
+        "\"--enable-introspection\",",
+        "\"--enable-system-sqlite=no\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.2.8"
+}

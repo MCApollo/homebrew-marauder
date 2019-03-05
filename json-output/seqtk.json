@@ -1,0 +1,16 @@
+{
+    "name": "Seqtk",
+    "description": "Toolkit for processing sequences in FASTA/Q formats",
+    "url": "https://github.com/lh3/seqtk/archive/v1.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/lh3/seqtk",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"seqtk\""
+    ],
+    "version": "1.3"
+}

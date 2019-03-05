@@ -1,0 +1,15 @@
+{
+    "name": "Mysqltuner",
+    "description": "Increase performance and stability of a MySQL installation",
+    "url": "https://github.com/major/MySQLTuner-perl/archive/1.7.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://raw.github.com/major/MySQLTuner-perl/master/mysqltuner.pl",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"mysqltuner.pl\" => \"mysqltuner\""
+    ],
+    "version": "1.7.13"
+}

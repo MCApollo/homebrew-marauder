@@ -1,0 +1,28 @@
+{
+    "name": "Snownews",
+    "description": "Text mode RSS newsreader",
+    "url": "https://github.com/kouya/snownews/archive/v1.5.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kouya/snownews",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if MacOS.version == :sierra || MacOS.version == :el_capitan",
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path",
+        "end",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\", \"EXTRA_LDFLAGS=#{ENV.ldflags} -L#{Formula[\"openssl\"].opt_lib} -lz\", \"CC=#{ENV.cc}\""
+    ],
+    "version": "1.5.13"
+}

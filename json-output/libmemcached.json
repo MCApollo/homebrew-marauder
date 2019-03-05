@@ -1,0 +1,26 @@
+{
+    "name": "Libmemcached",
+    "description": "C and C++ client library to the memcached server",
+    "url": "https://launchpad.net/libmemcached/1.0/1.0.18/+download/libmemcached-1.0.18.tar.gz",
+    "mirror": null,
+    "homepage": "https://libmemcached.org/",
+    "depends": [
+        {
+            "depend": "memcached",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/60f3532/libmemcached/1.0.18.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.18"
+}

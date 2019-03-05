@@ -1,0 +1,32 @@
+{
+    "name": "FdkAac",
+    "description": "Standalone library of the Fraunhofer FDK AAC code from Android",
+    "url": "https://downloads.sourceforge.net/project/opencore-amr/fdk-aac/fdk-aac-2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/opencore-amr/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-example\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.0"
+}

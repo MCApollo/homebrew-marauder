@@ -1,0 +1,58 @@
+{
+    "name": "Colorsvn",
+    "description": "Subversion output colorizer",
+    "url": "http://colorsvn.tigris.org/files/documents/4414/49311/colorsvn-0.3.3.tar.gz",
+    "mirror": null,
+    "homepage": "http://colorsvn.tigris.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/Makefile.in b/Makefile.in\n",
+                "index 84a3d97..54c2f74 100644\n",
+                "--- a/Makefile.in\n",
+                "+++ b/Makefile.in\n",
+                "@@ -13,8 +13,6 @@ srcdir=@srcdir@\n",
+                " mandir=@mandir@\n",
+                " sysconfdir=@sysconfdir@\n",
+                " \n",
+                "-confdir=/etc\n",
+                "-\n",
+                " CP=@CP@\n",
+                " PERL=@PERL@\n",
+                " RM=@RM@ -f\n",
+                "@@ -36,10 +34,10 @@ colorsvn:\n",
+                " install: colorsvn\n",
+                " \t$(INSTALL) -d $(DESTDIR)$(bindir) && \\\n",
+                " \t$(INSTALL) -m 755 $(PACKAGE) $(DESTDIR)$(bindir)/$(PACKAGE) && \\\n",
+                "-\t$(INSTALL) -d $(DESTDIR)/$(confdir) && \\\n",
+                "-\t$(INSTALL) -m 644 $(CONFIGFILE) $(DESTDIR)/$(confdir)/$(CONFIGFILE) && \\\n",
+                "-\t$(INSTALL) -d $(DESTDIR)/$(confdir)/profile.d && \\\n",
+                "-\t$(INSTALL) -m 755 $(PROFFILE) $(DESTDIR)/$(confdir)/profile.d/$(PROFFILE) && \\\n",
+                "+\t$(INSTALL) -d $(DESTDIR)/$(sysconfdir) && \\\n",
+                "+\t$(INSTALL) -m 644 $(CONFIGFILE) $(DESTDIR)/$(sysconfdir)/$(CONFIGFILE) && \\\n",
+                "+\t$(INSTALL) -d $(DESTDIR)/$(sysconfdir)/profile.d && \\\n",
+                "+\t$(INSTALL) -m 755 $(PROFFILE) $(DESTDIR)/$(sysconfdir)/profile.d/$(PROFFILE) && \\\n",
+                " \tif [ -f $(srcdir)/colorsvn.1 ] ; then \\\n",
+                " \t    $(INSTALL) -d $(DESTDIR)$(mandir)/man1/ ; \\\n",
+                " \t    $(INSTALL) -m 644 $(srcdir)/colorsvn.1 $(DESTDIR)$(mandir)/man1/ ; \\\n",
+                "@@ -54,6 +52,6 @@ clean:\n",
+                " \n",
+                " uninstall:\n",
+                " \t$(RM) $(DESTDIR)$(bindir)/$(PACKAGE) && \\\n",
+                "-\t$(RM) $(DESTDIR)/$(confdir)/$(CONFIGFILE)  && \\\n",
+                "-\t$(RM) $(DESTDIR)/$(confdir)/profile.d/$(PROFFILE)\n",
+                "+\t$(RM) $(DESTDIR)/$(sysconfdir)/$(CONFIGFILE)  && \\\n",
+                "+\t$(RM) $(DESTDIR)/$(sysconfdir)/profile.d/$(PROFFILE)\n"
+            ]
+        }
+    ],
+    "install": [
+        "svn_binary = which_all(\"svn\").reject do |bin|",
+        "bin.to_s.start_with?(\"#{HOMEBREW_REPOSITORY}/Library/ENV/\")"
+    ],
+    "version": "0.3.3"
+}

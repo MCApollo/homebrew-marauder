@@ -1,0 +1,59 @@
+{
+    "name": "Creduce",
+    "description": "Reduce a C/C++ program while keeping a property of interest",
+    "url": "https://embed.cs.utah.edu/creduce/creduce-2.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://embed.cs.utah.edu/creduce/",
+    "depends": [
+        {
+            "depend": "astyle",
+            "build-depend": false
+        },
+        {
+            "depend": "clang-format",
+            "build-depend": false
+        },
+        {
+            "depend": "delta",
+            "build-depend": false
+        },
+        {
+            "depend": "llvm",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "Exporter::Lite",
+            "url": "https://cpan.metacpan.org/authors/id/N/NE/NEILB/Exporter-Lite-0.08.tar.gz"
+        },
+        {
+            "name": "File::Which",
+            "url": "https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/File-Which-1.22.tar.gz"
+        },
+        {
+            "name": "Getopt::Tabular",
+            "url": "https://cpan.metacpan.org/authors/id/G/GW/GWARD/Getopt-Tabular-0.3.tar.gz"
+        },
+        {
+            "name": "Regexp::Common",
+            "url": "https://cpan.metacpan.org/authors/id/A/AB/ABIGAIL/Regexp-Common-2017060201.tar.gz"
+        },
+        {
+            "name": "Term::ReadKey",
+            "url": "https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.37.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "ENV[\"CLANG_FORMAT\"] = Formula[\"llvm\"].opt_bin/\"clang-format\"",
+        "resources.each do |r|",
+        "r.stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.8.0"
+}

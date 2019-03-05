@@ -1,0 +1,15 @@
+{
+    "name": "Hyperspec",
+    "description": "Common Lisp ANSI-standard Hyperspec",
+    "url": "http://ftp.lispworks.com/pub/software_tools/reference/HyperSpec-7-0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.lispworks.com/documentation/common-lisp.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "doc.install Dir[\"*\"]"
+    ],
+    "version": "HyperSpec-70"
+}

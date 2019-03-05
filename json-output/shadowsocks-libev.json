@@ -1,0 +1,72 @@
+{
+    "name": "ShadowsocksLibev",
+    "description": "Libev port of shadowsocks",
+    "url": "https://github.com/shadowsocks/shadowsocks-libev/releases/download/v3.2.4/shadowsocks-libev-3.2.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/shadowsocks/shadowsocks-libev",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        },
+        {
+            "depend": "c-ares",
+            "build-depend": false
+        },
+        {
+            "depend": "libev",
+            "build-depend": false
+        },
+        {
+            "depend": "libsodium",
+            "build-depend": false
+        },
+        {
+            "depend": "mbedtls",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = etc/\"xml/catalog\"",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "(buildpath/\"shadowsocks-libev.json\").write <<~EOS",
+        "{",
+        "\"server\":\"localhost\",",
+        "\"server_port\":8388,",
+        "\"local_port\":1080,",
+        "\"password\":\"barfoo!\",",
+        "\"timeout\":600,",
+        "\"method\":null",
+        "}",
+        "EOS",
+        "etc.install \"shadowsocks-libev.json\"",
+        "inreplace Dir[\"man/*\"], \"/etc/shadowsocks-libev/config.json\", \"#{etc}/shadowsocks-libev.json\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.4"
+}

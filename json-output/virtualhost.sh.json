@@ -1,0 +1,15 @@
+{
+    "name": "VirtualhostSh",
+    "description": "Script for macOS to create Apache virtual hosts",
+    "url": "https://github.com/virtualhost/virtualhost.sh/archive/1.35.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/virtualhost/virtualhost.sh",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"virtualhost.sh\""
+    ],
+    "version": "1.35"
+}

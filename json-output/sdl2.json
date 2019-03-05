@@ -1,0 +1,37 @@
+{
+    "name": "Sdl2",
+    "description": "Low-level access to audio, keyboard, mouse, joystick, and graphics",
+    "url": "https://libsdl.org/release/SDL2-2.0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libsdl.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://hg.libsdl.org/SDL/raw-diff/d274fa9731b1/build-scripts/ltmain.sh",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "inreplace %w[sdl2.pc.in sdl2-config.in], \"@prefix@\", HOMEBREW_PREFIX",
+        "system \"./autogen.sh\" if build.head? || build.devel?",
+        "args = %W[--prefix=#{prefix} --without-x]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.9"
+}

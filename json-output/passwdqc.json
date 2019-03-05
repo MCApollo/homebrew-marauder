@@ -1,0 +1,27 @@
+{
+    "name": "Passwdqc",
+    "description": "Password/passphrase strength checking and enforcement toolset",
+    "url": "https://www.openwall.com/passwdqc/passwdqc-1.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.openwall.com/passwdqc/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "BINDIR=#{bin}",
+        "CC=#{ENV.cc}",
+        "CONFDIR=#{etc}",
+        "DEVEL_LIBDIR=#{lib}",
+        "INCLUDEDIR=#{include}",
+        "MANDIR=#{man}",
+        "PREFIX=#{prefix}",
+        "SECUREDIR_DARWIN=#{prefix}/pam",
+        "SHARED_LIBDIR=#{lib}",
+        "]",
+        "system \"make\", *args",
+        "system \"make\", \"install\", *args"
+    ],
+    "version": "1.3.1"
+}

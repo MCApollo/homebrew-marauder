@@ -1,0 +1,17 @@
+{
+    "name": "Precomp",
+    "description": "Command-line precompressor to achieve better compression",
+    "url": "https://github.com/schnaader/precomp-cpp/archive/v0.4.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://schnaader.info/precomp.php",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", \" -s \", \" \"",
+        "system \"make\"",
+        "bin.install \"precomp\""
+    ],
+    "version": "0.4.6"
+}

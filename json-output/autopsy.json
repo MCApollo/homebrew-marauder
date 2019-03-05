@@ -1,0 +1,44 @@
+{
+    "name": "Autopsy",
+    "description": "Graphical interface to Sleuth Kit investigation tools",
+    "url": "https://downloads.sourceforge.net/project/autopsy/autopsy/2.24/autopsy-2.24.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.sleuthkit.org/autopsy/index.php",
+    "depends": [
+        {
+            "depend": "sleuthkit",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/base/autopsy.base b/base/autopsy.base\n",
+                "index 3b3bbdc..a0d2632 100644\n",
+                "--- a/base/autopsy.base\n",
+                "+++ b/base/autopsy.base\n",
+                "@@ -1,3 +1,6 @@\n",
+                "+#!/usr/bin/perl -wT\n",
+                "+use lib '/tmp/autopsy/';\n",
+                "+use lib '/tmp/autopsy/libexec/';\n",
+                " #\n",
+                " # autopsy gui server\n",
+                " # Autopsy Forensic Browser\n"
+            ]
+        }
+    ],
+    "install": [
+        "(var+\"lib/autopsy\").mkpath",
+        "mv \"lib\", \"libexec\"",
+        "prefix.install %w[global.css help libexec pict]",
+        "prefix.install Dir[\"*.txt\"]",
+        "(prefix+\"conf.pl\").write autcfg",
+        "inreplace \"base/autopsy.base\", \"/tmp/autopsy\", prefix",
+        "inreplace \"base/autopsy.base\", \"lib/define.pl\", \"#{libexec}/define.pl\"",
+        "bin.install \"base/autopsy.base\" => \"autopsy\""
+    ],
+    "version": "2.24"
+}

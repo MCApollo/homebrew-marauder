@@ -1,0 +1,29 @@
+{
+    "name": "Swfmill",
+    "description": "xml2swf and swf2xml processor",
+    "url": "https://www.swfmill.org/releases/swfmill-0.3.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://swfmill.org",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.6"
+}

@@ -1,0 +1,33 @@
+{
+    "name": "Libtar",
+    "description": "C library for manipulating POSIX tar files",
+    "url": "https://repo.or.cz/libtar.git",
+    "mirror": null,
+    "homepage": "https://repo.or.cz/libtar.git",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"--force\", \"--install\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.20-git-0907a903"
+}

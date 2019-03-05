@@ -1,0 +1,27 @@
+{
+    "name": "Knock",
+    "description": "Port-knock server",
+    "url": "http://www.zeroflux.org/proj/knock/files/knock-0.7.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.zeroflux.org/projects/knock",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fi\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7"
+}

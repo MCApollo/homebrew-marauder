@@ -1,0 +1,34 @@
+{
+    "name": "Lha",
+    "description": "Utility for creating and opening lzh archives",
+    "url": "https://dotsrc.dl.osdn.net/osdn/lha/22231/lha-1.14i-ac20050924p1.tar.gz",
+    "mirror": null,
+    "homepage": "https://lha.osdn.jp/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "lhasa",
+            "reason": "both install a `lha` binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-is\" if build.head?",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14"
+}

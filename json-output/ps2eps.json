@@ -1,0 +1,28 @@
+{
+    "name": "Ps2eps",
+    "description": "Convert PostScript to EPS files",
+    "url": "https://www.tm.uka.de/~bless/ps2eps-1.68.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.tm.uka.de/~bless/ps2eps",
+    "depends": [
+        {
+            "depend": "ghostscript",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system ENV.cc, \"src/C/bbox.c\", \"-o\", \"bbox\"",
+        "bin.install \"bbox\"",
+        "(libexec/\"bin\").install \"bin/ps2eps\"",
+        "(bin/\"ps2eps\").write <<~EOS",
+        "#!/bin/sh",
+        "perl -S #{libexec}/bin/ps2eps \\\"$@\\\"",
+        "EOS",
+        "share.install \"doc/man\"",
+        "doc.install \"doc/pdf\", \"doc/html\""
+    ],
+    "version": "1.68"
+}

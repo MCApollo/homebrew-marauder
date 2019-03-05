@@ -1,0 +1,34 @@
+{
+    "name": "Libosmium",
+    "description": "Fast and flexible C++ library for working with OpenStreetMap data",
+    "url": "https://github.com/osmcode/libosmium/archive/v2.15.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://osmcode.org/libosmium/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "protozero",
+            "url": "https://github.com/mapbox/protozero/archive/v1.6.3.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"protozero\").stage { libexec.install \"include\" }",
+        "system \"cmake\", \".\", \"-DINSTALL_GDALCPP=ON\",",
+        "\"-DINSTALL_UTFCPP=ON\",",
+        "\"-DPROTOZERO_INCLUDE_DIR=#{libexec}/include\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.15.0"
+}

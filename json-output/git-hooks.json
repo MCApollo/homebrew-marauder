@@ -1,0 +1,16 @@
+{
+    "name": "GitHooks",
+    "description": "Manage project, user, and global Git hooks",
+    "url": "https://github.com/icefox/git-hooks/archive/1.00.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/icefox/git-hooks",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"git-hooks\"",
+        "(etc/\"git-hooks\").install \"contrib\""
+    ],
+    "version": "1.00.0"
+}

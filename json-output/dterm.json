@@ -1,0 +1,17 @@
+{
+    "name": "Dterm",
+    "description": "Terminal emulator for use with xterm and friends",
+    "url": "http://www.knossos.net.nz/downloads/dterm-0.5.tgz",
+    "mirror": null,
+    "homepage": "http://www.knossos.net.nz/resources/free-software/dterm/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "system \"make\"",
+        "system \"make\", \"install\", \"BIN=#{bin}/\""
+    ],
+    "version": "0.5"
+}

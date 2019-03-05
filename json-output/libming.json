@@ -1,0 +1,46 @@
+{
+    "name": "Libming",
+    "description": "C library for generating Macromedia Flash files",
+    "url": "https://github.com/libming/libming/archive/ming-0_4_8.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.libming.org",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "giflib",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-perl\",",
+        "\"--enable-python\"",
+        "system \"make\", \"DEBUG=\", \"install\""
+    ],
+    "version": "0_4_8"
+}

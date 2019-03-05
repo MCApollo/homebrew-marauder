@@ -1,0 +1,20 @@
+{
+    "name": "Ffind",
+    "description": "Friendlier find",
+    "url": "https://github.com/sjl/friendly-find/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sjl/friendly-find",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "sleuthkit",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "bin.install \"ffind\""
+    ],
+    "version": "1.0.1"
+}

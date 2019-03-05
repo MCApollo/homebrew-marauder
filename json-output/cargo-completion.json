@@ -1,0 +1,16 @@
+{
+    "name": "CargoCompletion",
+    "description": "Bash and Zsh completion for Cargo",
+    "url": "https://github.com/rust-lang/cargo/archive/0.33.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rust-lang/cargo",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"src/etc/cargo.bashcomp.sh\" => \"cargo\"",
+        "zsh_completion.install \"src/etc/_cargo\""
+    ],
+    "version": "0.33.0"
+}

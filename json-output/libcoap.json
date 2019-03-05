@@ -1,0 +1,36 @@
+{
+    "name": "Libcoap",
+    "description": "Lightweight application-protocol for resource-constrained devices",
+    "url": "https://github.com/obgm/libcoap/archive/v4.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/obgm/libcoap",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-examples\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.1.2"
+}

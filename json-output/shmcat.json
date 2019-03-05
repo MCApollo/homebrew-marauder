@@ -1,0 +1,19 @@
+{
+    "name": "Shmcat",
+    "description": "Tool that dumps shared memory segments (System V and POSIX)",
+    "url": "https://downloads.sourceforge.net/project/shmcat/shmcat-1.9.tar.xz",
+    "mirror": null,
+    "homepage": "https://shmcat.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-ftok\",",
+        "\"--disable-nls\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Hayai",
+    "description": "C++ benchmarking framework inspired by the googletest framework",
+    "url": "https://github.com/nickbruun/hayai/archive/v1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://bruun.co/2012/02/07/easy-cpp-benchmarking",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.2"
+}

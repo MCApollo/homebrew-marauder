@@ -1,0 +1,30 @@
+{
+    "name": "Codequery",
+    "description": "Code-understanding, code-browsing or code-search tool",
+    "url": "https://github.com/ruben2020/codequery/archive/v0.21.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ruben2020/codequery",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args",
+        "args << \"-DBUILD_QT5=ON\"",
+        "share.install \"test\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-G\", \"Unix Makefiles\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.21.1"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Ltl2ba",
+    "description": "Translate LTL formulae to Buchi automata",
+    "url": "https://www.lsv.ens-cachan.fr/~gastin/ltl2ba/ltl2ba-1.2b1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.lsv.ens-cachan.fr/~gastin/ltl2ba/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"ltl2ba\""
+    ],
+    "version": "1.2"
+}

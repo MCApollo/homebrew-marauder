@@ -1,0 +1,28 @@
+{
+    "name": "Depqbf",
+    "description": "Solver for quantified boolean formulae (QBF)",
+    "url": "https://github.com/lonsing/depqbf/archive/version-6.03.tar.gz",
+    "mirror": null,
+    "homepage": "https://lonsing.github.io/depqbf/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "nenofex",
+            "url": "https://github.com/lonsing/nenofex/archive/version-1.1.tar.gz"
+        },
+        {
+            "name": "picosat",
+            "url": "http://fmv.jku.at/picosat/picosat-960.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"nenofex\").install resource(\"nenofex\")",
+        "(buildpath/\"picosat-960\").install resource(\"picosat\")",
+        "system \"./compile.sh\"",
+        "bin.install \"depqbf\"",
+        "lib.install \"libqdpll.a\", \"libqdpll.1.0.dylib\""
+    ],
+    "version": "6.03"
+}

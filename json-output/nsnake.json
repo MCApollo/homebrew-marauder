@@ -1,0 +1,18 @@
+{
+    "name": "Nsnake",
+    "description": "Classic snake game with textual interface",
+    "url": "https://downloads.sourceforge.net/project/nsnake/GNU-Linux/nsnake-3.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/alexdantas/nSnake",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "(share/\"applications\").rmtree",
+        "(share/\"icons\").rmtree",
+        "(share/\"pixmaps\").rmtree"
+    ],
+    "version": "3.0.1"
+}

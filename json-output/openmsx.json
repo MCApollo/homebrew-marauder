@@ -1,0 +1,40 @@
+{
+    "name": "Openmsx",
+    "description": "MSX emulator",
+    "url": "https://github.com/openMSX/openMSX/releases/download/RELEASE_0_15_0/openmsx-0.15.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://openmsx.org/",
+    "depends": [
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "glew",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.O0",
+        "inreplace \"build/custom.mk\", \"/opt/openMSX\", prefix",
+        "inreplace \"build/libraries.py\" do |s|",
+        "s.gsub! /\\((distroRoot), \\)/, \"(\\\\1, '/usr', '#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework')\"",
+        "s.gsub! \"lib/tcl\", \".\""
+    ],
+    "version": "0.15.0"
+}

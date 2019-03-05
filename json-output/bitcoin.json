@@ -1,0 +1,65 @@
+{
+    "name": "Bitcoin",
+    "description": "Decentralized, peer to peer payment network",
+    "url": "https://bitcoin.org/bin/bitcoin-core-0.17.1/bitcoin-0.17.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://bitcoin.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "berkeley-db@4",
+            "build-depend": false
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "miniupnpc",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "zeromq",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if MacOS.version == :el_capitan && MacOS::Xcode.version >= \"8.0\"",
+        "ENV.delete(\"SDKROOT\")",
+        "end",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--with-boost-libdir=#{Formula[\"boost\"].opt_lib}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"share/rpcauth\""
+    ],
+    "version": "0.17.1"
+}

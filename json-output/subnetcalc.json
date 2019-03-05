@@ -1,0 +1,25 @@
+{
+    "name": "Subnetcalc",
+    "description": "IPv4/IPv6 subnet calculator",
+    "url": "https://www.uni-due.de/~be0001/subnetcalc/download/subnetcalc-2.4.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.uni-due.de/~be0001/subnetcalc/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "geoip",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.9"
+}

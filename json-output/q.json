@@ -1,0 +1,15 @@
+{
+    "name": "Q",
+    "description": "Treat text as a database",
+    "url": "https://github.com/harelba/q/archive/1.7.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/harelba/q",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"bin/q\""
+    ],
+    "version": "1.7.4"
+}

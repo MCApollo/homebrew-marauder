@@ -1,0 +1,33 @@
+{
+    "name": "OcamlNum",
+    "description": "OCaml legacy Num library for arbitrary-precision arithmetic",
+    "url": "https://github.com/ocaml/num/archive/v1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ocaml/num",
+    "depends": [
+        {
+            "depend": "ocaml-findlib",
+            "build-depend": true
+        },
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"OCAMLFIND_DESTDIR\"] = lib/\"ocaml\"",
+        "(lib/\"ocaml\").mkpath",
+        "cp Formula[\"ocaml\"].opt_lib/\"ocaml/Makefile.config\", lib/\"ocaml\"",
+        "inreplace lib/\"ocaml/Makefile.config\", /^PREFIX=#{HOMEBREW_PREFIX}$/,",
+        "\"PREFIX=#{prefix}\"",
+        "system \"make\"",
+        "(lib/\"ocaml/stublibs\").mkpath ",
+        "system \"make\", \"install\", \"STDLIBDIR=#{lib}/ocaml\"",
+        "pkgshare.install \"test\"",
+        "rm lib/\"ocaml/Makefile.config\" "
+    ],
+    "version": "1.1"
+}

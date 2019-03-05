@@ -1,0 +1,15 @@
+{
+    "name": "Historian",
+    "description": "Command-line utility for managing shell history in a SQLite database",
+    "url": "https://github.com/jcsalterego/historian/archive/0.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jcsalterego/historian",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"hist\""
+    ],
+    "version": "0.0.2"
+}

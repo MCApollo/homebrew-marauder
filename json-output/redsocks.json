@@ -1,0 +1,21 @@
+{
+    "name": "Redsocks",
+    "description": "Transparent socks redirector",
+    "url": "https://github.com/darkk/redsocks/archive/release-0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://darkk.net.ru/redsocks/",
+    "depends": [
+        {
+            "depend": "libevent",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"redsocks\""
+    ],
+    "version": "0.4"
+}

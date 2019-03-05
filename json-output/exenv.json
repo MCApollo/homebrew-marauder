@@ -1,0 +1,16 @@
+{
+    "name": "Exenv",
+    "description": "Elixir versions management tool",
+    "url": "https://github.com/mururu/exenv/archive/v0.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mururu/exenv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"libexec/exenv\", \"/usr/local\", HOMEBREW_PREFIX",
+        "prefix.install Dir[\"*\"]"
+    ],
+    "version": "0.1.0"
+}

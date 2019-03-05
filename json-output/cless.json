@@ -1,0 +1,25 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Display file contents with colorized syntax highlighting",
+    "url": "https://github.com/tanakh/cless/archive/0.3.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tanakh/cless",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"cabal.config\").write(\"allow-newer: base,transformers\\n\")",
+        "install_cabal_package"
+    ],
+    "version": "0.3.0.0"
+}

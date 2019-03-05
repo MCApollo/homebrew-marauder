@@ -1,0 +1,52 @@
+{
+    "name": "Vip",
+    "description": "Program that provides for interactive editing in a pipeline",
+    "url": "https://www.cs.duke.edu/~des/scripts/vip",
+    "mirror": null,
+    "homepage": "https://www.cs.duke.edu/~des/vip.html",
+    "depends": [],
+    "resource": [
+        {
+            "name": "man",
+            "url": "https://www.cs.duke.edu/~des/scripts/vip.man"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/vip b/vip\n",
+                "index f150167..e517675 100644\n",
+                "--- a/vip\n",
+                "+++ b/vip\n",
+                "@@ -66,7 +66,7 @@ Usage:  $PROG [ -no ] [ command ]\n",
+                " \t\t\totherwise stdin is used;\n",
+                " \"\n",
+                " \n",
+                "-: ${TMPDIR:=\"/usr/tmp\"}\t\t# where temp. files go\n",
+                "+: ${TMPDIR:=\"/var/tmp\"}\t\t# where temp. files go\n",
+                " TEMP_FILE=\"$TMPDIR/$PROG.$$\"\t# temp. file to hold data to edit\n",
+                " COMMAND=\"cat\"\t\t\t# default command to produce input\n",
+                " DFLT_ED=\"vi\"\t\t\t# default editor\n",
+                "@@ -81,6 +81,10 @@ case \"$SYS\" in\n",
+                " \t;;\n",
+                "   \"HP-UX \"*)\n",
+                " \tAWK=awk\n",
+                "+\t;;\n",
+                "+  \"Darwin \"*)\n",
+                "+\tAWK=awk\n",
+                "+\t;;\n",
+                "   esac\n",
+                " \n",
+                " #\n"
+            ]
+        }
+    ],
+    "install": [
+        "bin.install \"vip\"",
+        "resource(\"man\").stage do",
+        "man1.install \"vip.man\" => \"vip.1\""
+    ],
+    "version": "1.0-u"
+}

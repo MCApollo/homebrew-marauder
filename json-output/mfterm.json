@@ -1,0 +1,43 @@
+{
+    "name": "Mfterm",
+    "description": "Terminal for working with Mifare Classic 1-4k Tags",
+    "url": "https://github.com/4ZM/mfterm/releases/download/v1.0.7/mfterm-1.0.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/4ZM/mfterm",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libnfc",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend \"CPPFLAGS\", \"-I#{Formula[\"openssl\"].opt_include}\"",
+        "ENV.prepend \"LDFLAGS\", \"-L#{Formula[\"openssl\"].opt_lib}\"",
+        "if build.head?",
+        "chmod 0755, \"./autogen.sh\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.7"
+}

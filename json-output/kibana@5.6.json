@@ -1,0 +1,22 @@
+{
+    "name": "\"language/node\"",
+    "description": "Analytics and search dashboard for Elasticsearch",
+    "url": "https://github.com/elastic/kibana.git",
+    "mirror": null,
+    "homepage": "https://www.elastic.co/products/kibana",
+    "depends": [],
+    "resource": [
+        {
+            "name": "node",
+            "url": "https://nodejs.org/dist/v6.16.0/node-v6.16.0.tar.xz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ln_s etc/\"kibana\", prefix/\"config\"",
+        "(prefix/\"data\").mkdir",
+        "(prefix/\"plugins\").mkdir"
+    ],
+    "version": "7.0.0-git-e157ea55"
+}

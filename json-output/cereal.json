@@ -1,0 +1,25 @@
+{
+    "name": "Cereal",
+    "description": "C++11 library for serialization",
+    "url": "https://github.com/USCiLab/cereal/archive/v1.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://uscilab.github.io/cereal/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DJUST_INSTALL_CEREAL=ON\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.2"
+}

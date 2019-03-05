@@ -1,0 +1,25 @@
+{
+    "name": "Flann",
+    "description": "Fast Library for Approximate Nearest Neighbors",
+    "url": "https://github.com/mariusmuja/flann/archive/1.9.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cs.ubc.ca/research/flann/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "hdf5",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args, \"-DBUILD_PYTHON_BINDINGS:BOOL=OFF\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9.1"
+}

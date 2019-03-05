@@ -1,0 +1,28 @@
+{
+    "name": "Roswell",
+    "description": "Lisp installer and launcher for major environments",
+    "url": "https://github.com/roswell/roswell/archive/v19.1.10.96.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/roswell/roswell",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "19.1.10.96"
+}

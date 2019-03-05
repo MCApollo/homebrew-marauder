@@ -1,0 +1,55 @@
+{
+    "name": "ChocolateDoom",
+    "description": "Accurate source port of Doom",
+    "url": "https://www.chocolate-doom.org/downloads/3.0.0/chocolate-doom-3.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.chocolate-doom.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libsamplerate",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_net",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--disable-sdltest\"",
+        "system \"make\", \"install\", \"execgamesdir=#{bin}\"",
+        "(share/\"applications\").rmtree",
+        "(share/\"icons\").rmtree"
+    ],
+    "version": "3.0.0"
+}

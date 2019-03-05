@@ -1,0 +1,16 @@
+{
+    "name": "Bnd",
+    "description": "The Swiss Army Knife for OSGi bundles",
+    "url": "https://search.maven.org/remotecontent?filepath=biz/aQute/bnd/biz.aQute.bnd/4.1.0/biz.aQute.bnd-4.1.0.jar",
+    "mirror": null,
+    "homepage": "https://bnd.bndtools.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"biz.aQute.bnd-#{version}.jar\"",
+        "bin.write_jar_script libexec/\"biz.aQute.bnd-#{version}.jar\", \"bnd\""
+    ],
+    "version": "4.1.0"
+}

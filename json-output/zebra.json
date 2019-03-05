@@ -1,0 +1,33 @@
+{
+    "name": "Zebra",
+    "description": "Information management system",
+    "url": "http://ftp.indexdata.dk/pub/zebra/idzebra-2.1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.indexdata.com/zebra",
+    "depends": [
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "yaz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-mod-text\",",
+        "\"--enable-mod-grs-regx\",",
+        "\"--enable-mod-grs-marc\",",
+        "\"--enable-mod-grs-xml\",",
+        "\"--enable-mod-dom\",",
+        "\"--enable-mod-alvis\",",
+        "\"--enable-mod-safari\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.4"
+}

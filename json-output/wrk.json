@@ -1,0 +1,28 @@
+{
+    "name": "Wrk",
+    "description": "HTTP benchmarking tool",
+    "url": "https://github.com/wg/wrk/archive/4.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/wg/wrk",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "wrk-trello",
+            "reason": "both install `wrk` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "ENV[\"MACOSX_DEPLOYMENT_TARGET\"] = MacOS.version",
+        "system \"make\"",
+        "bin.install \"wrk\""
+    ],
+    "version": "4.1.0"
+}

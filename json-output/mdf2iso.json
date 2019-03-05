@@ -1,0 +1,17 @@
+{
+    "name": "Mdf2iso",
+    "description": "Tool to convert MDF (Alcohol 120% images) images to ISO images",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/mdf2iso/mdf2iso_0.3.1.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/m/mdf2iso/mdf2iso_0.3.1.orig.tar.gz",
+    "homepage": "https://packages.debian.org/sid/mdf2iso",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.1"
+}

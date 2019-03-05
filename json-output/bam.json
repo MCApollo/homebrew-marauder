@@ -1,0 +1,16 @@
+{
+    "name": "Bam",
+    "description": "Build system that uses Lua to describe the build process",
+    "url": "https://github.com/matricks/bam/archive/v0.5.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://matricks.github.io/bam/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./make_unix.sh\"",
+        "bin.install \"bam\""
+    ],
+    "version": "0.5.1"
+}

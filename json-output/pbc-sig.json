@@ -1,0 +1,38 @@
+{
+    "name": "PbcSig",
+    "description": "Signatures library",
+    "url": "https://crypto.stanford.edu/pbc/sig/files/pbc_sig-0.0.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://crypto.stanford.edu/pbc/sig/",
+    "depends": [
+        {
+            "depend": "pbc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/sig/bbs.c b/sig/bbs.c\n",
+                "index ed1b437..8aa8331 100644\n",
+                "--- a/sig/bbs.c\n",
+                "+++ b/sig/bbs.c\n",
+                "@@ -1,4 +1,5 @@\n",
+                " //see Boneh, Boyen and Shacham, \"Short Group Signatures\"\n",
+                "+#include <stdint.h>\n",
+                " #include <pbc/pbc_utils.h>\n",
+                " #include \"pbc_sig.h\"\n",
+                " #include \"pbc_hash.h\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.8"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Odt2txt",
+    "description": "Convert OpenDocument files to plain text",
+    "url": "https://github.com/dstosberg/odt2txt/archive/v0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/dstosberg/odt2txt/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "sample",
+            "url": "https://github.com/Turbo87/odt2txt/raw/samples/samples/sample-1.odt"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"DESTDIR=#{prefix}\""
+    ],
+    "version": "0.5"
+}

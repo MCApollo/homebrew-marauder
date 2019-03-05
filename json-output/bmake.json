@@ -1,0 +1,18 @@
+{
+    "name": "Bmake",
+    "description": "Portable version of NetBSD make(1)",
+    "url": "http://www.crufty.net/ftp/pub/sjg/bmake-20181221.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.crufty.net/help/sjg/bmake.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"mk/man.mk\", \"MANTARGET?\", \"MANTARGET\"",
+        "args = [\"--prefix=#{prefix}\", \"-DWITHOUT_PROG_LINK\", \"--install\"]",
+        "system \"sh\", \"boot-strap\", *args",
+        "man1.install \"bmake.1\""
+    ],
+    "version": "20181221"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Repl",
+    "description": "Wrap non-interactive programs with a REPL",
+    "url": "https://github.com/defunkt/repl/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/defunkt/repl",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"bin/repl\"",
+        "man1.install \"man/repl.1\""
+    ],
+    "version": "1.0.0"
+}

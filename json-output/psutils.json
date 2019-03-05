@@ -1,0 +1,21 @@
+{
+    "name": "Psutils",
+    "description": "Collection of PostScript document handling utilities",
+    "url": "ftp://ftp.knackered.org/pub/psutils/psutils-p17.tar.gz",
+    "mirror": "https://ftp.osuosl.org/pub/blfs/conglomeration/psutils/psutils-p17.tar.gz",
+    "homepage": "http://knackered.org/angus/psutils/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "man1.mkpath",
+        "system \"make\", \"-f\", \"Makefile.unix\",",
+        "\"PERL=/usr/bin/perl\",",
+        "\"BINDIR=#{bin}\",",
+        "\"INCLUDEDIR=#{pkgshare}\",",
+        "\"MANDIR=#{man1}\",",
+        "\"install\""
+    ],
+    "version": "1.0-u"
+}

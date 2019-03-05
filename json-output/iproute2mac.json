@@ -1,0 +1,15 @@
+{
+    "name": "Iproute2mac",
+    "description": "CLI wrapper for basic network utilities on macOS - ip command",
+    "url": "https://github.com/brona/iproute2mac/releases/download/v1.2.2/iproute2mac-1.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/brona/iproute2mac",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"src/ip.py\" => \"ip\""
+    ],
+    "version": "1.2.2"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Chromaprint",
+    "description": "Core component of the AcoustID project (Audio fingerprinting)",
+    "url": "https://github.com/acoustid/chromaprint/releases/download/v1.4.3/chromaprint-1.4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://acoustid.org/chromaprint",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.3"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "PhpCodeSniffer",
+    "description": "Check coding standards in PHP, JavaScript and CSS",
+    "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.0/phpcs.phar",
+    "mirror": null,
+    "homepage": "https://github.com/squizlabs/PHP_CodeSniffer/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "phpcbf.phar",
+            "url": "https://github.com/squizlabs/PHP_CodeSniffer/releases/download/3.4.0/phpcbf.phar"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"phpcs.phar\" => \"phpcs\"",
+        "resource(\"phpcbf.phar\").stage { bin.install \"phpcbf.phar\" => \"phpcbf\" }"
+    ],
+    "version": "3.4.0"
+}

@@ -1,0 +1,77 @@
+{
+    "name": "Groonga",
+    "description": "Fulltext search engine and column store",
+    "url": "https://packages.groonga.org/source/groonga/groonga-9.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://groonga.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "mecab",
+            "build-depend": false
+        },
+        {
+            "depend": "mecab-ipadic",
+            "build-depend": false
+        },
+        {
+            "depend": "msgpack",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "groonga-normalizer-mysql",
+            "url": "https://packages.groonga.org/source/groonga-normalizer-mysql/groonga-normalizer-mysql-1.1.3.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-zeromq",
+        "--enable-mruby",
+        "--with-ssl",
+        "--with-zlib",
+        "--without-libstemmer",
+        "--with-mecab",
+        "]",
+        "if build.head?",
+        "args << \"--with-ruby\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "resource(\"groonga-normalizer-mysql\").stage do",
+        "ENV.prepend_path \"PATH\", bin",
+        "ENV.prepend_path \"PKG_CONFIG_PATH\", lib/\"pkgconfig\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "9.0.0"
+}

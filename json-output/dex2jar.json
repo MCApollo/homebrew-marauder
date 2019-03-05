@@ -1,0 +1,20 @@
+{
+    "name": "Dex2jar",
+    "description": "Tools to work with Android .dex and Java .class files",
+    "url": "https://downloads.sourceforge.net/project/dex2jar/dex2jar-2.0.zip",
+    "mirror": "https://bitbucket.org/pxb1988/dex2jar/downloads/dex2jar-2.0.zip",
+    "homepage": "https://github.com/pxb1988/dex2jar",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm_rf Dir[\"*.bat\"]",
+        "prefix.install_metafiles",
+        "chmod 0755, Dir[\"*\"]",
+        "libexec.install Dir[\"*\"]",
+        "Dir.glob(\"#{libexec}/*.sh\") do |script|",
+        "bin.install_symlink script => File.basename(script, \".sh\")"
+    ],
+    "version": "2.0"
+}

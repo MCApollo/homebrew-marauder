@@ -1,0 +1,16 @@
+{
+    "name": "Tcpstat",
+    "description": "Active TCP connections monitoring tool",
+    "url": "https://github.com/jtt/tcpstat/archive/rel-0-1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jtt/tcpstat",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"tcpstat\""
+    ],
+    "version": "rel-01"
+}

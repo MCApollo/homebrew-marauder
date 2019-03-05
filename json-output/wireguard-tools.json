@@ -1,0 +1,26 @@
+{
+    "name": "WireguardTools",
+    "description": "Tools for the WireGuard secure network tunnel",
+    "url": "https://git.zx2c4.com/WireGuard/snapshot/WireGuard-0.0.20190123.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.wireguard.com/",
+    "depends": [
+        {
+            "depend": "bash",
+            "build-depend": false
+        },
+        {
+            "depend": "wireguard-go",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"BASHCOMPDIR=#{bash_completion}\", \"WITH_BASHCOMPLETION=yes\", \"WITH_WGQUICK=yes\",",
+        "\"WITH_SYSTEMDUNITS=no\", \"PREFIX=#{prefix}\", \"SYSCONFDIR=#{prefix}/etc\",",
+        "\"-C\", \"src/tools\", \"install\""
+    ],
+    "version": "0.0.20190123"
+}

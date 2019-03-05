@@ -1,0 +1,60 @@
+{
+    "name": "GuileAT20",
+    "description": "GNU Ubiquitous Intelligent Language for Extensions",
+    "url": "https://ftp.gnu.org/gnu/guile/guile-2.0.14.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/guile/guile-2.0.14.tar.xz",
+    "homepage": "https://www.gnu.org/software/guile/",
+    "depends": [
+        {
+            "depend": "bdw-gc",
+            "build-depend": false
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "libffi",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "libunistring",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/5a3bba7/lang/guile/files/sierra.patch",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/8b7f401/lang/guile/files/sierra-filter-incompatible-mkostemp-flags.patch",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"./autogen.sh\" unless build.stable?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-libreadline-prefix=#{Formula[\"readline\"].opt_prefix}\",",
+        "\"--with-libgmp-prefix=#{Formula[\"gmp\"].opt_prefix}\"",
+        "system \"make\", \"install\"",
+        "Pathname.glob(\"#{lib}/*.dylib\") do |dylib|",
+        "lib.install_symlink dylib.basename => \"#{dylib.basename(\".dylib\")}.so\""
+    ],
+    "version": "2.0.14"
+}

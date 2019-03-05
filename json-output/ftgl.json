@@ -1,0 +1,26 @@
+{
+    "name": "Ftgl",
+    "description": "Freetype / OpenGL bridge",
+    "url": "https://downloads.sourceforge.net/project/ftgl/FTGL%20Source/2.1.3~rc5/ftgl-2.1.3-rc5.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/ftgl/",
+    "depends": [
+        {
+            "depend": "freetype",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"configure\", \"set dummy doxygen;\", \"set dummy no_doxygen;\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-freetypetest\",",
+        "\"--with-glut-inc=/dev/null\",",
+        "\"--with-glut-lib=/dev/null\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.3"
+}

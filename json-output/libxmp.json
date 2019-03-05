@@ -1,0 +1,28 @@
+{
+    "name": "Libxmp",
+    "description": "C library for playback of module music (MOD, S3M, IT, etc)",
+    "url": "https://downloads.sourceforge.net/project/xmp/libxmp/4.4.1/libxmp-4.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://xmp.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "demo_mods",
+            "url": "https://files.scene.org/get:us-http/mirrors/modsoulbrother/vim/vim-best-of.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoconf\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install resource(\"demo_mods\")"
+    ],
+    "version": "4.4.1"
+}

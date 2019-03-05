@@ -1,0 +1,33 @@
+{
+    "name": "Jcal",
+    "description": "UNIX-cal-like tool to display Jalali calendar",
+    "url": "https://download.savannah.gnu.org/releases/jcal/jcal-0.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://savannah.nongnu.org/projects/jcal/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"/bin/sh\", \"autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-debug\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.1"
+}

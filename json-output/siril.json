@@ -1,0 +1,102 @@
+{
+    "name": "Siril",
+    "description": "Astronomical image processing tool",
+    "url": "https://free-astro.org/download/siril-0.9.10.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.siril.org",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "adwaita-icon-theme",
+            "build-depend": false
+        },
+        {
+            "depend": "cfitsio",
+            "build-depend": false
+        },
+        {
+            "depend": "ffms2",
+            "build-depend": false
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        },
+        {
+            "depend": "gnuplot",
+            "build-depend": false
+        },
+        {
+            "depend": "gsl",
+            "build-depend": false
+        },
+        {
+            "depend": "gtk-mac-integration",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "libomp",
+            "build-depend": false
+        },
+        {
+            "depend": "libraw",
+            "build-depend": false
+        },
+        {
+            "depend": "librsvg",
+            "build-depend": false
+        },
+        {
+            "depend": "libsvg",
+            "build-depend": false
+        },
+        {
+            "depend": "netpbm",
+            "build-depend": false
+        },
+        {
+            "depend": "opencv",
+            "build-depend": false
+        },
+        {
+            "depend": "openjpeg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append_to_cflags \"-I#{HOMEBREW_PREFIX}/include -Xpreprocessor -fopenmp -lomp\"",
+        "system \"./autogen.sh\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.10"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Lutok",
+    "description": "Lightweight C++ API for Lua",
+    "url": "https://github.com/jmmv/lutok/releases/download/lutok-0.4/lutok-0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jmmv/lutok",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"installcheck\""
+    ],
+    "version": "0.4"
+}

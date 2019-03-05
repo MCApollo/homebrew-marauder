@@ -1,0 +1,85 @@
+{
+    "name": "Sdf",
+    "description": "Syntax Definition Formalism: high-level description of grammars",
+    "url": "http://www.meta-environment.org/releases/sdf-2.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://strategoxt.org/Sdf/WebHome",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "aterm",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "c-library",
+            "url": "http://www.meta-environment.org/releases/c-library-1.2.tar.gz"
+        },
+        {
+            "name": "toolbuslib",
+            "url": "http://www.meta-environment.org/releases/toolbuslib-1.1.tar.gz"
+        },
+        {
+            "name": "error-support",
+            "url": "http://www.meta-environment.org/releases/error-support-1.6.tar.gz"
+        },
+        {
+            "name": "pt-support",
+            "url": "http://www.meta-environment.org/releases/pt-support-2.4.tar.gz"
+        },
+        {
+            "name": "sdf-support",
+            "url": "http://www.meta-environment.org/releases/sdf-support-2.5.tar.gz"
+        },
+        {
+            "name": "asf-support",
+            "url": "http://www.meta-environment.org/releases/asf-support-1.8.tar.gz"
+        },
+        {
+            "name": "tide-support",
+            "url": "http://www.meta-environment.org/releases/tide-support-1.3.1.tar.gz"
+        },
+        {
+            "name": "rstore-support",
+            "url": "http://www.meta-environment.org/releases/rstore-support-1.0.tar.gz"
+        },
+        {
+            "name": "config-support",
+            "url": "http://www.meta-environment.org/releases/config-support-1.4.tar.gz"
+        },
+        {
+            "name": "ptable-support",
+            "url": "http://www.meta-environment.org/releases/ptable-support-1.2.tar.gz"
+        },
+        {
+            "name": "sglr",
+            "url": "http://www.meta-environment.org/releases/sglr-4.5.3.tar.gz"
+        },
+        {
+            "name": "asc-support",
+            "url": "http://www.meta-environment.org/releases/asc-support-2.6.tar.gz"
+        },
+        {
+            "name": "pgen",
+            "url": "http://www.meta-environment.org/releases/pgen-2.8.1.tar.gz"
+        },
+        {
+            "name": "pandora",
+            "url": "http://www.meta-environment.org/releases/pandora-1.6.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize ",
+        "ENV.append \"CFLAGS\", \"-std=gnu89 -fbracket-depth=1024\" if ENV.compiler == :clang",
+        "resource(\"c-library\").stage do",
+        "system \"./configure\", \"--prefix=#{libexec}/c-library\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.3"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "UrdfdomHeaders",
+    "description": "Headers for Unified Robot Description Format (URDF) parsers",
+    "url": "https://github.com/ros/urdfdom_headers/archive/1.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.ros.org/urdfdom_headers/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.3"
+}

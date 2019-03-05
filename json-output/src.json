@@ -1,0 +1,30 @@
+{
+    "name": "Src",
+    "description": "Simple revision control: RCS reloaded with a modern UI",
+    "url": "http://www.catb.org/~esr/src/src-1.18.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.catb.org/~esr/src/",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "rcs",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "srclib",
+            "reason": "both install a "
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\" if build.head?",
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "1.18"
+}

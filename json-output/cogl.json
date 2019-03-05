@@ -1,0 +1,68 @@
+{
+    "name": "Cogl",
+    "description": "Low level OpenGL abstraction library developed for Clutter",
+    "url": "https://download.gnome.org/sources/cogl/1.22/cogl-1.22.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://developer.gnome.org/cogl/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gtk-doc",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"GI_SCANNER_DISABLE_CACHE\"] = \"yes\"",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--enable-cogl-pango=yes",
+        "--enable-introspection=yes",
+        "--disable-glx",
+        "--without-x",
+        "]",
+        "if build.head?",
+        "system \"./autogen.sh\", *args",
+        "else",
+        "system \"./configure\", *args",
+        "end",
+        "system \"make\", \"install\"",
+        "doc.install \"examples\""
+    ],
+    "version": "1.22.2"
+}

@@ -1,0 +1,76 @@
+{
+    "name": "GccAT5",
+    "description": "The GNU Compiler Collection",
+    "url": "https://ftp.gnu.org/gnu/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/gcc/gcc-5.5.0/gcc-5.5.0.tar.xz",
+    "homepage": "https://gcc.gnu.org/",
+    "depends": [
+        {
+            "depend": "maximum_macos",
+            "build-depend": false
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "libmpc",
+            "build-depend": false
+        },
+        {
+            "depend": "mpfr",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "isl",
+            "url": "https://gcc.gnu.org/pub/gcc/infrastructure/isl-0.14.tar.bz2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/078797f1b9/gcc%405/xcode9.patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/413cfac6/gcc%405/10.13_headers.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.delete \"LD\"",
+        "resource(\"isl\").stage buildpath/\"isl\"",
+        "languages = %w[c c++ fortran objc obj-c++]",
+        "version_suffix = version.to_s.slice(/\\d/)",
+        "ENV[\"gcc_cv_prog_makeinfo_modern\"] = \"no\"",
+        "args = [",
+        "\"--build=x86_64-apple-darwin#{osmajor}\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--libdir=#{lib}/gcc/#{version_suffix}\",",
+        "\"--enable-languages=#{languages.join(\",\")}\",",
+        "\"--program-suffix=-#{version_suffix}\",",
+        "\"--with-gmp=#{Formula[\"gmp\"].opt_prefix}\",",
+        "\"--with-mpfr=#{Formula[\"mpfr\"].opt_prefix}\",",
+        "\"--with-mpc=#{Formula[\"libmpc\"].opt_prefix}\",",
+        "\"--with-system-zlib\",",
+        "\"--enable-libstdcxx-time=yes\",",
+        "\"--enable-stage1-checking\",",
+        "\"--enable-checking=release\",",
+        "\"--enable-lto\",",
+        "\"--enable-plugin\",",
+        "\"--disable-werror\",",
+        "\"--disable-nls\",",
+        "\"--with-pkgversion=Homebrew GCC #{pkg_version} #{build.used_options*\" \"}\".strip,",
+        "\"--with-bugurl=https://github.com/Homebrew/homebrew-core/issues\",",
+        "\"--enable-multilib\",",
+        "]",
+        "inreplace \"libgcc/config/t-slibgcc-darwin\", \"@shlib_slibdir@\", \"#{HOMEBREW_PREFIX}/lib/gcc/#{version_suffix}\"",
+        "mkdir \"build\" do",
+        "unless MacOS::CLT.installed?",
+        "args << \"--with-native-system-header-dir=/usr/include\"",
+        "args << \"--with-sysroot=#{MacOS.sdk_path}\""
+    ],
+    "version": "5.5.0"
+}

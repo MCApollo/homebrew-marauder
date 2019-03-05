@@ -1,0 +1,39 @@
+{
+    "name": "Libgit2",
+    "description": "C library of Git core methods that is re-entrant and linkable",
+    "url": "https://github.com/libgit2/libgit2/archive/v0.27.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://libgit2.github.com/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libssh2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args",
+        "args << \"-DBUILD_EXAMPLES=YES\"",
+        "args << \"-DBUILD_CLAR=NO\" ",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\", \"install\"",
+        "cd \"examples\" do",
+        "(pkgshare/\"examples\").install \"add\", \"blame\", \"cat-file\", \"cgit2\",",
+        "\"describe\", \"diff\", \"for-each-ref\",",
+        "\"general\", \"init\", \"log\", \"remote\",",
+        "\"rev-list\", \"rev-parse\", \"showindex\",",
+        "\"status\", \"tag\""
+    ],
+    "version": "0.27.8"
+}

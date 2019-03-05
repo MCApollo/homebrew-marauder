@@ -1,0 +1,23 @@
+{
+    "name": "ParquetTools",
+    "description": "Apache Parquet command-line tools and utilities",
+    "url": "https://github.com/apache/parquet-mr.git",
+    "mirror": null,
+    "homepage": "https://parquet.apache.org/",
+    "depends": [
+        {
+            "depend": "maven",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"parquet-tools\" do",
+        "system \"mvn\", \"clean\", \"package\", \"-Plocal\"",
+        "libexec.install \"target/parquet-tools-#{version}.jar\"",
+        "bin.write_jar_script libexec/\"parquet-tools-#{version}.jar\", \"parquet-tools\""
+    ],
+    "version": "1.8.0-git-213e952d"
+}

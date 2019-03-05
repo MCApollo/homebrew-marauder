@@ -1,0 +1,27 @@
+{
+    "name": "Rnv",
+    "description": "Implementation of Relax NG Compact Syntax validator",
+    "url": "https://downloads.sourceforge.net/project/rnv/Sources/1.7.11/rnv-1.7.11.tar.bz2",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/rnv/",
+    "depends": [
+        {
+            "depend": "expat",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "arx-libertatis",
+            "reason": "both install `arx` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7.11"
+}

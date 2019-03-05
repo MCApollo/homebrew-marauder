@@ -1,0 +1,42 @@
+{
+    "name": "Libwmf",
+    "description": "Library for converting WMF (Window Metafile Format) files",
+    "url": "https://downloads.sourceforge.net/project/wvware/libwmf/0.2.8.4/libwmf-0.2.8.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://wvware.sourceforge.io/libwmf.html",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gd",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-png=#{Formula[\"libpng\"].opt_prefix}\",",
+        "\"--with-freetype=#{Formula[\"freetype\"].opt_prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize ",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.8.4"
+}

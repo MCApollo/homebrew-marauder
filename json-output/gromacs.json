@@ -1,0 +1,33 @@
+{
+    "name": "Gromacs",
+    "description": "Versatile package for molecular dynamics calculations",
+    "url": "https://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.gromacs.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        },
+        {
+            "depend": "gsl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"scripts/CMakeLists.txt\", \"CMAKE_INSTALL_BINDIR\",",
+        "\"CMAKE_INSTALL_DATADIR\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args, \"-DGMX_GSL=ON\"",
+        "system \"make\"",
+        "ENV.deparallelize { system \"make\", \"install\" }"
+    ],
+    "version": "2018.3"
+}

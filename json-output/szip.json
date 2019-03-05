@@ -1,0 +1,17 @@
+{
+    "name": "Szip",
+    "description": "Implementation of extended-Rice lossless compression algorithm",
+    "url": "https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://support.hdfgroup.org/HDF5/release/obtain5.html#extlibs",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.1"
+}

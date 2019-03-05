@@ -1,0 +1,30 @@
+{
+    "name": "Libidl",
+    "description": "Library for creating CORBA IDL files",
+    "url": "https://download.gnome.org/sources/libIDL/0.8/libIDL-0.8.14.tar.bz2",
+    "mirror": null,
+    "homepage": "https://ftp.acc.umu.se/pub/gnome/sources/libIDL/0.8/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.14"
+}

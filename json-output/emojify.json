@@ -1,0 +1,15 @@
+{
+    "name": "Emojify",
+    "description": "Emoji on the command-line :scream:",
+    "url": "https://github.com/mrowa44/emojify/archive/v1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mrowa44/emojify",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"emojify\""
+    ],
+    "version": "1.0.2"
+}

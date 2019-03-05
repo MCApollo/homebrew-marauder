@@ -1,0 +1,22 @@
+{
+    "name": "Pkcrack",
+    "description": "Implementation of an algorithm for breaking the PkZip cipher",
+    "url": "https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack/pkcrack-1.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.unix-ag.uni-kl.de/~conrad/krypto/pkcrack.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "libextractor",
+            "reason": "both install `extract` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.prepend \"CPPFLAGS\", \"-I#{MacOS.sdk_path}/usr/include/malloc\"",
+        "system \"make\", \"-C\", \"src/\"",
+        "bin.install Dir[\"src/*\"].select { |f| File.executable? f }"
+    ],
+    "version": "1.2.2"
+}

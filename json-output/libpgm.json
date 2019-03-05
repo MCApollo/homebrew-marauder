@@ -1,0 +1,18 @@
+{
+    "name": "Libpgm",
+    "description": "Implements the PGM reliable multicast protocol",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/openpgm/libpgm-5.2.122~dfsg.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/openpgm/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"openpgm/pgm\" do",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.2.122"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Quazip",
+    "description": "C++ wrapper over Gilles Vollant",
+    "url": "https://downloads.sourceforge.net/project/quazip/quazip/0.7.3/quazip-0.7.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://quazip.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"qmake\", \"quazip.pro\", \"-config\", \"release\",",
+        "\"PREFIX=#{prefix}\", \"LIBS+=-lz\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.3"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Toilet",
+    "description": "Color-based alternative to figlet (uses libcaca)",
+    "url": "http://caca.zoy.org/raw-attachment/wiki/toilet/toilet-0.3.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/t/toilet/toilet_0.3.orig.tar.gz",
+    "homepage": "http://caca.zoy.org/wiki/toilet",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libcaca",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3"
+}

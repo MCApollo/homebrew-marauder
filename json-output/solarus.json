@@ -1,0 +1,59 @@
+{
+    "name": "Solarus",
+    "description": "Action-RPG game engine",
+    "url": "http://www.solarus-games.org/downloads/solarus/solarus-1.5.3-src.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.solarus-games.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libmodplug",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "luajit",
+            "build-depend": false
+        },
+        {
+            "depend": "physfs",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/e6a26f3d/solarus/config.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DSOLARUS_GUI=OFF\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.3"
+}

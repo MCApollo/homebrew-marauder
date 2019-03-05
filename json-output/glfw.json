@@ -1,0 +1,26 @@
+{
+    "name": "Glfw",
+    "description": "Multi-platform library for OpenGL applications",
+    "url": "https://github.com/glfw/glfw/archive/3.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.glfw.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %w[",
+        "-DGLFW_USE_CHDIR=TRUE",
+        "-DGLFW_USE_MENUBAR=TRUE",
+        "-DBUILD_SHARED_LIBS=TRUE",
+        "]",
+        "system \"cmake\", *args, \".\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.1"
+}

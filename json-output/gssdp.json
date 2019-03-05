@@ -1,0 +1,38 @@
+{
+    "name": "Gssdp",
+    "description": "GUPnP library for resource discovery and announcement over SSDP",
+    "url": "https://download.gnome.org/sources/gssdp/1.0/gssdp-1.0.3.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.gnome.org/GUPnP/",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libsoup",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.3"
+}

@@ -1,0 +1,51 @@
+{
+    "name": "Leptonica",
+    "description": "Image processing and image analysis library",
+    "url": "https://github.com/DanBloomberg/leptonica/releases/download/1.77.0/leptonica-1.77.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.leptonica.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "giflib",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "openjpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "webp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--with-libwebp",
+        "--with-libopenjpeg",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.77.0"
+}

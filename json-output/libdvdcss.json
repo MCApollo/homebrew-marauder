@@ -1,0 +1,30 @@
+{
+    "name": "Libdvdcss",
+    "description": "Access DVDs as block devices without the decryption",
+    "url": "https://download.videolan.org/pub/videolan/libdvdcss/1.4.2/libdvdcss-1.4.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.videolan.org/developers/libdvdcss.html",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-if\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.2"
+}

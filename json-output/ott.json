@@ -1,0 +1,23 @@
+{
+    "name": "Ott",
+    "description": "Tool for writing definitions of programming languages and calculi",
+    "url": "https://github.com/ott-lang/ott/archive/0.28.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cl.cam.ac.uk/~pes20/ott/",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"world\"",
+        "bin.install \"bin/ott\"",
+        "pkgshare.install \"examples\"",
+        "(pkgshare/\"emacs/site-lisp/ott\").install \"emacs/ott-mode.el\""
+    ],
+    "version": "0.28"
+}

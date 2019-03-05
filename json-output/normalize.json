@@ -1,0 +1,32 @@
+{
+    "name": "Normalize",
+    "description": "Adjust volume of audio files to a standard level",
+    "url": "https://savannah.nongnu.org/download/normalize/normalize-0.7.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/normalize/",
+    "depends": [
+        {
+            "depend": "mad",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "num-utils",
+            "reason": "both install `normalize` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--mandir=#{man}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.7"
+}

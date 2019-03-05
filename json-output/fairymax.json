@@ -1,0 +1,20 @@
+{
+    "name": "Fairymax",
+    "description": "AI for playing Chess variants",
+    "url": "http://hgm.nubati.net/git/fairymax.git",
+    "mirror": null,
+    "homepage": "https://www.chessvariants.com/index/msdisplay.php?itemid=MSfairy-max",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\",",
+        "\"INI_F=#{pkgshare}/fmax.ini\",",
+        "\"INI_Q=#{pkgshare}/qmax.ini\"",
+        "bin.install \"fairymax\", \"shamax\", \"maxqi\"",
+        "pkgshare.install Dir[\"data/*.ini\"]",
+        "man6.install \"fairymax.6.gz\""
+    ],
+    "version": "5.0-git-f7a7847e"
+}

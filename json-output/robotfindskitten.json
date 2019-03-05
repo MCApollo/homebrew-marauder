@@ -1,0 +1,17 @@
+{
+    "name": "Robotfindskitten",
+    "description": "Zen Simulation of robot finding kitten",
+    "url": "https://downloads.sourceforge.net/project/rfk/robotfindskitten-POSIX/mayan_apocalypse_edition/robotfindskitten-2.7182818.701.tar.gz",
+    "mirror": null,
+    "homepage": "http://robotfindskitten.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\", \"execgamesdir=#{bin}\""
+    ],
+    "version": "2.7182818.701"
+}

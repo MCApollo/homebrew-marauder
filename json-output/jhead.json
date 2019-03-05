@@ -1,0 +1,57 @@
+{
+    "name": "Jhead",
+    "description": "Extract Digicam setting info from EXIF JPEG headers",
+    "url": "http://www.sentex.net/~mwandel/jhead/jhead-3.00.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.sentex.net/~mwandel/jhead/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/j/jhead/jhead_3.00-4.debian.tar.xz",
+            "strip": "1"
+        },
+        {
+            "url": null,
+            "data": [
+                "--- a/makefile\t2015-02-02 23:24:06.000000000 +0100\n",
+                "+++ b/makefile\t2015-02-25 16:31:21.000000000 +0100\n",
+                "@@ -1,12 +1,18 @@\n",
+                " #--------------------------------\n",
+                " # jhead makefile for Unix\n",
+                " #--------------------------------\n",
+                "+PREFIX=$(DESTDIR)/usr/local\n",
+                "+BINDIR=$(PREFIX)/bin\n",
+                "+DOCDIR=$(PREFIX)/share/doc/jhead\n",
+                "+MANDIR=$(PREFIX)/share/man/man1\n",
+                " OBJ=.\n",
+                " SRC=.\n",
+                " CFLAGS:= $(CFLAGS) -O3 -Wall\n",
+                "\n",
+                " all: jhead\n",
+                "\n",
+                "+docs = $(SRC)/usage.html\n",
+                "+\n",
+                " objs = $(OBJ)/jhead.o $(OBJ)/jpgfile.o $(OBJ)/jpgqguess.o $(OBJ)/paths.o \\\n",
+                "\t$(OBJ)/exif.o $(OBJ)/iptc.o $(OBJ)/gpsinfo.o $(OBJ)/makernote.o\n",
+                "\n",
+                "@@ -19,5 +25,8 @@\n",
+                " clean:\n",
+                "\trm -f $(objs) jhead\n",
+                "\n",
+                "-install:\n",
+                "-\tcp jhead ${DESTDIR}/usr/local/bin/\n",
+                "+install: all\n",
+                "+\tinstall -d $(BINDIR) $(DOCDIR) $(MANDIR)\n",
+                "+\tinstall -m 0755 jhead $(BINDIR)\n",
+                "+\tinstall -m 0644 $(docs) $(DOCDIR)\n",
+                "+\tinstall -m 0644 jhead.1 $(MANDIR)\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "3.00"
+}

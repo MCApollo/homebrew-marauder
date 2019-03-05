@@ -1,0 +1,68 @@
+{
+    "name": "Graphicsmagick",
+    "description": "Image processing tools collection",
+    "url": "https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.31/GraphicsMagick-1.3.31.tar.xz",
+    "mirror": null,
+    "homepage": "http://www.graphicsmagick.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "jasper",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        },
+        {
+            "depend": "webp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--disable-openmp",
+        "--disable-static",
+        "--enable-shared",
+        "--with-modules",
+        "--with-quantum-depth=16",
+        "--without-lzma",
+        "--without-x",
+        "--without-gslib",
+        "--with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts",
+        "--without-wmf",
+        "]",
+        "inreplace \"configure\", \"${PACKAGE_NAME}-${PACKAGE_VERSION}\", \"${PACKAGE_NAME}\"",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.31"
+}

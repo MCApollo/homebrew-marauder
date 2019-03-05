@@ -1,0 +1,28 @@
+{
+    "name": "Fping",
+    "description": "Scriptable ping program for checking if multiple hosts are up",
+    "url": "https://fping.org/dist/fping-4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://fping.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sbindir=#{bin}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.1"
+}

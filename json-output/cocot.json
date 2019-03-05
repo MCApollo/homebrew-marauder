@@ -1,0 +1,16 @@
+{
+    "name": "Cocot",
+    "description": "Code converter on tty",
+    "url": "https://github.com/vmi/cocot/archive/cocot-1.2-20171118.tar.gz",
+    "mirror": null,
+    "homepage": "https://vmi.jp/software/cygwin/cocot.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

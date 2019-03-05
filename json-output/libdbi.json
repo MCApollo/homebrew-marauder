@@ -1,0 +1,16 @@
+{
+    "name": "Libdbi",
+    "description": "Database-independent abstraction layer in C, similar to DBI/DBD in Perl",
+    "url": "https://downloads.sourceforge.net/project/libdbi/libdbi/libdbi-0.9.0/libdbi-0.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://libdbi.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.0"
+}

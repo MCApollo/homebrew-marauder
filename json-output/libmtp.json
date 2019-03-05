@@ -1,0 +1,27 @@
+{
+    "name": "Libmtp",
+    "description": "Implementation of Microsoft",
+    "url": "https://downloads.sourceforge.net/project/libmtp/libmtp/1.1.15/libmtp-1.1.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://libmtp.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb-compat",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-mtpz\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.15"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Seexpr",
+    "description": "Embeddable expression evaluation engine",
+    "url": "https://github.com/wdas/SeExpr/archive/v2.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.disneyanimation.com/technology/seexpr.html",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"doc\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.11"
+}

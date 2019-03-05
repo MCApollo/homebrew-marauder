@@ -1,0 +1,27 @@
+{
+    "name": "Libfaketime",
+    "description": "Report faked system time to programs",
+    "url": "https://github.com/wolfcw/libfaketime/archive/v0.9.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/wolfcw/libfaketime",
+    "depends": [
+        {
+            "depend": "coreutils",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-C\", \"src\", \"-f\", \"Makefile.OSX\", \"PREFIX=#{prefix}\"",
+        "bin.install \"src/faketime\"",
+        "(lib/\"faketime\").install \"src/libfaketime.1.dylib\"",
+        "man1.install \"man/faketime.1\""
+    ],
+    "version": "0.9.7"
+}

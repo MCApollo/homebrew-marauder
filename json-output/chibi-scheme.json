@@ -1,0 +1,17 @@
+{
+    "name": "ChibiScheme",
+    "description": "Small footprint Scheme for use as a C Extension Language",
+    "url": "http://synthcode.com/scheme/chibi/chibi-scheme-0.8.0.tgz",
+    "mirror": null,
+    "homepage": "http://synthcode.com/wiki/chibi-scheme",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.8.0"
+}

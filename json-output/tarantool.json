@@ -1,0 +1,36 @@
+{
+    "name": "Tarantool",
+    "description": "In-memory database and Lua application server",
+    "url": "https://download.tarantool.org/tarantool/1.10/src/tarantool-1.10.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://tarantool.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "local_user = ENV[\"USER\"]",
+        "inreplace etc/\"default/tarantool\", /(username\\s*=).*/, \"\\\\1 '#{local_user}'\"",
+        "(var/\"lib/tarantool\").mkpath",
+        "(var/\"log/tarantool\").mkpath",
+        "(var/\"run/tarantool\").mkpath"
+    ],
+    "version": "1.10.2.1"
+}

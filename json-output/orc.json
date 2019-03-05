@@ -1,0 +1,18 @@
+{
+    "name": "Orc",
+    "description": "Oil Runtime Compiler (ORC)",
+    "url": "https://gstreamer.freedesktop.org/src/orc/orc-0.4.28.tar.xz",
+    "mirror": null,
+    "homepage": "https://cgit.freedesktop.org/gstreamer/orc/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-gtk-doc\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.28"
+}

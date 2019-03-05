@@ -1,0 +1,50 @@
+{
+    "name": "Devtodo",
+    "description": "Command-line task lists",
+    "url": "https://swapoff.org/files/devtodo/devtodo-0.1.20.tar.gz",
+    "mirror": null,
+    "homepage": "https://swapoff.org/devtodo.html",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "todoman",
+            "reason": "both install a `todo` binary"
+        }
+    ],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/util/XML.cc\tMon Dec 10 22:26:55 2007\n",
+                "+++ b/util/XML.cc\tMon Dec 10 22:27:07 2007\n",
+                "@@ -49,7 +49,7 @@ void XML::init() {\n",
+                " \t// Only initialise scanners once\n",
+                " \tif (!initialised) {\n",
+                " \t\t// <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n",
+                "-\t\txmlScan.addPattern(XmlDecl, \"<\\\\?xml.*?>[[:space:]]*\");\n",
+                "+\t\txmlScan.addPattern(XmlDecl, \"<\\\\?xml.*\\\\?>[[:space:]]*\");\n",
+                " \t\txmlScan.addPattern(XmlCommentBegin, \"<!--\");\n",
+                " \t\txmlScan.addPattern(XmlBegin, \"<[a-zA-Z0-9_-]+\"\n",
+                " \t\t\t\"([[:space:]]+[a-zA-Z_0-9-]+=(([/a-zA-Z_0-9,.]+)|(\\\"[^\\\"]*\\\")|('[^']*')))\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "mv \"util/Regex.h\", \"util/Regex.hh\"",
+        "inreplace [\"util/Lexer.h\", \"util/Makefile.in\", \"util/Regex.cc\"],",
+        "\"Regex.h\", \"Regex.hh\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\"",
+        "doc.install \"contrib\""
+    ],
+    "version": "0.1.20"
+}

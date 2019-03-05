@@ -1,0 +1,29 @@
+{
+    "name": "TemporalTables",
+    "description": "Temporal Tables PostgreSQL Extension",
+    "url": "https://github.com/arkhipov/temporal_tables/archive/v1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://pgxn.org/dist/temporal_tables/",
+    "depends": [
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/mlt/temporal_tables/commit/24906c44.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV[\"PG_CONFIG\"] = Formula[\"postgresql\"].opt_bin/\"pg_config\"",
+        "mkdir \"stage\"",
+        "system \"make\", \"install\", \"DESTDIR=#{buildpath}/stage\"",
+        "lib.install Dir[\"stage/**/lib/*\"]",
+        "(share/\"postgresql/extension\").install Dir[\"stage/**/share/postgresql/extension/*\"]"
+    ],
+    "version": "1.2.0"
+}

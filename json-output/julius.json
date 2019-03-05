@@ -1,0 +1,32 @@
+{
+    "name": "Julius",
+    "description": "Two-pass large vocabulary continuous speech recognition engine",
+    "url": "https://github.com/julius-speech/julius/archive/v4.4.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/julius-speech/julius",
+    "depends": [
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/julius-speech/julius/pull/73.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--mandir=#{man}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.4.2.1"
+}

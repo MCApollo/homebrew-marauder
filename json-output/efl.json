@@ -1,0 +1,104 @@
+{
+    "name": "Efl",
+    "description": "Enlightenment Foundation Libraries",
+    "url": "https://download.enlightenment.org/rel/libs/efl/efl-1.21.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.enlightenment.org",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "bullet",
+            "build-depend": false
+        },
+        {
+            "depend": "dbus",
+            "build-depend": false
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "fribidi",
+            "build-depend": false
+        },
+        {
+            "depend": "giflib",
+            "build-depend": false
+        },
+        {
+            "depend": "gst-plugins-good",
+            "build-depend": false
+        },
+        {
+            "depend": "gstreamer",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libraw",
+            "build-depend": false
+        },
+        {
+            "depend": "librsvg",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        },
+        {
+            "depend": "libspectre",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "luajit",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "poppler",
+            "build-depend": false
+        },
+        {
+            "depend": "pulseaudio",
+            "build-depend": false
+        },
+        {
+            "depend": "shared-mime-info",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system Formula[\"shared-mime-info\"].opt_bin/\"update-mime-database\", \"#{HOMEBREW_PREFIX}/share/mime\""
+    ],
+    "version": "1.21.0"
+}

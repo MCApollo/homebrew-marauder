@@ -1,0 +1,27 @@
+{
+    "name": "Lolcode",
+    "description": "Esoteric programming language",
+    "url": "https://github.com/justinmeza/lci/archive/v0.11.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://lolcode.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "lci",
+            "reason": "both install `lci` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\"",
+        "system \"make\"",
+        "bin.install \"lci\""
+    ],
+    "version": "0.11.2"
+}

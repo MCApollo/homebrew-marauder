@@ -1,0 +1,30 @@
+{
+    "name": "Guetzli",
+    "description": "Perceptual JPEG encoder",
+    "url": "https://github.com/google/guetzli/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/guetzli",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "test_image",
+            "url": "https://github.com/google/guetzli/releases/download/v1.0/bees.png"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"bin/Release/guetzli\""
+    ],
+    "version": "1.0.1"
+}

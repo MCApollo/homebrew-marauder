@@ -1,0 +1,16 @@
+{
+    "name": "Cpanminus",
+    "description": "Get, unpack, build, and install modules from CPAN",
+    "url": "https://github.com/miyagawa/cpanminus/archive/1.9019.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/miyagawa/cpanminus",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"App-cpanminus\" do",
+        "bin.install \"cpanm\""
+    ],
+    "version": "1.9019"
+}

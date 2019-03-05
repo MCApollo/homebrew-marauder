@@ -1,0 +1,17 @@
+{
+    "name": "Pakchois",
+    "description": "PKCS #11 wrapper library",
+    "url": "https://web.archive.org/web/20161220165909/www.manyfish.co.uk/pakchois/pakchois-0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://web.archive.org/web/www.manyfish.co.uk/pakchois/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4"
+}

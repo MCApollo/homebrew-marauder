@@ -1,0 +1,27 @@
+{
+    "name": "Libdv",
+    "description": "Codec for DV video encoding format",
+    "url": "https://downloads.sourceforge.net/libdv/libdv-1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://libdv.sourceforge.io",
+    "depends": [
+        {
+            "depend": "popt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-undefined dynamic_lookup\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-gtktest\",",
+        "\"--disable-gtk\",",
+        "\"--disable-asm\",",
+        "\"--disable-sdltest\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.0"
+}

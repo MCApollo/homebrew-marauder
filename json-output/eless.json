@@ -1,0 +1,21 @@
+{
+    "name": "Eless",
+    "description": "Better `less` using Emacs view-mode and Bash",
+    "url": "https://github.com/kaushalmodi/eless/archive/v0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://eless.scripter.co/",
+    "depends": [
+        {
+            "depend": "emacs",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"eless\"",
+        "info.install \"docs/eless.info\""
+    ],
+    "version": "0.5"
+}

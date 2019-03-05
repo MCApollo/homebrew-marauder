@@ -1,0 +1,20 @@
+{
+    "name": "Icon",
+    "description": "General-purpose programming language",
+    "url": "https://www.cs.arizona.edu/icon/ftp/packages/unix/icon-v951src.tgz",
+    "mirror": null,
+    "homepage": "https://www.cs.arizona.edu/icon/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"Configure\", \"name=posix\"",
+        "system \"make\"",
+        "bin.install \"bin/icon\", \"bin/icont\", \"bin/iconx\"",
+        "doc.install Dir[\"doc/*\"]",
+        "man1.install Dir[\"man/man1/*.1\"]"
+    ],
+    "version": "951"
+}

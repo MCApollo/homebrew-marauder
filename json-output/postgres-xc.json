@@ -1,0 +1,54 @@
+{
+    "name": "PostgresXc",
+    "description": "PostgreSQL cluster based on shared-nothing architecture",
+    "url": "https://downloads.sourceforge.net/project/postgres-xc/Version_1.0/pgxc-v1.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/p/postgres-xc/xc-wiki/Main_Page/",
+    "depends": [
+        {
+            "depend": "arch",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "ossp-uuid",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "postgresql",
+            "reason": null
+        }
+    ],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/src/pl/plpython/Makefile\t2011-09-23 08:03:52.000000000 +1000\n",
+                "+++ b/src/pl/plpython/Makefile\t2011-10-26 21:43:40.000000000 +1100\n",
+                "@@ -24,8 +24,6 @@\n",
+                " # Darwin (OS X) has its own ideas about how to do this.\n",
+                " ifeq ($(PORTNAME), darwin)\n",
+                " shared_libpython = yes\n",
+                "-override python_libspec = -framework Python\n",
+                "-override python_additional_libs =\n",
+                " endif\n",
+                "\n",
+                " # If we don't have a shared library and the platform doesn't allow it\n"
+            ]
+        }
+    ],
+    "install": [
+        "(var/\"postgres-xc\").mkpath"
+    ],
+    "version": "1.0.4"
+}

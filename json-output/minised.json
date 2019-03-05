@@ -1,0 +1,16 @@
+{
+    "name": "Minised",
+    "description": "Smaller, cheaper, faster SED implementation",
+    "url": "https://dl.exactcode.de/oss/minised/minised-1.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.exactcode.com/opensource/minised/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"DESTDIR=#{prefix}\", \"PREFIX=\", \"install\""
+    ],
+    "version": "1.15"
+}

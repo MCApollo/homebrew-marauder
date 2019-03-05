@@ -1,0 +1,17 @@
+{
+    "name": "Vde",
+    "description": "Ethernet compliant virtual network",
+    "url": "https://downloads.sourceforge.net/project/vde/vde2/2.3.2/vde2-2.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://vde.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.2"
+}

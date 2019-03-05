@@ -1,0 +1,31 @@
+{
+    "name": "Compcert",
+    "description": "Formally verified C compiler",
+    "url": "https://github.com/AbsInt/CompCert/archive/v3.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://compcert.inria.fr",
+    "depends": [
+        {
+            "depend": "coq",
+            "build-depend": true
+        },
+        {
+            "depend": "menhir",
+            "build-depend": true
+        },
+        {
+            "depend": "ocaml",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"-prefix\", prefix, \"x86_64-macosx\",",
+        "\"-ignore-coq-version\"",
+        "system \"make\", \"all\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.4"
+}

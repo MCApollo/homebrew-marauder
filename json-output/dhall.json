@@ -1,0 +1,24 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Interpreter for the Dhall language",
+    "url": "https://hackage.haskell.org/package/dhall-1.20.1/dhall-1.20.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://dhall-lang.org/",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package"
+    ],
+    "version": "1.20.1"
+}

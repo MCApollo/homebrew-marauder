@@ -1,0 +1,17 @@
+{
+    "name": "Camellia",
+    "description": "Image Processing & Computer Vision library written in C",
+    "url": "https://downloads.sourceforge.net/project/camellia/Unix_Linux%20Distribution/v2.7.0/CamelliaLib-2.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://camellia.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7.0"
+}

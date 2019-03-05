@@ -1,0 +1,23 @@
+{
+    "name": "Bowtie2",
+    "description": "Fast and sensitive gapped read aligner",
+    "url": "https://github.com/BenLangmead/bowtie2/archive/v2.3.4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://bowtie-bio.sourceforge.io/bowtie2/",
+    "depends": [
+        {
+            "depend": "tbb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "tbb = Formula[\"tbb\"]",
+        "system \"make\", \"install\", \"WITH_TBB=1\", \"prefix=#{prefix}\",",
+        "\"EXTRA_FLAGS=-L #{tbb.opt_lib}\", \"INC=-I #{tbb.opt_include}\"",
+        "pkgshare.install \"example\", \"scripts\""
+    ],
+    "version": "2.3.4.3"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Aoeui",
+    "description": "Lightweight text editor optimized for Dvorak and QWERTY keyboards",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/aoeui/aoeui-1.6.tgz",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/aoeui/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"INST_DIR=#{prefix}\", \"install\""
+    ],
+    "version": "1.6"
+}

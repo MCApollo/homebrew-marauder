@@ -1,0 +1,16 @@
+{
+    "name": "Finatra",
+    "description": "Scala web framework inspired by Sinatra",
+    "url": "https://github.com/twitter/finatra/archive/1.5.3.tar.gz",
+    "mirror": null,
+    "homepage": "http://finatra.info/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "bin.install_symlink libexec/\"finatra\""
+    ],
+    "version": "1.5.3"
+}

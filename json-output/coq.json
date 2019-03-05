@@ -1,0 +1,38 @@
+{
+    "name": "Coq",
+    "description": "Proof assistant for higher-order logic",
+    "url": "https://github.com/coq/coq/archive/V8.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://coq.inria.fr/",
+    "depends": [
+        {
+            "depend": "ocaml-findlib",
+            "build-depend": true
+        },
+        {
+            "depend": "camlp5",
+            "build-depend": false
+        },
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        },
+        {
+            "depend": "ocaml-num",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"-prefix\", prefix,",
+        "\"-mandir\", man,",
+        "\"-coqdocdir\", \"#{pkgshare}/latex\",",
+        "\"-coqide\", \"no\",",
+        "\"-with-doc\", \"no\"",
+        "system \"make\", \"world\"",
+        "ENV.deparallelize { system \"make\", \"install\" }"
+    ],
+    "version": "8.9.0"
+}

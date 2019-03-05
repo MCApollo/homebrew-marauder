@@ -1,0 +1,16 @@
+{
+    "name": "Keychain",
+    "description": "User-friendly front-end to ssh-agent(1)",
+    "url": "https://build.funtoo.org/distfiles/keychain/keychain-2.8.5.tar.bz2",
+    "mirror": "https://fossies.org/linux/privat/keychain-2.8.5.tar.bz2",
+    "homepage": "https://www.funtoo.org/Keychain",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"keychain\"",
+        "man1.install \"keychain.1\""
+    ],
+    "version": "2.8.5"
+}

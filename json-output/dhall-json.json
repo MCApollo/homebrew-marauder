@@ -1,0 +1,24 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Dhall to JSON compiler and a Dhall to YAML compiler",
+    "url": "https://hackage.haskell.org/package/dhall-json-1.2.6/dhall-json-1.2.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Gabriel439/Haskell-Dhall-JSON-Library",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package"
+    ],
+    "version": "1.2.6"
+}

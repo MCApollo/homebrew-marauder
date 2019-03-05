@@ -1,0 +1,33 @@
+{
+    "name": "Newt",
+    "description": "Library for color text mode, widget based user interfaces",
+    "url": "https://pagure.io/releases/newt/newt-0.52.20.tar.gz",
+    "mirror": null,
+    "homepage": "https://pagure.io/newt",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "popt",
+            "build-depend": false
+        },
+        {
+            "depend": "s-lang",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = [\"--prefix=#{prefix}\", \"--without-tcl\"]",
+        "inreplace \"Makefile.in\" do |s|",
+        "s.gsub! \"libnewt.$(SOEXT).$(SONAME)\", \"libnewt.$(SONAME).dylib\"",
+        "s.gsub! \"libnewt.$(SOEXT).$(VERSION)\", \"libnewt.$(VERSION).dylib\"",
+        "s.gsub! \"`$$pyconfig --ldflags`\", '\"-undefined dynamic_lookup\"'",
+        "s.gsub! \"`$$pyconfig --libs`\", '\"\"'"
+    ],
+    "version": "0.52.20"
+}

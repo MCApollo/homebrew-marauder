@@ -1,0 +1,18 @@
+{
+    "name": "Packetq",
+    "description": "SQL-frontend to PCAP-files",
+    "url": "https://www.dns-oarc.net/files/packetq/packetq-1.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.dns-oarc.net/tools/packetq",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.1"
+}

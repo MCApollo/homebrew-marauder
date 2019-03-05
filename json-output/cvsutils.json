@@ -1,0 +1,18 @@
+{
+    "name": "Cvsutils",
+    "description": "CVS utilities for use in working directories",
+    "url": "https://www.red-bean.com/cvsutils/releases/cvsutils-0.2.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.red-bean.com/cvsutils/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.6"
+}

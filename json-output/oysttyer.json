@@ -1,0 +1,15 @@
+{
+    "name": "Oysttyer",
+    "description": "Command-line Twitter client",
+    "url": "https://github.com/oysttyer/oysttyer/archive/2.10.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/oysttyer/oysttyer",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"oysttyer.pl\" => \"oysttyer\""
+    ],
+    "version": "2.10.0"
+}

@@ -1,0 +1,28 @@
+{
+    "name": "E2fsprogs",
+    "description": "Utilities for the ext2, ext3, and ext4 file systems",
+    "url": "https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v1.44.5/e2fsprogs-1.44.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://e2fsprogs.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-e2initrd-helper\",",
+        "\"MKDIR_P=mkdir -p\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"install-libs\""
+    ],
+    "version": "1.44.5"
+}

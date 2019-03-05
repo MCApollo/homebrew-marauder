@@ -1,0 +1,24 @@
+{
+    "name": "Diffuse",
+    "description": "Graphical tool for merging and comparing text files",
+    "url": "https://downloads.sourceforge.net/project/diffuse/diffuse/0.4.8/diffuse-0.4.8.tar.bz2",
+    "mirror": null,
+    "homepage": "https://diffuse.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pygtk",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"python\", \"./install.py\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--examplesdir=#{share}\",",
+        "\"--prefix=#{prefix}\"",
+        "inreplace bin/\"diffuse\", %r{^#!/usr/bin/env python$}, \"#!/usr/bin/python\""
+    ],
+    "version": "0.4.8"
+}

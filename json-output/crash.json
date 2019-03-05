@@ -1,0 +1,22 @@
+{
+    "name": "Crash",
+    "description": "Kernel debugging shell for Java that allows gdb-like syntax",
+    "url": "https://search.maven.org/remotecontent?filepath=org/crashub/crash.distrib/1.3.2/crash.distrib-1.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.crashub.org/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "docs",
+            "url": "https://search.maven.org/remotecontent?filepath=org/crashub/crash.distrib/1.3.2/crash.distrib-1.3.2-docs.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "doc.install resource(\"docs\")",
+        "libexec.install Dir[\"crash/*\"]",
+        "bin.install_symlink \"#{libexec}/bin/crash.sh\""
+    ],
+    "version": "1.3.2"
+}

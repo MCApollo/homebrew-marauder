@@ -1,0 +1,48 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Manage files with git without checking in file contents",
+    "url": "https://hackage.haskell.org/package/git-annex-7.20181121/git-annex-7.20181121.tar.gz",
+    "mirror": null,
+    "homepage": "https://git-annex.branchable.com/",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc@8.2",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gsasl",
+            "build-depend": false
+        },
+        {
+            "depend": "libmagic",
+            "build-depend": false
+        },
+        {
+            "depend": "quvi",
+            "build-depend": false
+        },
+        {
+            "depend": "xdot",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package \"--constraint\", \"http-conduit<2.3\",",
+        "\"--constraint\", \"network<2.7.0.1\",",
+        ":using => [\"alex\", \"happy\", \"c2hs\"],",
+        ":flags => [\"s3\", \"webapp\"]",
+        "bin.install_symlink \"git-annex\" => \"git-annex-shell\""
+    ],
+    "version": "7.20181121"
+}

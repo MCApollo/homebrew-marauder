@@ -1,0 +1,17 @@
+{
+    "name": "Libdshconfig",
+    "description": "Distributed shell library",
+    "url": "https://www.netfort.gr.jp/~dancer/software/downloads/libdshconfig-0.20.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.netfort.gr.jp/~dancer/software/dsh.html.en",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.20.13"
+}

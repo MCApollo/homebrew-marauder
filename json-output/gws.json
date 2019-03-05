@@ -1,0 +1,22 @@
+{
+    "name": "Gws",
+    "description": "Manage workspaces composed of git repositories",
+    "url": "https://github.com/StreakyCobra/gws/archive/0.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://streakycobra.github.io/gws/",
+    "depends": [
+        {
+            "depend": "bash",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"src/gws\"",
+        "bash_completion.install \"completions/bash\"",
+        "zsh_completion.install \"completions/zsh\""
+    ],
+    "version": "0.2.0"
+}

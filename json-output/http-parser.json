@@ -1,0 +1,21 @@
+{
+    "name": "HttpParser",
+    "description": "HTTP request/response parser for c",
+    "url": "https://github.com/nodejs/http-parser/archive/v2.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/nodejs/http-parser",
+    "depends": [
+        {
+            "depend": "coreutils",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\", \"INSTALL=ginstall\"",
+        "pkgshare.install \"test.c\""
+    ],
+    "version": "2.9.0"
+}

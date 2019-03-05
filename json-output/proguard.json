@@ -1,0 +1,18 @@
+{
+    "name": "Proguard",
+    "description": "Java class file shrinker, optimizer, and obfuscator",
+    "url": "https://downloads.sourceforge.net/project/proguard/proguard/6.0/proguard6.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://proguard.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"lib/proguard.jar\"",
+        "libexec.install \"lib/proguardgui.jar\"",
+        "bin.write_jar_script libexec/\"proguard.jar\", \"proguard\"",
+        "bin.write_jar_script libexec/\"proguardgui.jar\", \"proguardgui\""
+    ],
+    "version": "6.0.3"
+}

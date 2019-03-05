@@ -1,0 +1,31 @@
+{
+    "name": "Fdclone",
+    "description": "Console-based file manager",
+    "url": "http://www.unixusers.net/src/fdclone/FD-3.01h.tar.gz",
+    "mirror": null,
+    "homepage": "https://hp.vector.co.jp/authors/VA012337/soft/fd/",
+    "depends": [
+        {
+            "depend": "nkf",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/86107cf/fdclone/3.01b.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"PREFIX=#{prefix}\", \"all\"",
+        "system \"make\", \"MANTOP=#{man}\", \"install\"",
+        "%w[README FAQ HISTORY LICENSES TECHKNOW ToAdmin].each do |file|",
+        "system \"nkf\", \"-w\", \"--overwrite\", file",
+        "prefix.install \"#{file}.eng\" => file",
+        "prefix.install file => \"#{file}.ja\""
+    ],
+    "version": "3.01"
+}

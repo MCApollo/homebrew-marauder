@@ -1,0 +1,28 @@
+{
+    "name": "Bookloupe",
+    "description": "List common formatting errors in a Project Gutenberg candidate file",
+    "url": "http://www.juiblex.co.uk/pgdp/bookloupe/bookloupe-2.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.juiblex.co.uk/pgdp/bookloupe/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0"
+}

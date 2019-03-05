@@ -1,0 +1,76 @@
+{
+    "name": "Gtkx",
+    "description": "GUI toolkit",
+    "url": "https://download.gnome.org/sources/gtk+/2.24/gtk+-2.24.32.tar.xz",
+    "mirror": null,
+    "homepage": "https://gtk.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gtk-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "atk",
+            "build-depend": false
+        },
+        {
+            "depend": "gdk-pixbuf",
+            "build-depend": false
+        },
+        {
+            "depend": "hicolor-icon-theme",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://bug757187.bugzilla-attachments.gnome.org/attachment.cgi?id=331173",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "args = [\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-static\",",
+        "\"--disable-glibtest\",",
+        "\"--enable-introspection=yes\",",
+        "\"--with-gdktarget=quartz\",",
+        "\"--disable-visibility\"]",
+        "if build.head?",
+        "inreplace \"autogen.sh\", \"libtoolize\", \"glibtoolize\"",
+        "ENV[\"NOCONFIGURE\"] = \"yes\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "inreplace bin/\"gtk-builder-convert\", %r{^#!/usr/bin/env python$}, \"#!/usr/bin/python\""
+    ],
+    "version": "2.24.32"
+}

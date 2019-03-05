@@ -1,0 +1,18 @@
+{
+    "name": "Readline",
+    "description": "Library for command-line editing",
+    "url": "https://ftp.gnu.org/gnu/readline/readline-8.0.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/readline/readline-8.0.tar.gz",
+    "homepage": "https://tiswww.case.edu/php/chet/readline/rltop.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "EOS",
+        "def install",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "8.0"
+}

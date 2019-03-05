@@ -1,0 +1,23 @@
+{
+    "name": "ColorCode",
+    "description": "Free advanced MasterMind clone",
+    "url": "http://colorcode.laebisch.com/download/ColorCode-0.8.5.tar.gz",
+    "mirror": null,
+    "homepage": "http://colorcode.laebisch.com/",
+    "depends": [
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"qmake\"",
+        "system \"make\"",
+        "prefix.install \"ColorCode.app\"",
+        "bin.write_exec_script \"#{prefix}/ColorCode.app/Contents/MacOS/colorcode\""
+    ],
+    "version": "0.8.5"
+}

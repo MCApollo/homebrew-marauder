@@ -1,0 +1,30 @@
+{
+    "name": "Sord",
+    "description": "C library for storing RDF data in memory",
+    "url": "https://download.drobilla.net/sord-0.16.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://drobilla.net/software/sord/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "serd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\"",
+        "system \"./waf\"",
+        "system \"./waf\", \"install\""
+    ],
+    "version": "0.16.2"
+}

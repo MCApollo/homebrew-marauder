@@ -1,0 +1,16 @@
+{
+    "name": "GnomeCommon",
+    "description": "Core files for GNOME",
+    "url": "https://download.gnome.org/sources/gnome-common/3.18/gnome-common-3.18.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://gitlab.gnome.org/GNOME/gnome-common",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.18.0"
+}

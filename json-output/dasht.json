@@ -1,0 +1,33 @@
+{
+    "name": "Dasht",
+    "description": "Search API docs offline, in your terminal or browser",
+    "url": "https://github.com/sunaku/dasht/archive/v2.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://sunaku.github.io/dasht",
+    "depends": [
+        {
+            "depend": "socat",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        },
+        {
+            "depend": "w3m",
+            "build-depend": false
+        },
+        {
+            "depend": "wget",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install Dir[\"bin/*\"]",
+        "man.install \"man/man1\""
+    ],
+    "version": "2.3.0"
+}

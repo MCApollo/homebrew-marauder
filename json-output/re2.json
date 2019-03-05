@@ -1,0 +1,19 @@
+{
+    "name": "Re2",
+    "description": "Alternative to backtracking PCRE-style regular expression engines",
+    "url": "https://github.com/google/re2/archive/2019-01-01.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/re2",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"make\", \"install\", \"prefix=#{prefix}\"",
+        "MachO::Tools.change_dylib_id(\"#{lib}/libre2.0.0.0.dylib\", \"#{lib}/libre2.0.dylib\")",
+        "lib.install_symlink \"libre2.0.0.0.dylib\" => \"libre2.0.dylib\"",
+        "lib.install_symlink \"libre2.0.0.0.dylib\" => \"libre2.dylib\""
+    ],
+    "version": "2019"
+}

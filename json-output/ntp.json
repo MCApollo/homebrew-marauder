@@ -1,0 +1,30 @@
+{
+    "name": "Ntp",
+    "description": "The Network Time Protocol (NTP) Distribution",
+    "url": "https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ntp-4.2.8p12.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.eecis.udel.edu/~mills/ntp/html/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--with-openssl-libdir=#{Formula[\"openssl\"].lib}",
+        "--with-openssl-incdir=#{Formula[\"openssl\"].include}",
+        "--with-net-snmp-config=no",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\", \"LDADD_LIBNTP=-lresolv -undefined dynamic_lookup\""
+    ],
+    "version": "4.2.8"
+}

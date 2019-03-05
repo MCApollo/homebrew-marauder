@@ -1,0 +1,15 @@
+{
+    "name": "Csshx",
+    "description": "Cluster ssh tool for Terminal.app",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/csshx/csshX-0.74.tgz",
+    "mirror": "https://distfiles.macports.org/csshX/csshX-0.74.tgz",
+    "homepage": "https://github.com/brockgr/csshx",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"csshX\""
+    ],
+    "version": "0.74"
+}

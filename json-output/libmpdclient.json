@@ -1,0 +1,30 @@
+{
+    "name": "Libmpdclient",
+    "description": "Library for MPD in the C, C++, and Objective-C languages",
+    "url": "https://www.musicpd.org/download/libmpdclient/2/libmpdclient-2.14.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.musicpd.org/libs/libmpdclient/",
+    "depends": [
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "meson-internal",
+            "build-depend": true
+        },
+        {
+            "depend": "ninja",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"meson\", \"--prefix=#{prefix}\", \".\", \"output\"",
+        "system \"ninja\", \"-C\", \"output\"",
+        "system \"ninja\", \"-C\", \"output\", \"install\""
+    ],
+    "version": "2.14"
+}

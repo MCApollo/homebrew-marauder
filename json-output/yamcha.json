@@ -1,0 +1,24 @@
+{
+    "name": "Yamcha",
+    "description": "NLP text chunker using Support Vector Machines",
+    "url": "http://chasen.org/~taku/software/yamcha/src/yamcha-0.33.tar.gz",
+    "mirror": null,
+    "homepage": "http://chasen.org/~taku/software/yamcha/",
+    "depends": [
+        {
+            "depend": "tinysvm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.33"
+}

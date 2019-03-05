@@ -1,0 +1,22 @@
+{
+    "name": "Ne",
+    "description": "The nice editor",
+    "url": "https://github.com/vigna/ne/archive/3.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://ne.di.unimi.it/",
+    "depends": [
+        {
+            "depend": "texinfo",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "cd \"src\" do",
+        "system \"make\""
+    ],
+    "version": "3.1.2"
+}

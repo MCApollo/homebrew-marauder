@@ -1,0 +1,40 @@
+{
+    "name": "Quantlib",
+    "description": "Library for quantitative finance",
+    "url": "https://dl.bintray.com/quantlib/releases/QuantLib-1.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.quantlib.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"QuantLib\").install buildpath.children if build.stable?",
+        "cd \"QuantLib\" do",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-lispdir=#{elisp}\",",
+        "\"--enable-intraday\"",
+        "system \"make\", \"install\"",
+        "prefix.install_metafiles"
+    ],
+    "version": "1.13"
+}

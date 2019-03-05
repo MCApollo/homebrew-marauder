@@ -1,0 +1,49 @@
+{
+    "name": "Libcaca",
+    "description": "Convert pixel information into colored ASCII art",
+    "url": "http://caca.zoy.org/files/libcaca/libcaca-0.99.beta19.tar.gz",
+    "mirror": "https://www.mirrorservice.org/sites/distfiles.macports.org/libcaca/libcaca-0.99.beta19.tar.gz",
+    "homepage": "http://caca.zoy.org/wiki/libcaca",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\" if build.head?",
+        "inreplace \"python/Makefile.in\",",
+        "'$(am__py_compile) --destdir \"$(DESTDIR)\"',",
+        "\"$(am__py_compile) --destdir \\\"$(cacadir)\\\"\"",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--disable-doc",
+        "--disable-slang",
+        "--disable-java",
+        "--disable-csharp",
+        "--disable-ruby",
+        "--disable-x11",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "ENV.deparallelize ",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.99"
+}

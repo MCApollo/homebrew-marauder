@@ -1,0 +1,37 @@
+{
+    "name": "Cubeb",
+    "description": "Cross-platform audio library",
+    "url": "https://github.com/kinetiknz/cubeb/archive/cubeb-0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kinetiknz/cubeb",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"--install\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2"
+}

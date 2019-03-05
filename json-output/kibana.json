@@ -1,0 +1,26 @@
+{
+    "name": "Kibana",
+    "description": "Analytics and search dashboard for Elasticsearch",
+    "url": "https://github.com/elastic/kibana.git",
+    "mirror": null,
+    "homepage": "https://www.elastic.co/products/kibana",
+    "depends": [],
+    "resource": [
+        {
+            "name": "node",
+            "url": "https://nodejs.org/dist/v10.15.1/node-v10.15.1.tar.xz"
+        },
+        {
+            "name": "yarn",
+            "url": "https://yarnpkg.com/downloads/1.13.0/yarn-v1.13.0.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ln_s etc/\"kibana\", prefix/\"config\"",
+        "(prefix/\"data\").mkdir",
+        "(prefix/\"plugins\").mkdir"
+    ],
+    "version": "7.0.0-git-e157ea55"
+}

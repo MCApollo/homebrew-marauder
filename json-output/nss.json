@@ -1,0 +1,35 @@
+{
+    "name": "Nss",
+    "description": "Libraries for security-enabled client and server applications",
+    "url": "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_42_RTM/src/nss-3.42.tar.gz",
+    "mirror": null,
+    "homepage": "https://developer.mozilla.org/docs/NSS",
+    "depends": [
+        {
+            "depend": "nspr",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "cd \"nss\"",
+        "args = %W[",
+        "BUILD_OPT=1",
+        "NSS_USE_SYSTEM_SQLITE=1",
+        "NSPR_INCLUDE_DIR=#{Formula[\"nspr\"].opt_include}/nspr",
+        "NSPR_LIB_DIR=#{Formula[\"nspr\"].opt_lib}",
+        "USE_64=1",
+        "]",
+        "inreplace \"coreconf/Darwin.mk\", \"-install_name @executable_path\", \"-install_name #{lib}\"",
+        "inreplace \"lib/freebl/config.mk\", \"@executable_path\", lib",
+        "system \"make\", \"all\", *args",
+        "cd \"../dist\"",
+        "bin.mkpath",
+        "Dir.glob(\"Darwin*/bin/*\") do |file|",
+        "cp file, bin unless file.include? \".dylib\""
+    ],
+    "version": "3.42"
+}

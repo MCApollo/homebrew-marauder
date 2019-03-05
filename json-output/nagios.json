@@ -1,0 +1,32 @@
+{
+    "name": "Nagios",
+    "description": "Network monitoring and management system",
+    "url": "https://downloads.sourceforge.net/project/nagios/nagios-4.x/nagios-4.4.2/nagios-4.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nagios.org/",
+    "depends": [
+        {
+            "depend": "gd",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "nagios-plugins",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"lib/nagios/rw\").mkpath",
+        "config = etc/\"nagios/nagios.cfg\"",
+        "return unless File.exist?(config)",
+        "return if File.read(config).include?(ENV[\"USER\"])",
+        "inreplace config, \"brew\", ENV[\"USER\"]"
+    ],
+    "version": "4.4.2"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "NuSmv",
+    "description": "Reimplementation and extension of SMV symbolic model checker",
+    "url": "http://nusmv.fbk.eu/distrib/NuSMV-2.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://nusmv.fbk.eu",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"NuSMV/build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.0"
+}

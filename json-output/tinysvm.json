@@ -1,0 +1,27 @@
+{
+    "name": "Tinysvm",
+    "description": "Support vector machine library for pattern recognition",
+    "url": "http://chasen.org/~taku/software/TinySVM/src/TinySVM-0.09.tar.gz",
+    "mirror": null,
+    "homepage": "http://chasen.org/~taku/software/TinySVM/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/838f605/tinysvm/patch-configure.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "ENV.append_to_cflags \"-D__GNU_LIBRARY__\"",
+        "inreplace \"configure\", \"-O9\", \"\" ",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--disable-shared\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.09"
+}

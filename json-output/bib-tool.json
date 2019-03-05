@@ -1,0 +1,17 @@
+{
+    "name": "BibTool",
+    "description": "Manipulates BibTeX databases",
+    "url": "https://github.com/ge-ne/bibtool/releases/download/BibTool_2_67/BibTool-2.67.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.gerd-neugebauer.de/software/TeX/BibTool/en/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--without-kpathsea\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.67"
+}

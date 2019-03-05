@@ -1,0 +1,21 @@
+{
+    "name": "Parallel",
+    "description": "Shell command parallelization utility",
+    "url": "https://ftp.gnu.org/gnu/parallel/parallel-20190222.tar.bz2",
+    "mirror": "https://ftpmirror.gnu.org/parallel/parallel-20190222.tar.bz2",
+    "homepage": "https://savannah.gnu.org/projects/parallel/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "moreutils",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20190222"
+}

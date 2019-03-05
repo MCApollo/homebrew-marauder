@@ -1,0 +1,17 @@
+{
+    "name": "Redir",
+    "description": "Port redirector",
+    "url": "https://github.com/TracyWebTech/redir/archive/2.2.1-9.tar.gz",
+    "mirror": null,
+    "homepage": "http://sammy.net/~sammy/hacks/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"redir\"",
+        "man1.install \"redir.man\""
+    ],
+    "version": "2.2.1"
+}

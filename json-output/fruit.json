@@ -1,0 +1,22 @@
+{
+    "name": "Fruit",
+    "description": "Dependency injection framework for C++",
+    "url": "https://github.com/google/fruit/archive/v3.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/fruit/wiki",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DFRUIT_USES_BOOST=False\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"examples/hello_world/main.cpp\""
+    ],
+    "version": "3.4.0"
+}

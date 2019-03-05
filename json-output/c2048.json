@@ -1,0 +1,16 @@
+{
+    "name": "C2048",
+    "description": "Console version of 2048",
+    "url": "https://github.com/mevdschee/2048.c.git",
+    "mirror": null,
+    "homepage": "https://github.com/mevdschee/2048.c",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"2048\""
+    ],
+    "version": "2048"
+}

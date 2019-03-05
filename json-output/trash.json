@@ -1,0 +1,23 @@
+{
+    "name": "Trash",
+    "description": "CLI tool that moves files or folder to the trash",
+    "url": "https://github.com/ali-rantakari/trash/archive/v0.9.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://hasseg.org/trash/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "trash-cli",
+            "reason": "both install a `trash` binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"docs\"",
+        "bin.install \"trash\"",
+        "man1.install \"trash.1\""
+    ],
+    "version": "0.9.2"
+}

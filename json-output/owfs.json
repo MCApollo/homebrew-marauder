@@ -1,0 +1,38 @@
+{
+    "name": "Owfs",
+    "description": "Monitor and control physical environment using Dallas/Maxim 1-wire system",
+    "url": "https://downloads.sourceforge.net/project/owfs/owfs/3.2p2/owfs-3.2p2.tar.gz",
+    "mirror": null,
+    "homepage": "http://owfs.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libftdi",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-swig\",",
+        "\"--disable-owtcl\",",
+        "\"--disable-zero\",",
+        "\"--disable-owpython\",",
+        "\"--disable-owperl\",",
+        "\"--disable-swig\",",
+        "\"--enable-ftdi\",",
+        "\"--enable-usb\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2"
+}

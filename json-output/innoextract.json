@@ -1,0 +1,29 @@
+{
+    "name": "Innoextract",
+    "description": "Tool to unpack installers created by Inno Setup",
+    "url": "https://constexpr.org/innoextract/files/innoextract-1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://constexpr.org/innoextract/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7"
+}

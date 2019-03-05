@@ -1,0 +1,17 @@
+{
+    "name": "SpiceProtocol",
+    "description": "Headers for SPICE protocol",
+    "url": "https://www.spice-space.org/download/releases/spice-protocol-0.12.15.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.spice-space.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.12.15"
+}

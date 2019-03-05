@@ -1,0 +1,36 @@
+{
+    "name": "Calcurse",
+    "description": "Text-based personal organizer",
+    "url": "https://calcurse.org/files/calcurse-4.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://calcurse.org/",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"XML_CATALOG_FILES=/usr/local/etc/xml/catalog\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.4.0"
+}

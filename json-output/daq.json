@@ -1,0 +1,23 @@
+{
+    "name": "Daq",
+    "description": "Network intrusion prevention and detection system",
+    "url": "https://www.mirrorservice.org/sites/distfiles.macports.org/daq/daq-2.0.6.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/daq-2.0.6.tar.gz",
+    "homepage": "https://www.snort.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/b345dac/daq/patch-pcap-version.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.6"
+}

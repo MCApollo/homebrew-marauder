@@ -1,0 +1,31 @@
+{
+    "name": "Osmfilter",
+    "description": "Command-line tool to filter OpenStreetMap files for specific tags",
+    "url": "https://gitlab.com/osm-c-tools/osmctools.git",
+    "mirror": null,
+    "homepage": "https://wiki.openstreetmap.org/wiki/Osmfilter",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "pbf",
+            "url": "https://download.gisgraphy.com/openstreetmap/pbf/AD.tar.bz2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-v\", \"-i\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9-git-f341f5f2"
+}

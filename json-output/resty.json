@@ -1,0 +1,25 @@
+{
+    "name": "Resty",
+    "description": "Command-line REST client that can be used in pipelines",
+    "url": "https://github.com/micha/resty/archive/v3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/micha/resty",
+    "depends": [],
+    "resource": [
+        {
+            "name": "JSON",
+            "url": "https://cpan.metacpan.org/authors/id/I/IS/ISHIGAKI/JSON-2.94.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pkgshare.install \"resty\"",
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "resource(\"JSON\").stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0"
+}

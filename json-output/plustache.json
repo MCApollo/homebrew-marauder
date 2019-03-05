@@ -1,0 +1,34 @@
+{
+    "name": "Plustache",
+    "description": "C++ port of Mustache templating system",
+    "url": "https://github.com/mrtazz/plustache/archive/0.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mrtazz/plustache",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"--force\", \"--install\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.0"
+}

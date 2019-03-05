@@ -1,0 +1,22 @@
+{
+    "name": "DoubleConversion",
+    "description": "Binary-decimal and decimal-binary routines for IEEE doubles",
+    "url": "https://github.com/google/double-conversion/archive/v3.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/double-conversion",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"dc-build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.1.1"
+}

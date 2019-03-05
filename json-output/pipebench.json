@@ -1,0 +1,17 @@
+{
+    "name": "Pipebench",
+    "description": "Measure the speed of STDIN/STDOUT communication",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/p/pipebench/pipebench_0.40.orig.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/p/pipebench/pipebench_0.40.orig.tar.gz",
+    "homepage": "http://www.habets.pp.se/synscan/programs.php?prog=pipebench",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"pipebench\"",
+        "man1.install \"pipebench.1\""
+    ],
+    "version": "0.40"
+}

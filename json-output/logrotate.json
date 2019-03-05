@@ -1,0 +1,33 @@
+{
+    "name": "Logrotate",
+    "description": "Rotates, compresses, and mails system logs",
+    "url": "https://github.com/logrotate/logrotate/releases/download/3.15.0/logrotate-3.15.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://github.com/logrotate/logrotate",
+    "depends": [
+        {
+            "depend": "popt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/logrotate/logrotate/commit/0d805ce.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-compress-command=/usr/bin/gzip\",",
+        "\"--with-uncompress-command=/usr/bin/gunzip\",",
+        "\"--with-state-file-path=#{var}/lib/logrotate.status\"",
+        "system \"make\", \"install\"",
+        "inreplace \"examples/logrotate.conf\", \"/etc/logrotate.d\", \"#{etc}/logrotate.d\"",
+        "etc.install \"examples/logrotate.conf\" => \"logrotate.conf\"",
+        "(etc/\"logrotate.d\").mkpath"
+    ],
+    "version": "3.15.0"
+}

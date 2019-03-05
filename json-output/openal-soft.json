@@ -1,0 +1,31 @@
+{
+    "name": "OpenalSoft",
+    "description": "Implementation of the OpenAL 3D audio API",
+    "url": "https://openal-soft.org/openal-releases/openal-soft-1.19.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://openal-soft.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %w[",
+        "-DALSOFT_BACKEND_PORTAUDIO=OFF",
+        "-DALSOFT_BACKEND_PULSEAUDIO=OFF",
+        "-DALSOFT_EXAMPLES=OFF",
+        "-DALSOFT_MIDI_FLUIDSYNTH=OFF",
+        "]",
+        "system \"cmake\", \".\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.19.1"
+}

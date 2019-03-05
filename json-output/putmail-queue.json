@@ -1,0 +1,21 @@
+{
+    "name": "PutmailQueue",
+    "description": "Putmail queue package",
+    "url": "https://downloads.sourceforge.net/project/putmail/putmail-queue/0.2/putmail-queue-0.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://putmail.sourceforge.io",
+    "depends": [
+        {
+            "depend": "putmail",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"putmail_dequeue.py\", \"putmail_enqueue.py\"",
+        "man1.install Dir[\"man/man1/*.1\"]"
+    ],
+    "version": "0.2"
+}

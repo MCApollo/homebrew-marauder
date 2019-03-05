@@ -1,0 +1,16 @@
+{
+    "name": "Ttf2eot",
+    "description": "Convert TTF files to EOT",
+    "url": "https://github.com/wget/ttf2eot/archive/v0.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/wget/ttf2eot",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"ttf2eot\""
+    ],
+    "version": "0.0.3"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Dash",
+    "description": "POSIX-compliant descendant of NetBSD",
+    "url": "http://gondor.apana.org.au/~herbert/dash/files/dash-0.5.10.2.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/dash-0.5.10.2.tar.gz",
+    "homepage": "http://gondor.apana.org.au/~herbert/dash/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-libedit\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.10.2"
+}

@@ -1,0 +1,69 @@
+{
+    "name": "Minidlna",
+    "description": "Media server software, compliant with DLNA/UPnP-AV clients",
+    "url": "https://downloads.sourceforge.net/project/minidlna/minidlna/1.2.1/minidlna-1.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/minidlna/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libexif",
+            "build-depend": false
+        },
+        {
+            "depend": "libid3tag",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(pkgshare/\"minidlna.conf\").write <<~EOS",
+        "friendly_name=Mac DLNA Server",
+        "media_dir=#{ENV[\"HOME\"]}/.config/minidlna/media",
+        "db_dir=#{ENV[\"HOME\"]}/.config/minidlna/cache",
+        "log_dir=#{ENV[\"HOME\"]}/.config/minidlna",
+        "EOS"
+    ],
+    "version": "1.2.1"
+}

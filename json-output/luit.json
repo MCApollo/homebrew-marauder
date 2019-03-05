@@ -1,0 +1,16 @@
+{
+    "name": "Luit",
+    "description": "Filter run between arbitrary application and UTF-8 terminal emulator",
+    "url": "https://invisible-mirror.net/archives/luit/luit-20180628.tgz",
+    "mirror": null,
+    "homepage": "https://invisible-island.net/luit/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--without-x\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20180628"
+}

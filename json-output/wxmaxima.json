@@ -1,0 +1,30 @@
+{
+    "name": "Wxmaxima",
+    "description": "Cross platform GUI for Maxima",
+    "url": "https://github.com/wxMaxima-developers/wxmaxima/archive/Version-19.01.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://wxmaxima-developers.github.io/wxmaxima/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "wxmac",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "prefix.install \"wxMaxima.app\""
+    ],
+    "version": "19.01.0"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Cvsps",
+    "description": "Create patchset information from CVS",
+    "url": "http://www.catb.org/~esr/cvsps/cvsps-3.13.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.catb.org/~esr/cvsps/",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": false
+        },
+        {
+            "depend": "docbook",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = etc/\"xml/catalog\"",
+        "system \"make\", \"all\", \"cvsps.1\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "3.13"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Parallelstl",
+    "description": "C++ standard library algorithms with support for execution policies",
+    "url": "https://github.com/intel/parallelstl/archive/20181204.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/intel/parallelstl",
+    "depends": [
+        {
+            "depend": "tbb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "include.install Dir[\"include/*\"]"
+    ],
+    "version": "20181204"
+}

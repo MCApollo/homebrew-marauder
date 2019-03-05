@@ -1,0 +1,54 @@
+{
+    "name": "Cattle",
+    "description": "Brainfuck language toolkit",
+    "url": "https://kiyuko.org/software/cattle/releases/cattle-1.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/andreabolognani/cattle",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gtk-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pkgshare.mkpath",
+        "cp_r [\"examples\", \"tests\"], pkgshare",
+        "rm Dir[\"#{pkgshare}/{examples,tests}/{Makefile.am,.gitignore}\"]",
+        "if build.head?",
+        "inreplace \"autogen.sh\", \"libtoolize\", \"glibtoolize\"",
+        "system \"sh\", \"autogen.sh\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.2"
+}

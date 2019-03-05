@@ -1,0 +1,20 @@
+{
+    "name": "Fribidi",
+    "description": "Implementation of the Unicode BiDi algorithm",
+    "url": "https://github.com/fribidi/fribidi/releases/download/v1.0.5/fribidi-1.0.5.tar.bz2",
+    "mirror": null,
+    "homepage": "https://github.com/fribidi/fribidi",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-static\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.5"
+}

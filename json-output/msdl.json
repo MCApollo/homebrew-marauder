@@ -1,0 +1,36 @@
+{
+    "name": "Msdl",
+    "description": "Downloader for various streaming protocols",
+    "url": "https://downloads.sourceforge.net/msdl/msdl-1.2.7-r2.tar.gz",
+    "mirror": null,
+    "homepage": "https://msdl.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/url.c b/src/url.c\n",
+                "index 81783c7..356883a 100644\n",
+                "--- a/src/url.c\n",
+                "+++ b/src/url.c\n",
+                "@@ -266,7 +266,7 @@ void url_unescape_string(char *dst,char *src)\n",
+                " /*\n",
+                "  * return true if 'c' is valid url character\n",
+                "  */\n",
+                "-inline int is_url_valid_char(int c)\n",
+                "+int is_url_valid_char(int c)\n",
+                " {\n",
+                "     return (isalpha(c) ||\n",
+                "\t    isdigit(c) ||\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.7"
+}

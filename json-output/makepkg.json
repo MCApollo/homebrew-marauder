@@ -1,0 +1,70 @@
+{
+    "name": "Makepkg",
+    "description": "Compile and build packages suitable for installation with pacman",
+    "url": "https://projects.archlinux.org/git/pacman.git",
+    "mirror": null,
+    "homepage": "https://wiki.archlinux.org/index.php/makepkg",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "docbook-xsl",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "bash",
+            "build-depend": false
+        },
+        {
+            "depend": "fakeroot",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libarchive",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = etc/\"xml/catalog\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--localstatedir=#{var}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.1.3-git-1bf76723"
+}

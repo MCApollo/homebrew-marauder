@@ -1,0 +1,16 @@
+{
+    "name": "Shtool",
+    "description": "GNU",
+    "url": "https://ftp.gnu.org/gnu/shtool/shtool-2.0.8.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/shtool/shtool-2.0.8.tar.gz",
+    "homepage": "https://www.gnu.org/software/shtool/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.8"
+}

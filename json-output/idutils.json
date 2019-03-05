@@ -1,0 +1,29 @@
+{
+    "name": "Idutils",
+    "description": "ID database and query tools",
+    "url": "https://ftp.gnu.org/gnu/idutils/idutils-4.6.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/idutils/idutils-4.6.tar.xz",
+    "homepage": "https://www.gnu.org/s/idutils/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "coreutils",
+            "reason": "both install `gid` and `gid.1`"
+        }
+    ],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/b76d1e48dac/editors/nano/files/secure_snprintf.patch",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "ENV[\"gl_cv_func_getcwd_abort_bug\"] = \"no\" if MacOS.version == :el_capitan",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-lispdir=#{elisp}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.6"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Taktuk",
+    "description": "Deploy commands to (a potentially large set of) remote nodes",
+    "url": "https://gforge.inria.fr/frs/download.php/file/37055/taktuk-3.7.7.tar.gz",
+    "mirror": null,
+    "homepage": "http://taktuk.gforge.inria.fr/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.7.7"
+}

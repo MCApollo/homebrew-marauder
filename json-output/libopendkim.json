@@ -1,0 +1,31 @@
+{
+    "name": "Libopendkim",
+    "description": "Implementation of Domain Keys Identified Mail authentication",
+    "url": "https://downloads.sourceforge.net/project/opendkim/opendkim-2.10.3.tar.gz",
+    "mirror": null,
+    "homepage": "http://opendkim.org",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "unbound",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-filter\",",
+        "\"--with-unbound=#{Formula[\"unbound\"].opt_prefix}\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.10.3"
+}

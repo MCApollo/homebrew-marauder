@@ -1,0 +1,24 @@
+{
+    "name": "Xrick",
+    "description": "Clone of Rick Dangerous",
+    "url": "https://www.bigorno.net/xrick/xrick-021212.tgz",
+    "mirror": null,
+    "homepage": "https://www.bigorno.net/xrick/",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"src/xrick.c\", \"data.zip\", \"#{pkgshare}/data.zip\"",
+        "system \"make\"",
+        "bin.install \"xrick\"",
+        "man6.install \"xrick.6.gz\"",
+        "pkgshare.install \"data.zip\""
+    ],
+    "version": "021212"
+}

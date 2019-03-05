@@ -1,0 +1,28 @@
+{
+    "name": "Libmusicbrainz",
+    "description": "MusicBrainz Client Library",
+    "url": "https://github.com/metabrainz/libmusicbrainz/releases/download/release-5.1.0/libmusicbrainz-5.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://musicbrainz.org/doc/libmusicbrainz",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "neon",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "neon = Formula[\"neon\"]",
+        "neon_args = %W[-DNEON_LIBRARIES:FILEPATH=#{neon.lib}/libneon.dylib",
+        "-DNEON_INCLUDE_DIR:PATH=#{neon.include}/neon]",
+        "system \"cmake\", \".\", *(std_cmake_args + neon_args)",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.1.0"
+}

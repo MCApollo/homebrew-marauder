@@ -1,0 +1,27 @@
+{
+    "name": "Ledit",
+    "description": "Line editor for interactive commands",
+    "url": "http://pauillac.inria.fr/~ddr/ledit/distrib/src/ledit-2.04.tgz",
+    "mirror": null,
+    "homepage": "http://pauillac.inria.fr/~ddr/ledit/",
+    "depends": [
+        {
+            "depend": "camlp5",
+            "build-depend": false
+        },
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "args = %W[BINDIR=#{bin} LIBDIR=#{lib} MANDIR=#{man}]",
+        "system \"make\", *args",
+        "system \"make\", \"install\", *args"
+    ],
+    "version": "2.04"
+}

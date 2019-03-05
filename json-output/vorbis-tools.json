@@ -1,0 +1,44 @@
+{
+    "name": "VorbisTools",
+    "description": "Ogg Vorbis CODEC tools",
+    "url": "https://downloads.xiph.org/releases/vorbis/vorbis-tools-1.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/xiph/vorbis-tools",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "libao",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.delete(\"SDKROOT\") if MacOS.version == :yosemite",
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-nls",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.0"
+}

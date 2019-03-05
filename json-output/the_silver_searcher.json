@@ -1,0 +1,41 @@
+{
+    "name": "TheSilverSearcher",
+    "description": "Code-search similar to ack",
+    "url": "https://github.com/ggreer/the_silver_searcher/archive/2.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ggreer/the_silver_searcher",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "bash_completion.install \"ag.bashcomp.sh\""
+    ],
+    "version": "2.2.0"
+}

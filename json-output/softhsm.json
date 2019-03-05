@@ -1,0 +1,20 @@
+{
+    "name": "Softhsm",
+    "description": "Cryptographic store accessible through a PKCS#11 interface",
+    "url": "https://dist.opendnssec.org/source/softhsm-2.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.opendnssec.org/softhsm/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"lib/softhsm/tokens\").mkpath"
+    ],
+    "version": "2.5.0"
+}

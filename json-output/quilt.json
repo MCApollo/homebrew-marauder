@@ -1,0 +1,28 @@
+{
+    "name": "Quilt",
+    "description": "Work with series of patches",
+    "url": "https://download.savannah.gnu.org/releases/quilt/quilt-0.65.tar.gz",
+    "mirror": null,
+    "homepage": "https://savannah.nongnu.org/projects/quilt",
+    "depends": [
+        {
+            "depend": "coreutils",
+            "build-depend": false
+        },
+        {
+            "depend": "gnu-sed",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-sed=#{HOMEBREW_PREFIX}/bin/gsed\",",
+        "\"--without-getopt\"",
+        "system \"make\"",
+        "system \"make\", \"install\", \"emacsdir=#{elisp}\""
+    ],
+    "version": "0.65"
+}

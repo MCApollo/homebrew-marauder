@@ -1,0 +1,20 @@
+{
+    "name": "Flawfinder",
+    "description": "Examines code and reports possible security weaknesses",
+    "url": "https://www.dwheeler.com/flawfinder/flawfinder-2.0.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.dwheeler.com/flawfinder/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "flaws",
+            "url": "https://www.dwheeler.com/flawfinder/test.c"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{prefix}\", \"install\""
+    ],
+    "version": "2.0.6"
+}

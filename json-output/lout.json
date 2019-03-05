@@ -1,0 +1,18 @@
+{
+    "name": "Lout",
+    "description": "Text formatting like TeX, but simpler",
+    "url": "https://download.savannah.gnu.org/releases/lout/lout-3.40.tar.gz",
+    "mirror": null,
+    "homepage": "https://savannah.nongnu.org/projects/lout",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "man1.mkpath",
+        "(doc/\"lout\").mkpath",
+        "system \"make\", \"PREFIX=#{prefix}\", \"LOUTLIBDIR=#{lib}\", \"LOUTDOCDIR=#{doc}\", \"MANDIR=#{man}\", \"allinstall\""
+    ],
+    "version": "3.40"
+}

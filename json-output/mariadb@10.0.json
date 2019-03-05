@@ -1,0 +1,28 @@
+{
+    "name": "MariadbAT100",
+    "description": "Drop-in replacement for MySQL",
+    "url": "https://downloads.mariadb.org/f/mariadb-10.0.38/source/mariadb-10.0.38.tar.gz",
+    "mirror": null,
+    "homepage": "https://mariadb.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var+\"mysql\").mkpath",
+        "unless File.exist? \"#{var}/mysql/mysql/user.frm\"",
+        "ENV[\"TMPDIR\"] = nil",
+        "system \"#{bin}/mysql_install_db\", \"--verbose\", \"--user=#{ENV[\"USER\"]}\",",
+        "\"--basedir=#{prefix}\", \"--datadir=#{var}/mysql\", \"--tmpdir=/tmp\""
+    ],
+    "version": "10.0.38"
+}

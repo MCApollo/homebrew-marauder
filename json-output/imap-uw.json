@@ -1,0 +1,26 @@
+{
+    "name": "ImapUw",
+    "description": "University of Washington IMAP toolkit",
+    "url": "https://mirrorservice.org/sites/ftp.cac.washington.edu/imap/imap-2007f.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/old/imap-2007f.tar.gz",
+    "homepage": "https://www.washington.edu/imap/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "inreplace \"Makefile\" do |s|",
+        "s.gsub! \"SSLINCLUDE=/usr/include/openssl\",",
+        "\"SSLINCLUDE=#{Formula[\"openssl\"].opt_include}/openssl\"",
+        "s.gsub! \"SSLLIB=/usr/lib\",",
+        "\"SSLLIB=#{Formula[\"openssl\"].opt_lib}\"",
+        "s.gsub! \"-DMAC_OSX_KLUDGE=1\", \"\""
+    ],
+    "version": "2007"
+}

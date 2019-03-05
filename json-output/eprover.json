@@ -1,0 +1,18 @@
+{
+    "name": "Eprover",
+    "description": "Theorem prover for full first-order logic with equality",
+    "url": "https://wwwlehre.dhbw-stuttgart.de/~sschulz/WORK/E_DOWNLOAD/V_2.2/E.tgz",
+    "mirror": null,
+    "homepage": "https://eprover.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--man-prefix=#{man1}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2"
+}

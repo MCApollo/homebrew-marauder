@@ -1,0 +1,17 @@
+{
+    "name": "Conserver",
+    "description": "Allows multiple users to watch a serial console at the same time",
+    "url": "https://github.com/conserver/conserver/releases/download/v8.2.2/conserver-8.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.conserver.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "8.2.2"
+}

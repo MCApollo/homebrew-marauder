@@ -1,0 +1,55 @@
+{
+    "name": "#",
+    "description": "Multimedia framework for research and academic purposes",
+    "url": "https://github.com/gpac/gpac/archive/v0.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://gpac.wp.mines-telecom.fr/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "bento4",
+            "reason": "both install `mp42ts` binaries"
+        }
+    ],
+    "patches": [
+        {
+            "url": "https://github.com/gpac/gpac/commit/90dc7f853d31b0a4e9441cba97feccf36d8b69a4.patch?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/gpac/gpac/commit/bceb03fd2be95097a7b409ea59914f332fb6bc86.patch?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/gpac/gpac/commit/b12b86e995db235e9a7e0c4fcd0fd54eb37bcee4.patch?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/gpac/gpac/commit/855aafe47677de558a7dd5f772b8094b54bfe61a.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "args = %W[",
+        "--disable-wx",
+        "--disable-pulseaudio",
+        "--prefix=#{prefix}",
+        "--mandir=#{man}",
+        "--disable-x11",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.1"
+}

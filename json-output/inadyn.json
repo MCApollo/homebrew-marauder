@@ -1,0 +1,56 @@
+{
+    "name": "Inadyn",
+    "description": "Dynamic DNS client with IPv4, IPv6, and SSL/TLS support",
+    "url": "https://github.com/troglobit/inadyn/releases/download/v2.5/inadyn-2.5.tar.gz",
+    "mirror": null,
+    "homepage": "http://troglobit.com/projects/inadyn/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "confuse",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/troglobit/inadyn/commit/57bdcc0321b49ee68397c70140d9895655edb06f.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "mkdir_p buildpath/\"inadyn/m4\"",
+        "system \"autoreconf\", \"-vif\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--localstatedir=#{var}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.5"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Ry",
+    "description": "Ruby virtual env tool",
+    "url": "https://github.com/jayferd/ry/archive/v0.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jayferd/ry",
+    "depends": [
+        {
+            "depend": "bash-completion",
+            "build-depend": false
+        },
+        {
+            "depend": "ruby-build",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"BASH_COMPLETIONS_DIR\"] = prefix/\"etc/bash_completion.d\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.5.2"
+}

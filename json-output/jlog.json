@@ -1,0 +1,26 @@
+{
+    "name": "Jlog",
+    "description": "Pure C message queue with subscribers and publishers for logs",
+    "url": "https://github.com/omniti-labs/jlog/archive/2.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://labs.omniti.com/labs/jlog",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoconf\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.2"
+}

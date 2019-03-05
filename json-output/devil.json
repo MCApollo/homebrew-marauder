@@ -1,0 +1,51 @@
+{
+    "name": "Devil",
+    "description": "Cross-platform image library",
+    "url": "https://downloads.sourceforge.net/project/openil/DevIL/1.8.0/DevIL-1.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/openil/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "jasper",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/DentonW/DevIL/commit/41fcabbe.patch?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/DentonW/DevIL/commit/4a2d7822.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "cd \"DevIL\" do",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.0"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Mp3splt",
+    "description": "Command-line interface to split MP3 and Ogg Vorbis files",
+    "url": "https://downloads.sourceforge.net/project/mp3splt/mp3splt/2.6.2/mp3splt-2.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://mp3splt.sourceforge.io",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libmp3splt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.2"
+}

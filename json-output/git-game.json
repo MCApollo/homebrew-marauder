@@ -1,0 +1,15 @@
+{
+    "name": "GitGame",
+    "description": "Game for git to guess who made which commit",
+    "url": "https://github.com/jsomers/git-game/archive/1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jsomers/git-game",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"git-game\""
+    ],
+    "version": "1.2"
+}

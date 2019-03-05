@@ -1,0 +1,16 @@
+{
+    "name": "SshCopyId",
+    "description": "Add a public key to a remote machine",
+    "url": "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz",
+    "mirror": "https://mirror.vdms.io/pub/OpenBSD/OpenSSH/portable/openssh-7.9p1.tar.gz",
+    "homepage": "https://www.openssh.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"contrib/ssh-copy-id\"",
+        "man1.install \"contrib/ssh-copy-id.1\""
+    ],
+    "version": "7.9"
+}

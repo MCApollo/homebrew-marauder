@@ -1,0 +1,26 @@
+{
+    "name": "Dub",
+    "description": "Build tool for D projects",
+    "url": "https://github.com/dlang/dub/archive/v1.14.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.dlang.org/getting_started",
+    "depends": [
+        {
+            "depend": "dmd",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"GITVER\"] = version.to_s",
+        "system \"./build.sh\"",
+        "bin.install \"bin/dub\""
+    ],
+    "version": "1.14.0"
+}

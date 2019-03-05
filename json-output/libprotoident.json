@@ -1,0 +1,27 @@
+{
+    "name": "Libprotoident",
+    "description": "Performs application layer protocol identification for flows",
+    "url": "https://research.wand.net.nz/software/libprotoident/libprotoident-2.0.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://research.wand.net.nz/software/libprotoident.php",
+    "depends": [
+        {
+            "depend": "libflowmanager",
+            "build-depend": false
+        },
+        {
+            "depend": "libtrace",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.12"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Intercal",
+    "description": "Esoteric, parody programming language",
+    "url": "http://catb.org/~esr/intercal/intercal-0.30.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/i/intercal/intercal_0.30.orig.tar.gz",
+    "homepage": "http://catb.org/~esr/intercal/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "cd \"buildaux\" do",
+        "system \"./regenerate-build-system.sh\"",
+        "end"
+    ],
+    "version": "0.30"
+}

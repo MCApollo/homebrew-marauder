@@ -1,0 +1,25 @@
+{
+    "name": "Jthread",
+    "description": "C++ class to make use of threads easy",
+    "url": "https://research.edm.uhasselt.be/jori/jthread/jthread-1.3.3.tar.bz2",
+    "mirror": null,
+    "homepage": "https://research.edm.uhasselt.be/jori/jthread",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.3"
+}

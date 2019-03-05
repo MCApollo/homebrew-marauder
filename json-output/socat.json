@@ -1,0 +1,25 @@
+{
+    "name": "Socat",
+    "description": "netcat on steroids",
+    "url": "http://www.dest-unreach.org/socat/download/socat-1.7.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.dest-unreach.org/socat/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7.3.2"
+}

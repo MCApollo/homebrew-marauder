@@ -1,0 +1,17 @@
+{
+    "name": "Mpck",
+    "description": "Check MP3 files for errors",
+    "url": "https://checkmate.gissen.nl/checkmate-0.19.tar.gz",
+    "mirror": null,
+    "homepage": "https://checkmate.gissen.nl/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.19"
+}

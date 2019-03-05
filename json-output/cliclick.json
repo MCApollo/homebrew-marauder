@@ -1,0 +1,16 @@
+{
+    "name": "Cliclick",
+    "description": "Tool for emulating mouse and keyboard events",
+    "url": "https://github.com/BlueM/cliclick/archive/4.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.bluem.net/jump/cliclick/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"cliclick\""
+    ],
+    "version": "4.0.1"
+}

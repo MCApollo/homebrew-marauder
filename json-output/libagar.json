@@ -1,0 +1,35 @@
+{
+    "name": "Libagar",
+    "description": "Cross-platform GUI toolkit",
+    "url": "http://stable.hypertriton.com/agar/agar-1.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://libagar.org/",
+    "depends": [
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\", \"MANDIR="
+    ],
+    "version": "1.5.0"
+}

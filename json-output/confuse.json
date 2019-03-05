@@ -1,0 +1,23 @@
+{
+    "name": "Confuse",
+    "description": "Configuration file parser library written in C",
+    "url": "https://github.com/martinh/libconfuse/releases/download/v3.2.2/confuse-3.2.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://github.com/martinh/libconfuse",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.2"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "LibusbCompat",
+    "description": "Library for USB device access",
+    "url": "https://downloads.sourceforge.net/project/libusb/libusb-compat-0.1/libusb-compat-0.1.5/libusb-compat-0.1.5.tar.bz2",
+    "mirror": null,
+    "homepage": "https://libusb.info/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.5"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Cc65",
+    "description": "6502 C compiler",
+    "url": "https://github.com/cc65/cc65/archive/V2.17.tar.gz",
+    "mirror": null,
+    "homepage": "https://cc65.github.io/cc65/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "grc",
+            "reason": "both install `grc` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.17"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Lepton",
+    "description": "Tool and file format for losslessly compressing JPEGs",
+    "url": "https://github.com/dropbox/lepton/archive/1.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/dropbox/lepton",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.1"
+}

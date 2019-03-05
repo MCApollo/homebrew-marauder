@@ -1,0 +1,95 @@
+{
+    "name": "Imagemagick",
+    "description": "Tools and libraries to manipulate images in many formats",
+    "url": "https://dl.bintray.com/homebrew/mirror/ImageMagick-7.0.8-29.tar.xz",
+    "mirror": "https://www.imagemagick.org/download/ImageMagick-7.0.8-29.tar.xz",
+    "homepage": "https://www.imagemagick.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libheif",
+            "build-depend": false
+        },
+        {
+            "depend": "libomp",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        },
+        {
+            "depend": "openexr",
+            "build-depend": false
+        },
+        {
+            "depend": "openjpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "webp",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-osx-universal-binary",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--disable-opencl",
+        "--enable-shared",
+        "--enable-static",
+        "--with-freetype=yes",
+        "--with-modules",
+        "--with-openjp2",
+        "--with-openexr",
+        "--with-webp=yes",
+        "--with-heic=yes",
+        "--without-gslib",
+        "--with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts",
+        "--without-fftw",
+        "--without-pango",
+        "--without-x",
+        "--without-wmf",
+        "--enable-openmp",
+        "ac_cv_prog_c_openmp=-Xpreprocessor\\ -fopenmp",
+        "ac_cv_prog_cxx_openmp=-Xpreprocessor\\ -fopenmp",
+        "LDFLAGS=-lomp",
+        "]",
+        "inreplace \"configure\", \"${PACKAGE_NAME}-${PACKAGE_VERSION}\", \"${PACKAGE_NAME}\"",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.0.8"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Sdcc",
+    "description": "ANSI C compiler for Intel 8051, Maxim 80DS390, and Zilog Z80",
+    "url": "https://downloads.sourceforge.net/project/sdcc/sdcc/3.8.0/sdcc-src-3.8.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://sdcc.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "gputils",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"all\"",
+        "system \"make\", \"install\"",
+        "rm Dir[\"#{bin}/*.el\"]"
+    ],
+    "version": "3.8.0"
+}

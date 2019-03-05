@@ -1,0 +1,45 @@
+{
+    "name": "Libtcod",
+    "description": "API for roguelike developers",
+    "url": "https://bitbucket.org/libtcod/libtcod/get/1.8.2.tar.bz2",
+    "mirror": null,
+    "homepage": "http://roguecentral.org/doryen/libtcod/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "libzip",
+            "reason": "both install `zip.h` header"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "cd \"build/autotools\" do",
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\"",
+        "system \"make\"",
+        "lib.install Dir[\".libs/*{.a,.dylib}\"]"
+    ],
+    "version": "1.8.2"
+}

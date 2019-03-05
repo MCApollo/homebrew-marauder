@@ -1,0 +1,16 @@
+{
+    "name": "Neatvi",
+    "description": "ex/vi clone for editing bidirectional utf-8 text",
+    "url": "https://repo.or.cz/neatvi.git",
+    "mirror": null,
+    "homepage": "https://repo.or.cz/neatvi.git",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"vi\" => \"neatvi\""
+    ],
+    "version": "1.0-git-5ed4bbc7"
+}

@@ -1,0 +1,33 @@
+{
+    "name": "GitFlow",
+    "description": "Extensions to follow Vincent Driessen",
+    "url": "https://github.com/nvie/gitflow.git",
+    "mirror": null,
+    "homepage": "https://github.com/nvie/gitflow",
+    "depends": [],
+    "resource": [
+        {
+            "name": "completion",
+            "url": "https://github.com/bobthecow/git-flow-completion/archive/0.4.2.2.tar.gz"
+        },
+        {
+            "name": "completion",
+            "url": "https://github.com/bobthecow/git-flow-completion.git"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "git-flow-avh",
+            "reason": "Both install `git-flow` binaries and completions"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{libexec}\", \"install\"",
+        "bin.write_exec_script libexec/\"bin/git-flow\"",
+        "resource(\"completion\").stage do",
+        "bash_completion.install \"git-flow-completion.bash\"",
+        "zsh_completion.install \"git-flow-completion.zsh\""
+    ],
+    "version": "0.4-git-dc5d08df"
+}

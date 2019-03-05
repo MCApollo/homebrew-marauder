@@ -1,0 +1,18 @@
+{
+    "name": "Goenv",
+    "description": "Go version management",
+    "url": "https://github.com/syndbg/goenv/archive/1.23.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/syndbg/goenv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"libexec/goenv\", \"/usr/local\", HOMEBREW_PREFIX",
+        "prefix.install Dir[\"*\"]",
+        "%w[goenv-install goenv-uninstall go-build].each do |cmd|",
+        "bin.install_symlink \"#{prefix}/plugins/go-build/bin/#{cmd}\""
+    ],
+    "version": "1.23.3"
+}

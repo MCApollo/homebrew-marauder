@@ -1,0 +1,25 @@
+{
+    "name": "Unison",
+    "description": "File synchronization tool for OSX",
+    "url": "https://github.com/bcpierce00/unison/archive/v2.51.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cis.upenn.edu/~bcpierce/unison/",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "ENV.delete \"CFLAGS\" ",
+        "ENV.delete \"NAME\" ",
+        "system \"make\", \"UISTYLE=text\"",
+        "bin.install \"src/unison\"",
+        "prefix.install_metafiles \"src\""
+    ],
+    "version": "2.51.2"
+}

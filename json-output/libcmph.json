@@ -1,0 +1,16 @@
+{
+    "name": "Libcmph",
+    "description": "C minimal perfect hashing library",
+    "url": "https://downloads.sourceforge.net/project/cmph/cmph/cmph-2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://cmph.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0"
+}

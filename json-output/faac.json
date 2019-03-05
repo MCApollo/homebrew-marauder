@@ -1,0 +1,18 @@
+{
+    "name": "Faac",
+    "description": "ISO AAC audio encoder",
+    "url": "https://downloads.sourceforge.net/project/faac/faac-src/faac-1.29/faac-1.29.9.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.audiocoding.com/faac.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.29.9.2"
+}

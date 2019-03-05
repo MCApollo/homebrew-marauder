@@ -1,0 +1,20 @@
+{
+    "name": "Libgfshare",
+    "description": "Library for sharing secrets",
+    "url": "https://www.digital-scurf.org/files/libgfshare/libgfshare-2.0.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.digital-scurf.org/software/libgfshare",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--disable-linker-optimisations\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.0"
+}

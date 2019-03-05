@@ -1,0 +1,27 @@
+{
+    "name": "Zint",
+    "description": "Barcode encoding library supporting over 50 symbologies",
+    "url": "https://downloads.sourceforge.net/project/zint/zint/2.6.3/zint-2.6.3.src.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.zint.org.uk/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"CMakeLists.txt\", \"${CMAKE_ROOT}\", \"#{share}/cmake\"",
+        "mkdir \"zint-build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.3"
+}

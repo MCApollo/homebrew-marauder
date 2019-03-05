@@ -1,0 +1,42 @@
+{
+    "name": "Vitetris",
+    "description": "Terminal-based Tetris clone",
+    "url": "https://www.victornils.net/tetris/vitetris-0.57.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.victornils.net/tetris/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/Makefile  2013-10-07 11:57:18.000000000 +0200\n",
+                "+++ b/Makefile  2013-10-07 11:57:29.000000000 +0200\n",
+                "@@ -5,7 +5,7 @@\n",
+                " # Uncomment to change the default.  (Only used in Unix-like systems.)\n",
+                " #HISCORE_FILENAME = /var/games/vitetris-hiscores\n",
+                "\n",
+                "-INSTALL = install -oroot -groot\n",
+                "+INSTALL = install\n",
+                "\n",
+                " default: build\n",
+                "\t@echo Done.\n",
+                "@@ -18,7 +18,7 @@\n",
+                "  cd src; $(MAKE) tetris\n",
+                "\tmv -f src/tetris$(EXE) $(PROGNAME)\n",
+                "\t@echo stripping symbols to reduce program size:\n",
+                "-\t-strip --strip-all $(PROGNAME)\n",
+                "+\t-strip $(PROGNAME)\n",
+                "\n",
+                " gameserver: src/netw/gameserver.c\n",
+                "\tcd src/netw; $(MAKE) gameserver\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--without-xlib\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.57"
+}

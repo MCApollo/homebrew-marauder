@@ -1,0 +1,16 @@
+{
+    "name": "Tass64",
+    "description": "Multi pass optimizing macro assembler for the 65xx series of processors",
+    "url": "https://downloads.sourceforge.net/project/tass64/source/64tass-1.53.1515-src.zip",
+    "mirror": null,
+    "homepage": "https://tass64.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"CPPFLAGS=-D_XOPEN_SOURCE\", \"prefix=#{prefix}\"",
+        "pkgshare.install \"syntax\""
+    ],
+    "version": "1.53.1515"
+}

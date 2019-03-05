@@ -1,0 +1,17 @@
+{
+    "name": "Voroxx",
+    "description": "3D Voronoi cell software library",
+    "url": "http://math.lbl.gov/voro++/download/dir/voro++-0.4.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://math.lbl.gov/voro++",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "pkgshare.install(\"examples\")",
+        "mv prefix/\"man\", share/\"man\""
+    ],
+    "version": "0.4.6"
+}

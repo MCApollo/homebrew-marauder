@@ -1,0 +1,40 @@
+{
+    "name": "Qrencode",
+    "description": "QR Code generation",
+    "url": "https://fukuchi.org/works/qrencode/qrencode-4.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://fukuchi.org/works/qrencode/index.html.en",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0.2"
+}

@@ -1,0 +1,56 @@
+{
+    "name": "Libdap",
+    "description": "Framework for scientific data networking",
+    "url": "https://www.opendap.org/pub/source/libdap-3.19.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.opendap.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "bison",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--disable-debug",
+        "--with-included-regex",
+        "]",
+        "system \"autoreconf\", \"-fvi\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\"",
+        "xml2 = Formula[\"libxml2\"]",
+        "inreplace bin/\"dap-config\", xml2.opt_prefix.realpath, xml2.opt_prefix"
+    ],
+    "version": "3.19.1"
+}

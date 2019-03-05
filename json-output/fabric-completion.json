@@ -1,0 +1,15 @@
+{
+    "name": "FabricCompletion",
+    "description": "Bash completion for Fabric",
+    "url": "https://github.com/kbakulin/fabric-completion.git",
+    "mirror": null,
+    "homepage": "https://github.com/kbakulin/fabric-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"fabric-completion.bash\" => \"fabric\""
+    ],
+    "version": "1.0-u"
+}

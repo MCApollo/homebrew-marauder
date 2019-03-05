@@ -1,0 +1,20 @@
+{
+    "name": "Atf",
+    "description": "ATF: Automated Testing Framework",
+    "url": "https://github.com/jmmv/atf/releases/download/atf-0.21/atf-0.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jmmv/atf",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.21"
+}

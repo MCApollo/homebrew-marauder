@@ -1,0 +1,18 @@
+{
+    "name": "Puf",
+    "description": "Parallel URL fetcher",
+    "url": "https://downloads.sourceforge.net/project/puf/puf/1.0.0/puf-1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://puf.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.0"
+}

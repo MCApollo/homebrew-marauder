@@ -1,0 +1,17 @@
+{
+    "name": "B2sum",
+    "description": "BLAKE2 b2sum reference binary",
+    "url": "https://github.com/BLAKE2/BLAKE2/archive/20160619.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/BLAKE2/BLAKE2",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"b2sum\" do",
+        "system \"make\", \"NO_OPENMP=1\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\", \"MANDIR=#{man}\""
+    ],
+    "version": "20160619"
+}

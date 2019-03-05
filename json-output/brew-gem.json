@@ -1,0 +1,16 @@
+{
+    "name": "BrewGem",
+    "description": "Install RubyGems as Homebrew formulae",
+    "url": "https://github.com/sportngin/brew-gem/archive/v0.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sportngin/brew-gem",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "lib.install Dir[\"lib/*\"]",
+        "bin.install \"bin/brew-gem\""
+    ],
+    "version": "0.9.0"
+}

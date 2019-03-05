@@ -1,0 +1,17 @@
+{
+    "name": "Lifelines",
+    "description": "Text-based genealogy software",
+    "url": "https://downloads.sourceforge.net/project/lifelines/lifelines/3.0.62/lifelines-3.0.62.tar.gz",
+    "mirror": null,
+    "homepage": "https://lifelines.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.62"
+}

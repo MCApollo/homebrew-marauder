@@ -1,0 +1,42 @@
+{
+    "name": "Libcouchbase",
+    "description": "C library for Couchbase",
+    "url": "https://packages.couchbase.com/clients/c/libcouchbase-2.10.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://docs.couchbase.com/c-sdk/2.10/start-using-sdk.html",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libev",
+            "build-depend": false
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "libuv",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args,",
+        "\"-DLCB_NO_TESTS=1\",",
+        "\"-DLCB_BUILD_LIBEVENT=ON\",",
+        "\"-DLCB_BUILD_LIBEV=ON\",",
+        "\"-DLCB_BUILD_LIBUV=ON\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.10.3"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Xxhash",
+    "description": "Extremely fast non-cryptographic hash algorithm",
+    "url": "https://github.com/Cyan4973/xxHash/archive/v0.6.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Cyan4973/xxHash",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.6.5"
+}

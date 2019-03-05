@@ -1,0 +1,38 @@
+{
+    "name": "Lilv",
+    "description": "C library to use LV2 plugins",
+    "url": "https://download.drobilla.net/lilv-0.24.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://drobilla.net/software/lilv/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "lv2",
+            "build-depend": false
+        },
+        {
+            "depend": "serd",
+            "build-depend": false
+        },
+        {
+            "depend": "sord",
+            "build-depend": false
+        },
+        {
+            "depend": "sratom",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\"",
+        "system \"./waf\"",
+        "system \"./waf\", \"install\""
+    ],
+    "version": "0.24.2"
+}

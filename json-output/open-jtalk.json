@@ -1,0 +1,30 @@
+{
+    "name": "OpenJtalk",
+    "description": "Japanese text-to-speech system",
+    "url": "https://downloads.sourceforge.net/project/open-jtalk/Open%20JTalk/open_jtalk-1.10/open_jtalk-1.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://open-jtalk.sourceforge.io/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "hts_engine API",
+            "url": "https://downloads.sourceforge.net/project/hts-engine/hts_engine%20API/hts_engine_API-1.10/hts_engine_API-1.10.tar.gz"
+        },
+        {
+            "name": "voice",
+            "url": "https://downloads.sourceforge.net/project/open-jtalk/HTS%20voice/hts_voice_nitech_jp_atr503_m001-1.05/hts_voice_nitech_jp_atr503_m001-1.05.tar.gz"
+        },
+        {
+            "name": "mei",
+            "url": "https://downloads.sourceforge.net/project/mmdagent/MMDAgent_Example/MMDAgent_Example-1.7/MMDAgent_Example-1.7.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"hts_engine API\").stage do",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.10"
+}

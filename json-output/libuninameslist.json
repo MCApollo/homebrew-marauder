@@ -1,0 +1,33 @@
+{
+    "name": "Libuninameslist",
+    "description": "Library of Unicode names and annotation data",
+    "url": "https://github.com/fontforge/libuninameslist/releases/download/20180701/libuninameslist-dist-20180701.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/fontforge/libuninameslist",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "system \"autoreconf\", \"-i\"",
+        "system \"automake\"",
+        "end",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20180701"
+}

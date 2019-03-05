@@ -1,0 +1,20 @@
+{
+    "name": "Sendemail",
+    "description": "Email program for sending SMTP mail",
+    "url": "http://caspian.dotconf.net/menu/Software/SendEmail/sendEmail-v1.56.tar.gz",
+    "mirror": null,
+    "homepage": "http://caspian.dotconf.net/menu/Software/SendEmail/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/mogaal/sendemail/e785a6d284884688322c9b39c0f64e20a43ea825/debian/patches/fix_ssl_version.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "bin.install \"sendEmail\""
+    ],
+    "version": "1.56"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "OpenCompletion",
+    "description": "Bash completion for open",
+    "url": "https://github.com/moshen/open-bash-completion/archive/v1.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/moshen/open-bash-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"open\""
+    ],
+    "version": "1.0.3"
+}

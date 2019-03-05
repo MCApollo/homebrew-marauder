@@ -1,0 +1,17 @@
+{
+    "name": "Automysqlbackup",
+    "description": "Automate MySQL backups",
+    "url": "https://downloads.sourceforge.net/project/automysqlbackup/AutoMySQLBackup/AutoMySQLBackup%20VER%203.0/automysqlbackup-v3.0_rc6.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/automysqlbackup/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"automysqlbackup\" do |s|",
+        "s.gsub! \"/etc\", etc",
+        "s.gsub! \"/var\", var"
+    ],
+    "version": "3.0"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Pdnsd",
+    "description": "Proxy DNS server with permanent caching",
+    "url": "http://members.home.nl/p.a.rombouts/pdnsd/releases/pdnsd-1.2.9a-par.tar.gz",
+    "mirror": null,
+    "homepage": "http://members.home.nl/p.a.rombouts/pdnsd/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--localstatedir=#{var}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--mandir=#{man}\",",
+        "\"--with-cachedir=#{var}/cache/pdnsd\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.9"
+}

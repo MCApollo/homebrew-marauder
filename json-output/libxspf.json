@@ -1,0 +1,48 @@
+{
+    "name": "Libxspf",
+    "description": "C++ library for XSPF playlist reading and writing",
+    "url": "https://downloads.xiph.org/releases/xspf/libxspf-1.2.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://libspiff.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cpptest",
+            "build-depend": false
+        },
+        {
+            "depend": "uriparser",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/examples/read/read.cpp b/examples/read/read.cpp\n",
+                "index 411f892..b66a25c 100644\n",
+                "--- a/examples/read/read.cpp\n",
+                "+++ b/examples/read/read.cpp\n",
+                "@@ -43,6 +43,7 @@\n",
+                " #include <cstdio>\n",
+                " #include <cstdlib> // MAX_PATH\n",
+                " #include <climits> // PATH_MAX\n",
+                "+#include <unistd.h>\n",
+                "\n",
+                "\n",
+                " #if defined(__WIN32__) || defined(WIN32)\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.0"
+}

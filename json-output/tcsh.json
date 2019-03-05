@@ -1,0 +1,16 @@
+{
+    "name": "Tcsh",
+    "description": "Enhanced, fully compatible version of the Berkeley C shell",
+    "url": "ftp://ftp.astron.com/pub/tcsh/tcsh-6.20.00.tar.gz",
+    "mirror": "https://ftp.osuosl.org/pub/blfs/conglomeration/tcsh/tcsh-6.20.00.tar.gz",
+    "homepage": "https://web.archive.org/web/20170609182511/www.tcsh.org/Home",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--sysconfdir=#{etc}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.20.00"
+}

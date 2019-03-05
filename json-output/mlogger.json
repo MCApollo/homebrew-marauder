@@ -1,0 +1,16 @@
+{
+    "name": "Mlogger",
+    "description": "Log to syslog from the command-line",
+    "url": "https://github.com/nbrownus/mlogger/archive/v1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/nbrownus/mlogger",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"mlogger\""
+    ],
+    "version": "1.2.0"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Ipinfo",
+    "description": "Tool for calculation of IP networks",
+    "url": "http://kyberdigi.cz/projects/ipinfo/files/ipinfo-1.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://kyberdigi.cz/projects/ipinfo/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"BINDIR=#{bin}\", \"MANDIR=#{man1}\", \"install\""
+    ],
+    "version": "1.2"
+}

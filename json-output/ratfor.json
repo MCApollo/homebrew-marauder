@@ -1,0 +1,21 @@
+{
+    "name": "Ratfor",
+    "description": "Rational Fortran",
+    "url": "http://www.dgate.org/ratfor/tars/ratfor-1.03.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.dgate.org/ratfor/",
+    "depends": [
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.03"
+}

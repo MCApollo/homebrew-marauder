@@ -1,0 +1,35 @@
+{
+    "name": "Usbredir",
+    "description": "USB traffic redirection library",
+    "url": "https://www.spice-space.org/download/usbredir/usbredir-0.8.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.spice-space.org",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gitlab.freedesktop.org/spice/usbredir/commit/985e79d5f98d5586d87204317462549332c1dd46.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.0"
+}

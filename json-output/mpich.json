@@ -1,0 +1,47 @@
+{
+    "name": "Mpich",
+    "description": "Implementation of the MPI Message Passing Interface standard",
+    "url": "https://www.mpich.org/static/downloads/3.3/mpich-3.3.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/mpich-3.3.tar.gz",
+    "homepage": "https://www.mpich.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "open-mpi",
+            "reason": "both install MPI compiler wrappers"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "ENV[\"MPICH_AUTOTOOLS_DIR\"] = HOMEBREW_PREFIX + \"bin\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.3"
+}

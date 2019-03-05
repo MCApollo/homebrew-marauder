@@ -1,0 +1,24 @@
+{
+    "name": "Libmodplug",
+    "description": "Library from the Modplug-XMMS project",
+    "url": "https://downloads.sourceforge.net/modplug-xmms/libmodplug/0.8.9.0/libmodplug-0.8.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://modplug-xmms.sourceforge.io/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "testmod",
+            "url": "https://api.modarchive.org/downloads.php?moduleid=60395#2ND_PM.S3M"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.9.0"
+}

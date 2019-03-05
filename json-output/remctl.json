@@ -1,0 +1,27 @@
+{
+    "name": "Remctl",
+    "description": "Client/server application for remote execution of tasks",
+    "url": "https://archives.eyrie.org/software/kerberos/remctl-3.15.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.eyrie.org/~eagle/software/remctl/",
+    "depends": [
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-pcre=#{HOMEBREW_PREFIX}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.15"
+}

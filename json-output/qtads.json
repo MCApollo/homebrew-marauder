@@ -1,0 +1,57 @@
+{
+    "name": "Qtads",
+    "description": "TADS multimedia interpreter",
+    "url": "https://downloads.sourceforge.net/project/qtads/qtads-2.x/2.1.7/qtads-2.1.7.tar.bz2",
+    "mirror": null,
+    "homepage": "https://qtads.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_sound",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/realnc/qtads/commit/d22054b.patch?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/realnc/qtads/commit/46701a2.patch?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/e189341/qtads/xcode9.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "sdl_sound_include = Formula[\"sdl_sound\"].opt_include",
+        "inreplace \"qtads.pro\",",
+        "\"INCLUDEPATH += src $$T2DIR $$T3DIR $$HTDIR\",",
+        "\"INCLUDEPATH += src $$T2DIR $$T3DIR $$HTDIR #{sdl_sound_include}/SDL\"",
+        "system \"qmake\", \"DEFINES+=NO_STATIC_TEXTCODEC_PLUGINS\"",
+        "system \"make\"",
+        "prefix.install \"QTads.app\"",
+        "bin.write_exec_script \"#{prefix}/QTads.app/Contents/MacOS/QTads\"",
+        "man6.install \"share/man/man6/qtads.6\""
+    ],
+    "version": "2.1.7"
+}

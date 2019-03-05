@@ -1,0 +1,69 @@
+{
+    "name": "Pango",
+    "description": "Framework for layout and rendering of i18n text",
+    "url": "https://download.gnome.org/sources/pango/1.42/pango-1.42.4.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.pango.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gtk-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "fribidi",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "harfbuzz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-html-dir=#{share}/doc\",",
+        "\"--enable-introspection=yes\",",
+        "\"--enable-static\",",
+        "\"--without-xft\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.42.4"
+}

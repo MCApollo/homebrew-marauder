@@ -1,0 +1,41 @@
+{
+    "name": "Teapot",
+    "description": "Table editor and planner",
+    "url": "https://www.syntax-k.de/projekte/teapot/teapot-2.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.syntax-k.de/projekte/teapot/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/config.h b/config.h\n",
+                "index 2a4e34f..cdf11a1 100644\n",
+                "--- a/config.h\n",
+                "+++ b/config.h\n",
+                "@@ -1,7 +1,7 @@\n",
+                " /* configuration values */\n",
+                "\n",
+                "\n",
+                "-#define VERSION \"2.2.1\"\n",
+                "+#define VERSION \"2.3.0\"\n",
+                "\n",
+                " #define HELPFILE \"/usr/local/share/doc/teapot/html/index.html\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "args = std_cmake_args + [\"-DENABLE_HELP=OFF\", \"..\"]",
+        "mkdir \"macbuild\" do",
+        "system \"cmake\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.0"
+}

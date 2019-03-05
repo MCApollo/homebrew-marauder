@@ -1,0 +1,26 @@
+{
+    "name": "SLang",
+    "description": "Library for creating multi-platform software",
+    "url": "https://www.jedsoft.org/releases/slang/slang-2.3.1a.tar.bz2",
+    "mirror": "https://src.fedoraproject.org/repo/pkgs/slang/slang-2.3.1a.tar.bz2/sha512/e7236a189081ebcbaf4e7f0506671226a4d46aede8826e1a558f1a2f57bcbe3ad58eadeabe2df99cd3d8bacb4c93749996bcbce4f51d338fc9396e0f945933e7/slang-2.3.1a.tar.bz2",
+    "homepage": "https://www.jedsoft.org/slang/",
+    "depends": [
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "png = Formula[\"libpng\"]",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-pnglib=#{png.lib}\",",
+        "\"--with-pnginc=#{png.include}\"",
+        "ENV.deparallelize",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.1"
+}

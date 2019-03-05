@@ -1,0 +1,25 @@
+{
+    "name": "Dwarf",
+    "description": "Object file manipulation tool",
+    "url": "https://github.com/elboza/dwarf-ng/archive/dwarf-0.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/elboza/dwarf-ng/",
+    "depends": [
+        {
+            "depend": "flex",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "%w[src/libdwarf.c doc/dwarf.man doc/xdwarf.man.html].each do |f|",
+        "inreplace f, \"/etc/dwarfrc\", etc/\"dwarfrc\""
+    ],
+    "version": "0.4.0"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Gupnp",
+    "description": "Framework for creating UPnP devices and control points",
+    "url": "https://download.gnome.org/sources/gupnp/1.0/gupnp-1.0.3.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.gnome.org/Projects/GUPnP",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gssdp",
+            "build-depend": false
+        },
+        {
+            "depend": "libsoup",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.3"
+}

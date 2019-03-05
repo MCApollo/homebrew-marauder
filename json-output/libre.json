@@ -1,0 +1,20 @@
+{
+    "name": "Libre",
+    "description": "Toolkit library for asynchronous network I/O with protocol stacks",
+    "url": "http://www.creytiv.com/pub/re-0.5.9.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.creytiv.com",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"SYSROOT=#{MacOS.sdk_path}/usr\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.5.9"
+}

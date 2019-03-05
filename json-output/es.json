@@ -1,0 +1,19 @@
+{
+    "name": "Es",
+    "description": "Extensible shell with first class functions, lexical scoping, and more",
+    "url": "https://github.com/wryun/es-shell/releases/download/v0.9.1/es-0.9.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://wryun.github.io/es-shell/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--with-editline\"",
+        "system \"make\"",
+        "bin.install \"es\"",
+        "doc.install %w[CHANGES README trip.es examples]",
+        "man1.install \"doc/es.1\""
+    ],
+    "version": "0.9.1"
+}

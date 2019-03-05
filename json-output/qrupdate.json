@@ -1,0 +1,31 @@
+{
+    "name": "Qrupdate",
+    "description": "Fast updates of QR and Cholesky decompositions",
+    "url": "https://downloads.sourceforge.net/qrupdate/qrupdate-1.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/qrupdate/",
+    "depends": [
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "veclibfort",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"lib\", \"solib\",",
+        "\"BLAS=-L#{Formula[\"veclibfort\"].opt_lib} -lvecLibFort\"",
+        "rm \"INSTALL\"",
+        "inreplace \"src/Makefile\", \"install -D\", \"install\"",
+        "lib.mkpath",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "pkgshare.install \"test/tch1dn.f\", \"test/utils.f\""
+    ],
+    "version": "1.1.2"
+}

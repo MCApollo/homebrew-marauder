@@ -1,0 +1,37 @@
+{
+    "name": "Libquicktime",
+    "description": "Library for reading and writing quicktime files",
+    "url": "https://downloads.sourceforge.net/project/libquicktime/libquicktime/1.2.4/libquicktime-1.2.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://libquicktime.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/libq/libquicktime/libquicktime_1.2.4-12.debian.tar.xz",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-gpl\",",
+        "\"--without-doxygen\",",
+        "\"--without-gtk\",",
+        "\"--without-x\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.4"
+}

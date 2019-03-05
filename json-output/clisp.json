@@ -1,0 +1,55 @@
+{
+    "name": "Clisp",
+    "description": "GNU CLISP, a Common Lisp implementation",
+    "url": "https://ftp.gnu.org/gnu/clisp/release/2.49/clisp-2.49.tar.bz2",
+    "mirror": "https://ftpmirror.gnu.org/clisp/release/2.49/clisp-2.49.tar.bz2",
+    "homepage": "https://clisp.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "libsigsegv",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/e2cc7c1/clisp/patch-src_lispbibl_d.diff",
+            "strip": "0"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/stream.d b/src/stream.d\n",
+                "index 5345ed6..cf14e29 100644\n",
+                "--- a/src/stream.d\n",
+                "+++ b/src/stream.d\n",
+                "@@ -3994,7 +3994,7 @@ global object iconv_range (object encoding, uintL start, uintL end, uintL maxint\n",
+                " nonreturning_function(extern, error_unencodable, (object encoding, chart ch));\n",
+                "\n",
+                " /* Avoid annoying warning caused by a wrongly standardized iconv() prototype. */\n",
+                "-#ifdef GNU_LIBICONV\n",
+                "+#if defined(GNU_LIBICONV) && !defined(__APPLE_CC__)\n",
+                "   #undef iconv\n",
+                "   #define iconv(cd,inbuf,inbytesleft,outbuf,outbytesleft) \\\n",
+                "     libiconv(cd,(ICONV_CONST char **)(inbuf),inbytesleft,outbuf,outbytesleft)\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV.deparallelize ",
+        "ENV.O0 ",
+        "ENV[\"CC\"] = \"#{ENV.cc} -m64\"",
+        "inreplace \"src/makemake.in\", \"${datarootdir}/emacs/site-lisp\", elisp",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-readline=yes\"",
+        "cd \"src\" do",
+        "inreplace \"Makefile\" do |s|",
+        "s.change_make_var! \"CFLAGS\", \"#{s.get_make_var(\"CFLAGS\")} #{ENV[\"CFLAGS\"]}\""
+    ],
+    "version": "2.49"
+}

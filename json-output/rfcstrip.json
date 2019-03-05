@@ -1,0 +1,21 @@
+{
+    "name": "Rfcstrip",
+    "description": "Strips headers and footers from RFCs and Internet-Drafts",
+    "url": "https://trac.tools.ietf.org/tools/rfcstrip/rfcstrip-1.03.tgz",
+    "mirror": null,
+    "homepage": "https://trac.tools.ietf.org/tools/rfcstrip/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "rfc1149",
+            "url": "https://www.ietf.org/rfc/rfc1149.txt"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"rfcstrip\"",
+        "doc.install %w[about todo]"
+    ],
+    "version": "1.03"
+}

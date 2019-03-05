@@ -1,0 +1,40 @@
+{
+    "name": "Uniutils",
+    "description": "Manipulate and analyze Unicode text",
+    "url": "https://billposer.org/Software/Downloads/uniutils-2.27.tar.gz",
+    "mirror": null,
+    "homepage": "https://billposer.org/Software/unidesc.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "Description: Fix clang FTBFS [-Wreturn-type]\n",
+                "Author: Nicolas S\u00e9velin-Radiguet <nicosr@free.fr>\n",
+                "Last-Update: 2014-03-06\n",
+                "--- a/unifuzz.c\n",
+                "+++ b/unifuzz.c\n",
+                "@@ -97,7 +97,7 @@\n",
+                " }\n",
+                "\n",
+                " /* Emit the middle character from each range */\n",
+                "-EmitAllRanges(short AboveBMPP) {\n",
+                "+void EmitAllRanges(short AboveBMPP) {\n",
+                "   int i;\n",
+                "   UTF32 scp;\n",
+                "   extern int Ranges_Defined;\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.27"
+}

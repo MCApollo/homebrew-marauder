@@ -1,0 +1,17 @@
+{
+    "name": "Synscan",
+    "description": "Asynchronous half-open TCP portscanner",
+    "url": "http://www.digit-labs.org/files/tools/synscan/releases/synscan-5.02.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.digit-labs.org/files/tools/synscan/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"macos\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.02"
+}

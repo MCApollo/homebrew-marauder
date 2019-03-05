@@ -1,0 +1,48 @@
+{
+    "name": "Zmap",
+    "description": "Network scanner for Internet-wide network studies",
+    "url": "https://github.com/zmap/zmap/archive/v2.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://zmap.io",
+    "depends": [
+        {
+            "depend": "byacc",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gengetopt",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "libdnet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace [\"conf/zmap.conf\", \"src/zmap.c\", \"src/zopt.ggo.in\"], \"/etc\", etc",
+        "system \"cmake\", \".\", *std_cmake_args, \"-DENABLE_DEVELOPMENT=OFF\",",
+        "\"-DRESPECT_INSTALL_PREFIX_CONFIG=ON\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.1"
+}

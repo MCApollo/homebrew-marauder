@@ -1,0 +1,26 @@
+{
+    "name": "Unrtf",
+    "description": "RTF to other formats converter",
+    "url": "https://ftp.gnu.org/gnu/unrtf/unrtf-0.21.9.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/unrtf/unrtf-0.21.9.tar.gz",
+    "homepage": "https://www.gnu.org/software/unrtf/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\"",
+        "system \"./configure\", \"LIBS=-liconv\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.21.9"
+}

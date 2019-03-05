@@ -1,0 +1,25 @@
+{
+    "name": "Coturn",
+    "description": "Free open source implementation of TURN and STUN Server",
+    "url": "http://turnserver.open-sys.org/downloads/v4.5.1.0/turnserver-4.5.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/coturn/coturn",
+    "depends": [
+        {
+            "depend": "libevent",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--mandir=#{man}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.5.1.0"
+}

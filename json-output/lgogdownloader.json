@@ -1,0 +1,53 @@
+{
+    "name": "Lgogdownloader",
+    "description": "Unofficial downloader for GOG.com games",
+    "url": "https://sites.google.com/site/gogdownloader/lgogdownloader-3.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://sites.google.com/site/gogdownloader/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "help2man",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "htmlcxx",
+            "build-depend": false
+        },
+        {
+            "depend": "jsoncpp",
+            "build-depend": false
+        },
+        {
+            "depend": "liboauth",
+            "build-depend": false
+        },
+        {
+            "depend": "rhash",
+            "build-depend": false
+        },
+        {
+            "depend": "tinyxml2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.3"
+}

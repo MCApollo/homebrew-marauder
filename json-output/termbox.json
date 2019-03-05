@@ -1,0 +1,17 @@
+{
+    "name": "Termbox",
+    "description": "Library for writing text-based user interfaces",
+    "url": "https://github.com/nsf/termbox/archive/v1.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/p/termbox/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\"",
+        "system \"./waf\"",
+        "system \"./waf\", \"install\""
+    ],
+    "version": "1.1.2"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "SeleniumServerStandalone",
+    "description": "Browser automation for testing purposes",
+    "url": "https://selenium-release.storage.googleapis.com/3.141/selenium-server-standalone-3.141.59.jar",
+    "mirror": null,
+    "homepage": "https://www.seleniumhq.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"selenium-server-standalone-#{version}.jar\"",
+        "bin.write_jar_script libexec/\"selenium-server-standalone-#{version}.jar\", \"selenium-server\""
+    ],
+    "version": "3.141.59"
+}

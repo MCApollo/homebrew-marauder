@@ -1,0 +1,30 @@
+{
+    "name": "Cppcms",
+    "description": "Free High Performance Web Development Framework",
+    "url": "https://downloads.sourceforge.net/project/cppcms/cppcms/1.2.1/cppcms-1.2.1.tar.bz2",
+    "mirror": null,
+    "homepage": "http://cppcms.com/wikipp/en/page/main",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"cmake\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.1"
+}

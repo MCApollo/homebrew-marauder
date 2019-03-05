@@ -1,0 +1,34 @@
+{
+    "name": "Dav1d",
+    "description": "AV1 decoder targeted to be small and fast",
+    "url": "https://code.videolan.org/videolan/dav1d/-/archive/0.2.0/dav1d-0.2.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://code.videolan.org/videolan/dav1d",
+    "depends": [
+        {
+            "depend": "meson",
+            "build-depend": true
+        },
+        {
+            "depend": "nasm",
+            "build-depend": true
+        },
+        {
+            "depend": "ninja",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "00000000.ivf",
+            "url": "https://code.videolan.org/videolan/dav1d-test-data/raw/master/8-bit/data/00000000.ivf"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"meson\", \"--prefix=#{prefix}\", \"build\", \"--buildtype\", \"release\"",
+        "system \"ninja\", \"install\", \"-C\", \"build\""
+    ],
+    "version": "0.2.0"
+}

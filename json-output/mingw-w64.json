@@ -1,0 +1,76 @@
+{
+    "name": "MingwW64",
+    "description": "Minimalist GNU for Windows and GCC cross-compilers",
+    "url": "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v5.0.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://mingw-w64.org/",
+    "depends": [
+        {
+            "depend": "texinfo",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "isl",
+            "build-depend": false
+        },
+        {
+            "depend": "libmpc",
+            "build-depend": false
+        },
+        {
+            "depend": "mpfr",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "binutils",
+            "url": "https://ftp.gnu.org/gnu/binutils/binutils-2.31.1.tar.gz"
+        },
+        {
+            "name": "gcc",
+            "url": "https://ftp.gnu.org/gnu/gcc/gcc-8.2.0/gcc-8.2.0.tar.xz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/gcc/graphite.h b/gcc/graphite.h\n",
+                "index 4e0e58c..be0a22b 100644\n",
+                "--- a/gcc/graphite.h\n",
+                "+++ b/gcc/graphite.h\n",
+                "@@ -37,6 +37,8 @@ along with GCC; see the file COPYING3.  If not see\n",
+                " #include <isl/schedule.h>\n",
+                " #include <isl/ast_build.h>\n",
+                " #include <isl/schedule_node.h>\n",
+                "+#include <isl/id.h>\n",
+                "+#include <isl/space.h>\n",
+                "\n",
+                " typedef struct poly_dr *poly_dr_p;\n"
+            ]
+        }
+    ],
+    "install": [
+        "target_archs.each do |arch|",
+        "arch_dir = \"#{prefix}/toolchain-#{arch}\"",
+        "target = \"#{arch}-w64-mingw32\"",
+        "resource(\"binutils\").stage do",
+        "args = %W[",
+        "--target=#{target}",
+        "--prefix=#{arch_dir}",
+        "--enable-targets=#{target}",
+        "--disable-multilib",
+        "]",
+        "mkdir \"build-#{arch}\" do",
+        "system \"../configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.0.4"
+}

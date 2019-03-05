@@ -1,0 +1,16 @@
+{
+    "name": "Objfw",
+    "description": "Portable, lightweight framework for the Objective-C language",
+    "url": "https://heap.zone/objfw/downloads/objfw-0.90.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://heap.zone/objfw/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.90.2"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Clean",
+    "description": "Search for files matching a regex and delete them",
+    "url": "https://downloads.sourceforge.net/project/clean/clean/3.4/clean-3.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://clean.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"clean\"",
+        "man1.install \"clean.1\""
+    ],
+    "version": "3.4"
+}

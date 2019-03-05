@@ -1,0 +1,34 @@
+{
+    "name": "Libwps",
+    "description": "Library to import files in MS Works format",
+    "url": "https://downloads.sourceforge.net/project/libwps/libwps/libwps-0.4.10/libwps-0.4.10.tar.xz",
+    "mirror": null,
+    "homepage": "https://libwps.sourceforge.io",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "librevenge",
+            "build-depend": false
+        },
+        {
+            "depend": "libwpd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--without-docs\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.10"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "Sdcv",
+    "description": "StarDict Console Version",
+    "url": "https://github.com/Dushistov/sdcv/archive/v0.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://dushistov.github.io/sdcv/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"lang\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.2"
+}

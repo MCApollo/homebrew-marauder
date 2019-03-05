@@ -1,0 +1,25 @@
+{
+    "name": "YoutubeDl",
+    "description": "Download YouTube videos from the command-line",
+    "url": "https://github.com/rg3/youtube-dl/releases/download/2019.03.01/youtube-dl-2019.03.01.tar.gz",
+    "mirror": null,
+    "homepage": "https://rg3.github.io/youtube-dl/",
+    "depends": [
+        {
+            "depend": "pandoc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\" if build.head?",
+        "bin.install \"youtube-dl\"",
+        "man1.install \"youtube-dl.1\"",
+        "bash_completion.install \"youtube-dl.bash-completion\"",
+        "zsh_completion.install \"youtube-dl.zsh\" => \"_youtube-dl\"",
+        "fish_completion.install \"youtube-dl.fish\""
+    ],
+    "version": "2019.03.01"
+}

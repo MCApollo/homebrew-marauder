@@ -1,0 +1,15 @@
+{
+    "name": "GitQuickStats",
+    "description": "Simple and efficient way to access statistics in git",
+    "url": "https://github.com/arzzen/git-quick-stats/archive/2.0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/arzzen/git-quick-stats",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"git-quick-stats\""
+    ],
+    "version": "2.0.5"
+}

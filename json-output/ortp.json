@@ -1,0 +1,39 @@
+{
+    "name": "Ortp",
+    "description": "Real-time transport protocol (RTP, RFC3550) library",
+    "url": "https://nongnu.askapache.com/linphone/ortp/sources/ortp-0.27.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.linphone.org/technical-corner/ortp/overview",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "mbedtls",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "bctoolbox",
+            "url": "https://github.com/BelledonneCommunications/bctoolbox/archive/0.6.0.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"bctoolbox\").stage do",
+        "args = std_cmake_args + %W[",
+        "-DCMAKE_INSTALL_PREFIX=#{libexec}",
+        "-DENABLE_TESTS_COMPONENT=OFF",
+        "]",
+        "system \"cmake\", \".\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.27.0"
+}

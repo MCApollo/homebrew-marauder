@@ -1,0 +1,30 @@
+{
+    "name": "Waon",
+    "description": "Wave-to-notes transcriber",
+    "url": "https://github.com/kichiki/WaoN/archive/v0.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://kichiki.github.io/WaoN/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-f\", \"Makefile.waon\", \"waon\"",
+        "bin.install \"waon\"",
+        "man1.install \"waon.1\""
+    ],
+    "version": "0.11"
+}

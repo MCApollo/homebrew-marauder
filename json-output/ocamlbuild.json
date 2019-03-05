@@ -1,0 +1,22 @@
+{
+    "name": "Ocamlbuild",
+    "description": "Generic build tool for OCaml",
+    "url": "https://github.com/ocaml/ocamlbuild/archive/0.13.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ocaml/ocamlbuild",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"configure\", \"OCAMLBUILD_BINDIR=#{bin}\", \"OCAMLBUILD_LIBDIR=#{lib}\", \"OCAMLBUILD_MANDIR=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.13.1"
+}

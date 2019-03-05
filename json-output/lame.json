@@ -1,0 +1,20 @@
+{
+    "name": "Lame",
+    "description": "High quality MPEG Audio Layer III (MP3) encoder",
+    "url": "https://downloads.sourceforge.net/sourceforge/lame/lame-3.100.tar.gz",
+    "mirror": null,
+    "homepage": "https://lame.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"include/libmp3lame.sym\", \"lame_init_old\\n\", \"\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-debug\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-nasm\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.100"
+}

@@ -1,0 +1,51 @@
+{
+    "name": "Libewf",
+    "description": "Library for support of the Expert Witness Compression Format",
+    "url": "https://deb.debian.org/debian/pool/main/libe/libewf/libewf_20140608.orig.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/libyal/libewf",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "system \"./synclibs.sh\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--with-libfuse=no",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "20140608"
+}

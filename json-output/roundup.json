@@ -1,0 +1,21 @@
+{
+    "name": "Roundup",
+    "description": "Unit testing tool",
+    "url": "https://github.com/bmizerany/roundup/archive/v0.0.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://bmizerany.github.io/roundup",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--bindir=#{bin}\",",
+        "\"--mandir=#{man}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--datarootdir=#{share}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.6"
+}

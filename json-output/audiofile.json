@@ -1,0 +1,49 @@
+{
+    "name": "Audiofile",
+    "description": "Reads and writes many common audio file formats",
+    "url": "https://audiofile.68k.org/audiofile-0.3.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://audiofile.68k.org/",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://deb.debian.org/debian/pool/main/a/audiofile/audiofile_0.3.6-4.debian.tar.xz",
+            "strip": "1"
+        },
+        {
+            "url": "https://deb.debian.org/debian/pool/main/a/audiofile/audiofile_0.3.6-4.debian.tar.xz",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "if build.head?",
+        "inreplace \"autogen.sh\", \"libtool\", \"glibtool\"",
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "end",
+        "configure = build.head? ? \"./autogen.sh\" : \"./configure\"",
+        "args = [\"--disable-dependency-tracking\", \"--prefix=#{prefix}\"]",
+        "system configure, *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.6"
+}

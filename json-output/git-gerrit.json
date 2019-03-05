@@ -1,0 +1,16 @@
+{
+    "name": "GitGerrit",
+    "description": "Gerrit code review helper scripts",
+    "url": "https://github.com/fbzhong/git-gerrit/archive/v0.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/fbzhong/git-gerrit",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install \"bin\"",
+        "bash_completion.install \"completion/git-gerrit-completion.bash\""
+    ],
+    "version": "0.3.0"
+}

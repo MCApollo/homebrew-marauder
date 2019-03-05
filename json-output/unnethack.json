@@ -1,0 +1,27 @@
+{
+    "name": "Unnethack",
+    "description": "Fork of Nethack",
+    "url": "https://downloads.sourceforge.net/project/unnethack/unnethack/5.2.0/unnethack-5.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/unnethack/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "version_specific_directory = \"#{var}/unnethack/#{version}\"",
+        "args = [",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-owner=#{`id -un`}\",",
+        "\"--with-group=admin\",",
+        "\"--enable-xlogfile=#{var}/unnethack/xlogfile\",",
+        "\"--with-bonesdir=#{version_specific_directory}/bones\",",
+        "\"--with-savesdir=#{version_specific_directory}/saves\",",
+        "\"--enable-wizmode=#{`id -un`}\",",
+        "]",
+        "system \"./configure\", *args",
+        "ENV.deparallelize ",
+        "system \"make\", \"install\", \"CHGRP=#\""
+    ],
+    "version": "5.2.0"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Fq",
+    "description": "Brokered message queue optimized for performance",
+    "url": "https://github.com/circonus-labs/fq/archive/v0.10.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/circonus-labs/fq",
+    "depends": [
+        {
+            "depend": "concurrencykit",
+            "build-depend": false
+        },
+        {
+            "depend": "jlog",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", \"/usr/lib/dtrace\", \"#{lib}/dtrace\"",
+        "system \"make\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "bin.install \"fqc\", \"fq_sndr\", \"fq_rcvr\""
+    ],
+    "version": "0.10.14"
+}

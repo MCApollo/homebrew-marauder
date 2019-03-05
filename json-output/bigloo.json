@@ -1,0 +1,53 @@
+{
+    "name": "Bigloo",
+    "description": "Scheme implementation with object system, C, and Java interfaces",
+    "url": "ftp://ftp-sop.inria.fr/indes/fp/Bigloo/bigloo4.3e.tar.gz",
+    "mirror": null,
+    "homepage": "https://www-sop.inria.fr/indes/fp/Bigloo/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--mandir=#{man1}",
+        "--infodir=#{info}",
+        "--customgc=yes",
+        "--os-macosx",
+        "--native=yes",
+        "--disable-alsa",
+        "--disable-mpg123",
+        "--disable-flac",
+        "--disable-srfi27",
+        "--jvm=yes",
+        "]",
+        "system \"./configure\", *args",
+        "cd \"libunistring\" do",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.3"
+}

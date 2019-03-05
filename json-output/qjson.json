@@ -1,0 +1,25 @@
+{
+    "name": "Qjson",
+    "description": "Map JSON to QVariant objects",
+    "url": "https://github.com/flavio/qjson/archive/0.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://qjson.sourceforge.io",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.0"
+}

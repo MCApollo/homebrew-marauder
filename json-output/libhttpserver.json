@@ -1,0 +1,44 @@
+{
+    "name": "Libhttpserver",
+    "description": "C++ library of embedded Rest HTTP server",
+    "url": "https://github.com/etr/libhttpserver/archive/0.17.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/etr/libhttpserver",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libmicrohttpd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = [",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "]",
+        "system \"./bootstrap\"",
+        "mkdir \"build\" do",
+        "system \"../configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.17.5"
+}

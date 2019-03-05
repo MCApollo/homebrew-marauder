@@ -1,0 +1,15 @@
+{
+    "name": "Clinfo",
+    "description": "Print information about OpenCL platforms and devices",
+    "url": "https://github.com/Oblomov/clinfo/archive/2.2.18.04.06.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Oblomov/clinfo",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"MANDIR=#{man}\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "2.2.18.04.06"
+}

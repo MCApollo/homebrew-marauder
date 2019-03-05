@@ -1,0 +1,31 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Data-parallel functional programming language",
+    "url": "https://github.com/diku-dk/futhark/archive/v0.9.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://futhark-lang.org/",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        },
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cabal_sandbox do",
+        "cabal_install \"hpack\"",
+        "system \"./.cabal-sandbox/bin/hpack\"",
+        "install_cabal_package :using => [\"alex\", \"happy\"]"
+    ],
+    "version": "0.9.1"
+}

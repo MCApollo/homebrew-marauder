@@ -1,0 +1,16 @@
+{
+    "name": "Babeld",
+    "description": "Loop-avoiding distance-vector routing protocol",
+    "url": "https://www.irif.fr/~jch/software/files/babeld-1.8.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.irif.univ-paris-diderot.fr/~jch/software/babel/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"LDLIBS=''\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.8.4"
+}

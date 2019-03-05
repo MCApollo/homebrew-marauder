@@ -1,0 +1,23 @@
+{
+    "name": "SdlGfx",
+    "description": "Graphics drawing primitives and other support functions",
+    "url": "https://www.ferzkopp.net/Software/SDL_gfx-2.0/SDL_gfx-2.0.26.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.ferzkopp.net/joomla/content/view/19/14/",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-sdltest\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.26"
+}

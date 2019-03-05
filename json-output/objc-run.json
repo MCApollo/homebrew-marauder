@@ -1,0 +1,16 @@
+{
+    "name": "ObjcRun",
+    "description": "Use Objective-C files for shell script-like tasks",
+    "url": "https://github.com/iljaiwas/objc-run/archive/1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/iljaiwas/objc-run",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"objc-run\"",
+        "pkgshare.install \"examples\", \"test.bash\""
+    ],
+    "version": "1.4"
+}

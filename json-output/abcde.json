@@ -1,0 +1,48 @@
+{
+    "name": "Abcde",
+    "description": "Better CD Encoder",
+    "url": "https://abcde.einval.com/download/abcde-2.9.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://abcde.einval.com",
+    "depends": [
+        {
+            "depend": "cd-discid",
+            "build-depend": false
+        },
+        {
+            "depend": "cdrtools",
+            "build-depend": false
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "glyr",
+            "build-depend": false
+        },
+        {
+            "depend": "id3v2",
+            "build-depend": false
+        },
+        {
+            "depend": "lame",
+            "build-depend": false
+        },
+        {
+            "depend": "mkcue",
+            "build-depend": false
+        },
+        {
+            "depend": "vorbis-tools",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"prefix=#{prefix}\", \"sysconfdir=#{etc}\""
+    ],
+    "version": "2.9.3"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Tcptraceroute",
+    "description": "Traceroute implementation using TCP packets",
+    "url": "https://github.com/mct/tcptraceroute/archive/tcptraceroute-1.5beta7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mct/tcptraceroute",
+    "depends": [
+        {
+            "depend": "libnet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/mct/tcptraceroute/commit/3772409867b3c5591c50d69f0abacf780c3a555f.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-libnet=#{HOMEBREW_PREFIX}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5"
+}

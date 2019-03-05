@@ -1,0 +1,48 @@
+{
+    "name": "Gnumeric",
+    "description": "GNOME Spreadsheet Application",
+    "url": "https://download.gnome.org/sources/gnumeric/1.12/gnumeric-1.12.43.tar.xz",
+    "mirror": null,
+    "homepage": "https://projects.gnome.org/gnumeric/",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "adwaita-icon-theme",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "goffice",
+            "build-depend": false
+        },
+        {
+            "depend": "itstool",
+            "build-depend": false
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        },
+        {
+            "depend": "rarian",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"#{Formula[\"glib\"].opt_bin}/glib-compile-schemas\", \"#{HOMEBREW_PREFIX}/share/glib-2.0/schemas\""
+    ],
+    "version": "1.12.43"
+}

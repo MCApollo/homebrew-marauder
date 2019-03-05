@@ -1,0 +1,16 @@
+{
+    "name": "Atool",
+    "description": "Archival front-end",
+    "url": "https://savannah.nongnu.org/download/atool/atool-0.39.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://savannah.nongnu.org/projects/atool/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.39.0"
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Libucl",
+    "description": "Universal configuration library parser",
+    "url": "https://github.com/vstakhov/libucl/archive/0.8.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/vstakhov/libucl",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--enable-utils",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.1"
+}

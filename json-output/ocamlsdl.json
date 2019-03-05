@@ -1,0 +1,44 @@
+{
+    "name": "Ocamlsdl",
+    "description": "OCaml interface with the SDL C library",
+    "url": "https://downloads.sourceforge.net/project/ocamlsdl/OCamlSDL/ocamlsdl-0.9.1/ocamlsdl-0.9.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://ocamlsdl.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_gfx",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"OCAMLPARAM\"] = \"safe-string=0,_\" ",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"OCAMLLIB=#{lib}/ocaml\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.1"
+}

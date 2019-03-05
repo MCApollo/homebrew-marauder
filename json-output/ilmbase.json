@@ -1,0 +1,18 @@
+{
+    "name": "Ilmbase",
+    "description": "OpenEXR ILM Base libraries (high dynamic-range image file format)",
+    "url": "https://download.savannah.nongnu.org/releases/openexr/ilmbase-2.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.openexr.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install %w[Half HalfTest Iex IexMath IexTest IlmThread Imath ImathTest]"
+    ],
+    "version": "2.2.1"
+}

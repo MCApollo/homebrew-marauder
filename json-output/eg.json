@@ -1,0 +1,24 @@
+{
+    "name": "Eg",
+    "description": "Expert Guide. Norton Guide Reader For GNU/Linux",
+    "url": "https://github.com/davep/eg/archive/v1.02.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/davep/eg",
+    "depends": [
+        {
+            "depend": "s-lang",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"eglib.c\", \"/usr/share/\", \"#{etc}/\"",
+        "bin.mkpath",
+        "man1.mkpath",
+        "system \"make\"",
+        "system \"make\", \"install\", \"BINDIR=#{bin}\", \"MANDIR=#{man}\", \"NGDIR=#{etc}/norton-guides\""
+    ],
+    "version": "1.02"
+}

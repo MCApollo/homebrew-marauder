@@ -1,0 +1,17 @@
+{
+    "name": "Mp3check",
+    "description": "Tool to check mp3 files for consistency",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/mp3check/mp3check-0.8.7.tgz",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/mp3check/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\"",
+        "bin.install \"mp3check\""
+    ],
+    "version": "0.8.7"
+}

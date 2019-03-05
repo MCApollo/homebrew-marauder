@@ -1,0 +1,15 @@
+{
+    "name": "Envchain",
+    "description": "Secure your credentials in environment variables",
+    "url": "https://github.com/sorah/envchain/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sorah/envchain",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"DESTDIR=#{prefix}\", \"install\""
+    ],
+    "version": "1.0.1"
+}

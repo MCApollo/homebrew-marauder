@@ -1,0 +1,39 @@
+{
+    "name": "Isync",
+    "description": "Synchronize a maildir with an IMAP server",
+    "url": "https://downloads.sourceforge.net/project/isync/isync/1.3.0/isync-1.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://isync.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "berkeley-db",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--disable-silent-rules",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.0"
+}

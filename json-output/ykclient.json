@@ -1,0 +1,39 @@
+{
+    "name": "Ykclient",
+    "description": "Library to validate YubiKey OTPs against YubiCloud",
+    "url": "https://developers.yubico.com/yubico-c-client/Releases/ykclient-2.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://developers.yubico.com/yubico-c-client/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "help2man",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-iv\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"check\""
+    ],
+    "version": "2.15"
+}

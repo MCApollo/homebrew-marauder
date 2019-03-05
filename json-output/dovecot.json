@@ -1,0 +1,47 @@
+{
+    "name": "Dovecot",
+    "description": "IMAP/POP3 server",
+    "url": "https://dovecot.org/releases/2.3/dovecot-2.3.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://dovecot.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "pigeonhole",
+            "url": "https://pigeonhole.dovecot.org/releases/2.3/dovecot-2.3-pigeonhole-0.5.4.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--libexecdir=#{libexec}",
+        "--sysconfdir=#{etc}",
+        "--localstatedir=#{var}",
+        "--with-bzlib",
+        "--with-pam",
+        "--with-sqlite",
+        "--with-ssl=openssl",
+        "--with-zlib",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "resource(\"pigeonhole\").stage do",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--with-dovecot=#{lib}/dovecot",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.4.1"
+}

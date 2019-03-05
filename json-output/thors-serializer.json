@@ -1,0 +1,24 @@
+{
+    "name": "ThorsSerializer",
+    "description": "Declarative serialization library (JSON/YAML) for C++",
+    "url": "https://github.com/Loki-Astari/ThorsSerializer.git",
+    "mirror": null,
+    "homepage": "https://github.com/Loki-Astari/ThorsSerializer",
+    "depends": [
+        {
+            "depend": "libyaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"COV\"] = \"gcov\"",
+        "system \"./configure\", \"--disable-binary\",",
+        "\"--disable-vera\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.10.2-git-163fb907"
+}

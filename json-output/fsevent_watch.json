@@ -1,0 +1,16 @@
+{
+    "name": "FseventWatch",
+    "description": "macOS FSEvents client",
+    "url": "https://github.com/proger/fsevent_watch/archive/v0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/proger/fsevent_watch",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\", \"CFLAGS=-DCLI_VERSION=\\\\\\\"#{version}\\\\\\\"\""
+    ],
+    "version": "0.1"
+}

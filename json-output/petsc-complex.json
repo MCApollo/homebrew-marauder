@@ -1,0 +1,58 @@
+{
+    "name": "PetscComplex",
+    "description": "Portable, Extensible Toolkit for Scientific Computation (complex)",
+    "url": "http://ftp.mcs.anl.gov/pub/petsc/release-snapshots/petsc-lite-3.10.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.mcs.anl.gov/petsc/",
+    "depends": [
+        {
+            "depend": "hdf5",
+            "build-depend": false
+        },
+        {
+            "depend": "hwloc",
+            "build-depend": false
+        },
+        {
+            "depend": "metis",
+            "build-depend": false
+        },
+        {
+            "depend": "netcdf",
+            "build-depend": false
+        },
+        {
+            "depend": "open-mpi",
+            "build-depend": false
+        },
+        {
+            "depend": "scalapack",
+            "build-depend": false
+        },
+        {
+            "depend": "suite-sparse",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "petsc",
+            "reason": "petsc must be installed with either real or complex support, not both"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV[\"CC\"] = \"mpicc\"",
+        "ENV[\"CXX\"] = \"mpicxx\"",
+        "ENV[\"F77\"] = \"mpif77\"",
+        "ENV[\"FC\"] = \"mpif90\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-debugging=0\",",
+        "\"--with-scalar-type=complex\",",
+        "\"--with-x=0\"",
+        "system \"make\", \"all\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.10.3"
+}

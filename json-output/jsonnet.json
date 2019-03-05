@@ -1,0 +1,17 @@
+{
+    "name": "Jsonnet",
+    "description": "Domain specific configuration language for defining JSON data",
+    "url": "https://github.com/google/jsonnet/archive/v0.12.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://jsonnet.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"make\"",
+        "bin.install \"jsonnet\""
+    ],
+    "version": "0.12.1"
+}

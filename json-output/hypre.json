@@ -1,0 +1,40 @@
+{
+    "name": "Hypre",
+    "description": "Library featuring parallel multigrid methods for grid problems",
+    "url": "https://computation.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods/download/hypre-2.11.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://computation.llnl.gov/casc/hypre/software.html",
+    "depends": [
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "open-mpi",
+            "build-depend": false
+        },
+        {
+            "depend": "veclibfort",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "ENV[\"CC\"] = ENV[\"MPICC\"]",
+        "ENV[\"CXX\"] = ENV[\"MPICXX\"]",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-blas=yes\",",
+        "\"--with-blas-libs=blas cblas\",",
+        "\"--with-blas-lib-dirs=/usr/lib\",",
+        "\"--with-lapack=yes\",",
+        "\"--with-lapack-libs=lapack clapack f77lapack\",",
+        "\"--with-lapack-lib-dirs=/usr/lib\",",
+        "\"--with-MPI\",",
+        "\"--enable-bigint\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.11.2"
+}

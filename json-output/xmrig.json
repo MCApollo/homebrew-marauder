@@ -1,0 +1,36 @@
+{
+    "name": "Xmrig",
+    "description": "Monero (XMR) CPU miner",
+    "url": "https://github.com/xmrig/xmrig/archive/v2.13.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/xmrig/xmrig",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libmicrohttpd",
+            "build-depend": false
+        },
+        {
+            "depend": "libuv",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DUV_LIBRARY=#{Formula[\"libuv\"].opt_lib}/libuv.dylib\",",
+        "*std_cmake_args",
+        "system \"make\"",
+        "bin.install \"xmrig\""
+    ],
+    "version": "2.13.1"
+}

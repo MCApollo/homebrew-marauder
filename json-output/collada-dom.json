@@ -1,0 +1,48 @@
+{
+    "name": "ColladaDom",
+    "description": "C++ library for loading and saving COLLADA data",
+    "url": "https://downloads.sourceforge.net/project/collada-dom/Collada%20DOM/Collada%20DOM%202.4/collada-dom-2.4.0.tgz",
+    "mirror": null,
+    "homepage": "https://www.khronos.org/collada/wiki/Portal:COLLADA_DOM",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/CMakeLists.txt b/CMakeLists.txt\n",
+                "index 72b6deb..0c7f7ce 100644\n",
+                "--- a/CMakeLists.txt\n",
+                "+++ b/CMakeLists.txt\n",
+                "@@ -100,7 +100,7 @@ endif()\n",
+                "\n",
+                " if( APPLE OR ${CMAKE_SYSTEM_NAME} MATCHES \"Darwin\")\n",
+                "   # apple doesn't have 64bit versions of file opening functions, so add them\n",
+                "-  add_definitions(\"-Dfopen64=fopen -Dfseeko64=fseeko -Dfseek64=fseek -Dftell64=ftell -Dftello64=ftello\")\n",
+                "+  add_definitions(-Dfopen64=fopen -Dfseeko64=fseeko -Dfseek64=fseek -Dftell64=ftell -Dftello64=ftello)\n",
+                " endif()\n",
+                "\n",
+                " set(COLLADA_DOM_INCLUDE_INSTALL_DIR \"include/collada-dom\")\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.0"
+}

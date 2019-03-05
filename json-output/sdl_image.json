@@ -1,0 +1,54 @@
+{
+    "name": "SdlImage",
+    "description": "Image file loading library",
+    "url": "https://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libsdl.org/projects/SDL_image",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "webp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/41996822/sdl_image/IMG_ImageIO.m.patch",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "inreplace \"SDL_image.pc.in\", \"@prefix@\", HOMEBREW_PREFIX",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-imageio\",",
+        "\"--disable-jpg-shared\",",
+        "\"--disable-png-shared\",",
+        "\"--disable-sdltest\",",
+        "\"--disable-tif-shared\",",
+        "\"--disable-webp-shared\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.12"
+}

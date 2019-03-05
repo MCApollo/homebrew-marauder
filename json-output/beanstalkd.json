@@ -1,0 +1,15 @@
+{
+    "name": "Beanstalkd",
+    "description": "Generic work queue originally designed to reduce web latency",
+    "url": "https://github.com/beanstalkd/beanstalkd/archive/v1.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://beanstalkd.github.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.10"
+}

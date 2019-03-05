@@ -1,0 +1,18 @@
+{
+    "name": "LibpokerEval",
+    "description": "C library to evaluate poker hands",
+    "url": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/p/poker-eval/poker-eval_138.0.orig.tar.gz",
+    "mirror": null,
+    "homepage": "https://pokersource.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-debug\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "138.0"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Castxml",
+    "description": "C-family Abstract Syntax Tree XML Output",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/c/castxml/castxml_0.1+git20180702.orig.tar.xz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/c/castxml/castxml_0.1+git20180702.orig.tar.xz",
+    "homepage": "https://github.com/CastXML/CastXML",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "llvm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Lzop",
+    "description": "File compressor",
+    "url": "https://dl.bintray.com/homebrew/mirror/lzop-1.04.tar.gz",
+    "mirror": "https://www.lzop.org/download/lzop-1.04.tar.gz",
+    "homepage": "https://www.lzop.org/",
+    "depends": [
+        {
+            "depend": "lzo",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.04"
+}

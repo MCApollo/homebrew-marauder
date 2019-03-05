@@ -1,0 +1,22 @@
+{
+    "name": "Wabt",
+    "description": "Web Assembly Binary Toolkit",
+    "url": "https://github.com/WebAssembly/wabt/archive/1.0.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/WebAssembly/wabt",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DBUILD_TESTS=OFF\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.8"
+}

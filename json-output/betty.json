@@ -1,0 +1,16 @@
+{
+    "name": "Betty",
+    "description": "English-like interface for the command-line",
+    "url": "https://github.com/pickhardt/betty/archive/v0.1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pickhardt/betty",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"lib\", \"main.rb\" => \"betty\"",
+        "bin.write_exec_script libexec/\"betty\""
+    ],
+    "version": "0.1.7"
+}

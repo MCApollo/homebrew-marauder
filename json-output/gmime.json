@@ -1,0 +1,42 @@
+{
+    "name": "Gmime",
+    "description": "MIME mail utilities",
+    "url": "https://download.gnome.org/sources/gmime/3.2/gmime-3.2.3.tar.xz",
+    "mirror": null,
+    "homepage": "https://spruce.sourceforge.io/gmime/",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gpgme",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--enable-largefile",
+        "--disable-vala",
+        "--disable-glibtest",
+        "--enable-crypto",
+        "--enable-introspection",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.3"
+}

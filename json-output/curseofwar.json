@@ -1,0 +1,17 @@
+{
+    "name": "Curseofwar",
+    "description": "Fast-paced action strategy game",
+    "url": "https://github.com/a-nikolaev/curseofwar/archive/v1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://a-nikolaev.github.io/curseofwar/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"curseofwar\"",
+        "man6.install \"curseofwar.6\""
+    ],
+    "version": "1.2.0"
+}

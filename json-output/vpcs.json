@@ -1,0 +1,17 @@
+{
+    "name": "Vpcs",
+    "description": "Virtual PC simulator for testing IP routing",
+    "url": "https://downloads.sourceforge.net/project/vpcs/0.8/vpcs-0.8-src.tbz",
+    "mirror": null,
+    "homepage": "https://vpcs.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"make\", \"-f\", \"Makefile.osx\"",
+        "bin.install \"vpcs\""
+    ],
+    "version": "0.8"
+}

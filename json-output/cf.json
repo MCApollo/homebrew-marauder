@@ -1,0 +1,20 @@
+{
+    "name": "Cf",
+    "description": "Filter to replace numeric timestamps with a formated date time",
+    "url": "https://ee.lbl.gov/downloads/cf/cf-1.2.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://ee.lbl.gov/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "bin.mkpath",
+        "man1.mkpath",
+        "system \"make\", \"install\"",
+        "system \"make\", \"install-man\""
+    ],
+    "version": "1.2.5"
+}

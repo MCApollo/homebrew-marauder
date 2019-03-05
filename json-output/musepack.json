@@ -1,0 +1,35 @@
+{
+    "name": "Musepack",
+    "description": "Audio compression format and tools",
+    "url": "https://files.musepack.net/source/musepack_src_r475.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.musepack.net/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libcuefile",
+            "build-depend": false
+        },
+        {
+            "depend": "libreplaygain",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "test-mpc",
+            "url": "https://trac.ffmpeg.org/raw-attachment/ticket/1160/decodererror.mpc"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "lib.install \"libmpcdec/libmpcdec.dylib\""
+    ],
+    "version": "475"
+}

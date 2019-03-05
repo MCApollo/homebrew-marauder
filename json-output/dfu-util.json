@@ -1,0 +1,39 @@
+{
+    "name": "DfuUtil",
+    "description": "USB programmer",
+    "url": "https://downloads.sourceforge.net/project/dfu-util/dfu-util-0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://dfu-util.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9"
+}

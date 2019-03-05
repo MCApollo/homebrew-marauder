@@ -1,0 +1,22 @@
+{
+    "name": "Nickle",
+    "description": "Desk calculator language",
+    "url": "https://www.nickle.org/release/nickle-2.81.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nickle.org/",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.81"
+}

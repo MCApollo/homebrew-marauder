@@ -1,0 +1,20 @@
+{
+    "name": "RbenvBundlerRubyVersion",
+    "description": "Pick a ruby version from bundler",
+    "url": "https://github.com/aripollak/rbenv-bundler-ruby-version/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/aripollak/rbenv-bundler-ruby-version",
+    "depends": [
+        {
+            "depend": "rbenv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install Dir[\"*\"]"
+    ],
+    "version": "1.0.0"
+}

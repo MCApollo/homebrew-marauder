@@ -1,0 +1,21 @@
+{
+    "name": "Flatbuffers",
+    "description": "Serialization library for C++, supporting Java, C#, and Go",
+    "url": "https://github.com/google/flatbuffers/archive/v1.10.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://google.github.io/flatbuffers",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \"-G\", \"Unix Makefiles\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.10.0"
+}

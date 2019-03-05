@@ -1,0 +1,17 @@
+{
+    "name": "Ddrescue",
+    "description": "GNU data recovery tool",
+    "url": "https://ftp.gnu.org/gnu/ddrescue/ddrescue-1.24.tar.lz",
+    "mirror": "https://ftpmirror.gnu.org/ddrescue/ddrescue-1.24.tar.lz",
+    "homepage": "https://www.gnu.org/software/ddrescue/ddrescue.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"CXX=#{ENV.cxx}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.24"
+}

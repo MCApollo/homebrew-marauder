@@ -1,0 +1,37 @@
+{
+    "name": "Jq",
+    "description": "Lightweight and flexible command-line JSON processor",
+    "url": "https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://stedolan.github.io/jq/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "oniguruma",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-iv\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--disable-maintainer-mode\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6"
+}

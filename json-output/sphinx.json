@@ -1,0 +1,31 @@
+{
+    "name": "Sphinx",
+    "description": "Full-text search engine",
+    "url": "https://sphinxsearch.com/files/sphinx-2.2.11-release.tar.gz",
+    "mirror": null,
+    "homepage": "https://sphinxsearch.com/",
+    "depends": [
+        {
+            "depend": "mysql",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "stemmer",
+            "url": "https://github.com/snowballstem/snowball.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"stemmer\").stage do",
+        "system \"make\", \"dist_libstemmer_c\"",
+        "system \"tar\", \"xzf\", \"dist/libstemmer_c.tgz\", \"-C\", buildpath"
+    ],
+    "version": "2.2.11"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Polyml",
+    "description": "Standard ML implementation",
+    "url": "https://github.com/polyml/polyml/archive/v5.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.polyml.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--disable-debug\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.7.1"
+}

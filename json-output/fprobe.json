@@ -1,0 +1,20 @@
+{
+    "name": "Fprobe",
+    "description": "Libpcap-based NetFlow probe",
+    "url": "https://downloads.sourceforge.net/project/fprobe/fprobe/1.1/fprobe-1.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/fprobe/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--mandir=#{man}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1"
+}

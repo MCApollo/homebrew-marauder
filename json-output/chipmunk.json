@@ -1,0 +1,22 @@
+{
+    "name": "Chipmunk",
+    "description": "2D rigid body physics library written in C",
+    "url": "https://chipmunk-physics.net/release/Chipmunk-7.x/Chipmunk-7.0.2.tgz",
+    "mirror": "https://www.mirrorservice.org/sites/distfiles.macports.org/chipmunk/Chipmunk-7.0.2.tgz",
+    "homepage": "https://chipmunk-physics.net/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DBUILD_DEMOS=OFF\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "doc.install Dir[\"doc/*\"]"
+    ],
+    "version": "7.0.2"
+}

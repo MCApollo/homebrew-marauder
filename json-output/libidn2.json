@@ -1,0 +1,55 @@
+{
+    "name": "Libidn2",
+    "description": "International domain name library (IDNA2008, Punycode and TR46)",
+    "url": "https://ftp.gnu.org/gnu/libidn/libidn2-2.1.1a.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/libidn/libidn2-2.1.1a.tar.gz",
+    "homepage": "https://www.gnu.org/software/libidn/#libidn2",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gengetopt",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libunistring",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "ENV[\"GEM_HOME\"] = buildpath/\"gem_home\"",
+        "system \"gem\", \"install\", \"ronn\"",
+        "ENV.prepend_path \"PATH\", buildpath/\"gem_home/bin\"",
+        "system \"./bootstrap\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-libintl-prefix=#{Formula[\"gettext\"].opt_prefix}\",",
+        "\"--with-packager=Homebrew\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.1"
+}

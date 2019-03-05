@@ -1,0 +1,29 @@
+{
+    "name": "Pachi",
+    "description": "Software for the Board Game of Go/Weiqi/Baduk",
+    "url": "https://repo.or.cz/pachi.git/snapshot/pachi-11.00-retsugen.tar.gz",
+    "mirror": null,
+    "homepage": "http://pachi.or.cz/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "patterns",
+            "url": "https://sainet-dist.s3.amazonaws.com/pachi_patterns.zip"
+        },
+        {
+            "name": "book",
+            "url": "https://gnugo.baduk.org/books/ra6.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"MAC\"] = \"1\"",
+        "ENV[\"DOUBLE_FLOATING\"] = \"1\"",
+        "system \"make\"",
+        "bin.install \"pachi\"",
+        "pkgshare.install resource(\"patterns\")",
+        "pkgshare.install resource(\"book\")"
+    ],
+    "version": "11.00"
+}

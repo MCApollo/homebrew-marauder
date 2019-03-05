@@ -1,0 +1,28 @@
+{
+    "name": "Jnettop",
+    "description": "View hosts/ports taking up the most network traffic",
+    "url": "https://downloads.sourceforge.net/project/jnettop/jnettop/0.13/jnettop-0.13.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://web.archive.org/web/20161127214942/jnettop.kubs.info/wiki/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--man=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.13.0"
+}

@@ -1,0 +1,53 @@
+{
+    "name": "Wxmac",
+    "description": "Cross-platform C++ GUI toolkit (wxWidgets for macOS)",
+    "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.wxwidgets.org",
+    "depends": [
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = [",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-clipboard\",",
+        "\"--enable-controls\",",
+        "\"--enable-dataviewctrl\",",
+        "\"--enable-display\",",
+        "\"--enable-dnd\",",
+        "\"--enable-graphics_ctx\",",
+        "\"--enable-std_string\",",
+        "\"--enable-svg\",",
+        "\"--enable-unicode\",",
+        "\"--enable-webkit\",",
+        "\"--with-expat\",",
+        "\"--with-libjpeg\",",
+        "\"--with-libpng\",",
+        "\"--with-libtiff\",",
+        "\"--with-opengl\",",
+        "\"--with-osx_cocoa\",",
+        "\"--with-zlib\",",
+        "\"--disable-precomp-headers\",",
+        "\"--disable-monolithic\",",
+        "\"--with-macosx-version-min=#{MacOS.version}\",",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "inreplace \"#{bin}/wx-config\", prefix, HOMEBREW_PREFIX"
+    ],
+    "version": "3.0.4"
+}

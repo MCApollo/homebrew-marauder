@@ -1,0 +1,25 @@
+{
+    "name": "Lynis",
+    "description": "Security and system auditing tool to harden systems",
+    "url": "https://downloads.cisofy.com/lynis/lynis-2.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://cisofy.com/lynis/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"lynis\" do |s|",
+        "s.gsub! 'tINCLUDE_TARGETS=\"/usr/local/include/lynis ' \\",
+        "'/usr/local/lynis/include /usr/share/lynis/include ./include\"',",
+        "%Q(tINCLUDE_TARGETS=\"#{include}\")",
+        "s.gsub! 'tPLUGIN_TARGETS=\"/usr/local/lynis/plugins ' \\",
+        "\"/usr/local/share/lynis/plugins /usr/share/lynis/plugins \" \\",
+        "'/etc/lynis/plugins ./plugins\"',",
+        "%Q(tPLUGIN_TARGETS=\"#{prefix}/plugins\")",
+        "s.gsub! 'tDB_TARGETS=\"/usr/local/share/lynis/db /usr/local/lynis/db ' \\",
+        "'/usr/share/lynis/db ./db\"',",
+        "%Q(tDB_TARGETS=\"#{prefix}/db\")"
+    ],
+    "version": "2.7.1"
+}

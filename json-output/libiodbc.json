@@ -1,0 +1,30 @@
+{
+    "name": "Libiodbc",
+    "description": "Database connectivity layer based on ODBC. (alternative to unixodbc)",
+    "url": "https://downloads.sourceforge.net/project/iodbc/iodbc/3.52.12/libiodbc-3.52.12.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.iodbc.org/dataspace/iodbc/wiki/iODBC/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.52.12"
+}

@@ -1,0 +1,34 @@
+{
+    "name": "DbusGlib",
+    "description": "GLib bindings for the D-Bus message bus system",
+    "url": "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.110.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/www/Software/DBusBindings/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "dbus",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.110"
+}

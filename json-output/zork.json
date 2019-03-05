@@ -1,0 +1,16 @@
+{
+    "name": "Zork",
+    "description": "The Dungeon modified from FORTRAN to C",
+    "url": "https://github.com/devshane/zork/archive/v1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/devshane/zork",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"DATADIR=#{share}\", \"BINDIR=#{bin}\"",
+        "system \"make\", \"install\", \"DATADIR=#{share}\", \"BINDIR=#{bin}\", \"MANDIR=#{man}\""
+    ],
+    "version": "1.0.2"
+}

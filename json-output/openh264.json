@@ -1,0 +1,21 @@
+{
+    "name": "Openh264",
+    "description": "H.264 codec from Cisco",
+    "url": "https://github.com/cisco/openh264/archive/v1.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.openh264.org/",
+    "depends": [
+        {
+            "depend": "nasm",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install-shared\", \"PREFIX=#{prefix}\"",
+        "chmod 0444, \"#{lib}/libopenh264.dylib\""
+    ],
+    "version": "1.8.0"
+}

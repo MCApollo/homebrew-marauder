@@ -1,0 +1,23 @@
+{
+    "name": "Daemon",
+    "description": "Turn other processes into daemons",
+    "url": "http://libslack.org/daemon/download/daemon-0.6.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://libslack.org/daemon/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/3323958/daemon/daemon-0.6.4-ignore-strlcpy-strlcat.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./config\"",
+        "system \"make\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "0.6.4"
+}

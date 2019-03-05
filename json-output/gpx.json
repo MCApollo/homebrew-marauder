@@ -1,0 +1,18 @@
+{
+    "name": "Gpx",
+    "description": "Gcode to x3g converter for 3D printers running Sailfish",
+    "url": "https://github.com/markwal/GPX/archive/2.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/markwal/GPX/blob/master/README.md",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.5.2"
+}

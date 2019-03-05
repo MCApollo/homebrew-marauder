@@ -1,0 +1,30 @@
+{
+    "name": "Libuvc",
+    "description": "Cross-platform library for USB video devices",
+    "url": "https://github.com/ktossell/libuvc/archive/v0.0.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ktossell/libuvc",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.6"
+}

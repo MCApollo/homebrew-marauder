@@ -1,0 +1,31 @@
+{
+    "name": "Yaf",
+    "description": "Yet another flowmeter: processes packet data from pcap(3)",
+    "url": "https://tools.netsa.cert.org/releases/yaf-2.10.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://tools.netsa.cert.org/yaf/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libfixbuf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.10.0"
+}

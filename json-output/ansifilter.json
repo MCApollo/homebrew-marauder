@@ -1,0 +1,16 @@
+{
+    "name": "Ansifilter",
+    "description": "Strip or convert ANSI codes into HTML, (La)Tex, RTF, or BBCode",
+    "url": "http://www.andre-simon.de/zip/ansifilter-2.13.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.andre-simon.de/doku/ansifilter/ansifilter.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "2.13"
+}

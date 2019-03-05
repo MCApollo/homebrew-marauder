@@ -1,0 +1,26 @@
+{
+    "name": "Memcached",
+    "description": "High performance, distributed memory object caching system",
+    "url": "https://www.memcached.org/files/memcached-1.5.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://memcached.org/",
+    "depends": [
+        {
+            "depend": "libevent",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mysql-cluster",
+            "reason": "both install `bin/memcached`"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-coverage\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.12"
+}

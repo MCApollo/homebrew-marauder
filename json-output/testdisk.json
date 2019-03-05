@@ -1,0 +1,19 @@
+{
+    "name": "Testdisk",
+    "description": "Powerful free data recovery utility",
+    "url": "https://www.cgsecurity.org/testdisk-7.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.cgsecurity.org/wiki/TestDisk",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.0"
+}

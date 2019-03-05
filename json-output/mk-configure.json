@@ -1,0 +1,28 @@
+{
+    "name": "MkConfigure",
+    "description": "Lightweight replacement for GNU autotools",
+    "url": "https://downloads.sourceforge.net/project/mk-configure/mk-configure/mk-configure-0.30.0/mk-configure-0.30.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/cheusov/mk-configure",
+    "depends": [
+        {
+            "depend": "bmake",
+            "build-depend": false
+        },
+        {
+            "depend": "makedepend",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PREFIX\"] = prefix",
+        "ENV[\"MANDIR\"] = man",
+        "system \"bmake\", \"all\"",
+        "system \"bmake\", \"install\"",
+        "doc.install \"presentation/presentation.pdf\""
+    ],
+    "version": "0.30.0"
+}

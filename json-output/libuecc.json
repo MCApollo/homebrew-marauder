@@ -1,0 +1,21 @@
+{
+    "name": "Libuecc",
+    "description": "Very small Elliptic Curve Cryptography library",
+    "url": "https://git.universe-factory.net/libuecc/snapshot/libuecc-7.tar",
+    "mirror": null,
+    "homepage": "https://git.universe-factory.net/libuecc/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "libuecc7"
+}

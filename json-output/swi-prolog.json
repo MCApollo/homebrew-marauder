@@ -1,0 +1,57 @@
+{
+    "name": "SwiProlog",
+    "description": "ISO/Edinburgh-style Prolog interpreter",
+    "url": "http://www.swi-prolog.org/download/stable/src/swipl-7.6.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.swi-prolog.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "libarchive",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args,",
+        "\"-DSWIPL_PACKAGES_JAVA=OFF\",",
+        "\"-DSWIPL_PACKAGES_JAVA=OFF\",",
+        "\"-DSWIPL_PACKAGES_X=OFF\",",
+        "\"-DCMAKE_INSTALL_PREFIX=#{libexec}\"",
+        "system \"make\", \"install\"",
+        "end",
+        "else",
+        "ENV[\"ARPREFIX\"] = Formula[\"libarchive\"].opt_prefix",
+        "ENV.append \"DISABLE_PKGS\", \"jpl\"",
+        "ENV.append \"DISABLE_PKGS\", \"xpce\"",
+        "ENV[\"CIFLAGS\"] = ENV.cppflags",
+        "ENV[\"COFLAGS\"] = ENV.cflags",
+        "system \"./configure\", \"--prefix=#{libexec}\", \"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.6.4"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Swaks",
+    "description": "SMTP command-line test tool",
+    "url": "https://www.jetmore.org/john/code/swaks/files/swaks-20170101.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.jetmore.org/john/code/swaks/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"swaks\""
+    ],
+    "version": "20170101.0"
+}

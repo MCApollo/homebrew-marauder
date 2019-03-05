@@ -1,0 +1,21 @@
+{
+    "name": "ZitaConvolver",
+    "description": "Fast, partitioned convolution engine library",
+    "url": "https://kokkinizita.linuxaudio.org/linuxaudio/downloads/zita-convolver-4.0.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://kokkinizita.linuxaudio.org/linuxaudio/",
+    "depends": [
+        {
+            "depend": "fftw",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"libs\" do",
+        "system \"make\", \"-f\", \"Makefile-osx\", \"install\", \"PREFIX=#{prefix}\", \"SUFFIX=\""
+    ],
+    "version": "4.0.0"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Flvstreamer",
+    "description": "Stream audio and video from flash & RTMP Servers",
+    "url": "https://download.savannah.gnu.org/releases/flvstreamer/source/flvstreamer-2.1c1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/flvstreamer/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "rtmpdump",
+            "reason": "both install "
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"posix\"",
+        "bin.install \"flvstreamer\", \"rtmpsrv\", \"rtmpsuck\", \"streams\""
+    ],
+    "version": "2.1"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "GnuUnits",
+    "description": "GNU unit conversion tool",
+    "url": "https://ftp.gnu.org/gnu/units/units-2.18.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/units/units-2.18.tar.gz",
+    "homepage": "https://www.gnu.org/software/units/",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--with-installed-readline",
+        "--program-prefix=g",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "(libexec/\"gnubin\").install_symlink bin/\"gunits\" => \"units\"",
+        "(libexec/\"gnubin\").install_symlink bin/\"gunits_cur\" => \"units_cur\"",
+        "(libexec/\"gnuman/man1\").install_symlink man1/\"gunits.1\" => \"units.1\"",
+        "libexec.install_symlink \"gnuman\" => \"man\""
+    ],
+    "version": "2.18"
+}

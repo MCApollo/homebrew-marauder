@@ -1,0 +1,38 @@
+{
+    "name": "Nginx",
+    "description": "HTTP(S) server and reverse proxy, and IMAP/POP3 proxy server",
+    "url": "https://nginx.org/download/nginx-1.15.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://nginx.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(etc/\"nginx/servers\").mkpath",
+        "(var/\"run/nginx\").mkpath",
+        "html = prefix/\"html\"",
+        "dst = var/\"www\"",
+        "if dst.exist?",
+        "html.rmtree",
+        "dst.mkpath",
+        "else",
+        "dst.dirname.mkpath",
+        "html.rename(dst)",
+        "end",
+        "prefix.install_symlink dst => \"html\"",
+        "if rack.subdirs.any? { |d| d.join(\"sbin\").directory? }",
+        "sbin.install_symlink bin/\"nginx\"",
+        "end"
+    ],
+    "version": "1.15.9"
+}

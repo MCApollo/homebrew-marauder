@@ -1,0 +1,23 @@
+{
+    "name": "Dos2unix",
+    "description": "Convert text between DOS, UNIX, and Mac formats",
+    "url": "https://waterlan.home.xs4all.nl/dos2unix/dos2unix-7.4.0.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/dos2unix-7.4.0.tar.gz",
+    "homepage": "https://waterlan.home.xs4all.nl/dos2unix.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "prefix=#{prefix}",
+        "CC=#{ENV.cc}",
+        "CPP=#{ENV.cc}",
+        "CFLAGS=#{ENV.cflags}",
+        "ENABLE_NLS=",
+        "install",
+        "]",
+        "system \"make\", *args"
+    ],
+    "version": "7.4.0"
+}

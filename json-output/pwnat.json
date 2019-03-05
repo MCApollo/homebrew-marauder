@@ -1,0 +1,16 @@
+{
+    "name": "Pwnat",
+    "description": "Proxy server that works behind a NAT",
+    "url": "https://samy.pl/pwnat/pwnat-0.3-beta.tgz",
+    "mirror": null,
+    "homepage": "https://samy.pl/pwnat/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"CFLAGS=#{ENV.cflags}\", \"LDFLAGS=-lz\"",
+        "bin.install \"pwnat\""
+    ],
+    "version": "0.3"
+}

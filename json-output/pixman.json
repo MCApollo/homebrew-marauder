@@ -1,0 +1,24 @@
+{
+    "name": "Pixman",
+    "description": "Low-level library for pixel manipulation",
+    "url": "https://cairographics.org/releases/pixman-0.38.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://cairographics.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-gtk\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.38.0"
+}

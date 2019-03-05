@@ -1,0 +1,16 @@
+{
+    "name": "Shmux",
+    "description": "Execute the same command on many hosts in parallel",
+    "url": "https://github.com/shmux/shmux/archive/v1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/shmux/shmux",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.2"
+}

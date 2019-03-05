@@ -1,0 +1,20 @@
+{
+    "name": "Rpm2cpio",
+    "description": "Tool to convert RPM package to CPIO archive",
+    "url": "https://svnweb.freebsd.org/ports/head/archivers/rpm2cpio/files/rpm2cpio?revision=259745&view=co",
+    "mirror": null,
+    "homepage": "https://svnweb.freebsd.org/ports/head/archivers/rpm2cpio/",
+    "depends": [
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"rpm2cpio\" => \"rpm2cpio.pl\""
+    ],
+    "version": "259745"
+}

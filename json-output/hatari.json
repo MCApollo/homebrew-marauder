@@ -1,0 +1,48 @@
+{
+    "name": "Hatari",
+    "description": "Atari ST/STE/TT/Falcon emulator",
+    "url": "https://download.tuxfamily.org/hatari/2.1.0/hatari-2.1.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://hatari.tuxfamily.org",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "portaudio",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "emutos",
+            "url": "https://downloads.sourceforge.net/project/emutos/emutos/0.9.9.1/emutos-512k-0.9.9.1.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://hg.tuxfamily.org/mercurialroot/hatari/hatari/raw-rev/21bc2b0ebae4",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "inreplace \"src/CMakeLists.txt\", \"/Applications\", prefix",
+        "system \"cmake\", *std_cmake_args",
+        "system \"make\"",
+        "prefix.install \"src/Hatari.app\"",
+        "bin.write_exec_script \"#{prefix}/Hatari.app/Contents/MacOS/hatari\"",
+        "resource(\"emutos\").stage do",
+        "(prefix/\"Hatari.app/Contents/Resources\").install \"etos512k.img\" => \"tos.img\""
+    ],
+    "version": "2.1.0"
+}

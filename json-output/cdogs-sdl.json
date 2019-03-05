@@ -1,0 +1,42 @@
+{
+    "name": "CdogsSdl",
+    "description": "Classic overhead run-and-gun game",
+    "url": "https://github.com/cxong/cdogs-sdl/archive/0.6.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://cxong.github.io/cdogs-sdl/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args",
+        "args << \"-DCDOGS_DATA_DIR=#{pkgshare}/\"",
+        "system \"cmake\", \".\", *args",
+        "system \"make\"",
+        "bin.install %w[src/cdogs-sdl src/cdogs-sdl-editor]",
+        "pkgshare.install %w[data dogfights graphics missions music sounds]",
+        "doc.install Dir[\"doc/*\"]"
+    ],
+    "version": "0.6.9"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Leafnode",
+    "description": "NNTP server for small sites",
+    "url": "https://downloads.sourceforge.net/project/leafnode/leafnode/1.11.11/leafnode-1.11.11.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.leafnode.org/",
+    "depends": [
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"spool/news/leafnode\").mkpath",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\",",
+        "\"--with-user=#{ENV[\"USER\"]}\", \"--with-group=admin\",",
+        "\"--sysconfdir=#{etc}/leafnode\", \"--with-spooldir=#{var}/spool/news/leafnode\"",
+        "system \"make\", \"install\"",
+        "(prefix/\"homebrew.mxcl.fetchnews.plist\").write fetchnews_plist",
+        "(prefix/\"homebrew.mxcl.texpire.plist\").write texpire_plist"
+    ],
+    "version": "1.11.11"
+}

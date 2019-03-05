@@ -1,0 +1,47 @@
+{
+    "name": "GribApi",
+    "description": "Encode and decode grib messages (editions 1 and 2)",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/g/grib-api/grib-api_1.27.0.orig.tar.xz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/g/grib-api/grib-api_1.27.0.orig.tar.xz",
+    "homepage": "https://software.ecmwf.int/wiki/display/GRIB/Home",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "jasper",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "numpy",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "eccodes",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "inreplace \"src/grib_jasper_encoding.c\", \"image.inmem_    = 1;\", \"\"",
+        "inreplace \"CMakeLists.txt\", \"find_package( OpenJPEG )\", \"\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args, \"-DENABLE_NETCDF=OFF\",",
+        "\"-DENABLE_PNG=ON\",",
+        "\"-DPNG_PNG_INCLUDE_DIR=#{Formula[\"libpng\"].opt_include}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.27.0"
+}

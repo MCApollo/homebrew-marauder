@@ -1,0 +1,25 @@
+{
+    "name": "Chicken",
+    "description": "Compiler for the Scheme programming language",
+    "url": "https://code.call-cc.org/releases/5.0.0/chicken-5.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.call-cc.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "args = %W[",
+        "PLATFORM=macosx",
+        "PREFIX=#{prefix}",
+        "C_COMPILER=#{ENV.cc}",
+        "LIBRARIAN=ar",
+        "POSTINSTALL_PROGRAM=install_name_tool",
+        "ARCH=x86-64",
+        "]",
+        "system \"make\", *args",
+        "system \"make\", \"install\", *args"
+    ],
+    "version": "5.0.0"
+}

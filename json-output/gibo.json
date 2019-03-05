@@ -1,0 +1,18 @@
+{
+    "name": "Gibo",
+    "description": "Access GitHub",
+    "url": "https://github.com/simonwhitaker/gibo/archive/2.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/simonwhitaker/gibo",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"gibo\"",
+        "bash_completion.install \"shell-completions/gibo-completion.bash\"",
+        "zsh_completion.install \"shell-completions/gibo-completion.zsh\" => \"_gibo\"",
+        "fish_completion.install \"shell-completions/gibo.fish\""
+    ],
+    "version": "2.1.2"
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Openjpeg",
+    "description": "Library for JPEG-2000 image manipulation",
+    "url": "https://github.com/uclouvain/openjpeg/archive/v2.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.openjpeg.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args, \"-DBUILD_DOC=ON\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.0"
+}

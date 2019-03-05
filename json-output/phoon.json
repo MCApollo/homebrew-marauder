@@ -1,0 +1,17 @@
+{
+    "name": "Phoon",
+    "description": "Displays current or specified phase of the moon via ASCII art",
+    "url": "https://www.acme.com/software/phoon/phoon_14Aug2014.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.acme.com/software/phoon/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"phoon\"",
+        "man1.install \"phoon.1\""
+    ],
+    "version": "2014"
+}

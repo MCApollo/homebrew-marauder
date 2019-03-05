@@ -1,0 +1,17 @@
+{
+    "name": "Postmark",
+    "description": "File system benchmark from NetApp",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/p/postmark/postmark_1.53.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/p/postmark/postmark_1.53.orig.tar.gz",
+    "homepage": "https://packages.debian.org/sid/postmark",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system ENV.cc, \"-o\", \"postmark\", \"postmark-#{version}.c\"",
+        "bin.install \"postmark\"",
+        "man1.install \"postmark.1\""
+    ],
+    "version": "1.53"
+}

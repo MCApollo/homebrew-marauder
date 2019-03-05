@@ -1,0 +1,15 @@
+{
+    "name": "Vf",
+    "description": "Enhanced version of `cd` command",
+    "url": "https://github.com/glejeune/vf/archive/0.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/glejeune/vf",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install Dir[\"*\"]"
+    ],
+    "version": "0.0.1"
+}

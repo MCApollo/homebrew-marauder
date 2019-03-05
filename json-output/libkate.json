@@ -1,0 +1,34 @@
+{
+    "name": "Libkate",
+    "description": "Overlay codec for multiplexed audio/video in Ogg",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libkate/libkate-0.4.1.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/libk/libkate/libkate_0.4.1.orig.tar.gz",
+    "homepage": "https://code.google.com/archive/p/libkate/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--enable-shared\",",
+        "\"--enable-static\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.1"
+}

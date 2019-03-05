@@ -1,0 +1,35 @@
+{
+    "name": "Cloog",
+    "description": "Generate code for scanning Z-polyhedra",
+    "url": "https://www.bastoul.net/cloog/pages/download/count.php3?url=./cloog-0.18.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.bastoul.net/cloog/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "isl",
+            "url": "http://isl.gforge.inria.fr/isl-0.18.tar.xz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"isl\").stage do",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{libexec}\",",
+        "\"--with-gmp=system\",",
+        "\"--with-gmp-prefix=#{Formula[\"gmp\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.18.4"
+}

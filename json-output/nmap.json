@@ -1,0 +1,38 @@
+{
+    "name": "Nmap",
+    "description": "Port scanning utility for large networks",
+    "url": "https://nmap.org/dist/nmap-7.70.tar.bz2",
+    "mirror": null,
+    "homepage": "https://nmap.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "ndiff",
+            "reason": "both install `ndiff` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--with-libpcre=included",
+        "--with-liblua=included",
+        "--with-openssl=#{Formula[\"openssl\"].opt_prefix}",
+        "--without-nmap-update",
+        "--disable-universal",
+        "--without-zenmap",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\" ",
+        "system \"make\", \"install\"",
+        "rm_f Dir[bin/\"uninstall_*\"] "
+    ],
+    "version": "7.70"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Libtool",
+    "description": "Generic library support script",
+    "url": "https://ftp.gnu.org/gnu/libtool/libtool-2.4.6.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.xz",
+    "homepage": "https://www.gnu.org/software/libtool/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"SED\"] = \"sed\" ",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--program-prefix=g\",",
+        "\"--enable-ltdl-install\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.6"
+}

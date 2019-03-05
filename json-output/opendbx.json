@@ -1,0 +1,29 @@
+{
+    "name": "Opendbx",
+    "description": "Lightweight but extensible database access library in C",
+    "url": "https://linuxnetworks.de/opendbx/download/opendbx-1.4.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://linuxnetworks.de/doc/index.php/OpenDBX",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"utils/Makefile.in\", \"$(LIBSUFFIX)\", \".dylib\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-backends=sqlite3\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.6"
+}

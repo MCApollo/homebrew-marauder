@@ -1,0 +1,23 @@
+{
+    "name": "Ctunnel",
+    "description": "Cryptographic or plain tunnels for TCP/UDP connections",
+    "url": "https://www.alienrobotarmy.com/ctunnel/0.7/ctunnel-0.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/alienrobotarmy/ctunnel",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile.cfg\", \"TUNTAP=yes\", \"TUNTAP=no\"",
+        "system \"make\"",
+        "bin.mkpath",
+        "system \"make\", \"-B\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.7"
+}

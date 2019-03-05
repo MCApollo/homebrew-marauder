@@ -1,0 +1,22 @@
+{
+    "name": "Geographiclib",
+    "description": "C++ geography library",
+    "url": "https://downloads.sourceforge.net/project/geographiclib/distrib/GeographicLib-1.49.tar.gz",
+    "mirror": null,
+    "homepage": "https://geographiclib.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.49"
+}

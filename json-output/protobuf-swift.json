@@ -1,0 +1,45 @@
+{
+    "name": "ProtobufSwift",
+    "description": "Implementation of Protocol Buffers in Swift",
+    "url": "https://github.com/alexeyxo/protobuf-swift/archive/4.0.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/alexeyxo/protobuf-swift",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "protobuf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "swift-protobuf",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"protoc\", \"-Iplugin/compiler\",",
+        "\"plugin/compiler/google/protobuf/descriptor.proto\",",
+        "\"plugin/compiler/google/protobuf/swift-descriptor.proto\",",
+        "\"--cpp_out=plugin/compiler\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0.6"
+}

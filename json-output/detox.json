@@ -1,0 +1,19 @@
+{
+    "name": "Detox",
+    "description": "Utility to replace problematic characters in filenames",
+    "url": "https://downloads.sourceforge.net/project/detox/detox/1.2.0/detox-1.2.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://detox.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--mandir=#{man}\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "(prefix/\"etc\").mkpath",
+        "pkgshare.mkpath",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.0"
+}

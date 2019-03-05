@@ -1,0 +1,16 @@
+{
+    "name": "Screenresolution",
+    "description": "Get, set, and list display resolution",
+    "url": "https://github.com/jhford/screenresolution/archive/v1.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jhford/screenresolution",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "1.6"
+}

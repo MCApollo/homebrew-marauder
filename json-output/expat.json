@@ -1,0 +1,37 @@
+{
+    "name": "Expat",
+    "description": "XML 1.0 parser",
+    "url": "https://github.com/libexpat/libexpat/releases/download/R_2_2_6/expat-2.2.6.tar.bz2",
+    "mirror": null,
+    "homepage": "https://libexpat.github.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "docbook2x",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"expat\" if build.head?",
+        "system \"autoreconf\", \"-fiv\" if build.head?",
+        "args = [\"--prefix=#{prefix}\", \"--mandir=#{man}\"]",
+        "args << \"--with-docbook\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2.6"
+}

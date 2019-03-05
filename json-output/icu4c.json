@@ -1,0 +1,25 @@
+{
+    "name": "Icu4c",
+    "description": "C/C++ and Java libraries for Unicode and globalization",
+    "url": "https://ssl.icu-project.org/files/icu4c/63.1/icu4c-63_1-src.tgz",
+    "mirror": "https://github.com/unicode-org/icu/releases/download/release-63-1/icu4c-63_1-src.tgz",
+    "homepage": "https://ssl.icu-project.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-samples",
+        "--disable-tests",
+        "--enable-static",
+        "--with-library-bits=64",
+        "]",
+        "cd \"source\" do",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "63_1"
+}

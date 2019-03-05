@@ -1,0 +1,28 @@
+{
+    "name": "Pktanon",
+    "description": "Packet trace anonymization",
+    "url": "https://www.tm.uka.de/software/pktanon/download/pktanon-1.4.0-dev.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.tm.uka.de/software/pktanon/index.html",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"src/Timer.cpp\", %Q(#include \"Timer.h\"\\r\\n),",
+        "%Q(#include \"Timer.h\"\\r\\n#include \"unistd.h\"\\r\\n)",
+        "ENV[\"LIBS\"] = \"-lboost_system-mt\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.0"
+}

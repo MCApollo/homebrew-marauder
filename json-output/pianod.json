@@ -1,0 +1,48 @@
+{
+    "name": "Pianod",
+    "description": "Pandora client with multiple control interfaces",
+    "url": "https://deviousfish.com/Downloads/pianod/pianod-176.tar.gz",
+    "mirror": null,
+    "homepage": "https://deviousfish.com/pianod/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "faad2",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "libao",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "mad",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "176"
+}

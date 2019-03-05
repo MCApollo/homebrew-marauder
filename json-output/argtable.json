@@ -1,0 +1,17 @@
+{
+    "name": "Argtable",
+    "description": "ANSI C library for parsing GNU-style command-line options",
+    "url": "https://downloads.sourceforge.net/project/argtable/argtable/argtable-2.13/argtable2-13.tar.gz",
+    "mirror": null,
+    "homepage": "https://argtable.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.13"
+}

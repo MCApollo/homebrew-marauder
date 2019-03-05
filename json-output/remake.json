@@ -1,0 +1,18 @@
+{
+    "name": "Remake",
+    "description": "GNU Make with improved error handling, tracing, and a debugger",
+    "url": "https://downloads.sourceforge.net/project/bashdb/remake/4.2%2Bdbg-1.4/remake-4.2.1%2Bdbg-1.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://bashdb.sourceforge.io/remake",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.2.1"
+}

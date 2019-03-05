@@ -1,0 +1,24 @@
+{
+    "name": "MecabUnidic",
+    "description": "Morphological analyzer for MeCab",
+    "url": "https://dotsrc.dl.osdn.net/osdn/unidic/58338/unidic-mecab-2.1.2_src.zip",
+    "mirror": null,
+    "homepage": "https://osdn.net/projects/unidic/",
+    "depends": [
+        {
+            "depend": "mecab",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-dicdir=#{lib}/mecab/dic/unidic\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.2"
+}

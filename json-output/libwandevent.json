@@ -1,0 +1,17 @@
+{
+    "name": "Libwandevent",
+    "description": "API for developing event-driven programs",
+    "url": "https://research.wand.net.nz/software/libwandevent/libwandevent-3.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://research.wand.net.nz/software/libwandevent.php",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.2"
+}

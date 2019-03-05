@@ -1,0 +1,16 @@
+{
+    "name": "Gnuski",
+    "description": "Open source clone of Skifree",
+    "url": "https://downloads.sourceforge.net/project/gnuski/gnuski/gnuski-0.3/gnuski-0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://gnuski.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"gnuski\""
+    ],
+    "version": "0.3"
+}

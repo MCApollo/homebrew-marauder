@@ -1,0 +1,39 @@
+{
+    "name": "Sassc",
+    "description": "Wrapper around libsass that helps to create command-line apps",
+    "url": "https://github.com/sass/sassc.git",
+    "mirror": null,
+    "homepage": "https://github.com/sass/sassc",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libsass",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-silent-rules\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.1-git-9451dd7a"
+}

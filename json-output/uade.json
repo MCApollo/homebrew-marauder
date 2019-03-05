@@ -1,0 +1,60 @@
+{
+    "name": "Uade",
+    "description": "Play Amiga tunes through UAE emulation",
+    "url": "http://zakalwe.fi/uade/uade2/uade-2.13.tar.bz2",
+    "mirror": null,
+    "homepage": "http://zakalwe.fi/uade/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libao",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "bencode-tools",
+            "url": "https://github.com/heikkiorsila/bencode-tools.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/configure b/configure\n",
+                "index 05bfa9b..a73608e 100755\n",
+                "--- a/configure\n",
+                "+++ b/configure\n",
+                "@@ -399,13 +399,13 @@ if test -n \"$sharedir\"; then\n",
+                "     uadedatadir=\"$sharedir\"\n",
+                " fi\n",
+                " \n",
+                "-$NATIVECC -v 2>/dev/null >/dev/null\n",
+                "+$NATIVECC --version 2>/dev/null >/dev/null\n",
+                " if test \"$?\" != \"0\"; then\n",
+                "     echo Native CC \"$NATIVECC\" not found, please install a C compiler\n",
+                "     exit 1\n",
+                " fi\n",
+                " \n",
+                "-$TARGETCC -v 2>/dev/null >/dev/null\n",
+                "+$TARGETCC --version 2>/dev/null >/dev/null\n",
+                " if test \"$?\" != \"0\"; then\n",
+                "     echo Target CC \"$TARGETCC\" not found, please install a C compiler\n",
+                "     exit 1\n"
+            ]
+        }
+    ],
+    "install": [
+        "if build.head?",
+        "resource(\"bencode-tools\").stage do",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--without-python\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "end"
+    ],
+    "version": "2.13"
+}

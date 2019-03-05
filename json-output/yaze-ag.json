@@ -1,0 +1,21 @@
+{
+    "name": "YazeAg",
+    "description": "Yet Another Z80 Emulator (by AG)",
+    "url": "http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/devel/yaze-ag-2.40.5_with_keytrans.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.mathematik.uni-ulm.de/users/ag/yaze-ag/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile_solaris_gcc\", \"md5sum -b\", \"md5\"",
+        "bin.mkpath",
+        "system \"make\", \"-f\", \"Makefile_solaris_gcc\",",
+        "\"BINDIR=#{bin}\",",
+        "\"MANDIR=#{man1}\",",
+        "\"LIBDIR=#{lib}/yaze\",",
+        "\"install\""
+    ],
+    "version": "2.40.5"
+}

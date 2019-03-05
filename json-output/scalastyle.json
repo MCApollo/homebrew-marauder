@@ -1,0 +1,21 @@
+{
+    "name": "Scalastyle",
+    "description": "Run scalastyle from the command-line",
+    "url": "https://oss.sonatype.org/content/repositories/releases/org/scalastyle/scalastyle_2.12/1.0.0/scalastyle_2.12-1.0.0-batch.jar",
+    "mirror": null,
+    "homepage": "http://www.scalastyle.org/command-line.html",
+    "depends": [],
+    "resource": [
+        {
+            "name": "default_config",
+            "url": "https://raw.githubusercontent.com/scalastyle/scalastyle/v1.0.0/lib/scalastyle_config.xml"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"scalastyle_2.12-#{version}-batch.jar\"",
+        "bin.write_jar_script(\"#{libexec}/scalastyle_2.12-#{version}-batch.jar\", \"scalastyle\")"
+    ],
+    "version": "2.12"
+}

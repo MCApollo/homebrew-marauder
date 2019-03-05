@@ -1,0 +1,58 @@
+{
+    "name": "Redshift",
+    "description": "Adjust color temperature of your screen according to your surroundings",
+    "url": "https://github.com/jonls/redshift/releases/download/v1.12/redshift-1.12.tar.xz",
+    "mirror": null,
+    "homepage": "http://jonls.dk/redshift/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--enable-corelocation",
+        "--disable-silent-rules",
+        "--disable-dependency-tracking",
+        "--disable-geoclue",
+        "--disable-geoclue2",
+        "--enable-quartz",
+        "--with-systemduserunitdir=no",
+        "--disable-gui",
+        "]",
+        "system \"./bootstrap\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"redshift.conf.sample\""
+    ],
+    "version": "1.12"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "RestShell",
+    "description": "Shell to work with Spring HATEOAS-compliant REST resources",
+    "url": "http://download.gopivotal.com/rest-shell/1.2.1/rest-shell-1.2.1.RELEASE.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/spring-projects/rest-shell",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "bin.write_exec_script libexec/\"bin/rest-shell\""
+    ],
+    "version": "1.2.1"
+}

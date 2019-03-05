@@ -1,0 +1,21 @@
+{
+    "name": "Spim",
+    "description": "MIPS32 simulator",
+    "url": "https://svn.code.sf.net/p/spimsimulator/code",
+    "mirror": null,
+    "homepage": "https://spimsimulator.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "cd \"spim\" do",
+        "system \"make\", \"EXCEPTION_DIR=#{share}\"",
+        "system \"make\", \"test\"",
+        "system \"make\", \"install\", \"BIN_DIR=#{bin}\",",
+        "\"EXCEPTION_DIR=#{share}\",",
+        "\"MAN_DIR=#{man1}\""
+    ],
+    "version": "1.0-u"
+}

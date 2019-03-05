@@ -1,0 +1,97 @@
+{
+    "name": "CrosstoolNg",
+    "description": "Tool for building toolchains",
+    "url": "http://crosstool-ng.org/download/crosstool-ng/crosstool-ng-1.23.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://crosstool-ng.github.io/",
+    "depends": [
+        {
+            "depend": "help2man",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": false
+        },
+        {
+            "depend": "automake",
+            "build-depend": false
+        },
+        {
+            "depend": "binutils",
+            "build-depend": false
+        },
+        {
+            "depend": "coreutils",
+            "build-depend": false
+        },
+        {
+            "depend": "flex",
+            "build-depend": false
+        },
+        {
+            "depend": "gawk",
+            "build-depend": false
+        },
+        {
+            "depend": "gnu-sed",
+            "build-depend": false
+        },
+        {
+            "depend": "grep",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "m4",
+            "build-depend": false
+        },
+        {
+            "depend": "make",
+            "build-depend": false
+        },
+        {
+            "depend": "ncurses",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        },
+        {
+            "depend": "bash",
+            "build-depend": false
+        },
+        {
+            "depend": "bison",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "lzip",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "system \"./bootstrap\"",
+        "ENV[\"BISON\"] = \"#{Formula[\"bison\"].opt_bin}/bison\"",
+        "ENV.append \"LDFLAGS\", \"-lintl\"",
+        "end",
+        "ENV[\"M4\"] = \"#{Formula[\"m4\"].opt_bin}/m4\"",
+        "ENV[\"MAKE\"] = \"#{Formula[\"make\"].opt_bin}/gmake\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.23.0"
+}

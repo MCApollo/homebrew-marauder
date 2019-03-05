@@ -1,0 +1,24 @@
+{
+    "name": "Zssh",
+    "description": "Interactive file transfers over SSH",
+    "url": "https://downloads.sourceforge.net/project/zssh/zssh/1.5/zssh-1.5c.tgz",
+    "mirror": null,
+    "homepage": "https://zssh.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "lrzsz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "bin.install \"zssh\", \"ztelnet\"",
+        "man1.install \"zssh.1\", \"ztelnet.1\""
+    ],
+    "version": "1.5"
+}

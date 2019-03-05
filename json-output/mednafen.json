@@ -1,0 +1,37 @@
+{
+    "name": "Mednafen",
+    "description": "Multi-system emulator",
+    "url": "https://mednafen.github.io/releases/files/mednafen-1.22.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://mednafen.github.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.22.1"
+}

@@ -1,0 +1,47 @@
+{
+    "name": "Rmlint",
+    "description": "Extremely fast tool to remove dupes and other lint from your filesystem",
+    "url": "https://github.com/sahib/rmlint/archive/v2.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sahib/rmlint",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "scons",
+            "build-depend": true
+        },
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "json-glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libelf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"scons\", \"config\"",
+        "scons",
+        "bin.install \"rmlint\"",
+        "man1.install \"docs/rmlint.1.gz\""
+    ],
+    "version": "2.8.0"
+}

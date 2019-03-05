@@ -1,0 +1,18 @@
+{
+    "name": "Xmake",
+    "description": "A cross-platform build utility based on Lua",
+    "url": "https://github.com/xmake-io/xmake/archive/v2.2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://xmake.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./install\", \"output\"",
+        "pkgshare.install Dir[\"xmake/*\"]",
+        "bin.install \"output/share/xmake/xmake\"",
+        "bin.env_script_all_files(libexec, :XMAKE_PROGRAM_DIR => pkgshare)"
+    ],
+    "version": "2.2.3"
+}

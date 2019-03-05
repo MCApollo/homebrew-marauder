@@ -1,0 +1,17 @@
+{
+    "name": "Zdelta",
+    "description": "Lossless delta compression library",
+    "url": "https://web.archive.org/web/20150804051752/cis.poly.edu/zdelta/downloads/zdelta-2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://web.archive.org/web/20150804051750/cis.poly.edu/zdelta/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"test\", \"CC=#{ENV.cc}\", \"CFLAGS=#{ENV.cflags}\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\"",
+        "bin.install \"zdc\", \"zdu\""
+    ],
+    "version": "2.1"
+}

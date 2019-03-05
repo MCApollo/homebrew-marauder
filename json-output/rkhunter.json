@@ -1,0 +1,15 @@
+{
+    "name": "Rkhunter",
+    "description": "Rootkit hunter",
+    "url": "https://downloads.sourceforge.net/project/rkhunter/rkhunter/1.4.6/rkhunter-1.4.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://rkhunter.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./installer.sh\", \"--layout\", \"custom\", prefix, \"--install\""
+    ],
+    "version": "1.4.6"
+}

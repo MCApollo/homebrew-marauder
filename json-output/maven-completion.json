@@ -1,0 +1,15 @@
+{
+    "name": "MavenCompletion",
+    "description": "Bash completion for Maven",
+    "url": "https://github.com/juven/maven-bash-completion.git",
+    "mirror": null,
+    "homepage": "https://github.com/juven/maven-bash-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"bash_completion.bash\" => \"maven\""
+    ],
+    "version": "1.0-u"
+}

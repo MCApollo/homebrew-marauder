@@ -1,0 +1,32 @@
+{
+    "name": "Torsocks",
+    "description": "Use SOCKS-friendly applications with Tor",
+    "url": "https://git.torproject.org/torsocks.git",
+    "mirror": null,
+    "homepage": "https://gitweb.torproject.org/torsocks.git/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.0-git-cec4a733"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Libpuzzle",
+    "description": "Library to find visually similar images",
+    "url": "https://download.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/libpuzzle-0.11.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.pureftpd.org/project/libpuzzle",
+    "depends": [
+        {
+            "depend": "gd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.11"
+}

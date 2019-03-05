@@ -1,0 +1,37 @@
+{
+    "name": "Mapcrafter",
+    "description": "Minecraft map renderer",
+    "url": "https://github.com/mapcrafter/mapcrafter/archive/v.2.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://mapcrafter.org",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg-turbo",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = std_cmake_args",
+        "args << \"-DJPEG_INCLUDE_DIR=#{Formula[\"jpeg-turbo\"].opt_include}\"",
+        "args << \"-DJPEG_LIBRARY=#{Formula[\"jpeg-turbo\"].opt_lib}/libjpeg.dylib\"",
+        "system \"cmake\", \".\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4"
+}

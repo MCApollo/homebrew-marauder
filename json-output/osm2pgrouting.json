@@ -1,0 +1,46 @@
+{
+    "name": "Osm2pgrouting",
+    "description": "Import OSM data into pgRouting database",
+    "url": "https://github.com/pgRouting/osm2pgrouting/archive/v2.3.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://pgrouting.org/docs/tools/osm2pgrouting.html",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "expat",
+            "build-depend": false
+        },
+        {
+            "depend": "libpqxx",
+            "build-depend": false
+        },
+        {
+            "depend": "pgrouting",
+            "build-depend": false
+        },
+        {
+            "depend": "postgis",
+            "build-depend": false
+        },
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.6"
+}

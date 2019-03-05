@@ -1,0 +1,18 @@
+{
+    "name": "Mmsrip",
+    "description": "Client for the MMS:// protocol",
+    "url": "https://nbenoit.tuxfamily.org/projects/mmsrip/mmsrip-0.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://nbenoit.tuxfamily.org/index.php?page=MMSRIP",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.0"
+}

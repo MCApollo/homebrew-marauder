@@ -1,0 +1,47 @@
+{
+    "name": "Coccinelle",
+    "description": "Program matching and transformation engine for C code",
+    "url": "http://coccinelle.lip6.fr/distrib/coccinelle-1.0.6.tgz",
+    "mirror": null,
+    "homepage": "http://coccinelle.lip6.fr/",
+    "depends": [
+        {
+            "depend": "hevea",
+            "build-depend": true
+        },
+        {
+            "depend": "opam",
+            "build-depend": true
+        },
+        {
+            "depend": "camlp4",
+            "build-depend": false
+        },
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"OCAMLPARAM\"] = \"safe-string=0,_\" ",
+        "opamroot = buildpath/\"opamroot\"",
+        "ENV[\"OPAMROOT\"] = opamroot",
+        "ENV[\"OPAMYES\"] = \"1\"",
+        "system \"opam\", \"init\", \"--no-setup\"",
+        "system \"opam\", \"install\", \"ocamlfind\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--enable-release\",",
+        "\"--enable-ocaml\",",
+        "\"--enable-opt\",",
+        "\"--enable-ocaml\",",
+        "\"--with-pdflatex=no\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"opam\", \"config\", \"exec\", \"--\", \"make\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"demos/simple.cocci\", \"demos/simple.c\""
+    ],
+    "version": "1.0.6"
+}

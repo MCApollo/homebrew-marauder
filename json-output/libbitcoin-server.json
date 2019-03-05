@@ -1,0 +1,46 @@
+{
+    "name": "LibbitcoinServer",
+    "description": "Bitcoin Full Node and Query Server",
+    "url": "https://github.com/libbitcoin/libbitcoin-server/archive/v3.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/libbitcoin/libbitcoin-server",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libbitcoin-node",
+            "build-depend": false
+        },
+        {
+            "depend": "libbitcoin-protocol",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_path \"PKG_CONFIG_PATH\", Formula[\"libbitcoin\"].opt_libexec/\"lib/pkgconfig\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "bash_completion.install \"data/bs\""
+    ],
+    "version": "3.5.0"
+}

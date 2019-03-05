@@ -1,0 +1,50 @@
+{
+    "name": "GetIplayer",
+    "description": "Utility for downloading TV and radio programmes from BBC iPlayer",
+    "url": "https://github.com/get-iplayer/get_iplayer/archive/v3.19.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/get-iplayer/get_iplayer",
+    "depends": [
+        {
+            "depend": "atomicparsley",
+            "build-depend": false
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "IO::Socket::IP",
+            "url": "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/IO-Socket-IP-0.39.tar.gz"
+        },
+        {
+            "name": "IO::Socket::SSL",
+            "url": "https://cpan.metacpan.org/authors/id/S/SU/SULLR/IO-Socket-SSL-2.059.tar.gz"
+        },
+        {
+            "name": "Mojolicious",
+            "url": "https://cpan.metacpan.org/authors/id/S/SR/SRI/Mojolicious-7.93.tar.gz"
+        },
+        {
+            "name": "Mozilla::CA",
+            "url": "https://cpan.metacpan.org/authors/id/A/AB/ABH/Mozilla-CA-20180117.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "ENV[\"NO_NETWORK_TESTING\"] = \"1\"",
+        "resources.each do |r|",
+        "r.stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.19"
+}

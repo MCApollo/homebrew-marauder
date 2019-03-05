@@ -1,0 +1,61 @@
+{
+    "name": "CdDiscid",
+    "description": "Read CD and get CDDB discid information",
+    "url": "http://linukz.org/download/cd-discid-1.4.tar.gz",
+    "mirror": "https://mirrors.ocf.berkeley.edu/debian/pool/main/c/cd-discid/cd-discid_1.4.orig.tar.gz",
+    "homepage": "http://linukz.org/cd-discid.shtml",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/cd-discid.c b/cd-discid.c\n",
+                "index 9b0b40a..2c96641 100644\n",
+                "--- a/cd-discid.c\n",
+                "+++ b/cd-discid.c\n",
+                "@@ -93,7 +93,7 @@\n",
+                " #define cdth_trk1               lastTrackNumberInLastSessionLSB\n",
+                " #define cdrom_tocentry          CDTrackInfo\n",
+                " #define cdte_track_address      trackStartAddress\n",
+                "-#define DEVICE_NAME             \"/dev/disk1\"\n",
+                "+#define DEVICE_NAME             \"/dev/rdisk1\"\n",
+                "\n",
+                " #else\n",
+                " #error \"Your OS isn't supported yet.\"\n",
+                "@@ -236,8 +236,7 @@ int main(int argc, char *argv[])\n",
+                "\t * TocEntry[last-1].lastRecordedAddress + 1, so we compute the start\n",
+                "\t * of leadout from the start+length of the last track instead\n",
+                "\t */\n",
+                "-\tTocEntry[last].cdte_track_address = TocEntry[last - 1].trackSize +\n",
+                "-\t\tTocEntry[last - 1].trackStartAddress;\n",
+                "+TocEntry[last].cdte_track_address = htonl(ntohl(TocEntry[last-1].trackSize) + ntohl(TocEntry[last-1].trackStartAddress));\n",
+                " #else   /* FreeBSD, Linux, Solaris */\n",
+                "\tfor (i = 0; i < last; i++) {\n",
+                "\t\t/* tracks start with 1, but I must start with 0 on OpenBSD */\n",
+                "@@ -260,12 +259,12 @@ int main(int argc, char *argv[])\n",
+                "\t/* release file handle */\n",
+                "\tclose(drive);\n",
+                "\n",
+                "-#if defined(__FreeBSD__)\n",
+                "+#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__APPLE__)\n",
+                "\tTocEntry[i].cdte_track_address = ntohl(TocEntry[i].cdte_track_address);\n",
+                " #endif\n",
+                "\n",
+                "\tfor (i = 0; i < last; i++) {\n",
+                "-#if defined(__FreeBSD__)\n",
+                "+#if defined(__FreeBSD__) || defined(__DragonFly__) || defined(__APPLE__)\n",
+                "\t\tTocEntry[i].cdte_track_address = ntohl(TocEntry[i].cdte_track_address);\n",
+                " #endif\n",
+                "\t\tcksum += cddb_sum((TocEntry[i].cdte_track_address + CD_MSF_OFFSET) / CD_FRAMES);\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\"",
+        "bin.install \"cd-discid\"",
+        "man1.install \"cd-discid.1\""
+    ],
+    "version": "1.4"
+}

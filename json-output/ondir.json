@@ -1,0 +1,16 @@
+{
+    "name": "Ondir",
+    "description": "Automatically execute scripts as you traverse directories",
+    "url": "https://swapoff.org/files/ondir/ondir-0.2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://swapoff.org/ondir.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "0.2.3"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Mpg123",
+    "description": "MP3 player for Linux and UNIX",
+    "url": "https://downloads.sourceforge.net/project/mpg123/mpg123/1.25.10/mpg123-1.25.10.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.mpg123.de/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--with-default-audio=coreaudio",
+        "--with-module-suffix=.so",
+        "--with-cpu=x86-64",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "123"
+}

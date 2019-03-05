@@ -1,0 +1,34 @@
+{
+    "name": "Dcmtk",
+    "description": "OFFIS DICOM toolkit command-line utilities",
+    "url": "https://dicom.offis.de/download/dcmtk/dcmtk364/dcmtk-3.6.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://dicom.offis.de/dcmtk.php.en",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", *std_cmake_args, \"..\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.6.4"
+}

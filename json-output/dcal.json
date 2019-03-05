@@ -1,0 +1,16 @@
+{
+    "name": "Dcal",
+    "description": "dcal(1) is to cal(1) what ddate(1) is to date(1)",
+    "url": "https://alexeyt.freeshell.org/code/dcal.c",
+    "mirror": null,
+    "homepage": "https://alexeyt.freeshell.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system ENV.cxx, \"dcal.c\", \"-o\", \"dcal\"",
+        "bin.install \"dcal\""
+    ],
+    "version": "1.0-u"
+}

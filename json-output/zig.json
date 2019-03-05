@@ -1,0 +1,25 @@
+{
+    "name": "Zig",
+    "description": "Programming language designed for robustness, optimality, and clarity",
+    "url": "https://github.com/ziglang/zig/archive/0.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://ziglang.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "llvm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.0"
+}

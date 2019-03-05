@@ -1,0 +1,16 @@
+{
+    "name": "Cdb",
+    "description": "Create and read constant databases",
+    "url": "https://cr.yp.to/cdb/cdb-0.75.tar.gz",
+    "mirror": null,
+    "homepage": "https://cr.yp.to/cdb.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"conf-home\", \"/usr/local\", prefix",
+        "system \"make\", \"setup\""
+    ],
+    "version": "0.75"
+}

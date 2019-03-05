@@ -1,0 +1,22 @@
+{
+    "name": "Ejdb",
+    "description": "C library based on modified version of Tokyo Cabinet",
+    "url": "https://github.com/Softmotions/ejdb/archive/v1.2.12.tar.gz",
+    "mirror": null,
+    "homepage": "http://ejdb.org",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.12"
+}

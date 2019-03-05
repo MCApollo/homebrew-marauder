@@ -1,0 +1,45 @@
+{
+    "name": "Moarvm",
+    "description": "Virtual machine for NQP and Rakudo Perl 6",
+    "url": "https://moarvm.org/releases/MoarVM-2018.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://moarvm.org",
+    "depends": [
+        {
+            "depend": "libatomic_ops",
+            "build-depend": false
+        },
+        {
+            "depend": "libffi",
+            "build-depend": false
+        },
+        {
+            "depend": "libtommath",
+            "build-depend": false
+        },
+        {
+            "depend": "libuv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libffi = Formula[\"libffi\"]",
+        "ENV.prepend \"CPPFLAGS\", \"-I#{libffi.opt_lib}/libffi-#{libffi.version}/include\"",
+        "configure_args = %W[",
+        "--has-libatomic_ops",
+        "--has-libffi",
+        "--has-libtommath",
+        "--has-libuv",
+        "--optimize",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"perl\", \"Configure.pl\", *configure_args",
+        "system \"make\", \"realclean\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2018.12"
+}

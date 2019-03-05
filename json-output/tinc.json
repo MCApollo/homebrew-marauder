@@ -1,0 +1,26 @@
+{
+    "name": "Tinc",
+    "description": "Virtual Private Network (VPN) tool",
+    "url": "https://tinc-vpn.org/packages/tinc-1.0.35.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.tinc-vpn.org/",
+    "depends": [
+        {
+            "depend": "lzo",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--sysconfdir=#{etc}\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.35"
+}

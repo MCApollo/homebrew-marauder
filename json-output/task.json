@@ -1,0 +1,28 @@
+{
+    "name": "Task",
+    "description": "Feature-rich console based todo list manager",
+    "url": "https://taskwarrior.org/download/task-2.5.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://taskwarrior.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "bash_completion.install \"scripts/bash/task.sh\"",
+        "zsh_completion.install \"scripts/zsh/_task\"",
+        "fish_completion.install \"scripts/fish/task.fish\""
+    ],
+    "version": "2.5.1"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Ser2net",
+    "description": "Allow network connections to serial ports",
+    "url": "https://downloads.sourceforge.net/project/ser2net/ser2net/ser2net-3.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://ser2net.sourceforge.io",
+    "depends": [
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"readconfig.c\", \"#include <values.h>\", \"\"",
+        "inreplace [\"ser2net.c\", \"ser2net.8\"], \"/etc/ser2net.conf\", \"#{etc}/ser2net.conf\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\", \"LIBS=-lpthread\"",
+        "etc.install \"ser2net.conf\""
+    ],
+    "version": "3.5"
+}

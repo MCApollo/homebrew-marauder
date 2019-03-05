@@ -1,0 +1,45 @@
+{
+    "name": "Zorba",
+    "description": "NoSQL query processor",
+    "url": "https://github.com/28msec/zorba/archive/3.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.zorba.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "flex",
+            "build-depend": false
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "xqilla",
+            "reason": "Both supply xqc.h"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.append \"CXXFLAGS\", \"-DU_USING_ICU_NAMESPACE=1\"",
+        "ENV.cxx11",
+        "args = std_cmake_args",
+        "if MacOS.version == :el_capitan && MacOS::Xcode.version >= \"8.0\"",
+        "args << \"-DZORBA_HAVE_CLOCKGETTIME=OFF\"",
+        "end",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.1"
+}

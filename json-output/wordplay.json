@@ -1,0 +1,23 @@
+{
+    "name": "Wordplay",
+    "description": "Anagram generator",
+    "url": "http://hsvmovies.com/static_subpages/personal_orig/wordplay/wordplay722.tar.Z",
+    "mirror": null,
+    "homepage": "http://hsvmovies.com/static_subpages/personal_orig/wordplay/index.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/5de9072/wordplay/patch-wordplay.c",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "inreplace \"wordplay.c\", \"@PREFIX@\", prefix",
+        "system \"make\", \"CC=#{ENV.cc}\"",
+        "bin.install \"wordplay\"",
+        "pkgshare.install \"words721.txt\""
+    ],
+    "version": "722"
+}

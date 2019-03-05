@@ -1,0 +1,29 @@
+{
+    "name": "MongoCxxDriver",
+    "description": "C++ driver for MongoDB",
+    "url": "https://github.com/mongodb/mongo-cxx-driver/archive/r3.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mongodb/mongo-cxx-driver",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "mongo-c-driver",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mongo_c_prefix = Formula[\"mongo-c-driver\"].opt_prefix",
+        "system \"cmake\", \".\", *std_cmake_args,",
+        "\"-DLIBBSON_DIR=#{mongo_c_prefix}\", \"-DLIBMONGOC_DIR=#{mongo_c_prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"examples\""
+    ],
+    "version": "3.4.0"
+}

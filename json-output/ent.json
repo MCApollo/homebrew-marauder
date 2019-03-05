@@ -1,0 +1,17 @@
+{
+    "name": "Ent",
+    "description": "Pseudorandom number sequence test program",
+    "url": "https://github.com/psm14/ent/archive/1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.fourmilab.ch/random/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"CFLAGS=#{ENV.cflags}\"",
+        "bin.install \"ent\"",
+        "prefix.install \"entest.mas\", \"entitle.gif\""
+    ],
+    "version": "1.0"
+}

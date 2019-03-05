@@ -1,0 +1,27 @@
+{
+    "name": "TarsnapGui",
+    "description": "Cross-platform GUI for the Tarsnap command-line client",
+    "url": "https://github.com/Tarsnap/tarsnap-gui/archive/v1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Tarsnap/tarsnap-gui/wiki",
+    "depends": [
+        {
+            "depend": "qt",
+            "build-depend": false
+        },
+        {
+            "depend": "tarsnap",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"qmake\"",
+        "system \"make\"",
+        "system \"macdeployqt\", \"Tarsnap.app\"",
+        "prefix.install \"Tarsnap.app\""
+    ],
+    "version": "1.0.2"
+}

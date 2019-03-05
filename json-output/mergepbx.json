@@ -1,0 +1,29 @@
+{
+    "name": "Mergepbx",
+    "description": "Merge XCode project files in git",
+    "url": "https://github.com/simonwagner/mergepbx/archive/v0.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/simonwagner/mergepbx",
+    "depends": [],
+    "resource": [
+        {
+            "name": "dummy_base",
+            "url": "https://raw.githubusercontent.com/simonwagner/mergepbx/a9bd9d8f4a732eff989ea03fbc0d78f6f6fb594f/test/fixtures/merge/dummy/dummy1/project.pbxproj.base"
+        },
+        {
+            "name": "dummy_mine",
+            "url": "https://raw.githubusercontent.com/simonwagner/mergepbx/a9bd9d8f4a732eff989ea03fbc0d78f6f6fb594f/test/fixtures/merge/dummy/dummy1/project.pbxproj.mine"
+        },
+        {
+            "name": "dummy_theirs",
+            "url": "https://raw.githubusercontent.com/simonwagner/mergepbx/a9bd9d8f4a732eff989ea03fbc0d78f6f6fb594f/test/fixtures/merge/dummy/dummy1/project.pbxproj.theirs"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./build.py\"",
+        "bin.install \"mergepbx\""
+    ],
+    "version": "0.10"
+}

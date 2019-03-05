@@ -1,0 +1,45 @@
+{
+    "name": "Libcdr",
+    "description": "C++ library to parse the file format of CorelDRAW documents",
+    "url": "https://dev-www.libreoffice.org/src/libcdr/libcdr-0.1.4.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.documentfoundation.org/DLP/Libraries/libcdr",
+    "depends": [
+        {
+            "depend": "cppunit",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "librevenge",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "ENV[\"LDFLAGS\"] = \"-lboost_system-mt\"",
+        "system \"./configure\", \"--disable-werror\",",
+        "\"--without-docs\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.4"
+}

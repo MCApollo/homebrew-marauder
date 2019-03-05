@@ -1,0 +1,34 @@
+{
+    "name": "Cdrtools",
+    "description": "CD/DVD/Blu-ray premastering and recording software",
+    "url": "https://downloads.sourceforge.net/project/cdrtools/cdrtools-3.01.tar.bz2",
+    "mirror": "https://fossies.org/linux/misc/cdrtools-3.01.tar.bz2",
+    "homepage": "http://cdrecord.org/",
+    "depends": [
+        {
+            "depend": "smake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "dvdrtools",
+            "reason": null
+        }
+    ],
+    "patches": [
+        {
+            "url": "https://downloads.sourceforge.net/project/cdrtools/cdrtools-3.01-fix-20151126-mkisofs-isoinfo.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "rm_f Dir[\"lib*/*_p.mk\"]",
+        "system \"smake\", \"INS_BASE=#{prefix}\", \"INS_RBASE=#{prefix}\", \"install\"",
+        "(include/\"schily\").rmtree",
+        "%w[libschily.a libdeflt.a libfind.a].each do |file|",
+        "(lib/file).unlink"
+    ],
+    "version": "3.01"
+}

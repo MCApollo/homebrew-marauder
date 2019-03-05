@@ -1,0 +1,26 @@
+{
+    "name": "Libzip",
+    "description": "C library for reading, creating, and modifying zip archives",
+    "url": "https://libzip.org/download/libzip-1.5.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://libzip.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "libtcod",
+            "reason": "both install `zip.h` header"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.1"
+}

@@ -1,0 +1,50 @@
+{
+    "name": "CeresSolver",
+    "description": "C++ library for large-scale optimization",
+    "url": "http://ceres-solver.org/ceres-solver-1.14.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://ceres-solver.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": false
+        },
+        {
+            "depend": "eigen",
+            "build-depend": false
+        },
+        {
+            "depend": "gflags",
+            "build-depend": false
+        },
+        {
+            "depend": "glog",
+            "build-depend": false
+        },
+        {
+            "depend": "metis",
+            "build-depend": false
+        },
+        {
+            "depend": "suite-sparse",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args,",
+        "\"-DBUILD_SHARED_LIBS=ON\",",
+        "\"-DEIGEN_INCLUDE_DIR=#{Formula[\"eigen\"].opt_include}/eigen3\",",
+        "\"-DMETIS_LIBRARY=#{Formula[\"metis\"].opt_lib}/libmetis.dylib\",",
+        "\"-DGLOG_INCLUDE_DIR_HINTS=#{Formula[\"glog\"].opt_include}\",",
+        "\"-DGLOG_LIBRARY_DIR_HINTS=#{Formula[\"glog\"].opt_lib}\",",
+        "\"-DTBB=OFF\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"examples\", \"data\"",
+        "doc.install \"docs/html\" unless build.head?"
+    ],
+    "version": "1.14.0"
+}

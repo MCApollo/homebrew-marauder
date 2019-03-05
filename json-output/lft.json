@@ -1,0 +1,17 @@
+{
+    "name": "Lft",
+    "description": "Layer Four Traceroute (LFT), an advanced traceroute tool",
+    "url": "https://pwhois.org/dl/index.who?file=lft-3.79.tar.gz",
+    "mirror": null,
+    "homepage": "https://pwhois.org/lft/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.79"
+}

@@ -1,0 +1,38 @@
+{
+    "name": "Ice",
+    "description": "Comprehensive RPC framework",
+    "url": "https://github.com/zeroc-ice/ice/archive/v3.7.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://zeroc.com",
+    "depends": [
+        {
+            "depend": "lmdb",
+            "build-depend": false
+        },
+        {
+            "depend": "mcpp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.O2 ",
+        "args = [",
+        "\"prefix=#{prefix}\",",
+        "\"V=1\",",
+        "\"MCPP_HOME=#{Formula[\"mcpp\"].opt_prefix}\",",
+        "\"LMDB_HOME=#{Formula[\"lmdb\"].opt_prefix}\",",
+        "\"CONFIGS=shared cpp11-shared xcodesdk cpp11-xcodesdk\",",
+        "\"PLATFORMS=all\",",
+        "\"SKIP=slice2confluence\",",
+        "\"LANGUAGES=cpp objective-c\",",
+        "]",
+        "system \"make\", \"install\", *args",
+        "(libexec/\"bin\").mkpath",
+        "%w[slice2py slice2rb slice2js].each do |r|",
+        "mv bin/r, libexec/\"bin\""
+    ],
+    "version": "3.7.2"
+}

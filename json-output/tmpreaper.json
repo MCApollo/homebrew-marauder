@@ -1,0 +1,16 @@
+{
+    "name": "Tmpreaper",
+    "description": "Clean up files in directories based on their age",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/t/tmpreaper/tmpreaper_1.6.13+nmu1.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/t/tmpreaper/tmpreaper_1.6.13+nmu1.tar.gz",
+    "homepage": "https://packages.debian.org/sid/tmpreaper",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--sysconfdir=#{etc}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.13"
+}

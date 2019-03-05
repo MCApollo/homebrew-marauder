@@ -1,0 +1,16 @@
+{
+    "name": "OpencoreAmr",
+    "description": "Audio codecs extracted from Android open source project",
+    "url": "https://downloads.sourceforge.net/opencore-amr/opencore-amr-0.1.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://opencore-amr.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.5"
+}

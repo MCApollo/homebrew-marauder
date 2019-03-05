@@ -1,0 +1,33 @@
+{
+    "name": "Tenyr",
+    "description": "32-bit computing environment (including simulated CPU)",
+    "url": "https://github.com/kulp/tenyr/archive/v0.9.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://tenyr.info/",
+    "depends": [
+        {
+            "depend": "bison",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"BISON=#{Formula[\"bison\"].opt_bin}/bison\",",
+        "\"JIT=0\", \"BUILDDIR=build/homebrew\"",
+        "pkgshare.install \"rsrc\", \"plugins\"",
+        "cd \"build/homebrew\" do",
+        "bin.install \"tsim\", \"tas\", \"tld\"",
+        "lib.install Dir[\"*.dylib\"]"
+    ],
+    "version": "0.9.6"
+}

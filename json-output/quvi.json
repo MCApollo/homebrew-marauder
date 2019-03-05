@@ -1,0 +1,25 @@
+{
+    "name": "Quvi",
+    "description": "Parse video download URLs",
+    "url": "https://downloads.sourceforge.net/project/quvi/0.4/quvi/quvi-0.4.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://quvi.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libquvi",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.2"
+}

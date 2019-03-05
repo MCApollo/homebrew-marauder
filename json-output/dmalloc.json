@@ -1,0 +1,16 @@
+{
+    "name": "Dmalloc",
+    "description": "Debug versions of system memory management routines",
+    "url": "http://dmalloc.com/releases/dmalloc-5.5.2.tgz",
+    "mirror": null,
+    "homepage": "http://dmalloc.com",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--enable-threads\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\", \"installth\", \"installcxx\", \"installthcxx\""
+    ],
+    "version": "5.5.2"
+}

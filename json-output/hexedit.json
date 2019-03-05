@@ -1,0 +1,26 @@
+{
+    "name": "Hexedit",
+    "description": "View and edit files in hexadecimal or ASCII",
+    "url": "https://github.com/pixel/hexedit/archive/1.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://rigaux.org/hexedit.html",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.2"
+}

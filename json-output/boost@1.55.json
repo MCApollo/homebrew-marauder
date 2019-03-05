@@ -1,0 +1,32 @@
+{
+    "name": "BoostAT155",
+    "description": "Collection of portable C++ source libraries",
+    "url": "https://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.boost.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/boostorg/atomic/commit/6bb71fdd.diff?full_index=1",
+            "strip": "2"
+        },
+        {
+            "url": "https://github.com/boostorg/atomic/commit/e4bde20f.diff?full_index=1",
+            "strip": "2"
+        },
+        {
+            "url": "https://github.com/boostorg/chrono/commit/143260d.diff?full_index=1",
+            "strip": "2"
+        }
+    ],
+    "install": [
+        "inreplace \"boost/archive/iterators/transform_width.hpp\",",
+        "\"#include <boost/iterator/iterator_traits.hpp>\",",
+        "\"#include <boost/iterator/iterator_traits.hpp>\\n#include <algorithm>\"",
+        "open(\"user-config.jam\", \"a\") do |file|",
+        "file.write \"using darwin : : #{ENV.cxx} ;\\n\""
+    ],
+    "version": "1_55_0"
+}

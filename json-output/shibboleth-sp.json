@@ -1,0 +1,69 @@
+{
+    "name": "ShibbolethSp",
+    "description": "Shibboleth 2 Service Provider daemon",
+    "url": "https://shibboleth.net/downloads/service-provider/3.0.2/shibboleth-sp-3.0.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://wiki.shibboleth.net/confluence/display/SHIB2",
+    "depends": [
+        {
+            "depend": "apr",
+            "build-depend": true
+        },
+        {
+            "depend": "apr-util",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "httpd",
+            "build-depend": false
+        },
+        {
+            "depend": "log4shib",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "opensaml",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "unixodbc",
+            "build-depend": false
+        },
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        },
+        {
+            "depend": "xml-security-c",
+            "build-depend": false
+        },
+        {
+            "depend": "xml-tooling-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"run/shibboleth/\").mkpath",
+        "(var/\"cache/shibboleth\").mkpath"
+    ],
+    "version": "3.0.2"
+}

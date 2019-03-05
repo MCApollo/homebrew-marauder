@@ -1,0 +1,72 @@
+{
+    "name": "Kpcli",
+    "description": "Command-line interface to KeePass database files",
+    "url": "https://downloads.sourceforge.net/project/kpcli/kpcli-3.2.pl",
+    "mirror": null,
+    "homepage": "https://kpcli.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "File::KeePass",
+            "url": "https://cpan.metacpan.org/authors/id/R/RH/RHANDOM/File-KeePass-2.03.tar.gz"
+        },
+        {
+            "name": "Crypt::Rijndael",
+            "url": "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Crypt-Rijndael-1.13.tar.gz"
+        },
+        {
+            "name": "Sort::Naturally",
+            "url": "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/Sort-Naturally-1.03.tar.gz"
+        },
+        {
+            "name": "Term::ShellUI",
+            "url": "https://cpan.metacpan.org/authors/id/B/BR/BRONSON/Term-ShellUI-0.92.tar.gz"
+        },
+        {
+            "name": "Term::Readline::Gnu",
+            "url": "https://cpan.metacpan.org/authors/id/H/HA/HAYASHI/Term-ReadLine-Gnu-1.35.tar.gz"
+        },
+        {
+            "name": "Data::Password",
+            "url": "https://cpan.metacpan.org/authors/id/R/RA/RAZINF/Data-Password-1.12.tar.gz"
+        },
+        {
+            "name": "Clipboard",
+            "url": "https://cpan.metacpan.org/authors/id/K/KI/KING/Clipboard-0.13.tar.gz"
+        },
+        {
+            "name": "Mac::Pasteboard",
+            "url": "https://cpan.metacpan.org/authors/id/W/WY/WYANT/Mac-Pasteboard-0.009.tar.gz"
+        },
+        {
+            "name": "Capture::Tiny",
+            "url": "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Capture-Tiny-0.46.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "ENV.prepend_path \"PERL5LIB\", libexec/\"lib\"",
+        "resources = [",
+        "\"File::KeePass\",",
+        "\"Crypt::Rijndael\",",
+        "\"Sort::Naturally\",",
+        "\"Term::ShellUI\",",
+        "\"Data::Password\",",
+        "\"Clipboard\",",
+        "\"Mac::Pasteboard\",",
+        "\"Capture::Tiny\",",
+        "]",
+        "resources.each do |r|",
+        "resource(r).stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2"
+}

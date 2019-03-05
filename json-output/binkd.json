@@ -1,0 +1,22 @@
+{
+    "name": "Binkd",
+    "description": "TCP/IP FTN Mailer",
+    "url": "https://happy.kiev.ua/pub/fidosoft/mailer/binkd/binkd-1.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://binkd.grumbler.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cp Dir[\"mkfls/unix/*\"].select { |f| File.file? f }, \".\"",
+        "inreplace \"binkd.conf\", \"/var/\", \"#{var}/\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.4"
+}

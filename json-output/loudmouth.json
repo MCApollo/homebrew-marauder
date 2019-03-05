@@ -1,0 +1,54 @@
+{
+    "name": "Loudmouth",
+    "description": "Lightweight C library for the Jabber protocol",
+    "url": "https://mcabber.com/files/loudmouth/loudmouth-1.5.3.tar.bz2",
+    "mirror": null,
+    "homepage": "https://mcabber.com",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "libidn",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\", \"-n\" if build.head?",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--with-ssl=gnutls\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\"",
+        "(pkgshare/\"examples\").install Dir[\"examples/*.c\"]"
+    ],
+    "version": "1.5.3"
+}

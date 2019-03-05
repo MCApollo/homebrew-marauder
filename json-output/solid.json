@@ -1,0 +1,50 @@
+{
+    "name": "Solid",
+    "description": "Collision detection library for geometric objects in 3D space",
+    "url": "http://www.dtecta.com/files/solid-3.5.6.tgz",
+    "mirror": null,
+    "homepage": "http://www.dtecta.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/include/MT/Quaternion.h b/include/MT/Quaternion.h\n",
+                "index 3726b4f..3393697 100644\n",
+                "--- a/include/MT/Quaternion.h\n",
+                "+++ b/include/MT/Quaternion.h\n",
+                "@@ -154,7 +154,7 @@ namespace MT {\n",
+                "\n",
+                "\t\tQuaternion<Scalar> inverse() const\n",
+                "\t\t{\n",
+                "-\t\t\treturn conjugate / length2();\n",
+                "+\t\t\treturn conjugate() / length2();\n",
+                "\t\t}\n",
+                "\n",
+                "\t\tQuaternion<Scalar> slerp(const Quaternion<Scalar>& q, const Scalar& t) const\n",
+                "diff --git a/src/complex/DT_CBox.h b/src/complex/DT_CBox.h\n",
+                "index 7fc7c5d..16ce972 100644\n",
+                "--- a/src/complex/DT_CBox.h\n",
+                "+++ b/src/complex/DT_CBox.h\n",
+                "@@ -131,4 +131,6 @@ inline DT_CBox operator-(const DT_CBox& b1, const DT_CBox& b2)\n",
+                "                    b1.getExtent() + b2.getExtent());\n",
+                " }\n",
+                "\n",
+                "+inline DT_CBox computeCBox(MT_Scalar margin, const MT_Transform& xform);\n",
+                "+\n",
+                " #endif\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-debug\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--infodir=#{info}\"",
+        "inreplace \"Makefile\", \" examples \", \" \"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.5.6"
+}

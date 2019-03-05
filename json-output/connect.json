@@ -1,0 +1,16 @@
+{
+    "name": "Connect",
+    "description": "Provides SOCKS and HTTPS proxy support to SSH",
+    "url": "https://bitbucket.org/gotoh/connect/get/1.105.tar.gz",
+    "mirror": null,
+    "homepage": "https://bitbucket.org/gotoh/connect/wiki/Home",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"connect\""
+    ],
+    "version": "1.105"
+}

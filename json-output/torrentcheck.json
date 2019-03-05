@@ -1,0 +1,17 @@
+{
+    "name": "Torrentcheck",
+    "description": "Command-line torrent viewer and hash checker",
+    "url": "https://downloads.sourceforge.net/project/torrentcheck/torrentcheck-1.00.zip",
+    "mirror": null,
+    "homepage": "https://torrentcheck.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"torrentcheck.c\", \"#include <malloc.h>\", \"\"",
+        "system ENV.cc, \"torrentcheck.c\", \"sha1.c\", \"-o\", \"torrentcheck\", *ENV.cflags.to_s.split",
+        "bin.install \"torrentcheck\""
+    ],
+    "version": "1.00"
+}

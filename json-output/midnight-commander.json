@@ -1,0 +1,52 @@
+{
+    "name": "MidnightCommander",
+    "description": "Terminal-based visual file manager",
+    "url": "https://www.midnight-commander.org/downloads/mc-4.8.22.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.midnight-commander.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libssh2",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "s-lang",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "minio-mc",
+            "reason": "Both install a `mc` binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--without-x",
+        "--with-screen=slang",
+        "--enable-vfs-sftp",
+        "]",
+        "ENV[\"ac_cv_func_utimensat\"] = \"no\" if MacOS.version >= :high_sierra",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.8.22"
+}

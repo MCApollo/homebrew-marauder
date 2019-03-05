@@ -1,0 +1,15 @@
+{
+    "name": "Phpmd",
+    "description": "PHP Mess Detector",
+    "url": "https://static.phpmd.org/php/2.6.0/phpmd.phar",
+    "mirror": null,
+    "homepage": "https://phpmd.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"phpmd.phar\" => \"phpmd\""
+    ],
+    "version": "2.6.0"
+}

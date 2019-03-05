@@ -1,0 +1,17 @@
+{
+    "name": "Zinc",
+    "description": "Stand-alone version of sbt",
+    "url": "https://downloads.typesafe.com/zinc/0.3.15/zinc-0.3.15.tgz",
+    "mirror": null,
+    "homepage": "https://github.com/typesafehub/zinc",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm_f Dir[\"bin/ng/{linux,win}*\"]",
+        "libexec.install Dir[\"*\"]",
+        "bin.install_symlink libexec/\"bin/zinc\""
+    ],
+    "version": "0.3.15"
+}

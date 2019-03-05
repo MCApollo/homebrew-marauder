@@ -1,0 +1,39 @@
+{
+    "name": "Beecrypt",
+    "description": "C/C++ cryptography library",
+    "url": "https://downloads.sourceforge.net/project/beecrypt/beecrypt/4.2.1/beecrypt-4.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://beecrypt.sourceforge.io",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "strip": "0"
+        },
+        {
+            "url": null,
+            "data": [
+                "--- include/beecrypt/c++/util/AbstractSet.h~\t2009-06-17 13:05:55.000000000 +0200\n",
+                "+++ include/beecrypt/c++/util/AbstractSet.h\t2012-06-03 17:45:55.229399461 +0200\n",
+                "@@ -56,7 +56,7 @@\n",
+                " \t\t\t\t\tif (c->size() != size())\n",
+                " \t\t\t\t\t\treturn false;\n",
+                " \n",
+                "-\t\t\t\t\treturn containsAll(*c);\n",
+                "+\t\t\t\t\treturn this->containsAll(*c);\n",
+                " \t\t\t\t}\n",
+                " \t\t\t\treturn false;\n",
+                " \t\t\t}\n"
+            ]
+        }
+    ],
+    "install": [],
+    "version": "4.2.1"
+}

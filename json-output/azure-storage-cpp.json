@@ -1,0 +1,44 @@
+{
+    "name": "AzureStorageCpp",
+    "description": "Microsoft Azure Storage Client Library for C++",
+    "url": "https://github.com/Azure/azure-storage-cpp/archive/v6.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://azure.github.io/azure-storage-cpp",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "cpprestsdk",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "ossp-uuid",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \"Microsoft.WindowsAzure.Storage\",",
+        "\"-DBUILD_SAMPLES=OFF\",",
+        "\"-DBUILD_TESTS=OFF\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.0.0"
+}

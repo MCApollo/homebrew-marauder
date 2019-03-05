@@ -1,0 +1,24 @@
+{
+    "name": "Wemux",
+    "description": "Enhances tmux",
+    "url": "https://github.com/zolrath/wemux/archive/v3.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/zolrath/wemux",
+    "depends": [
+        {
+            "depend": "tmux",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"wemux\", \"/usr/local/etc\", etc",
+        "bin.install \"wemux\"",
+        "man1.install \"man/wemux.1\"",
+        "inreplace \"wemux.conf.example\", \"change_this\", ENV[\"USER\"]",
+        "etc.install \"wemux.conf.example\" => \"wemux.conf\""
+    ],
+    "version": "3.2.0"
+}

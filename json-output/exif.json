@@ -1,0 +1,35 @@
+{
+    "name": "Exif",
+    "description": "Read, write, modify, and display EXIF data on the command-line",
+    "url": "https://downloads.sourceforge.net/project/libexif/exif/0.6.21/exif-0.6.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://libexif.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libexif",
+            "build-depend": false
+        },
+        {
+            "depend": "popt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--disable-nls",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.21"
+}

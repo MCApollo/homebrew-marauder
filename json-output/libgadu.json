@@ -1,0 +1,18 @@
+{
+    "name": "Libgadu",
+    "description": "Library for ICQ instant messenger protocol",
+    "url": "https://github.com/wojtekka/libgadu/releases/download/1.12.2/libgadu-1.12.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://libgadu.net/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--without-pthread\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.12.2"
+}

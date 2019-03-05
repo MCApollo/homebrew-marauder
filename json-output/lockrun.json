@@ -1,0 +1,16 @@
+{
+    "name": "Lockrun",
+    "description": "Run cron jobs with overrun protection",
+    "url": "http://unixwiz.net/tools/lockrun.c",
+    "mirror": null,
+    "homepage": "http://unixwiz.net/tools/lockrun.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system ENV.cc, ENV.cflags, \"lockrun.c\", \"-o\", \"lockrun\"",
+        "bin.install \"lockrun\""
+    ],
+    "version": "1.0-u"
+}

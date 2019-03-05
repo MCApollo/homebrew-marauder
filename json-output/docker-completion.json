@@ -1,0 +1,22 @@
+{
+    "name": "DockerCompletion",
+    "description": "Bash, Zsh and Fish completion for Docker",
+    "url": "https://github.com/docker/docker-ce.git",
+    "mirror": null,
+    "homepage": "https://www.docker.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "docker",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"components/cli/contrib/completion/bash/docker\"",
+        "fish_completion.install \"components/cli/contrib/completion/fish/docker.fish\"",
+        "zsh_completion.install \"components/cli/contrib/completion/zsh/_docker\""
+    ],
+    "version": "18.09.3-git-774a1f4e"
+}

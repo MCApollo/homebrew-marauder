@@ -1,0 +1,16 @@
+{
+    "name": "ReattachToUserNamespace",
+    "description": "Reattach process (e.g., tmux) to background",
+    "url": "https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard/archive/v2.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"reattach-to-user-namespace\""
+    ],
+    "version": "2.7"
+}

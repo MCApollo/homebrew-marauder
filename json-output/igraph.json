@@ -1,0 +1,30 @@
+{
+    "name": "Igraph",
+    "description": "Network analysis package",
+    "url": "https://igraph.org/nightly/get/c/igraph-0.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://igraph.org/",
+    "depends": [
+        {
+            "depend": "glpk",
+            "build-depend": false
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-external-blas\",",
+        "\"--with-external-lapack\",",
+        "\"--with-external-glpk\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.1"
+}

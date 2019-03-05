@@ -1,0 +1,15 @@
+{
+    "name": "BundlerCompletion",
+    "description": "Bash completion for Bundler",
+    "url": "https://github.com/mernen/completion-ruby.git",
+    "mirror": null,
+    "homepage": "https://github.com/mernen/completion-ruby",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"completion-bundle\" => \"bundler\""
+    ],
+    "version": "1.0-u"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Md",
+    "description": "Process raw dependency files produced by cpp",
+    "url": "https://opensource.apple.com/tarballs/adv_cmds/adv_cmds-147.tar.gz",
+    "mirror": null,
+    "homepage": "https://opensource.apple.com/source/adv_cmds/adv_cmds-147/md/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"md\" do",
+        "system ENV.cc, ENV.cflags, \"-o\", \"md\", \"md.c\"",
+        "bin.install \"md\"",
+        "man1.install \"md.1\""
+    ],
+    "version": "147"
+}

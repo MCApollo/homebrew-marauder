@@ -1,0 +1,16 @@
+{
+    "name": "Tag",
+    "description": "Manipulate and query tags on Mavericks files",
+    "url": "https://github.com/jdberry/tag/archive/v0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jdberry/tag/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"bin/tag\""
+    ],
+    "version": "0.9"
+}

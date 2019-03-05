@@ -1,0 +1,16 @@
+{
+    "name": "Stow",
+    "description": "Organize software neatly under a single directory tree (e.g. /usr/local)",
+    "url": "https://ftp.gnu.org/gnu/stow/stow-2.2.2.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/stow/stow-2.2.2.tar.gz",
+    "homepage": "https://www.gnu.org/software/stow/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2.2"
+}

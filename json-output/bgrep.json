@@ -1,0 +1,16 @@
+{
+    "name": "Bgrep",
+    "description": "Like grep but for binary strings",
+    "url": "https://github.com/tmbinc/bgrep/archive/bgrep-0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tmbinc/bgrep",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system ENV.cc, ENV.cflags, \"-o\", \"bgrep\", \"bgrep.c\"",
+        "bin.install \"bgrep\""
+    ],
+    "version": "0.2"
+}

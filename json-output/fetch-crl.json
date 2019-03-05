@@ -1,0 +1,15 @@
+{
+    "name": "FetchCrl",
+    "description": "Retrieve certificate revocation lists (CRLs)",
+    "url": "https://dist.eugridpma.info/distribution/util/fetch-crl3/fetch-crl-3.0.20.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.nikhef.nl/grid/FetchCRL3",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\", \"ETC=#{etc}\", \"CACHE=#{var}/cache\""
+    ],
+    "version": "3.0.20"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Openrtsp",
+    "description": "Command-line RTSP client",
+    "url": "http://www.live555.com/liveMedia/public/live.2018.10.17.tar.gz",
+    "mirror": "https://download.videolan.org/pub/videolan/testing/contrib/live555/live.2018.10.17.tar.gz",
+    "homepage": "http://www.live555.com/openRTSP",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./genMakefiles\", \"macosx\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\"",
+        "libexec.install Dir.glob(bin/\"test*\")"
+    ],
+    "version": "2018.10.17"
+}

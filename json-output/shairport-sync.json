@@ -1,0 +1,52 @@
+{
+    "name": "ShairportSync",
+    "description": "AirTunes emulator that adds multi-room capability",
+    "url": "https://github.com/mikebrady/shairport-sync/archive/3.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mikebrady/shairport-sync",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libao",
+            "build-depend": false
+        },
+        {
+            "depend": "libconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "libdaemon",
+            "build-depend": false
+        },
+        {
+            "depend": "libsoxr",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "popt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"run\").mkpath"
+    ],
+    "version": "3.2.2"
+}

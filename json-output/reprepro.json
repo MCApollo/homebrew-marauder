@@ -1,0 +1,44 @@
+{
+    "name": "Reprepro",
+    "description": "Debian package repository manager",
+    "url": "https://deb.debian.org/debian/pool/main/r/reprepro/reprepro_5.3.0.orig.tar.gz",
+    "mirror": null,
+    "homepage": "https://salsa.debian.org/brlink/reprepro",
+    "depends": [
+        {
+            "depend": "berkeley-db@4",
+            "build-depend": false
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "gpgme",
+            "build-depend": false
+        },
+        {
+            "depend": "libarchive",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-gpgme=#{Formula[\"gpgme\"].opt_lib}\",",
+        "\"--with-libarchive=#{Formula[\"libarchive\"].opt_lib}\",",
+        "\"--with-libbz2=yes\",",
+        "\"--with-liblzma=#{Formula[\"xz\"].opt_lib}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.3.0"
+}

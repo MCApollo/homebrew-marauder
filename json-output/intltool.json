@@ -1,0 +1,17 @@
+{
+    "name": "Intltool",
+    "description": "String tool",
+    "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/www/Software/intltool",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-silent-rules\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.51.0"
+}

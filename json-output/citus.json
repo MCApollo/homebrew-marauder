@@ -1,0 +1,32 @@
+{
+    "name": "Citus",
+    "description": "PostgreSQL-based distributed RDBMS",
+    "url": "https://github.com/citusdata/citus/archive/v8.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.citusdata.com",
+    "depends": [
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PG_CONFIG\"] = Formula[\"postgresql\"].opt_bin/\"pg_config\"",
+        "system \"./configure\"",
+        "system \"make\", \"libpq=-L#{Formula[\"postgresql\"].opt_lib} -lpq\"",
+        "mkdir \"stage\"",
+        "system \"make\", \"install\", \"DESTDIR=#{buildpath}/stage\"",
+        "bin.install Dir[\"stage/**/bin/*\"]",
+        "lib.install Dir[\"stage/**/lib/*\"]",
+        "include.install Dir[\"stage/**/include/*\"]",
+        "(share/\"postgresql/extension\").install Dir[\"stage/**/share/postgresql/extension/*\"]"
+    ],
+    "version": "8.1.1"
+}

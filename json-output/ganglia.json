@@ -1,0 +1,53 @@
+{
+    "name": "Ganglia",
+    "description": "Scalable distributed monitoring system",
+    "url": "https://downloads.sourceforge.net/project/ganglia/ganglia%20monitoring%20core/3.7.2/ganglia-3.7.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://ganglia.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "apr",
+            "build-depend": false
+        },
+        {
+            "depend": "confuse",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "rrdtool",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "coreutils",
+            "reason": "both install `gstat` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "(var/\"lib/ganglia/rrds\").mkpath"
+    ],
+    "version": "3.7.2"
+}

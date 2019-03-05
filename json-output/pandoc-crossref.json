@@ -1,0 +1,28 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Pandoc filter for numbering and cross-referencing",
+    "url": "https://hackage.haskell.org/package/pandoc-crossref-0.3.4.0/pandoc-crossref-0.3.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/lierdakil/pandoc-crossref",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        },
+        {
+            "depend": "pandoc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package"
+    ],
+    "version": "0.3.4.0"
+}

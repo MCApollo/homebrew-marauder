@@ -1,0 +1,29 @@
+{
+    "name": "OcamlFindlib",
+    "description": "OCaml library manager",
+    "url": "http://download.camlcity.org/download/findlib-1.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://projects.camlcity.org/projects/findlib.html",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"-bindir\", bin,",
+        "\"-mandir\", man,",
+        "\"-sitelib\", lib/\"ocaml\",",
+        "\"-config\", etc/\"findlib.conf\",",
+        "\"-no-topfind\"",
+        "system \"make\", \"all\"",
+        "system \"make\", \"opt\"",
+        "inreplace \"findlib.conf\", prefix, HOMEBREW_PREFIX",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.0"
+}

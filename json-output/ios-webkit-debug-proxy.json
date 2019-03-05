@@ -1,0 +1,46 @@
+{
+    "name": "IosWebkitDebugProxy",
+    "description": "DevTools proxy for iOS devices",
+    "url": "https://github.com/google/ios-webkit-debug-proxy/archive/v1.8.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/ios-webkit-debug-proxy",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libimobiledevice",
+            "build-depend": false
+        },
+        {
+            "depend": "libplist",
+            "build-depend": false
+        },
+        {
+            "depend": "usbmuxd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.3"
+}

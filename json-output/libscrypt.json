@@ -1,0 +1,16 @@
+{
+    "name": "Libscrypt",
+    "description": "Library for scrypt",
+    "url": "https://github.com/technion/libscrypt/archive/v1.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://lolware.net/libscrypt.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install-osx\", \"PREFIX=#{prefix}\", \"LDFLAGS=\", \"CFLAGS_EXTRA=\"",
+        "system \"make\", \"check\", \"LDFLAGS=\", \"CFLAGS_EXTRA=\""
+    ],
+    "version": "1.21"
+}

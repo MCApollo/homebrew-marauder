@@ -1,0 +1,79 @@
+{
+    "name": "Widelands",
+    "description": "Free real-time strategy game like Settlers II",
+    "url": "https://launchpad.net/widelands/build19/build19/+download/widelands-build19-src.tar.bz2",
+    "mirror": null,
+    "homepage": "https://wl.widelands.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glew",
+            "build-depend": false
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "minizip",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_net",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CXXFLAGS\", \"-DU_USING_ICU_NAMESPACE=1\"",
+        "ENV.cxx11",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\",",
+        "\"-DPNG_PNG_INCLUDE_DIR:PATH=#{Formula[\"libpng\"].opt_include}\",",
+        "\"-DWL_INSTALL_DATADIR=#{pkgshare}/data\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\"",
+        "(bin/\"widelands\").write <<~EOS",
+        "#!/bin/sh",
+        "exec #{prefix}/widelands \"$@\"",
+        "EOS"
+    ],
+    "version": "1.0-u"
+}

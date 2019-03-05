@@ -1,0 +1,24 @@
+{
+    "name": "Drake",
+    "description": "Data workflow tool meant to be ",
+    "url": "https://raw.githubusercontent.com/Factual/drake/1.0.3/bin/drake-pkg",
+    "mirror": null,
+    "homepage": "https://github.com/Factual/drake",
+    "depends": [],
+    "resource": [
+        {
+            "name": "jar",
+            "url": "https://github.com/Factual/drake/releases/download/1.0.3/drake.jar"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "jar = \"drake-#{version}-standalone.jar\"",
+        "inreplace \"drake-pkg\", /DRAKE_JAR/, libexec/jar",
+        "bin.install \"drake-pkg\" => \"drake\"",
+        "resource(\"jar\").stage do",
+        "libexec.install \"drake.jar\" => jar"
+    ],
+    "version": "1.0.3"
+}

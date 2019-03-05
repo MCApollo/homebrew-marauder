@@ -1,0 +1,47 @@
+{
+    "name": "Spdylay",
+    "description": "Experimental implementation of SPDY protocol versions 2, 3, and 3.1",
+    "url": "https://github.com/tatsuhiro-t/spdylay/archive/v1.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tatsuhiro-t/spdylay",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if MacOS.version == \"10.11\" && MacOS::Xcode.version >= \"8.0\"",
+        "ENV[\"ac_cv_search_clock_gettime\"] = \"no\"",
+        "end",
+        "Formula[\"libxml2\"].stable.stage { (buildpath/\"m4\").install \"libxml.m4\" }",
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.0"
+}

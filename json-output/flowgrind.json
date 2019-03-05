@@ -1,0 +1,28 @@
+{
+    "name": "Flowgrind",
+    "description": "TCP measurement tool, similar to iperf or netperf",
+    "url": "https://launchpad.net/flowgrind/trunk/flowgrind-0.8.0/+download/flowgrind-0.8.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://launchpad.net/flowgrind",
+    "depends": [
+        {
+            "depend": "gsl",
+            "build-depend": false
+        },
+        {
+            "depend": "xmlrpc-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.0"
+}

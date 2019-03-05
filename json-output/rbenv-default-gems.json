@@ -1,0 +1,25 @@
+{
+    "name": "RbenvDefaultGems",
+    "description": "Auto-installs gems for Ruby installs",
+    "url": "https://github.com/sstephenson/rbenv-default-gems/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sstephenson/rbenv-default-gems",
+    "depends": [
+        {
+            "depend": "rbenv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/sstephenson/rbenv-default-gems/commit/ead67889c91c53ad967f85f5a89d986fdb98f6fb.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "prefix.install Dir[\"*\"]"
+    ],
+    "version": "1.0.0"
+}

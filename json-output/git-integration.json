@@ -1,0 +1,17 @@
+{
+    "name": "GitIntegration",
+    "description": "Manage git integration branches",
+    "url": "https://github.com/johnkeeping/git-integration/archive/v0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://johnkeeping.github.io/git-integration/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"config.mak\").write \"prefix = #{prefix}\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"install-completion\""
+    ],
+    "version": "0.4"
+}

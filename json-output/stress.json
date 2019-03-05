@@ -1,0 +1,17 @@
+{
+    "name": "Stress",
+    "description": "Tool to impose load on and stress test a computer system",
+    "url": "https://people.seas.harvard.edu/~apw/stress/stress-1.0.4.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/s/stress/stress_1.0.4.orig.tar.gz",
+    "homepage": "https://people.seas.harvard.edu/~apw/stress/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.4"
+}

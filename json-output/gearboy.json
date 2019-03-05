@@ -1,0 +1,27 @@
+{
+    "name": "Gearboy",
+    "description": "Nintendo Game Boy (Color) emulator",
+    "url": "https://github.com/drhelius/Gearboy/archive/gearboy-2.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/drhelius/Gearboy",
+    "depends": [
+        {
+            "depend": "qt",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"platforms/macosx/Gearboy\" do",
+        "inreplace \"Gearboy.pro\" do |s|",
+        "s.gsub! \"/usr/local/include\", Formula[\"sdl2\"].include",
+        "s.gsub! \"/usr/local/lib\", Formula[\"sdl2\"].lib"
+    ],
+    "version": "2.3.1"
+}

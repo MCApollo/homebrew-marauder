@@ -1,0 +1,34 @@
+{
+    "name": "Flif",
+    "description": "Free Loseless Image Format",
+    "url": "https://github.com/FLIF-hub/FLIF/archive/v0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://flif.info/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "test_c",
+            "url": "https://raw.githubusercontent.com/FLIF-hub/FLIF/dcc2011/tools/test.c"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\", \"install-dev\"",
+        "doc.install \"doc/flif.pdf\""
+    ],
+    "version": "0.3"
+}

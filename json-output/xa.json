@@ -1,0 +1,18 @@
+{
+    "name": "Xa",
+    "description": "6502 cross assembler",
+    "url": "https://www.floodgap.com/retrotech/xa/dists/xa-2.3.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.floodgap.com/retrotech/xa/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\",",
+        "\"CFLAGS=#{ENV.cflags}\",",
+        "\"DESTDIR=#{prefix}\",",
+        "\"install\""
+    ],
+    "version": "2.3.8"
+}

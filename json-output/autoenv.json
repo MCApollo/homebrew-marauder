@@ -1,0 +1,15 @@
+{
+    "name": "Autoenv",
+    "description": "Per-project, per-directory shell environments",
+    "url": "https://github.com/kennethreitz/autoenv/archive/v0.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kennethreitz/autoenv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install \"activate.sh\""
+    ],
+    "version": "0.2.1"
+}

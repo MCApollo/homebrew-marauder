@@ -1,0 +1,18 @@
+{
+    "name": "Spatialindex",
+    "description": "General framework for developing spatial indices",
+    "url": "https://github.com/libspatialindex/libspatialindex/releases/download/1.9.0/spatialindex-src-1.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://libspatialindex.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "ENV.append \"CXXFLAGS\", \"-std=c++11\"",
+        "system \"./configure\", \"--disable-debug\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9.0"
+}

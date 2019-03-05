@@ -1,0 +1,28 @@
+{
+    "name": "Nu",
+    "description": "Object-oriented, Lisp-like programming language",
+    "url": "https://github.com/nulang/nu/archive/v2.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/nulang/nu",
+    "depends": [
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.delete(\"SDKROOT\") if MacOS.version < :sierra",
+        "ENV[\"PREFIX\"] = prefix",
+        "inreplace \"Nukefile\" do |s|",
+        "s.gsub!('(SH \"sudo ', '(SH \"') ",
+        "s.gsub!(\"\\#{@destdir}/Library/Frameworks\", \"\\#{@prefix}/Frameworks\")",
+        "s.sub! /^;; source files$/, <<~EOS",
+        ";; source files",
+        "(set @framework_install_path \"#{frameworks}\")",
+        "EOS"
+    ],
+    "version": "2.2.2"
+}

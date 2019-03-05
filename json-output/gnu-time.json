@@ -1,0 +1,22 @@
+{
+    "name": "GnuTime",
+    "description": "GNU implementation of time utility",
+    "url": "https://ftp.gnu.org/gnu/time/time-1.9.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/time/time-1.9.tar.gz",
+    "homepage": "https://www.gnu.org/software/time/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--info=#{info}",
+        "--program-prefix=g",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "(libexec/\"gnubin\").install_symlink bin/\"gtime\" => \"time\""
+    ],
+    "version": "1.9"
+}

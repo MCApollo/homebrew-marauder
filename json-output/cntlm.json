@@ -1,0 +1,19 @@
+{
+    "name": "Cntlm",
+    "description": "NTLM authentication proxy with tunneling",
+    "url": "https://downloads.sourceforge.net/project/cntlm/cntlm/cntlm%200.92.3/cntlm-0.92.3.tar.bz2",
+    "mirror": null,
+    "homepage": "https://cntlm.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\"",
+        "system \"make\", \"CC=#{ENV.cc}\", \"SYSCONFDIR=#{etc}\"",
+        "bin.install \"cntlm\"",
+        "man1.install \"doc/cntlm.1\"",
+        "etc.install \"doc/cntlm.conf\""
+    ],
+    "version": "0.92.3"
+}

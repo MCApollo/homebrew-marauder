@@ -1,0 +1,22 @@
+{
+    "name": "Icbirc",
+    "description": "Proxy IRC client and ICB server",
+    "url": "https://www.benzedrine.ch/icbirc-2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.benzedrine.ch/icbirc.html",
+    "depends": [
+        {
+            "depend": "bsdmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"bsdmake\"",
+        "bin.install \"icbirc\"",
+        "man8.install \"icbirc.8\""
+    ],
+    "version": "2.1"
+}

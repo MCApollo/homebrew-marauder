@@ -1,0 +1,16 @@
+{
+    "name": "Libquantum",
+    "description": "C library for the simulation of quantum mechanics",
+    "url": "http://www.libquantum.de/files/libquantum-1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.libquantum.de/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.0"
+}

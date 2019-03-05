@@ -1,0 +1,23 @@
+{
+    "name": "Mpir",
+    "description": "Multiple Precision Integers and Rationals (fork of GMP)",
+    "url": "http://mpir.org/mpir-3.0.0.tar.bz2",
+    "mirror": null,
+    "homepage": "http://mpir.org/",
+    "depends": [
+        {
+            "depend": "yasm",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[--disable-silent-rules --prefix=#{prefix} --enable-cxx]",
+        "args << \"--build=#{Hardware.oldest_cpu}-apple-darwin#{`uname -r`.to_i}\"",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.0"
+}

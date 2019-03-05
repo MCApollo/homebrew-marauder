@@ -1,0 +1,29 @@
+{
+    "name": "Xqilla",
+    "description": "XQuery and XPath 2 command-line interpreter",
+    "url": "https://downloads.sourceforge.net/project/xqilla/XQilla-2.3.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://xqilla.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "zorba",
+            "reason": "Both supply xqc.h"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--with-xerces=#{HOMEBREW_PREFIX}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.4"
+}

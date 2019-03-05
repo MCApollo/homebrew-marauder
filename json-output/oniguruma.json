@@ -1,0 +1,16 @@
+{
+    "name": "Oniguruma",
+    "description": "Regular expressions library",
+    "url": "https://github.com/kkos/oniguruma/releases/download/v6.9.1/onig-6.9.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kkos/oniguruma/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.9.1"
+}

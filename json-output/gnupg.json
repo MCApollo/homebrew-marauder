@@ -1,0 +1,65 @@
+{
+    "name": "Gnupg",
+    "description": "GNU Pretty Good Privacy (PGP) package",
+    "url": "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.2.13.tar.bz2",
+    "mirror": null,
+    "homepage": "https://gnupg.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        },
+        {
+            "depend": "adns",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "libassuan",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "libgpg-error",
+            "build-depend": false
+        },
+        {
+            "depend": "libksba",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        },
+        {
+            "depend": "npth",
+            "build-depend": false
+        },
+        {
+            "depend": "pinentry",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"run\").mkpath",
+        "quiet_system \"killall\", \"gpg-agent\""
+    ],
+    "version": "2.2.13"
+}

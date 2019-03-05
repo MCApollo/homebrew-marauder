@@ -1,0 +1,15 @@
+{
+    "name": "ZshHistorySubstringSearch",
+    "description": "Zsh port of Fish shell",
+    "url": "https://github.com/zsh-users/zsh-history-substring-search/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/zsh-users/zsh-history-substring-search",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pkgshare.install \"zsh-history-substring-search.zsh\""
+    ],
+    "version": "1.0.1"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Unixodbc",
+    "description": "ODBC 3 connectivity for UNIX",
+    "url": "http://www.unixodbc.org/unixODBC-2.3.7.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.unixodbc.org/",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "virtuoso",
+            "reason": "Both install `isql` binaries."
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--enable-static\",",
+        "\"--enable-gui=no\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.7"
+}

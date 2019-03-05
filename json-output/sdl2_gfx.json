@@ -1,0 +1,23 @@
+{
+    "name": "Sdl2Gfx",
+    "description": "SDL2 graphics drawing primitives and other support functions",
+    "url": "https://www.ferzkopp.net/Software/SDL2_gfx/SDL2_gfx-1.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.ferzkopp.net/wordpress/2016/01/02/sdl_gfx-sdl2_gfx/",
+    "depends": [
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-sdltest\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.4"
+}

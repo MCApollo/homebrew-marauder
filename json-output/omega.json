@@ -1,0 +1,32 @@
+{
+    "name": "Omega",
+    "description": "Packaged search engine for websites, built on top of Xapian",
+    "url": "https://oligarchy.co.uk/xapian/1.4.3/xapian-omega-1.4.3.tar.xz",
+    "mirror": "https://mirrors.ocf.berkeley.edu/debian/pool/main/x/xapian-omega/xapian-omega_1.4.3.orig.tar.xz",
+    "homepage": "https://xapian.org/",
+    "depends": [
+        {
+            "depend": "libmagic",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "xapian",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.3"
+}

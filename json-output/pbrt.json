@@ -1,0 +1,25 @@
+{
+    "name": "Pbrt",
+    "description": "Physically based rendering",
+    "url": "https://github.com/mmp/pbrt-v2/archive/2.0.342.tar.gz",
+    "mirror": null,
+    "homepage": "https://pbrt.org/",
+    "depends": [
+        {
+            "depend": "flex",
+            "build-depend": false
+        },
+        {
+            "depend": "openexr",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-C\", \"src\"",
+        "prefix.install \"src/bin\""
+    ],
+    "version": "2.0.342"
+}

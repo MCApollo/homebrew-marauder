@@ -1,0 +1,100 @@
+{
+    "name": "GstPluginsGood",
+    "description": "GStreamer plugins (well-supported, under the LGPL)",
+    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-good/gst-plugins-good-1.14.4.tar.xz",
+    "mirror": null,
+    "homepage": "https://gstreamer.freedesktop.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "check",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gst-plugins-base",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libshout",
+            "build-depend": false
+        },
+        {
+            "depend": "libsoup",
+            "build-depend": false
+        },
+        {
+            "depend": "libvpx",
+            "build-depend": false
+        },
+        {
+            "depend": "orc",
+            "build-depend": false
+        },
+        {
+            "depend": "speex",
+            "build-depend": false
+        },
+        {
+            "depend": "taglib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-gtk-doc",
+        "--disable-goom",
+        "--with-default-videosink=ximagesink",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--disable-x",
+        "]",
+        "if build.head?",
+        "ENV[\"NOCONFIGURE\"] = \"yes\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14.4"
+}

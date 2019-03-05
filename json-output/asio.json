@@ -1,0 +1,40 @@
+{
+    "name": "Asio",
+    "description": "Cross-platform C++ Library for asynchronous programming",
+    "url": "https://downloads.sourceforge.net/project/asio/asio/1.12.2%20%28Stable%29/asio-1.12.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://think-async.com/Asio",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "if build.head?",
+        "cd \"asio\"",
+        "system \"./autogen.sh\"",
+        "else",
+        "system \"autoconf\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-boost=no\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"src/examples\""
+    ],
+    "version": "1.12.2"
+}

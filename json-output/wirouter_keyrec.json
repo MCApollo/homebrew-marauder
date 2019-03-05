@@ -1,0 +1,24 @@
+{
+    "name": "WirouterKeyrec",
+    "description": "Recover the default WPA passphrases from supported routers",
+    "url": "https://www.mirrorservice.org/sites/distfiles.macports.org/wirouterkeyrec/WiRouter_KeyRec_1.1.2.zip",
+    "mirror": "https://distfiles.macports.org/wirouterkeyrec/WiRouter_KeyRec_1.1.2.zip",
+    "homepage": "https://www.salvatorefresta.net/tools/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"src/agpf.h\", %r{/etc}, \"#{prefix}/etc\"",
+        "inreplace \"src/teletu.h\", %r{/etc}, \"#{prefix}/etc\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{prefix}\",",
+        "\"--exec-prefix=#{prefix}\"",
+        "system \"make\", \"prefix=#{prefix}\"",
+        "system \"make\", \"install\", \"DESTDIR=#{prefix}\", \"BIN_DIR=bin/\""
+    ],
+    "version": "1.1.2"
+}

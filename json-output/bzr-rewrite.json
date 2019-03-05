@@ -1,0 +1,20 @@
+{
+    "name": "BzrRewrite",
+    "description": "Bazaar plugin to support rewriting revisions and rebasing",
+    "url": "https://launchpad.net/bzr-rewrite/trunk/0.6.3/+download/bzr-rewrite-0.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://launchpad.net/bzr-rewrite",
+    "depends": [
+        {
+            "depend": "bazaar",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(share/\"bazaar/plugins/rewrite\").install Dir[\"*\"]"
+    ],
+    "version": "0.6.3"
+}

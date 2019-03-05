@@ -1,0 +1,47 @@
+{
+    "name": "Vimpc",
+    "description": "Ncurses based mpd client with vi like key bindings",
+    "url": "https://downloads.sourceforge.net/project/vimpc/Release%200.09.1/vimpc-0.09.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/vimpc/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libmpdclient",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "taglib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.09.1"
+}

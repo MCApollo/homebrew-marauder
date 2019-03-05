@@ -1,0 +1,20 @@
+{
+    "name": "Unrar",
+    "description": "Extract, view, and test RAR archives",
+    "url": "https://www.rarlab.com/rar/unrarsrc-5.7.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.rarlab.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"makefile\", \"libunrar.so\", \"libunrar.dylib\"",
+        "system \"make\"",
+        "system \"make\", \"clean\"",
+        "system \"make\", \"lib\"",
+        "bin.install \"unrar\"",
+        "lib.install \"libunrar.dylib\""
+    ],
+    "version": "5.7.3"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "SourceHighlight",
+    "description": "Source-code syntax highlighter",
+    "url": "https://ftp.gnu.org/gnu/src-highlite/source-highlight-3.1.8.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/src-highlite/source-highlight-3.1.8.tar.gz",
+    "homepage": "https://www.gnu.org/software/src-highlite/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-boost=#{Formula[\"boost\"].opt_prefix}\"",
+        "system \"make\", \"install\"",
+        "bash_completion.install \"completion/source-highlight\""
+    ],
+    "version": "3.1.8"
+}

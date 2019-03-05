@@ -1,0 +1,24 @@
+{
+    "name": "Hyperestraier",
+    "description": "Full-text search system for communities",
+    "url": "https://fallabs.com/hyperestraier/hyperestraier-1.4.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://fallabs.com/hyperestraier/",
+    "depends": [
+        {
+            "depend": "qdbm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"mac\"",
+        "system \"make\", \"check-mac\"",
+        "system \"make\", \"install-mac\""
+    ],
+    "version": "1.4.13"
+}

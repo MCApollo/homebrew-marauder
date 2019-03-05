@@ -1,0 +1,31 @@
+{
+    "name": "Libbladerf",
+    "description": "USB 3.0 Superspeed Software Defined Radio Source",
+    "url": "https://github.com/Nuand/bladeRF/archive/2018.08.tar.gz",
+    "mirror": null,
+    "homepage": "https://nuand.com/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend \"CFLAGS\", \"-I#{MacOS.sdk_path}/usr/include/malloc\"",
+        "mkdir \"host/build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2018.08"
+}

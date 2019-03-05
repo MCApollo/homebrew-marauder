@@ -1,0 +1,30 @@
+{
+    "name": "Libmodbus",
+    "description": "Portable modbus library",
+    "url": "https://libmodbus.org/releases/libmodbus-3.1.4.tar.gz",
+    "mirror": "https://librecmc.org/librecmc/downloads/sources/v1.3.4/libmodbus-3.1.4.tar.gz",
+    "homepage": "https://libmodbus.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.1.4"
+}

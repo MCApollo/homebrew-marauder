@@ -1,0 +1,51 @@
+{
+    "name": "GerbilScheme",
+    "description": "Opinionated dialect of Scheme designed for Systems Programming",
+    "url": "https://github.com/vyzo/gerbil/archive/v0.15.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://cons.io",
+    "depends": [
+        {
+            "depend": "gambit-scheme",
+            "build-depend": false
+        },
+        {
+            "depend": "leveldb",
+            "build-depend": false
+        },
+        {
+            "depend": "libyaml",
+            "build-depend": false
+        },
+        {
+            "depend": "lmdb",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bins = %w[",
+        "gxi",
+        "gxc",
+        "gxi-build-script",
+        "gxpkg",
+        "gxprof",
+        "gxtags",
+        "]",
+        "cd \"src\" do",
+        "ENV.append_path \"PATH\", \"#{Formula[\"gambit-scheme\"].opt_prefix}/current/bin\"",
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path if MacOS.version <= :sierra",
+        "inreplace \"std/build-features.ss\" do |s|",
+        "s.gsub! \"(enable leveldb #f)\", \"(enable leveldb #t)\"",
+        "s.gsub! \"(enable libxml #f)\", \"(enable libxml #t)\"",
+        "s.gsub! \"(enable libyaml #f)\", \"(enable libyaml #t)\"",
+        "s.gsub! \"(enable lmdb #f)\", \"(enable lmdb #t)\""
+    ],
+    "version": "0.15.1"
+}

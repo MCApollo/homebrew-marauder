@@ -1,0 +1,23 @@
+{
+    "name": "Olsrd",
+    "description": "Implementation of the optimized link state routing protocol",
+    "url": "http://www.olsr.org/releases/0.9/olsrd-0.9.0.3.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.olsr.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "lib.mkpath",
+        "args = %W[",
+        "DESTDIR=#{prefix}",
+        "USRDIR=#{prefix}",
+        "LIBDIR=#{lib}",
+        "ETCDIR=#{etc}",
+        "]",
+        "system \"make\", \"build_all\", *args",
+        "system \"make\", \"install_all\", *args"
+    ],
+    "version": "0.9.0.3"
+}

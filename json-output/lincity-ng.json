@@ -1,0 +1,63 @@
+{
+    "name": "LincityNg",
+    "description": "City simulation game",
+    "url": "https://github.com/lincity-ng/lincity-ng/archive/lincity-ng-2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/lincity-ng/lincity-ng/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "jam",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "physfs",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_gfx",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system 'cat data/gui/creditslist.xml | grep -v \"@\" | cut -d\\> -f2 | cut -d\\< -f1 >CREDITS'",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-sdltest\",",
+        "\"--with-apple-opengl-framework\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--datarootdir=#{pkgshare}\"",
+        "system \"jam\", \"install\"",
+        "rm_rf [\"#{pkgshare}/applications\", \"#{pkgshare}/pixmaps\"]"
+    ],
+    "version": "2.0"
+}

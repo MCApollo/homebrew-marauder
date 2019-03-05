@@ -1,0 +1,21 @@
+{
+    "name": "Buildifier",
+    "description": "Format bazel BUILD files with a standard convention",
+    "url": "https://github.com/bazelbuild/buildtools.git",
+    "mirror": null,
+    "homepage": "https://github.com/bazelbuild/buildtools",
+    "depends": [
+        {
+            "depend": "bazel",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"bazel\", \"build\", \"--workspace_status_command=#{buildpath}/status.sh\", \"buildifier:buildifier\"",
+        "bin.install \"bazel-bin/buildifier/darwin_amd64_stripped/buildifier\""
+    ],
+    "version": "0.22.0-git-55b64c3d"
+}

@@ -1,0 +1,62 @@
+{
+    "name": "Lysp",
+    "description": "Small Lisp interpreter",
+    "url": "http://www.piumarta.com/software/lysp/lysp-1.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.piumarta.com/software/lysp/",
+    "depends": [
+        {
+            "depend": "bdw-gc",
+            "build-depend": false
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/Makefile b/Makefile\n",
+                "index fc3f5d9..0b0e20d 100644\n",
+                "--- a/Makefile\n",
+                "+++ b/Makefile\n",
+                "@@ -1,6 +1,3 @@\n",
+                "-CFLAGS  = -O  -g -Wall\n",
+                "-CFLAGSO = -O3 -g -Wall -DNDEBUG\n",
+                "-CFLAGSs = -Os -g -Wall -DNDEBUG\n",
+                " LDLIBS  = -rdynamic\n",
+                " \n",
+                " all : lysp gclysp\n",
+                "@@ -10,15 +7,15 @@ lysp : lysp.c gc.c\n",
+                " \tsize $@\n",
+                " \n",
+                " olysp: lysp.c gc.c\n",
+                "-\t$(CC) $(CFLAGSO) -DBDWGC=0 -o $@ lysp.c gc.c $(LDLIBS) -ldl\n",
+                "+\t$(CC) $(CFLAGS) -DBDWGC=0 -o $@ lysp.c gc.c $(LDLIBS) -ldl\n",
+                " \tsize $@\n",
+                " \n",
+                " ulysp: lysp.c gc.c\n",
+                "-\t$(CC) $(CFLAGSs) -DBDWGC=0 -o $@ lysp.c gc.c $(LDLIBS) -ldl\n",
+                "+\t$(CC) $(CFLAGS) -DBDWGC=0 -o $@ lysp.c gc.c $(LDLIBS) -ldl\n",
+                " \tsize $@\n",
+                " \n",
+                " gclysp: lysp.c\n",
+                "-\t$(CC) $(CFLAGSO) -DBDWGC=1  -o $@ lysp.c $(LDLIBS) -lgc\n",
+                "+\t$(CC) $(CFLAGS) -DBDWGC=1  -o $@ lysp.c $(LDLIBS) -lgc\n",
+                " \tsize $@\n",
+                " \n",
+                " run : all\n"
+            ]
+        }
+    ],
+    "install": [
+        "inreplace \"Makefile\", \"-rdynamic\", \"\"",
+        "system \"make\", \"CC=#{ENV.cc}\"",
+        "bin.install \"lysp\", \"gclysp\""
+    ],
+    "version": "1.1"
+}

@@ -1,0 +1,42 @@
+{
+    "name": "Saldl",
+    "description": "CLI downloader optimized for speed and early preview",
+    "url": "https://github.com/saldl/saldl/archive/v40.tar.gz",
+    "mirror": null,
+    "homepage": "https://saldl.github.io/",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "docbook-xsl",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "curl",
+            "build-depend": false
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.refurbish_args",
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "args = [\"--prefix=#{prefix}\"]",
+        "args << \"--saldl-version=v#{version}\" unless build.head?",
+        "system \"./waf\", \"configure\", *args",
+        "system \"./waf\", \"build\"",
+        "system \"./waf\", \"install\""
+    ],
+    "version": "40"
+}

@@ -1,0 +1,73 @@
+{
+    "name": "Gegl",
+    "description": "Graph based image processing framework",
+    "url": "https://download.gimp.org/pub/gegl/0.4/gegl-0.4.12.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.gegl.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "babl",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "json-glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "coreutils",
+            "reason": "both install `gcut` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-docs\",",
+        "\"--without-cairo\",",
+        "\"--without-jasper\",",
+        "\"--without-umfpack\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.12"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "Mtools",
+    "description": "Tools for manipulating MSDOS files",
+    "url": "https://ftp.gnu.org/gnu/mtools/mtools-4.0.18.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/mtools/mtools-4.0.18.tar.gz",
+    "homepage": "https://www.gnu.org/software/mtools/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "multimarkdown",
+            "reason": "both install `mmd` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "if ENV.cc == \"clang\"",
+        "inreplace \"sysincludes.h\",",
+        "\"",
+        "\"",
+        "end",
+        "args = %W[",
+        "LIBS=-liconv",
+        "--disable-debug",
+        "--prefix=#{prefix}",
+        "--sysconfdir=#{etc}",
+        "--without-x",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0.18"
+}

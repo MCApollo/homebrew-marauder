@@ -1,0 +1,18 @@
+{
+    "name": "Mailcheck",
+    "description": "Check multiple mailboxes/maildirs for mail",
+    "url": "https://downloads.sourceforge.net/project/mailcheck/mailcheck/1.91.2/mailcheck_1.91.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://mailcheck.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"mailcheck\"",
+        "bin.install \"mailcheck\"",
+        "man1.install \"mailcheck.1\"",
+        "etc.install \"mailcheckrc\""
+    ],
+    "version": "1.91.2"
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Lrdf",
+    "description": "RDF library for accessing plugin metadata in the LADSPA plugin system",
+    "url": "https://github.com/swh/LRDF/archive/v0.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/swh/LRDF",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "raptor",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "(pkgshare/\"examples\").install Dir[\"examples/*\"] - Dir[\"examples/Makefile*\"]"
+    ],
+    "version": "0.6.1"
+}

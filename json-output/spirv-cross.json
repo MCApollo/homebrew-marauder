@@ -1,0 +1,30 @@
+{
+    "name": "SpirvCross",
+    "description": "Performing reflection and disassembling SPIR-V",
+    "url": "https://github.com/KhronosGroup/SPIRV-Cross/archive/2019-01-31.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/KhronosGroup/SPIRV-Cross",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "glm",
+            "build-depend": false
+        },
+        {
+            "depend": "glslang",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2019"
+}

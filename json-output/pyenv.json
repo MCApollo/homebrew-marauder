@@ -1,0 +1,37 @@
+{
+    "name": "Pyenv",
+    "description": "Python version management",
+    "url": "https://github.com/pyenv/pyenv/archive/v1.2.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pyenv/pyenv",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"libexec/pyenv\", \"/usr/local\", HOMEBREW_PREFIX",
+        "system \"src/configure\"",
+        "system \"make\", \"-C\", \"src\"",
+        "prefix.install Dir[\"*\"]",
+        "%w[pyenv-install pyenv-uninstall python-build].each do |cmd|",
+        "bin.install_symlink \"#{prefix}/plugins/python-build/bin/#{cmd}\""
+    ],
+    "version": "1.2.9"
+}

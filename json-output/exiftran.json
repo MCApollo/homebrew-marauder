@@ -1,0 +1,38 @@
+{
+    "name": "Exiftran",
+    "description": "Transform digital camera jpegs and their EXIF data",
+    "url": "https://www.kraxel.org/releases/fbida/fbida-2.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.kraxel.org/blog/linux/fbida/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libexif",
+            "build-depend": false
+        },
+        {
+            "depend": "pixman",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/185c281/exiftran/fix-build.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"prefix=#{prefix}\", \"install\""
+    ],
+    "version": "2.14"
+}

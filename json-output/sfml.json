@@ -1,0 +1,50 @@
+{
+    "name": "Sfml",
+    "description": "Multi-media library with bindings for multiple languages",
+    "url": "https://www.sfml-dev.org/files/SFML-2.5.1-sources.zip",
+    "mirror": null,
+    "homepage": "https://www.sfml-dev.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path if MacOS.version == :sierra",
+        "rm_rf Dir[\"extlibs/*\"] - [\"extlibs/headers\"]",
+        "system \"cmake\", \".\", *std_cmake_args,",
+        "\"-DSFML_MISC_INSTALL_PREFIX=#{share}/SFML\",",
+        "\"-DSFML_INSTALL_PKGCONFIG_FILES=TRUE\",",
+        "\"-DSFML_BUILD_DOC=TRUE\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.5.1"
+}

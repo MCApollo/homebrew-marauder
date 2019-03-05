@@ -1,0 +1,43 @@
+{
+    "name": "ArgyllCms",
+    "description": "ICC compatible color management system",
+    "url": "https://www.argyllcms.com/Argyll_V2.0.1_src.zip",
+    "mirror": null,
+    "homepage": "https://www.argyllcms.com/",
+    "depends": [
+        {
+            "depend": "jam",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "num-utils",
+            "reason": "both install `average` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "if MacOS.version == :el_capitan && MacOS::Xcode.version >= \"8.0\"",
+        "inreplace \"numlib/numsup.c\", \"CLOCK_MONOTONIC\", \"UNDEFINED_GIBBERISH\"",
+        "end",
+        "system \"sh\", \"makeall.sh\"",
+        "system \"./makeinstall.sh\"",
+        "rm \"bin/License.txt\"",
+        "prefix.install \"bin\", \"ref\", \"doc\""
+    ],
+    "version": "2.0.1"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Libb2",
+    "description": "Secure hashing function",
+    "url": "https://blake2.net/libb2-0.97.tar.gz",
+    "mirror": null,
+    "homepage": "https://blake2.net/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--enable-fat\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.97"
+}

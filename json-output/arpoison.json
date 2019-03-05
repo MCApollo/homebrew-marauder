@@ -1,0 +1,22 @@
+{
+    "name": "Arpoison",
+    "description": "UNIX arp cache update utility",
+    "url": "http://www.arpoison.net/arpoison-0.7.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.arpoison.net/",
+    "depends": [
+        {
+            "depend": "libnet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"arpoison\"",
+        "man8.install \"arpoison.8\""
+    ],
+    "version": "0.7"
+}

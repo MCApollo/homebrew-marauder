@@ -1,0 +1,26 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Smarter Dockerfile linter to validate best practices",
+    "url": "https://github.com/hadolint/hadolint/archive/v1.16.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/hadolint/hadolint",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cabal_sandbox do",
+        "cabal_install \"hpack\"",
+        "system \"./.cabal-sandbox/bin/hpack\""
+    ],
+    "version": "1.16.0"
+}

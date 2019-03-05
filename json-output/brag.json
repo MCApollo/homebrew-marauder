@@ -1,0 +1,21 @@
+{
+    "name": "Brag",
+    "description": "Download and assemble multipart binaries from newsgroups",
+    "url": "https://downloads.sourceforge.net/project/brag/brag/1.4.3/brag-1.4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://brag.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "uudeview",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"brag\"",
+        "man1.install \"brag.1\""
+    ],
+    "version": "1.4.3"
+}

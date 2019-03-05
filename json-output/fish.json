@@ -1,0 +1,30 @@
+{
+    "name": "Fish",
+    "description": "User-friendly command-line shell for UNIX-like operating systems",
+    "url": "https://github.com/fish-shell/fish-shell/releases/download/3.0.2/fish-3.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://fishshell.com",
+    "depends": [
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(pkgshare/\"vendor_functions.d\").mkpath",
+        "(pkgshare/\"vendor_completions.d\").mkpath",
+        "(pkgshare/\"vendor_conf.d\").mkpath"
+    ],
+    "version": "3.0.2"
+}

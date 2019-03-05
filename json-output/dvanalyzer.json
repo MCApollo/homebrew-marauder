@@ -1,0 +1,20 @@
+{
+    "name": "Dvanalyzer",
+    "description": "Quality control tool for examining tape-to-file DV streams",
+    "url": "https://mediaarea.net/download/binary/dvanalyzer/1.4.2/DVAnalyzer_CLI_1.4.2_GNU_FromSource.tar.bz2",
+    "mirror": null,
+    "homepage": "https://mediaarea.net/DVAnalyzer",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"ZenLib/Project/GNU/Library\" do",
+        "args = [\"--disable-debug\",",
+        "\"--enable-static\",",
+        "\"--disable-shared\"]",
+        "system \"./configure\", *args",
+        "system \"make\""
+    ],
+    "version": "1.4.2"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Nylon",
+    "description": "Proxy server",
+    "url": "https://monkey.org/~marius/nylon/nylon-1.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/smeinecke/nylon",
+    "depends": [
+        {
+            "depend": "libevent",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--with-libevent=#{HOMEBREW_PREFIX}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.21"
+}

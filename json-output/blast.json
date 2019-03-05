@@ -1,0 +1,30 @@
+{
+    "name": "Blast",
+    "description": "Basic Local Alignment Search Tool",
+    "url": "https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.8.1/ncbi-blast-2.8.1+-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://blast.ncbi.nlm.nih.gov/",
+    "depends": [
+        {
+            "depend": "lmdb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "proj",
+            "reason": "both install a `libproj.a` library"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "cd \"c++\" do",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--without-debug\",",
+        "\"--without-boost\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.8.1"
+}

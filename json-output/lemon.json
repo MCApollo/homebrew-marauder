@@ -1,0 +1,18 @@
+{
+    "name": "Lemon",
+    "description": "LALR(1) parser generator like yacc or bison",
+    "url": "https://tx97.net/pub/distfiles/lemon-1.69.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.hwaci.com/sw/lemon/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pkgshare.install \"lempar.c\"",
+        "inreplace \"lemon.c\", / = pathsearch\\([^)]*\\);/, \" = \\\"#{pkgshare}/lempar.c\\\";\"",
+        "system ENV.cc, \"-o\", \"lemon\", \"lemon.c\"",
+        "bin.install \"lemon\""
+    ],
+    "version": "1.69"
+}

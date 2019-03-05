@@ -1,0 +1,55 @@
+{
+    "name": "OpusTools",
+    "description": "Utilities to encode, inspect, and decode .opus files",
+    "url": "https://archive.mozilla.org/pub/opus/opus-tools-0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.opus-codec.org",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libopusenc",
+            "build-depend": false
+        },
+        {
+            "depend": "opus",
+            "build-depend": false
+        },
+        {
+            "depend": "opusfile",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2"
+}

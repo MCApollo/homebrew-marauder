@@ -1,0 +1,22 @@
+{
+    "name": "Libflowmanager",
+    "description": "Flow-based measurement tasks with packet-based inputs",
+    "url": "https://research.wand.net.nz/software/libflowmanager/libflowmanager-3.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://research.wand.net.nz/software/libflowmanager.php",
+    "depends": [
+        {
+            "depend": "libtrace",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.0"
+}

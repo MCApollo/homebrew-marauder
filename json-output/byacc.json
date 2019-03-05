@@ -1,0 +1,17 @@
+{
+    "name": "Byacc",
+    "description": "(Arguably) the best yacc variant",
+    "url": "https://invisible-mirror.net/archives/byacc/byacc-20180609.tgz",
+    "mirror": null,
+    "homepage": "https://invisible-island.net/byacc/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--program-prefix=b\", \"--prefix=#{prefix}\", \"--man=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20180609"
+}

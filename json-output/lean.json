@@ -1,0 +1,30 @@
+{
+    "name": "Lean",
+    "description": "Theorem prover",
+    "url": "https://github.com/leanprover/lean/archive/v3.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://leanprover.github.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "jemalloc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"src/build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.4.2"
+}

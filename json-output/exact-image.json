@@ -1,0 +1,25 @@
+{
+    "name": "ExactImage",
+    "description": "Image processing library",
+    "url": "https://dl.exactcode.de/oss/exact-image/exact-image-1.0.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://exactcode.com/opensource/exactimage/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libagg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.1"
+}

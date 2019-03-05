@@ -1,0 +1,36 @@
+{
+    "name": "Freeling",
+    "description": "Suite of language analyzers",
+    "url": "https://github.com/TALP-UPC/FreeLing/releases/download/4.1/FreeLing-4.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://nlp.lsi.upc.edu/freeling/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "boost",
+            "url": "https://dl.bintray.com/boostorg/release/1.68.0/source/boost_1_68_0.tar.bz2"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "hunspell",
+            "reason": "both install "
+        }
+    ],
+    "patches": [],
+    "install": [
+        "resource(\"boost\").stage do",
+        "open(\"user-config.jam\", \"a\") do |file|",
+        "file.write \"using darwin : : #{ENV.cxx} ;\\n\""
+    ],
+    "version": "4.1"
+}

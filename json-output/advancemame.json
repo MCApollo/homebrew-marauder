@@ -1,0 +1,35 @@
+{
+    "name": "Advancemame",
+    "description": "MAME with advanced video support",
+    "url": "https://github.com/amadvance/advancemame/releases/download/v3.9/advancemame-3.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.advancemame.it/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "advancemenu",
+            "reason": "both install `advmenu` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.delete \"SDKROOT\" if MacOS.version == :yosemite",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\", \"LDFLAGS=#{ENV.ldflags}\", \"mandir=#{man}\", \"docdir=#{doc}\""
+    ],
+    "version": "3.9"
+}

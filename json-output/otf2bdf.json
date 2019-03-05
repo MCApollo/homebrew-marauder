@@ -1,0 +1,28 @@
+{
+    "name": "Otf2bdf",
+    "description": "OpenType to BDF font converter",
+    "url": "https://www.math.nmsu.edu/~mleisher/Software/otf2bdf/otf2bdf-3.1.tbz2",
+    "mirror": null,
+    "homepage": "https://www.math.nmsu.edu/~mleisher/Software/otf2bdf/",
+    "depends": [
+        {
+            "depend": "freetype",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "mkinstalldirs",
+            "url": "https://www.math.nmsu.edu/~mleisher/Software/otf2bdf/mkinstalldirs"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "buildpath.install resource(\"mkinstalldirs\")",
+        "chmod 0755, \"mkinstalldirs\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.1"
+}

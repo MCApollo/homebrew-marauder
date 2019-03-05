@@ -1,0 +1,23 @@
+{
+    "name": "OpenMesh",
+    "description": "Generic data structure to represent and manipulate polygonal meshes",
+    "url": "https://www.openmesh.org/media/Releases/7.1/OpenMesh-7.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://openmesh.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DBUILD_APPS=OFF\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.1"
+}

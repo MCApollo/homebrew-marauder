@@ -1,0 +1,24 @@
+{
+    "name": "Corkscrew",
+    "description": "Tunnel SSH through HTTP proxies",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/c/corkscrew/corkscrew_2.0.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/c/corkscrew/corkscrew_2.0.orig.tar.gz",
+    "homepage": "https://packages.debian.org/sid/corkscrew",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cp Dir[\"#{Formula[\"libtool\"].opt_share}/libtool/*/config.{guess,sub}\"], buildpath",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0"
+}

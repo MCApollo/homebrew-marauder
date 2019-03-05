@@ -1,0 +1,71 @@
+{
+    "name": "Nut",
+    "description": "Network UPS Tools: Support for various power devices",
+    "url": "https://networkupstools.org/source/2.7/nut-2.7.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://networkupstools.org/",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb-compat",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "rhino",
+            "reason": "both install `rhino` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--localstatedir=#{var}\",",
+        "\"--with-macosx_ups\",",
+        "\"--with-openssl\",",
+        "\"--with-serial\",",
+        "\"--with-usb\",",
+        "\"--without-avahi\",",
+        "\"--without-cgi\",",
+        "\"--without-dev\",",
+        "\"--without-doc\",",
+        "\"--without-ipmi\",",
+        "\"--without-libltdl\",",
+        "\"--without-neon\",",
+        "\"--without-nss\",",
+        "\"--without-powerman\",",
+        "\"--without-snmp\",",
+        "\"--without-wrap\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7.4"
+}

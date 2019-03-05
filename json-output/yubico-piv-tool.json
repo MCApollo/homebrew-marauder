@@ -1,0 +1,31 @@
+{
+    "name": "YubicoPivTool",
+    "description": "Command-line tool for the YubiKey PIV application",
+    "url": "https://developers.yubico.com/yubico-piv-tool/Releases/yubico-piv-tool-1.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://developers.yubico.com/yubico-piv-tool/",
+    "depends": [
+        {
+            "depend": "check",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.2"
+}

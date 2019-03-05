@@ -1,0 +1,35 @@
+{
+    "name": "Pgbouncer",
+    "description": "Lightweight connection pooler for PostgreSQL",
+    "url": "https://pgbouncer.github.io/downloads/files/1.9.0/pgbouncer-1.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.postgresql.org/wiki/PgBouncer",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--with-libevent=#{HOMEBREW_PREFIX}\",",
+        "\"--prefix=#{prefix}\"",
+        "ln_s \"../install-sh\", \"doc/install-sh\"",
+        "system \"make\", \"install\"",
+        "bin.install \"etc/mkauth.py\"",
+        "etc.install %w[etc/pgbouncer.ini etc/userlist.txt]"
+    ],
+    "version": "1.9.0"
+}

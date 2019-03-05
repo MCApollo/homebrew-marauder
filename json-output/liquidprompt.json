@@ -1,0 +1,16 @@
+{
+    "name": "Liquidprompt",
+    "description": "Adaptive prompt for bash and zsh shells",
+    "url": "https://github.com/nojhan/liquidprompt/archive/v_1.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/nojhan/liquidprompt",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "share.install \"liquidpromptrc-dist\"",
+        "share.install \"liquidprompt\""
+    ],
+    "version": "1.11"
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Vis",
+    "description": "Vim-like text editor",
+    "url": "https://github.com/martanne/vis/archive/v0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/martanne/vis",
+    "depends": [
+        {
+            "depend": "luarocks",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libtermkey",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "lpeg",
+            "url": "https://luarocks.org/manifests/gvvaughan/lpeg-1.0.1-1.src.rock"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "luapath = libexec/\"vendor\"",
+        "ENV[\"LUA_PATH\"] = \"#{luapath}/share/lua/5.3/?.lua\"",
+        "ENV[\"LUA_CPATH\"] = \"#{luapath}/lib/lua/5.3/?.so\"",
+        "resource(\"lpeg\").stage do",
+        "system \"luarocks\", \"build\", \"lpeg\", \"--tree=#{luapath}\""
+    ],
+    "version": "0.5"
+}

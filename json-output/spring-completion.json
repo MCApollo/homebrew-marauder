@@ -1,0 +1,15 @@
+{
+    "name": "SpringCompletion",
+    "description": "Bash completion for Spring",
+    "url": "https://github.com/jacaetevha/spring_bash_completion/archive/v0.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jacaetevha/spring_bash_completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"spring.bash\" => \"spring\""
+    ],
+    "version": "0.0.1"
+}

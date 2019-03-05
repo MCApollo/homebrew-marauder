@@ -1,0 +1,33 @@
+{
+    "name": "SimpleAmqpClient",
+    "description": "C++ interface to rabbitmq-c",
+    "url": "https://github.com/alanxz/SimpleAmqpClient/archive/v2.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/alanxz/SimpleAmqpClient",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "rabbitmq-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.0"
+}

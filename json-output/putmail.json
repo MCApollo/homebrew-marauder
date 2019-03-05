@@ -1,0 +1,18 @@
+{
+    "name": "Putmail",
+    "description": "MTA or SMTP client designed to replace the sendmail command",
+    "url": "https://downloads.sourceforge.net/project/putmail/putmail.py/1.4/putmail.py-1.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://putmail.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"putmail.py\"",
+        "man1.install \"man/man1/putmail.py.1\"",
+        "bin.install_symlink \"putmail.py\" => \"putmail\"",
+        "man1.install_symlink \"putmail.py.1\" => \"putmail.1\""
+    ],
+    "version": "1.4"
+}

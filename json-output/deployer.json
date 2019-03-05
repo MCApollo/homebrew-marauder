@@ -1,0 +1,25 @@
+{
+    "name": "Deployer",
+    "description": "Deployment tool written in PHP with support for popular frameworks",
+    "url": "https://deployer.org/releases/v6.4.3/deployer.phar",
+    "mirror": null,
+    "homepage": "https://deployer.org/",
+    "depends": [
+        {
+            "depend": "php",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "dep",
+            "reason": "both install `dep` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "bin.install \"deployer.phar\" => \"dep\""
+    ],
+    "version": "6.4.3"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Wwwoffle",
+    "description": "Better browsing for computers with intermittent connections",
+    "url": "https://www.gedanken.org.uk/software/wwwoffle/download/wwwoffle-2.9j.tgz",
+    "mirror": null,
+    "homepage": "https://www.gedanken.org.uk/software/wwwoffle/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.9"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "Libftdi",
+    "description": "Library to talk to FTDI chips",
+    "url": "https://www.intra2net.com/en/developer/libftdi/download/libftdi1-1.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.intra2net.com/en/developer/libftdi",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "swig",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"libftdi-build\" do",
+        "system \"cmake\", \"..\", \"-DPYTHON_BINDINGS=OFF\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "(libexec/\"bin\").install \"examples/find_all\""
+    ],
+    "version": "1.4"
+}

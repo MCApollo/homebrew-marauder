@@ -1,0 +1,17 @@
+{
+    "name": "Bibutils",
+    "description": "Bibliography conversion utilities",
+    "url": "https://downloads.sourceforge.net/project/bibutils/bibutils_6.7_src.tgz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/p/bibutils/home/Bibutils/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--install-dir\", bin,",
+        "\"--install-lib\", lib",
+        "system \"make\", \"install\", \"CC=#{ENV.cc}\""
+    ],
+    "version": "6.7"
+}

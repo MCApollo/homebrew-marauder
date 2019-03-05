@@ -1,0 +1,36 @@
+{
+    "name": "BerkeleyDb",
+    "description": "High performance key/value database",
+    "url": "https://dl.bintray.com/homebrew/mirror/berkeley-db-18.1.25.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.oracle.com/technology/products/berkeley-db/index.html",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "args = %W[",
+        "--disable-debug",
+        "--prefix=#{prefix}",
+        "--mandir=#{man}",
+        "--enable-cxx",
+        "--enable-compat185",
+        "--enable-sql",
+        "--enable-sql_codegen",
+        "--enable-dbm",
+        "--enable-stl",
+        "]",
+        "cd \"build_unix\" do",
+        "system \"../dist/configure\", *args",
+        "system \"make\", \"install\"",
+        "doc.parent.mkpath",
+        "mv prefix/\"docs\", doc"
+    ],
+    "version": "18.1.25"
+}

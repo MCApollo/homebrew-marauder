@@ -1,0 +1,57 @@
+{
+    "name": "Rpm",
+    "description": "Standard unix software packaging tool",
+    "url": "http://ftp.rpm.org/releases/rpm-4.14.x/rpm-4.14.2.1.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.rpm.org/",
+    "depends": [
+        {
+            "depend": "berkeley-db",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libarchive",
+            "build-depend": false
+        },
+        {
+            "depend": "libmagic",
+            "build-depend": false
+        },
+        {
+            "depend": "lua@5.1",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": false
+        },
+        {
+            "depend": "popt",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        },
+        {
+            "depend": "zstd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"lib/rpm\").mkpath",
+        "inreplace lib/\"rpm/macros\", \"/usr/bin/gpg2\", HOMEBREW_PREFIX/\"bin/gpg\""
+    ],
+    "version": "4.14.2.1"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "H264bitstream",
+    "description": "Library for reading and writing H264 video streams",
+    "url": "https://downloads.sourceforge.net/project/h264bitstream/h264bitstream/0.1.9/h264bitstream-0.1.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://h264bitstream.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "264"
+}

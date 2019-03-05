@@ -1,0 +1,29 @@
+{
+    "name": "Cpprestsdk",
+    "description": "C++ libraries for cloud-based client-server communication",
+    "url": "https://github.com/Microsoft/cpprestsdk.git",
+    "mirror": null,
+    "homepage": "https://github.com/Microsoft/cpprestsdk",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \"-DBUILD_SAMPLES=OFF\", \"-DBUILD_TESTS=OFF\", \"Release\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.10.10-git-91f66c62"
+}

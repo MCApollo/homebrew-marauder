@@ -1,0 +1,18 @@
+{
+    "name": "TeensyLoaderCli",
+    "description": "Command-line integration for Teensy USB development boards",
+    "url": "https://github.com/PaulStoffregen/teensy_loader_cli/archive/2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.pjrc.com/teensy/loader_cli.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"OS\"] = \"MACOSX\"",
+        "ENV[\"SDK\"] = MacOS.sdk_path || \"/\"",
+        "system \"make\"",
+        "bin.install \"teensy_loader_cli\""
+    ],
+    "version": "2.1"
+}

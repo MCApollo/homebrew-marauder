@@ -1,0 +1,17 @@
+{
+    "name": "Bcpp",
+    "description": "C(++) beautifier",
+    "url": "https://invisible-mirror.net/archives/bcpp/bcpp-20180401.tgz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/bcpp-20180401.tgz",
+    "homepage": "https://invisible-island.net/bcpp/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"install\"",
+        "etc.install \"bcpp.cfg\""
+    ],
+    "version": "20180401"
+}

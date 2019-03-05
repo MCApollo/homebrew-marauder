@@ -1,0 +1,51 @@
+{
+    "name": "Ruby",
+    "description": "Powerful, clean, object-oriented scripting language",
+    "url": "https://cache.ruby-lang.org/pub/ruby/2.6/ruby-2.6.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.ruby-lang.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libyaml",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "rubygems",
+            "url": "https://rubygems.org/rubygems/rubygems-3.0.2.tgz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm_f %W[",
+        "#{rubygems_bindir}/bundle",
+        "#{rubygems_bindir}/bundler",
+        "]",
+        "rm_rf Dir[HOMEBREW_PREFIX/\"lib/ruby/gems/#{api_version}/gems/bundler-*\"]",
+        "rubygems_bindir.install_symlink Dir[libexec/\"gembin/*\"]",
+        "config_file = lib/\"ruby/#{api_version}/rubygems/defaults/operating_system.rb\"",
+        "config_file.unlink if config_file.exist?",
+        "config_file.write rubygems_config(api_version)",
+        "%w[sitearchdir vendorarchdir].each do |dir|",
+        "mkdir_p `#{bin}/ruby -rrbconfig -e 'print RbConfig::CONFIG[\"#{dir}\"]'`"
+    ],
+    "version": "2.6.1"
+}

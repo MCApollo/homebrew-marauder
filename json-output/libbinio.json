@@ -1,0 +1,17 @@
+{
+    "name": "Libbinio",
+    "description": "Binary I/O stream class library",
+    "url": "https://downloads.sourceforge.net/project/libbinio/libbinio/1.4/libbinio-1.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://libbinio.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4"
+}

@@ -1,0 +1,49 @@
+{
+    "name": "Hunspell",
+    "description": "Spell checker and morphological analyzer",
+    "url": "https://github.com/hunspell/hunspell/archive/v1.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://hunspell.github.io",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "freeling",
+            "reason": "both install "
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-ui\",",
+        "\"--with-readline\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"tests\""
+    ],
+    "version": "1.7.0"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Libbs2b",
+    "description": "Bauer stereophonic-to-binaural DSP",
+    "url": "https://downloads.sourceforge.net/project/bs2b/libbs2b/3.1.0/libbs2b-3.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://bs2b.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-static\",",
+        "\"--enable-shared\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.1.0"
+}

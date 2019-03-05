@@ -1,0 +1,34 @@
+{
+    "name": "Recode",
+    "description": "Convert character set (charsets)",
+    "url": "https://github.com/pinard/Recode/archive/v3.7-beta2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pinard/Recode",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-liconv\"",
+        "ENV.append \"LDFLAGS\", \"-lintl\"",
+        "inreplace \"src/recodext.h\", \"bool ignore : 2;\", \"bool ignore : 1;\"",
+        "cp Dir[\"#{Formula[\"libtool\"].opt_pkgshare}/*/config.{guess,sub}\"], buildpath",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--without-included-gettext\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--infodir=#{info}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.7"
+}

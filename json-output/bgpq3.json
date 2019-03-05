@@ -1,0 +1,39 @@
+{
+    "name": "Bgpq3",
+    "description": "BGP filtering automation for Cisco, Juniper, BIRD and OpenBGPD routers",
+    "url": "https://github.com/snar/bgpq3/archive/v0.1.35.tar.gz",
+    "mirror": null,
+    "homepage": "http://snar.spb.ru/prog/bgpq3/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/Makefile.in b/Makefile.in\n",
+                "index c2d7e96..afec780 100644\n",
+                "--- a/Makefile.in\n",
+                "+++ b/Makefile.in\n",
+                "@@ -29,9 +29,10 @@ clean:\n",
+                " \trm -rf *.o *.core core.* core\n",
+                "\n",
+                " install: bgpq3\n",
+                "+\tif test ! -d @prefix@/bin ; then mkdir -p @prefix@/bin ; fi\n",
+                " \t${INSTALL} -c -s -m 755 bgpq3 @bindir@\n",
+                "-\tif test ! -d @prefix@/man/man8 ; then mkdir -p @prefix@/man/man8 ; fi\n",
+                "-\t${INSTALL} -m 644 bgpq3.8 @prefix@/man/man8\n",
+                "+\tif test ! -d @mandir@/man8 ; then mkdir -p @mandir@/man8 ; fi\n",
+                "+\t${INSTALL} -m 644 bgpq3.8 @mandir@/man8\n",
+                "\n",
+                " depend:\n",
+                " \tmakedepend -- $(CFLAGS) -- $(SRCS)\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.35"
+}

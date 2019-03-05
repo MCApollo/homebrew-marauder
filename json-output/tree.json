@@ -1,0 +1,23 @@
+{
+    "name": "Tree",
+    "description": "Display directories as trees (with optional color/HTML output)",
+    "url": "https://deb.debian.org/debian/pool/main/t/tree/tree_1.8.0.orig.tar.gz",
+    "mirror": null,
+    "homepage": "http://mama.indstate.edu/users/ice/tree/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CFLAGS\", \"-fomit-frame-pointer\"",
+        "objs = \"tree.o unix.o html.o xml.o json.o hash.o color.o file.o strverscmp.o\"",
+        "system \"make\", \"prefix=#{prefix}\",",
+        "\"MANDIR=#{man1}\",",
+        "\"CC=#{ENV.cc}\",",
+        "\"CFLAGS=#{ENV.cflags}\",",
+        "\"LDFLAGS=#{ENV.ldflags}\",",
+        "\"OBJS=#{objs}\",",
+        "\"install\""
+    ],
+    "version": "1.8.0"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Iat",
+    "description": "Converts many CD-ROM image formats to ISO9660",
+    "url": "https://downloads.sourceforge.net/project/iat.berlios/iat-0.1.7.tar.bz2",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/iat.berlios/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\",",
+        "\"--includedir=#{include}/iat\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.7"
+}

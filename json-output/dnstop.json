@@ -1,0 +1,18 @@
+{
+    "name": "Dnstop",
+    "description": "Console tool to analyze DNS traffic",
+    "url": "http://dns.measurement-factory.com/tools/dnstop/src/dnstop-20140915.tar.gz",
+    "mirror": null,
+    "homepage": "http://dns.measurement-factory.com/tools/dnstop/index.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "bin.install \"dnstop\"",
+        "man8.install \"dnstop.8\""
+    ],
+    "version": "20140915"
+}

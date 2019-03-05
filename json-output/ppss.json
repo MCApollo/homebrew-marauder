@@ -1,0 +1,15 @@
+{
+    "name": "Ppss",
+    "description": "Shell script to execute commands in parallel",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/ppss/ppss-2.97.tgz",
+    "mirror": null,
+    "homepage": "https://github.com/louwrentius/PPSS",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"ppss\""
+    ],
+    "version": "2.97"
+}

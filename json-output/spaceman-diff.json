@@ -1,0 +1,24 @@
+{
+    "name": "SpacemanDiff",
+    "description": "Diff images from the command-line",
+    "url": "https://github.com/holman/spaceman-diff/archive/v1.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/holman/spaceman-diff",
+    "depends": [
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        },
+        {
+            "depend": "jp2a",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"spaceman-diff\""
+    ],
+    "version": "1.0.3"
+}

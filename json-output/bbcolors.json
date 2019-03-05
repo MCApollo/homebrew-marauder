@@ -1,0 +1,15 @@
+{
+    "name": "Bbcolors",
+    "description": "Save and load color schemes for BBEdit and TextWrangler",
+    "url": "https://daringfireball.net/projects/downloads/bbcolors_1.0.1.zip",
+    "mirror": null,
+    "homepage": "https://daringfireball.net/projects/bbcolors/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"bbcolors\""
+    ],
+    "version": "1.0.1"
+}

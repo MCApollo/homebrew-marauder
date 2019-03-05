@@ -1,0 +1,49 @@
+{
+    "name": "ClutterGst",
+    "description": "ClutterMedia interface using GStreamer for video and audio",
+    "url": "https://download.gnome.org/sources/clutter-gst/3.0/clutter-gst-3.0.27.tar.xz",
+    "mirror": null,
+    "homepage": "https://developer.gnome.org/clutter-gst/",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "clutter",
+            "build-depend": false
+        },
+        {
+            "depend": "gdk-pixbuf",
+            "build-depend": false
+        },
+        {
+            "depend": "gst-plugins-base",
+            "build-depend": false
+        },
+        {
+            "depend": "gstreamer",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-debug",
+        "--prefix=#{prefix}",
+        "--enable-introspection=yes",
+        "--disable-silent-rules",
+        "--disable-gtk-doc-html",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.27"
+}

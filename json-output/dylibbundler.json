@@ -1,0 +1,16 @@
+{
+    "name": "Dylibbundler",
+    "description": "Utility to bundle libraries into executables for macOS",
+    "url": "https://downloads.sourceforge.net/project/macdylibbundler/macdylibbundler/0.4.4/dylibbundler-0.4.4.zip",
+    "mirror": null,
+    "homepage": "https://github.com/auriamg/macdylibbundler",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"dylibbundler\""
+    ],
+    "version": "0.4.4"
+}

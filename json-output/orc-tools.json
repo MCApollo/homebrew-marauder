@@ -1,0 +1,16 @@
+{
+    "name": "OrcTools",
+    "description": "ORC java command-line tools and utilities",
+    "url": "https://search.maven.org/remotecontent?filepath=org/apache/orc/orc-tools/1.5.4/orc-tools-1.5.4-uber.jar",
+    "mirror": null,
+    "homepage": "https://orc.apache.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"orc-tools-#{version}-uber.jar\"",
+        "bin.write_jar_script libexec/\"orc-tools-#{version}-uber.jar\", \"orc-tools\""
+    ],
+    "version": "1.5.4"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Etsh",
+    "description": "Two ports of /bin/sh from V6 UNIX (circa 1975)",
+    "url": "https://etsh.io/src/etsh-5.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://etsh.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "teleport",
+            "reason": "both install `tsh` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\", \"SYSCONFDIR=#{etc}\", \"MANDIR=#{man1}\"",
+        "bin.install_symlink \"etsh\" => \"osh\"",
+        "bin.install_symlink \"tsh\" => \"sh6\""
+    ],
+    "version": "5.2.0"
+}

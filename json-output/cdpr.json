@@ -1,0 +1,16 @@
+{
+    "name": "Cdpr",
+    "description": "Cisco Discovery Protocol Reporter",
+    "url": "https://downloads.sourceforge.net/project/cdpr/cdpr/2.4/cdpr-2.4.tgz",
+    "mirror": null,
+    "homepage": "http://www.monkeymental.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system ENV.cc, ENV.cflags, \"cdpr.c\", \"cdprs.c\", \"conffile.c\", ENV.ldflags, \"-lpcap\", \"-o\", \"cdpr\"",
+        "bin.install \"cdpr\""
+    ],
+    "version": "2.4"
+}

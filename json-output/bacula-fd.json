@@ -1,0 +1,29 @@
+{
+    "name": "BaculaFd",
+    "description": "Network backup solution",
+    "url": "https://downloads.sourceforge.net/project/bacula/bacula/9.4.2/bacula-9.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.bacula.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "bareos-client",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "(var/\"run\").mkpath"
+    ],
+    "version": "9.4.2"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Ddclient",
+    "description": "Update dynamic DNS entries",
+    "url": "https://downloads.sourceforge.net/project/ddclient/ddclient/ddclient-3.9.0/ddclient-3.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/p/ddclient/wiki/Home",
+    "depends": [],
+    "resource": [
+        {
+            "name": "Data::Validate::IP",
+            "url": "https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Data-Validate-IP-0.27.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(etc/\"ddclient\").mkpath",
+        "(var/\"run/ddclient\").mkpath"
+    ],
+    "version": "3.9.0"
+}

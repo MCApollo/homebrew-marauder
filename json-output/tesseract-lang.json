@@ -1,0 +1,27 @@
+{
+    "name": "TesseractLang",
+    "description": "Enables extra languages support for Tesseract",
+    "url": "https://github.com/tesseract-ocr/tessdata_fast/archive/4.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tesseract-ocr/tessdata_fast/",
+    "depends": [
+        {
+            "depend": "tesseract",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "testfile",
+            "url": "https://raw.githubusercontent.com/tesseract-ocr/test/6dd816cdaf3e76153271daf773e562e24c928bf5/testing/eurotext.tif"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm \"eng.traineddata\"",
+        "rm \"osd.traineddata\"",
+        "(share/\"tessdata\").install Dir[\"*\"]"
+    ],
+    "version": "4.0.0"
+}

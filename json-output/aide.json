@@ -1,0 +1,43 @@
+{
+    "name": "Aide",
+    "description": "File and directory integrity checker",
+    "url": "https://downloads.sourceforge.net/project/aide/aide/0.16/aide-0.16.tar.gz",
+    "mirror": null,
+    "homepage": "https://aide.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "libgpg-error",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"sh\", \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-lfs\",",
+        "\"--disable-static\",",
+        "\"--with-curl\",",
+        "\"--with-zlib\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.16"
+}

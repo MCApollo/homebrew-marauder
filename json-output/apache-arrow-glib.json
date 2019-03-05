@@ -1,0 +1,35 @@
+{
+    "name": "ApacheArrowGlib",
+    "description": "GLib bindings for Apache Arrow",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=arrow/arrow-0.12.1/apache-arrow-0.12.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://arrow.apache.org/",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "apache-arrow",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"c_glib\" do",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.12.1"
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Aom",
+    "description": "Codec library for encoding and decoding AV1 video streams",
+    "url": "https://aomedia.googlesource.com/aom.git",
+    "mirror": null,
+    "homepage": "https://aomedia.googlesource.com/aom",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "yasm",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "bus_qcif_15fps.y4m",
+            "url": "https://media.xiph.org/video/derf/y4m/bus_qcif_15fps.y4m"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"macbuild\" do",
+        "system \"cmake\", \"..\", *std_cmake_args,",
+        "\"-DENABLE_DOCS=off\",",
+        "\"-DENABLE_EXAMPLES=on\",",
+        "\"-DENABLE_TESTDATA=off\",",
+        "\"-DENABLE_TESTS=off\",",
+        "\"-DENABLE_TOOLS=off\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.0-git-d14c5bb4"
+}

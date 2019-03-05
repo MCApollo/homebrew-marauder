@@ -1,0 +1,17 @@
+{
+    "name": "Mpegdemux",
+    "description": "MPEG1/2 system stream demultiplexer",
+    "url": "http://www.hampa.ch/mpegdemux/mpegdemux-0.1.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.hampa.ch/mpegdemux/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.4"
+}

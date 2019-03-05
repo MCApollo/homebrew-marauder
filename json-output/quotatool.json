@@ -1,0 +1,18 @@
+{
+    "name": "Quotatool",
+    "description": "Edit disk quotas from the command-line",
+    "url": "https://quotatool.ekenberg.se/quotatool-1.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://quotatool.ekenberg.se/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "sbin.mkpath",
+        "man8.mkpath",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.2"
+}

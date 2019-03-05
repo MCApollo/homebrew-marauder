@@ -1,0 +1,35 @@
+{
+    "name": "Librdkafka",
+    "description": "The Apache Kafka C/C++ library",
+    "url": "https://github.com/edenhill/librdkafka/archive/v0.11.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/edenhill/librdkafka",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "lz4",
+            "build-depend": false
+        },
+        {
+            "depend": "lzlib",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.11.6"
+}

@@ -1,0 +1,48 @@
+{
+    "name": "Openldap",
+    "description": "Open source suite of directory software",
+    "url": "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.4.47.tgz",
+    "mirror": null,
+    "homepage": "https://www.openldap.org/software/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--sysconfdir=#{etc}",
+        "--localstatedir=#{var}",
+        "--enable-accesslog",
+        "--enable-auditlog",
+        "--enable-bdb=no",
+        "--enable-constraint",
+        "--enable-dds",
+        "--enable-deref",
+        "--enable-dyngroup",
+        "--enable-dynlist",
+        "--enable-hdb=no",
+        "--enable-memberof",
+        "--enable-ppolicy",
+        "--enable-proxycache",
+        "--enable-refint",
+        "--enable-retcode",
+        "--enable-seqmod",
+        "--enable-translucent",
+        "--enable-unique",
+        "--enable-valsort",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "(var/\"run\").mkpath",
+        "chmod 0755, Dir[etc/\"openldap/*\"]",
+        "chmod 0755, Dir[etc/\"openldap/schema/*\"]"
+    ],
+    "version": "2.4.47"
+}

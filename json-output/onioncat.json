@@ -1,0 +1,25 @@
+{
+    "name": "Onioncat",
+    "description": "VPN-adapter that provides location privacy using Tor or I2P",
+    "url": "https://www.cypherpunk.at/ocat/download/Source/current/onioncat-0.2.2.r578.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.onioncat.org",
+    "depends": [
+        {
+            "depend": "tor",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "rm_f \""
+    ],
+    "version": "0.2.2"
+}

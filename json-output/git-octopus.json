@@ -1,0 +1,17 @@
+{
+    "name": "GitOctopus",
+    "description": "The continuous merge workflow",
+    "url": "https://github.com/lesfurets/git-octopus/archive/v1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/lesfurets/git-octopus",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"build\"",
+        "bin.install \"bin/git-octopus\", \"bin/git-conflict\", \"bin/git-apply-conflict-resolution\"",
+        "man1.install \"doc/git-octopus.1\", \"doc/git-conflict.1\""
+    ],
+    "version": "1.4"
+}

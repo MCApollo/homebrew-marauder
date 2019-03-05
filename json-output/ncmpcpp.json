@@ -1,0 +1,73 @@
+{
+    "name": "Ncmpcpp",
+    "description": "Ncurses-based client for the Music Player Daemon",
+    "url": "https://rybczak.net/ncmpcpp/stable/ncmpcpp-0.8.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://rybczak.net/ncmpcpp/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        },
+        {
+            "depend": "libmpdclient",
+            "build-depend": false
+        },
+        {
+            "depend": "ncurses",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        },
+        {
+            "depend": "taglib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "ENV.append \"LDFLAGS\", \"-liconv\"",
+        "ENV.append \"BOOST_LIB_SUFFIX\", \"-mt\"",
+        "ENV.append \"CXXFLAGS\", \"-D_XOPEN_SOURCE_EXTENDED\"",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--enable-clock",
+        "--enable-outputs",
+        "--enable-unicode",
+        "--enable-visualizer",
+        "--with-curl",
+        "--with-taglib",
+        "]",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.2"
+}

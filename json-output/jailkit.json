@@ -1,0 +1,16 @@
+{
+    "name": "Jailkit",
+    "description": "Utilities to create limited user accounts in a chroot jail",
+    "url": "https://olivier.sessink.nl/jailkit/jailkit-2.19.tar.bz2",
+    "mirror": null,
+    "homepage": "https://olivier.sessink.nl/jailkit/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-debug\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.19"
+}

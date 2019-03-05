@@ -1,0 +1,45 @@
+{
+    "name": "Ldc",
+    "description": "Portable D programming language compiler",
+    "url": "https://github.com/ldc-developers/ldc/releases/download/v1.14.0/ldc-1.14.0-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.dlang.org/LDC",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libconfig",
+            "build-depend": true
+        },
+        {
+            "depend": "llvm",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "ldc-bootstrap",
+            "url": "https://github.com/ldc-developers/ldc/releases/download/v1.12.0/ldc2-1.12.0-osx-x86_64.tar.xz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "(buildpath/\"ldc-bootstrap\").install resource(\"ldc-bootstrap\")",
+        "mkdir \"build\" do",
+        "args = std_cmake_args + %W[",
+        "-DLLVM_ROOT_DIR=#{Formula[\"llvm\"].opt_prefix}",
+        "-DINCLUDE_INSTALL_DIR=#{include}/dlang/ldc",
+        "-DD_COMPILER=#{buildpath}/ldc-bootstrap/bin/ldmd2",
+        "-DLDC_WITH_LLD=OFF",
+        "-DRT_ARCHIVE_WITH_LDC=OFF",
+        "]",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14.0"
+}

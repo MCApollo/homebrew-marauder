@@ -1,0 +1,32 @@
+{
+    "name": "Mlton",
+    "description": "Whole-program, optimizing compiler for Standard ML",
+    "url": "https://downloads.sourceforge.net/project/mlton/mlton/20180207/mlton-20180207.src.tgz",
+    "mirror": null,
+    "homepage": "http://mlton.org",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "bootstrap",
+            "url": "https://downloads.sourceforge.net/project/mlton/mlton/20180207/mlton-20180207-1.amd64-darwin.gmp-static.tgz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bootstrap = buildpath/\"bootstrap\"",
+        "resource(\"bootstrap\").stage do",
+        "args = %W[",
+        "WITH_GMP=#{Formula[\"gmp\"].opt_prefix}",
+        "PREFIX=#{bootstrap}",
+        "MAN_PREFIX_EXTRA=/share",
+        "]",
+        "system \"make\", *(args + [\"install\"])"
+    ],
+    "version": "20180207"
+}

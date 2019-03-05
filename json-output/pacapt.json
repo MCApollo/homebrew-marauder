@@ -1,0 +1,16 @@
+{
+    "name": "Pacapt",
+    "description": "Package manager in the style of Arch",
+    "url": "https://github.com/icy/pacapt/archive/v2.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/icy/pacapt",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "system \"make\", \"install\", \"BINDIR=#{bin}\", \"VERSION=#{version}\""
+    ],
+    "version": "2.4.0"
+}

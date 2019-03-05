@@ -1,0 +1,49 @@
+{
+    "name": "Uriparser",
+    "description": "URI parsing library (strictly RFC 3986 compliant)",
+    "url": "https://github.com/uriparser/uriparser/releases/download/uriparser-0.9.1/uriparser-0.9.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://uriparser.github.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "gtest",
+            "url": "https://github.com/google/googletest/archive/release-1.8.1.tar.gz"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "libkml",
+            "reason": "both install `liburiparser.dylib`"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "(buildpath/\"gtest\").install resource(\"gtest\")",
+        "(buildpath/\"gtest/googletest\").cd do",
+        "system \"cmake\", \".\"",
+        "system \"make\""
+    ],
+    "version": "0.9.1"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Liboauth",
+    "description": "C library for the OAuth Core RFC 5849 standard",
+    "url": "https://downloads.sourceforge.net/project/liboauth/liboauth-1.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://liboauth.sourceforge.io",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-curl\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.3"
+}

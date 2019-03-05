@@ -1,0 +1,21 @@
+{
+    "name": "Gpatch",
+    "description": "Apply a diff file to an original",
+    "url": "https://ftp.gnu.org/gnu/patch/patch-2.7.6.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/patch/patch-2.7.6.tar.xz",
+    "homepage": "https://savannah.gnu.org/projects/patch/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7.6"
+}

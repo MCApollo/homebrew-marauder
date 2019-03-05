@@ -1,0 +1,17 @@
+{
+    "name": "Pgdbf",
+    "description": "Converter of XBase/FoxPro tables to PostgreSQL",
+    "url": "https://downloads.sourceforge.net/project/pgdbf/pgdbf/0.6.2/pgdbf-0.6.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://github.com/kstrauser/pgdbf",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.2"
+}

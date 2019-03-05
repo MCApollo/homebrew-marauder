@@ -1,0 +1,63 @@
+{
+    "name": "Pdns",
+    "description": "Authoritative nameserver",
+    "url": "https://downloads.powerdns.com/releases/pdns-4.1.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.powerdns.com",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "ragel",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path if MacOS.version == :sierra",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--sysconfdir=#{etc}/powerdns",
+        "--with-lua",
+        "--with-openssl=#{Formula[\"openssl\"].opt_prefix}",
+        "--with-sqlite3",
+        "--with-modules=gsqlite3",
+        "]",
+        "system \"./bootstrap\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.1.4"
+}

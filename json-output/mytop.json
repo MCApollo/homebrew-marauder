@@ -1,0 +1,55 @@
+{
+    "name": "Mytop",
+    "description": "Top-like query monitor for MySQL",
+    "url": "http://www.mysqlfanboy.com/mytop-3/mytop-1.9.1.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/m/mytop/mytop_1.9.1.orig.tar.gz",
+    "homepage": "http://www.mysqlfanboy.com/mytop-3/",
+    "depends": [
+        {
+            "depend": "mysql-client",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "List::Util",
+            "url": "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Scalar-List-Utils-1.46.tar.gz"
+        },
+        {
+            "name": "Config::IniFiles",
+            "url": "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/Config-IniFiles-2.94.tar.gz"
+        },
+        {
+            "name": "DBI",
+            "url": "https://cpan.metacpan.org/authors/id/T/TI/TIMB/DBI-1.641.tar.gz"
+        },
+        {
+            "name": "DBD::mysql",
+            "url": "https://cpan.metacpan.org/authors/id/C/CA/CAPTTOFU/DBD-mysql-4.046.tar.gz"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "mariadb",
+            "reason": "both install `mytop` binaries"
+        }
+    ],
+    "patches": [
+        {
+            "url": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/m/mytop/mytop_1.9.1-2.debian.tar.xz",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "resources.each do |r|",
+        "r.stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9.1"
+}

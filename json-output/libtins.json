@@ -1,0 +1,26 @@
+{
+    "name": "Libtins",
+    "description": "C++ network packet sniffing and crafting library",
+    "url": "https://github.com/mfontanini/libtins/archive/v4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://libtins.github.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "doc.install \"examples\""
+    ],
+    "version": "4.1"
+}

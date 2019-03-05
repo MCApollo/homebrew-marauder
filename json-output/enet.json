@@ -1,0 +1,16 @@
+{
+    "name": "Enet",
+    "description": "Provides a network communication layer on top of UDP",
+    "url": "http://enet.bespin.org/download/enet-1.3.14.tar.gz",
+    "mirror": null,
+    "homepage": "http://enet.bespin.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.14"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Nxengine",
+    "description": "Rewrite of Cave Story (Doukutsu Monogatari)",
+    "url": "https://nxengine.sourceforge.io/dl/nx-src-1006.tar.bz2",
+    "mirror": null,
+    "homepage": "https://nxengine.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "game",
+            "url": "https://www.cavestory.org/downloads/cavestoryen.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"nxengine\").mkpath",
+        "ln_sf Dir[pkgshare/\"*\"], \"#{var}/nxengine/\"",
+        "ln_sf \"/Library/Fonts/Courier New.ttf\", \"#{var}/nxengine/font.ttf\""
+    ],
+    "version": "1006"
+}

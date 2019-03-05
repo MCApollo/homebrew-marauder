@@ -1,0 +1,24 @@
+{
+    "name": "Crc32c",
+    "description": "CRC32C implementation with CPU-specific acceleration",
+    "url": "https://github.com/google/crc32c/archive/1.0.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/crc32c",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DCRC32C_BUILD_TESTS=0\", \"-DCRC32C_BUILD_BENCHMARKS=0\", \"-DCRC32C_USE_GLOG=0\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "system \"make\", \"clean\"",
+        "system \"cmake\", \".\", \"-DBUILD_SHARED_LIBS=ON\", \"-DCRC32C_BUILD_TESTS=0\", \"-DCRC32C_BUILD_BENCHMARKS=0\", \"-DCRC32C_USE_GLOG=0\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.7"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Acme",
+    "description": "Crossassembler for multiple environments",
+    "url": "https://svn.code.sf.net/p/acme-crossass/code-0/trunk",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/acme-crossass/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-C\", \"src\", \"install\", \"BINDIR=#{bin}\"",
+        "doc.install Dir[\"docs/*\"]"
+    ],
+    "version": "1.0-u"
+}

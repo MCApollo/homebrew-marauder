@@ -1,0 +1,22 @@
+{
+    "name": "Serd",
+    "description": "C library for RDF syntax",
+    "url": "https://download.drobilla.net/serd-0.28.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://drobilla.net/software/serd/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\"",
+        "system \"./waf\"",
+        "system \"./waf\", \"install\""
+    ],
+    "version": "0.28.0"
+}

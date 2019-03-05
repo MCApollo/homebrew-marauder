@@ -1,0 +1,41 @@
+{
+    "name": "Schroedinger",
+    "description": "High-speed implementation of the Dirac codec",
+    "url": "https://launchpad.net/schroedinger/trunk/1.0.11/+download/schroedinger-1.0.11.tar.gz",
+    "mirror": "https://mirrors.ocf.berkeley.edu/debian/pool/main/s/schroedinger/schroedinger_1.0.11.orig.tar.gz",
+    "homepage": "https://launchpad.net/schroedinger",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "orc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "inreplace \"Makefile\" do |s|",
+        "s.change_make_var! \"SUBDIRS\", \"schroedinger doc tools\"",
+        "s.change_make_var! \"DIST_SUBDIRS\", \"schroedinger doc tools\""
+    ],
+    "version": "1.0.11"
+}

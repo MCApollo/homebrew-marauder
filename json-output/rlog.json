@@ -1,0 +1,37 @@
+{
+    "name": "Rlog",
+    "description": "Flexible message logging facility for C++",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rlog/rlog-1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.arg0.net/rlog",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- orig/rlog/common.h.in\t2008-06-14 20:10:13.000000000 -0700\n",
+                "+++ new/rlog/common.h.in\t2009-05-18 16:05:04.000000000 -0700\n",
+                "@@ -52,7 +52,12 @@\n",
+                " \n",
+                " # define PRINTF(FMT,X) __attribute__ (( __format__ ( __printf__, FMT, X)))\n",
+                " # define HAVE_PRINTF_ATTR 1\n",
+                "+\n",
+                "+#ifdef __APPLE__ \n",
+                "+# define RLOG_SECTION __attribute__ (( section(\"__DATA, RLOG_DATA\") ))\n",
+                "+#else\n",
+                " # define RLOG_SECTION __attribute__ (( section(\"RLOG_DATA\") ))\n",
+                "+#endif\n",
+                " \n",
+                " #if __GNUC__ >= 3\n",
+                " # define expect(foo, bar) __builtin_expect((foo),bar)\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4"
+}

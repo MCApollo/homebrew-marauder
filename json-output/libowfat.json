@@ -1,0 +1,16 @@
+{
+    "name": "Libowfat",
+    "description": "Reimplements libdjb",
+    "url": "https://www.fefe.de/libowfat/libowfat-0.31.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.fefe.de/libowfat/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"libowfat.a\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\", \"MAN3DIR=#{man3}\", \"INCLUDEDIR=#{include}/libowfat\""
+    ],
+    "version": "0.31"
+}

@@ -1,0 +1,104 @@
+{
+    "name": "Poppler",
+    "description": "PDF rendering library (based on the xpdf-3.0 code base)",
+    "url": "https://poppler.freedesktop.org/poppler-0.74.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://poppler.freedesktop.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        },
+        {
+            "depend": "nss",
+            "build-depend": false
+        },
+        {
+            "depend": "openjpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "font-data",
+            "url": "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "pdftohtml",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = std_cmake_args + %w[",
+        "-DBUILD_GTK_TESTS=OFF",
+        "-DENABLE_CMS=lcms2",
+        "-DENABLE_GLIB=ON",
+        "-DENABLE_QT5=ON",
+        "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON",
+        "-DWITH_GObjectIntrospection=ON",
+        "]",
+        "system \"cmake\", \".\", *args",
+        "system \"make\", \"install\"",
+        "system \"make\", \"clean\"",
+        "system \"cmake\", \".\", \"-DBUILD_SHARED_LIBS=OFF\", *args",
+        "system \"make\"",
+        "lib.install \"libpoppler.a\"",
+        "lib.install \"cpp/libpoppler-cpp.a\"",
+        "lib.install \"glib/libpoppler-glib.a\"",
+        "resource(\"font-data\").stage do",
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "0.74.0"
+}

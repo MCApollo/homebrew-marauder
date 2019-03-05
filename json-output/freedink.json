@@ -1,0 +1,68 @@
+{
+    "name": "Freedink",
+    "description": "Portable version of the Dink Smallwood game engine",
+    "url": "https://ftp.gnu.org/gnu/freedink/freedink-108.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gnu.org/software/freedink/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "check",
+            "build-depend": false
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libzip",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_gfx",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "freedink-data",
+            "url": "https://ftp.gnu.org/gnu/freedink/freedink-data-1.08.20170409.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "resource(\"freedink-data\").stage do",
+        "inreplace \"Makefile\", \"xargs -0r\", \"xargs -0\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "108.4"
+}

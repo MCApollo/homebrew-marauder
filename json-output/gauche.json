@@ -1,0 +1,19 @@
+{
+    "name": "Gauche",
+    "description": "R7RS Scheme implementation, developed to be a handy script interpreter",
+    "url": "https://downloads.sourceforge.net/gauche/Gauche/Gauche-0.9.7.tgz",
+    "mirror": null,
+    "homepage": "https://practical-scheme.net/gauche/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\",",
+        "\"--enable-multibyte=utf-8\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.7"
+}

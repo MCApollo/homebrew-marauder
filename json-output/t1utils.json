@@ -1,0 +1,28 @@
+{
+    "name": "T1utils",
+    "description": "Command-line tools for dealing with Type 1 fonts",
+    "url": "https://www.lcdf.org/type/t1utils-1.41.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.lcdf.org/type/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.41"
+}

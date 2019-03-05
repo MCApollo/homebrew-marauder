@@ -1,0 +1,23 @@
+{
+    "name": "Grt",
+    "description": "The Gesture Recognition Toolkit for real-time machine learning",
+    "url": "https://github.com/nickgillian/grt/archive/v0.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://nickgillian.com/grt/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"build\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.1"
+}

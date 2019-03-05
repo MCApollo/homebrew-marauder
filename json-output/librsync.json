@@ -1,0 +1,27 @@
+{
+    "name": "Librsync",
+    "description": "Library that implements the rsync remote-delta algorithm",
+    "url": "https://github.com/librsync/librsync/archive/v2.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://librsync.github.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "popt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "man1.install \"doc/rdiff.1\"",
+        "man3.install \"doc/librsync.3\""
+    ],
+    "version": "2.0.2"
+}

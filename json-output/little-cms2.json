@@ -1,0 +1,26 @@
+{
+    "name": "LittleCms2",
+    "description": "Color management engine supporting ICC profiles",
+    "url": "https://downloads.sourceforge.net/project/lcms/lcms/2.9/lcms2-2.9.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.littlecms.com/",
+    "depends": [
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[--disable-dependency-tracking --prefix=#{prefix}]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.9"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Ekhtml",
+    "description": "Forgiving SAX-style HTML parser",
+    "url": "https://downloads.sourceforge.net/project/ekhtml/ekhtml/0.3.2/ekhtml-0.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://ekhtml.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.2"
+}

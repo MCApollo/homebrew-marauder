@@ -1,0 +1,39 @@
+{
+    "name": "Makensis",
+    "description": "System to create Windows installers",
+    "url": "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.04/nsis-3.04-src.tar.bz2",
+    "mirror": null,
+    "homepage": "https://nsis.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "mingw-w64",
+            "build-depend": true
+        },
+        {
+            "depend": "scons",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "nsis",
+            "url": "https://downloads.sourceforge.net/project/nsis/NSIS%203/3.04/nsis-3.04.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = [",
+        "\"CC=#{ENV.cc}\",",
+        "\"CXX=#{ENV.cxx}\",",
+        "\"PREFIX_DOC=#{share}/nsis/Docs\",",
+        "\"SKIPUTILS=Makensisw,NSIS Menu,zip2exe\",",
+        "\"STRIP=0\",",
+        "\"VERSION=#{version}\",",
+        "]",
+        "system \"scons\", \"makensis\", *args",
+        "bin.install \"build/urelease/makensis/makensis\"",
+        "(share/\"nsis\").install resource(\"nsis\")"
+    ],
+    "version": "3.04"
+}

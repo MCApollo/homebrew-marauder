@@ -1,0 +1,30 @@
+{
+    "name": "Metaproxy",
+    "description": "Z39.50 proxy and router utilizing Yaz toolkit",
+    "url": "http://ftp.indexdata.dk/pub/metaproxy/metaproxy-1.15.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.indexdata.com/metaproxy",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "yazpp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.15.0"
+}

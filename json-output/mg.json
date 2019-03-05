@@ -1,0 +1,23 @@
+{
+    "name": "Mg",
+    "description": "Small Emacs-like editor",
+    "url": "https://dl.bintray.com/homebrew/mirror/mg-20180421.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ibara/mg",
+    "depends": [
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20180421"
+}

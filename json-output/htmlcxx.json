@@ -1,0 +1,16 @@
+{
+    "name": "Htmlcxx",
+    "description": "Non-validating CSS1 and HTML parser for C++",
+    "url": "https://downloads.sourceforge.net/project/htmlcxx/htmlcxx/0.86/htmlcxx-0.86.tar.gz",
+    "mirror": null,
+    "homepage": "https://htmlcxx.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.86"
+}

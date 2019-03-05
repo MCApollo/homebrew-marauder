@@ -1,0 +1,43 @@
+{
+    "name": "Pushpin",
+    "description": "Reverse proxy for realtime web services",
+    "url": "https://dl.bintray.com/fanout/source/pushpin-1.20.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://pushpin.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "mongrel2",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        },
+        {
+            "depend": "zeromq",
+            "build-depend": false
+        },
+        {
+            "depend": "zurl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--configdir=#{etc}\",",
+        "\"--rundir=#{var}/run\",",
+        "\"--logdir=#{var}/log\",",
+        "\"--extraconf=QMAKE_MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.20.1"
+}

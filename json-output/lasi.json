@@ -1,0 +1,34 @@
+{
+    "name": "Lasi",
+    "description": "C++ stream output interface for creating Postscript documents",
+    "url": "https://downloads.sourceforge.net/project/lasi/lasi/1.1.2%20Source/libLASi-1.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.unifont.org/lasi/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args - %w[-DCMAKE_BUILD_TYPE=None]",
+        "system \"cmake\", \".\", \"-DCMAKE_BUILD_TYPE=Release\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.2"
+}

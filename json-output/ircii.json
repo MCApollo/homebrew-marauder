@@ -1,0 +1,26 @@
+{
+    "name": "Ircii",
+    "description": "IRC and ICB client",
+    "url": "https://ircii.warped.com/ircii-20170704.tar.bz2",
+    "mirror": "https://mirrors.ocf.berkeley.edu/debian/pool/main/i/ircii/ircii_20170704.orig.tar.bz2",
+    "homepage": "http://www.eterna.com.au/ircii/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LIBS\", \"-liconv\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-default-server=irc.freenode.net\",",
+        "\"--enable-ipv6\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "20170704"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Chgems",
+    "description": "Chroot for Ruby gems",
+    "url": "https://github.com/postmodern/chgems/archive/v0.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/postmodern/chgems#readme",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.3.2"
+}

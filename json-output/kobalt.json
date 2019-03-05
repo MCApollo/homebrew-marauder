@@ -1,0 +1,19 @@
+{
+    "name": "Kobalt",
+    "description": "Build system",
+    "url": "https://github.com/cbeust/kobalt/releases/download/1.0.122/kobalt-1.0.122.zip",
+    "mirror": null,
+    "homepage": "https://beust.com/kobalt/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"kobalt-#{version}/kobalt\"",
+        "(bin/\"kobaltw\").write <<~EOS",
+        "#!/bin/bash",
+        "java -jar #{libexec}/kobalt/wrapper/kobalt-wrapper.jar $*",
+        "EOS"
+    ],
+    "version": "1.0.122"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Tfenv",
+    "description": "Terraform version manager inspired by rbenv",
+    "url": "https://github.com/kamatama41/tfenv/archive/v0.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kamatama41/tfenv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "terraform",
+            "reason": "tfenv symlinks terraform binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "prefix.install [\"bin\", \"libexec\"]"
+    ],
+    "version": "0.6.0"
+}

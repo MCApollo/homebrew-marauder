@@ -1,0 +1,38 @@
+{
+    "name": "Nmh",
+    "description": "The new version of the MH mail handler",
+    "url": "https://download.savannah.gnu.org/releases/nmh/nmh-1.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/nmh/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "w3m",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\", \"--libdir=#{libexec}\",",
+        "\"--with-cyrus-sasl\",",
+        "\"--with-tls\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7.1"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Vttest",
+    "description": "Test compatibility of VT100-compatible terminals",
+    "url": "https://invisible-mirror.net/archives/vttest/vttest-20140305.tgz",
+    "mirror": null,
+    "homepage": "https://invisible-island.net/vttest/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20140305"
+}

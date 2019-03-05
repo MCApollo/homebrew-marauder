@@ -1,0 +1,16 @@
+{
+    "name": "Lpc21isp",
+    "description": "In-circuit programming (ISP) tool for several NXP microcontrollers",
+    "url": "https://downloads.sourceforge.net/project/lpc21isp/lpc21isp/1.97/lpc21isp_197.tar.gz",
+    "mirror": null,
+    "homepage": "https://lpc21isp.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install [\"lpc21isp\"]"
+    ],
+    "version": "197"
+}

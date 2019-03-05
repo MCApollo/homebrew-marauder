@@ -1,0 +1,34 @@
+{
+    "name": "Nfdump",
+    "description": "Tools to collect and process netflow data on the command-line",
+    "url": "https://github.com/phaag/nfdump/archive/v1.6.17.tar.gz",
+    "mirror": null,
+    "homepage": "https://nfdump.sourceforge.io",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--enable-readpcap\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.17"
+}

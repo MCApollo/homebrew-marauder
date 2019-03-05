@@ -1,0 +1,16 @@
+{
+    "name": "CreateDmg",
+    "description": "Shell script to build fancy DMGs",
+    "url": "https://github.com/andreyvit/create-dmg/archive/v1.0.0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/andreyvit/create-dmg",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"support/brew-me.sh\"",
+        "bin.install \"create-dmg\""
+    ],
+    "version": "1.0.0.5"
+}

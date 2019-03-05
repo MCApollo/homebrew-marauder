@@ -1,0 +1,17 @@
+{
+    "name": "Sipp",
+    "description": "Traffic generator for the SIP protocol",
+    "url": "https://github.com/SIPp/sipp/releases/download/v3.5.2/sipp-3.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://sipp.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--with-pcap\"",
+        "system \"make\", \"DESTDIR=#{prefix}\"",
+        "bin.install \"sipp\""
+    ],
+    "version": "3.5.2"
+}

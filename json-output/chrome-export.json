@@ -1,0 +1,17 @@
+{
+    "name": "ChromeExport",
+    "description": "Convert Chrome\u2019s bookmarks and history to HTML bookmarks files",
+    "url": "https://github.com/bdesham/chrome-export/archive/v2.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/bdesham/chrome-export",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"export-chrome-bookmarks\"",
+        "bin.install \"export-chrome-history\"",
+        "pkgshare.install \"test\""
+    ],
+    "version": "2.0.1"
+}

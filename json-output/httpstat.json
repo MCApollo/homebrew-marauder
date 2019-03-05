@@ -1,0 +1,15 @@
+{
+    "name": "Httpstat",
+    "description": "Curl statistics made simple",
+    "url": "https://github.com/reorx/httpstat/archive/1.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/reorx/httpstat",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"httpstat.py\" => \"httpstat\""
+    ],
+    "version": "1.2.1"
+}

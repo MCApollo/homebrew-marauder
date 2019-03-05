@@ -1,0 +1,37 @@
+{
+    "name": "Scalapack",
+    "description": "High-performance linear algebra for distributed memory machines",
+    "url": "https://www.netlib.org/scalapack/scalapack-2.0.2.tgz",
+    "mirror": null,
+    "homepage": "https://www.netlib.org/scalapack/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "open-mpi",
+            "build-depend": false
+        },
+        {
+            "depend": "openblas",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "blas = \"-L#{Formula[\"openblas\"].opt_lib} -lopenblas\"",
+        "system \"cmake\", \"..\", *std_cmake_args, \"-DBUILD_SHARED_LIBS=ON\",",
+        "\"-DBLAS_LIBRARIES=#{blas}\", \"-DLAPACK_LIBRARIES=#{blas}\"",
+        "system \"make\", \"all\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.2"
+}

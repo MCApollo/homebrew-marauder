@@ -1,0 +1,68 @@
+{
+    "name": "Ctags",
+    "description": "Reimplementation of ctags(1)",
+    "url": "https://downloads.sourceforge.net/ctags/ctags-5.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://ctags.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gist.githubusercontent.com/naegelejd/9a0f3af61954ae5a77e7/raw/16d981a3d99628994ef0f73848b6beffc70b5db8/Ctags%20r782",
+            "strip": "2"
+        },
+        {
+            "url": null,
+            "strip": "2"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff -ur a/ctags-5.8/read.c b/ctags-5.8/read.c\n",
+                "--- a/ctags-5.8/read.c\t2009-07-04 17:29:02.000000000 +1200\n",
+                "+++ b/ctags-5.8/read.c\t2012-11-04 16:19:27.000000000 +1300\n",
+                "@@ -18,7 +18,6 @@\n",
+                " #include <string.h>\n",
+                " #include <ctype.h>\n",
+                " \n",
+                "-#define FILE_WRITE\n",
+                " #include \"read.h\"\n",
+                " #include \"debug.h\"\n",
+                " #include \"entry.h\"\n",
+                "diff -ur a/ctags-5.8/read.h b/ctags-5.8/read.h\n",
+                "--- a/ctags-5.8/read.h\t2008-04-30 13:45:57.000000000 +1200\n",
+                "+++ b/ctags-5.8/read.h\t2012-11-04 16:19:18.000000000 +1300\n",
+                "@@ -11,12 +11,6 @@\n",
+                " #ifndef _READ_H\n",
+                " #define _READ_H\n",
+                " \n",
+                "-#if defined(FILE_WRITE) || defined(VAXC)\n",
+                "-# define CONST_FILE\n",
+                "-#else\n",
+                "-# define CONST_FILE const\n",
+                "-#endif\n",
+                "-\n",
+                " /*\n",
+                " *   INCLUDE FILES\n",
+                " */\n",
+                "@@ -95,7 +89,7 @@\n",
+                " /*\n",
+                " *   GLOBAL VARIABLES\n",
+                " */\n",
+                "-extern CONST_FILE inputFile File;\n",
+                "+extern inputFile File;\n",
+                " \n",
+                " /*\n",
+                " *   FUNCTION PROTOTYPES\n"
+            ]
+        }
+    ],
+    "install": [],
+    "version": "5.8"
+}

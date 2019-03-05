@@ -1,0 +1,16 @@
+{
+    "name": "Cpulimit",
+    "description": "CPU usage limiter",
+    "url": "https://github.com/opsengine/cpulimit/archive/v0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/opsengine/cpulimit",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"src/cpulimit\""
+    ],
+    "version": "0.2"
+}

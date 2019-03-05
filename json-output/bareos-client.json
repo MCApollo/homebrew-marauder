@@ -1,0 +1,33 @@
+{
+    "name": "BareosClient",
+    "description": "Client for Bareos (Backup Archiving REcovery Open Sourced)",
+    "url": "https://github.com/bareos/bareos/archive/Release/17.2.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.bareos.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "bacula-fd",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "unless (etc/\"bareos/bareos-fd.d\").exist?",
+        "system lib/\"bareos/scripts/bareos-config\", \"deploy_config\",",
+        "lib/\"bareos/defaultconfigs\", etc/\"bareos\", \"bareos-fd\"",
+        "system lib/\"bareos/scripts/bareos-config\", \"deploy_config\",",
+        "lib/\"bareos/defaultconfigs\", etc/\"bareos\", \"bconsole\""
+    ],
+    "version": "17.2.7"
+}

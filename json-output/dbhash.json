@@ -1,0 +1,17 @@
+{
+    "name": "Dbhash",
+    "description": "Computes the SHA1 hash of schema and content of a SQLite database",
+    "url": "https://sqlite.org/2019/sqlite-src-3270100.zip",
+    "mirror": null,
+    "homepage": "https://www.sqlite.org/dbhash.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"dbhash\"",
+        "bin.install \"dbhash\""
+    ],
+    "version": "3270100"
+}

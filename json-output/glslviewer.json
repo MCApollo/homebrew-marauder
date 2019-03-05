@@ -1,0 +1,25 @@
+{
+    "name": "Glslviewer",
+    "description": "Live-coding console tool that renders GLSL Shaders",
+    "url": "https://github.com/patriciogonzalezvivo/glslViewer/archive/1.5.5.tar.gz",
+    "mirror": null,
+    "homepage": "http://patriciogonzalezvivo.com/2015/glslViewer/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glfw",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install Dir[\"bin/*\"]"
+    ],
+    "version": "1.5.5"
+}

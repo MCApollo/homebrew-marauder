@@ -1,0 +1,16 @@
+{
+    "name": "Libyubikey",
+    "description": "C library for manipulating Yubico one-time passwords",
+    "url": "https://developers.yubico.com/yubico-c/Releases/libyubikey-1.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://yubico.github.io/yubico-c/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.13"
+}

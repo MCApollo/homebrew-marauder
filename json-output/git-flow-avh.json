@@ -1,0 +1,43 @@
+{
+    "name": "GitFlowAvh",
+    "description": "AVH edition of git-flow",
+    "url": "https://github.com/petervanderdoes/gitflow-avh/archive/1.12.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/petervanderdoes/gitflow-avh",
+    "depends": [
+        {
+            "depend": "gnu-getopt",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "completion",
+            "url": "https://github.com/petervanderdoes/git-flow-completion/archive/0.6.0.tar.gz"
+        },
+        {
+            "name": "completion",
+            "url": "https://github.com/petervanderdoes/git-flow-completion.git"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "git-flow",
+            "reason": "Both install `git-flow` binaries and completions"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{libexec}\", \"install\"",
+        "(bin/\"git-flow\").write <<~EOS",
+        "#!/bin/bash",
+        "export FLAGS_GETOPT_CMD=#{Formula[\"gnu-getopt\"].opt_bin}/getopt",
+        "exec \"#{libexec}/bin/git-flow\" \"$@\"",
+        "EOS",
+        "resource(\"completion\").stage do",
+        "bash_completion.install \"git-flow-completion.bash\"",
+        "zsh_completion.install \"git-flow-completion.zsh\"",
+        "fish_completion.install \"git.fish\""
+    ],
+    "version": "1.12.0"
+}

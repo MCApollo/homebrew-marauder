@@ -1,0 +1,23 @@
+{
+    "name": "Metashell",
+    "description": "Metaprogramming shell for C++ templates",
+    "url": "https://github.com/metashell/metashell/archive/v4.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://metashell.org",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "mkdir \"3rd/templight/build\" do",
+        "system \"cmake\", \"../llvm\", \"-DLLVM_ENABLE_TERMINFO=OFF\", *std_cmake_args",
+        "system \"make\", \"templight\""
+    ],
+    "version": "4.0.0"
+}

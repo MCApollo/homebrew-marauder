@@ -1,0 +1,19 @@
+{
+    "name": "Plan9port",
+    "description": "Many Plan 9 programs ported to UNIX-like operating systems",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/plan9port/plan9port-20140306.tgz",
+    "mirror": null,
+    "homepage": "https://swtch.com/plan9port/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PLAN9_TARGET\"] = libexec",
+        "system \"./INSTALL\"",
+        "libexec.install Dir[\"*\"]",
+        "bin.install_symlink libexec/\"bin/9\"",
+        "prefix.install Dir[libexec/\"mac/*.app\"]"
+    ],
+    "version": "20140306"
+}

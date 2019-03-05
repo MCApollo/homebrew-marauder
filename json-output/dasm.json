@@ -1,0 +1,16 @@
+{
+    "name": "Dasm",
+    "description": "Macro assembler with support for several 8-bit microprocessors",
+    "url": "https://downloads.sourceforge.net/project/dasm-dillon/dasm-dillon/2.20.11/dasm-2.20.11-2014.03.04-source.tar.gz",
+    "mirror": null,
+    "homepage": "https://dasm-dillon.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "prefix.install \"bin\", \"doc\""
+    ],
+    "version": "2.20.11"
+}

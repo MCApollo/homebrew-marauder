@@ -1,0 +1,55 @@
+{
+    "name": "Libopkele",
+    "description": "C++ implementation of OpenID decentralized identity system",
+    "url": "http://kin.klever.net/dist/libopkele-2.0.4.tar.bz2",
+    "mirror": null,
+    "homepage": "http://kin.klever.net/libopkele/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/hacker/libopkele/commit/9ff6244998b0d41e71f7cc7351403ad590e990e4.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./autogen.bash\" if build.head?",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"dox\"",
+        "doc.install \"doxydox/html\""
+    ],
+    "version": "2.0.4"
+}

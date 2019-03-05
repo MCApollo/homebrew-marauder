@@ -1,0 +1,18 @@
+{
+    "name": "Tre",
+    "description": "Lightweight, POSIX-compliant regular expression (regex) library",
+    "url": "https://laurikari.net/tre/tre-0.8.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://laurikari.net/tre/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.0"
+}

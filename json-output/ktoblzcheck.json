@@ -1,0 +1,19 @@
+{
+    "name": "Ktoblzcheck",
+    "description": "Library for German banks",
+    "url": "https://downloads.sourceforge.net/project/ktoblzcheck/ktoblzcheck-1.49.tar.gz",
+    "mirror": null,
+    "homepage": "https://ktoblzcheck.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.49"
+}

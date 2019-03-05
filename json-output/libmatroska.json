@@ -1,0 +1,26 @@
+{
+    "name": "Libmatroska",
+    "description": "Extensible, open standard container format for audio/video",
+    "url": "https://dl.matroska.org/downloads/libmatroska/libmatroska-1.4.9.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.matroska.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libebml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DBUILD_SHARED_LIBS=YES\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.9"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Minizinc",
+    "description": "Medium-level constraint modeling language",
+    "url": "https://github.com/MiniZinc/libminizinc/archive/2.2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.minizinc.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "arch",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"cmake\", \"--build\", \".\", \"--target\", \"install\""
+    ],
+    "version": "2.2.3"
+}

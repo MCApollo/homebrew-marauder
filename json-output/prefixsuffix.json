@@ -1,0 +1,28 @@
+{
+    "name": "Prefixsuffix",
+    "description": "GUI batch renaming utility",
+    "url": "https://download.gnome.org/sources/prefixsuffix/0.6/prefixsuffix-0.6.9.tar.xz",
+    "mirror": null,
+    "homepage": "https://github.com/murraycu/prefixsuffix",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gtkmm3",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"#{Formula[\"glib\"].opt_bin}/glib-compile-schemas\", \"#{HOMEBREW_PREFIX}/share/glib-2.0/schemas\""
+    ],
+    "version": "0.6.9"
+}

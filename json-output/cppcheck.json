@@ -1,0 +1,23 @@
+{
+    "name": "Cppcheck",
+    "description": "Static analysis of C and C++ code",
+    "url": "https://github.com/danmar/cppcheck/archive/1.87.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/cppcheck/",
+    "depends": [
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"make\", \"HAVE_RULES=yes\", \"CFGDIR=#{prefix}/cfg\"",
+        "system \"make\", \"DESTDIR=#{prefix}\", \"BIN=#{bin}\", \"CFGDIR=/cfg\", \"install\"",
+        "(pkgshare/\"addons\").install Dir.glob(bin/\"*.py\")"
+    ],
+    "version": "1.87"
+}

@@ -1,0 +1,78 @@
+{
+    "name": "ImagemagickAT6",
+    "description": "Tools and libraries to manipulate images in many formats",
+    "url": "https://dl.bintray.com/homebrew/mirror/imagemagick%406--6.9.10-27.tar.xz",
+    "mirror": "https://www.imagemagick.org/download/ImageMagick-6.9.10-27.tar.xz",
+    "homepage": "https://www.imagemagick.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        },
+        {
+            "depend": "openjpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "webp",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-osx-universal-binary",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--disable-opencl",
+        "--disable-openmp",
+        "--enable-shared",
+        "--enable-static",
+        "--with-freetype=yes",
+        "--with-modules",
+        "--with-webp=yes",
+        "--with-openjp2",
+        "--without-gslib",
+        "--with-gs-font-dir=#{HOMEBREW_PREFIX}/share/ghostscript/fonts",
+        "--without-fftw",
+        "--without-pango",
+        "--without-x",
+        "--without-wmf",
+        "]",
+        "inreplace \"configure\", \"${PACKAGE_NAME}-${PACKAGE_VERSION}\", \"${PACKAGE_NAME}\"",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "406"
+}

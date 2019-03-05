@@ -1,0 +1,18 @@
+{
+    "name": "MysqlSearchReplace",
+    "description": "Database search and replace script in PHP",
+    "url": "https://github.com/interconnectit/Search-Replace-DB/archive/3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://interconnectit.com/products/search-and-replace-for-wordpress-databases/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"srdb.class.php\"",
+        "libexec.install \"srdb.cli.php\" => \"srdb\"",
+        "chmod 0755, libexec/\"srdb\"",
+        "bin.install_symlink libexec/\"srdb\""
+    ],
+    "version": "3.1"
+}

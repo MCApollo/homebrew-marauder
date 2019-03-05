@@ -1,0 +1,33 @@
+{
+    "name": "Rsyslog",
+    "description": "Enhanced, multi-threaded syslogd",
+    "url": "https://www.rsyslog.com/files/download/rsyslog/rsyslog-8.37.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.rsyslog.com/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libestr",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "libfastjson",
+            "url": "http://download.rsyslog.com/libfastjson/libfastjson-0.99.8.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"libfastjson\").stage do",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{libexec}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "8.37.0"
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Opencsg",
+    "description": "The CSG rendering library",
+    "url": "http://www.opencsg.org/OpenCSG-1.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.opencsg.org",
+    "depends": [
+        {
+            "depend": "qt",
+            "build-depend": true
+        },
+        {
+            "depend": "glew",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/990b9bb/opencsg/disable-examples.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"qmake\", \"-r\", \"INSTALLDIR=#{prefix}\",",
+        "\"INCLUDEPATH+=#{Formula[\"glew\"].opt_include}\",",
+        "\"LIBS+=-L#{Formula[\"glew\"].opt_lib} -lGLEW\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.2"
+}

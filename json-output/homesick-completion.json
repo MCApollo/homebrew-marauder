@@ -1,0 +1,15 @@
+{
+    "name": "HomesickCompletion",
+    "description": "Bash completion for Homesick",
+    "url": "https://github.com/MasterRoot24/homesick-completion/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/MasterRoot24/homesick-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"homesick\""
+    ],
+    "version": "1.0.0"
+}

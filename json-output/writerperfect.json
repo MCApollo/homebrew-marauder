@@ -1,0 +1,42 @@
+{
+    "name": "Writerperfect",
+    "description": "Library for importing WordPerfect documents",
+    "url": "https://downloads.sourceforge.net/project/libwpd/writerperfect/writerperfect-0.9.6/writerperfect-0.9.6.tar.xz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/p/libwpd/wiki/writerperfect/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libodfgen",
+            "build-depend": false
+        },
+        {
+            "depend": "libwpd",
+            "build-depend": false
+        },
+        {
+            "depend": "libwpg",
+            "build-depend": false
+        },
+        {
+            "depend": "libwps",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.6"
+}

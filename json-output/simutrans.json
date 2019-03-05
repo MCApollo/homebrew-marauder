@@ -1,0 +1,46 @@
+{
+    "name": "Simutrans",
+    "description": "Transport simulator",
+    "url": "https://downloads.sourceforge.net/project/simutrans/simutrans/120-4-1/simutrans-src-120-4-1.zip",
+    "mirror": null,
+    "homepage": "https://www.simutrans.com/",
+    "depends": [
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "pak64",
+            "url": "https://downloads.sourceforge.net/project/simutrans/pak64/120-4-1/simupak64-120-4-1.zip"
+        },
+        {
+            "name": "text",
+            "url": "https://simutrans-germany.com/translator/data/tab/language_pack-Base+texts.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %w[",
+        "BACKEND=sdl2",
+        "COLOUR_DEPTH=16",
+        "OSTYPE=mac",
+        "]",
+        "args << \"AV_FOUNDATION=1\" if MacOS.version >= :sierra",
+        "system \"make\", *args",
+        "libexec.install \"build/default/sim\" => \"simutrans\"",
+        "libexec.install Dir[\"simutrans/*\"]",
+        "bin.write_exec_script libexec/\"simutrans\"",
+        "libexec.install resource(\"pak64\")",
+        "(libexec/\"text\").install resource(\"text\")",
+        "system \"make\", \"makeobj\", *args",
+        "bin.install \"build/default/makeobj/makeobj\""
+    ],
+    "version": "120"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Asciidoctor",
+    "description": "Text processor and publishing toolchain for AsciiDoc",
+    "url": "https://github.com/asciidoctor/asciidoctor/archive/v1.5.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://asciidoctor.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"GEM_HOME\"] = libexec",
+        "system \"gem\", \"build\", \"asciidoctor.gemspec\"",
+        "system \"gem\", \"install\", \"asciidoctor-#{version}.gem\"",
+        "bin.install Dir[libexec/\"bin/*\"]",
+        "bin.env_script_all_files(libexec/\"bin\", :GEM_HOME => ENV[\"GEM_HOME\"])"
+    ],
+    "version": "1.5.8"
+}

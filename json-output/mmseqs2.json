@@ -1,0 +1,36 @@
+{
+    "name": "Mmseqs2",
+    "description": "Software suite for very fast protein sequence search and clustering",
+    "url": "https://github.com/soedinglab/MMseqs2/archive/7-4e23d.tar.gz",
+    "mirror": null,
+    "homepage": "https://mmseqs.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "documentation",
+            "url": "https://github.com/soedinglab/MMseqs2.wiki.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = *std_cmake_args << \"-DHAVE_TESTS=0\" << \"-DHAVE_MPI=0\"",
+        "args << \"-DVERSION_OVERRIDE=#{version}\"",
+        "args << \"-DHAVE_SSE4_1=1\"",
+        "system \"cmake\", \".\", *args",
+        "system \"make\", \"install\"",
+        "resource(\"documentation\").stage { doc.install Dir[\"*\"] }",
+        "pkgshare.install \"examples\"",
+        "bash_completion.install \"util/bash-completion.sh\" => \"mmseqs.sh\""
+    ],
+    "version": "74"
+}

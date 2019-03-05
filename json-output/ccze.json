@@ -1,0 +1,26 @@
+{
+    "name": "Ccze",
+    "description": "Robust and modular log colorizer",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/c/ccze/ccze_0.2.1.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/c/ccze/ccze_0.2.1.orig.tar.gz",
+    "homepage": "https://packages.debian.org/wheezy/ccze",
+    "depends": [
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"src/ccze-compat.c\", \"#if HAVE_SUBOPTARg\", \"#if HAVE_SUBOPTARG\"",
+        "inreplace \"src/Makefile.in\", \"-Wreturn-type -Wswitch -Wmulticharacter\",",
+        "\"-Wreturn-type -Wswitch\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-builtins=all\"",
+        "system \"make\", \"install\"",
+        "share.install prefix/\"man\""
+    ],
+    "version": "0.2.1"
+}

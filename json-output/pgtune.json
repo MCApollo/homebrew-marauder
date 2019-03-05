@@ -1,0 +1,16 @@
+{
+    "name": "Pgtune",
+    "description": "Tuning wizard for postgresql.conf",
+    "url": "https://ftp.postgresql.org/pub/projects/pgFoundry/pgtune/pgtune/0.9.3/pgtune-0.9.3.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.postgresql.org/projects/pgFoundry/pgtune/pgtune/0.9.3/pgtune-0.9.3.tar.gz",
+    "homepage": "http://pgfoundry.org/projects/pgtune",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"pgtune\" do |s|",
+        "s.sub! /(parser\\.add_option\\('-S'.*default=).*,/, \"\\\\1\\\"#{pkgshare}\\\",\""
+    ],
+    "version": "0.9.3"
+}

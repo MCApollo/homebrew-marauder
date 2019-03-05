@@ -1,0 +1,27 @@
+{
+    "name": "Bsponmpi",
+    "description": "Implements the BSPlib standard on top of MPI",
+    "url": "https://downloads.sourceforge.net/project/bsponmpi/bsponmpi/0.3/bsponmpi-0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/bsponmpi/",
+    "depends": [
+        {
+            "depend": "scons",
+            "build-depend": true
+        },
+        {
+            "depend": "open-mpi",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm_rf \"include/CVS\"",
+        "rm_rf \"include/tools/CVS\"",
+        "system \"scons\", \"-Q\", \"mode=release\"",
+        "prefix.install \"lib\", \"include\""
+    ],
+    "version": "0.3"
+}

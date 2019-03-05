@@ -1,0 +1,15 @@
+{
+    "name": "Smartypants",
+    "description": "Typography prettifier",
+    "url": "https://daringfireball.net/projects/downloads/SmartyPants_1.5.1.zip",
+    "mirror": null,
+    "homepage": "https://daringfireball.net/projects/smartypants/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"SmartyPants.pl\" => \"smartypants\""
+    ],
+    "version": "1.5.1"
+}

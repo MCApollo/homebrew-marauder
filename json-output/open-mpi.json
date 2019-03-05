@@ -1,0 +1,58 @@
+{
+    "name": "OpenMpi",
+    "description": "High performance message passing library",
+    "url": "https://download.open-mpi.org/release/open-mpi/v4.0/openmpi-4.0.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.open-mpi.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mpich",
+            "reason": "both install MPI compiler wrappers"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV[\"MACOSX_DEPLOYMENT_TARGET\"] = MacOS.version",
+        "ENV.cxx11",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--enable-ipv6",
+        "--with-libevent=#{Formula[\"libevent\"].opt_prefix}",
+        "--with-sge",
+        "]",
+        "args << \"--with-platform-optimized\" if build.head?",
+        "args << \"--enable-mpi1-compatibility\"",
+        "system \"./autogen.pl\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"all\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\"",
+        "include.install Dir[\"#{lib}/*.mod\"]"
+    ],
+    "version": "4.0.0"
+}

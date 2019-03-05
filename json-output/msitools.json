@@ -1,0 +1,51 @@
+{
+    "name": "Msitools",
+    "description": "Windows installer (.MSI) tool",
+    "url": "https://download.gnome.org/sources/msitools/0.98/msitools-0.98.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.gnome.org/msitools",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "e2fsprogs",
+            "build-depend": false
+        },
+        {
+            "depend": "gcab",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libgsf",
+            "build-depend": false
+        },
+        {
+            "depend": "vala",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.98"
+}

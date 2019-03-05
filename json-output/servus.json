@@ -1,0 +1,25 @@
+{
+    "name": "Servus",
+    "description": "Library and Utilities for zeroconf networking",
+    "url": "https://github.com/HBPVIS/Servus.git",
+    "mirror": null,
+    "homepage": "https://github.com/HBPVIS/Servus",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.1-git-eee57654"
+}

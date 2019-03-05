@@ -1,0 +1,17 @@
+{
+    "name": "Libxmi",
+    "description": "C/C++ function library for rasterizing 2D vector graphics",
+    "url": "https://ftp.gnu.org/gnu/libxmi/libxmi-1.2.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/libxmi/libxmi-1.2.tar.gz",
+    "homepage": "https://www.gnu.org/software/libxmi/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--infodir=#{info}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

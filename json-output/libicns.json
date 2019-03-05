@@ -1,0 +1,29 @@
+{
+    "name": "Libicns",
+    "description": "Library for manipulation of the macOS .icns resource format",
+    "url": "https://downloads.sourceforge.net/project/icns/libicns-0.8.1.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/libi/libicns/libicns_0.8.1.orig.tar.gz",
+    "homepage": "https://icns.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "jasper",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"icnsutils/png2icns.c\",",
+        "\"png_set_gray_1_2_4_to_8\",",
+        "\"png_set_expand_gray_1_2_4_to_8\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.1"
+}

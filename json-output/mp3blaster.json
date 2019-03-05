@@ -1,0 +1,24 @@
+{
+    "name": "Mp3blaster",
+    "description": "Text-based mp3 player",
+    "url": "https://downloads.sourceforge.net/project/mp3blaster/mp3blaster/mp3blaster-3.2.6/mp3blaster-3.2.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://mp3blaster.sourceforge.io",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.6"
+}

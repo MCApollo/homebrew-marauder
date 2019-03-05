@@ -1,0 +1,16 @@
+{
+    "name": "Iperf",
+    "description": "Tool to measure maximum TCP and UDP bandwidth",
+    "url": "https://downloads.sourceforge.net/project/iperf2/iperf-2.0.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/iperf2/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.12"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "Cgit",
+    "description": "Hyperfast web frontend for Git repositories written in C",
+    "url": "https://git.zx2c4.com/cgit/snapshot/cgit-1.2.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://git.zx2c4.com/cgit/",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "git",
+            "url": "https://www.kernel.org/pub/software/scm/git/git-2.18.0.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"git\").stage(buildpath/\"git\")",
+        "system \"make\", \"prefix=#{prefix}\",",
+        "\"CGIT_SCRIPT_PATH=#{pkgshare}\",",
+        "\"CGIT_DATA_PATH=#{var}/www/htdocs/cgit\",",
+        "\"CGIT_CONFIG=#{etc}/cgitrc\",",
+        "\"CACHE_ROOT=#{var}/cache/cgit\",",
+        "\"install\""
+    ],
+    "version": "1.2.1"
+}

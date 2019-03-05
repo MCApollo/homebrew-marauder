@@ -1,0 +1,26 @@
+{
+    "name": "Pev",
+    "description": "PE analysis toolkit",
+    "url": "https://downloads.sourceforge.net/project/pev/pev-0.80/pev-0.80.tar.gz",
+    "mirror": null,
+    "homepage": "https://pev.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"prefix=#{prefix}\", \"CC=#{ENV.cc}\"",
+        "system \"make\", \"prefix=#{prefix}\", \"install\""
+    ],
+    "version": "0.80"
+}

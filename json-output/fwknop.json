@@ -1,0 +1,36 @@
+{
+    "name": "Fwknop",
+    "description": "Single Packet Authorization and Port Knocking",
+    "url": "https://github.com/mrash/fwknop/archive/2.6.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cipherdyne.org/fwknop/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gpgme",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\", \"--with-gpgme\", \"--sysconfdir=#{etc}\",",
+        "\"--with-gpg=#{Formula[\"gnupg\"].opt_bin}/gpg\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.10"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Funcoeszz",
+    "description": "Dozens of command-line mini-applications (Portuguese)",
+    "url": "https://funcoeszz.net/download/funcoeszz-15.5.sh",
+    "mirror": null,
+    "homepage": "https://funcoeszz.net/",
+    "depends": [
+        {
+            "depend": "bash",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"funcoeszz-#{version}.sh\" => \"funcoeszz\""
+    ],
+    "version": "15.5"
+}

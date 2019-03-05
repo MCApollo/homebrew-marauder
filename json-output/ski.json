@@ -1,0 +1,25 @@
+{
+    "name": "Ski",
+    "description": "Evade the deadly Yeti on your jet-powered skis",
+    "url": "http://www.catb.org/~esr/ski/ski-6.12.tar.gz",
+    "mirror": null,
+    "homepage": "http://catb.org/~esr/ski/",
+    "depends": [
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "system \"make\"",
+        "end",
+        "bin.install \"ski\"",
+        "man6.install \"ski.6\""
+    ],
+    "version": "6.12"
+}

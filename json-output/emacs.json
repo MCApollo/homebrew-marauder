@@ -1,0 +1,58 @@
+{
+    "name": "Emacs",
+    "description": "GNU Emacs text editor",
+    "url": "https://ftp.gnu.org/gnu/emacs/emacs-26.1.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/emacs/emacs-26.1.tar.xz",
+    "homepage": "https://www.gnu.org/software/emacs/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "gnu-sed",
+            "build-depend": true
+        },
+        {
+            "depend": "texinfo",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--enable-locallisppath=#{HOMEBREW_PREFIX}/share/emacs/site-lisp",
+        "--infodir=#{info}/emacs",
+        "--prefix=#{prefix}",
+        "--with-gnutls",
+        "--without-x",
+        "--with-xml2",
+        "--without-dbus",
+        "--with-modules",
+        "--without-ns",
+        "--without-imagemagick",
+        "]",
+        "if build.head?",
+        "ENV.prepend_path \"PATH\", Formula[\"gnu-sed\"].opt_libexec/\"gnubin\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "(bin/\"ctags\").unlink",
+        "(man1/\"ctags.1.gz\").unlink"
+    ],
+    "version": "26.1"
+}

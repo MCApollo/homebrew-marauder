@@ -1,0 +1,23 @@
+{
+    "name": "Qd",
+    "description": "C++/Fortran-90 double-double and quad-double package",
+    "url": "https://crd.lbl.gov/~dhbailey/mpdist/qd-2.3.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://crd.lbl.gov/~dhbailey/mpdist/",
+    "depends": [
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--enable-shared\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.21"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Shakespeare",
+    "description": "Write programs in Shakespearean English",
+    "url": "https://shakespearelang.sourceforge.io/download/spl-1.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://shakespearelang.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "flex",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\"",
+        "bin.install \"spl/bin/spl2c\"",
+        "include.install \"spl/include/spl.h\"",
+        "lib.install \"spl/lib/libspl.a\""
+    ],
+    "version": "1.2.1"
+}

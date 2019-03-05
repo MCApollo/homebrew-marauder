@@ -1,0 +1,26 @@
+{
+    "name": "Sispmctl",
+    "description": "Control Gembird SIS-PM programmable power outlet strips",
+    "url": "https://downloads.sourceforge.net/project/sispmctl/sispmctl/sispmctl-4.0/sispmctl-4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://sispmctl.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb-compat",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0"
+}

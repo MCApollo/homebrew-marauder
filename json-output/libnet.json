@@ -1,0 +1,37 @@
+{
+    "name": "Libnet",
+    "description": "C library for creating IP packets",
+    "url": "https://downloads.sourceforge.net/project/libnet-dev/libnet-1.1.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sam-github/libnet",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/a689647/libnet/patch-configure.in.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "inreplace \"src/libnet_link_bpf.c\", \"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.6"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "Cspice",
+    "description": "Observation geometry system for robotic space science missions",
+    "url": "https://naif.jpl.nasa.gov/pub/naif/toolkit/C/MacIntel_OSX_AppleC_64bit/packages/cspice.tar.Z",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/cspice-66.tar.Z",
+    "homepage": "https://naif.jpl.nasa.gov/naif/toolkit.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "openhmd",
+            "reason": "both install `simple` binaries"
+        },
+        {
+            "conflict": "libftdi0",
+            "reason": "both install `simple` binaries"
+        },
+        {
+            "conflict": "enscript",
+            "reason": "both install `states` binaries"
+        },
+        {
+            "conflict": "fondu",
+            "reason": "both install `tobin` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "rm_f Dir[\"lib/*\"]",
+        "rm_f Dir[\"exe/*\"]",
+        "system \"csh\", \"makeall.csh\"",
+        "mv \"exe\", \"bin\"",
+        "pkgshare.install \"doc\", \"data\"",
+        "prefix.install \"bin\", \"include\", \"lib\"",
+        "lib.install_symlink \"cspice.a\" => \"libcspice.a\"",
+        "lib.install_symlink \"csupport.a\" => \"libcsupport.a\""
+    ],
+    "version": "1.0-u"
+}

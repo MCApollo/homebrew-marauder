@@ -1,0 +1,16 @@
+{
+    "name": "Mujs",
+    "description": "Embeddable Javascript interpreter",
+    "url": "https://github.com/ccxvii/mujs.git",
+    "mirror": null,
+    "homepage": "https://www.mujs.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"release\"",
+        "system \"make\", \"prefix=#{prefix}\", \"install\""
+    ],
+    "version": "1.0.5-git-7448a824"
+}

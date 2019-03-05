@@ -1,0 +1,60 @@
+{
+    "name": "Libxmlsec1",
+    "description": "XML security library",
+    "url": "https://www.aleksey.com/xmlsec/download/xmlsec1-1.2.27.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.aleksey.com/xmlsec/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/dl.c b/src/dl.c\n",
+                "index 6e8a56a..0e7f06b 100644\n",
+                "--- a/src/dl.c\n",
+                "+++ b/src/dl.c\n",
+                "@@ -141,6 +141,7 @@ xmlSecCryptoDLLibraryCreate(const xmlChar* name) {\n",
+                "     }\n",
+                "\n",
+                " #ifdef XMLSEC_DL_LIBLTDL\n",
+                "+    lt_dlsetsearchpath(\"HOMEBREW_PREFIX/lib\");\n",
+                "     lib->handle = lt_dlopenext((char*)lib->filename);\n",
+                "     if(lib->handle == NULL) {\n",
+                "         xmlSecError(XMLSEC_ERRORS_HERE,\n"
+            ]
+        }
+    ],
+    "install": [
+        "args = [\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-crypto-dl\",",
+        "\"--disable-apps-crypto-dl\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.27"
+}

@@ -1,0 +1,42 @@
+{
+    "name": "Goaccess",
+    "description": "Log analyzer and interactive viewer for the Apache Webserver",
+    "url": "https://tar.goaccess.io/goaccess-1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://goaccess.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libmaxminddb",
+            "build-depend": false
+        },
+        {
+            "depend": "tokyo-cabinet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-vfi\"",
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--enable-utf8",
+        "--enable-tcb=btree",
+        "--enable-geoip=mmdb",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

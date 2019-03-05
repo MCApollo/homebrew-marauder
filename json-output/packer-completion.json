@@ -1,0 +1,15 @@
+{
+    "name": "PackerCompletion",
+    "description": "Bash completion for Packer",
+    "url": "https://github.com/mrolli/packer-bash-completion/archive/1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mrolli/packer-bash-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"packer\""
+    ],
+    "version": "1.0.0"
+}

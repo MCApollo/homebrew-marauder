@@ -1,0 +1,31 @@
+{
+    "name": "Cabocha",
+    "description": "Yet Another Japanese Dependency Structure Analyzer",
+    "url": "https://dl.bintray.com/homebrew/mirror/cabocha-0.69.tar.bz2",
+    "mirror": "https://mirrorservice.org/sites/ftp.netbsd.org/pub/pkgsrc/distfiles/cabocha-20160909/cabocha-0.69.tar.bz2",
+    "homepage": "https://taku910.github.io/cabocha/",
+    "depends": [
+        {
+            "depend": "crf++",
+            "build-depend": false
+        },
+        {
+            "depend": "mecab",
+            "build-depend": false
+        },
+        {
+            "depend": "mecab-ipadic",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"LIBS\"] = \"-liconv\"",
+        "inreplace \"Makefile.in\" do |s|",
+        "s.change_make_var! \"CFLAGS\", ENV.cflags",
+        "s.change_make_var! \"CXXFLAGS\", ENV.cflags"
+    ],
+    "version": "0.69"
+}

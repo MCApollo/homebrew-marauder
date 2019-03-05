@@ -1,0 +1,20 @@
+{
+    "name": "RbenvChefdk",
+    "description": "Treat ChefDK as another version in rbenv",
+    "url": "https://github.com/docwhat/rbenv-chefdk/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/docwhat/rbenv-chefdk",
+    "depends": [
+        {
+            "depend": "rbenv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install Dir[\"*\"]"
+    ],
+    "version": "1.0.0"
+}

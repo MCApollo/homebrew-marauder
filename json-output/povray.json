@@ -1,0 +1,58 @@
+{
+    "name": "Povray",
+    "description": "Persistence Of Vision RAYtracer (POVRAY)",
+    "url": "https://github.com/POV-Ray/povray/archive/v3.7.0.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.povray.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "openexr",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = %W[",
+        "COMPILED_BY=homebrew",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--mandir=#{man}",
+        "--with-boost=#{Formula[\"boost\"].opt_prefix}",
+        "--with-openexr=#{Formula[\"openexr\"].opt_prefix}",
+        "--without-libsdl",
+        "--without-x",
+        "]",
+        "%w[allanim allscene portfolio].each do |script|",
+        "inreplace \"unix/scripts/#{script}.sh\",",
+        "/^DEFAULT_DIR=.*$/, \"DEFAULT_DIR=#{HOMEBREW_PREFIX}\""
+    ],
+    "version": "3.7.0.8"
+}

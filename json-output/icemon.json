@@ -1,0 +1,37 @@
+{
+    "name": "Icemon",
+    "description": "Icecream GUI Monitor",
+    "url": "https://github.com/icecc/icemon/archive/v3.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/icecc/icemon",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "icecream",
+            "build-depend": false
+        },
+        {
+            "depend": "lzo",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.0"
+}

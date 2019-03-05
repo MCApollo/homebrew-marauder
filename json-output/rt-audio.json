@@ -1,0 +1,23 @@
+{
+    "name": "RtAudio",
+    "description": "API for realtime audio input/output",
+    "url": "https://www.music.mcgill.ca/~gary/rtaudio/release/rtaudio-5.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.music.mcgill.ca/~gary/rtaudio/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\"",
+        "lib.install \"librtaudio_static.a\", \"librtaudio.dylib\""
+    ],
+    "version": "5.0.0"
+}

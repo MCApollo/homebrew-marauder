@@ -1,0 +1,31 @@
+{
+    "name": "Minisat",
+    "description": "Boolean satisfiability (SAT) problem solver",
+    "url": "https://github.com/niklasso/minisat/archive/releases/2.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://minisat.se",
+    "depends": [
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/niklasso/minisat/commit/9bd874980a7e5d65cecaba4edeb7127a41050ed1.patch?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/niklasso/minisat/commit/cfae87323839064832c8b3608bf595548dd1a1f3.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV[\"MROOT\"] = buildpath",
+        "system \"make\", \"-C\", \"simp\", \"r\"",
+        "bin.install \"simp/minisat_release\" => \"minisat\""
+    ],
+    "version": "2.2.0"
+}

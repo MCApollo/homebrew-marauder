@@ -1,0 +1,16 @@
+{
+    "name": "Tcpsplit",
+    "description": "Break a packet trace into some number of sub-traces",
+    "url": "https://www.icir.org/mallman/software/tcpsplit/tcpsplit-0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.icir.org/mallman/software/tcpsplit/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"tcpsplit\""
+    ],
+    "version": "0.2"
+}

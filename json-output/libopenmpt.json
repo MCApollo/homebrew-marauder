@@ -1,0 +1,55 @@
+{
+    "name": "Libopenmpt",
+    "description": "Software library to decode tracked music files",
+    "url": "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.4.3+release.autotools.tar.gz",
+    "mirror": null,
+    "homepage": "https://lib.openmpt.org/libopenmpt/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "mpg123",
+            "build-depend": false
+        },
+        {
+            "depend": "portaudio",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "mystique.s3m",
+            "url": "https://api.modarchive.org/downloads.php?moduleid=54144#mystique.s3m"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-vorbisfile\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.3"
+}

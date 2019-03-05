@@ -1,0 +1,48 @@
+{
+    "name": "Gxml",
+    "description": "GObject-based XML DOM API",
+    "url": "https://download.gnome.org/sources/gxml/0.16/gxml-0.16.3.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.gnome.org/GXml",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "gtk-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "vala",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libgee",
+            "build-depend": false
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"#{Formula[\"glib\"].opt_bin}/glib-compile-schemas\", \"#{HOMEBREW_PREFIX}/share/glib-2.0/schemas\""
+    ],
+    "version": "0.16.3"
+}

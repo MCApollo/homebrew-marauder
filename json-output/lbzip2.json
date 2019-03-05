@@ -1,0 +1,17 @@
+{
+    "name": "Lbzip2",
+    "description": "Parallel bzip2 utility",
+    "url": "http://archive.lbzip2.org/lbzip2-2.5.tar.bz2",
+    "mirror": null,
+    "homepage": "https://github.com/kjn/lbzip2",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.5"
+}

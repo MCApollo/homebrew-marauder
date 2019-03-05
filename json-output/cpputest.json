@@ -1,0 +1,22 @@
+{
+    "name": "Cpputest",
+    "description": "C /C++ based unit xUnit test framework",
+    "url": "https://github.com/cpputest/cpputest/releases/download/v3.8/cpputest-3.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cpputest.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.8"
+}

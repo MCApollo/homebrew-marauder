@@ -1,0 +1,36 @@
+{
+    "name": "Mailutils",
+    "description": "Swiss Army knife of email handling",
+    "url": "https://ftp.gnu.org/gnu/mailutils/mailutils-3.4.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/mailutils/mailutils-3.4.tar.gz",
+    "homepage": "https://mailutils.org/",
+    "depends": [
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "gsasl",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-mh\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-guile\",",
+        "\"--without-tokyocabinet\"",
+        "system \"make\", \"PYTHON_LIBS=-undefined dynamic_lookup\", \"install\""
+    ],
+    "version": "3.4"
+}

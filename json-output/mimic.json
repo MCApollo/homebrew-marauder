@@ -1,0 +1,46 @@
+{
+    "name": "Mimic",
+    "description": "Lightweight text-to-speech engine based on CMU Flite",
+    "url": "https://github.com/MycroftAI/mimic/archive/1.2.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://mimic.mycroft.ai",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "portaudio",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--enable-shared\",",
+        "\"--enable-static\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.0.2"
+}

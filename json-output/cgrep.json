@@ -1,0 +1,28 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Context-aware grep for source code",
+    "url": "https://github.com/awgn/cgrep/archive/v6.6.27.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/awgn/cgrep",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package"
+    ],
+    "version": "6.6.27"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Alure",
+    "description": "Manage common tasks with OpenAL applications",
+    "url": "https://kcat.strangesoft.net/alure-releases/alure-1.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://kcat.strangesoft.net/alure.html",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/eed63e836e/alure/unistd.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "cd \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

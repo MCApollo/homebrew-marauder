@@ -1,0 +1,15 @@
+{
+    "name": "Cfv",
+    "description": "Test and create various files (e.g., .sfv, .csv, .crc., .torrent)",
+    "url": "https://downloads.sourceforge.net/project/cfv/cfv/1.18.3/cfv-1.18.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://cfv.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{prefix}\", \"mandir=#{man}\", \"install\""
+    ],
+    "version": "1.18.3"
+}

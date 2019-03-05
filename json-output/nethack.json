@@ -1,0 +1,25 @@
+{
+    "name": "Nethack",
+    "description": "Single-player roguelike video game",
+    "url": "https://www.nethack.org/download/3.6.1/nethack-361-src.tgz",
+    "mirror": null,
+    "homepage": "https://www.nethack.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "cd \"sys/unix\" do",
+        "if MacOS.version >= :yosemite",
+        "hintfile = \"macosx10.10\"",
+        "else",
+        "hintfile = \"macosx10.7\"",
+        "end",
+        "inreplace \"hints/#{hintfile}\",",
+        "/^HACKDIR=.*/,",
+        "\"HACKDIR=#{libexec}\"",
+        "system \"sh\", \"setup.sh\", \"hints/#{hintfile}\""
+    ],
+    "version": "361"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Liblinear",
+    "description": "Library for large linear classification",
+    "url": "https://www.csie.ntu.edu.tw/~cjlin/liblinear/oldfiles/liblinear-2.20.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.csie.ntu.edu.tw/~cjlin/liblinear/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/941ec0ad/liblinear/patch-Makefile.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"make\", \"all\"",
+        "bin.install \"predict\", \"train\"",
+        "lib.install \"liblinear.dylib\"",
+        "lib.install_symlink \"liblinear.dylib\" => \"liblinear.1.dylib\"",
+        "include.install \"linear.h\""
+    ],
+    "version": "2.20"
+}

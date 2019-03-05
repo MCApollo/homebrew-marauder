@@ -1,0 +1,44 @@
+{
+    "name": "Mozjpeg",
+    "description": "Improved JPEG encoder",
+    "url": "https://github.com/mozilla/mozjpeg/archive/v3.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mozilla/mozjpeg",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "nasm",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--with-jpeg8\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.3.1"
+}

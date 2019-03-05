@@ -1,0 +1,37 @@
+{
+    "name": "Madplay",
+    "description": "MPEG Audio Decoder",
+    "url": "https://downloads.sourceforge.net/project/mad/madplay/0.15.2b/madplay-0.15.2b.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.underbit.com/products/mad/",
+    "depends": [
+        {
+            "depend": "libid3tag",
+            "build-depend": false
+        },
+        {
+            "depend": "mad",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/f6c5992c/madplay/patch-audio_carbon.c",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--mandir=#{man}",
+        "--build=x86_64",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.15.2"
+}

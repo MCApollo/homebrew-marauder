@@ -1,0 +1,25 @@
+{
+    "name": "Nqp",
+    "description": "Lightweight Perl 6-like environment for virtual machines",
+    "url": "https://rakudo.perl6.org/downloads/nqp/nqp-2018.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/perl6/nqp",
+    "depends": [
+        {
+            "depend": "moarvm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"perl\", \"Configure.pl\",",
+        "\"--backends=moar\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-moar=#{Formula[\"moarvm\"].bin}/moar\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2018.12"
+}

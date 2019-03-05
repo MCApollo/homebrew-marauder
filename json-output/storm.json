@@ -1,0 +1,21 @@
+{
+    "name": "Storm",
+    "description": "Distributed realtime computation system to process data streams",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=storm/apache-storm-1.2.2/apache-storm-1.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://storm.apache.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "stormssh",
+            "reason": "both install "
+        }
+    ],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "bin.install_symlink libexec/\"bin/storm\""
+    ],
+    "version": "1.2.2"
+}

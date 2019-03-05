@@ -1,0 +1,29 @@
+{
+    "name": "Tldr",
+    "description": "Simplified and community-driven man pages",
+    "url": "https://github.com/tldr-pages/tldr-cpp-client/archive/v1.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://tldr.sh/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libzip",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "tealdeer",
+            "reason": "both install `tldr` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "1.3.0"
+}

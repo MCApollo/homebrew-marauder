@@ -1,0 +1,17 @@
+{
+    "name": "CsvFix",
+    "description": "Tool for manipulating CSV data",
+    "url": "https://bitbucket.org/neilb/csvfix/get/version-1.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://neilb.bitbucket.io/csvfix/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.libcxx",
+        "system \"make\", \"lin\"",
+        "bin.install \"csvfix/bin/csvfix\""
+    ],
+    "version": "1.6"
+}

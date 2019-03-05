@@ -1,0 +1,16 @@
+{
+    "name": "Tinycdb",
+    "description": "Create and read constant databases",
+    "url": "http://www.corpit.ru/mjt/tinycdb/tinycdb-0.78.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.corpit.ru/mjt/tinycdb.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\", \"mandir=#{man}\""
+    ],
+    "version": "0.78"
+}

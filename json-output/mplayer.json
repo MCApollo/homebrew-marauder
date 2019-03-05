@@ -1,0 +1,53 @@
+{
+    "name": "Mplayer",
+    "description": "UNIX movie player",
+    "url": "https://mplayerhq.hu/MPlayer/releases/MPlayer-1.3.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://mplayerhq.hu/",
+    "depends": [
+        {
+            "depend": "yasm",
+            "build-depend": true
+        },
+        {
+            "depend": "libcaca",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/configure b/configure\n",
+                "index addc461..3b871aa 100755\n",
+                "--- a/configure\n",
+                "+++ b/configure\n",
+                "@@ -1517,8 +1517,6 @@ if test -e ffmpeg/mp_auto_pull ; then\n",
+                " fi\n",
+                "\n",
+                " if test \"$ffmpeg_a\" != \"no\" && ! test -e ffmpeg ; then\n",
+                "-    echo \"No FFmpeg checkout, press enter to download one with git or CTRL+C to abort\"\n",
+                "-    read tmp\n",
+                "     if ! git clone -b $FFBRANCH --depth 1 git://source.ffmpeg.org/ffmpeg.git ffmpeg ; then\n",
+                "         rm -rf ffmpeg\n",
+                "         echo \"Failed to get a FFmpeg checkout\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "args = %W[",
+        "--cc=#{ENV.cc}",
+        "--host-cc=#{ENV.cc}",
+        "--disable-cdparanoia",
+        "--prefix=#{prefix}",
+        "--disable-x11",
+        "--enable-caca",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.0"
+}

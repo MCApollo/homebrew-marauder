@@ -1,0 +1,17 @@
+{
+    "name": "Netperf",
+    "description": "Benchmarks performance of many different types of networking",
+    "url": "https://github.com/HewlettPackard/netperf/archive/netperf-2.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://hewlettpackard.github.io/netperf/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7.0"
+}

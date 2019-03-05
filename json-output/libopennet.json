@@ -1,0 +1,19 @@
+{
+    "name": "Libopennet",
+    "description": "open_net(), similar to open()",
+    "url": "https://www.rkeene.org/files/oss/libopennet/libopennet-0.9.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.rkeene.org/oss/libopennet",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.9"
+}

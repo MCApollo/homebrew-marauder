@@ -1,0 +1,41 @@
+{
+    "name": "Openvpn",
+    "description": "SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension",
+    "url": "https://swupdate.openvpn.org/community/releases/openvpn-2.4.6.tar.xz",
+    "mirror": "https://build.openvpn.net/downloads/releases/openvpn-2.4.6.tar.xz",
+    "homepage": "https://openvpn.net/index.php/download/community-downloads.html",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "lz4",
+            "build-depend": false
+        },
+        {
+            "depend": "lzo",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "pkcs11-helper",
+            "url": "https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.22/pkcs11-helper-1.22.tar.bz2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"run/openvpn\").mkpath"
+    ],
+    "version": "2.4.6"
+}

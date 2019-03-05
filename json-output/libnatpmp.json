@@ -1,0 +1,16 @@
+{
+    "name": "Libnatpmp",
+    "description": "NAT port mapping protocol library",
+    "url": "http://miniupnp.free.fr/files/download.php?file=libnatpmp-20150609.tar.gz",
+    "mirror": null,
+    "homepage": "http://miniupnp.free.fr/libnatpmp.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", \"-Wl,-install_name,$(SONAME)\", \"-Wl,-install_name,$(INSTALLDIRLIB)/$(SONAME)\"",
+        "system \"make\", \"INSTALLPREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "20150609"
+}

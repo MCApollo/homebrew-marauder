@@ -1,0 +1,15 @@
+{
+    "name": "Bork",
+    "description": "Bash-Operated Reconciling Kludge",
+    "url": "https://github.com/mattly/bork/archive/v0.11.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mattly/bork",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install %w[bin docs lib test types]"
+    ],
+    "version": "0.11.1"
+}

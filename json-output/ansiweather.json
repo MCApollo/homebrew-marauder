@@ -1,0 +1,20 @@
+{
+    "name": "Ansiweather",
+    "description": "Weather in your terminal, with ANSI colors and Unicode symbols",
+    "url": "https://github.com/fcambus/ansiweather/archive/1.13.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/fcambus/ansiweather",
+    "depends": [
+        {
+            "depend": "jq",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"ansiweather\""
+    ],
+    "version": "1.13.0"
+}

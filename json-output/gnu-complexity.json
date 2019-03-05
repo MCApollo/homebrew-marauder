@@ -1,0 +1,27 @@
+{
+    "name": "GnuComplexity",
+    "description": "Measures complexity of C source",
+    "url": "https://ftp.gnu.org/gnu/complexity/complexity-1.10.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/complexity/complexity-1.10.tar.xz",
+    "homepage": "https://www.gnu.org/software/complexity",
+    "depends": [
+        {
+            "depend": "autogen",
+            "build-depend": false
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.10"
+}

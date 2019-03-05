@@ -1,0 +1,17 @@
+{
+    "name": "Pidof",
+    "description": "Display the PID number for a given process name",
+    "url": "http://www.nightproductions.net/downloads/pidof_source.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.nightproductions.net/cli.htm",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\", \"CC=#{ENV.cc}\", \"CFLAGS=#{ENV.cflags}\"",
+        "man1.install gzip(\"pidof.1\")",
+        "bin.install \"pidof\""
+    ],
+    "version": "1.0-u"
+}

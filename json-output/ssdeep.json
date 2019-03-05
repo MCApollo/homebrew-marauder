@@ -1,0 +1,16 @@
+{
+    "name": "Ssdeep",
+    "description": "Recursive piecewise hashing tool",
+    "url": "https://github.com/ssdeep-project/ssdeep/releases/download/release-2.14.1/ssdeep-2.14.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://ssdeep-project.github.io/ssdeep/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.14.1"
+}

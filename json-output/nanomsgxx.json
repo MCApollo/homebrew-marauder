@@ -1,0 +1,31 @@
+{
+    "name": "Nanomsgxx",
+    "description": "Nanomsg binding for C++11",
+    "url": "https://github.com/achille-roussel/nanomsgxx/archive/0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://achille-roussel.github.io/nanomsgxx/doc/nanomsgxx.7.html",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "nanomsg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--static",
+        "--shared",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"python\", \"./waf\", \"configure\", *args",
+        "system \"python\", \"./waf\", \"build\"",
+        "system \"python\", \"./waf\", \"install\""
+    ],
+    "version": "0.2"
+}

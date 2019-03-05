@@ -1,0 +1,17 @@
+{
+    "name": "TodoTxt",
+    "description": "Minimal, todo.txt-focused editor",
+    "url": "https://github.com/todotxt/todo.txt-cli/releases/download/v2.11.0/todo.txt_cli-2.11.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://todotxt.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"todo.sh\"",
+        "prefix.install \"todo.cfg\" ",
+        "bash_completion.install \"todo_completion\""
+    ],
+    "version": "2.11.0"
+}

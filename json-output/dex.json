@@ -1,0 +1,19 @@
+{
+    "name": "Dex",
+    "description": "Dextrous text editor",
+    "url": "https://github.com/tihirvon/dex/archive/v1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tihirvon/dex",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = [\"prefix=#{prefix}\",",
+        "\"CC=#{ENV.cc}\",",
+        "\"HOST_CC=#{ENV.cc}\"]",
+        "args << \"VERSION=#{version}\" if build.head?",
+        "system \"make\", \"install\", *args"
+    ],
+    "version": "1.0"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Perceptualdiff",
+    "description": "Perceptual image comparison tool",
+    "url": "https://downloads.sourceforge.net/project/pdiff/pdiff/perceptualdiff-1.1.1/perceptualdiff-1.1.1-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://pdiff.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "freeimage",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.1"
+}

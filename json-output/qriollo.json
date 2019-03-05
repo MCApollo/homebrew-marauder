@@ -1,0 +1,22 @@
+{
+    "name": "Qriollo",
+    "description": "Impure functional language, based on Rioplatense Spanish",
+    "url": "https://qriollo.github.io/Qriollo-0.91.tar.gz",
+    "mirror": null,
+    "homepage": "https://qriollo.github.io",
+    "depends": [
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"qr\"",
+        "(lib/\"chamuyo\").install \"Chamuyo.q\""
+    ],
+    "version": "0.91"
+}

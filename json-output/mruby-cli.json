@@ -1,0 +1,20 @@
+{
+    "name": "MrubyCli",
+    "description": "Build native command-line applications for Linux, MacOS, and Windows",
+    "url": "https://github.com/hone/mruby-cli/archive/v0.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/hone/mruby-cli",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"MRUBY_CLI_LOCAL\"] = \"true\"",
+        "rm buildpath/\"build_config.rb\"",
+        "(buildpath/\"build_config.rb\").write <<~EOS",
+        "MRuby::Build.new do |conf|",
+        "toolchain :clang",
+        "conf.gem File.expand_path(File.dirname(__FILE__))"
+    ],
+    "version": "0.0.4"
+}

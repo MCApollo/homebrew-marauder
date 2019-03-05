@@ -1,0 +1,23 @@
+{
+    "name": "Texi2html",
+    "description": "Convert TeXinfo files to HTML",
+    "url": "https://download.savannah.gnu.org/releases/texi2html/texi2html-5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/texi2html/",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\", \"--infodir=#{info}\"",
+        "chmod 0755, \"./install-sh\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.0"
+}

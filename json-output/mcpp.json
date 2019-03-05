@@ -1,0 +1,23 @@
+{
+    "name": "Mcpp",
+    "description": "Alternative C/C++ preprocessor",
+    "url": "https://downloads.sourceforge.net/project/mcpp/mcpp/V.2.7.2/mcpp-2.7.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://mcpp.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/3fd7fba/mcpp/2.7.2.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-mcpplib\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7.2"
+}

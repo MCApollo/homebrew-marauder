@@ -1,0 +1,17 @@
+{
+    "name": "Pdf2json",
+    "description": "PDF to JSON and XML converter",
+    "url": "https://github.com/flexpaper/pdf2json/releases/download/v0.69/pdf2json-0.69.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/flexpaper/pdf2json",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\"",
+        "system \"make\", \"CC=#{ENV.cc}\", \"CXX=#{ENV.cxx}\"",
+        "bin.install \"src/pdf2json\""
+    ],
+    "version": "0.69"
+}

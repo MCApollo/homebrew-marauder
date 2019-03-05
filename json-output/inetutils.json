@@ -1,0 +1,31 @@
+{
+    "name": "Inetutils",
+    "description": "GNU utilities for networking",
+    "url": "https://ftp.gnu.org/gnu/inetutils/inetutils-1.9.4.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/inetutils/inetutils-1.9.4.tar.xz",
+    "homepage": "https://www.gnu.org/software/inetutils/",
+    "depends": [
+        {
+            "depend": "libidn",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--program-prefix=g",
+        "--with-idn",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "noshadow.each do |cmd|",
+        "bin.install_symlink \"g#{cmd}\" => cmd",
+        "man1.install_symlink \"g#{cmd}.1\" => \"#{cmd}.1\""
+    ],
+    "version": "1.9.4"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Scheme48",
+    "description": "Scheme byte-code interpreter",
+    "url": "http://s48.org/1.9.2/scheme48-1.9.2.tgz",
+    "mirror": null,
+    "homepage": "http://www.s48.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.O0 if ENV.compiler == :clang",
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--enable-gc=bibop\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9.2"
+}

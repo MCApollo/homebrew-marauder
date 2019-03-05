@@ -1,0 +1,29 @@
+{
+    "name": "Jrtplib",
+    "description": "Fully featured C++ Library for RTP (Real-time Transport Protocol)",
+    "url": "https://research.edm.uhasselt.be/jori/jrtplib/jrtplib-3.11.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://research.edm.uhasselt.be/jori/jrtplib",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jthread",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.11.1"
+}

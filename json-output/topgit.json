@@ -1,0 +1,15 @@
+{
+    "name": "Topgit",
+    "description": "Git patch queue manager",
+    "url": "https://github.com/greenrd/topgit/archive/topgit-0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/greenrd/topgit",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "0.9"
+}

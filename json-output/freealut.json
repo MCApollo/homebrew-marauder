@@ -1,0 +1,52 @@
+{
+    "name": "Freealut",
+    "description": "Implementation of OpenAL",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/f/freealut/freealut_1.1.0.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/f/freealut/freealut_1.1.0.orig.tar.gz",
+    "homepage": "https://github.com/vancegroup/freealut",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/configure.ac b/configure.ac\n",
+                "index 2b26d6d..4001db1 100644\n",
+                "--- a/configure.ac\n",
+                "+++ b/configure.ac\n",
+                "@@ -83,7 +83,8 @@ AC_DEFINE([ALUT_BUILD_LIBRARY], [1], [Define to 1 if you want to build the ALUT\n",
+                " \n",
+                " # Checks for libraries. (not perfect yet)\n",
+                " AC_SEARCH_LIBS([pthread_self], [pthread])\n",
+                "-AC_SEARCH_LIBS([alGetError], [openal32 openal])\n",
+                "+# Use Mac OS X frameworks\n",
+                "+LIBS=\"$LIBS -framework IOKit -framework OpenAL\"\n",
+                "\n",
+                " ################################################################################\n",
+                " # Checks for header files.\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.0"
+}

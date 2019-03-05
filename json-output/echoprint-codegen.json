@@ -1,0 +1,33 @@
+{
+    "name": "EchoprintCodegen",
+    "description": "Codegen for Echoprint",
+    "url": "https://github.com/echonest/echoprint-codegen/archive/v4.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/spotify/echoprint-codegen",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "taglib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/echonest/echoprint-codegen/commit/5ac72c40ae920f507f3f4da8b8875533bccf5e02.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\", \"-C\", \"src\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "4.12"
+}

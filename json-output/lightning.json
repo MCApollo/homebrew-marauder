@@ -1,0 +1,23 @@
+{
+    "name": "Lightning",
+    "description": "Generates assembly language code at run-time",
+    "url": "https://ftp.gnu.org/gnu/lightning/lightning-2.1.2.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/lightning/lightning-2.1.2.tar.gz",
+    "homepage": "https://www.gnu.org/software/lightning/",
+    "depends": [
+        {
+            "depend": "binutils",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"check\", \"-j1\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.2"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Libghthash",
+    "description": "Generic hash table for C++",
+    "url": "https://web.archive.org/web/20170824230514/www.bth.se/people/ska/sim_home/filer/libghthash-0.6.2.tar.gz",
+    "mirror": "https://pkg.freebsd.org/ports-distfiles/libghthash-0.6.2.tar.gz",
+    "homepage": "https://web.archive.org/web/20170824230514/www.bth.se/people/ska/sim_home/libghthash.html",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-ivf\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.2"
+}

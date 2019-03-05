@@ -1,0 +1,16 @@
+{
+    "name": "Dnsmap",
+    "description": "Passive DNS network mapper (a.k.a. subdomains bruteforcer)",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/dnsmap/dnsmap-0.30.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/dnsmap/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"CFLAGS=#{ENV.cflags}\",",
+        "\"BINDIR=#{bin}\", \"install\""
+    ],
+    "version": "0.30"
+}

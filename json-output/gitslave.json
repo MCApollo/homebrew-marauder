@@ -1,0 +1,15 @@
+{
+    "name": "Gitslave",
+    "description": "Create group of related repos with one as superproject",
+    "url": "https://downloads.sourceforge.net/project/gitslave/gitslave-2.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://gitslave.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "2.0.2"
+}

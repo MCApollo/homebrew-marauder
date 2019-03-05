@@ -1,0 +1,57 @@
+{
+    "name": "Midgard2",
+    "description": "Generic content repository for web and desktop applications",
+    "url": "https://github.com/downloads/midgardproject/midgard-core/midgard2-core-12.09.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.midgard-project.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "dbus-glib",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libgda",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--with-libgda5",
+        "--with-dbus-support",
+        "--enable-introspection=no",
+        "]",
+        "if build.head?",
+        "inreplace \"autogen.sh\", \"libtoolize\", \"glibtoolize\"",
+        "system \"./autogen.sh\", *args",
+        "else",
+        "system \"./configure\", *args",
+        "end",
+        "system \"make\", \"install\""
+    ],
+    "version": "12.09"
+}

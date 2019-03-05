@@ -1,0 +1,28 @@
+{
+    "name": "Rsstail",
+    "description": "Monitors an RSS feed and emits new entries when detected",
+    "url": "https://www.vanheusden.com/rsstail/rsstail-2.1.tgz",
+    "mirror": null,
+    "homepage": "https://www.vanheusden.com/rsstail/",
+    "depends": [
+        {
+            "depend": "libmrss",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "libiconv_hook",
+            "url": "https://www.mirrorservice.org/sites/archive.ubuntu.com/ubuntu/pool/universe/liba/libapache-mod-encoding/libapache-mod-encoding_0.0.20021209.orig.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"libiconv_hook\").install resource(\"libiconv_hook\")",
+        "cd \"libiconv_hook/lib\" do",
+        "system \"./configure\", \"--disable-shared\"",
+        "system \"make\""
+    ],
+    "version": "2.1"
+}

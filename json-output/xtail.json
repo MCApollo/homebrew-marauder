@@ -1,0 +1,20 @@
+{
+    "name": "Xtail",
+    "description": "Watch growth of multiple files or directories (like `tail -f`)",
+    "url": "https://www.unicom.com/files/xtail-2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.unicom.com/sw/xtail",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "man1.mkpath",
+        "bin.mkpath",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1"
+}

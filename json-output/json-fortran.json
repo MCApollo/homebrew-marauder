@@ -1,0 +1,32 @@
+{
+    "name": "JsonFortran",
+    "description": "Fortran 2008 JSON API",
+    "url": "https://github.com/jacobwilliams/json-fortran/archive/6.10.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jacobwilliams/json-fortran",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "ford",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args,",
+        "\"-DUSE_GNU_INSTALL_CONVENTION:BOOL=TRUE\",",
+        "\"-DENABLE_UNICODE:BOOL=TRUE\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.10.0"
+}

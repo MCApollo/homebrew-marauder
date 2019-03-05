@@ -1,0 +1,22 @@
+{
+    "name": "ScIm",
+    "description": "Spreadsheet program for the terminal, using ncurses",
+    "url": "https://github.com/andmarti1424/sc-im/archive/v0.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/andmarti1424/sc-im",
+    "depends": [
+        {
+            "depend": "ncurses",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"make\", \"prefix=#{prefix}\"",
+        "system \"make\", \"prefix=#{prefix}\", \"install\""
+    ],
+    "version": "0.7.0"
+}

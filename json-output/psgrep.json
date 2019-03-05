@@ -1,0 +1,16 @@
+{
+    "name": "Psgrep",
+    "description": "Shortcut for the ",
+    "url": "https://github.com/jvz/psgrep/archive/1.0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jvz/psgrep",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"psgrep\"",
+        "man1.install \"psgrep.1\""
+    ],
+    "version": "1.0.9"
+}

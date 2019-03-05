@@ -1,0 +1,15 @@
+{
+    "name": "GerritTools",
+    "description": "Tools to ease Gerrit code review",
+    "url": "https://github.com/indirect/gerrit-tools/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/indirect/gerrit-tools",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install \"bin\""
+    ],
+    "version": "1.0.0"
+}

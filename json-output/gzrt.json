@@ -1,0 +1,17 @@
+{
+    "name": "Gzrt",
+    "description": "Gzip recovery toolkit",
+    "url": "https://www.urbanophile.com/arenn/coding/gzrt/gzrt-0.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.urbanophile.com/arenn/coding/gzrt/gzrt.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"gzrecover\"",
+        "man1.install \"gzrecover.1\""
+    ],
+    "version": "0.8"
+}

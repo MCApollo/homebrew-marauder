@@ -1,0 +1,50 @@
+{
+    "name": "LibvirtGlib",
+    "description": "Libvirt API for glib-based programs",
+    "url": "https://libvirt.org/sources/glib/libvirt-glib-2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://libvirt.org/",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libvirt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"libvirt-gconfig/Makefile.in\", /^.*-Wl,--version-script=.*$\\n/, \"\"",
+        "inreplace \"libvirt-glib/Makefile.in\",    /^.*-Wl,--version-script=.*$\\n/, \"\"",
+        "inreplace \"libvirt-gobject/Makefile.in\", /^.*-Wl,--version-script=.*$\\n/, \"\"",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--enable-introspection",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.0"
+}

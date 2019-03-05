@@ -1,0 +1,29 @@
+{
+    "name": "Cquery",
+    "description": "C/C++ language server",
+    "url": "https://github.com/cquery-project/cquery.git",
+    "mirror": null,
+    "homepage": "https://github.com/cquery-project/cquery",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "llvm",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DSYSTEM_CLANG=ON\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0-git-b523aa92"
+}

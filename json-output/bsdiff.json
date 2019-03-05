@@ -1,0 +1,40 @@
+{
+    "name": "Bsdiff",
+    "description": "Generate and apply patches to binary files",
+    "url": "https://www.daemonology.net/bsdiff/bsdiff-4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.daemonology.net/bsdiff",
+    "depends": [
+        {
+            "depend": "bsdmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/bspatch.c b/bspatch.c\n",
+                "index 643c60b..543379c 100644\n",
+                "--- a/bspatch.c\n",
+                "+++ b/bspatch.c\n",
+                "@@ -28,6 +28,7 @@\n",
+                " __FBSDID(\"$FreeBSD: src/usr.bin/bsdiff/bspatch/bspatch.c,v 1.1 2005/08/06 01:59:06 cperciva Exp $\");\n",
+                " #endif\n",
+                "\n",
+                "+#include <sys/types.h>\n",
+                " #include <bzlib.h>\n",
+                " #include <stdlib.h>\n",
+                " #include <stdio.h>\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"bsdmake\"",
+        "bin.install \"bsdiff\"",
+        "man1.install \"bsdiff.1\""
+    ],
+    "version": "4.3"
+}

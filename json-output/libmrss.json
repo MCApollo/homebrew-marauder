@@ -1,0 +1,27 @@
+{
+    "name": "Libmrss",
+    "description": "C library for RSS files or streams",
+    "url": "https://www.autistici.org/bakunin/libmrss/libmrss-0.19.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.autistici.org/bakunin/libmrss/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libnxml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.19.2"
+}

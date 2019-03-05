@@ -1,0 +1,47 @@
+{
+    "name": "Zyre",
+    "description": "Local Area Clustering for Peer-to-Peer Applications",
+    "url": "https://github.com/zeromq/zyre/releases/download/v2.0.0/zyre-2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/zeromq/zyre",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "czmq",
+            "build-depend": false
+        },
+        {
+            "depend": "zeromq",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check-verbose\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.0"
+}

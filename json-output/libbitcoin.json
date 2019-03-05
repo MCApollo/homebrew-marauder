@@ -1,0 +1,56 @@
+{
+    "name": "Libbitcoin",
+    "description": "Bitcoin Cross-Platform C++ Development Toolkit",
+    "url": "https://github.com/libbitcoin/libbitcoin-system/archive/v3.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://libbitcoin.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "qrencode",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "secp256k1",
+            "url": "https://github.com/libbitcoin/secp256k1/archive/v0.1.0.13.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"secp256k1\").stage do",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{libexec}\",",
+        "\"--enable-module-recovery\",",
+        "\"--with-bignum=no\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.5.0"
+}

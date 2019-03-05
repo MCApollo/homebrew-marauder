@@ -1,0 +1,20 @@
+{
+    "name": "Direvent",
+    "description": "Monitors events in the file system directories",
+    "url": "https://ftp.gnu.org/gnu/direvent/direvent-5.1.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/direvent/direvent-5.1.tar.gz",
+    "homepage": "https://www.gnu.org.ua/software/direvent/direvent.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.1"
+}

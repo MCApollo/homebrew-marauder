@@ -1,0 +1,38 @@
+{
+    "name": "Ibex",
+    "description": "C++ library for constraint processing over real numbers",
+    "url": "https://github.com/ibex-team/ibex-lib/archive/ibex-2.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.ibex-lib.org/",
+    "depends": [
+        {
+            "depend": "bison",
+            "build-depend": true
+        },
+        {
+            "depend": "flex",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "ENV.deparallelize",
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\",",
+        "\"--enable-shared\",",
+        "\"--lp-lib=soplex\",",
+        "\"--with-optim\"",
+        "system \"./waf\", \"install\"",
+        "pkgshare.install %w[examples plugins/solver/benchs]",
+        "(pkgshare/\"examples/symb01.txt\").write <<~EOS",
+        "function f(x)",
+        "return ((2*x,-x);(-x,3*x));"
+    ],
+    "version": "2.8.0"
+}

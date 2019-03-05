@@ -1,0 +1,20 @@
+{
+    "name": "Prettyping",
+    "description": "Wrapper to colorize and simplify ping",
+    "url": "https://github.com/denilsonsa/prettyping/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://denilsonsa.github.io/prettyping/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/6ecea23/prettyping/ipv6.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "bin.install \"prettyping\""
+    ],
+    "version": "1.0.1"
+}

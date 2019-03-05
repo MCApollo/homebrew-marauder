@@ -1,0 +1,64 @@
+{
+    "name": "Libgtop",
+    "description": "Library for portably obtaining information about processes",
+    "url": "https://download.gnome.org/sources/libgtop/2.38/libgtop-2.38.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://library.gnome.org/devel/libgtop/stable/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gnome-common",
+            "build-depend": true
+        },
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "gtk-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/GNOME/libgtop/commit/42b049f338363f92c1e93b4549fc944098eae674.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./autogen.sh\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-x\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.38.0"
+}

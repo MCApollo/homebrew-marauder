@@ -1,0 +1,22 @@
+{
+    "name": "Htslib",
+    "description": "C library for high-throughput sequencing data formats",
+    "url": "https://github.com/samtools/htslib/releases/download/1.9/htslib-1.9.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.htslib.org/",
+    "depends": [
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"test\""
+    ],
+    "version": "1.9"
+}

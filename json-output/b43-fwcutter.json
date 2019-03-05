@@ -1,0 +1,18 @@
+{
+    "name": "B43Fwcutter",
+    "description": "Extract firmware from Braodcom 43xx driver files",
+    "url": "https://bues.ch/b43/fwcutter/b43-fwcutter-019.tar.bz2",
+    "mirror": "https://launchpad.net/ubuntu/+archive/primary/+files/b43-fwcutter_019.orig.tar.bz2",
+    "homepage": "https://wireless.kernel.org/en/users/Drivers/b43",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\" do |m|",
+        "m.gsub! /install -o 0 -g 0/, \"install\"",
+        "m.gsub! /install -d -o 0 -g 0/, \"install -d\"",
+        "m.gsub! \"$(PREFIX)/man\", man"
+    ],
+    "version": "019"
+}

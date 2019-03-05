@@ -1,0 +1,18 @@
+{
+    "name": "Txr",
+    "description": "Original, new programming language for convenient data munging",
+    "url": "http://www.kylheku.com/cgit/txr/snapshot/txr-198.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/txr/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "198"
+}

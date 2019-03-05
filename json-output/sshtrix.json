@@ -1,0 +1,23 @@
+{
+    "name": "Sshtrix",
+    "description": "SSH login cracker",
+    "url": "https://github.com/nullsecuritynet/tools/raw/master/cracker/sshtrix/release/sshtrix-0.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.nullsecurity.net/tools/cracker.html",
+    "depends": [
+        {
+            "depend": "libssh",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", \"-lssh_threads\", \"\"",
+        "bin.mkpath",
+        "system \"make\", \"sshtrix\", \"CC=#{ENV.cc}\"",
+        "system \"make\", \"DISTDIR=#{prefix}\", \"install\""
+    ],
+    "version": "0.0.2"
+}

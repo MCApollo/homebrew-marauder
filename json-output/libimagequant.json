@@ -1,0 +1,16 @@
+{
+    "name": "Libimagequant",
+    "description": "Palette quantization library extracted from pnquant2",
+    "url": "https://github.com/ImageOptim/libimagequant/archive/2.12.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://pngquant.org/lib/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.12.2"
+}

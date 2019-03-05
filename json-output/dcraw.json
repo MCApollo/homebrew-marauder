@@ -1,0 +1,31 @@
+{
+    "name": "Dcraw",
+    "description": "Digital camera RAW photo decoding software",
+    "url": "https://www.cybercom.net/~dcoffin/dcraw/archive/dcraw-9.28.0.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/distfiles.macports.org/dcraw/dcraw-9.28.0.tar.gz",
+    "homepage": "https://www.cybercom.net/~dcoffin/dcraw/",
+    "depends": [
+        {
+            "depend": "jasper",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "little-cms2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append_to_cflags \"-I#{HOMEBREW_PREFIX}/include -L#{HOMEBREW_PREFIX}/lib\"",
+        "system ENV.cc, \"-o\", \"dcraw\", ENV.cflags, \"dcraw.c\", \"-lm\", \"-ljpeg\", \"-llcms2\", \"-ljasper\"",
+        "bin.install \"dcraw\"",
+        "man1.install \"dcraw.1\""
+    ],
+    "version": "9.28.0"
+}

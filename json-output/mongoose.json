@@ -1,0 +1,27 @@
+{
+    "name": "Mongoose",
+    "description": "Web server build on top of Libmongoose embedded library",
+    "url": "https://github.com/cesanta/mongoose/archive/6.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/cesanta/mongoose",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "suite-sparse",
+            "reason": "suite-sparse vendors libmongoose.dylib"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "cd \"examples/simplest_web_server\" do",
+        "system \"make\"",
+        "bin.install \"simplest_web_server\" => \"mongoose\""
+    ],
+    "version": "6.13"
+}

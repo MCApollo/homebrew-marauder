@@ -1,0 +1,15 @@
+{
+    "name": "Bcal",
+    "description": "Storage conversion and expression calculator",
+    "url": "https://github.com/jarun/bcal/archive/v2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jarun/bcal",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.1"
+}

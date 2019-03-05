@@ -1,0 +1,39 @@
+{
+    "name": "Libp11",
+    "description": "PKCS#11 wrapper library in C",
+    "url": "https://downloads.sourceforge.net/project/opensc/libp11/libp11-0.2.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/OpenSC/libp11/wiki",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.8"
+}

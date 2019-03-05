@@ -1,0 +1,16 @@
+{
+    "name": "MozillaAddonSdk",
+    "description": "Create Firefox add-ons using JS, HTML, and CSS",
+    "url": "https://archive.mozilla.org/pub/mozilla.org/labs/jetpack/addon-sdk-1.17.zip",
+    "mirror": null,
+    "homepage": "https://developer.mozilla.org/en-US/Add-ons/SDK",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "bin.install_symlink \"#{libexec}/bin/cfx\""
+    ],
+    "version": "1.17"
+}

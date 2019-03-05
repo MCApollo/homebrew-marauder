@@ -1,0 +1,15 @@
+{
+    "name": "GitTracker",
+    "description": "Integrate Pivotal Tracker into your Git workflow",
+    "url": "https://github.com/stevenharman/git_tracker/archive/v2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/stevenharman/git_tracker",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"rake\", \"standalone:install\", \"prefix=#{prefix}\""
+    ],
+    "version": "2.0.0"
+}

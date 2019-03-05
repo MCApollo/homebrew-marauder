@@ -1,0 +1,20 @@
+{
+    "name": "Fsh",
+    "description": "Provides remote command execution",
+    "url": "https://www.lysator.liu.se/fsh/fsh-1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.lysator.liu.se/fsh/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"fshcompat.py\", \"FCNTL\", \"fcntl\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--infodir=#{info}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

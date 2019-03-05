@@ -1,0 +1,38 @@
+{
+    "name": "BoostAT160",
+    "description": "Collection of portable C++ source libraries",
+    "url": "https://downloads.sourceforge.net/project/boost/boost/1.60.0/boost_1_60_0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.boost.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/9e56b45/boost/boost1_60_0_python_class_metadata.diff",
+            "strip": "1"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff -Nur boost_1_60_0/boost/graph/adjacency_matrix.hpp boost_1_60_0-patched/boost/graph/adjacency_matrix.hpp\n",
+                "--- boost_1_60_0/boost/graph/adjacency_matrix.hpp\t2015-10-23 05:50:19.000000000 -0700\n",
+                "+++ boost_1_60_0-patched/boost/graph/adjacency_matrix.hpp\t2016-01-19 14:03:29.000000000 -0800\n",
+                "@@ -443,7 +443,7 @@\n",
+                "     // graph type. Instead, use directedS, which also provides the\n",
+                "     // functionality required for a Bidirectional Graph (in_edges,\n",
+                "     // in_degree, etc.).\n",
+                "-    BOOST_STATIC_ASSERT(type_traits::ice_not<(is_same<Directed, bidirectionalS>::value)>::value);\n",
+                "+    BOOST_STATIC_ASSERT(!(is_same<Directed, bidirectionalS>::value));\n",
+                "\n",
+                "     typedef typename mpl::if_<is_directed,\n",
+                "                                     bidirectional_tag, undirected_tag>::type\n"
+            ]
+        }
+    ],
+    "install": [
+        "open(\"user-config.jam\", \"a\") do |file|",
+        "file.write \"using darwin : : #{ENV.cxx} ;\\n\""
+    ],
+    "version": "1_60_0"
+}

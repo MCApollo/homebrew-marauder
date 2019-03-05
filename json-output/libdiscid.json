@@ -1,0 +1,17 @@
+{
+    "name": "Libdiscid",
+    "description": "C library for creating MusicBrainz and freedb disc IDs",
+    "url": "http://ftp.musicbrainz.org/pub/musicbrainz/libdiscid/libdiscid-0.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://musicbrainz.org/doc/libdiscid",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.2"
+}

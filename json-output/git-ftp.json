@@ -1,0 +1,43 @@
+{
+    "name": "GitFtp",
+    "description": "Git-powered FTP client",
+    "url": "https://github.com/git-ftp/git-ftp/archive/1.5.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://git-ftp.github.io/",
+    "depends": [
+        {
+            "depend": "pandoc",
+            "build-depend": true
+        },
+        {
+            "depend": "libssh2",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "curl",
+            "url": "https://curl.haxx.se/download/curl-7.62.0.tar.bz2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"curl\").stage do",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{libexec}\",",
+        "\"--disable-ares\",",
+        "\"--with-darwinssl\",",
+        "\"--with-libssh2\",",
+        "\"--without-brotli\",",
+        "\"--without-ca-bundle\",",
+        "\"--without-ca-path\",",
+        "\"--without-gssapi\",",
+        "\"--without-libmetalink\",",
+        "\"--without-librtmp\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.1"
+}

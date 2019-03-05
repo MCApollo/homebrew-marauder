@@ -1,0 +1,19 @@
+{
+    "name": "Texinfo",
+    "description": "Official documentation format of the GNU project",
+    "url": "https://ftp.gnu.org/gnu/texinfo/texinfo-6.6.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/texinfo/texinfo-6.6.tar.xz",
+    "homepage": "https://www.gnu.org/software/texinfo/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-install-warnings\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "doc.install Dir[\"doc/refcard/txirefcard*\"]"
+    ],
+    "version": "6.6"
+}

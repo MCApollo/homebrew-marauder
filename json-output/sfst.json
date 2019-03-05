@@ -1,0 +1,18 @@
+{
+    "name": "Sfst",
+    "description": "Toolbox for morphological analysers and other FST-based tools",
+    "url": "http://www.cis.uni-muenchen.de/~schmid/tools/SFST/data/SFST-1.4.7d.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.cis.uni-muenchen.de/~schmid/tools/SFST/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"make\"",
+        "system \"make\", \"DESTDIR=#{prefix}/\", \"install\"",
+        "system \"make\", \"DESTDIR=#{share}/\", \"maninstall\""
+    ],
+    "version": "1.4.7"
+}

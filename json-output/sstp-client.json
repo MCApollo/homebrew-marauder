@@ -1,0 +1,34 @@
+{
+    "name": "SstpClient",
+    "description": "SSTP (Microsofts Remote Access Solution for PPP over SSL) client",
+    "url": "https://downloads.sourceforge.net/project/sstp-client/sstp-client/sstp-client-1.0.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://sstp-client.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--disable-ppp-plugin\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-runtime-dir=#{var}/run/sstpc\"",
+        "system \"make\", \"install\"",
+        "(var/\"run/sstpc\").mkpath"
+    ],
+    "version": "1.0.12"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Typespeed",
+    "description": "Zap words flying across the screen by typing them correctly",
+    "url": "https://downloads.sourceforge.net/project/typespeed/typespeed/0.6.5/typespeed-0.6.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://typespeed.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"src/Makefile.in\", \"gcc\", ENV.cc",
+        "inreplace \"testsuite/Makefile.in\", \"gcc\", ENV.cc",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.5"
+}

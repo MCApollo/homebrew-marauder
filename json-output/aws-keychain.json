@@ -1,0 +1,15 @@
+{
+    "name": "AwsKeychain",
+    "description": "Uses macOS keychain for storage of AWS credentials",
+    "url": "https://github.com/pda/aws-keychain/archive/v3.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pda/aws-keychain",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"aws-keychain\""
+    ],
+    "version": "3.0.0"
+}

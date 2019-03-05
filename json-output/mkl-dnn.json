@@ -1,0 +1,27 @@
+{
+    "name": "MklDnn",
+    "description": "Intel Math Kernel Library for Deep Neural Networks",
+    "url": "https://github.com/intel/mkl-dnn/archive/v0.18.tar.gz",
+    "mirror": null,
+    "homepage": "https://01.org/mkl-dnn",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"doc\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.18"
+}

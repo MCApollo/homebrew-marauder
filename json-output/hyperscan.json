@@ -1,0 +1,34 @@
+{
+    "name": "Hyperscan",
+    "description": "High-performance regular expression matching library",
+    "url": "https://github.com/intel/hyperscan/archive/v5.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.hyperscan.io/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "ragel",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args, \"-DBUILD_STATIC_AND_SHARED=on\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.1.0"
+}

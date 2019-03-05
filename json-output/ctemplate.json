@@ -1,0 +1,16 @@
+{
+    "name": "Ctemplate",
+    "description": "Template language for C++",
+    "url": "https://github.com/OlafvdSpek/ctemplate/archive/ctemplate-2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/olafvdspek/ctemplate",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3"
+}

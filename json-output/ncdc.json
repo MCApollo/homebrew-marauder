@@ -1,0 +1,42 @@
+{
+    "name": "Ncdc",
+    "description": "NCurses direct connect",
+    "url": "https://dev.yorhel.nl/download/ncdc-1.20.tar.gz",
+    "mirror": null,
+    "homepage": "https://dev.yorhel.nl/ncdc",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-ivf\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.20"
+}

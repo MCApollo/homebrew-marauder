@@ -1,0 +1,36 @@
+{
+    "name": "Hesiod",
+    "description": "Library for the simple string lookup service built on top of DNS",
+    "url": "https://github.com/achernya/hesiod/archive/hesiod-3.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/achernya/hesiod",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "libidn",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.1"
+}

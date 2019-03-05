@@ -1,0 +1,16 @@
+{
+    "name": "Z",
+    "description": "Tracks most-used directories to make cd smarter",
+    "url": "https://github.com/rupa/z/archive/v1.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rupa/z",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(prefix/\"etc/profile.d\").install \"z.sh\"",
+        "man1.install \"z.1\""
+    ],
+    "version": "1.9"
+}

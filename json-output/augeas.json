@@ -1,0 +1,46 @@
+{
+    "name": "Augeas",
+    "description": "Configuration editing tool and API",
+    "url": "http://download.augeas.net/augeas-1.11.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://augeas.net",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "bison",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[--disable-debug --disable-dependency-tracking --prefix=#{prefix}]",
+        "if build.head?",
+        "system \"./autogen.sh\", *args",
+        "else",
+        "system \"./configure\", *args",
+        "end",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.11.0"
+}

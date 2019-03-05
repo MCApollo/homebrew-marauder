@@ -1,0 +1,34 @@
+{
+    "name": "Osslsigncode",
+    "description": "Authenticode signing of PE(EXE/SYS/DLL/etc), CAB and MSI files",
+    "url": "https://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/osslsigncode/",
+    "depends": [
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-ivf\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7.1"
+}

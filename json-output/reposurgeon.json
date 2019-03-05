@@ -1,0 +1,30 @@
+{
+    "name": "Reposurgeon",
+    "description": "Edit version-control repository history",
+    "url": "https://gitlab.com/esr/reposurgeon.git",
+    "mirror": null,
+    "homepage": "http://www.catb.org/esr/reposurgeon/",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        },
+        {
+            "depend": "pypy",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\"",
+        "elisp.install \"reposurgeon-mode.el\""
+    ],
+    "version": "1.0-git-ed480698"
+}

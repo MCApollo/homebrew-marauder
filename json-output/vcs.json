@@ -1,0 +1,33 @@
+{
+    "name": "Vcs",
+    "description": "Creates video contact sheets (previews) of videos",
+    "url": "https://p.outlyer.net/vcs/files/vcs-1.13.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://p.outlyer.net/vcs/",
+    "depends": [
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "ghostscript",
+            "build-depend": false
+        },
+        {
+            "depend": "gnu-getopt",
+            "build-depend": false
+        },
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"vcs\", \"declare GETOPT=getopt\", \"declare GETOPT=#{Formula[\"gnu-getopt\"].opt_bin}/getopt\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "1.13.2"
+}

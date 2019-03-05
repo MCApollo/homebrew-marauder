@@ -1,0 +1,17 @@
+{
+    "name": "Poster",
+    "description": "Create large posters out of PostScript pages",
+    "url": "https://github.com/schrfr/poster/archive/1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://schrfr.github.io/poster/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"poster\"",
+        "man1.install \"poster.1\""
+    ],
+    "version": "1.0.0"
+}

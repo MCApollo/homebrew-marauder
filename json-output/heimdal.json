@@ -1,0 +1,27 @@
+{
+    "name": "Heimdal",
+    "description": "Free Kerberos 5 implementation",
+    "url": "https://github.com/heimdal/heimdal/releases/download/heimdal-7.5.0/heimdal-7.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.h5l.org",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--without-x",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.5.0"
+}

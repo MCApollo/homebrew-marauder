@@ -1,0 +1,16 @@
+{
+    "name": "Blazeblogger",
+    "description": "CMS for the command-line",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/blazeblogger/blazeblogger-1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://blaze.blackened.cz/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"prefix=#{prefix}\", \"compdir=#{prefix}\", \"install\""
+    ],
+    "version": "1.2.0"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Ficy",
+    "description": "Icecast/Shoutcast stream grabber suite",
+    "url": "https://www.thregr.org/~wavexx/software/fIcy/releases/fIcy-1.0.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.thregr.org/~wavexx/software/fIcy/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"fIcy\", \"fPls\", \"fResync\""
+    ],
+    "version": "1.0.21"
+}

@@ -1,0 +1,40 @@
+{
+    "name": "DuoUnix",
+    "description": "Two-factor authentication for SSH",
+    "url": "https://github.com/duosecurity/duo_unix/archive/duo_unix-1.11.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.duosecurity.com/docs/duounix",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--includedir=#{include}/duo\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\",",
+        "\"--with-pam=#{lib}/pam/\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.11.1"
+}

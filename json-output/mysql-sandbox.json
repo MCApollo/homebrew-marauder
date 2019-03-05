@@ -1,0 +1,20 @@
+{
+    "name": "MysqlSandbox",
+    "description": "Install one or more MySQL servers",
+    "url": "https://github.com/datacharmer/mysql-sandbox/archive/3.2.17.tar.gz",
+    "mirror": null,
+    "homepage": "https://mysqlsandbox.net",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PERL_LIBDIR\"] = libexec/\"lib/perl5\"",
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5/site_perl\"",
+        "system \"perl\", \"Makefile.PL\", \"PREFIX=#{libexec}\"",
+        "system \"make\", \"test\", \"install\"",
+        "bin.install Dir[\"#{libexec}/bin/*\"]",
+        "bin.env_script_all_files(libexec/\"bin\", :PERL5LIB => ENV[\"PERL5LIB\"])"
+    ],
+    "version": "3.2.17"
+}

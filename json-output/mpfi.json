@@ -1,0 +1,27 @@
+{
+    "name": "Mpfi",
+    "description": "Multiple precision interval arithmetic library",
+    "url": "https://gforge.inria.fr/frs/download.php/file/37331/mpfi-1.5.3.tar.bz2",
+    "mirror": null,
+    "homepage": "https://perso.ens-lyon.fr/nathalie.revol/software.html",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "mpfr",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.3"
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Axel",
+    "description": "Light UNIX download accelerator",
+    "url": "https://github.com/axel-download-accelerator/axel/archive/v2.16.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/eribertomota/axel",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append_to_cflags \"-D_DARWIN_C_SOURCE\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.16.1"
+}

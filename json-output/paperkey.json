@@ -1,0 +1,23 @@
+{
+    "name": "Paperkey",
+    "description": "Extract just secret information out of OpenPGP secret keys",
+    "url": "https://www.jabberwocky.com/software/paperkey/paperkey-1.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.jabberwocky.com/software/paperkey/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "secret.gpg",
+            "url": "https://gist.github.com/bfontaine/5b0e3efa97e2dc42a970/raw/915e802578339ddde2967de541ed65cb76cd14b9/secret.gpg"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5"
+}

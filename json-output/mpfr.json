@@ -1,0 +1,24 @@
+{
+    "name": "Mpfr",
+    "description": "C library for multiple-precision floating-point computations",
+    "url": "https://ftp.gnu.org/gnu/mpfr/mpfr-4.0.1.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/mpfr/mpfr-4.0.1.tar.xz",
+    "homepage": "https://www.mpfr.org/",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\",",
+        "\"--disable-silent-rules\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0.1"
+}

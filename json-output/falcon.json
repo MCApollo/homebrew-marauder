@@ -1,0 +1,40 @@
+{
+    "name": "Falcon",
+    "description": "Multi-paradigm programming language and scripting engine",
+    "url": "https://mirrorservice.org/sites/distfiles.macports.org/falcon/Falcon-0.9.6.8.tgz",
+    "mirror": "https://src.fedoraproject.org/repo/pkgs/Falcon/Falcon-0.9.6.8.tgz/8435f6f2fe95097ac2fbe000da97c242/Falcon-0.9.6.8.tgz",
+    "homepage": "http://www.falconpl.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "sdl",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %W[",
+        "-DFALCON_BIN_DIR=#{bin}",
+        "-DFALCON_LIB_DIR=#{lib}",
+        "-DFALCON_MAN_DIR=#{man1}",
+        "-DFALCON_WITH_EDITLINE=OFF",
+        "-DFALCON_WITH_FEATHERS=NO",
+        "-DFALCON_WITH_INTERNAL_PCRE=OFF",
+        "-DFALCON_WITH_MANPAGES=ON",
+        "]",
+        "system \"cmake\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.6.8"
+}

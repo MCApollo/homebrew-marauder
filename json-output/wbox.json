@@ -1,0 +1,16 @@
+{
+    "name": "Wbox",
+    "description": "HTTP testing tool and configuration-less HTTP server",
+    "url": "http://www.hping.org/wbox/wbox-5.tar.gz",
+    "mirror": null,
+    "homepage": "http://hping.org/wbox/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"wbox\""
+    ],
+    "version": "wbox5"
+}

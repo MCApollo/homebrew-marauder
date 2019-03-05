@@ -1,0 +1,193 @@
+{
+    "name": "Rex",
+    "description": "Command-line tool which executes commands on remote servers",
+    "url": "https://cpan.metacpan.org/authors/id/J/JF/JFRIED/Rex-1.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.rexify.org",
+    "depends": [],
+    "resource": [
+        {
+            "name": "Module::Build",
+            "url": "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4222.tar.gz"
+        },
+        {
+            "name": "AWS::Signature4",
+            "url": "https://cpan.metacpan.org/authors/id/L/LD/LDS/AWS-Signature4-1.02.tar.gz"
+        },
+        {
+            "name": "Clone",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GARU/Clone-0.38.tar.gz"
+        },
+        {
+            "name": "Date::Parse",
+            "url": "https://cpan.metacpan.org/authors/id/G/GB/GBARR/TimeDate-2.30.tar.gz"
+        },
+        {
+            "name": "Devel::Caller",
+            "url": "https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Devel-Caller-2.06.tar.gz"
+        },
+        {
+            "name": "Encode::Locale",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/Encode-Locale-1.05.tar.gz"
+        },
+        {
+            "name": "Exporter::Tiny",
+            "url": "https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Exporter-Tiny-0.042.tar.gz"
+        },
+        {
+            "name": "File::Listing",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/File-Listing-6.04.tar.gz"
+        },
+        {
+            "name": "File::Remove",
+            "url": "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/File-Remove-1.57.tar.gz"
+        },
+        {
+            "name": "HTML::Parser",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTML-Parser-3.72.tar.gz"
+        },
+        {
+            "name": "HTML::Tagset",
+            "url": "https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/HTML-Tagset-3.20.tar.gz"
+        },
+        {
+            "name": "HTTP::Cookies",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTTP-Cookies-6.01.tar.gz"
+        },
+        {
+            "name": "HTTP::Daemon",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTTP-Daemon-6.01.tar.gz"
+        },
+        {
+            "name": "HTTP::Date",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTTP-Date-6.02.tar.gz"
+        },
+        {
+            "name": "HTTP::Message",
+            "url": "https://cpan.metacpan.org/authors/id/E/ET/ETHER/HTTP-Message-6.11.tar.gz"
+        },
+        {
+            "name": "HTTP::Negotiate",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/HTTP-Negotiate-6.01.tar.gz"
+        },
+        {
+            "name": "Hash::Merge",
+            "url": "https://cpan.metacpan.org/authors/id/R/RE/REHSACK/Hash-Merge-0.200.tar.gz"
+        },
+        {
+            "name": "IO::HTML",
+            "url": "https://cpan.metacpan.org/authors/id/C/CJ/CJM/IO-HTML-1.001.tar.gz"
+        },
+        {
+            "name": "IO::String",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/IO-String-1.08.tar.gz"
+        },
+        {
+            "name": "Canary::Stability",
+            "url": "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Canary-Stability-2012.tar.gz"
+        },
+        {
+            "name": "JSON::XS",
+            "url": "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/JSON-XS-3.02.tar.gz"
+        },
+        {
+            "name": "LWP",
+            "url": "https://cpan.metacpan.org/authors/id/E/ET/ETHER/libwww-perl-6.15.tar.gz"
+        },
+        {
+            "name": "LWP::MediaTypes",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz"
+        },
+        {
+            "name": "List::MoreUtils",
+            "url": "https://cpan.metacpan.org/authors/id/R/RE/REHSACK/List-MoreUtils-0.419.tar.gz"
+        },
+        {
+            "name": "Module::ScanDeps",
+            "url": "https://cpan.metacpan.org/authors/id/R/RS/RSCHUPP/Module-ScanDeps-1.23.tar.gz"
+        },
+        {
+            "name": "YAML::Tiny",
+            "url": "https://cpan.metacpan.org/authors/id/E/ET/ETHER/YAML-Tiny-1.70.tar.gz"
+        },
+        {
+            "name": "Module::Install",
+            "url": "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Install-1.18.tar.gz"
+        },
+        {
+            "name": "Net::HTTP",
+            "url": "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Net-HTTP-6.09.tar.gz"
+        },
+        {
+            "name": "Net::OpenSSH",
+            "url": "https://cpan.metacpan.org/authors/id/S/SA/SALVA/Net-OpenSSH-0.74.tar.gz"
+        },
+        {
+            "name": "PadWalker",
+            "url": "https://cpan.metacpan.org/authors/id/R/RO/ROBIN/PadWalker-2.2.tar.gz"
+        },
+        {
+            "name": "Sort::Naturally",
+            "url": "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/Sort-Naturally-1.03.tar.gz"
+        },
+        {
+            "name": "Term::ReadKey",
+            "url": "https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.37.tar.gz"
+        },
+        {
+            "name": "Text::Glob",
+            "url": "https://cpan.metacpan.org/authors/id/R/RC/RCLAMP/Text-Glob-0.10.tar.gz"
+        },
+        {
+            "name": "Types::Serialiser",
+            "url": "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Types-Serialiser-1.0.tar.gz"
+        },
+        {
+            "name": "URI",
+            "url": "https://cpan.metacpan.org/authors/id/E/ET/ETHER/URI-1.71.tar.gz"
+        },
+        {
+            "name": "WWW::RobotRules",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/WWW-RobotRules-6.02.tar.gz"
+        },
+        {
+            "name": "XML::NamespaceSupport",
+            "url": "https://cpan.metacpan.org/authors/id/P/PE/PERIGRIN/XML-NamespaceSupport-1.11.tar.gz"
+        },
+        {
+            "name": "XML::Parser",
+            "url": "https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-2.44.tar.gz"
+        },
+        {
+            "name": "XML::Simple",
+            "url": "https://cpan.metacpan.org/authors/id/G/GR/GRANTM/XML-Simple-2.22.tar.gz"
+        },
+        {
+            "name": "XSLoader",
+            "url": "https://cpan.metacpan.org/authors/id/S/SA/SAPER/XSLoader-0.24.tar.gz"
+        },
+        {
+            "name": "YAML",
+            "url": "https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-1.18.tar.gz"
+        },
+        {
+            "name": "common::sense",
+            "url": "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/common-sense-3.74.tar.gz"
+        },
+        {
+            "name": "inc::latest",
+            "url": "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/inc-latest-0.500.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "ENV.prepend_path \"PERL5LIB\", libexec/\"lib\"",
+        "ENV[\"PERL_CANARY_STABILITY_NOPROMPT\"] = \"1\"",
+        "resources.each do |res|",
+        "res.stage do",
+        "perl_build"
+    ],
+    "version": "1.5.0"
+}

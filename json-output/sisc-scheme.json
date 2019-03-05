@@ -1,0 +1,20 @@
+{
+    "name": "SiscScheme",
+    "description": "Extensive Java based Scheme interpreter",
+    "url": "https://downloads.sourceforge.net/project/sisc/SISC%20Lite/1.16.6/sisc-lite-1.16.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://sisc-scheme.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "(bin/\"sisc\").write <<~EOS",
+        "#!/bin/sh",
+        "SISC_HOME=#{libexec}",
+        "exec #{libexec}/sisc \"$@\"",
+        "EOS"
+    ],
+    "version": "1.16.6"
+}

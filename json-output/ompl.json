@@ -1,0 +1,30 @@
+{
+    "name": "Ompl",
+    "description": "Open Motion Planning Library consists of many motion planning algorithms",
+    "url": "https://bitbucket.org/ompl/ompl/downloads/ompl-1.4.1-Source.tar.gz",
+    "mirror": null,
+    "homepage": "https://ompl.kavrakilab.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "eigen",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.1"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Minuit2",
+    "description": "Physics analysis tool for function minimization",
+    "url": "https://www.cern.ch/mathlibs/sw/5_34_14/Minuit2/Minuit2-5.34.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://seal.web.cern.ch/seal/snapshot/work-packages/mathlibs/minuit/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--with-pic\",",
+        "\"--disable-openmp\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.34.14"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Cidrmerge",
+    "description": "CIDR merging with white listing (network exclusion)",
+    "url": "https://downloads.sourceforge.net/project/cidrmerge/cidrmerge/cidrmerge-1.5.3/cidrmerge-1.5.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://cidrmerge.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"cidrmerge\""
+    ],
+    "version": "1.5.3"
+}

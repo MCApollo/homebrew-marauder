@@ -1,0 +1,66 @@
+{
+    "name": "Mcabber",
+    "description": "Console Jabber client",
+    "url": "https://mcabber.com/files/mcabber-1.1.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://mcabber.com/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gpgme",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "libidn",
+            "build-depend": false
+        },
+        {
+            "depend": "libotr",
+            "build-depend": false
+        },
+        {
+            "depend": "loudmouth",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "cd \"mcabber\"",
+        "inreplace \"autogen.sh\", \"libtoolize\", \"glibtoolize\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-otr\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install %w[mcabberrc.example contrib]"
+    ],
+    "version": "1.1.0"
+}

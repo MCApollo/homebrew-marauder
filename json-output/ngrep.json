@@ -1,0 +1,20 @@
+{
+    "name": "Ngrep",
+    "description": "Network grep",
+    "url": "https://github.com/jpr5/ngrep/archive/V1_47.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jpr5/ngrep",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "sdk = MacOS.sdk_path_if_needed ? MacOS.sdk_path : \"\"",
+        "system \"./configure\", \"--enable-ipv6\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-pcap-includes=#{sdk}/usr/include/pcap\",",
+        "\"--disable-pcap-restart\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1_47"
+}

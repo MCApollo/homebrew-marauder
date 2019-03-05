@@ -1,0 +1,32 @@
+{
+    "name": "Spidermonkey",
+    "description": "JavaScript-C Engine",
+    "url": "https://archive.mozilla.org/pub/mozilla.org/js/js185-1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://developer.mozilla.org/en/SpiderMonkey",
+    "depends": [
+        {
+            "depend": "nspr",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "narwhal",
+            "reason": "both install a js binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "cd \"js/src\" do",
+        "inreplace \"config/rules.mk\",",
+        "\"-install_name @executable_path/$(SHARED_LIBRARY) \",",
+        "\"-install_name #{lib}/$(SHARED_LIBRARY) \""
+    ],
+    "version": "185"
+}

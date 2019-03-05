@@ -1,0 +1,21 @@
+{
+    "name": "Catimg",
+    "description": "Insanely fast image printing in your terminal",
+    "url": "https://github.com/posva/catimg/archive/2.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/posva/catimg",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \"-DMAN_OUTPUT_PATH=#{man1}\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.5.0"
+}

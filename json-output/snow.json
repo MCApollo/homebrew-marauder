@@ -1,0 +1,17 @@
+{
+    "name": "Snow",
+    "description": "Whitespace steganography: coded messages using whitespace",
+    "url": "https://dl.bintray.com/homebrew/mirror/snow-20130616.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.darkside.com.au/snow/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"snow\"",
+        "man1.install \"snow.1\""
+    ],
+    "version": "20130616"
+}

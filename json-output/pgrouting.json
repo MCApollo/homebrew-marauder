@@ -1,0 +1,44 @@
+{
+    "name": "Pgrouting",
+    "description": "Provides geospatial routing for PostGIS/PostgreSQL database",
+    "url": "https://github.com/pgRouting/pgrouting/archive/v2.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://pgrouting.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "cgal",
+            "build-depend": false
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "postgis",
+            "build-depend": false
+        },
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"stage\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"-DWITH_DD=ON\", \"..\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"install\", \"DESTDIR=#{buildpath}/stage\""
+    ],
+    "version": "2.6.2"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Redo",
+    "description": "Implements djb",
+    "url": "https://github.com/apenwarr/redo/archive/redo-0.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/apenwarr/redo",
+    "depends": [],
+    "resource": [
+        {
+            "name": "docs",
+            "url": "https://github.com/apenwarr/redo.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PREFIX\"] = prefix",
+        "system \"./redo\", \"install\"",
+        "rm share/\"doc/redo/README.md\" ",
+        "man1.install resource(\"docs\")"
+    ],
+    "version": "0.21"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Htmlcompressor",
+    "description": "Minify HTML or XML",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/htmlcompressor/htmlcompressor-1.5.3.jar",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/htmlcompressor/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"htmlcompressor-#{version}.jar\"",
+        "bin.write_jar_script libexec/\"htmlcompressor-#{version}.jar\", \"htmlcompressor\""
+    ],
+    "version": "1.5.3"
+}

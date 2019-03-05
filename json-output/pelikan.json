@@ -1,0 +1,23 @@
+{
+    "name": "Pelikan",
+    "description": "Production-ready cache services",
+    "url": "https://github.com/twitter/pelikan/archive/0.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://twitter.github.io/pelikan",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"_build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.2"
+}

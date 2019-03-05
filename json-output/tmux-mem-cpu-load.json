@@ -1,0 +1,22 @@
+{
+    "name": "TmuxMemCpuLoad",
+    "description": "CPU, RAM memory, and load monitor for use with tmux",
+    "url": "https://github.com/thewtex/tmux-mem-cpu-load/archive/v3.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/thewtex/tmux-mem-cpu-load",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.4.0"
+}

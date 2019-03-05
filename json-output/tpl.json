@@ -1,0 +1,33 @@
+{
+    "name": "Tpl",
+    "description": "Store and retrieve binary data in C",
+    "url": "https://github.com/troydhanson/tpl/archive/v1.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://troydhanson.github.io/tpl/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"-C\", \"tests\""
+    ],
+    "version": "1.6.1"
+}

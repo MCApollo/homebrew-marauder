@@ -1,0 +1,15 @@
+{
+    "name": "Yetris",
+    "description": "Customizable Tetris for the terminal",
+    "url": "https://github.com/alexdantas/yetris/archive/v2.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/alexdantas/yetris",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.3.0"
+}

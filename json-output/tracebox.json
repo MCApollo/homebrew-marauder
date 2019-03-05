@@ -1,0 +1,43 @@
+{
+    "name": "Tracebox",
+    "description": "Middlebox detection tool",
+    "url": "https://github.com/tracebox/tracebox.git",
+    "mirror": null,
+    "homepage": "https://www.tracebox.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.libcxx",
+        "system \"autoreconf\", \"--install\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.4-git-4fc12b2e"
+}

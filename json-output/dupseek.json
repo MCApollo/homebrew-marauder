@@ -1,0 +1,16 @@
+{
+    "name": "Dupseek",
+    "description": "Interactive program to find and remove duplicate files",
+    "url": "http://www.beautylabs.net/software/dupseek-1.3.tgz",
+    "mirror": null,
+    "homepage": "http://www.beautylabs.net/software/dupseek.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"dupseek\"",
+        "doc.install %w[changelog.txt doc.txt copyright credits.txt]"
+    ],
+    "version": "1.3"
+}

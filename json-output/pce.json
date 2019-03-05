@@ -1,0 +1,34 @@
+{
+    "name": "Pce",
+    "description": "PC emulator",
+    "url": "http://www.hampa.ch/pub/pce/pce-0.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.hampa.ch/pce/",
+    "depends": [
+        {
+            "depend": "nasm",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-x\",",
+        "\"--enable-readline\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.2"
+}

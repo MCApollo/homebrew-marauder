@@ -1,0 +1,17 @@
+{
+    "name": "Jslint4java",
+    "description": "Java wrapper for JavaScript Lint (jsl)",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/jslint4java/jslint4java-2.0.5-dist.zip",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/jslint4java/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "doc.install Dir[\"docs/*\"]",
+        "libexec.install Dir[\"*.jar\"]",
+        "bin.write_jar_script Dir[libexec/\"jslint4java*.jar\"].first, \"jslint4java\""
+    ],
+    "version": "2.0.5"
+}

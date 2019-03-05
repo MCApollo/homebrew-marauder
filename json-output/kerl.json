@@ -1,0 +1,17 @@
+{
+    "name": "Kerl",
+    "description": "Easy building and installing of Erlang/OTP instances",
+    "url": "https://github.com/kerl/kerl/archive/1.8.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kerl/kerl",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"kerl\"",
+        "bash_completion.install \"bash_completion/kerl\"",
+        "zsh_completion.install \"zsh_completion/_kerl\""
+    ],
+    "version": "1.8.5"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Doxygen",
+    "description": "Generate documentation for several programming languages",
+    "url": "http://doxygen.nl/files/doxygen-1.8.15.src.tar.gz",
+    "mirror": "https://downloads.sourceforge.net/project/doxygen/rel-1.8.15/doxygen-1.8.15.src.tar.gz",
+    "homepage": "http://www.doxygen.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/doxygen/doxygen/commit/889eab308b564c4deba4ef58a3f134a309e3e9d1.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "args = std_cmake_args + %W[",
+        "-DCMAKE_OSX_DEPLOYMENT_TARGET:STRING=#{MacOS.version}",
+        "]",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\""
+    ],
+    "version": "1.8.15"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "Tgui",
+    "description": "GUI library for use with sfml",
+    "url": "https://github.com/texus/TGUI/archive/v0.8.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://tgui.eu",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "sfml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args,",
+        "\"-DTGUI_MISC_INSTALL_PREFIX=#{pkgshare}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.4"
+}

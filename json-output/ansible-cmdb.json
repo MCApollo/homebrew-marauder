@@ -1,0 +1,23 @@
+{
+    "name": "AnsibleCmdb",
+    "description": "Generates static HTML overview page from Ansible facts",
+    "url": "https://github.com/fboender/ansible-cmdb/releases/download/1.30/ansible-cmdb-1.30.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/fboender/ansible-cmdb",
+    "depends": [
+        {
+            "depend": "libyaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install_metafiles",
+        "man1.install \"ansible-cmdb.man.1\" => \"ansible-cmdb.1\"",
+        "libexec.install Dir[\"*\"] - [\"Makefile\"]",
+        "bin.write_exec_script libexec/\"ansible-cmdb\""
+    ],
+    "version": "1.30"
+}

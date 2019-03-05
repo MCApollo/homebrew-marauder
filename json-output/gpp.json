@@ -1,0 +1,19 @@
+{
+    "name": "Gpp",
+    "description": "General-purpose preprocessor with customizable syntax",
+    "url": "https://files.nothingisreal.com/software/gpp/gpp-2.25.tar.bz2",
+    "mirror": null,
+    "homepage": "https://logological.org/gpp",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.25"
+}

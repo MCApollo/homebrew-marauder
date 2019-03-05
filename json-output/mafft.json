@@ -1,0 +1,17 @@
+{
+    "name": "Mafft",
+    "description": "Multiple alignments with fast Fourier transforms",
+    "url": "https://mafft.cbrc.jp/alignment/software/mafft-7.407-with-extensions-src.tgz",
+    "mirror": null,
+    "homepage": "https://mafft.cbrc.jp/alignment/software/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "make_args = %W[CC=#{ENV.cc} CXX=#{ENV.cxx} PREFIX=#{prefix} install]",
+        "system \"make\", \"-C\", \"core\", *make_args",
+        "system \"make\", \"-C\", \"extensions\", *make_args"
+    ],
+    "version": "7.407"
+}

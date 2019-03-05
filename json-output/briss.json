@@ -1,0 +1,16 @@
+{
+    "name": "Briss",
+    "description": "Crop PDF files",
+    "url": "https://downloads.sourceforge.net/project/briss/release%200.9/briss-0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://briss.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*.jar\"]",
+        "bin.write_jar_script libexec/\"briss-#{version}.jar\", \"briss\""
+    ],
+    "version": "0.9"
+}

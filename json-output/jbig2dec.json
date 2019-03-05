@@ -1,0 +1,22 @@
+{
+    "name": "Jbig2dec",
+    "description": "JBIG2 decoder and library (for monochrome documents)",
+    "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs924/jbig2dec-0.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://jbig2dec.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--disable-silent-rules",
+        "--without-libpng",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.15"
+}

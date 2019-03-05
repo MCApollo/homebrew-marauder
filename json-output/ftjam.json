@@ -1,0 +1,22 @@
+{
+    "name": "Ftjam",
+    "description": "Build tool that can be used as a replacement for Make",
+    "url": "https://downloads.sourceforge.net/project/freetype/ftjam/2.5.2/ftjam-2.5.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.freetype.org/jam/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "jam",
+            "reason": "both install a `jam` binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.5.2"
+}

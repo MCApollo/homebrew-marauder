@@ -1,0 +1,38 @@
+{
+    "name": "OpenTyrian",
+    "description": "Open-source port of Tyrian",
+    "url": "https://www.camanis.net/opentyrian/releases/opentyrian-2.1.20130907-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://bitbucket.org/opentyrian/opentyrian",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_net",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "data",
+            "url": "https://camanis.net/tyrian/tyrian21.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "datadir = pkgshare/\"data\"",
+        "datadir.install resource(\"data\")",
+        "args = []",
+        "if build.head?",
+        "args << \"TYRIAN_DIR=#{datadir}\"",
+        "else",
+        "inreplace \"src/file.c\", \"/usr/share/opentyrian/data\", datadir",
+        "end",
+        "system \"make\", *args",
+        "bin.install \"opentyrian\""
+    ],
+    "version": "2.1.20130907"
+}

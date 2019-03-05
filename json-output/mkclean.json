@@ -1,0 +1,39 @@
+{
+    "name": "Mkclean",
+    "description": "Optimizes Matroska and WebM files",
+    "url": "https://downloads.sourceforge.net/project/matroska/mkclean/mkclean-0.8.10.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.matroska.org/downloads/mkclean.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/corec/tools/coremake/gcc_osx_x64.build\t2017-08-22 06:38:25.000000000 -0700\n",
+                "+++ b/corec/tools/coremake/gcc_osx_x64.build\t2017-11-18 22:53:56.000000000 -0800\n",
+                "@@ -4,11 +4,10 @@\n",
+                " \n",
+                " PLATFORMLIB = osx_x86\n",
+                " SVNDIR = osx_x86\n",
+                "-SDK = /Developer/SDKs/MacOSX10.5.sdk\n",
+                "\n",
+                " //CC = xcrun --sdk macosx clang\n",
+                " \n",
+                "-CCFLAGS=%(CCFLAGS) -arch x86_64 -mdynamic-no-pic -mmacosx-version-min=10.5\n",
+                "+CCFLAGS=%(CCFLAGS) -arch x86_64 -mdynamic-no-pic\n",
+                " ASMFLAGS = -f macho64 -D_MACHO -D_HIDDEN\n",
+                " \n",
+                " #include \"gcc_osx.inc\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./mkclean/configure\"",
+        "system \"make\", \"mkclean\"",
+        "bindir = `corec/tools/coremake/system_output.sh`.chomp",
+        "bin.install Dir[\"release/#{bindir}/mk*\"]"
+    ],
+    "version": "0.8.10"
+}

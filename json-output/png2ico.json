@@ -1,0 +1,41 @@
+{
+    "name": "Png2ico",
+    "description": "PNG to icon converter",
+    "url": "https://www.winterdrache.de/freeware/png2ico/data/png2ico-src-2002-12-08.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.winterdrache.de/freeware/png2ico/",
+    "depends": [
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/png2ico.cpp b/png2ico.cpp\n",
+                "index 8fb87e4..9dedb97 100644\n",
+                "--- a/png2ico.cpp\n",
+                "+++ b/png2ico.cpp\n",
+                "@@ -34,6 +34,7 @@ Notes about transparent and inverted pixels:\n",
+                " #include <cstdio>\n",
+                " #include <vector>\n",
+                " #include <climits>\n",
+                "+#include <cstdlib>\n",
+                " \n",
+                " #if __GNUC__ > 2\n",
+                " #include <ext/hash_map>\n"
+            ]
+        }
+    ],
+    "install": [
+        "inreplace \"Makefile\", \"g++\", \"$(CXX)\"",
+        "system \"make\", \"CPPFLAGS=#{ENV.cxxflags} #{ENV.cppflags} #{ENV.ldflags}\"",
+        "bin.install \"png2ico\"",
+        "man1.install \"doc/png2ico.1\""
+    ],
+    "version": "2002"
+}

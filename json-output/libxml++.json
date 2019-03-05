@@ -1,0 +1,26 @@
+{
+    "name": "Libxmlxx",
+    "description": "C++ wrapper for libxml",
+    "url": "https://download.gnome.org/sources/libxml++/2.40/libxml++-2.40.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://libxmlplusplus.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glibmm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.40.1"
+}

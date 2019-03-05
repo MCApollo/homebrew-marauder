@@ -1,0 +1,25 @@
+{
+    "name": "Pla",
+    "description": "Tool for building Gantt charts in PNG, EPS, PDF or SVG format",
+    "url": "https://www.arpalert.org/src/pla-1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.arpalert.org/pla.html",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"pla\""
+    ],
+    "version": "1.2"
+}

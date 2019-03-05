@@ -1,0 +1,18 @@
+{
+    "name": "T1lib",
+    "description": "C library to generate/rasterize bitmaps from Type 1 fonts",
+    "url": "https://www.ibiblio.org/pub/linux/libs/graphics/t1lib-5.1.2.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/old/t1lib-5.1.2.tar.gz",
+    "homepage": "https://www.t1lib.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"without_doc\"",
+        "system \"make\", \"install\"",
+        "share.install \"Fonts\" => \"fonts\""
+    ],
+    "version": "5.1.2"
+}

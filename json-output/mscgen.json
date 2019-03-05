@@ -1,0 +1,31 @@
+{
+    "name": "Mscgen",
+    "description": "Parses Message Sequence Chart descriptions and produces images",
+    "url": "http://www.mcternan.me.uk/mscgen/software/mscgen-src-0.20.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.mcternan.me.uk/mscgen/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-freetype\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.20"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "RustcCompletion",
+    "description": "Bash completion for rustc",
+    "url": "https://github.com/roshan/rust-bash-completion/archive/0.12.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/roshan/rust-bash-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/roshan/rust-bash-completion/commit/932e9bb4e9f28c2785de2b8db6f0e8c050f4f9be.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "bash_completion.install \"etc/bash_completion.d/rustc\""
+    ],
+    "version": "0.12.1"
+}

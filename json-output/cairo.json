@@ -1,0 +1,65 @@
+{
+    "name": "Cairo",
+    "description": "Vector graphics library with cross-device output support",
+    "url": "https://cairographics.org/releases/cairo-1.16.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://cairographics.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "pixman",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "ENV[\"NOCONFIGURE\"] = \"1\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-gobject=yes\",",
+        "\"--enable-svg=yes\",",
+        "\"--enable-tee=yes\",",
+        "\"--enable-quartz-image\",",
+        "\"--enable-xcb=no\",",
+        "\"--enable-xlib=no\",",
+        "\"--enable-xlib-xrender=no\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.16.0"
+}

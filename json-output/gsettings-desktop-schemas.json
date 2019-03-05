@@ -1,0 +1,40 @@
+{
+    "name": "GsettingsDesktopSchemas",
+    "description": "GSettings schemas for desktop components",
+    "url": "https://download.gnome.org/sources/gsettings-desktop-schemas/3.28/gsettings-desktop-schemas-3.28.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://download.gnome.org/sources/gsettings-desktop-schemas/",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libffi",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"#{Formula[\"glib\"].opt_bin}/glib-compile-schemas\", \"#{HOMEBREW_PREFIX}/share/glib-2.0/schemas\""
+    ],
+    "version": "3.28.1"
+}

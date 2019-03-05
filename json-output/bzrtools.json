@@ -1,0 +1,20 @@
+{
+    "name": "Bzrtools",
+    "description": "Bazaar plugin that supplies useful additional utilities",
+    "url": "https://launchpad.net/bzrtools/stable/2.6.0/+download/bzrtools-2.6.0.tar.gz",
+    "mirror": "https://mirrors.ocf.berkeley.edu/debian/pool/main/b/bzrtools/bzrtools_2.6.0.orig.tar.gz",
+    "homepage": "http://wiki.bazaar.canonical.com/BzrTools",
+    "depends": [
+        {
+            "depend": "bazaar",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(share/\"bazaar/plugins/bzrtools\").install Dir[\"*\"]"
+    ],
+    "version": "2.6.0"
+}

@@ -1,0 +1,59 @@
+{
+    "name": "Openslide",
+    "description": "C library to read whole-slide images (a.k.a. virtual slides)",
+    "url": "https://github.com/openslide/openslide/releases/download/v3.4.1/openslide-3.4.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://openslide.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "gdk-pixbuf",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        },
+        {
+            "depend": "openjpeg",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "svs",
+            "url": "http://openslide.cs.cmu.edu/download/openslide-testdata/Aperio/CMU-1-Small-Region.svs"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.4.1"
+}

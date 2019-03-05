@@ -1,0 +1,28 @@
+{
+    "name": "Iftop",
+    "description": "Display an interface",
+    "url": "http://www.ex-parrot.com/pdw/iftop/download/iftop-1.0pre4.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.ex-parrot.com/~pdw/iftop/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0"
+}

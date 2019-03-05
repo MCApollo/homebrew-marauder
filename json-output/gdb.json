@@ -1,0 +1,39 @@
+{
+    "name": "Gdb",
+    "description": "GNU debugger",
+    "url": "https://ftp.gnu.org/gnu/gdb/gdb-8.2.1.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/gdb/gdb-8.2.1.tar.xz",
+    "homepage": "https://www.gnu.org/software/gdb/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/d457e55/gdb/all-targets.diff",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/d457e55/gdb/mojave.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--enable-targets=all",
+        "--with-python=/usr",
+        "--disable-binutils",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install-gdb\""
+    ],
+    "version": "8.2.1"
+}

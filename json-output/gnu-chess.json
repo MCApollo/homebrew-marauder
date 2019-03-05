@@ -1,0 +1,49 @@
+{
+    "name": "GnuChess",
+    "description": "GNU Chess",
+    "url": "https://ftp.gnu.org/gnu/chess/gnuchess-6.2.5.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/chess/gnuchess-6.2.5.tar.gz",
+    "homepage": "https://www.gnu.org/software/chess/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "help2man",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "book",
+            "url": "https://ftp.gnu.org/gnu/chess/book_1.02.pgn.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "system \"autoreconf\", \"--install\"",
+        "chmod 0755, \"install-sh\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "resource(\"book\").stage do",
+        "doc.install \"book_1.02.pgn\""
+    ],
+    "version": "6.2.5"
+}

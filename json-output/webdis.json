@@ -1,0 +1,20 @@
+{
+    "name": "Webdis",
+    "description": "Redis HTTP interface with JSON output",
+    "url": "https://github.com/nicolasff/webdis/archive/0.1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://webd.is/",
+    "depends": [
+        {
+            "depend": "libevent",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"log\").mkpath"
+    ],
+    "version": "0.1.4"
+}

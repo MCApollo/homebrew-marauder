@@ -1,0 +1,47 @@
+{
+    "name": "Pdnsrec",
+    "description": "Non-authoritative/recursing DNS server",
+    "url": "https://downloads.powerdns.com/releases/pdns-recursor-4.1.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.powerdns.com/recursor.html",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--sysconfdir=#{etc}/powerdns",
+        "--disable-silent-rules",
+        "--with-boost=#{Formula[\"boost\"].opt_prefix}",
+        "--with-libcrypto=#{Formula[\"openssl\"].opt_prefix}",
+        "--with-lua",
+        "--without-net-snmp",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.1.4"
+}

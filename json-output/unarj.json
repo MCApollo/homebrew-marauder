@@ -1,0 +1,22 @@
+{
+    "name": "Unarj",
+    "description": "ARJ file archiver",
+    "url": "https://src.fedoraproject.org/repo/pkgs/unarj/unarj-2.65.tar.gz/c6fe45db1741f97155c7def322aa74aa/unarj-2.65.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.arjsoftware.com/files.htm",
+    "depends": [],
+    "resource": [
+        {
+            "name": "testfile",
+            "url": "https://s3.amazonaws.com/ARJ/ARJ286.EXE"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.mkdir",
+        "system \"make\", \"install\", \"INSTALLDIR=#{bin}\""
+    ],
+    "version": "2.65"
+}

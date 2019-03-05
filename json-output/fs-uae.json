@@ -1,0 +1,74 @@
+{
+    "name": "FsUae",
+    "description": "Amiga emulator",
+    "url": "https://fs-uae.net/stable/2.8.3/fs-uae-2.8.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://fs-uae.net/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glew",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libmpeg2",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "openal-soft",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\" if build.head?",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "mkdir \"gen\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "(share/\"applications\").rmtree",
+        "(share/\"icons\").rmtree",
+        "(share/\"mime\").rmtree"
+    ],
+    "version": "2.8.3"
+}

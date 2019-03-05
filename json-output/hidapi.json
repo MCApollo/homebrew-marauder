@@ -1,0 +1,40 @@
+{
+    "name": "Hidapi",
+    "description": "Library for communicating with USB and Bluetooth HID devices",
+    "url": "https://github.com/signal11/hidapi/archive/hidapi-0.8.0-rc1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/signal11/hidapi",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/signal11/hidapi/pull/219.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./bootstrap\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "bin.install \"hidtest/.libs/hidtest\""
+    ],
+    "version": "0.8.0"
+}

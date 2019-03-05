@@ -1,0 +1,27 @@
+{
+    "name": "Vgmstream",
+    "description": "Library for playing streamed audio formats from video games",
+    "url": "https://github.com/kode54/vgmstream/archive/r1040.tar.gz",
+    "mirror": null,
+    "homepage": "https://hcs64.com/vgmstream.html",
+    "depends": [
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "mpg123",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"test\" do",
+        "system \"make\"",
+        "bin.install \"test\" => \"vgmstream\"",
+        "lib.install \"../src/libvgmstream.a\""
+    ],
+    "version": "1040"
+}

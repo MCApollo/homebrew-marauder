@@ -1,0 +1,28 @@
+{
+    "name": "Speex",
+    "description": "Audio codec designed for speech",
+    "url": "https://downloads.xiph.org/releases/speex/speex-1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://speex.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-debug\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.0"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Slugify",
+    "description": "Convert filenames and directories to a web friendly format",
+    "url": "https://github.com/benlinton/slugify/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/benlinton/slugify",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"slugify\"",
+        "man1.install \"slugify.1\""
+    ],
+    "version": "1.0.1"
+}

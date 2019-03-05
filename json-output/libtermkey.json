@@ -1,0 +1,29 @@
+{
+    "name": "Libtermkey",
+    "description": "Library for processing keyboard entry from the terminal",
+    "url": "http://www.leonerd.org.uk/code/libtermkey/libtermkey-0.21.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.leonerd.org.uk/code/libtermkey/",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "unibilium",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.21.1"
+}

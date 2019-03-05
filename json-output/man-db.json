@@ -1,0 +1,33 @@
+{
+    "name": "ManDb",
+    "description": "Unix documentation system",
+    "url": "https://download.savannah.gnu.org/releases/man-db/man-db-2.8.5.tar.xz",
+    "mirror": null,
+    "homepage": "http://man-db.nongnu.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "libpipeline",
+            "url": "https://download.savannah.gnu.org/releases/libpipeline/libpipeline-1.5.1.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"libpipeline\").stage do",
+        "system \"./configure\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{buildpath}/libpipeline\",",
+        "\"--enable-static\",",
+        "\"--disable-shared\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.8.5"
+}

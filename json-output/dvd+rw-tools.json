@@ -1,0 +1,38 @@
+{
+    "name": "DvdxrwTools",
+    "description": "DVD+-RW/R tools",
+    "url": "http://fy.chalmers.se/~appro/linux/DVD+RW/tools/dvd+rw-tools-7.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://fy.chalmers.se/~appro/linux/DVD+RW/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/Makefile.m4 b/Makefile.m4\n",
+                "index a6a100b..bf7c041 100644\n",
+                "--- a/Makefile.m4\n",
+                "+++ b/Makefile.m4\n",
+                "@@ -30,8 +30,8 @@ LINK.o\t=$(LINK.cc)\n",
+                " # to install set-root-uid, `make BIN_MODE=04755 install'...\n",
+                " BIN_MODE?=0755\n",
+                " install:\tdvd+rw-tools\n",
+                "-\tinstall -o root -m $(BIN_MODE) $(CHAIN) /usr/bin\n",
+                "-\tinstall -o root -m 0644 growisofs.1 /usr/share/man/man1\n",
+                "+\tinstall -m $(BIN_MODE) $(CHAIN) $(PREFIX)/bin\n",
+                "+\tinstall -m 0644 growisofs.1 $(PREFIX)/share/man/man1\n",
+                " ])\n",
+                " \n",
+                " ifelse(OS,MINGW32,[\n"
+            ]
+        }
+    ],
+    "install": [
+        "bin.mkpath",
+        "man1.mkpath",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "7.1"
+}

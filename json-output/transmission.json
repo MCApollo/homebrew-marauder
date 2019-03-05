@@ -1,0 +1,35 @@
+{
+    "name": "Transmission",
+    "description": "Lightweight BitTorrent client",
+    "url": "https://github.com/transmission/transmission-releases/raw/dc77bea/transmission-2.94.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.transmissionbt.com/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-framework Foundation -prebind\"",
+        "ENV.append \"LDFLAGS\", \"-liconv\"",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--disable-mac",
+        "--disable-nls",
+        "--without-gtk",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "(var/\"transmission\").mkpath"
+    ],
+    "version": "2.94"
+}

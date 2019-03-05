@@ -1,0 +1,24 @@
+{
+    "name": "Eigen",
+    "description": "C++ template library for linear algebra",
+    "url": "https://bitbucket.org/eigen/eigen/get/3.3.7.tar.bz2",
+    "mirror": null,
+    "homepage": "https://eigen.tuxfamily.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"eigen-build\" do",
+        "args = std_cmake_args",
+        "args << \"-Dpkg_config_libdir=#{lib}\" << \"..\"",
+        "system \"cmake\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.3.7"
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Gloox",
+    "description": "C++ Jabber/XMPP library that handles the low-level protocol",
+    "url": "https://camaya.net/download/gloox-1.0.21.tar.bz2",
+    "mirror": null,
+    "homepage": "https://camaya.net/gloox/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libidn",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-zlib\",",
+        "\"--disable-debug\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.21"
+}

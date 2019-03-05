@@ -1,0 +1,45 @@
+{
+    "name": "Lnav",
+    "description": "Curses-based tool for viewing and analyzing log files",
+    "url": "https://github.com/tstack/lnav/releases/download/v0.8.4/lnav-0.8.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tstack/lnav",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "re2c",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.delete(\"SDKROOT\")",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-readline=#{Formula[\"readline\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.4"
+}

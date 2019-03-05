@@ -1,0 +1,16 @@
+{
+    "name": "Flasm",
+    "description": "Flash command-line assembler and disassembler",
+    "url": "http://www.nowrap.de/download/flasm16src.zip",
+    "mirror": null,
+    "homepage": "http://www.nowrap.de/flasm.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"CFLAGS=#{ENV.cflags}\"",
+        "bin.install \"flasm\""
+    ],
+    "version": "1.0-u"
+}

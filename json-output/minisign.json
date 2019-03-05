@@ -1,0 +1,26 @@
+{
+    "name": "Minisign",
+    "description": "Sign files & verify signatures. Works with signify in OpenBSD",
+    "url": "https://github.com/jedisct1/minisign/archive/0.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://jedisct1.github.io/minisign/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libsodium",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8"
+}

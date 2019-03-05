@@ -1,0 +1,22 @@
+{
+    "name": "Jshon",
+    "description": "Parse, read, and create JSON from the shell",
+    "url": "https://github.com/keenerd/jshon/archive/20131105.tar.gz",
+    "mirror": null,
+    "homepage": "http://kmkeen.com/jshon/",
+    "depends": [
+        {
+            "depend": "jansson",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"jshon\"",
+        "man1.install \"jshon.1\""
+    ],
+    "version": "20131105"
+}

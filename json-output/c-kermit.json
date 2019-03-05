@@ -1,0 +1,17 @@
+{
+    "name": "CKermit",
+    "description": "Scriptable network and serial communication for UNIX and VMS",
+    "url": "http://www.kermitproject.org/ftp/kermit/archives/cku302.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.kermitproject.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"macosx\"",
+        "man1.mkpath",
+        "system \"make\", \"prefix=#{prefix}\", \"manroot=#{share}\", \"install\""
+    ],
+    "version": "302"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Luarocks",
+    "description": "Package manager for the Lua programming language",
+    "url": "https://luarocks.org/releases/luarocks-3.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://luarocks.org/",
+    "depends": [
+        {
+            "depend": "lua@5.1",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--rocks-tree=#{HOMEBREW_PREFIX}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.1"
+}

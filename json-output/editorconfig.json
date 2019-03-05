@@ -1,0 +1,25 @@
+{
+    "name": "Editorconfig",
+    "description": "Maintain consistent coding style between multiple editors",
+    "url": "https://github.com/editorconfig/editorconfig-core-c/archive/v0.12.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://editorconfig.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DCMAKE_INSTALL_PREFIX:PATH=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.12.3"
+}

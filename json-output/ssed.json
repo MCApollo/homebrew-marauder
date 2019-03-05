@@ -1,0 +1,25 @@
+{
+    "name": "Ssed",
+    "description": "Super sed stream editor",
+    "url": "https://sed.sourceforge.io/grabbag/ssed/sed-3.62.tar.gz",
+    "mirror": null,
+    "homepage": "https://sed.sourceforge.io/grabbag/ssed/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "gnu-sed",
+            "reason": "both install share/info/sed.info"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--infodir=#{info}\",",
+        "\"--program-prefix=s\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.62"
+}

@@ -1,0 +1,38 @@
+{
+    "name": "Ttyd",
+    "description": "Command-line tool for sharing terminal over the web",
+    "url": "https://github.com/tsl0922/ttyd/archive/1.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tsl0922/ttyd",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "libwebsockets",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cmake_args = std_cmake_args + [\"-DOPENSSL_ROOT_DIR=#{Formula[\"openssl\"].opt_prefix}\"]",
+        "system \"cmake\", \".\", *cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.2"
+}

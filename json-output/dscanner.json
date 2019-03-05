@@ -1,0 +1,21 @@
+{
+    "name": "Dscanner",
+    "description": "Analyses e.g. the style and syntax of D code",
+    "url": "https://github.com/dlang-community/D-Scanner.git",
+    "mirror": null,
+    "homepage": "https://github.com/dlang-community/D-Scanner",
+    "depends": [
+        {
+            "depend": "dmd",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"dmdbuild\"",
+        "bin.install \"bin/dscanner\""
+    ],
+    "version": "0.7.0-git-1bb815e9"
+}

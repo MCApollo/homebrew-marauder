@@ -1,0 +1,24 @@
+{
+    "name": "Mboxgrep",
+    "description": "Scan a mailbox for messages matching a regular expression",
+    "url": "https://downloads.sourceforge.net/project/mboxgrep/mboxgrep/0.7.9/mboxgrep-0.7.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://datatipp.se/mboxgrep/",
+    "depends": [
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--infodir=#{info}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.9"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Diamond",
+    "description": "Accelerated BLAST compatible local sequence aligner",
+    "url": "https://github.com/bbuchfink/diamond/archive/v0.9.24.tar.gz",
+    "mirror": null,
+    "homepage": "https://ab.inf.uni-tuebingen.de/software/diamond/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.24"
+}

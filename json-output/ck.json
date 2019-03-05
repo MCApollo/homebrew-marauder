@@ -1,0 +1,17 @@
+{
+    "name": "Ck",
+    "description": "Concurrency primitives and non-blocking data structures library",
+    "url": "http://concurrencykit.org/releases/ck-0.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://concurrencykit.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.0"
+}

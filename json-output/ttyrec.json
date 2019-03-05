@@ -1,0 +1,23 @@
+{
+    "name": "Ttyrec",
+    "description": "Terminal interaction recorder and player",
+    "url": "http://0xcc.net/ttyrec/ttyrec-1.0.8.tar.gz",
+    "mirror": null,
+    "homepage": "http://0xcc.net/ttyrec/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "matrix.tty",
+            "url": "http://0xcc.net/tty/tty/matrix.tty"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"ttyrec.c\", \"<libutil.h>\", \"<util.h>\"",
+        "system \"make\", \"CFLAGS=#{ENV.cflags} -DHAVE_openpty\"",
+        "bin.install %w[ttytime ttyplay ttyrec]",
+        "man1.install Dir[\"*.1\"]"
+    ],
+    "version": "1.0.8"
+}

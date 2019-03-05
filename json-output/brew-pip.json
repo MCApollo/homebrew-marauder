@@ -1,0 +1,15 @@
+{
+    "name": "BrewPip",
+    "description": "Install pip packages as homebrew formulae",
+    "url": "https://github.com/hanxue/brew-pip/archive/0.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/hanxue/brew-pip",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"bin/brew-pip\""
+    ],
+    "version": "0.4.1"
+}

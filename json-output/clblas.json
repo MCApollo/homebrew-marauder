@@ -1,0 +1,31 @@
+{
+    "name": "Clblas",
+    "description": "Library containing BLAS functions written in OpenCL",
+    "url": "https://github.com/clMathLibraries/clBLAS/archive/v2.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/clMathLibraries/clBLAS",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \"src\", *std_cmake_args,",
+        "\"-DBUILD_CLIENT=OFF\",",
+        "\"-DBUILD_KTEST=OFF\",",
+        "\"-DBUILD_TEST=OFF\",",
+        "\"-DCMAKE_MACOSX_RPATH:BOOL=ON\",",
+        "\"-DSUFFIX_LIB:STRING=\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"src/samples/example_srot.c\""
+    ],
+    "version": "2.12"
+}

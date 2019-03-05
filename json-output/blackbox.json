@@ -1,0 +1,21 @@
+{
+    "name": "Blackbox",
+    "description": "Safely store secrets in Git/Mercurial/Subversion",
+    "url": "https://github.com/StackExchange/blackbox/archive/v1.20181219.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/StackExchange/blackbox",
+    "depends": [
+        {
+            "depend": "gnupg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"bin/*\"]",
+        "bin.write_exec_script Dir[libexec/\"*\"].select { |f| File.executable? f }"
+    ],
+    "version": "1.20181219"
+}

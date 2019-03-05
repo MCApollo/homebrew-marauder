@@ -1,0 +1,24 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Command-line benchmark tool",
+    "url": "https://hackage.haskell.org/package/bench-1.0.12/bench-1.0.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Gabriel439/bench",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package"
+    ],
+    "version": "1.0.12"
+}

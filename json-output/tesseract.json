@@ -1,0 +1,69 @@
+{
+    "name": "Tesseract",
+    "description": "OCR (Optical Character Recognition) engine",
+    "url": "https://github.com/tesseract-ocr/tesseract/archive/4.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tesseract-ocr/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf-archive",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "leptonica",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "eng",
+            "url": "https://github.com/tesseract-ocr/tessdata_fast/raw/4.0.0/eng.traineddata"
+        },
+        {
+            "name": "osd",
+            "url": "https://github.com/tesseract-ocr/tessdata_fast/raw/4.0.0/osd.traineddata"
+        },
+        {
+            "name": "snum",
+            "url": "https://github.com/USCDataScience/counterfeit-electronics-tesseract/raw/319a6eeacff181dad5c02f3e7a3aff804eaadeca/Training%20Tesseract/snum.traineddata"
+        },
+        {
+            "name": "testfile",
+            "url": "https://raw.githubusercontent.com/tesseract-ocr/test/6dd816cdaf3e76153271daf773e562e24c928bf5/testing/eurotext.tif"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"LIBLEPT_HEADERSDIR\"] = HOMEBREW_PREFIX/\"include\"",
+        "ENV.cxx11",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\", \"--datarootdir=#{HOMEBREW_PREFIX}/share\"",
+        "system \"make\"",
+        "system \"make\", \"install\", \"datarootdir=#{share}\"",
+        "resource(\"snum\").stage { mv \"snum.traineddata\", share/\"tessdata\" }",
+        "resource(\"eng\").stage { mv \"eng.traineddata\", share/\"tessdata\" }",
+        "resource(\"osd\").stage { mv \"osd.traineddata\", share/\"tessdata\" }"
+    ],
+    "version": "4.0.0"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Libomp",
+    "description": "LLVM",
+    "url": "https://releases.llvm.org/7.0.0/openmp-7.0.0.src.tar.xz",
+    "mirror": null,
+    "homepage": "https://openmp.llvm.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "system \"cmake\", \".\", \"-DLIBOMP_ENABLE_SHARED=OFF\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.0.0"
+}

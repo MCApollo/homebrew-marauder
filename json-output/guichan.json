@@ -1,0 +1,33 @@
+{
+    "name": "Guichan",
+    "description": "Small, efficient C++ GUI library designed for games",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/guichan/guichan-0.8.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://guichan.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "sdl_image",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "fixedfont.bmp",
+            "url": "https://guichan.sourceforge.io/oldsite/images/fixedfont.bmp"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CPPFLAGS\", \"-I#{Formula[\"sdl_image\"].opt_include}/SDL\"",
+        "ENV.append \"LDFLAGS\", \"-lSDL -lSDL_image -framework OpenGL\"",
+        "inreplace \"src/opengl/Makefile.in\", \"-no-undefined\", \" \"",
+        "inreplace \"src/sdl/Makefile.in\", \"-no-undefined\", \" \"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.2"
+}

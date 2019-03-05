@@ -1,0 +1,36 @@
+{
+    "name": "Gifsicle",
+    "description": "GIF image/animation creator/editor",
+    "url": "https://www.lcdf.org/gifsicle/gifsicle-1.91.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.lcdf.org/gifsicle/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "giflossy",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--disable-gifview",
+        "]",
+        "system \"./bootstrap.sh\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.91"
+}

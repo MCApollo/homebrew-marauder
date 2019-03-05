@@ -1,0 +1,15 @@
+{
+    "name": "Serveit",
+    "description": "Synchronous server and rebuilder of static content",
+    "url": "https://github.com/garybernhardt/serveit/archive/v0.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/garybernhardt/serveit",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"serveit\""
+    ],
+    "version": "0.0.2"
+}

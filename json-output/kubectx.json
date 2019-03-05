@@ -1,0 +1,26 @@
+{
+    "name": "Kubectx",
+    "description": "Tool that can switch between kubectl contexts easily and create aliases",
+    "url": "https://github.com/ahmetb/kubectx/archive/v0.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ahmetb/kubectx",
+    "depends": [
+        {
+            "depend": "kubernetes-cli",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"kubectx\", \"kubens\"",
+        "bash_completion.install \"completion/kubectx.bash\" => \"kubectx\"",
+        "bash_completion.install \"completion/kubens.bash\" => \"kubens\"",
+        "zsh_completion.install \"completion/kubectx.zsh\" => \"_kubectx\"",
+        "zsh_completion.install \"completion/kubens.zsh\" => \"_kubens\"",
+        "fish_completion.install \"completion/kubectx.fish\"",
+        "fish_completion.install \"completion/kubens.fish\""
+    ],
+    "version": "0.6.3"
+}

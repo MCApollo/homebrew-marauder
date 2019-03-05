@@ -1,0 +1,32 @@
+{
+    "name": "Mosquitto",
+    "description": "Message broker implementing the MQTT protocol",
+    "url": "https://mosquitto.org/files/source/mosquitto-1.5.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://mosquitto.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libwebsockets",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"mosquitto\").mkpath"
+    ],
+    "version": "1.5.8"
+}

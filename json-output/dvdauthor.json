@@ -1,0 +1,41 @@
+{
+    "name": "Dvdauthor",
+    "description": "DVD-authoring toolset",
+    "url": "https://downloads.sourceforge.net/project/dvdauthor/dvdauthor-0.7.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://dvdauthor.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "libdvdread",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\"",
+        "ENV.deparallelize ",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.2"
+}

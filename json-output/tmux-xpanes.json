@@ -1,0 +1,20 @@
+{
+    "name": "TmuxXpanes",
+    "description": "Ultimate terminal divider powered by tmux",
+    "url": "https://github.com/greymd/tmux-xpanes/archive/v4.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/greymd/tmux-xpanes",
+    "depends": [
+        {
+            "depend": "tmux",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./install.sh\", prefix"
+    ],
+    "version": "4.0.0"
+}

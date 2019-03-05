@@ -1,0 +1,30 @@
+{
+    "name": "Highlight",
+    "description": "Convert source code to formatted text with syntax highlighting",
+    "url": "http://www.andre-simon.de/zip/highlight-3.49.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.andre-simon.de/doku/highlight/en/highlight.php",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "conf_dir = etc/\"highlight/\" ",
+        "system \"make\", \"PREFIX=#{prefix}\", \"conf_dir=#{conf_dir}\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"conf_dir=#{conf_dir}\", \"install\""
+    ],
+    "version": "3.49"
+}

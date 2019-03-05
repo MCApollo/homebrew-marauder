@@ -1,0 +1,31 @@
+{
+    "name": "OpenCobol",
+    "description": "COBOL compiler",
+    "url": "https://downloads.sourceforge.net/project/open-cobol/open-cobol/1.1/open-cobol-1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/open-cobol/",
+    "depends": [
+        {
+            "depend": "berkeley-db",
+            "build-depend": false
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "gnu-cobol",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--infodir=#{info}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1"
+}

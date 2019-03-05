@@ -1,0 +1,34 @@
+{
+    "name": "Soci",
+    "description": "Database access library for C++",
+    "url": "https://downloads.sourceforge.net/project/soci/soci/soci-3.2.3/soci-3.2.3.zip",
+    "mirror": null,
+    "homepage": "https://soci.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %w[",
+        "-DWITH_SQLITE3:BOOL=ON",
+        "-DWITH_BOOST:BOOL=OFF",
+        "-DWITH_MYSQL:BOOL=OFF",
+        "-DWITH_ODBC:BOOL=OFF",
+        "-DWITH_ORACLE:BOOL=OFF",
+        "-DWITH_POSTGRESQL:BOOL=OFF",
+        "]",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.3"
+}

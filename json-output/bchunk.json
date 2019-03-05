@@ -1,0 +1,17 @@
+{
+    "name": "Bchunk",
+    "description": "Convert CD images from .bin/.cue to .iso/.cdr",
+    "url": "http://he.fi/bchunk/bchunk-1.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://he.fi/bchunk/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"bchunk\"",
+        "man1.install \"bchunk.1\""
+    ],
+    "version": "1.2.2"
+}

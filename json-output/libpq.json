@@ -1,0 +1,27 @@
+{
+    "name": "Libpq",
+    "description": "Postgres C API library",
+    "url": "https://ftp.postgresql.org/pub/source/v11.2/postgresql-11.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.postgresql.org/docs/11/static/libpq.html",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-openssl\"",
+        "system \"make\"",
+        "system \"make\", \"-C\", \"src/bin\", \"install\"",
+        "system \"make\", \"-C\", \"src/include\", \"install\"",
+        "system \"make\", \"-C\", \"src/interfaces\", \"install\"",
+        "system \"make\", \"-C\", \"doc\", \"install\""
+    ],
+    "version": "11.2"
+}

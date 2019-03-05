@@ -1,0 +1,30 @@
+{
+    "name": "Itpp",
+    "description": "Library of math, signal, and communication classes and functions",
+    "url": "https://downloads.sourceforge.net/project/itpp/itpp/4.3.1/itpp-4.3.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://itpp.sourceforge.io",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "args = std_cmake_args",
+        "args.delete \"-DCMAKE_BUILD_TYPE=None\"",
+        "args << \"-DCMAKE_BUILD_TYPE=Release\"",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.3.1"
+}

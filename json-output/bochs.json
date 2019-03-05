@@ -1,0 +1,61 @@
+{
+    "name": "Bochs",
+    "description": "Open source IA-32 (x86) PC emulator written in C++",
+    "url": "https://downloads.sourceforge.net/project/bochs/bochs/2.6.9/bochs-2.6.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://bochs.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/e9b520dd4c/bochs/xcode9.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-docbook",
+        "--enable-a20-pin",
+        "--enable-alignment-check",
+        "--enable-all-optimizations",
+        "--enable-avx",
+        "--enable-cdrom",
+        "--enable-clgd54xx",
+        "--enable-cpu-level=6",
+        "--enable-debugger",
+        "--enable-debugger-gui",
+        "--enable-disasm",
+        "--enable-fpu",
+        "--enable-iodebug",
+        "--enable-large-ramfile",
+        "--enable-logging",
+        "--enable-long-phy-address",
+        "--enable-pci",
+        "--enable-plugins",
+        "--enable-readline",
+        "--enable-show-ips",
+        "--enable-smp",
+        "--enable-usb",
+        "--enable-vmx=2",
+        "--enable-x86-64",
+        "--with-nogui",
+        "--with-sdl2",
+        "--with-term",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.9"
+}

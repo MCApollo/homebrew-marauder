@@ -1,0 +1,45 @@
+{
+    "name": "Pcre",
+    "description": "Perl compatible regular expressions library",
+    "url": "https://ftp.pcre.org/pub/pcre/pcre-8.43.tar.bz2",
+    "mirror": "https://www.mirrorservice.org/sites/ftp.exim.org/pub/pcre/pcre-8.43.tar.bz2",
+    "homepage": "https://www.pcre.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--enable-utf8",
+        "--enable-pcre8",
+        "--enable-pcre16",
+        "--enable-pcre32",
+        "--enable-unicode-properties",
+        "--enable-pcregrep-libz",
+        "--enable-pcregrep-libbz2",
+        "]",
+        "args << \"--enable-jit\" if MacOS.version >= :sierra",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"test\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "8.43"
+}

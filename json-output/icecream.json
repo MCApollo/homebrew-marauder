@@ -1,0 +1,46 @@
+{
+    "name": "Icecream",
+    "description": "Distributed compiler with a central scheduler to share build load",
+    "url": "https://github.com/icecc/icecream/archive/1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://en.opensuse.org/Icecream",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "docbook2x",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "lzo",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--enable-clang-wrappers",
+        "]",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "(prefix/\"org.opensuse.icecc.plist\").write iceccd_plist",
+        "(prefix/\"org.opensuse.icecc-scheduler.plist\").write scheduler_plist"
+    ],
+    "version": "1.2"
+}

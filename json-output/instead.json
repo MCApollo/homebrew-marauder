@@ -1,0 +1,50 @@
+{
+    "name": "Instead",
+    "description": "Interpreter of simple text adventures",
+    "url": "https://github.com/instead-hub/instead/archive/3.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://instead.syscall.ru/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/instead-hub/instead/commit/e00be1e2.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DWITH_GTK2=OFF\",",
+        "\"-DLUA_INCLUDE_DIR=#{Formula[\"lua\"].opt_include}/lua\",",
+        "\"-DLUA_LIBRARY=#{Formula[\"lua\"].opt_lib}/liblua.dylib\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.2"
+}

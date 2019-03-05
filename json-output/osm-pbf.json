@@ -1,0 +1,23 @@
+{
+    "name": "OsmPbf",
+    "description": "Tools related to PBF (an alternative to XML format)",
+    "url": "https://github.com/scrosby/OSM-binary/archive/v1.3.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.openstreetmap.org/wiki/PBF_Format",
+    "depends": [
+        {
+            "depend": "protobuf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "cd \"src\" do",
+        "system \"make\"",
+        "lib.install \"libosmpbf.a\""
+    ],
+    "version": "1.3.3"
+}

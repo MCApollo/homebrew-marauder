@@ -1,0 +1,50 @@
+{
+    "name": "Nload",
+    "description": "Realtime console network usage monitor",
+    "url": "http://www.roland-riegel.de/nload/nload-0.7.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.roland-riegel.de/nload/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://sourceforge.net/p/nload/bugs/_discuss/thread/c9b68d8e/4a65/attachment/devreader-bsd.cpp.patch",
+            "strip": "0"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff --git a/configure.in b/configure.in\n",
+                "index 87ecc88..4df8dc3 100644\n",
+                "--- a/configure.in\n",
+                "+++ b/configure.in\n",
+                "@@ -38,7 +38,7 @@ case $host_os in\n",
+                " \n",
+                "         AC_CHECK_FUNCS([memset])\n",
+                "         ;;\n",
+                "-    *bsd*)\n",
+                "+    *darwin*)\n",
+                "         AC_DEFINE(HAVE_BSD, 1, [Define to 1 if your build target is BSD.])\n",
+                "         AM_CONDITIONAL(HAVE_BSD, true)\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./run_autotools\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\", \"LDFLAGS=\""
+    ],
+    "version": "0.7.4"
+}

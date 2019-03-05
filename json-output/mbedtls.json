@@ -1,0 +1,22 @@
+{
+    "name": "Mbedtls",
+    "description": "Cryptographic & SSL/TLS library",
+    "url": "https://tls.mbed.org/download/mbedtls-2.13.0-apache.tgz",
+    "mirror": null,
+    "homepage": "https://tls.mbed.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"include/mbedtls/config.h\" do |s|",
+        "s.gsub! \"//#define MBEDTLS_THREADING_PTHREAD\", \"#define MBEDTLS_THREADING_PTHREAD\"",
+        "s.gsub! \"//#define MBEDTLS_THREADING_C\", \"#define MBEDTLS_THREADING_C\""
+    ],
+    "version": "2.13.0"
+}

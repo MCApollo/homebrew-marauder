@@ -1,0 +1,33 @@
+{
+    "name": "Blahtexml",
+    "description": "Converts equations into Math ML",
+    "url": "http://gva.noekeon.org/blahtexml/blahtexml-0.9-src.tar.gz",
+    "mirror": null,
+    "homepage": "http://gva.noekeon.org/blahtexml/",
+    "depends": [
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/0632225f/blahtexml/patch-mainPng.cpp.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/0632225f/blahtexml/patch-main.cpp.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "ENV.cxx11",
+        "system \"make\", \"blahtex-mac\"",
+        "bin.install \"blahtex\"",
+        "system \"make\", \"blahtexml-mac\"",
+        "bin.install \"blahtexml\""
+    ],
+    "version": "0.9"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Btpd",
+    "description": "BitTorrent Protocol Daemon",
+    "url": "https://github.com/downloads/btpd/btpd/btpd-0.16.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/btpd/btpd",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.16"
+}

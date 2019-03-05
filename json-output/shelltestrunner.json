@@ -1,0 +1,24 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Portable command-line tool for testing command-line programs",
+    "url": "https://hackage.haskell.org/package/shelltestrunner-1.9/shelltestrunner-1.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/simonmichael/shelltestrunner",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package :using => [\"happy\"]"
+    ],
+    "version": "1.9"
+}

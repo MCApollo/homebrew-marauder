@@ -1,0 +1,18 @@
+{
+    "name": "Jpeg",
+    "description": "Image manipulation library",
+    "url": "https://www.ijg.org/files/jpegsrc.v9c.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/jpeg-9c.tar.gz",
+    "homepage": "https://www.ijg.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "jpegsrc.9"
+}

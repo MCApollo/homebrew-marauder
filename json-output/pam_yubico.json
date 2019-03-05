@@ -1,0 +1,36 @@
+{
+    "name": "PamYubico",
+    "description": "Yubico pluggable authentication module",
+    "url": "https://developers.yubico.com/yubico-pam/Releases/pam_yubico-2.26.tar.gz",
+    "mirror": null,
+    "homepage": "https://developers.yubico.com/yubico-pam/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libyubikey",
+            "build-depend": false
+        },
+        {
+            "depend": "ykclient",
+            "build-depend": false
+        },
+        {
+            "depend": "ykpers",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-libyubikey-prefix=#{Formula[\"libyubikey\"].opt_prefix}\",",
+        "\"--with-libykclient-prefix=#{Formula[\"ykclient\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.26"
+}

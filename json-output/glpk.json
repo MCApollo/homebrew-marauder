@@ -1,0 +1,23 @@
+{
+    "name": "Glpk",
+    "description": "Library for Linear and Mixed-Integer Programming",
+    "url": "https://ftp.gnu.org/gnu/glpk/glpk-4.65.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/glpk/glpk-4.65.tar.gz",
+    "homepage": "https://www.gnu.org/software/glpk/",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--with-gmp\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.65"
+}

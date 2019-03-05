@@ -1,0 +1,37 @@
+{
+    "name": "Fontconfig",
+    "description": "XML-based font configuration API for X Windows",
+    "url": "https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/www/Software/fontconfig/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ohai \"Regenerating font cache, this may take a while\"",
+        "system \"#{bin}/fc-cache\", \"-frv\""
+    ],
+    "version": "2.13.1"
+}

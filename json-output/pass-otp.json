@@ -1,0 +1,24 @@
+{
+    "name": "PassOtp",
+    "description": "The Pass extension for managing one-time-password (OTP) tokens",
+    "url": "https://github.com/tadfisher/pass-otp/releases/download/v1.2.0/pass-otp-1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tadfisher/pass-otp#readme",
+    "depends": [
+        {
+            "depend": "oath-toolkit",
+            "build-depend": false
+        },
+        {
+            "depend": "pass",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"BASHCOMPDIR=#{bash_completion}\", \"install\""
+    ],
+    "version": "1.2.0"
+}

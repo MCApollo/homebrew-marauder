@@ -1,0 +1,17 @@
+{
+    "name": "Memtester",
+    "description": "Utility for testing the memory subsystem",
+    "url": "http://pyropus.ca/software/memtester/old-versions/memtester-4.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://pyropus.ca/software/memtester/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\" do |s|",
+        "s.change_make_var! \"INSTALLPATH\", prefix",
+        "s.gsub! \"man/man8\", \"share/man/man8\""
+    ],
+    "version": "4.3.0"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Pgtoolkit",
+    "description": "Tools for PostgreSQL maintenance",
+    "url": "https://github.com/grayhemp/pgtoolkit/archive/v1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/grayhemp/pgtoolkit",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"fatpack/pgcompact\"",
+        "doc.install %w[CHANGES.md LICENSE.md README.md TODO.md]"
+    ],
+    "version": "1.0.2"
+}

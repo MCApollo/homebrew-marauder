@@ -1,0 +1,15 @@
+{
+    "name": "Aha",
+    "description": "ANSI HTML adapter",
+    "url": "https://github.com/theZiz/aha/archive/0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/theZiz/aha",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.5"
+}

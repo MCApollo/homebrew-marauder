@@ -1,0 +1,22 @@
+{
+    "name": "Bogofilter",
+    "description": "Mail filter via statistical analysis",
+    "url": "https://downloads.sourceforge.net/project/bogofilter/bogofilter-1.2.4/bogofilter-1.2.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://bogofilter.sourceforge.io",
+    "depends": [
+        {
+            "depend": "berkeley-db",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.4"
+}

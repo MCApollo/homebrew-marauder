@@ -1,0 +1,15 @@
+{
+    "name": "Goto",
+    "description": "Bash tool for navigation to aliased directories with auto-completion",
+    "url": "https://github.com/iridakos/goto/archive/v1.2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/iridakos/goto",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"goto.sh\""
+    ],
+    "version": "1.2.3"
+}

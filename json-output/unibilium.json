@@ -1,0 +1,21 @@
+{
+    "name": "Unibilium",
+    "description": "Very basic terminfo library",
+    "url": "https://github.com/mauke/unibilium/archive/v2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mauke/unibilium",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.0.0"
+}

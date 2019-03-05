@@ -1,0 +1,17 @@
+{
+    "name": "Jerm",
+    "description": "Communication terminal through serial and TCP/IP interfaces",
+    "url": "https://web.archive.org/web/20160719014241/bsddiary.net/jerm/jerm-8096.tar.gz",
+    "mirror": "https://dotsrc.dl.osdn.net/osdn/fablib/62057/jerm-8096.tar.gz",
+    "homepage": "https://web.archive.org/web/20160719014241/bsddiary.net/jerm/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\"",
+        "bin.install %w[jerm tiocdtr]",
+        "man1.install Dir[\"*.1\"]"
+    ],
+    "version": "8096"
+}

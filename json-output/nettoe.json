@@ -1,0 +1,17 @@
+{
+    "name": "Nettoe",
+    "description": "Tic Tac Toe-like game for the console",
+    "url": "https://downloads.sourceforge.net/project/nettoe/nettoe/1.5.1/nettoe-1.5.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://nettoe.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.1"
+}

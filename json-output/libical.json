@@ -1,0 +1,35 @@
+{
+    "name": "Libical",
+    "description": "Implementation of iCalendar protocols and data formats",
+    "url": "https://github.com/libical/libical/releases/download/v3.0.4/libical-3.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://libical.github.io/libical/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DBDB_LIBRARY=BDB_LIBRARY-NOTFOUND\",",
+        "\"-DSHARED_ONLY=ON\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.4"
+}

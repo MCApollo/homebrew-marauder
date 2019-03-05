@@ -1,0 +1,22 @@
+{
+    "name": "Iprint",
+    "description": "Provides a print_one function",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/i/iprint/iprint_1.3.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/i/iprint/iprint_1.3.orig.tar.gz",
+    "homepage": "https://www.samba.org/ftp/unpacked/junkcode/i.c",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/i/iprint/iprint_1.3-9.diff.gz",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\"",
+        "bin.install \"i\"",
+        "man1.install \"i.1\""
+    ],
+    "version": "1.3"
+}

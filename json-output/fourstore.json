@@ -1,0 +1,58 @@
+{
+    "name": "Fourstore",
+    "description": "Efficient, stable RDF database",
+    "url": "https://github.com/4store/4store/archive/v1.1.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/4store/4store",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "raptor",
+            "build-depend": false
+        },
+        {
+            "depend": "rasqal",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\".version\").write(\"v1.1.6\")",
+        "system \"./autogen.sh\"",
+        "(var/\"fourstore\").mkpath",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-storage-path=#{var}/fourstore\",",
+        "\"--sysconfdir=#{etc}/fourstore\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.6"
+}

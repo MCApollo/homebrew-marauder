@@ -1,0 +1,36 @@
+{
+    "name": "Sslsplit",
+    "description": "Man-in-the-middle attacks against SSL encrypted network connections",
+    "url": "https://mirror.roe.ch/rel/sslsplit/sslsplit-0.5.3.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.roe.ch/SSLsplit",
+    "depends": [
+        {
+            "depend": "check",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "unless build.head?",
+        "ENV.deparallelize",
+        "inreplace \"GNUmakefile\" do |s|",
+        "s.gsub! \"-o $(BINUID) -g $(BINGID)\", \"\"",
+        "s.gsub! \"-o $(MANUID) -g $(MANGID)\", \"\""
+    ],
+    "version": "0.5.3"
+}

@@ -1,0 +1,47 @@
+{
+    "name": "Cuetools",
+    "description": "Utilities for .cue and .toc files",
+    "url": "https://github.com/svend/cuetools/archive/1.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/svend/cuetools",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/configure.ac b/configure.ac\n",
+                "index f54bb92..84ab467 100644\n",
+                "--- a/configure.ac\n",
+                "+++ b/configure.ac\n",
+                "@@ -1,5 +1,5 @@\n",
+                " AC_INIT([cuetools], [1.4.0], [svend@ciffer.net])\n",
+                "-AM_INIT_AUTOMAKE([-Wall -Werror foreign])\n",
+                "+AM_INIT_AUTOMAKE([-Wall -Werror -Wno-extra-portability foreign])\n",
+                " AC_PROG_CC\n",
+                " AC_PROG_INSTALL\n",
+                " AC_PROG_RANLIB\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"autoreconf\", \"-i\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.1"
+}

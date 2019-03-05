@@ -1,0 +1,43 @@
+{
+    "name": "Mdbtools",
+    "description": "Tools to facilitate the use of Microsoft Access databases",
+    "url": "https://github.com/brianb/mdbtools/archive/0.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/brianb/mdbtools/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"autoreconf\", \"-i\", \"-f\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-man\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.1"
+}

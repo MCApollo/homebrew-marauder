@@ -1,0 +1,35 @@
+{
+    "name": "Kallisto",
+    "description": "Quantify abundances of transcripts from RNA-Seq data",
+    "url": "https://github.com/pachterlab/kallisto/archive/v0.45.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://pachterlab.github.io/kallisto/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "hdf5",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\", \"ext/htslib\"",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"htslib\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.45.0"
+}

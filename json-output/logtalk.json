@@ -1,0 +1,20 @@
+{
+    "name": "Logtalk",
+    "description": "Object-oriented logic programming language",
+    "url": "https://github.com/LogtalkDotOrg/logtalk3/archive/lgt3240stable.tar.gz",
+    "mirror": null,
+    "homepage": "https://logtalk.org/",
+    "depends": [
+        {
+            "depend": "gnu-prolog",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd(\"scripts\") { system \"./install.sh\", \"-p\", prefix }"
+    ],
+    "version": "3240"
+}

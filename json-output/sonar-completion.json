@@ -1,0 +1,15 @@
+{
+    "name": "SonarCompletion",
+    "description": "Bash completion for Sonar",
+    "url": "https://github.com/a1dutch/sonarqube-bash-completion/archive/1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/a1dutch/sonarqube-bash-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"etc/bash_completion.d/sonar\""
+    ],
+    "version": "1.0"
+}

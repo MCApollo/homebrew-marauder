@@ -1,0 +1,20 @@
+{
+    "name": "BzrUpload",
+    "description": "Bazaar plugin to incrementally upload changes to a dumb server",
+    "url": "https://launchpad.net/bzr-upload/1.1/1.1.0/+download/bzr-upload-1.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://launchpad.net/bzr-upload",
+    "depends": [
+        {
+            "depend": "bazaar",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(share/\"bazaar/plugins/upload\").install Dir[\"*\"]"
+    ],
+    "version": "1.1.0"
+}

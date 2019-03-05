@@ -1,0 +1,20 @@
+{
+    "name": "Docx2txt",
+    "description": "Converts Microsoft Office docx documents to equivalent text documents",
+    "url": "https://downloads.sourceforge.net/docx2txt/docx2txt-1.4.tgz",
+    "mirror": null,
+    "homepage": "https://docx2txt.sourceforge.io/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "sample_doc",
+            "url": "https://calibre-ebook.com/downloads/demos/demo.docx"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"CONFIGDIR=#{etc}\", \"BINDIR=#{bin}\""
+    ],
+    "version": "1.4"
+}

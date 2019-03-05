@@ -1,0 +1,17 @@
+{
+    "name": "Glkterm",
+    "description": "Terminal-window Glk library",
+    "url": "https://www.eblong.com/zarf/glk/glkterm-104.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.eblong.com/zarf/glk/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "lib.install \"libglkterm.a\"",
+        "include.install \"glk.h\", \"glkstart.h\", \"gi_blorb.h\", \"gi_dispa.h\", \"Make.glkterm\""
+    ],
+    "version": "104"
+}

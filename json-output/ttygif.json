@@ -1,0 +1,24 @@
+{
+    "name": "Ttygif",
+    "description": "Converts a ttyrec file into gif files",
+    "url": "https://github.com/icholy/ttygif/archive/1.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/icholy/ttygif",
+    "depends": [
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        },
+        {
+            "depend": "ttyrec",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.4.0"
+}

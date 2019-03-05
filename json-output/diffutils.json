@@ -1,0 +1,16 @@
+{
+    "name": "Diffutils",
+    "description": "File comparison utilities",
+    "url": "https://ftp.gnu.org/gnu/diffutils/diffutils-3.7.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/diffutils/diffutils-3.7.tar.xz",
+    "homepage": "https://www.gnu.org/s/diffutils/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.7"
+}

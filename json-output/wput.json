@@ -1,0 +1,51 @@
+{
+    "name": "Wput",
+    "description": "Tiny, wget-like FTP client for uploading files",
+    "url": "https://downloads.sourceforge.net/project/wput/wput/0.6.2/wput-0.6.2.tgz",
+    "mirror": null,
+    "homepage": "https://wput.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/memdbg.c b/src/memdbg.c\n",
+                "index 560bd7c..9e69eef 100644\n",
+                "--- a/src/memdbg.c\n",
+                "+++ b/src/memdbg.c\n",
+                "@@ -1,5 +1,7 @@\n",
+                " #include <stdio.h>\n",
+                "+#ifndef __APPLE__\n",
+                " #include <malloc.h>\n",
+                "+#endif\n",
+                " #include <fcntl.h>\n",
+                " #ifndef WIN32\n",
+                " #include <sys/socket.h>\n",
+                "diff --git a/src/socketlib.c b/src/socketlib.c\n",
+                "index ab77d2b..c728ed9 100644\n",
+                "--- a/src/socketlib.c\n",
+                "+++ b/src/socketlib.c\n",
+                "@@ -20,7 +20,9 @@\n",
+                "  * It is meant to provide some library functions. The only required external depency\n",
+                "  * the printip function that is provided in utils.c */\n",
+                "\n",
+                "+#ifndef __APPLE__\n",
+                " #include <malloc.h>\n",
+                "+#endif\n",
+                " #include <string.h>\n",
+                " #include <fcntl.h>\n",
+                " #include <errno.h>\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.2"
+}

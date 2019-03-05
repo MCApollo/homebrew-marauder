@@ -1,0 +1,62 @@
+{
+    "name": "Podofo",
+    "description": "Library to work with the PDF file format",
+    "url": "https://downloads.sourceforge.net/podofo/podofo-0.9.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://podofo.sourceforge.io",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libidn",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://sourceforge.net/p/podofo/tickets/24/attachment/podofo-cmake-3.12.patch",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "args = std_cmake_args + %W[",
+        "-DCMAKE_DISABLE_FIND_PACKAGE_CppUnit=ON",
+        "-DCMAKE_DISABLE_FIND_PACKAGE_LUA=ON",
+        "-DPODOFO_BUILD_SHARED:BOOL=ON",
+        "-DFREETYPE_INCLUDE_DIR_FT2BUILD=#{Formula[\"freetype\"].opt_include}/freetype2",
+        "-DFREETYPE_INCLUDE_DIR_FTHEADER=#{Formula[\"freetype\"].opt_include}/freetype2/config/",
+        "]",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.5"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Dirt",
+    "description": "Experimental sample playback",
+    "url": "https://github.com/tidalcycles/Dirt/archive/1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tidalcycles/Dirt",
+    "depends": [
+        {
+            "depend": "jack",
+            "build-depend": false
+        },
+        {
+            "depend": "liblo",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "1.1"
+}

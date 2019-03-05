@@ -1,0 +1,17 @@
+{
+    "name": "Rpg",
+    "description": "Ruby package management for UNIX",
+    "url": "https://github.com/downloads/rtomayko/rpg/rpg-0.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rtomayko/rpg",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.0"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "TitanServer",
+    "description": "Distributed graph database",
+    "url": "http://s3.thinkaurelius.com/downloads/titan/titan-1.0.0-hadoop1.zip",
+    "mirror": null,
+    "homepage": "https://thinkaurelius.github.io/titan/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install %w[bin conf data ext javadocs lib log scripts]",
+        "bin.install_symlink libexec/\"bin/titan.sh\" => \"titan\"",
+        "bin.install_symlink libexec/\"bin/gremlin.sh\" => \"titan-gremlin\"",
+        "bin.install_symlink libexec/\"bin/gremlin-server.sh\" => \"titan-gremlin-server\""
+    ],
+    "version": "1.0.0"
+}

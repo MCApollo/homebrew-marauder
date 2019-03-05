@@ -1,0 +1,40 @@
+{
+    "name": "Privoxy",
+    "description": "Advanced filtering web proxy",
+    "url": "https://downloads.sourceforge.net/project/ijbswa/Sources/3.0.26%20%28stable%29/privoxy-3.0.26-stable-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.privoxy.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-L#{HOMEBREW_PREFIX}/lib\"",
+        "system \"autoreconf\", \"-i\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}/privoxy\",",
+        "\"--localstatedir=#{var}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.26"
+}

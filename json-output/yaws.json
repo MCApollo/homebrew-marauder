@@ -1,0 +1,33 @@
+{
+    "name": "Yaws",
+    "description": "Webserver for dynamic content (written in Erlang)",
+    "url": "http://yaws.hyber.org/download/yaws-2.0.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://yaws.hyber.org",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "erlang@20",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"log/yaws\").mkpath",
+        "(var/\"yaws/www\").mkpath"
+    ],
+    "version": "2.0.6"
+}

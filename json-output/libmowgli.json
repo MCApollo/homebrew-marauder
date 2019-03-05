@@ -1,0 +1,23 @@
+{
+    "name": "Libmowgli",
+    "description": "Core framework for Atheme applications",
+    "url": "https://github.com/atheme/libmowgli-2/archive/v2.1.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/atheme/libmowgli-2",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.3"
+}

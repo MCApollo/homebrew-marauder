@@ -1,0 +1,26 @@
+{
+    "name": "UcspiTcp",
+    "description": "Tools for building TCP client-server applications",
+    "url": "https://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz",
+    "mirror": null,
+    "homepage": "https://cr.yp.to/ucspi-tcp.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/homebrew/patches/2b3e4da/ucspi-tcp/patch-0.88-ipv6.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "(buildpath/\"conf-home\").unlink",
+        "(buildpath/\"conf-home\").write prefix",
+        "system \"make\"",
+        "bin.mkpath",
+        "system \"make\", \"setup\"",
+        "system \"make\", \"check\"",
+        "share.install prefix/\"man\""
+    ],
+    "version": "0.88"
+}

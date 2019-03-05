@@ -1,0 +1,35 @@
+{
+    "name": "Ngircd",
+    "description": "Lightweight Internet Relay Chat server",
+    "url": "https://ngircd.barton.de/pub/ngircd/ngircd-25.tar.gz",
+    "mirror": "https://ngircd.sourceforge.io/pub/ngircd/ngircd-25.tar.gz",
+    "homepage": "https://ngircd.barton.de/",
+    "depends": [
+        {
+            "depend": "libident",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{HOMEBREW_PREFIX}/etc\",",
+        "\"--enable-ipv6\",",
+        "\"--with-ident\",",
+        "\"--with-openssl\"",
+        "system \"make\", \"install\"",
+        "prefix.install \"contrib/MacOSX/de.barton.ngircd.plist.tmpl\" => \"de.barton.ngircd.plist\"",
+        "(prefix+\"de.barton.ngircd.plist\").chmod 0644",
+        "inreplace prefix+\"de.barton.ngircd.plist\" do |s|",
+        "s.gsub! \":SBINDIR:\", sbin",
+        "s.gsub! \"/Library/Logs/ngIRCd.log\", var/\"Logs/ngIRCd.log\""
+    ],
+    "version": "ngircd25"
+}

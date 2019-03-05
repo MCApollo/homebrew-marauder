@@ -1,0 +1,33 @@
+{
+    "name": "MonitoringPlugins",
+    "description": "Plugins for nagios compatible monitoring systems",
+    "url": "https://www.monitoring-plugins.org/download/monitoring-plugins-2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.monitoring-plugins.org",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "nagios-plugins",
+            "reason": "nagios-plugins ships their plugins to the same folder."
+        }
+    ],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{libexec}",
+        "--libexecdir=#{libexec}/sbin",
+        "--with-openssl=#{Formula[\"openssl\"].opt_prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "sbin.write_exec_script Dir[\"#{libexec}/sbin/*\"]"
+    ],
+    "version": "2.2"
+}

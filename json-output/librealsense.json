@@ -1,0 +1,35 @@
+{
+    "name": "Librealsense",
+    "description": "Intel RealSense D400 series and SR300 capture",
+    "url": "https://github.com/IntelRealSense/librealsense/archive/v2.18.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/IntelRealSense/librealsense",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glfw",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args",
+        "args << \"-DENABLE_CCACHE=OFF\"",
+        "system \"cmake\", \".\", \"-DBUILD_WITH_OPENMP=OFF\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.18.1"
+}

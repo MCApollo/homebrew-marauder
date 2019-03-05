@@ -1,0 +1,36 @@
+{
+    "name": "Bmon",
+    "description": "Interface bandwidth monitor",
+    "url": "https://github.com/tgraf/bmon/releases/download/v4.0/bmon-4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tgraf/bmon",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "confuse",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0"
+}

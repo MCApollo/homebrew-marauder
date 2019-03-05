@@ -1,0 +1,18 @@
+{
+    "name": "P0f",
+    "description": "Versatile passive OS fingerprinting, masquerade detection tool",
+    "url": "http://lcamtuf.coredump.cx/p0f3/releases/p0f-3.09b.tgz",
+    "mirror": null,
+    "homepage": "http://lcamtuf.coredump.cx/p0f3/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"config.h\", \"p0f.fp\", \"#{etc}/p0f/p0f.fp\"",
+        "system \"./build.sh\"",
+        "sbin.install \"p0f\"",
+        "(etc/\"p0f\").install \"p0f.fp\""
+    ],
+    "version": "3.09"
+}

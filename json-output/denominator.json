@@ -1,0 +1,15 @@
+{
+    "name": "Denominator",
+    "description": "Portable Java library for manipulating DNS clouds",
+    "url": "https://bintray.com/artifact/download/netflixoss/maven/com/netflix/denominator/denominator-cli/4.7.1/denominator-cli-4.7.1-fat.jar",
+    "mirror": null,
+    "homepage": "https://github.com/Netflix/denominator/tree/v4.7.1/cli",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"denominator-cli-4.7.1-fat.jar\" => \"denominator\""
+    ],
+    "version": "4.7.1"
+}

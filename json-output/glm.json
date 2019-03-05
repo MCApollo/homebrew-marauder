@@ -1,0 +1,26 @@
+{
+    "name": "Glm",
+    "description": "C++ mathematics library for graphics software",
+    "url": "https://github.com/g-truc/glm/releases/download/0.9.9.3/glm-0.9.9.3.zip",
+    "mirror": null,
+    "homepage": "https://glm.g-truc.net/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.9.3"
+}

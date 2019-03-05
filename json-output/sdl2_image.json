@@ -1,0 +1,48 @@
+{
+    "name": "Sdl2Image",
+    "description": "Library for loading images as SDL surfaces and textures",
+    "url": "https://www.libsdl.org/projects/SDL_image/release/SDL2_image-2.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libsdl.org/projects/SDL_image/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "webp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"SDL2_image.pc.in\", \"@prefix@\", HOMEBREW_PREFIX",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-imageio\",",
+        "\"--disable-jpg-shared\",",
+        "\"--disable-png-shared\",",
+        "\"--disable-tif-shared\",",
+        "\"--disable-webp-shared\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.4"
+}

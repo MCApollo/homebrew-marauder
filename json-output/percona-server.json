@@ -1,0 +1,50 @@
+{
+    "name": "PerconaServer",
+    "description": "Drop-in MySQL replacement",
+    "url": "https://www.percona.com/downloads/Percona-Server-8.0/Percona-Server-8.0.13-3/source/tarball/percona-server-8.0.13-3.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.percona.com",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "boost",
+            "url": "https://downloads.sourceforge.net/project/boost/boost/1.67.0/boost_1_67_0.tar.bz2"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "mariadb",
+            "reason": null
+        },
+        {
+            "conflict": "mysql-connector-c",
+            "reason": null
+        },
+        {
+            "conflict": "mariadb-connector-c",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "datadir.mkpath",
+        "unless (datadir/\"mysql/user.frm\").exist?",
+        "ENV[\"TMPDIR\"] = nil",
+        "system bin/\"mysqld\", \"--initialize-insecure\", \"--user=#{ENV[\"USER\"]}\",",
+        "\"--basedir=#{prefix}\", \"--datadir=#{datadir}\", \"--tmpdir=/tmp\""
+    ],
+    "version": "8.0.13"
+}

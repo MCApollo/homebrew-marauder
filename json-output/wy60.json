@@ -1,0 +1,16 @@
+{
+    "name": "Wy60",
+    "description": "Wyse 60 compatible terminal emulator",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/wy60/wy60-2.0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/wy60/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.9"
+}

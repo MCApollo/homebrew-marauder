@@ -1,0 +1,31 @@
+{
+    "name": "Arping",
+    "description": "Utility to check whether MAC addresses are already taken on a LAN",
+    "url": "https://github.com/ThomasHabets/arping/archive/arping-2.19.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ThomasHabets/arping",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libnet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.19"
+}

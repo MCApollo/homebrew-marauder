@@ -1,0 +1,37 @@
+{
+    "name": "Elinks",
+    "description": "Text mode web browser",
+    "url": "http://elinks.or.cz/download/elinks-0.11.7.tar.bz2",
+    "mirror": null,
+    "homepage": "http://elinks.or.cz/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "ENV.delete(\"LD\")",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--without-spidermonkey\",",
+        "\"--enable-256-colors\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.11.7"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Static analysis and lint tool, for (ba)sh scripts",
+    "url": "https://github.com/koalaman/shellcheck/archive/v0.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.shellcheck.net/",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        },
+        {
+            "depend": "pandoc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package",
+        "system \"pandoc\", \"-s\", \"-f\", \"markdown-smart\", \"-t\", \"man\",",
+        "\"shellcheck.1.md\", \"-o\", \"shellcheck.1\"",
+        "man1.install \"shellcheck.1\""
+    ],
+    "version": "0.6.0"
+}

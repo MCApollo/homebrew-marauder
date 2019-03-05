@@ -1,0 +1,23 @@
+{
+    "name": "Xaric",
+    "description": "IRC client",
+    "url": "https://xaric.org/software/xaric/releases/xaric-0.13.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://xaric.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.13.7"
+}

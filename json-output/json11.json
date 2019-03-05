@@ -1,0 +1,21 @@
+{
+    "name": "Json11",
+    "description": "Tiny JSON library for C++11",
+    "url": "https://github.com/dropbox/json11/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/dropbox/json11",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.0"
+}

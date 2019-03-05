@@ -1,0 +1,17 @@
+{
+    "name": "GnuShogi",
+    "description": "GNU Shogi (Japanese Chess)",
+    "url": "https://ftp.gnu.org/gnu/gnushogi/gnushogi-1.4.2.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/gnushogi/gnushogi-1.4.2.tar.gz",
+    "homepage": "https://www.gnu.org/software/gnushogi/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\", \"MANDIR=#{man6}\", \"INFODIR=#{info}\""
+    ],
+    "version": "1.4.2"
+}

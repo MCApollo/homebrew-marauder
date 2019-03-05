@@ -1,0 +1,31 @@
+{
+    "name": "Nailgun",
+    "description": "Command-line client, protocol and server for Java programs",
+    "url": "https://github.com/facebook/nailgun/archive/nailgun-all-v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.martiansoftware.com/nailgun/",
+    "depends": [
+        {
+            "depend": "maven",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/martylamb/nailgun/pull/70.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\", \"install\", \"CC=#{ENV.cc}\", \"PREFIX=#{prefix}\", \"CFLAGS=#{ENV.cflags}\"",
+        "require \"rexml/document\"",
+        "pom_xml = REXML::Document.new(File.new(\"pom.xml\"))",
+        "jar_version = REXML::XPath.first(pom_xml, \"string(/pom:project/pom:version)\", \"pom\" => \"http://maven.apache.org/POM/4.0.0\")",
+        "system \"mvn\", \"clean\", \"install\"",
+        "libexec.install Dir[\"nailgun-server/target/*.jar\"]",
+        "bin.write_jar_script libexec/\"nailgun-server-#{jar_version}.jar\", \"ng-server\", \"-server\""
+    ],
+    "version": "1.0.0"
+}

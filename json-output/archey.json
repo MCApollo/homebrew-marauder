@@ -1,0 +1,20 @@
+{
+    "name": "Archey",
+    "description": "Graphical system information display for macOS",
+    "url": "https://github.com/obihann/archey-osx/archive/1.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://obihann.github.io/archey-osx/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/obihann/archey-osx/commit/cd125547d0936f066b64616553269bf647348e53.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "bin.install \"bin/archey\""
+    ],
+    "version": "1.6.0"
+}

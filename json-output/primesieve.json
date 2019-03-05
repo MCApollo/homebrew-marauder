@@ -1,0 +1,22 @@
+{
+    "name": "Primesieve",
+    "description": "Fast C/C++ prime number generator",
+    "url": "https://github.com/kimwalisch/primesieve/archive/v7.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://primesieve.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.4"
+}

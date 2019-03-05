@@ -1,0 +1,22 @@
+{
+    "name": "Vifm",
+    "description": "Ncurses based file manager with vi like keybindings",
+    "url": "https://github.com/vifm/vifm/releases/download/v0.9.1/vifm-0.9.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://vifm.info/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-gtk\",",
+        "\"--without-libmagic\",",
+        "\"--without-X11\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "ENV.deparallelize { system \"make\", \"install\" }"
+    ],
+    "version": "0.9.1"
+}

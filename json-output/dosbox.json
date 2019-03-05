@@ -1,0 +1,48 @@
+{
+    "name": "Dosbox",
+    "description": "DOS Emulator",
+    "url": "https://downloads.sourceforge.net/project/dosbox/dosbox/0.74-2/dosbox-0.74-2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.dosbox.com/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_net",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_sound",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--disable-sdltest",
+        "--enable-core-inline",
+        "]",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.74"
+}

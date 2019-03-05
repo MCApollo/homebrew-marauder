@@ -1,0 +1,28 @@
+{
+    "name": "Whois",
+    "description": "Lookup tool for domain names and other internet resources",
+    "url": "https://deb.debian.org/debian/pool/main/w/whois/whois_5.4.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://packages.debian.org/sid/whois",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libidn2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-L/usr/lib -liconv\"",
+        "system \"make\", \"whois\", \"HAVE_ICONV=1\"",
+        "bin.install \"whois\"",
+        "man1.install \"whois.1\"",
+        "man5.install \"whois.conf.5\""
+    ],
+    "version": "5.4.1"
+}

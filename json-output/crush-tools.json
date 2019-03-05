@@ -1,0 +1,44 @@
+{
+    "name": "CrushTools",
+    "description": "Command-line tools for processing delimited text data",
+    "url": "https://github.com/google/crush-tools/releases/download/20150716/crush-tools-20150716.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/crush-tools",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "aggregate",
+            "reason": "both install an `aggregate` binary"
+        },
+        {
+            "conflict": "num-utils",
+            "reason": "both install an `range` binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20150716"
+}

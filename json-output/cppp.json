@@ -1,0 +1,16 @@
+{
+    "name": "Cppp",
+    "description": "Partial Preprocessor for C",
+    "url": "https://www.muppetlabs.com/~breadbox/pub/software/cppp-2.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.muppetlabs.com/~breadbox/software/cppp.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"cppp\""
+    ],
+    "version": "2.6"
+}

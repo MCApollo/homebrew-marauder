@@ -1,0 +1,45 @@
+{
+    "name": "Urbit",
+    "description": "Personal cloud computer",
+    "url": "https://github.com/urbit/urbit.git",
+    "mirror": null,
+    "homepage": "https://urbit.org",
+    "depends": [
+        {
+            "depend": "meson",
+            "build-depend": true
+        },
+        {
+            "depend": "ninja",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "libsigsegv",
+            "build-depend": false
+        },
+        {
+            "depend": "libuv",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./scripts/build\"",
+        "bin.install \"build/urbit\""
+    ],
+    "version": "1.0-git-0177e814"
+}

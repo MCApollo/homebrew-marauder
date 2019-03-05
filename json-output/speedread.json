@@ -1,0 +1,15 @@
+{
+    "name": "Speedread",
+    "description": "Simple terminal-based rapid serial visual presentation (RSVP) reader",
+    "url": "https://github.com/pasky/speedread/archive/v1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pasky/speedread",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"speedread\""
+    ],
+    "version": "1.0"
+}

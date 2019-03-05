@@ -1,0 +1,17 @@
+{
+    "name": "Uni2ascii",
+    "description": "Bi-directional conversion between UTF-8 and various ASCII flavors",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/u/uni2ascii/uni2ascii_4.18.orig.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/u/uni2ascii/uni2ascii_4.18.orig.tar.gz",
+    "homepage": "https://billposer.org/Software/uni2ascii.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "ENV[\"MKDIRPROG\"]=\"mkdir -p\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.18"
+}

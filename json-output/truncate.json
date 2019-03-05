@@ -1,0 +1,17 @@
+{
+    "name": "Truncate",
+    "description": "Truncates a file to a given size",
+    "url": "https://github.com/flok99/truncate/archive/0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.vanheusden.com/truncate/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"truncate\"",
+        "man1.install \"truncate.1\""
+    ],
+    "version": "0.9"
+}

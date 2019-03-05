@@ -1,0 +1,15 @@
+{
+    "name": "BashPreexec",
+    "description": "preexec and precmd functions for Bash (just like Zsh)",
+    "url": "https://github.com/rcaloras/bash-preexec/archive/0.3.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rcaloras/bash-preexec",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(prefix/\"etc/profile.d\").install \"bash-preexec.sh\""
+    ],
+    "version": "0.3.7"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "SomagicTools",
+    "description": "Tools to extract firmware from EasyCAP",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/easycap-somagic-linux/somagic-easycap-tools_1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/easycap-somagic-linux/",
+    "depends": [
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "1.1"
+}

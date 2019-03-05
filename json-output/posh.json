@@ -1,0 +1,28 @@
+{
+    "name": "Posh",
+    "description": "Policy-compliant ordinary shell",
+    "url": "https://salsa.debian.org/clint/posh/repository/debian/0.13.2/archive.tar.gz",
+    "mirror": null,
+    "homepage": "https://salsa.debian.org/clint/posh",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.13.2"
+}

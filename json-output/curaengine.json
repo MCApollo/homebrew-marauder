@@ -1,0 +1,16 @@
+{
+    "name": "Curaengine",
+    "description": "C++ 3D printing GCode generator",
+    "url": "https://github.com/Ultimaker/CuraEngine/archive/15.04.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Ultimaker/CuraEngine",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"VERSION=#{version}\"",
+        "bin.install \"build/CuraEngine\""
+    ],
+    "version": "15.04.6"
+}

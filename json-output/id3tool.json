@@ -1,0 +1,19 @@
+{
+    "name": "Id3tool",
+    "description": "ID3 editing tool",
+    "url": "http://nekohako.xware.cx/id3tool/id3tool-1.2a.tar.gz",
+    "mirror": null,
+    "homepage": "http://nekohako.xware.cx/id3tool/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

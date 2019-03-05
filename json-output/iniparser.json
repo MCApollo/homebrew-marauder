@@ -1,0 +1,22 @@
+{
+    "name": "Iniparser",
+    "description": "Library for parsing ini files",
+    "url": "http://ndevilla.free.fr/iniparser/iniparser-3.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://ndevilla.free.fr/iniparser/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "fastbit",
+            "reason": "Both install `include/dictionary.h`"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"libiniparser.a\", \"CC=#{ENV.cc}\", \"RANLIB=ranlib\"",
+        "lib.install \"libiniparser.a\"",
+        "include.install Dir[\"src/*.h\"]"
+    ],
+    "version": "3.1"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Juman",
+    "description": "Japanese morphological analysis system",
+    "url": "http://nlp.ist.i.kyoto-u.ac.jp/nl-resource/juman/juman-7.01.tar.bz2",
+    "mirror": null,
+    "homepage": "http://nlp.ist.i.kyoto-u.ac.jp/index.php?JUMAN",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.01"
+}

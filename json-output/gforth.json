@@ -1,0 +1,39 @@
+{
+    "name": "Gforth",
+    "description": "Implementation of the ANS Forth language",
+    "url": "https://www.complang.tuwien.ac.at/forth/gforth/gforth-0.7.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gnu.org/software/gforth/",
+    "depends": [
+        {
+            "depend": "emacs",
+            "build-depend": true
+        },
+        {
+            "depend": "libffi",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"MACOSX_DEPLOYMENT_TARGET\"] = MacOS.version",
+        "cp Dir[\"#{Formula[\"libtool\"].opt_share}/libtool/*/config.{guess,sub}\"], buildpath",
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"EMACS=#{Formula[\"emacs\"].opt_bin}/emacs\"",
+        "elisp.mkpath",
+        "system \"make\", \"install\", \"emacssitelispdir=#{elisp}\"",
+        "elisp.install \"gforth.elc\""
+    ],
+    "version": "0.7.3"
+}

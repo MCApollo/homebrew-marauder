@@ -1,0 +1,25 @@
+{
+    "name": "Uudeview",
+    "description": "Smart multi-file multi-part decoder",
+    "url": "http://www.fpx.de/fp/Software/UUDeview/download/uudeview-0.5.20.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.fpx.de/fp/Software/UUDeview/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/19da78c/uudeview/inews.c.patch",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--disable-tcl\"",
+        "system \"make\", \"install\"",
+        "lib.install \"uulib/libuu.a\"",
+        "include.install \"uulib/uudeview.h\""
+    ],
+    "version": "0.5.20"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Wandio",
+    "description": "Transparently read from and write to zip, bzip2, lzma or zstd archives",
+    "url": "https://research.wand.net.nz/software/wandio/wandio-4.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://research.wand.net.nz/software/libwandio.php",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--with-http\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0.0"
+}

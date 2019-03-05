@@ -1,0 +1,18 @@
+{
+    "name": "TaLib",
+    "description": "Tools for market analysis",
+    "url": "https://downloads.sourceforge.net/project/ta-lib/ta-lib/0.4.0/ta-lib-0.4.0-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://ta-lib.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "bin.install \"src/tools/ta_regtest/.libs/ta_regtest\""
+    ],
+    "version": "0.4.0"
+}

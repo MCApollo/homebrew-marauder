@@ -1,0 +1,31 @@
+{
+    "name": "Clucene",
+    "description": "C++ port of Lucene: high-performance, full-featured text search engine",
+    "url": "https://downloads.sourceforge.net/project/clucene/clucene-core-unstable/2.3/clucene-core-2.3.3.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://clucene.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/ec8d133/clucene/patch-src-shared-CLucene-LuceneThreads.h.diff",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/ec8d133/clucene/patch-src-shared-CLucene-config-repl_tchar.h.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.3.4"
+}

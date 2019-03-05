@@ -1,0 +1,26 @@
+{
+    "name": "Xrootd",
+    "description": "High performance, scalable, fault-tolerant access to data",
+    "url": "http://xrootd.org/download/v4.8.3/xrootd-4.8.3.tar.gz",
+    "mirror": null,
+    "homepage": "http://xrootd.org",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.8.3"
+}

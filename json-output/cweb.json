@@ -1,0 +1,25 @@
+{
+    "name": "Cweb",
+    "description": "Literate documentation system for C, C++, and Java",
+    "url": "https://cs.stanford.edu/pub/cweb/cweb-3.64b.tar.gz",
+    "mirror": "https://www.ctan.org/tex-archive/web/c_cpp/cweb/cweb-3.64b.tar.gz",
+    "homepage": "https://cs.stanford.edu/~knuth/cweb.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "macrosdir = share/\"texmf/tex/generic\"",
+        "cwebinputs = lib/\"cweb\"",
+        "[bin, man1, macrosdir, elisp, cwebinputs].each(&:mkpath)",
+        "system \"make\", \"install\",",
+        "\"DESTDIR=#{bin}/\",",
+        "\"MANDIR=#{man1}\",",
+        "\"MANEXT=1\",",
+        "\"MACROSDIR=#{macrosdir}\",",
+        "\"EMACSDIR=#{elisp}\",",
+        "\"CWEBINPUTS=#{cwebinputs}\""
+    ],
+    "version": "3.64"
+}

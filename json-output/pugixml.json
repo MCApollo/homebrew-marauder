@@ -1,0 +1,22 @@
+{
+    "name": "Pugixml",
+    "description": "Light-weight C++ XML processing library",
+    "url": "https://github.com/zeux/pugixml/releases/download/v1.9/pugixml-1.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://pugixml.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DBUILD_SHARED_LIBS=OFF\",",
+        "\"-DBUILD_PKGCONFIG=ON\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9"
+}

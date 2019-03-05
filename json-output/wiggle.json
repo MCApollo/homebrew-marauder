@@ -1,0 +1,17 @@
+{
+    "name": "Wiggle",
+    "description": "Program for applying patches with conflicting changes",
+    "url": "https://neil.brown.name/wiggle/wiggle-1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://neil.brown.name/blog/20100324064620",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"OptDbg=#{ENV.cflags}\", \"wiggle\", \"wiggle.man\", \"test\"",
+        "bin.install \"wiggle\"",
+        "man1.install \"wiggle.1\""
+    ],
+    "version": "1.1"
+}

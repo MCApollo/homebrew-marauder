@@ -1,0 +1,21 @@
+{
+    "name": "Mktorrent",
+    "description": "Create BitTorrent metainfo files",
+    "url": "https://github.com/Rudde/mktorrent/archive/v1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://mktorrent.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"USE_PTHREADS=1\", \"USE_OPENSSL=1\", \"USE_LONG_OPTIONS=1\"",
+        "bin.install \"mktorrent\""
+    ],
+    "version": "1.1"
+}

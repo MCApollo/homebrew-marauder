@@ -1,0 +1,18 @@
+{
+    "name": "Whitedb",
+    "description": "Lightweight in-memory NoSQL database library",
+    "url": "http://whitedb.org/whitedb-0.7.3.tar.gz",
+    "mirror": null,
+    "homepage": "http://whitedb.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CFLAGS\", \"-std=gnu89\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.3"
+}

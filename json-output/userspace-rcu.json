@@ -1,0 +1,23 @@
+{
+    "name": "UserspaceRcu",
+    "description": "Library for userspace RCU (read-copy-update)",
+    "url": "https://lttng.org/files/urcu/userspace-rcu-0.10.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://liburcu.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--build=x86_64",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.10.2"
+}

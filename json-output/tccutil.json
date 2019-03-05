@@ -1,0 +1,15 @@
+{
+    "name": "Tccutil",
+    "description": "Utility to modify the macOS Accessibility Database (TCC.db)",
+    "url": "https://github.com/jacobsalmela/tccutil/archive/v1.2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jacobsalmela/tccutil",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"tccutil.py\" => \"tccutil\""
+    ],
+    "version": "1.2.3"
+}

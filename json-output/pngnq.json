@@ -1,0 +1,44 @@
+{
+    "name": "Pngnq",
+    "description": "Tool for optimizing PNG images",
+    "url": "https://downloads.sourceforge.net/project/pngnq/pngnq/1.1/pngnq-1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://pngnq.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/rwpng.c b/src/rwpng.c\n",
+                "index aaa21fc..5324afe 100644\n",
+                "--- a/src/rwpng.c\n",
+                "+++ b/src/rwpng.c\n",
+                "@@ -31,6 +31,7 @@\n",
+                "\n",
+                " #include <stdio.h>\n",
+                " #include <stdlib.h>\n",
+                "+#include <zlib.h>\n",
+                "\n",
+                " #include \"png.h\"        /* libpng header; includes zlib.h */\n",
+                " #include \"rwpng.h\"      /* typedefs, common macros, public prototypes */\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1"
+}

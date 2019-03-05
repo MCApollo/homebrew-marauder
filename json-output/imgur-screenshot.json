@@ -1,0 +1,15 @@
+{
+    "name": "ImgurScreenshot",
+    "description": "Take screenshot selection, upload to imgur. + more cool things",
+    "url": "https://github.com/jomo/imgur-screenshot/archive/v1.7.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jomo/imgur-screenshot",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"imgur-screenshot.sh\""
+    ],
+    "version": "1.7.4"
+}

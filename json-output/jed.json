@@ -1,0 +1,31 @@
+{
+    "name": "Jed",
+    "description": "Powerful editor for programmers",
+    "url": "https://www.jedsoft.org/releases/jed/jed-0.99-19.tar.gz",
+    "mirror": "https://deb.debian.org/debian/pool/main/j/jed/jed_0.99.19.orig.tar.gz",
+    "homepage": "https://www.jedsoft.org/jed/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "s-lang",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "cd \"autoconf\" do",
+        "system \"make\"",
+        "end"
+    ],
+    "version": "0.99"
+}

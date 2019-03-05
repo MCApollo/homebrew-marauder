@@ -1,0 +1,16 @@
+{
+    "name": "Mp3val",
+    "description": "Program for MPEG audio stream validation",
+    "url": "https://downloads.sourceforge.net/mp3val/mp3val-0.1.8-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://mp3val.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"gnumake\", \"-f\", \"Makefile.gcc\"",
+        "bin.install \"mp3val.exe\" => \"mp3val\""
+    ],
+    "version": "0.1.8"
+}

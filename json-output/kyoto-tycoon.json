@@ -1,0 +1,45 @@
+{
+    "name": "KyotoTycoon",
+    "description": "Database server with interface to Kyoto Cabinet",
+    "url": "https://fallabs.com/kyototycoon/pkg/kyototycoon-0.9.56.tar.gz",
+    "mirror": null,
+    "homepage": "https://fallabs.com/kyototycoon/",
+    "depends": [
+        {
+            "depend": "kyoto-cabinet",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/ktdbext.h  2013-11-08 09:34:53.000000000 -0500\n",
+                "+++ b/ktdbext.h  2013-11-08 09:35:00.000000000 -0500\n",
+                "@@ -271,7 +271,7 @@\n",
+                "       if (!logf(\"prepare\", \"started to open temporary databases under %s\", tmppath.c_str()))\n",
+                "         err = true;\n",
+                "       stime = kc::time();\n",
+                "-      uint32_t pid = getpid() & kc::UINT16MAX;\n",
+                "+      uint32_t pid = kc::getpid() & kc::UINT16MAX;\n",
+                "       uint32_t tid = kc::Thread::hash() & kc::UINT16MAX;\n",
+                "       uint32_t ts = kc::time() * 1000;\n",
+                "       for (size_t i = 0; i < dbnum_; i++) {\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-kc=#{Formula[\"kyoto-cabinet\"].opt_prefix}\",",
+        "\"--with-lua=#{Formula[\"lua\"].opt_prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.56"
+}

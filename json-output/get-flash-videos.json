@@ -1,0 +1,54 @@
+{
+    "name": "GetFlashVideos",
+    "description": "Download or play videos from various Flash-based websites",
+    "url": "https://github.com/monsieurvideo/get-flash-videos/archive/1.25.99.03.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/monsieurvideo/get-flash-videos",
+    "depends": [
+        {
+            "depend": "rtmpdump",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "Crypt::Blowfish_PP",
+            "url": "https://cpan.metacpan.org/authors/id/M/MA/MATTBM/Crypt-Blowfish_PP-1.12.tar.gz"
+        },
+        {
+            "name": "LWP::Protocol",
+            "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.33.tar.gz"
+        },
+        {
+            "name": "Tie::IxHash",
+            "url": "https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Tie-IxHash-1.23.tar.gz"
+        },
+        {
+            "name": "WWW::Mechanize",
+            "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/WWW-Mechanize-1.88.tar.gz"
+        },
+        {
+            "name": "Term::ProgressBar",
+            "url": "https://cpan.metacpan.org/authors/id/M/MA/MANWAR/Term-ProgressBar-2.21.tar.gz"
+        },
+        {
+            "name": "Class::MethodMaker",
+            "url": "https://cpan.metacpan.org/authors/id/S/SC/SCHWIGON/class-methodmaker/Class-MethodMaker-2.24.tar.gz"
+        },
+        {
+            "name": "Crypt::Rijndael",
+            "url": "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Crypt-Rijndael-1.13.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "resources.each do |r|",
+        "r.stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.25.99.03"
+}

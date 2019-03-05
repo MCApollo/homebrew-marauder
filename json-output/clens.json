@@ -1,0 +1,21 @@
+{
+    "name": "Clens",
+    "description": "Library to help port code from OpenBSD to other operating systems",
+    "url": "https://github.com/conformal/clens/archive/CLENS_0_7_0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/conformal/clens",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/conformal/clens/commit/83648cc9027d9f76a1bc79ddddcbed1349b9d5cd.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"all\", \"install\", \"LOCALBASE=#{prefix}\""
+    ],
+    "version": "0_7_0"
+}

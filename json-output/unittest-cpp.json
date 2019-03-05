@@ -1,0 +1,30 @@
+{
+    "name": "UnittestCpp",
+    "description": "Unit testing framework for C++",
+    "url": "https://github.com/unittest-cpp/unittest-cpp/releases/download/v2.0.0/unittest-cpp-2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/unittest-cpp/unittest-cpp",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-silent-rules\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.0"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Dante",
+    "description": "SOCKS server and client, implementing RFC 1928 and related standards",
+    "url": "https://www.inet.no/dante/files/dante-1.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.inet.no/dante/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-silent-rules\",",
+        "\"--enable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}/dante\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.2"
+}

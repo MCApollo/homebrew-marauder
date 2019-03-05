@@ -1,0 +1,35 @@
+{
+    "name": "Utimer",
+    "description": "Multifunction timer tool",
+    "url": "https://launchpad.net/utimer/0.4/0.4/+download/utimer-0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://launchpad.net/utimer",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4"
+}

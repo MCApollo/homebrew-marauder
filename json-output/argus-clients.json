@@ -1,0 +1,31 @@
+{
+    "name": "ArgusClients",
+    "description": "Audit Record Generation and Utilization System clients",
+    "url": "https://qosient.com/argus/src/argus-clients-3.0.8.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://qosient.com/argus/",
+    "depends": [
+        {
+            "depend": "geoip",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        },
+        {
+            "depend": "rrdtool",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CFLAGS\", \"-std=gnu89\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.8.2"
+}

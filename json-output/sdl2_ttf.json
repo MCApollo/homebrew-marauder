@@ -1,0 +1,31 @@
+{
+    "name": "Sdl2Ttf",
+    "description": "Library for using TrueType fonts in SDL applications",
+    "url": "https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libsdl.org/projects/SDL_ttf/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"SDL2_ttf.pc.in\", \"@prefix@\", HOMEBREW_PREFIX",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.14"
+}

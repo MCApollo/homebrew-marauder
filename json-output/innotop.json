@@ -1,0 +1,41 @@
+{
+    "name": "Innotop",
+    "description": "Top clone for MySQL",
+    "url": "https://github.com/innotop/innotop/archive/v1.12.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/innotop/innotop/",
+    "depends": [
+        {
+            "depend": "mysql-client",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "DBI",
+            "url": "https://cpan.metacpan.org/authors/id/T/TI/TIMB/DBI-1.636.tar.gz"
+        },
+        {
+            "name": "DBD::mysql",
+            "url": "https://cpan.metacpan.org/authors/id/C/CA/CAPTTOFU/DBD-mysql-4.046.tar.gz"
+        },
+        {
+            "name": "TermReadKey",
+            "url": "https://cpan.metacpan.org/authors/id/J/JS/JSTOWE/TermReadKey-2.37.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "resources.each do |r|",
+        "r.stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.12.0"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Desk",
+    "description": "Lightweight workspace manager for the shell",
+    "url": "https://github.com/jamesob/desk/archive/v0.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jamesob/desk",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"desk\"",
+        "bash_completion.install \"shell_plugins/bash/desk\"",
+        "zsh_completion.install \"shell_plugins/zsh/_desk\"",
+        "fish_completion.install \"shell_plugins/fish/desk.fish\""
+    ],
+    "version": "0.6.0"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "Gearman",
+    "description": "Application framework to farm out work to other machines or processes",
+    "url": "https://github.com/gearman/gearmand/releases/download/1.1.18/gearmand-1.1.18.tar.gz",
+    "mirror": null,
+    "homepage": "http://gearman.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "libmemcached",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.delete(\"SDKROOT\") if DevelopmentTools.clang_build_version >= 900",
+        "Dir[\"tests/**/*.cc\", \"libtest/main.cc\"].each do |test_file|",
+        "next unless /std::unique_ptr/ =~ File.read(test_file)",
+        "inreplace test_file, \"std::unique_ptr\", \"std::auto_ptr\""
+    ],
+    "version": "1.1.18"
+}

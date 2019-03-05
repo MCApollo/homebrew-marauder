@@ -1,0 +1,27 @@
+{
+    "name": "Par",
+    "description": "Paragraph reflow for email",
+    "url": "http://www.nicemice.net/par/Par152.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.nicemice.net/par/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "rancid",
+            "reason": "both install `par` binaries"
+        }
+    ],
+    "patches": [
+        {
+            "url": "http://sysmic.org/dl/par/par-1.52-i18n.4.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\", \"-f\", \"protoMakefile\"",
+        "bin.install \"par\"",
+        "man1.install gzip(\"par.1\")"
+    ],
+    "version": "152"
+}

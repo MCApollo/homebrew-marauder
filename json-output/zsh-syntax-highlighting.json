@@ -1,0 +1,15 @@
+{
+    "name": "ZshSyntaxHighlighting",
+    "description": "Fish shell like syntax highlighting for zsh",
+    "url": "https://github.com/zsh-users/zsh-syntax-highlighting.git",
+    "mirror": null,
+    "homepage": "https://github.com/zsh-users/zsh-syntax-highlighting",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.6.0-git-434af7b1"
+}

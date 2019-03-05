@@ -1,0 +1,17 @@
+{
+    "name": "Lesspipe",
+    "description": "Input filter for the pager less",
+    "url": "https://downloads.sourceforge.net/project/lesspipe/lesspipe/1.83/lesspipe-1.83.tar.gz",
+    "mirror": null,
+    "homepage": "https://www-zeuthen.desy.de/~friebel/unix/lesspipe.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--yes\"",
+        "man1.mkpath",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.83"
+}

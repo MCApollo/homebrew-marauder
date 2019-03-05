@@ -1,0 +1,21 @@
+{
+    "name": "Lci",
+    "description": "Interpreter for the lambda calculus",
+    "url": "https://downloads.sourceforge.net/project/lci/lci/0.6/lci-0.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://lci.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "lolcode",
+            "reason": "both install `lci` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6"
+}

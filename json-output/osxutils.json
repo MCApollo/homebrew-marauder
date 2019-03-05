@@ -1,0 +1,16 @@
+{
+    "name": "Osxutils",
+    "description": "Collection of macOS command-line utilities",
+    "url": "https://github.com/specious/osxutils/archive/v1.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/specious/osxutils",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "1.9.0"
+}

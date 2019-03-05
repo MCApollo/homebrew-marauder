@@ -1,0 +1,23 @@
+{
+    "name": "Glew",
+    "description": "OpenGL Extension Wrangler Library",
+    "url": "https://downloads.sourceforge.net/project/glew/glew/2.1.0/glew-2.1.0.tgz",
+    "mirror": null,
+    "homepage": "https://glew.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"build\" do",
+        "system \"cmake\", \"./cmake\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.0"
+}

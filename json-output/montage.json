@@ -1,0 +1,21 @@
+{
+    "name": "Montage",
+    "description": "Toolkit for assembling FITS images into custom mosaics",
+    "url": "http://montage.ipac.caltech.edu/download/Montage_v4.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://montage.ipac.caltech.edu",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "wdiff",
+            "reason": "Both install an mdiff executable"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install Dir[\"bin/m*\"]"
+    ],
+    "version": "4.0"
+}

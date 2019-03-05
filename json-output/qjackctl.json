@@ -1,0 +1,38 @@
+{
+    "name": "Qjackctl",
+    "description": "Simple Qt application to control the JACK sound server daemon",
+    "url": "https://downloads.sourceforge.net/qjackctl/qjackctl-0.5.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://qjackctl.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jack",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dbus\",",
+        "\"--disable-portaudio\",",
+        "\"--disable-xunique\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-jack=#{Formula[\"jack\"].opt_prefix}\",",
+        "\"--with-qt5=#{Formula[\"qt\"].opt_prefix}\"",
+        "system \"make\", \"install\"",
+        "prefix.install bin/\"qjackctl.app\"",
+        "bin.install_symlink prefix/\"qjackctl.app/Contents/MacOS/qjackctl\""
+    ],
+    "version": "0.5.3"
+}

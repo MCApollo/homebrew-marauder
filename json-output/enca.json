@@ -1,0 +1,17 @@
+{
+    "name": "Enca",
+    "description": "Charset analyzer and converter",
+    "url": "https://dl.cihar.com/enca/enca-1.19.tar.gz",
+    "mirror": null,
+    "homepage": "https://cihar.com/software/enca/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.19"
+}

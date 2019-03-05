@@ -1,0 +1,76 @@
+{
+    "name": "Pulseaudio",
+    "description": "Sound system for POSIX OSes",
+    "url": "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-12.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/www/Software/PulseAudio/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        },
+        {
+            "depend": "libsoxr",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "speexdsp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--enable-coreaudio-output",
+        "--disable-neon-opt",
+        "--disable-nls",
+        "--disable-x11",
+        "--with-mac-sysroot=#{MacOS.sdk_path}",
+        "--with-mac-version-min=#{MacOS.version}",
+        "]",
+        "if build.head?",
+        "system \"./autogen.sh\", *args",
+        "else",
+        "system \"./configure\", *args",
+        "end",
+        "system \"make\", \"install\""
+    ],
+    "version": "12.2"
+}

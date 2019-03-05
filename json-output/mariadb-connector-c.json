@@ -1,0 +1,34 @@
+{
+    "name": "MariadbConnectorC",
+    "description": "MariaDB database connector for C applications",
+    "url": "https://downloads.mariadb.org/f/connector-c-3.0.8/mariadb-connector-c-3.0.8-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://downloads.mariadb.org/connector-c/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mysql",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args",
+        "args << \"-DWITH_OPENSSL=On\"",
+        "args << \"-DOPENSSL_INCLUDE_DIR=#{Formula[\"openssl\"].opt_include}\"",
+        "args << \"-DCOMPILATION_COMMENT=Homebrew\"",
+        "system \"cmake\", \".\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.8"
+}

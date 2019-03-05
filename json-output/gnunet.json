@@ -1,0 +1,63 @@
+{
+    "name": "Gnunet",
+    "description": "Framework for distributed, secure and privacy-preserving applications",
+    "url": "https://ftp.gnu.org/gnu/gnunet/gnunet-0.11.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://gnunet.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "jansson",
+            "build-depend": false
+        },
+        {
+            "depend": "libextractor",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "libidn2",
+            "build-depend": false
+        },
+        {
+            "depend": "libmicrohttpd",
+            "build-depend": false
+        },
+        {
+            "depend": "libmpc",
+            "build-depend": false
+        },
+        {
+            "depend": "libunistring",
+            "build-depend": false
+        },
+        {
+            "depend": "unbound",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "mv bin/\"gnunet-qr.py\", pkgshare",
+        "inreplace bin/\"gnunet-qr\", bin, pkgshare"
+    ],
+    "version": "0.11.0"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Vmdktool",
+    "description": "Converts raw filesystems to VMDK files and vice versa",
+    "url": "https://people.freebsd.org/~brian/vmdktool/vmdktool-1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://manned.org/vmdktool",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CFLAGS='-D_GNU_SOURCE -g -O -pipe'\"",
+        "bin.mkpath",
+        "man8.mkpath",
+        "inreplace \"Makefile\", \"man/man8\", \"share/man/man8\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.4"
+}

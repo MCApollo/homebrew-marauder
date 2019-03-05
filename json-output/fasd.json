@@ -1,0 +1,16 @@
+{
+    "name": "Fasd",
+    "description": "CLI tool for quick access to files and directories",
+    "url": "https://github.com/clvv/fasd/archive/1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/clvv/fasd",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"fasd\"",
+        "man1.install \"fasd.1\""
+    ],
+    "version": "1.0.1"
+}

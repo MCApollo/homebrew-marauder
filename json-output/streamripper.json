@@ -1,0 +1,29 @@
+{
+    "name": "Streamripper",
+    "description": "Separate tracks via Shoutcasts title-streaming",
+    "url": "https://downloads.sourceforge.net/sourceforge/streamripper/streamripper-1.64.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://streamripper.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append_to_cflags ENV.cppflags",
+        "chmod 0755, \"./install-sh\" ",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-debug\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.64.6"
+}

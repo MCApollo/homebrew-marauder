@@ -1,0 +1,36 @@
+{
+    "name": "Djbdns",
+    "description": "D.J. Bernstein",
+    "url": "https://cr.yp.to/djbdns/djbdns-1.05.tar.gz",
+    "mirror": null,
+    "homepage": "https://cr.yp.to/djbdns.html",
+    "depends": [
+        {
+            "depend": "daemontools",
+            "build-depend": false
+        },
+        {
+            "depend": "ucspi-tcp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"hier.c\", 'c(\"/\"', \"c(auto_home\"",
+        "inreplace \"dnscache-conf.c\", \"/etc/dnsroots\", \"#{etc}/dnsroots\"",
+        "rm %w[conf-home conf-ld conf-cc]",
+        "(buildpath/\"conf-home\").write prefix",
+        "(buildpath/\"conf-ld\").write \"gcc\"",
+        "if MacOS.sdk_path_if_needed",
+        "(buildpath/\"conf-cc\").write \"gcc -O2 -include #{MacOS.sdk_path}/usr/include/errno.h\"",
+        "else",
+        "(buildpath/\"conf-cc\").write \"gcc -O2 -include /usr/include/errno.h\"",
+        "end",
+        "bin.mkpath",
+        "(prefix/\"etc\").mkpath ",
+        "system \"make\", \"setup\", \"check\""
+    ],
+    "version": "1.05"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Sdl2Net",
+    "description": "Small sample cross-platform networking library",
+    "url": "https://www.libsdl.org/projects/SDL_net/release/SDL2_net-2.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libsdl.org/projects/SDL_net/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"SDL2_net.pc.in\", \"@prefix@\", HOMEBREW_PREFIX",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--disable-sdltest\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.1"
+}

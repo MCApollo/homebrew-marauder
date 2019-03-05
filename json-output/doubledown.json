@@ -1,0 +1,16 @@
+{
+    "name": "Doubledown",
+    "description": "Sync local changes to a remote directory",
+    "url": "https://github.com/devstructure/doubledown/archive/v0.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/devstructure/doubledown",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install Dir[\"bin/*\"]",
+        "man1.install Dir[\"man/man1/*.1\"]"
+    ],
+    "version": "0.0.2"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Most",
+    "description": "Powerful paging program",
+    "url": "https://www.jedsoft.org/releases/most/most-5.0.0a.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.jedsoft.org/most/",
+    "depends": [
+        {
+            "depend": "s-lang",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-slang=#{HOMEBREW_PREFIX}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.0.0"
+}

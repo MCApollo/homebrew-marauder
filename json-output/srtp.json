@@ -1,0 +1,24 @@
+{
+    "name": "Srtp",
+    "description": "Implementation of the Secure Real-time Transport Protocol",
+    "url": "https://github.com/cisco/libsrtp/archive/v2.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/cisco/libsrtp",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"test\"",
+        "system \"make\", \"shared_library\"",
+        "system \"make\", \"install\" ",
+        "libexec.install \"test/rtpw\""
+    ],
+    "version": "2.2.0"
+}

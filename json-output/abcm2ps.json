@@ -1,0 +1,21 @@
+{
+    "name": "Abcm2ps",
+    "description": "ABC music notation software",
+    "url": "https://github.com/leesavide/abcm2ps/archive/v8.14.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://moinejf.free.fr",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "8.14.2"
+}

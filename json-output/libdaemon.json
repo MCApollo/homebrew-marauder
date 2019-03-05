@@ -1,0 +1,17 @@
+{
+    "name": "Libdaemon",
+    "description": "C library that eases writing UNIX daemons",
+    "url": "http://0pointer.de/lennart/projects/libdaemon/libdaemon-0.14.tar.gz",
+    "mirror": null,
+    "homepage": "http://0pointer.de/lennart/projects/libdaemon/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.14"
+}

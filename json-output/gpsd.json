@@ -1,0 +1,21 @@
+{
+    "name": "Gpsd",
+    "description": "Global Positioning System (GPS) daemon",
+    "url": "https://download.savannah.gnu.org/releases/gpsd/gpsd-3.17.tar.gz",
+    "mirror": null,
+    "homepage": "http://catb.org/gpsd/",
+    "depends": [
+        {
+            "depend": "scons",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"scons\", \"chrpath=False\", \"python=False\", \"strip=False\", \"prefix=#{prefix}/\"",
+        "system \"scons\", \"install\""
+    ],
+    "version": "3.17"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Boxes",
+    "description": "Draw boxes around text",
+    "url": "https://github.com/ascii-boxes/boxes/archive/v1.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://boxes.thomasjensen.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"GLOBALCONF=#{share}/boxes-config\", \"CC=#{ENV.cc}\"",
+        "bin.install \"src/boxes\"",
+        "man1.install \"doc/boxes.1\"",
+        "share.install \"boxes-config\""
+    ],
+    "version": "1.3"
+}

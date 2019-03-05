@@ -1,0 +1,17 @@
+{
+    "name": "Exiftags",
+    "description": "Utility to read EXIF tags from a digital camera JPEG file",
+    "url": "https://johnst.org/sw/exiftags/exiftags-1.01.tar.gz",
+    "mirror": null,
+    "homepage": "https://johnst.org/sw/exiftags/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "man1.mkpath",
+        "system \"make\", \"prefix=#{prefix}\", \"mandir=#{man}\", \"install\""
+    ],
+    "version": "1.01"
+}

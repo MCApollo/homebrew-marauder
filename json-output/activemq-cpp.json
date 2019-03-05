@@ -1,0 +1,30 @@
+{
+    "name": "ActivemqCpp",
+    "description": "C++ API for message brokers such as Apache ActiveMQ",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=activemq/activemq-cpp/3.9.5/activemq-cpp-library-3.9.5-src.tar.bz2",
+    "mirror": null,
+    "homepage": "https://activemq.apache.org/cms/index.html",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "apr",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.9.5"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "Autogen",
+    "description": "Automated text file generator",
+    "url": "https://ftp.gnu.org/gnu/autogen/rel5.18.16/autogen-5.18.16.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/autogen/rel5.18.16/autogen-5.18.16.tar.xz",
+    "homepage": "https://autogen.sourceforge.io",
+    "depends": [
+        {
+            "depend": "coreutils",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "guile",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace %w[agen5/mk-stamps.sh build-aux/run-ag.sh config/mk-shdefs.in], \"mktemp\", \"gmktemp\"",
+        "system \"./configure\", \"ac_cv_func_utimensat=no\",",
+        "\"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.18.16"
+}

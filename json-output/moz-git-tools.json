@@ -1,0 +1,18 @@
+{
+    "name": "MozGitTools",
+    "description": "Tools for working with Git at Mozilla",
+    "url": "https://github.com/mozilla/moz-git-tools.git",
+    "mirror": null,
+    "homepage": "https://github.com/mozilla/moz-git-tools",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin_array = Dir.glob(\"git*\").push(\"hg-patch-to-git-patch\")",
+        "bin_array.delete(\"git-root\")",
+        "bin_array.delete(\"git-bz-moz\") ",
+        "bin_array.each { |e| bin.install e }"
+    ],
+    "version": "0.1-git-cfe890e6"
+}

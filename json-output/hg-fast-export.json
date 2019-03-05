@@ -1,0 +1,17 @@
+{
+    "name": "HgFastExport",
+    "description": "Fast Mercurial to Git converter",
+    "url": "https://github.com/frej/fast-export/archive/v180610.tar.gz",
+    "mirror": null,
+    "homepage": "https://repo.or.cz/fast-export.git",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"hg-fast-export.py\", \"hg-fast-export.sh\",",
+        "\"hg-reset.py\", \"hg-reset.sh\",",
+        "\"hg2git.py\""
+    ],
+    "version": "180610"
+}

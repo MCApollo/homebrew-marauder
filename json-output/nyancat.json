@@ -1,0 +1,21 @@
+{
+    "name": "Nyancat",
+    "description": "Renders an animated, color, ANSI-text loop of the Poptart Cat",
+    "url": "https://github.com/klange/nyancat/archive/1.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/klange/nyancat",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/klange/nyancat/pull/34.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"instdir=#{prefix}\""
+    ],
+    "version": "1.5.2"
+}

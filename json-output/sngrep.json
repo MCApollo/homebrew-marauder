@@ -1,0 +1,38 @@
+{
+    "name": "Sngrep",
+    "description": "Command-line tool for displaying SIP calls message flows",
+    "url": "https://github.com/irontec/sngrep/archive/v1.4.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/irontec/sngrep",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "ncurses",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap.sh\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.6"
+}

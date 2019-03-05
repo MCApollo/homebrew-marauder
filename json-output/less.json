@@ -1,0 +1,21 @@
+{
+    "name": "Less",
+    "description": "Pager program similar to more",
+    "url": "https://ftp.gnu.org/gnu/less/less-530.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/less/less-530.tar.gz",
+    "homepage": "http://www.greenwoodsoftware.com/less/index.html",
+    "depends": [
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--with-regex=pcre\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "530"
+}

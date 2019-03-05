@@ -1,0 +1,17 @@
+{
+    "name": "Cheapglk",
+    "description": "Extremely minimal Glk library",
+    "url": "https://www.eblong.com/zarf/glk/cheapglk-106.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.eblong.com/zarf/glk/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "lib.install \"libcheapglk.a\"",
+        "include.install \"glk.h\", \"glkstart.h\", \"gi_blorb.h\", \"gi_dispa.h\", \"Make.cheapglk\""
+    ],
+    "version": "106"
+}

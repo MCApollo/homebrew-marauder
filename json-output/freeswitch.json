@@ -1,0 +1,124 @@
+{
+    "name": "Freeswitch",
+    "description": "Telephony platform to route various communication protocols",
+    "url": "https://freeswitch.org/stash/scm/fs/freeswitch.git",
+    "mirror": null,
+    "homepage": "https://freeswitch.org",
+    "depends": [
+        {
+            "depend": "apr-util",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "yasm",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "opus",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "speex",
+            "build-depend": false
+        },
+        {
+            "depend": "speexdsp",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "sounds-music-8000",
+            "url": "#{sounds_url_base}/freeswitch-sounds-music-8000-#{moh_version}.tar.gz"
+        },
+        {
+            "name": "sounds-music-16000",
+            "url": "#{sounds_url_base}/freeswitch-sounds-music-16000-#{moh_version}.tar.gz"
+        },
+        {
+            "name": "sounds-music-32000",
+            "url": "#{sounds_url_base}/freeswitch-sounds-music-32000-#{moh_version}.tar.gz"
+        },
+        {
+            "name": "sounds-music-48000",
+            "url": "#{sounds_url_base}/freeswitch-sounds-music-48000-#{moh_version}.tar.gz"
+        },
+        {
+            "name": "sounds-en-us-callie-8000",
+            "url": "#{sounds_url_base}/freeswitch-sounds-en-us-callie-8000-#{sounds_en_version}.tar.gz"
+        },
+        {
+            "name": "sounds-en-us-callie-16000",
+            "url": "#{sounds_url_base}/freeswitch-sounds-en-us-callie-16000-#{sounds_en_version}.tar.gz"
+        },
+        {
+            "name": "sounds-en-us-callie-32000",
+            "url": "#{sounds_url_base}/freeswitch-sounds-en-us-callie-32000-#{sounds_en_version}.tar.gz"
+        },
+        {
+            "name": "sounds-en-us-callie-48000",
+            "url": "#{sounds_url_base}/freeswitch-sounds-en-us-callie-48000-#{sounds_en_version}.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"ac_cv_lib_lzma_lzma_code\"] = \"no\" ",
+        "inreplace \"build/modules.conf.in\", \"applications/mod_enum\",",
+        "\"#applications/mod_enum\"",
+        "system \"./bootstrap.sh\", \"-j\"",
+        "inreplace \"libs/tiff-4.0.2/configure.gnu\", \"--with-pic\", \"--with-pic --without-x\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--enable-shared\",",
+        "\"--enable-static\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--exec_prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\", \"all\"",
+        "mkdir_p prefix/\"sounds/music\"",
+        "[8, 16, 32, 48].each do |n|",
+        "resource(\"sounds-music-#{n}000\").stage do",
+        "cp_r \".\", prefix/\"sounds/music\""
+    ],
+    "version": "15.9-git-8893e0b8"
+}

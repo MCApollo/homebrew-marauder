@@ -1,0 +1,18 @@
+{
+    "name": "Shorten",
+    "description": "Waveform compression",
+    "url": "https://web.archive.org/web/20180903155129/www.etree.org/shnutils/shorten/dist/src/shorten-3.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://web.archive.org/web/20180903155129/www.etree.org/shnutils/shorten/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.6.1"
+}

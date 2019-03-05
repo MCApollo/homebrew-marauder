@@ -1,0 +1,39 @@
+{
+    "name": "Kvazaar",
+    "description": "Ultravideo HEVC encoder",
+    "url": "https://github.com/ultravideo/kvazaar/releases/download/v1.2.0/kvazaar-1.2.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://github.com/ultravideo/kvazaar",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "yasm",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "videosample",
+            "url": "https://samples.mplayerhq.hu/V-codecs/lm20.avi"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.0"
+}

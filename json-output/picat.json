@@ -1,0 +1,20 @@
+{
+    "name": "Picat",
+    "description": "Simple, and yet powerful, logic-based multi-paradigm programming language",
+    "url": "http://picat-lang.org/download/picat26_src.tar.gz",
+    "mirror": null,
+    "homepage": "http://picat-lang.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"emu/Makefile.picat.mac64\", \"/usr/local/bin/gcc\", \"gcc\"",
+        "system \"make\", \"-C\", \"emu\", \"-f\", \"Makefile.picat.mac64\"",
+        "bin.install \"emu/picat_macx\" => \"picat\"",
+        "prefix.install \"lib\" => \"pi_lib\"",
+        "doc.install Dir[\"doc/*\"]",
+        "pkgshare.install \"exs\""
+    ],
+    "version": "1.0-u"
+}

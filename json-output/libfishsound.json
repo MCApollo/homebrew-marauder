@@ -1,0 +1,26 @@
+{
+    "name": "Libfishsound",
+    "description": "Decode and encode audio data using the Xiph.org codecs",
+    "url": "https://downloads.xiph.org/releases/libfishsound/libfishsound-1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://xiph.org/fishsound/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.0"
+}

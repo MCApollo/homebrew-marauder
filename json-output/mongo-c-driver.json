@@ -1,0 +1,31 @@
+{
+    "name": "MongoCDriver",
+    "description": "C driver for MongoDB",
+    "url": "https://github.com/mongodb/mongo-c-driver/releases/download/1.13.0/mongo-c-driver-1.13.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mongodb/mongo-c-driver",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "(pkgshare/\"libbson\").install \"src/libbson/examples\"",
+        "(pkgshare/\"libmongoc\").install \"src/libmongoc/examples\""
+    ],
+    "version": "1.13.0"
+}

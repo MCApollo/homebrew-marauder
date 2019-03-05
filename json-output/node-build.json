@@ -1,0 +1,29 @@
+{
+    "name": "NodeBuild",
+    "description": "Install NodeJS versions",
+    "url": "https://github.com/nodenv/node-build/archive/v4.4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/nodenv/node-build",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PREFIX\"] = prefix",
+        "system \"./install.sh\""
+    ],
+    "version": "4.4.3"
+}

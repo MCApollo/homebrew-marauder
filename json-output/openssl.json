@@ -1,0 +1,25 @@
+{
+    "name": "Openssl",
+    "description": "SSL/TLS cryptography library",
+    "url": "https://www.openssl.org/source/openssl-1.0.2q.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/openssl--1.0.2q.tar.gz",
+    "homepage": "https://openssl.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "keychains = %w[",
+        "/System/Library/Keychains/SystemRootCertificates.keychain",
+        "]",
+        "certs_list = `security find-certificate -a -p #{keychains.join(\" \")}`",
+        "certs = certs_list.scan(",
+        "/-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m,",
+        ")",
+        "valid_certs = certs.select do |cert|",
+        "IO.popen(\"#{bin}/openssl x509 -inform pem -checkend 0 -noout\", \"w\") do |openssl_io|",
+        "openssl_io.write(cert)",
+        "openssl_io.close_write"
+    ],
+    "version": "1.0.2"
+}

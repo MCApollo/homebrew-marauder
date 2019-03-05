@@ -1,0 +1,50 @@
+{
+    "name": "Qwt",
+    "description": "Qt Widgets for Technical Applications",
+    "url": "https://downloads.sourceforge.net/project/qwt/qwt/6.1.3/qwt-6.1.3.tar.bz2",
+    "mirror": null,
+    "homepage": "https://qwt.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/designer/designer.pro b/designer/designer.pro\n",
+                "index c269e9d..c2e07ae 100644\n",
+                "--- a/designer/designer.pro\n",
+                "+++ b/designer/designer.pro\n",
+                "@@ -126,6 +126,16 @@ contains(QWT_CONFIG, QwtDesigner) {\n",
+                "\n",
+                "     target.path = $${QWT_INSTALL_PLUGINS}\n",
+                "     INSTALLS += target\n",
+                "+\n",
+                "+    macx {\n",
+                "+        contains(QWT_CONFIG, QwtFramework) {\n",
+                "+            QWT_LIB = qwt.framework/Versions/$${QWT_VER_MAJ}/qwt\n",
+                "+        }\n",
+                "+        else {\n",
+                "+            QWT_LIB = libqwt.$${QWT_VER_MAJ}.dylib\n",
+                "+        }\n",
+                "+        QMAKE_POST_LINK = install_name_tool -change $${QWT_LIB} $${QWT_INSTALL_LIBS}/$${QWT_LIB} $(DESTDIR)$(TARGET)\n",
+                "+    }\n",
+                " }\n",
+                " else {\n",
+                "     TEMPLATE        = subdirs # do nothing\n"
+            ]
+        }
+    ],
+    "install": [
+        "inreplace \"qwtconfig.pri\" do |s|",
+        "s.gsub! /^\\s*QWT_INSTALL_PREFIX\\s*=(.*)$/, \"QWT_INSTALL_PREFIX=#{prefix}\"",
+        "s.sub! %r{(= \\$\\$\\{QWT_INSTALL_PREFIX\\})/(plugins/designer)$},",
+        "\"\\\\1/lib/qt/\\\\2\""
+    ],
+    "version": "6.1.3"
+}

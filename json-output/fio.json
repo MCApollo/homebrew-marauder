@@ -1,0 +1,21 @@
+{
+    "name": "Fio",
+    "description": "I/O benchmark and stress test",
+    "url": "https://github.com/axboe/fio/archive/fio-3.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/axboe/fio",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\"",
+        "system \"make\", \"prefix=#{prefix}\",",
+        "\"mandir=#{man}\",",
+        "\"sharedir=#{share}\",",
+        "\"CC=#{ENV.cc}\",",
+        "\"V=true\", ",
+        "\"install\""
+    ],
+    "version": "3.12"
+}

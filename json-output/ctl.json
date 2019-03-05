@@ -1,0 +1,39 @@
+{
+    "name": "Ctl",
+    "description": "Programming language for digital color management",
+    "url": "https://github.com/ampas/CTL/archive/ctl-1.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ampas/CTL",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "aces_container",
+            "build-depend": false
+        },
+        {
+            "depend": "ilmbase",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "openexr",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.delete \"CTL_MODULE_PATH\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.2"
+}

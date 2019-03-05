@@ -1,0 +1,17 @@
+{
+    "name": "Libbind",
+    "description": "Original resolver library from ISC",
+    "url": "https://ftp.isc.org/isc/libbind/6.0/libbind-6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.isc.org/software/libbind",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\" ",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.0"
+}

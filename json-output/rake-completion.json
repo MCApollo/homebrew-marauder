@@ -1,0 +1,15 @@
+{
+    "name": "RakeCompletion",
+    "description": "Bash completion for Rake",
+    "url": "https://github.com/JoeNyland/rake-completion/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/JoeNyland/rake-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"rake.sh\" => \"rake\""
+    ],
+    "version": "1.0.0"
+}

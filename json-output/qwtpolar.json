@@ -1,0 +1,53 @@
+{
+    "name": "Qwtpolar",
+    "description": "Library for displaying values on a polar coordinate system",
+    "url": "https://downloads.sourceforge.net/project/qwtpolar/qwtpolar/1.1.1/qwtpolar-1.1.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://qwtpolar.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "qt",
+            "build-depend": false
+        },
+        {
+            "depend": "qwt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/designer/designer.pro b/designer/designer.pro\n",
+                "index 24770fd..3ff0761 100644\n",
+                "--- a/designer/designer.pro\n",
+                "+++ b/designer/designer.pro\n",
+                "@@ -75,6 +75,16 @@ contains(QWT_POLAR_CONFIG, QwtPolarDesigner) {\n",
+                "\n",
+                "     target.path = $${QWT_POLAR_INSTALL_PLUGINS}\n",
+                "     INSTALLS += target\n",
+                "+\n",
+                "+    macx {\n",
+                "+        contains(QWT_POLAR_CONFIG, QwtPolarFramework) {\n",
+                "+            QWTP_LIB = qwtpolar.framework/Versions/$${QWT_POLAR_VER_MAJ}/qwtpolar\n",
+                "+        }\n",
+                "+        else {\n",
+                "+            QWTP_LIB = libqwtpolar.$${QWT_POLAR_VER_MAJ}.dylib\n",
+                "+        }\n",
+                "+        QMAKE_POST_LINK = install_name_tool -change $${QWTP_LIB} $${QWT_POLAR_INSTALL_LIBS}/$${QWTP_LIB} $(DESTDIR)$(TARGET)\n",
+                "+    }\n",
+                " }\n",
+                " else {\n",
+                "     TEMPLATE        = subdirs # do nothing\n"
+            ]
+        }
+    ],
+    "install": [
+        "cd \"doc\" do",
+        "doc.install \"html\"",
+        "man3.install Dir[\"man/man3/{q,Q}wt*\"]"
+    ],
+    "version": "1.1.1"
+}

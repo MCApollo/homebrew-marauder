@@ -1,0 +1,52 @@
+{
+    "name": "Gtkx3",
+    "description": "Toolkit for creating graphical user interfaces",
+    "url": "https://download.gnome.org/sources/gtk+/3.24/gtk+-3.24.5.tar.xz",
+    "mirror": null,
+    "homepage": "https://gtk.org/",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "atk",
+            "build-depend": false
+        },
+        {
+            "depend": "gdk-pixbuf",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gsettings-desktop-schemas",
+            "build-depend": false
+        },
+        {
+            "depend": "hicolor-icon-theme",
+            "build-depend": false
+        },
+        {
+            "depend": "libepoxy",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"#{Formula[\"glib\"].opt_bin}/glib-compile-schemas\", \"#{HOMEBREW_PREFIX}/share/glib-2.0/schemas\""
+    ],
+    "version": "3.24.5"
+}

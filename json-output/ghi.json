@@ -1,0 +1,28 @@
+{
+    "name": "Ghi",
+    "description": "Work on GitHub issues on the command-line",
+    "url": "https://github.com/stephencelis/ghi/archive/1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/stephencelis/ghi",
+    "depends": [],
+    "resource": [
+        {
+            "name": "multi_json",
+            "url": "https://rubygems.org/gems/multi_json-1.12.1.gem"
+        },
+        {
+            "name": "pygments.rb",
+            "url": "https://rubygems.org/gems/pygments.rb-1.1.2.gem"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"GEM_HOME\"] = libexec",
+        "resources.each do |r|",
+        "r.verify_download_integrity(r.fetch)",
+        "system \"gem\", \"install\", r.cached_download, \"--no-document\",",
+        "\"--install-dir\", libexec"
+    ],
+    "version": "1.2.0"
+}

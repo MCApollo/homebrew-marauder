@@ -1,0 +1,17 @@
+{
+    "name": "Rolldice",
+    "description": "Rolls an amount of virtual dice",
+    "url": "https://github.com/sstrickl/rolldice/archive/v1.16.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sstrickl/rolldice",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\"",
+        "bin.install \"rolldice\"",
+        "man6.install gzip(\"rolldice.6\")"
+    ],
+    "version": "1.16"
+}

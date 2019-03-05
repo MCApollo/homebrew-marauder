@@ -1,0 +1,41 @@
+{
+    "name": "Huexpress",
+    "description": "PC Engine emulator",
+    "url": "https://github.com/kallisti5/huexpress/archive/3.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kallisti5/huexpress",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "scons",
+            "build-depend": true
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "libzip",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "scons",
+        "bin.install [\"src/huexpress\", \"src/hucrc\"]"
+    ],
+    "version": "3.0.4"
+}

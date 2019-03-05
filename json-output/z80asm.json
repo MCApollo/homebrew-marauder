@@ -1,0 +1,17 @@
+{
+    "name": "Z80asm",
+    "description": "Assembler for the Zilog Z80 microprcessor and compatibles",
+    "url": "https://download.savannah.gnu.org/releases/z80asm/z80asm-1.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/z80asm/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"z80asm\"",
+        "man1.install \"z80asm.1\""
+    ],
+    "version": "1.8"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Texapp",
+    "description": "App.net client based on TTYtter",
+    "url": "https://www.floodgap.com/software/texapp/dist0/0.6.11.txt",
+    "mirror": null,
+    "homepage": "https://www.floodgap.com/software/texapp/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"#{version}.txt\" => \"texapp\""
+    ],
+    "version": "0.6.11"
+}

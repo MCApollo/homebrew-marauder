@@ -1,0 +1,45 @@
+{
+    "name": "FluidSynth",
+    "description": "Real-time software synthesizer based on the SoundFont 2 specs",
+    "url": "https://github.com/FluidSynth/fluidsynth/archive/v2.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.fluidsynth.org",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        },
+        {
+            "depend": "portaudio",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %w[",
+        "-Denable-framework=OFF",
+        "-Denable-portaudio=ON",
+        "-DLIB_SUFFIX=",
+        "-Denable-dbus=OFF",
+        "-Denable-sdl2=OFF",
+        "]",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.3"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Dps8m",
+    "description": "Simulator for the Multics dps-8/m mainframe",
+    "url": "https://downloads.sourceforge.net/project/dps8m/Release%201.0/source.tgz",
+    "mirror": null,
+    "homepage": "https://ringzero.wikidot.com",
+    "depends": [
+        {
+            "depend": "libuv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "system \"make\", \"INSTALL_ROOT=#{prefix}\", \"install\""
+    ],
+    "version": "201.0"
+}

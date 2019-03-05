@@ -1,0 +1,24 @@
+{
+    "name": "Libxo",
+    "description": "Allows an application to generate text, XML, JSON, and HTML output",
+    "url": "https://github.com/Juniper/libxo/releases/download/0.9.0/libxo-0.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://juniper.github.io/libxo/libxo-manual.html",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.0"
+}

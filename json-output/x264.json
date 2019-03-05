@@ -1,0 +1,28 @@
+{
+    "name": "X264",
+    "description": "H.264/AVC encoder",
+    "url": "https://git.videolan.org/git/x264.git",
+    "mirror": null,
+    "homepage": "https://www.videolan.org/developers/x264.html",
+    "depends": [
+        {
+            "depend": "nasm",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-lsmash",
+        "--enable-shared",
+        "--enable-static",
+        "--enable-strip",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "264"
+}

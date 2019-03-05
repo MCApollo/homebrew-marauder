@@ -1,0 +1,63 @@
+{
+    "name": "Irssi",
+    "description": "Modular IRC client",
+    "url": "https://github.com/irssi/irssi/releases/download/1.1.1/irssi-1.1.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://irssi.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "lynx",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--sysconfdir=#{etc}",
+        "--with-bot",
+        "--with-proxy",
+        "--enable-true-color",
+        "--with-socks=no",
+        "--with-ncurses=#{MacOS.sdk_path}/usr",
+        "--with-perl=yes",
+        "--with-perl-lib=#{lib}/perl5/site_perl",
+        "]",
+        "if build.head?",
+        "ENV[\"NOCONFIGURE\"] = \"yes\"",
+        "system \"./autogen.sh\", *args",
+        "end",
+        "inreplace \"configure\", \"^DUIfm\", \"^DUIifm\"",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.1"
+}

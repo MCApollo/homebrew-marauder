@@ -1,0 +1,33 @@
+{
+    "name": "Xsw",
+    "description": "Slide show presentation tool",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/xsw/xsw-0.3.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/xsw/",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_gfx",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.5"
+}

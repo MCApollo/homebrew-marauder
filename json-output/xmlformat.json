@@ -1,0 +1,15 @@
+{
+    "name": "Xmlformat",
+    "description": "Format XML documents",
+    "url": "http://www.kitebird.com/software/xmlformat/xmlformat-1.04.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.kitebird.com/software/xmlformat/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"xmlformat.pl\" => \"xmlformat\""
+    ],
+    "version": "1.04"
+}

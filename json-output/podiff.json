@@ -1,0 +1,17 @@
+{
+    "name": "Podiff",
+    "description": "Compare textual information in two PO files",
+    "url": "https://download.gnu.org.ua/pub/release/podiff/podiff-1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://puszcza.gnu.org.ua/software/podiff/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"podiff\"",
+        "man1.install \"podiff.1\""
+    ],
+    "version": "1.1"
+}

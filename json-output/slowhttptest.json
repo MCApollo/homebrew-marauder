@@ -1,0 +1,21 @@
+{
+    "name": "Slowhttptest",
+    "description": "Simulates application layer denial of service attacks",
+    "url": "https://github.com/shekyan/slowhttptest/archive/v1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/shekyan/slowhttptest",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7"
+}

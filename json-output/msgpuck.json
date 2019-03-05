@@ -1,0 +1,21 @@
+{
+    "name": "Msgpuck",
+    "description": "A simple and efficient MsgPack binary serialization library",
+    "url": "https://github.com/rtsisyk/msgpuck/archive/2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://rtsisyk.github.io/msgpuck/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0"
+}

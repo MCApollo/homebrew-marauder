@@ -1,0 +1,23 @@
+{
+    "name": "Mikmod",
+    "description": "Portable tracked music player",
+    "url": "https://downloads.sourceforge.net/project/mikmod/mikmod/3.2.8/mikmod-3.2.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://mikmod.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "libmikmod",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.8"
+}

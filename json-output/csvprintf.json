@@ -1,0 +1,28 @@
+{
+    "name": "Csvprintf",
+    "description": "Command-line utility for parsing CSV files",
+    "url": "https://github.com/archiecobbs/csvprintf/archive/1.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/archiecobbs/csvprintf",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-liconv\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.4"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Metis",
+    "description": "Programs that partition graphs and order matrices",
+    "url": "http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/metis-5.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://glaros.dtc.umn.edu/gkhome/views/metis",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"config\", \"prefix=#{prefix}\", \"shared=1\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"graphs\""
+    ],
+    "version": "5.1.0"
+}

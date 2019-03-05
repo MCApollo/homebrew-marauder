@@ -1,0 +1,16 @@
+{
+    "name": "Saxon",
+    "description": "XSLT and XQuery processor",
+    "url": "https://downloads.sourceforge.net/project/saxon/Saxon-HE/9.9/SaxonHE9-9-0-1J.zip",
+    "mirror": null,
+    "homepage": "https://saxon.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*.jar\", \"doc\", \"notices\"]",
+        "bin.write_jar_script libexec/\"saxon9he.jar\", \"saxon\""
+    ],
+    "version": "9.9"
+}

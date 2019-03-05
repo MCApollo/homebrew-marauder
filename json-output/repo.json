@@ -1,0 +1,16 @@
+{
+    "name": "Repo",
+    "description": "Repository tool for Android development",
+    "url": "https://gerrit.googlesource.com/git-repo.git",
+    "mirror": null,
+    "homepage": "https://source.android.com/source/developing.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"repo\"",
+        "doc.install (buildpath/\"docs\").children"
+    ],
+    "version": "1.13.2-git-13f323b2"
+}

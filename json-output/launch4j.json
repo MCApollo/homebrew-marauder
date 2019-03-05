@@ -1,0 +1,16 @@
+{
+    "name": "Launch4j",
+    "description": "Cross-platform Java executable wrapper",
+    "url": "https://downloads.sourceforge.net/project/launch4j/launch4j-3/3.12/launch4j-3.12-macosx-x86.tgz",
+    "mirror": null,
+    "homepage": "https://launch4j.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"] - [\"src\", \"web\"]",
+        "bin.write_jar_script libexec/\"launch4j.jar\", \"launch4j\""
+    ],
+    "version": "3.12"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Couchpotatoserver",
+    "description": "Download movies automatically",
+    "url": "https://github.com/CouchPotato/CouchPotatoServer/archive/build/3.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://couchpota.to",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install_metafiles",
+        "libexec.install Dir[\"*\"]",
+        "(bin+\"couchpotatoserver\").write(startup_script)"
+    ],
+    "version": "3.0.1"
+}

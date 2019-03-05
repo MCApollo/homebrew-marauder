@@ -1,0 +1,50 @@
+{
+    "name": "Opensc",
+    "description": "Tools and libraries for smart cards",
+    "url": "https://github.com/OpenSC/OpenSC/releases/download/0.19.0/opensc-0.19.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/OpenSC/OpenSC/wiki",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "docbook-xsl",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--enable-openssl",
+        "--enable-pcsc",
+        "--enable-sm",
+        "--with-xsl-stylesheetsdir=#{Formula[\"docbook-xsl\"].opt_prefix}/docbook-xsl",
+        "]",
+        "system \"./bootstrap\"",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.19.0"
+}

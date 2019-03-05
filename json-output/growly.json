@@ -1,0 +1,15 @@
+{
+    "name": "Growly",
+    "description": "Redirect command output to a growl notification",
+    "url": "https://github.com/downloads/ryankee/growly/growly-v0.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ryankee/growly",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"growly\""
+    ],
+    "version": "0.2.0"
+}

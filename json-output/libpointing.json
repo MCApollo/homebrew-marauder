@@ -1,0 +1,17 @@
+{
+    "name": "Libpointing",
+    "description": "Provides direct access to HID pointing devices",
+    "url": "https://github.com/INRIA/libpointing/releases/download/v1.0.7/libpointing-mac-1.0.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/INRIA/libpointing",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.0.7"
+}

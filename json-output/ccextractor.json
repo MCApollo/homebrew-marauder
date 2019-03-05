@@ -1,0 +1,17 @@
+{
+    "name": "Ccextractor",
+    "description": "Free, GPL licensed closed caption tool",
+    "url": "https://github.com/CCExtractor/ccextractor/archive/v0.87.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.ccextractor.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"mac\" do",
+        "system \"./build.command\"",
+        "bin.install \"ccextractor\""
+    ],
+    "version": "0.87"
+}

@@ -1,0 +1,53 @@
+{
+    "name": "Libevent",
+    "description": "Asynchronous event library",
+    "url": "https://github.com/libevent/libevent/archive/release-2.1.8-stable.tar.gz",
+    "mirror": null,
+    "homepage": "https://libevent.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "pincaster",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "inreplace \"Doxyfile\", /GENERATE_MAN\\s*=\\s*NO/, \"GENERATE_MAN = YES\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-debug-mode\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"doxygen\"",
+        "man3.install Dir[\"doxygen/man/man3/*.3\"]"
+    ],
+    "version": "2.1.8"
+}

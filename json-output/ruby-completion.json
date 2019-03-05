@@ -1,0 +1,15 @@
+{
+    "name": "RubyCompletion",
+    "description": "Bash completion for Ruby",
+    "url": "https://github.com/mernen/completion-ruby.git",
+    "mirror": null,
+    "homepage": "https://github.com/mernen/completion-ruby",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"completion-ruby\" => \"ruby\""
+    ],
+    "version": "1.0-u"
+}

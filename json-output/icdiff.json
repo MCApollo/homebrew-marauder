@@ -1,0 +1,15 @@
+{
+    "name": "Icdiff",
+    "description": "Improved colored diff",
+    "url": "https://github.com/jeffkaufman/icdiff/archive/release-1.9.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jeffkaufman/icdiff",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"icdiff\", \"git-icdiff\""
+    ],
+    "version": "1.9.4"
+}

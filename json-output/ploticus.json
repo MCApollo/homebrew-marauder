@@ -1,0 +1,26 @@
+{
+    "name": "Ploticus",
+    "description": "Scriptable plotting and graphing utility",
+    "url": "https://downloads.sourceforge.net/project/ploticus/ploticus/2.42/ploticus242_src.tar.gz",
+    "mirror": null,
+    "homepage": "https://ploticus.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args=[\"INSTALLBIN=#{bin}\",",
+        "\"EXE=ploticus\"]",
+        "inreplace \"src/pl.h\", /#define\\s+PREFABS_DIR\\s+\"\"/, \"#define PREFABS_DIR \\\"#{pkgshare}\\\"\"",
+        "system \"make\", \"-C\", \"src\", *args",
+        "bin.mkdir",
+        "system \"make\", \"-C\", \"src\", \"install\", *args",
+        "pkgshare.install Dir[\"prefabs/*\"]"
+    ],
+    "version": "242"
+}

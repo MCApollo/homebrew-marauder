@@ -1,0 +1,21 @@
+{
+    "name": "RedisAT32",
+    "description": "Persistent key-value database, with built-in net interface",
+    "url": "http://download.redis.io/releases/redis-3.2.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://redis.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"OBJARCH\"] = \"-arch #{MacOS.preferred_arch}\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\", \"CC=#{ENV.cc}\"",
+        "%w[run db/redis log].each { |p| (var/p).mkpath }",
+        "inreplace \"redis.conf\" do |s|",
+        "s.gsub! \"/var/run/redis.pid\", var/\"run/redis.pid\"",
+        "s.gsub! \"dir ./\", \"dir #{var}/db/redis/\"",
+        "s.gsub! \"\\"
+    ],
+    "version": "3.2.12"
+}

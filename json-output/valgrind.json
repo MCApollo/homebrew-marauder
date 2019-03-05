@@ -1,0 +1,40 @@
+{
+    "name": "Valgrind",
+    "description": "Dynamic analysis tools (memory, debug, profiling)",
+    "url": "https://sourceware.org/pub/valgrind/valgrind-3.14.0.tar.bz2",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/valgrind-3.14.0.tar.bz2",
+    "homepage": "http://www.valgrind.org/",
+    "depends": [
+        {
+            "depend": "maximum_macos",
+            "build-depend": false
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--enable-only64bit",
+        "--build=amd64-darwin",
+        "]",
+        "system \"./autogen.sh\" if build.head?",
+        "unless MacOS::CLT.installed?",
+        "inreplace \"coregrind/Makefile.in\", %r{(\\s)(?=/usr/include/mach/)}, '\\1'+MacOS.sdk_path.to_s"
+    ],
+    "version": "3.14.0"
+}

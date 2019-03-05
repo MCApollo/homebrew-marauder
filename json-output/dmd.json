@@ -1,0 +1,40 @@
+{
+    "name": "Dmd",
+    "description": "D programming language compiler for macOS",
+    "url": "https://github.com/dlang/dmd/archive/v2.084.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://dlang.org/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "druntime",
+            "url": "https://github.com/dlang/druntime/archive/v2.084.1.tar.gz"
+        },
+        {
+            "name": "phobos",
+            "url": "https://github.com/dlang/phobos/archive/v2.084.1.tar.gz"
+        },
+        {
+            "name": "tools",
+            "url": "https://github.com/dlang/tools/archive/v2.084.1.tar.gz"
+        },
+        {
+            "name": "druntime",
+            "url": "https://github.com/dlang/druntime.git"
+        },
+        {
+            "name": "phobos",
+            "url": "https://github.com/dlang/phobos.git"
+        },
+        {
+            "name": "tools",
+            "url": "https://github.com/dlang/tools.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_new_dmd_conf"
+    ],
+    "version": "2.084.1"
+}

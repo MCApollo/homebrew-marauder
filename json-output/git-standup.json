@@ -1,0 +1,15 @@
+{
+    "name": "GitStandup",
+    "description": "Git extension to generate reports for standup meetings",
+    "url": "https://github.com/kamranahmedse/git-standup/archive/2.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kamranahmedse/git-standup",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.3.1"
+}

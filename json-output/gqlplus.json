@@ -1,0 +1,26 @@
+{
+    "name": "Gqlplus",
+    "description": "Drop-in replacement for sqlplus, an Oracle SQL client",
+    "url": "https://downloads.sourceforge.net/project/gqlplus/gqlplus/1.16/gqlplus-1.16.tar.gz",
+    "mirror": null,
+    "homepage": "https://gqlplus.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"gqlplus.c\",",
+        "\"#define VERSION          \\\"1.15\\\"\",",
+        "\"#define VERSION          \\\"1.16\\\"\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.16"
+}

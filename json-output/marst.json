@@ -1,0 +1,17 @@
+{
+    "name": "Marst",
+    "description": "Algol-to-C translator",
+    "url": "https://ftp.gnu.org/gnu/marst/marst-2.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gnu.org/software/marst",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7"
+}

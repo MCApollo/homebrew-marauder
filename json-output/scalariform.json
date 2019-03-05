@@ -1,0 +1,27 @@
+{
+    "name": "Scalariform",
+    "description": "Scala source code formatter",
+    "url": "https://github.com/scala-ide/scalariform/releases/download/0.2.6/scalariform.jar",
+    "mirror": null,
+    "homepage": "https://github.com/scala-ide/scalariform",
+    "depends": [
+        {
+            "depend": "sbt",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "system \"sbt\", \"project cli\", \"assembly\"",
+        "libexec.install Dir[\"cli/target/scala-*/cli-assembly-*.jar\"]",
+        "bin.write_jar_script Dir[libexec/\"cli-assembly-*.jar\"][0], \"scalariform\"",
+        "else",
+        "libexec.install \"scalariform.jar\"",
+        "bin.write_jar_script libexec/\"scalariform.jar\", \"scalariform\"",
+        "end"
+    ],
+    "version": "0.2.6"
+}

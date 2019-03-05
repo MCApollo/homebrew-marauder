@@ -1,0 +1,37 @@
+{
+    "name": "Jerasure",
+    "description": "Library in C that supports erasure coding in storage applications",
+    "url": "https://bitbucket.org/tsg-/jerasure/get/v2.0.0.tar.bz2",
+    "mirror": null,
+    "homepage": "http://jerasure.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gf-complete",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"--force\", \"--install\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.0"
+}

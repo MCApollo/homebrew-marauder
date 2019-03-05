@@ -1,0 +1,47 @@
+{
+    "name": "Vncsnapshot",
+    "description": "Command-line utility for taking VNC snapshots",
+    "url": "https://downloads.sourceforge.net/project/vncsnapshot/vncsnapshot/1.2a/vncsnapshot-1.2a-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/vncsnapshot/",
+    "depends": [
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/sockets.cxx b/sockets.cxx\n",
+                "index ecdf0db..6c827fa 100644\n",
+                "--- a/sockets.cxx\n",
+                "+++ b/sockets.cxx\n",
+                "@@ -38,9 +38,9 @@ typedef int socklen_t;\n",
+                " #include <fcntl.h>\n",
+                " #endif\n",
+                "\n",
+                "-#ifdef __APPLE__\n",
+                "-typedef int socklen_t;\n",
+                "-#endif\n",
+                "+//#ifdef __APPLE__\n",
+                "+//typedef int socklen_t;\n",
+                "+//#endif\n",
+                "\n",
+                " extern \"C\" {\n",
+                " #include \"vncsnapshot.h\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "inreplace \"rfb.h\", \"typedef unsigned long CARD32;\",",
+        "\"typedef unsigned int CARD32;\"",
+        "system \"make\"",
+        "bin.install \"vncsnapshot\", \"vncpasswd\"",
+        "man1.install \"vncsnapshot.man1\" => \"vncsnapshot.1\""
+    ],
+    "version": "1.2"
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Httpd",
+    "description": "Apache HTTP server",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=httpd/httpd-2.4.38.tar.bz2",
+    "mirror": null,
+    "homepage": "https://httpd.apache.org/",
+    "depends": [
+        {
+            "depend": "apr",
+            "build-depend": false
+        },
+        {
+            "depend": "apr-util",
+            "build-depend": false
+        },
+        {
+            "depend": "brotli",
+            "build-depend": false
+        },
+        {
+            "depend": "nghttp2",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"cache/httpd\").mkpath",
+        "(var/\"www\").mkpath"
+    ],
+    "version": "2.4.38"
+}

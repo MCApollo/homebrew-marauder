@@ -1,0 +1,46 @@
+{
+    "name": "SimpleObfs",
+    "description": "Simple obfusacting plugin of shadowsocks-libev",
+    "url": "https://github.com/shadowsocks/simple-obfs.git",
+    "mirror": null,
+    "homepage": "https://github.com/shadowsocks/simple-obfs",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        },
+        {
+            "depend": "libev",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = etc/\"xml/catalog\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--enable-applecc\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.5-git-a9c43588"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Mecab",
+    "description": "Yet another part-of-speech and morphological analyzer",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/mecab/mecab_0.996.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/m/mecab/mecab_0.996.orig.tar.gz",
+    "homepage": "https://taku910.github.io/mecab/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mecab-ko",
+            "reason": "both install mecab binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "(HOMEBREW_PREFIX/\"lib/mecab/dic\").mkpath"
+    ],
+    "version": "0.996"
+}

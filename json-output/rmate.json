@@ -1,0 +1,15 @@
+{
+    "name": "Rmate",
+    "description": "Edit files from an SSH session in TextMate",
+    "url": "https://github.com/textmate/rmate/archive/v1.5.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/textmate/rmate",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"bin/rmate\""
+    ],
+    "version": "1.5.8"
+}

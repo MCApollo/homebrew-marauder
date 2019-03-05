@@ -1,0 +1,16 @@
+{
+    "name": "Befunge93",
+    "description": "Esoteric programming language",
+    "url": "https://catseye.tc/distfiles/befunge-93-2.25.zip",
+    "mirror": null,
+    "homepage": "https://catseye.tc/node/Befunge-93.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install Dir[\"bin/bef*\"]"
+    ],
+    "version": "2.25"
+}

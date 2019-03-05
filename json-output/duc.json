@@ -1,0 +1,42 @@
+{
+    "name": "Duc",
+    "description": "Suite of tools for inspecting disk usage",
+    "url": "https://github.com/zevv/duc/releases/download/1.4.4/duc-1.4.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://duc.zevv.nl/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "glfw",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        },
+        {
+            "depend": "tokyo-cabinet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-x11\",",
+        "\"--enable-opengl\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.4"
+}

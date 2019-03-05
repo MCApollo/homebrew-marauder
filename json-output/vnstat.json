@@ -1,0 +1,22 @@
+{
+    "name": "Vnstat",
+    "description": "Console-based network traffic monitor",
+    "url": "https://humdi.net/vnstat/vnstat-1.18.tar.gz",
+    "mirror": null,
+    "homepage": "https://humdi.net/vnstat/",
+    "depends": [
+        {
+            "depend": "gd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"db/vnstat\").mkpath",
+        "(var/\"log/vnstat\").mkpath",
+        "(var/\"run/vnstat\").mkpath"
+    ],
+    "version": "1.18"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Cdk",
+    "description": "Curses development kit provides predefined curses widget for apps",
+    "url": "https://invisible-mirror.net/archives/cdk/cdk-5.0-20190220.tgz",
+    "mirror": null,
+    "homepage": "https://invisible-island.net/cdk/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--with-ncurses\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.0"
+}

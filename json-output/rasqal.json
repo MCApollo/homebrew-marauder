@@ -1,0 +1,27 @@
+{
+    "name": "Rasqal",
+    "description": "RDF query library",
+    "url": "http://download.librdf.org/source/rasqal-0.9.33.tar.gz",
+    "mirror": null,
+    "homepage": "http://librdf.org/rasqal/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "raptor",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-html-dir=#{share}/doc\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.33"
+}

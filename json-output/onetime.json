@@ -1,0 +1,25 @@
+{
+    "name": "Onetime",
+    "description": "Encryption with one-time pads",
+    "url": "https://www.red-bean.com/onetime/onetime-1.81.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.red-bean.com/onetime/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/kfogel/OneTime/commit/61e534e2.patch?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/kfogel/OneTime/commit/fb0a12f2.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\", \"prefix=#{prefix}\", \"install\"",
+        "inreplace bin/\"onetime\", %r{^#!/usr/bin/env python$}, \"#!/usr/bin/python\""
+    ],
+    "version": "1.81"
+}

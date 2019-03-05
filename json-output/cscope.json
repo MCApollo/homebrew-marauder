@@ -1,0 +1,17 @@
+{
+    "name": "Cscope",
+    "description": "Tool for browsing source code",
+    "url": "https://downloads.sourceforge.net/project/cscope/cscope/v15.9/cscope-15.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://cscope.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "15.9"
+}

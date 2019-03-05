@@ -1,0 +1,32 @@
+{
+    "name": "Webalizer",
+    "description": "Web server log file analysis",
+    "url": "ftp://ftp.mrunix.net/pub/webalizer/webalizer-2.23-08-src.tgz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/w/webalizer/webalizer_2.23.08.orig.tar.gz",
+    "homepage": "http://www.webalizer.org",
+    "depends": [
+        {
+            "depend": "berkeley-db",
+            "build-depend": false
+        },
+        {
+            "depend": "gd",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.23"
+}

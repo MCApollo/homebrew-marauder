@@ -1,0 +1,31 @@
+{
+    "name": "FluentBit",
+    "description": "Data Collector for IoT",
+    "url": "https://github.com/fluent/fluent-bit/archive/v0.14.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/fluent/fluent-bit",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mbedtls",
+            "reason": "fluent-bit includes mbedtls libraries."
+        },
+        {
+            "conflict": "msgpack",
+            "reason": "fluent-bit includes msgpack libraries."
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV[\"MACOSX_DEPLOYMENT_TARGET\"] = MacOS.version",
+        "system \"cmake\", \".\", \"-DWITH_IN_MEM=OFF\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.14.9"
+}

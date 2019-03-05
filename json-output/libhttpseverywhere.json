@@ -1,0 +1,59 @@
+{
+    "name": "Libhttpseverywhere",
+    "description": "Bring HTTPSEverywhere to desktop apps",
+    "url": "https://download.gnome.org/sources/libhttpseverywhere/0.8/libhttpseverywhere-0.8.3.tar.xz",
+    "mirror": null,
+    "homepage": "https://github.com/gnome/libhttpseverywhere",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "meson-internal",
+            "build-depend": true
+        },
+        {
+            "depend": "ninja",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "vala",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "json-glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libarchive",
+            "build-depend": false
+        },
+        {
+            "depend": "libgee",
+            "build-depend": false
+        },
+        {
+            "depend": "libsoup",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"meson\", \"--prefix=#{prefix}\", \"..\"",
+        "system \"ninja\"",
+        "system \"ninja\", \"install\""
+    ],
+    "version": "0.8.3"
+}

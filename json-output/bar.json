@@ -1,0 +1,15 @@
+{
+    "name": "Bar",
+    "description": "Provide progress bars for shell scripts",
+    "url": "http://www.theiling.de/downloads/bar-1.4-src.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.theiling.de/projects/bar.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"bar\""
+    ],
+    "version": "1.4"
+}

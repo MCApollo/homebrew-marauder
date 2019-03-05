@@ -1,0 +1,15 @@
+{
+    "name": "WpCliCompletion",
+    "description": "Bash completion for Wpcli",
+    "url": "https://github.com/wp-cli/wp-cli/archive/v2.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/wp-cli/wp-cli",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"utils/wp-completion.bash\" => \"wp\""
+    ],
+    "version": "2.1.0"
+}

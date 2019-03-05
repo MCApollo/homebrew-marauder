@@ -1,0 +1,25 @@
+{
+    "name": "Hebcal",
+    "description": "Perpetual Jewish calendar for the command-line",
+    "url": "https://github.com/hebcal/hebcal/archive/v4.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/hebcal/hebcal",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"ACLOCAL=aclocal\", \"AUTOMAKE=automake\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.15"
+}

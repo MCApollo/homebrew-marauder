@@ -1,0 +1,24 @@
+{
+    "name": "Ssdb",
+    "description": "NoSQL database supporting many data structures: Redis alternative",
+    "url": "https://github.com/ideawu/ssdb/archive/1.9.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://ssdb.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"tools/ssdb-cli\", /^DIR=.*$/, \"DIR=#{prefix}\"",
+        "system \"make\", \"CC=#{ENV.cc}\", \"CXX=#{ENV.cxx}\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "%w[bench cli dump repair server].each do |suffix|",
+        "bin.install \"#{prefix}/ssdb-#{suffix}\""
+    ],
+    "version": "1.9.4"
+}

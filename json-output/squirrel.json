@@ -1,0 +1,24 @@
+{
+    "name": "Squirrel",
+    "description": "High level, imperative, object-oriented programming language",
+    "url": "https://downloads.sourceforge.net/project/squirrel/squirrel3/squirrel%203.1%20stable/squirrel_3_1_stable.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.squirrel-lang.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/dcaba40/squirrel/xcode9.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\"",
+        "prefix.install %w[bin include lib]",
+        "doc.install Dir[\"doc/*.pdf\"]",
+        "doc.install %w[etc samples]",
+        "(lib+\"pkgconfig/libsquirrel.pc\").write pc_file"
+    ],
+    "version": "3_1"
+}

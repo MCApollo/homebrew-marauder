@@ -1,0 +1,15 @@
+{
+    "name": "CodaCli",
+    "description": "Shell integration for Panic",
+    "url": "https://github.com/bobthecow/coda-cli/archive/v1.0.5.tar.gz",
+    "mirror": null,
+    "homepage": "http://justinhileman.info/coda-cli/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"coda\""
+    ],
+    "version": "1.0.5"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Riemann",
+    "description": "Event stream processor",
+    "url": "https://github.com/riemann/riemann/releases/download/0.3.1/riemann-0.3.1.tar.bz2",
+    "mirror": null,
+    "homepage": "http://riemann.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "etc.install \"etc/riemann.config\" => \"riemann.config.guide\"",
+        "libexec.install Dir[\"*\"]",
+        "(bin+\"riemann\").write shim_script"
+    ],
+    "version": "0.3.1"
+}

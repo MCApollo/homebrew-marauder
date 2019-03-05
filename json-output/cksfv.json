@@ -1,0 +1,16 @@
+{
+    "name": "Cksfv",
+    "description": "File verification utility",
+    "url": "http://zakalwe.fi/~shd/foss/cksfv/files/cksfv-1.3.14.tar.bz2",
+    "mirror": null,
+    "homepage": "http://zakalwe.fi/~shd/foss/cksfv/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.14"
+}

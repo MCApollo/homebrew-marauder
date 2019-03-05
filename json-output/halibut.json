@@ -1,0 +1,17 @@
+{
+    "name": "Halibut",
+    "description": "Yet another free document preparation system",
+    "url": "https://www.chiark.greenend.org.uk/~sgtatham/halibut/halibut-1.2/halibut-1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/halibut/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{prefix}\", \"mandir=#{man}\", \"all\"",
+        "system \"make\", \"-C\", \"doc\", \"prefix=#{prefix}\", \"mandir=#{man}\"",
+        "system \"make\", \"prefix=#{prefix}\", \"mandir=#{man}\", \"install\""
+    ],
+    "version": "1.2"
+}

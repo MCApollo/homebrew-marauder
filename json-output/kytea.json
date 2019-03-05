@@ -1,0 +1,31 @@
+{
+    "name": "Kytea",
+    "description": "Toolkit for analyzing text, especially Japanese and Chinese",
+    "url": "http://www.phontron.com/kytea/download/kytea-0.4.7.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.phontron.com/kytea/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-i\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.7"
+}

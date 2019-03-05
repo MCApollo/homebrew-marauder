@@ -1,0 +1,24 @@
+{
+    "name": "Smartmontools",
+    "description": "SMART hard drive monitoring",
+    "url": "https://downloads.sourceforge.net/project/smartmontools/smartmontools/7.0/smartmontools-7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.smartmontools.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"run\").mkpath",
+        "(var/\"lib/smartmontools\").mkpath",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sbindir=#{bin}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--localstatedir=#{var}\",",
+        "\"--with-savestates\",",
+        "\"--with-attributelog\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.0"
+}

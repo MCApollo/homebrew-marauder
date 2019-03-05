@@ -1,0 +1,19 @@
+{
+    "name": "Bbe",
+    "description": "Sed-like editor for binary files",
+    "url": "https://downloads.sourceforge.net/project/bbe-/bbe/0.2.2/bbe-0.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/bbe-/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.2"
+}

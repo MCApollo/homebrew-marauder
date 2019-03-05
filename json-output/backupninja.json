@@ -1,0 +1,28 @@
+{
+    "name": "Backupninja",
+    "description": "Backup automation tool",
+    "url": "https://sourcearchive.raspbian.org/main/b/backupninja/backupninja_1.1.0.orig.tar.gz",
+    "mirror": "https://debian.ethz.ch/ubuntu/ubuntu/pool/universe/b/backupninja/backupninja_1.1.0.orig.tar.gz",
+    "homepage": "https://0xacab.org/riseuplabs/backupninja",
+    "depends": [
+        {
+            "depend": "bash",
+            "build-depend": false
+        },
+        {
+            "depend": "dialog",
+            "build-depend": false
+        },
+        {
+            "depend": "gawk",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"log\").mkpath"
+    ],
+    "version": "1.1.0"
+}

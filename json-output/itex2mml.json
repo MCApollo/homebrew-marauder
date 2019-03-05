@@ -1,0 +1,18 @@
+{
+    "name": "Itex2mml",
+    "description": "Text filter to convert itex equations to MathML",
+    "url": "https://golem.ph.utexas.edu/~distler/blog/files/itexToMML-1.5.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://golem.ph.utexas.edu/~distler/blog/itex2MML.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "cd \"itex-src\" do",
+        "system \"make\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\", \"BINDIR=#{bin}\""
+    ],
+    "version": "1.5.7"
+}

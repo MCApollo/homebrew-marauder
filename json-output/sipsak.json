@@ -1,0 +1,25 @@
+{
+    "name": "Sipsak",
+    "description": "SIP Swiss army knife",
+    "url": "https://downloads.sourceforge.net/project/sipsak.berlios/sipsak-0.9.6-1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/nils-ohlmeier/sipsak/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CFLAGS\", \"-std=gnu89\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.6"
+}

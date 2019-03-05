@@ -1,0 +1,15 @@
+{
+    "name": "Xcv",
+    "description": "Cut, copy and paste files with Bash",
+    "url": "https://github.com/busterc/xcv/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/busterc/xcv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"xcv\""
+    ],
+    "version": "1.0.1"
+}

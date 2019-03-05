@@ -1,0 +1,121 @@
+{
+    "name": "Mpd",
+    "description": "Music Player Daemon",
+    "url": "https://www.musicpd.org/download/mpd/0.21/mpd-0.21.4.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.musicpd.org/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "meson",
+            "build-depend": true
+        },
+        {
+            "depend": "ninja",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "expat",
+            "build-depend": false
+        },
+        {
+            "depend": "faad2",
+            "build-depend": false
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "fluid-synth",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "lame",
+            "build-depend": false
+        },
+        {
+            "depend": "libao",
+            "build-depend": false
+        },
+        {
+            "depend": "libid3tag",
+            "build-depend": false
+        },
+        {
+            "depend": "libmpdclient",
+            "build-depend": false
+        },
+        {
+            "depend": "libnfs",
+            "build-depend": false
+        },
+        {
+            "depend": "libsamplerate",
+            "build-depend": false
+        },
+        {
+            "depend": "libupnp",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "opus",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.libcxx",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--sysconfdir=#{etc}",
+        "-Dlibwrap=disabled",
+        "-Dmad=disabled",
+        "-Dmpcdec=disabled",
+        "-Dsoundcloud=disabled",
+        "-Dao=enabled",
+        "-Dbzip2=enabled",
+        "-Dexpat=enabled",
+        "-Dffmpeg=enabled",
+        "-Dfluidsynth=enabled",
+        "-Dnfs=enabled",
+        "-Dupnp=enabled",
+        "-Dvorbisenc=enabled",
+        "]",
+        "system \"meson\", *args, \"output/release\", \".\"",
+        "system \"ninja\", \"-C\", \"output/release\"",
+        "ENV.deparallelize ",
+        "system \"ninja\", \"-C\", \"output/release\", \"install\"",
+        "(etc/\"mpd\").install \"doc/mpdconf.example\" => \"mpd.conf\""
+    ],
+    "version": "0.21.4"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Di",
+    "description": "Advanced df-like disk information utility",
+    "url": "https://gentoo.com/di/di-4.47.tar.gz",
+    "mirror": null,
+    "homepage": "https://gentoo.com/di/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "4.47"
+}

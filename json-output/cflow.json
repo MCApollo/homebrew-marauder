@@ -1,0 +1,20 @@
+{
+    "name": "Cflow",
+    "description": "Generate call graphs from C code",
+    "url": "https://ftp.gnu.org/gnu/cflow/cflow-1.6.tar.bz2",
+    "mirror": "https://ftpmirror.gnu.org/cflow/cflow-1.6.tar.bz2",
+    "homepage": "https://www.gnu.org/software/cflow/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--infodir=#{info}\",",
+        "\"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--with-lispdir=#{elisp}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6"
+}

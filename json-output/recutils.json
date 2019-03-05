@@ -1,0 +1,18 @@
+{
+    "name": "Recutils",
+    "description": "Tools to work with human-editable, plain text data files",
+    "url": "https://ftp.gnu.org/gnu/recutils/recutils-1.8.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/gnu/recutils/recutils-1.8.tar.gz",
+    "homepage": "https://www.gnu.org/software/recutils/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--datarootdir=#{elisp}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8"
+}

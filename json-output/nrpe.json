@@ -1,0 +1,24 @@
+{
+    "name": "Nrpe",
+    "description": "Nagios remote plugin executor",
+    "url": "https://downloads.sourceforge.net/project/nagios/nrpe-3.x/nrpe-3.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nagios.org/",
+    "depends": [
+        {
+            "depend": "nagios-plugins",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"run\").mkpath"
+    ],
+    "version": "3.2.1"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Uggconv",
+    "description": "Universal Game Genie code convertor",
+    "url": "https://wyrmcorp.com/software/uggconv/uggconv-1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://wyrmcorp.com/software/uggconv/index.shtml",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"uggconv\"",
+        "man1.install \"uggconv.1\""
+    ],
+    "version": "1.0"
+}

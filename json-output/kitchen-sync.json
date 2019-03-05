@@ -1,0 +1,34 @@
+{
+    "name": "KitchenSync",
+    "description": "Fast efficiently sync database without dumping & reloading",
+    "url": "https://github.com/willbryant/kitchen_sync/archive/v1.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/willbryant/kitchen_sync",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libpq",
+            "build-depend": false
+        },
+        {
+            "depend": "mysql-client",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\",",
+        "\"-DMySQL_INCLUDE_DIR=#{Formula[\"mysql-client\"].opt_include}/mysql\",",
+        "\"-DMySQL_LIBRARY_DIR=#{Formula[\"mysql-client\"].opt_lib}\",",
+        "\"-DPostgreSQL_INCLUDE_DIR=#{Formula[\"libpq\"].opt_include}\",",
+        "\"-DPostgreSQL_LIBRARY_DIR=#{Formula[\"libpq\"].opt_lib}\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.11"
+}

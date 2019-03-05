@@ -1,0 +1,19 @@
+{
+    "name": "CssCrush",
+    "description": "Extensible PHP based CSS preprocessor",
+    "url": "https://github.com/peteboere/css-crush/archive/v2.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://the-echoplex.net/csscrush",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "(bin+\"csscrush\").write <<~EOS",
+        "#!/bin/sh",
+        "php \"#{libexec}/cli.php\" \"$@\"",
+        "EOS"
+    ],
+    "version": "2.4.0"
+}

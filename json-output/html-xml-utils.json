@@ -1,0 +1,19 @@
+{
+    "name": "HtmlXmlUtils",
+    "description": "Tools for manipulating HTML and XML files",
+    "url": "https://www.w3.org/Tools/HTML-XML-utils/html-xml-utils-7.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.w3.org/Tools/HTML-XML-utils/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CFLAGS\", \"-std=gnu89\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize ",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.7"
+}

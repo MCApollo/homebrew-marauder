@@ -1,0 +1,20 @@
+{
+    "name": "Negfix8",
+    "description": "Turn scanned negative images into positives",
+    "url": "https://sites.google.com/site/negfix/downloads/negfix8.3.tgz",
+    "mirror": null,
+    "homepage": "https://sites.google.com/site/negfix",
+    "depends": [
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"negfix8\""
+    ],
+    "version": "8.3"
+}

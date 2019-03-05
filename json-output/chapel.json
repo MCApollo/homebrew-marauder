@@ -1,0 +1,23 @@
+{
+    "name": "Chapel",
+    "description": "Emerging programming language designed for parallel computing",
+    "url": "https://github.com/chapel-lang/chapel/releases/download/1.18.0/chapel-1.18.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://chapel-lang.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "ENV[\"CHPL_HOME\"] = libexec",
+        "ENV[\"CHPL_REGEXP\"] = \"re2\"",
+        "cd libexec do",
+        "system \"make\"",
+        "system \"make\", \"chpldoc\"",
+        "system \"make\", \"test-venv\"",
+        "system \"make\", \"mason\"",
+        "system \"make\", \"cleanall\""
+    ],
+    "version": "1.18.0"
+}

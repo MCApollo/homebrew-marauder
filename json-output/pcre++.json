@@ -1,0 +1,64 @@
+{
+    "name": "Pcrexx",
+    "description": "C++ wrapper for the Perl Compatible Regular Expressions",
+    "url": "https://www.daemon.de/idisk/Apps/pcre++/pcre++-0.9.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.daemon.de/PCRE",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/libpcre++/pcre++.h b/libpcre++/pcre++.h\n",
+                "index d80b387..21869fc 100644\n",
+                "--- a/libpcre++/pcre++.h\n",
+                "+++ b/libpcre++/pcre++.h\n",
+                "@@ -47,11 +47,11 @@\n",
+                " #include <map>\n",
+                " #include <stdexcept>\n",
+                " #include <iostream>\n",
+                "+#include <clocale>\n",
+                " \n",
+                " \n",
+                " extern \"C\" {\n",
+                "   #include <pcre.h>\n",
+                "-  #include <locale.h>\n",
+                " }\n",
+                " \n",
+                " namespace pcrepp {\n"
+            ]
+        }
+    ],
+    "install": [
+        "pcre = Formula[\"pcre\"]",
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-pcre-lib=#{pcre.opt_lib}\",",
+        "\"--with-pcre-include=#{pcre.opt_include}\"",
+        "system \"make\", \"install\"",
+        "mv man3/\"Pcre.3\", man3/\"pcre++.3\""
+    ],
+    "version": "0.9.5"
+}

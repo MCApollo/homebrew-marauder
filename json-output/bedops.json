@@ -1,0 +1,16 @@
+{
+    "name": "Bedops",
+    "description": "Set and statistical operations on genomic data of arbitrary scale",
+    "url": "https://github.com/bedops/bedops/archive/v2.4.35.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/bedops/bedops",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"BINDIR=#{bin}\""
+    ],
+    "version": "2.4.35"
+}

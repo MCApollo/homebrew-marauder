@@ -1,0 +1,29 @@
+{
+    "name": "Valabind",
+    "description": "Vala bindings for radare, reverse engineering framework",
+    "url": "https://github.com/radare/valabind/archive/1.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://radare.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "swig",
+            "build-depend": false
+        },
+        {
+            "depend": "vala",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.7.1"
+}

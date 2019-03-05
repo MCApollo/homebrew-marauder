@@ -1,0 +1,18 @@
+{
+    "name": "Rush",
+    "description": "GNU",
+    "url": "https://ftp.gnu.org/gnu/rush/rush-1.8.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/rush/rush-1.8.tar.gz",
+    "homepage": "https://www.gnu.org/software/rush/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8"
+}

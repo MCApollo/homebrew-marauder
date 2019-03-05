@@ -1,0 +1,41 @@
+{
+    "name": "Ejabberd",
+    "description": "XMPP application server",
+    "url": "https://www.process-one.net/downloads/ejabberd/18.09/ejabberd-18.09.tgz",
+    "mirror": null,
+    "homepage": "https://www.ejabberd.im",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "erlang",
+            "build-depend": false
+        },
+        {
+            "depend": "gd",
+            "build-depend": false
+        },
+        {
+            "depend": "libyaml",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"lib/ejabberd\").mkpath",
+        "(var/\"spool/ejabberd\").mkpath"
+    ],
+    "version": "18.09"
+}

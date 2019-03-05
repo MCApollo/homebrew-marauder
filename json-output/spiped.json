@@ -1,0 +1,25 @@
+{
+    "name": "Spiped",
+    "description": "Secure pipe daemon",
+    "url": "https://www.tarsnap.com/spiped/spiped-1.6.0.tgz",
+    "mirror": null,
+    "homepage": "https://www.tarsnap.com/spiped.html",
+    "depends": [
+        {
+            "depend": "bsdmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "man1.mkpath",
+        "system \"bsdmake\", \"BINDIR_DEFAULT=#{bin}\", \"MAN1DIR=#{man1}\", \"install\""
+    ],
+    "version": "1.6.0"
+}

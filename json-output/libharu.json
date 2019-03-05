@@ -1,0 +1,41 @@
+{
+    "name": "Libharu",
+    "description": "Library for generating PDF files",
+    "url": "https://github.com/libharu/libharu/archive/RELEASE_2_3_0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.libharu.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./buildconf.sh\", \"--force\"",
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--with-png=#{Formula[\"libpng\"].opt_prefix}",
+        "]",
+        "args << \"--with-zlib=#{MacOS.sdk_path}/usr\" if MacOS.sdk_path_if_needed",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2_3_0"
+}

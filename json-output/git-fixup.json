@@ -1,0 +1,16 @@
+{
+    "name": "GitFixup",
+    "description": "Alias for git commit --fixup <ref>",
+    "url": "https://github.com/keis/git-fixup/archive/v1.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/keis/git-fixup",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\"",
+        "zsh_completion.install \"completion.zsh\" => \"_git-fixup\""
+    ],
+    "version": "1.1.2"
+}

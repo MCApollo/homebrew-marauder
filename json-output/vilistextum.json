@@ -1,0 +1,17 @@
+{
+    "name": "Vilistextum",
+    "description": "HTML to text converter",
+    "url": "https://bhaak.net/vilistextum/vilistextum-2.6.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://bhaak.net/vilistextum/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.9"
+}

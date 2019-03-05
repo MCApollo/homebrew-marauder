@@ -1,0 +1,17 @@
+{
+    "name": "SpeedtestCli",
+    "description": "Command-line interface for https://speedtest.net bandwidth tests",
+    "url": "https://github.com/sivel/speedtest-cli/archive/v2.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sivel/speedtest-cli",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"speedtest.py\" => \"speedtest\"",
+        "bin.install_symlink \"speedtest\" => \"speedtest-cli\"",
+        "man1.install \"speedtest-cli.1\""
+    ],
+    "version": "2.0.2"
+}

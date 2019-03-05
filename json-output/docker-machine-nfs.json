@@ -1,0 +1,15 @@
+{
+    "name": "DockerMachineNfs",
+    "description": "Activates NFS on docker-machine",
+    "url": "https://github.com/adlogix/docker-machine-nfs/archive/0.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/adlogix/docker-machine-nfs",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"docker-machine-nfs.sh\" => \"docker-machine-nfs\""
+    ],
+    "version": "0.5.2"
+}

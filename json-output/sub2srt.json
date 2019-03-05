@@ -1,0 +1,15 @@
+{
+    "name": "Sub2srt",
+    "description": "Convert subtitles from .sub to subviewer .srt format",
+    "url": "https://github.com/robelix/sub2srt/archive/0.5.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/robelix/sub2srt",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"sub2srt\""
+    ],
+    "version": "0.5.5"
+}

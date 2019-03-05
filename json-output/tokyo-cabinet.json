@@ -1,0 +1,17 @@
+{
+    "name": "TokyoCabinet",
+    "description": "Lightweight database library",
+    "url": "https://fallabs.com/tokyocabinet/tokyocabinet-1.4.48.tar.gz",
+    "mirror": "https://deb.debian.org/debian/pool/main/t/tokyocabinet/tokyocabinet_1.4.48.orig.tar.gz",
+    "homepage": "https://fallabs.com/tokyocabinet/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.48"
+}

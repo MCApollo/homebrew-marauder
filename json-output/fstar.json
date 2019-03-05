@@ -1,0 +1,52 @@
+{
+    "name": "Fstar",
+    "description": "ML-like language aimed at program verification",
+    "url": "https://github.com/FStarLang/FStar.git",
+    "mirror": null,
+    "homepage": "https://www.fstar-lang.org/",
+    "depends": [
+        {
+            "depend": "camlp4",
+            "build-depend": true
+        },
+        {
+            "depend": "ocamlbuild",
+            "build-depend": true
+        },
+        {
+            "depend": "opam",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "z3",
+            "url": "https://github.com/Z3Prover/z3.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize ",
+        "ENV[\"OPAMROOT\"] = buildpath/\"opamroot\"",
+        "ENV[\"OPAMYES\"] = \"1\"",
+        "inreplace \"src/ocaml-output/Makefile\", \"$(DATE_EXEC) -Iseconds\",",
+        "\"$(DATE_EXEC) '+%Y-%m-%dT%H:%M:%S%z'\"",
+        "resource(\"z3\").stage do",
+        "githash = Utils.popen_read(\"git\", \"rev-parse\", \"--short=12\", \"HEAD\").chomp",
+        "system \"python\", \"scripts/mk_make.py\", \"--prefix=#{libexec}\",",
+        "\"--githash=#{githash}\"",
+        "cd \"build\" do",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.6.0-git-06574526"
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Gstreamermm",
+    "description": "GStreamer C++ bindings",
+    "url": "https://download.gnome.org/sources/gstreamermm/1.10/gstreamermm-1.10.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://gstreamer.freedesktop.org/bindings/cplusplus.html",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glibmm",
+            "build-depend": false
+        },
+        {
+            "depend": "gst-plugins-base",
+            "build-depend": false
+        },
+        {
+            "depend": "gstreamer",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.10.0"
+}

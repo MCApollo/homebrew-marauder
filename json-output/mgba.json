@@ -1,0 +1,64 @@
+{
+    "name": "Mgba",
+    "description": "Game Boy Advance emulator",
+    "url": "https://github.com/mgba-emu/mgba/archive/0.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://mgba.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        },
+        {
+            "depend": "libepoxy",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libzip",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/mgba-emu/mgba/commit/7f41dd35417.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "if MacOS.version <= :el_capitan",
+        "ENV[\"MACOSX_DEPLOYMENT_TARGET\"] = MacOS.version",
+        "end",
+        "inreplace \"src/platform/qt/CMakeLists.txt\", \"Applications\", \".\"",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "rm bin/\"mgba\"",
+        "bin.write_exec_script \"#{prefix}/mGBA.app/Contents/MacOS/mGBA\""
+    ],
+    "version": "0.6.3"
+}

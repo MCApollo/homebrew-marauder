@@ -1,0 +1,16 @@
+{
+    "name": "Jsmin",
+    "description": "Minify JavaScript code",
+    "url": "https://github.com/douglascrockford/JSMin/archive/1bf6ce5f74a9f8752ac7f5d115b8d7ccb31cfe1b.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.crockford.com/javascript/jsmin.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system ENV.cc, \"jsmin.c\", \"-o\", \"jsmin\"",
+        "bin.install \"jsmin\""
+    ],
+    "version": "8752"
+}

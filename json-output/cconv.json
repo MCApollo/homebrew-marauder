@@ -1,0 +1,32 @@
+{
+    "name": "Cconv",
+    "description": "Iconv based simplified-traditional Chinese conversion tool",
+    "url": "https://github.com/xiaoyjy/cconv/archive/v0.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/xiaoyjy/cconv",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-liconv\"",
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "rm_f include/\"unicode.h\""
+    ],
+    "version": "0.6.3"
+}

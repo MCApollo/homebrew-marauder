@@ -1,0 +1,20 @@
+{
+    "name": "KubePs1",
+    "description": "Kubernetes prompt info for bash and zsh",
+    "url": "https://github.com/jonmosco/kube-ps1/archive/v0.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jonmosco/kube-ps1",
+    "depends": [
+        {
+            "depend": "kubernetes-cli",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "share.install \"kube-ps1.sh\""
+    ],
+    "version": "0.7.0"
+}

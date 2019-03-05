@@ -1,0 +1,19 @@
+{
+    "name": "Odo",
+    "description": "Atomic odometer for the command-line",
+    "url": "https://github.com/atomicobject/odo/archive/v0.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/atomicobject/odo",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "man1.mkpath",
+        "bin.mkpath",
+        "system \"make\", \"test\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.2.2"
+}

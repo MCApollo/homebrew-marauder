@@ -1,0 +1,16 @@
+{
+    "name": "Plenv",
+    "description": "Perl binary manager",
+    "url": "https://github.com/tokuhirom/plenv/archive/2.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tokuhirom/plenv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install \"bin\", \"plenv.d\", \"completions\", \"libexec\"",
+        "system \"#{bin}/plenv\", \"rehash\""
+    ],
+    "version": "2.3.0"
+}

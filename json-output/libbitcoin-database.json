@@ -1,0 +1,41 @@
+{
+    "name": "LibbitcoinDatabase",
+    "description": "Bitcoin High Performance Blockchain Database",
+    "url": "https://github.com/libbitcoin/libbitcoin-database/archive/v3.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/libbitcoin/libbitcoin-database",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libbitcoin",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_path \"PKG_CONFIG_PATH\", Formula[\"libbitcoin\"].opt_libexec/\"lib/pkgconfig\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.5.0"
+}

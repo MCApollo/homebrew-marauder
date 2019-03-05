@@ -1,0 +1,30 @@
+{
+    "name": "Camlp4",
+    "description": "Tool to write extensible parsers in OCaml",
+    "url": "https://github.com/ocaml/camlp4/archive/4.07+1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ocaml/camlp4",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        },
+        {
+            "depend": "ocamlbuild",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--bindir=#{bin}\",",
+        "\"--libdir=#{HOMEBREW_PREFIX}/lib/ocaml\",",
+        "\"--pkgdir=#{HOMEBREW_PREFIX}/lib/ocaml/camlp4\"",
+        "system \"make\", \"all\"",
+        "system \"make\", \"install\", \"LIBDIR=#{lib}/ocaml\",",
+        "\"PKGDIR=#{lib}/lib/ocaml/camlp4\""
+    ],
+    "version": "4.07"
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Gmediaserver",
+    "description": "UPnP Mediaserver",
+    "url": "https://download.savannah.gnu.org/releases/gmediaserver/gmediaserver-0.13.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gnu.org/software/gmediaserver/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libmagic",
+            "build-depend": false
+        },
+        {
+            "depend": "libupnp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/c68985023c/gmediaserver/sigwait.diff",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/893042fbfb/gmediaserver/libupnp_1.6.19_support.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.13.0"
+}

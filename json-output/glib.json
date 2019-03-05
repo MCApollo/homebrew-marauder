@@ -1,0 +1,57 @@
+{
+    "name": "Glib",
+    "description": "Core application library for C",
+    "url": "https://download.gnome.org/sources/glib/2.58/glib-2.58.3.tar.xz",
+    "mirror": null,
+    "homepage": "https://developer.gnome.org/glib/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gtk-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libffi",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/59e4d32/glib/hardcoded-paths.diff",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/5857984/glib/revert-appinfo-contenttype.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "(HOMEBREW_PREFIX/\"lib/gio/modules\").mkpath"
+    ],
+    "version": "2.58.3"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Fzy",
+    "description": "Fast, simple fuzzy text selector with an advanced scoring algorithm",
+    "url": "https://github.com/jhawthorn/fzy/releases/download/1.0/fzy-1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jhawthorn/fzy",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "1.0"
+}

@@ -1,0 +1,110 @@
+{
+    "name": "Zbar",
+    "description": "Suite of barcodes-reading tools",
+    "url": "https://downloads.sourceforge.net/project/zbar/zbar/0.10/zbar-0.10.tar.bz2",
+    "mirror": null,
+    "homepage": "https://zbar.sourceforge.io",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "ufraw",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/zbar/jpeg.c b/zbar/jpeg.c\n",
+                "index fb566f4..d1c1fb2 100644\n",
+                "--- a/zbar/jpeg.c\n",
+                "+++ b/zbar/jpeg.c\n",
+                "@@ -79,8 +79,15 @@ int fill_input_buffer (j_decompress_ptr cinfo)\n",
+                " void skip_input_data (j_decompress_ptr cinfo,\n",
+                "                       long num_bytes)\n",
+                " {\n",
+                "-    cinfo->src->next_input_byte = NULL;\n",
+                "-    cinfo->src->bytes_in_buffer = 0;\n",
+                "+    if (num_bytes > 0) {\n",
+                "+        if (num_bytes < cinfo->src->bytes_in_buffer) {\n",
+                "+            cinfo->src->next_input_byte += num_bytes;\n",
+                "+            cinfo->src->bytes_in_buffer -= num_bytes;\n",
+                "+        }\n",
+                "+        else {\n",
+                "+            fill_input_buffer(cinfo);\n",
+                "+        }\n",
+                "+    }\n",
+                " }\n",
+                " \n",
+                " void term_source (j_decompress_ptr cinfo)\n"
+            ]
+        }
+    ],
+    "install": [
+        "if build.head?",
+        "inreplace \"configure.ac\", \"-Werror\", \"\"",
+        "gettext = Formula[\"gettext\"]",
+        "system \"autoreconf\", \"-fvi\", \"-I\", \"#{gettext.opt_share}/aclocal\"",
+        "end",
+        "inreplace [\"configure\", \"zbarimg/zbarimg.c\"],",
+        "\"wand/MagickWand.h\",",
+        "\"ImageMagick-7/MagickWand/MagickWand.h\"",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--without-python",
+        "--without-qt",
+        "--disable-video",
+        "--without-gtk",
+        "--without-x",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.10"
+}

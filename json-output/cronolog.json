@@ -1,0 +1,19 @@
+{
+    "name": "Cronolog",
+    "description": "Web log rotation",
+    "url": "https://www.mirrorservice.org/sites/distfiles.macports.org/cronolog/cronolog-1.6.2.tar.gz",
+    "mirror": "https://fossies.org/linux/www/old/cronolog-1.6.2.tar.gz",
+    "homepage": "https://web.archive.org/web/20140209202032/cronolog.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--infodir=#{info}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.2"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Apel",
+    "description": "Emacs Lisp library to help write portable Emacs programs",
+    "url": "http://git.chise.org/elisp/dist/apel/apel-10.8.tar.gz",
+    "mirror": null,
+    "homepage": "http://git.chise.org/elisp/apel/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\",",
+        "\"LISPDIR=#{elisp}\", \"VERSION_SPECIFIC_LISPDIR=#{elisp}\""
+    ],
+    "version": "10.8"
+}

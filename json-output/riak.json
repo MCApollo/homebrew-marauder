@@ -1,0 +1,43 @@
+{
+    "name": "Riak",
+    "description": "Distributed database",
+    "url": "https://github.com/basho/riak.git",
+    "mirror": null,
+    "homepage": "https://riak.com/products/riak-kv/",
+    "depends": [
+        {
+            "depend": "arch",
+            "build-depend": false
+        },
+        {
+            "depend": "erlang@17",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "fuse",
+            "url": "https://github.com/jlouis/fuse.git"
+        },
+        {
+            "name": "hyper",
+            "url": "https://github.com/basho/hyper/pull/6.patch?full_index=1"
+        },
+        {
+            "name": "solr",
+            "url": "https://files-source.tiot.jp/riak/solr/solr-4.10.4-yz-2.tgz"
+        },
+        {
+            "name": "yokozuna",
+            "url": "https://github.com/basho/yokozuna.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "[\"fuse\", \"hyper\", \"yokozuna\"].each do |r|",
+        "(buildpath/\"deps/#{r}\").install resource(r)"
+    ],
+    "version": "1.0-git-0736b65d"
+}

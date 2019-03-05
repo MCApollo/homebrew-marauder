@@ -1,0 +1,16 @@
+{
+    "name": "Udpxy",
+    "description": "UDP-to-HTTP multicast traffic relay daemon",
+    "url": "http://www.udpxy.com/download/1_23/udpxy.1.0.23-12-prod.tar.gz",
+    "mirror": "https://fossies.org/linux/www/udpxy.1.0.23-12-prod.tar.gz",
+    "homepage": "http://www.udpxy.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"DESTDIR=#{prefix}\", \"PREFIX=''\""
+    ],
+    "version": "1.0.23"
+}

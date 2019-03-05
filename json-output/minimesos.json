@@ -1,0 +1,15 @@
+{
+    "name": "Minimesos",
+    "description": "Testing infrastructure for Mesos frameworks",
+    "url": "https://github.com/ContainerSolutions/minimesos/archive/0.13.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://minimesos.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"bin/minimesos\""
+    ],
+    "version": "0.13.0"
+}

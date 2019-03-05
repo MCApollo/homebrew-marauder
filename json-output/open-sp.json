@@ -1,0 +1,34 @@
+{
+    "name": "OpenSp",
+    "description": "SGML parser",
+    "url": "https://downloads.sourceforge.net/project/openjade/opensp/1.5.2/OpenSP-1.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://openjade.sourceforge.io",
+    "depends": [
+        {
+            "depend": "docbook",
+            "build-depend": true
+        },
+        {
+            "depend": "ghostscript",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--enable-http\",",
+        "\"--enable-default-catalog=#{etc}/sgml/catalog\"",
+        "system \"make\", \"pkgdatadir=#{share}/sgml/opensp\", \"install\""
+    ],
+    "version": "1.5.2"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Gperf",
+    "description": "Perfect hash function generator",
+    "url": "https://ftp.gnu.org/gnu/gperf/gperf-3.1.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/gperf/gperf-3.1.tar.gz",
+    "homepage": "https://www.gnu.org/software/gperf",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.1"
+}

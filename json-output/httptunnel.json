@@ -1,0 +1,16 @@
+{
+    "name": "Httptunnel",
+    "description": "Tunnels a data stream in HTTP requests",
+    "url": "https://ftp.gnu.org/gnu/httptunnel/httptunnel-3.3.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/httptunnel/httptunnel-3.3.tar.gz",
+    "homepage": "https://github.com/larsbrinkhoff/httptunnel",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.3"
+}

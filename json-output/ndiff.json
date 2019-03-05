@@ -1,0 +1,26 @@
+{
+    "name": "Ndiff",
+    "description": "Virtual package provided by nmap",
+    "url": "http://ftp.math.utah.edu/pub/misc/ndiff-2.00.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.math.utah.edu/~beebe/software/ndiff/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "nmap",
+            "reason": "both install `ndiff` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=.\", \"--mandir=.\"",
+        "mkpath \"bin\"",
+        "mkpath \"man/man1\"",
+        "system \"make\", \"install\"",
+        "bin.install \"bin/ndiff\"",
+        "man1.install \"man/man1/ndiff.1\""
+    ],
+    "version": "2.00"
+}

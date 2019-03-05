@@ -1,0 +1,30 @@
+{
+    "name": "Libspectre",
+    "description": "Small library for rendering Postscript documents",
+    "url": "https://libspectre.freedesktop.org/releases/libspectre-0.2.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/www/Software/libspectre/",
+    "depends": [
+        {
+            "depend": "ghostscript",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/Homebrew/formula-patches/raw/master/libspectre/libspectre-0.2.7-gs918.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.append \"CFLAGS\", \"-I#{Formula[\"ghostscript\"].opt_include}/ghostscript\"",
+        "ENV.append \"LIBS\", \"-L#{Formula[\"ghostscript\"].opt_lib}\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.8"
+}

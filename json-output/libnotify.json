@@ -1,0 +1,33 @@
+{
+    "name": "Libnotify",
+    "description": "Library that sends desktop notifications to a notification daemon",
+    "url": "https://download.gnome.org/sources/libnotify/0.7/libnotify-0.7.7.tar.xz",
+    "mirror": null,
+    "homepage": "https://developer.gnome.org/libnotify",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gdk-pixbuf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-tests\",",
+        "\"--enable-introspection\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.7"
+}

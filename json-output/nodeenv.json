@@ -1,0 +1,15 @@
+{
+    "name": "Nodeenv",
+    "description": "Node.js virtual environment builder",
+    "url": "https://github.com/ekalinin/nodeenv/archive/1.3.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ekalinin/nodeenv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"nodeenv.py\" => \"nodeenv\""
+    ],
+    "version": "1.3.3"
+}

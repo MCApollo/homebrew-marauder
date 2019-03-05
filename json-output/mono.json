@@ -1,0 +1,51 @@
+{
+    "name": "Mono",
+    "description": "Cross platform, open source .NET development framework",
+    "url": "https://download.mono-project.com/sources/mono/mono-5.18.0.240.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.mono-project.com/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "fsharp",
+            "url": "https://github.com/fsharp/fsharp.git"
+        },
+        {
+            "name": "msbuild",
+            "url": "https://github.com/mono/msbuild.git"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "xsd",
+            "reason": "both install `xsd` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--enable-nls=no\",",
+        "\"--build=x86_64-apple-darwin\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "libexec.install bin/\"mono-gdb.py\", bin/\"mono-sgen-gdb.py\"",
+        "ENV.prepend_path \"PATH\", bin",
+        "resource(\"msbuild\").stage do",
+        "system \"./build.sh\", \"-hostType\", \"mono\", \"-configuration\", \"Release\", \"-skipTests\"",
+        "system \"./artifacts/mono-msbuild/msbuild\", \"mono/build/install.proj\",",
+        "\"/p:MonoInstallPrefix=#{prefix}\", \"/p:Configuration=Release-MONO\",",
+        "\"/p:IgnoreDiffFailure=true\""
+    ],
+    "version": "5.18.0.240"
+}

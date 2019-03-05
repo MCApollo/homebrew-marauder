@@ -1,0 +1,22 @@
+{
+    "name": "Gecode",
+    "description": "Toolkit for developing constraint-based systems and applications",
+    "url": "https://github.com/Gecode/gecode/archive/release-6.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gecode.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-examples",
+        "--disable-qt",
+        "]",
+        "ENV.cxx11",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.1.1"
+}

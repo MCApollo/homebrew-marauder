@@ -1,0 +1,17 @@
+{
+    "name": "Doublecpp",
+    "description": "Double dispatch in C++",
+    "url": "https://downloads.sourceforge.net/doublecpp/doublecpp-0.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://doublecpp.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.3"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Librem",
+    "description": "Toolkit library for real-time audio and video processing",
+    "url": "http://www.creytiv.com/pub/rem-0.5.3.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.creytiv.com",
+    "depends": [
+        {
+            "depend": "libre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libre = Formula[\"libre\"]",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\",",
+        "\"LIBRE_MK=#{libre.opt_share}/re/re.mk\",",
+        "\"LIBRE_INC=#{libre.opt_include}/re\",",
+        "\"LIBRE_SO=#{libre.opt_lib}\""
+    ],
+    "version": "0.5.3"
+}

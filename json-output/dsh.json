@@ -1,0 +1,22 @@
+{
+    "name": "Dsh",
+    "description": "Dancer",
+    "url": "https://www.netfort.gr.jp/~dancer/software/downloads/dsh-0.25.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.netfort.gr.jp/~dancer/software/dsh.html.en",
+    "depends": [
+        {
+            "depend": "libdshconfig",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.25.10"
+}

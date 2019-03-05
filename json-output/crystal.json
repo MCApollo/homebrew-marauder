@@ -1,0 +1,77 @@
+{
+    "name": "Crystal",
+    "description": "Fast and statically typed, compiled language with Ruby-like syntax",
+    "url": "https://github.com/crystal-lang/crystal/archive/0.27.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://crystal-lang.org/",
+    "depends": [
+        {
+            "depend": "libatomic_ops",
+            "build-depend": false
+        },
+        {
+            "depend": "bdw-gc",
+            "build-depend": false
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "libyaml",
+            "build-depend": false
+        },
+        {
+            "depend": "llvm@6",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "shards",
+            "url": "https://github.com/crystal-lang/shards/archive/v0.8.1.tar.gz"
+        },
+        {
+            "name": "shards",
+            "url": "https://github.com/crystal-lang/shards.git"
+        },
+        {
+            "name": "boot",
+            "url": "https://github.com/crystal-lang/crystal/releases/download/0.27.1/crystal-0.27.1-1-darwin-x86_64.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"boot\").install resource(\"boot\")",
+        "if build.head?",
+        "ENV[\"CRYSTAL_CONFIG_BUILD_COMMIT\"] = Utils.popen_read(\"git rev-parse --short HEAD\").strip",
+        "end",
+        "ENV[\"CRYSTAL_CONFIG_PATH\"] = prefix/\"src:lib\"",
+        "ENV.append_path \"PATH\", \"boot/bin\"",
+        "system \"make\", \"deps\"",
+        "(buildpath/\".build\").mkpath",
+        "system \"bin/crystal\", \"build\",",
+        "\"-D\", \"without_openssl\",",
+        "\"-D\", \"without_zlib\",",
+        "\"-D\", \"preview_overflow\",",
+        "\"-o\", \".build/crystal\",",
+        "\"src/compiler/crystal.cr\",",
+        "\"--release\", \"--no-debug\"",
+        "resource(\"shards\").stage do",
+        "system buildpath/\"bin/crystal\", \"build\", \"-o\", buildpath/\".build/shards\", \"src/shards.cr\""
+    ],
+    "version": "0.27.2"
+}

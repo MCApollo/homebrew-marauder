@@ -1,0 +1,17 @@
+{
+    "name": "Linklint",
+    "description": "Link checker and web site maintenance tool",
+    "url": "http://linklint.org/download/linklint-2.3.5.tar.gz",
+    "mirror": null,
+    "homepage": "http://linklint.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mv \"READ_ME.txt\", \"README\"",
+        "doc.install \"README\"",
+        "bin.install \"linklint-#{version}\" => \"linklint\""
+    ],
+    "version": "2.3.5"
+}

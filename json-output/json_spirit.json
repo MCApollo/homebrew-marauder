@@ -1,0 +1,31 @@
+{
+    "name": "JsonSpirit",
+    "description": "C++ JSON parser/generator",
+    "url": "https://github.com/png85/json_spirit/archive/json_spirit-4.07.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.codeproject.com/Articles/20027/JSON-Spirit-A-C-JSON-Parser-Generator-Implemented",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args",
+        "args << \"-DBUILD_STATIC_LIBRARIES=ON\"",
+        "system \"cmake\", *args",
+        "system \"make\"",
+        "args = std_cmake_args",
+        "args << \"-DBUILD_STATIC_LIBRARIES=OFF\"",
+        "system \"cmake\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.07"
+}

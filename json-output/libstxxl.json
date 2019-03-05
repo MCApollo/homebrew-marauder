@@ -1,0 +1,24 @@
+{
+    "name": "Libstxxl",
+    "description": "C++ implementation of STL for extra large data sets",
+    "url": "https://downloads.sourceforge.net/project/stxxl/stxxl/1.4.1/stxxl-1.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://stxxl.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args - %w[-DCMAKE_BUILD_TYPE=None]",
+        "args << \"-DCMAKE_BUILD_TYPE=Release\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.1"
+}

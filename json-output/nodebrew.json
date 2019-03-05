@@ -1,0 +1,17 @@
+{
+    "name": "Nodebrew",
+    "description": "Node.js version manager",
+    "url": "https://github.com/hokaccha/nodebrew/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/hokaccha/nodebrew",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"nodebrew\"",
+        "bash_completion.install \"completions/bash/nodebrew-completion\" => \"nodebrew\"",
+        "zsh_completion.install \"completions/zsh/_nodebrew\""
+    ],
+    "version": "1.0.1"
+}

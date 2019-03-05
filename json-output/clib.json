@@ -1,0 +1,16 @@
+{
+    "name": "Clib",
+    "description": "Package manager for C programming",
+    "url": "https://github.com/clibs/clib/archive/1.8.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/clibs/clib",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PREFIX\"] = prefix",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.1"
+}

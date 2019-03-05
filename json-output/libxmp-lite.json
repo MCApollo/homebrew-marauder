@@ -1,0 +1,21 @@
+{
+    "name": "LibxmpLite",
+    "description": "Lite libxmp",
+    "url": "https://downloads.sourceforge.net/project/xmp/libxmp/4.4.1/libxmp-lite-4.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://xmp.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/cmatsuoka/libxmp/commit/a028835.patch?full_index=1",
+            "strip": "2"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.4.1"
+}

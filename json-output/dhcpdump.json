@@ -1,0 +1,17 @@
+{
+    "name": "Dhcpdump",
+    "description": "Monitor DHCP traffic for debugging purposes",
+    "url": "https://www.mavetju.org/download/dhcpdump-1.8.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/d/dhcpdump/dhcpdump_1.8.orig.tar.gz",
+    "homepage": "https://www.mavetju.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"dhcpdump\"",
+        "man8.install \"dhcpdump.8\""
+    ],
+    "version": "1.8"
+}

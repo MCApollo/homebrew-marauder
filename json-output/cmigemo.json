@@ -1,0 +1,42 @@
+{
+    "name": "Cmigemo",
+    "description": "Migemo is a tool that supports Japanese incremental search with Romaji",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cmigemo/cmigemo-default-src-20110227.zip",
+    "mirror": null,
+    "homepage": "https://www.kaoriya.net/software/cmigemo",
+    "depends": [
+        {
+            "depend": "nkf",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/src/wordbuf.c\t2011-08-15 02:57:05.000000000 +0900\n",
+                "+++ b/src/wordbuf.c\t2011-08-15 02:57:17.000000000 +0900\n",
+                "@@ -9,6 +9,7 @@\n",
+                " #include <stdio.h>\n",
+                " #include <stdlib.h>\n",
+                " #include <string.h>\n",
+                "+#include <limits.h>\n",
+                " #include \"wordbuf.h\"\n",
+                "\n",
+                " #define WORDLEN_DEF 64\n"
+            ]
+        }
+    ],
+    "install": [
+        "chmod 0755, \"./configure\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"osx\"",
+        "system \"make\", \"osx-dict\"",
+        "system \"make\", \"-C\", \"dict\", \"utf-8\" if build.stable?",
+        "ENV.deparallelize ",
+        "system \"make\", \"osx-install\""
+    ],
+    "version": "20110227"
+}

@@ -1,0 +1,53 @@
+{
+    "name": "Colordiff",
+    "description": "Color-highlighted diff(1) output",
+    "url": "https://www.colordiff.org/colordiff-1.0.18.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/colordiff-1.0.18.tar.gz",
+    "homepage": "https://www.colordiff.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "cdiff",
+            "reason": "both install `cdiff` binaries"
+        }
+    ],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/Makefile b/Makefile\n",
+                "index 6ccbfc7..e5d64e7 100644\n",
+                "--- a/Makefile\n",
+                "+++ b/Makefile\n",
+                "@@ -28,8 +29,8 @@ install:\n",
+                " \tif [ ! -f ${DESTDIR}${INSTALL_DIR}/cdiff ] ; then \\\n",
+                " \t  install cdiff.sh ${DESTDIR}${INSTALL_DIR}/cdiff; \\\n",
+                " \tfi\n",
+                "-\tinstall -Dm 644 colordiff.1 ${DESTDIR}${MAN_DIR}/colordiff.1\n",
+                "-\tinstall -Dm 644 cdiff.1 ${DESTDIR}${MAN_DIR}/cdiff.1\n",
+                "+\tinstall -m 644 colordiff.1 ${DESTDIR}${MAN_DIR}/colordiff.1\n",
+                "+\tinstall -m 644 cdiff.1 ${DESTDIR}${MAN_DIR}/cdiff.1\n",
+                " \tif [ -f ${DESTDIR}${ETC_DIR}/colordiffrc ]; then \\\n",
+                " \t  mv -f ${DESTDIR}${ETC_DIR}/colordiffrc \\\n",
+                " \t    ${DESTDIR}${ETC_DIR}/colordiffrc.old; \\\n",
+                "@@ -37,7 +38,6 @@ install:\n",
+                " \t  install -d ${DESTDIR}${ETC_DIR}; \\\n",
+                " \tfi\n",
+                " \tcp colordiffrc ${DESTDIR}${ETC_DIR}/colordiffrc\n",
+                "-\t-chown root.root ${DESTDIR}${ETC_DIR}/colordiffrc\n",
+                " \tchmod 644 ${DESTDIR}${ETC_DIR}/colordiffrc\n",
+                "\n",
+                " uninstall:\n"
+            ]
+        }
+    ],
+    "install": [
+        "man1.mkpath",
+        "system \"make\", \"INSTALL_DIR=#{bin}\",",
+        "\"ETC_DIR=#{etc}\",",
+        "\"MAN_DIR=#{man1}\",",
+        "\"install\""
+    ],
+    "version": "1.0.18"
+}

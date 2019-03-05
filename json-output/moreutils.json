@@ -1,0 +1,45 @@
+{
+    "name": "Moreutils",
+    "description": "Collection of tools that nobody wrote when UNIX was young",
+    "url": "https://git.joeyh.name/git/moreutils.git",
+    "mirror": null,
+    "homepage": "https://joeyh.name/code/moreutils/",
+    "depends": [
+        {
+            "depend": "docbook-xsl",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "Time::Duration",
+            "url": "https://cpan.metacpan.org/authors/id/N/NE/NEILB/Time-Duration-1.20.tar.gz"
+        },
+        {
+            "name": "IPC::Run",
+            "url": "https://cpan.metacpan.org/authors/id/T/TO/TODDR/IPC-Run-0.94.tar.gz"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "parallel",
+            "reason": "Both install a `parallel` executable."
+        },
+        {
+            "conflict": "pwntools",
+            "reason": "Both install an `errno` executable."
+        },
+        {
+            "conflict": "task-spooler",
+            "reason": "Both install a `ts` executable."
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "resource(\"Time::Duration\").stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\", \"--skipdeps\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.55-git-0f2e3ff1"
+}

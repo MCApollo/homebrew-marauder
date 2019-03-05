@@ -1,0 +1,122 @@
+{
+    "name": "Gobby",
+    "description": "Multi-platform collaborative text editor",
+    "url": "http://releases.0x539.de/gobby/gobby-0.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://gobby.github.io/",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "gsasl",
+            "build-depend": false
+        },
+        {
+            "depend": "gtkmm3",
+            "build-depend": false
+        },
+        {
+            "depend": "gtksourceview3",
+            "build-depend": false
+        },
+        {
+            "depend": "hicolor-icon-theme",
+            "build-depend": false
+        },
+        {
+            "depend": "libinfinity",
+            "build-depend": false
+        },
+        {
+            "depend": "libxml++",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/code/core/header.cpp b/code/core/header.cpp\n",
+                "index eba2fb1..510608e 100644\n",
+                "--- a/code/core/header.cpp\n",
+                "+++ b/code/core/header.cpp\n",
+                "@@ -24,10 +24,6 @@\n",
+                " #include <gtksourceview/gtksourcelanguage.h>\n",
+                " #include <gdk/gdkkeysyms.h>\n",
+                "\n",
+                "-#ifdef PLATFORM_OSX_NATIVE\n",
+                "-#include <ige-mac-menu.h>\n",
+                "-#endif\n",
+                "-\n",
+                " namespace {\n",
+                "\tGlib::ustring ui_desc =\n",
+                "\t\t\"<ui>\"\n",
+                "@@ -519,28 +515,7 @@ Gobby::Header::Header(Preferences& preferences,\n",
+                "\t\t);\n",
+                "\t}\n",
+                "\n",
+                "-#ifdef PLATFORM_OSX_NATIVE\n",
+                "-\tige_mac_menu_set_menu_bar(GTK_MENU_SHELL(m_menubar->gobj()));\n",
+                "-\n",
+                "-\tige_mac_menu_set_quit_menu_item(GTK_MENU_ITEM(\n",
+                "-\t\tm_ui_manager->get_widget(\n",
+                "-\t\t\t\"/MenuMainBar/MenuFile/FileQuit\")->gobj()));\n",
+                "-\n",
+                "-\tige_mac_menu_add_app_menu_item(\n",
+                "-\t\tige_mac_menu_add_app_menu_group(), GTK_MENU_ITEM(\n",
+                "-\t\t\tm_ui_manager->get_widget(\n",
+                "-\t\t\t\t\"/MenuMainBar/MenuHelp/HelpAbout\")->gobj()),\n",
+                "-\t\tNULL);\n",
+                "-\n",
+                "-\t ige_mac_menu_add_app_menu_item(\n",
+                "-\t \tige_mac_menu_add_app_menu_group(), GTK_MENU_ITEM(\n",
+                "-\t\t\tm_ui_manager->get_widget(\n",
+                "-\t\t\t\t\"/MenuMainBar/MenuEdit/EditPreferences\")\n",
+                "-\t\t\t->gobj()),\n",
+                "-\t\tNULL);\n",
+                "-#else\n",
+                "\tpack_start(*m_menubar, Gtk::PACK_SHRINK);\n",
+                "-#endif\n",
+                "\tpack_start(*m_toolbar, Gtk::PACK_SHRINK);\n",
+                "\n",
+                "\tm_toolbar->set_toolbar_style(preferences.appearance.toolbar_style);\n",
+                "diff --git a/configure b/configure\n",
+                "index 7dabb26..0987444 100755\n",
+                "--- a/configure\n",
+                "+++ b/configure\n",
+                "@@ -4955,7 +4955,7 @@ $as_echo \"#define PLATFORM_OSX 1\" >>confdefs.h\n",
+                "\n",
+                " $as_echo \"#define PLATFORM_OSX_NATIVE 1\" >>confdefs.h\n",
+                "\n",
+                "-    required_libs=\"$required_libs ige-mac-integration\"\n",
+                "+    required_libs=\"$required_libs\"\n",
+                "   fi\n",
+                " fi\n",
+                " cat >confcache <<\\_ACEOF\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--with-gtk3\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.0"
+}

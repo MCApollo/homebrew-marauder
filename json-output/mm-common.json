@@ -1,0 +1,16 @@
+{
+    "name": "MmCommon",
+    "description": "Build utilities for C++ interfaces of GTK+ and GNOME packages",
+    "url": "https://download.gnome.org/sources/mm-common/0.9/mm-common-0.9.12.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.gtkmm.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-silent-rules\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.12"
+}

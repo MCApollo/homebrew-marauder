@@ -1,0 +1,15 @@
+{
+    "name": "DockerClean",
+    "description": "Clean Docker containers, images, networks, and volumes",
+    "url": "https://github.com/ZZROTDesign/docker-clean/archive/v2.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ZZROTDesign/docker-clean",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"docker-clean\""
+    ],
+    "version": "2.0.4"
+}

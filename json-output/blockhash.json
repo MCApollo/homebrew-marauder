@@ -1,0 +1,31 @@
+{
+    "name": "Blockhash",
+    "description": "Perceptual image hash calculation tool",
+    "url": "https://github.com/commonsmachinery/blockhash/archive/v0.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/commonsmachinery/blockhash",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "testdata",
+            "url": "https://raw.githubusercontent.com/commonsmachinery/blockhash/ce08b465b658c4e886d49ec33361cee767f86db6/testdata/clipper_ship.jpg"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\"",
+        "system \"./waf\"",
+        "system \"./waf\", \"install\""
+    ],
+    "version": "0.3.1"
+}

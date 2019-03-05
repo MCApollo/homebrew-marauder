@@ -1,0 +1,16 @@
+{
+    "name": "DiffSoFancy",
+    "description": "Good-lookin",
+    "url": "https://github.com/so-fancy/diff-so-fancy/archive/v1.2.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/so-fancy/diff-so-fancy",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"diff-so-fancy\", \"lib\"",
+        "bin.install_symlink libexec/\"diff-so-fancy\""
+    ],
+    "version": "1.2.5"
+}

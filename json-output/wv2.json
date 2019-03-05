@@ -1,0 +1,34 @@
+{
+    "name": "Wv2",
+    "description": "Programs for accessing Microsoft Word documents",
+    "url": "https://downloads.sourceforge.net/project/wvware/wv2-0.4.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://wvware.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libgsf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-liconv -lgobject-2.0\" ",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.2"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Tiff2png",
+    "description": "TIFF to PNG converter",
+    "url": "https://github.com/rillian/tiff2png/archive/v0.92.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.libpng.org/pub/png/apps/tiff2png.html",
+    "depends": [
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "system \"make\", \"INSTALL=#{prefix}\", \"CC=#{ENV.cc}\", \"install\""
+    ],
+    "version": "0.92"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Zpaq",
+    "description": "Incremental, journaling command-line archiver",
+    "url": "http://mattmahoney.net/dc/zpaq715.zip",
+    "mirror": null,
+    "homepage": "http://mattmahoney.net/dc/zpaq.html",
+    "depends": [],
+    "resource": [
+        {
+            "name": "test",
+            "url": "http://mattmahoney.net/dc/calgarytest2.zpaq"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "715"
+}

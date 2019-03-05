@@ -1,0 +1,18 @@
+{
+    "name": "Aacgain",
+    "description": "AAC-supporting version of mp3gain",
+    "url": "https://aacgain.altosdesign.com/alvarez/aacgain-1.8.tar.bz2",
+    "mirror": null,
+    "homepage": "https://aacgain.altosdesign.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8"
+}

@@ -1,0 +1,37 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Command-line accounting tool",
+    "url": "https://hackage.haskell.org/package/hledger-1.13.2/hledger-1.13.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://hledger.org/",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "hledger_web",
+            "url": "https://hackage.haskell.org/package/hledger-web-1.13/hledger-web-1.13.tar.gz"
+        },
+        {
+            "name": "hledger_ui",
+            "url": "https://hackage.haskell.org/package/hledger-ui-1.13.1/hledger-ui-1.13.1.tar.gz"
+        },
+        {
+            "name": "hledger_api",
+            "url": "https://hackage.haskell.org/package/hledger-api-1.13/hledger-api-1.13.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package \"hledger\", \"hledger-web\", \"hledger-ui\", \"hledger-api\", :using => [\"happy\", \"alex\"]"
+    ],
+    "version": "1.13.2"
+}

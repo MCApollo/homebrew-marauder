@@ -1,0 +1,30 @@
+{
+    "name": "XbeeComm",
+    "description": "XBee communication libraries and utilities",
+    "url": "https://github.com/guyzmo/xbee-comm/archive/v1.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/guyzmo/xbee-comm.git",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"aclocal\"",
+        "system \"autoconf\"",
+        "system \"autoheader\"",
+        "system \"automake\", \"-a\", \"-c\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5"
+}

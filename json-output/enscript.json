@@ -1,0 +1,27 @@
+{
+    "name": "Enscript",
+    "description": "Convert text to Postscript, HTML, or RTF, with syntax highlighting",
+    "url": "https://ftp.gnu.org/gnu/enscript/enscript-1.6.6.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/enscript/enscript-1.6.6.tar.gz",
+    "homepage": "https://www.gnu.org/software/enscript/",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "cspice",
+            "reason": "both install `states` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.6"
+}

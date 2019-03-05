@@ -1,0 +1,20 @@
+{
+    "name": "RbenvWhatis",
+    "description": "Resolves abbreviations and aliases to Ruby versions",
+    "url": "https://github.com/rkh/rbenv-whatis/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rkh/rbenv-whatis",
+    "depends": [
+        {
+            "depend": "rbenv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install Dir[\"*\"]"
+    ],
+    "version": "1.0.0"
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Mediaconch",
+    "description": "Conformance checker and technical metadata reporter",
+    "url": "https://mediaarea.net/download/binary/mediaconch/18.03.2/MediaConch_CLI_18.03.2_GNU_FromSource.tar.bz2",
+    "mirror": null,
+    "homepage": "https://mediaarea.net/MediaConch",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jansson",
+            "build-depend": false
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"ZenLib/Project/GNU/Library\" do",
+        "args = [\"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--enable-shared\",",
+        "\"--enable-static\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--libdir=#{lib}/mediaconch\",",
+        "\"--includedir=#{include}/mediaconch\"]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "18.03.2"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "MupdfTools",
+    "description": "Lightweight PDF and XPS viewer",
+    "url": "https://mupdf.com/downloads/archive/mupdf-1.14.0-source.tar.gz",
+    "mirror": null,
+    "homepage": "https://mupdf.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\",",
+        "\"build=release\",",
+        "\"verbose=yes\",",
+        "\"HAVE_X11=no\",",
+        "\"HAVE_GLUT=no\",",
+        "\"CC=#{ENV.cc}\",",
+        "\"prefix=#{prefix}\"",
+        "bin.install_symlink bin/\"mutool\" => \"mudraw\"",
+        "man1.install_symlink man1/\"mutool.1\" => \"mudraw.1\""
+    ],
+    "version": "1.14.0"
+}

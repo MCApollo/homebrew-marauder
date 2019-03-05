@@ -1,0 +1,24 @@
+{
+    "name": "Plod",
+    "description": "Keep an online journal of what you",
+    "url": "http://www.deer-run.com/~hal/plod/plod.shar",
+    "mirror": null,
+    "homepage": "http://www.deer-run.com/~hal/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"sh\", \"plod.shar\"",
+        "pager = ENV[\"PAGER\"] || \"/usr/bin/less\"",
+        "editor = ENV[\"EDITOR\"] || \"/usr/bin/emacs\"",
+        "visual = ENV[\"VISUAL\"] || editor",
+        "inreplace \"plod\" do |s|",
+        "s.gsub! \"#!/usr/local/bin/perl\", \"#!/usr/bin/env perl\"",
+        "s.gsub! '\"/bin/crypt\"', \"undef\"",
+        "s.gsub! \"/usr/local/bin/less\", pager",
+        "s.gsub! '$EDITOR = \"/usr/local/bin/emacs\"', \"$EDITOR = \\\"#{editor}\\\"\"",
+        "s.gsub! '$VISUAL = \"/usr/local/bin/emacs\"', \"$VISUAL = \\\"#{visual}\\\"\""
+    ],
+    "version": "1.0-u"
+}

@@ -1,0 +1,32 @@
+{
+    "name": "IrcdHybrid",
+    "description": "High-performance secure IRC server",
+    "url": "https://downloads.sourceforge.net/project/ircd-hybrid/ircd-hybrid/ircd-hybrid-8.2.24/ircd-hybrid-8.2.24.tgz",
+    "mirror": null,
+    "homepage": "http://www.ircd-hybrid.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "ircd-irc2",
+            "reason": "both install an `ircd` binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize ",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--localstatedir=#{var}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--enable-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\"",
+        "etc.install \"doc/reference.conf\" => \"ircd.conf\""
+    ],
+    "version": "8.2.24"
+}

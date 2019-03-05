@@ -1,0 +1,35 @@
+{
+    "name": "RabbitmqC",
+    "description": "RabbitMQ C client",
+    "url": "https://github.com/alanxz/rabbitmq-c/archive/v0.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/alanxz/rabbitmq-c",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "popt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args, \"-DBUILD_EXAMPLES=OFF\",",
+        "\"-DBUILD_TESTS=OFF\", \"-DBUILD_API_DOCS=OFF\",",
+        "\"-DBUILD_TOOLS=ON\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.0"
+}

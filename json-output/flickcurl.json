@@ -1,0 +1,22 @@
+{
+    "name": "Flickcurl",
+    "description": "Library for the Flickr API",
+    "url": "http://download.dajobe.org/flickcurl/flickcurl-1.26.tar.gz",
+    "mirror": null,
+    "homepage": "http://librdf.org/flickcurl/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.26"
+}

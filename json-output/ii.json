@@ -1,0 +1,16 @@
+{
+    "name": "Ii",
+    "description": "Minimalist IRC client",
+    "url": "https://dl.suckless.org/tools/ii-1.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://tools.suckless.org/ii/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", \"SRC = ii.c strlcpy.c\", \"SRC = ii.c\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.8"
+}

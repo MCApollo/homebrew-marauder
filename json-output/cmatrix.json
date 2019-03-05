@@ -1,0 +1,17 @@
+{
+    "name": "Cmatrix",
+    "description": "Console Matrix",
+    "url": "https://www.asty.org/cmatrix/dist/cmatrix-1.2a.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/c/cmatrix/cmatrix_1.2a.orig.tar.gz",
+    "homepage": "https://www.asty.org/cmatrix/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

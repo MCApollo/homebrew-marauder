@@ -1,0 +1,37 @@
+{
+    "name": "Rethinkdb",
+    "description": "The open-source database for the realtime web",
+    "url": "https://download.rethinkdb.com/dist/rethinkdb-2.3.6.tgz",
+    "mirror": null,
+    "homepage": "https://www.rethinkdb.com/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/fb00ee376a/rethinkdb/xcode9.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "args = [\"--prefix=#{prefix}\"]",
+        "args += [\"--fetch\", \"protobuf\"]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install-osx\"",
+        "(var/\"log/rethinkdb\").mkpath",
+        "inreplace \"packaging/assets/config/default.conf.sample\",",
+        "/^",
+        "etc.install \"packaging/assets/config/default.conf.sample\" => \"rethinkdb.conf\""
+    ],
+    "version": "2.3.6"
+}

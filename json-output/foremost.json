@@ -1,0 +1,18 @@
+{
+    "name": "Foremost",
+    "description": "Console program to recover files based on their headers and footers",
+    "url": "https://foremost.sourceforge.io/pkg/foremost-1.5.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://foremost.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\" do |s|",
+        "s.gsub! \"/usr/\", \"#{prefix}/\"",
+        "s.change_make_var! \"RAW_CC\", ENV.cc",
+        "s.change_make_var! \"RAW_FLAGS\", ENV.cflags"
+    ],
+    "version": "1.5.7"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Latexml",
+    "description": "LaTeX to XML/HTML/MathML Converter",
+    "url": "https://dlmf.nist.gov/LaTeXML/releases/LaTeXML-0.8.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://dlmf.nist.gov/LaTeXML/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "Image::Size",
+            "url": "https://cpan.metacpan.org/authors/id/R/RJ/RJRAY/Image-Size-3.300.tar.gz"
+        },
+        {
+            "name": "Text::Unidecode",
+            "url": "https://cpan.metacpan.org/authors/id/S/SB/SBURKE/Text-Unidecode-1.27.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec+\"lib/perl5\"",
+        "resources.each do |r|",
+        "r.stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.2"
+}

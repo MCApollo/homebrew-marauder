@@ -1,0 +1,18 @@
+{
+    "name": "Gsasl",
+    "description": "SASL library command-line interface",
+    "url": "https://ftp.gnu.org/gnu/gsasl/gsasl-1.8.0.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/gsasl/gsasl-1.8.0.tar.gz",
+    "homepage": "https://www.gnu.org/software/gsasl/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--with-gssapi-impl=mit\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.0"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "PaxConstruct",
+    "description": "Tools to setup and develop OSGi projects quickly",
+    "url": "https://search.maven.org/remotecontent?filepath=org/ops4j/pax/construct/scripts/1.5/scripts-1.5.zip",
+    "mirror": null,
+    "homepage": "https://ops4j1.jira.com/wiki/display/paxconstruct/Pax+Construct",
+    "depends": [
+        {
+            "depend": "maven",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm_rf Dir[\"bin/*.bat\"]",
+        "prefix.install_metafiles \"bin\" ",
+        "libexec.install Dir[\"*\"]",
+        "bin.write_exec_script Dir[\"#{libexec}/bin/*\"].select { |f| File.executable? f }"
+    ],
+    "version": "1.5"
+}

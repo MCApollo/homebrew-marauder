@@ -1,0 +1,21 @@
+{
+    "name": "Timelimit",
+    "description": "Limit a process",
+    "url": "https://devel.ringlet.net/files/sys/timelimit/timelimit-1.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://devel.ringlet.net/sysutils/timelimit/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", \"-o ${BINOWN} -g ${BINGRP}\", \"\"",
+        "inreplace \"Makefile\", \"-o ${SHAREOWN} -g ${SHAREGRP}\", \"\"",
+        "args = %W[LOCALBASE=#{prefix} MANDIR=#{man}/man]",
+        "check_args = args + [\"check\"]",
+        "install_args = args + [\"install\"]",
+        "system \"make\", *check_args",
+        "system \"make\", *install_args"
+    ],
+    "version": "1.9.0"
+}

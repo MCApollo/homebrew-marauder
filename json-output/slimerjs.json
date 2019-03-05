@@ -1,0 +1,18 @@
+{
+    "name": "Slimerjs",
+    "description": "Scriptable browser for Web developers",
+    "url": "https://github.com/laurentj/slimerjs/archive/1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://slimerjs.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"zip\", \"-r\", \"omni.ja\", \"chrome/\", \"components/\", \"modules/\",",
+        "\"defaults/\", \"chrome.manifest\", \"-x@package_exclude.lst\"",
+        "libexec.install %w[application.ini omni.ja slimerjs slimerjs.py]"
+    ],
+    "version": "1.0.0"
+}

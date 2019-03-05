@@ -1,0 +1,38 @@
+{
+    "name": "Fcl",
+    "description": "Flexible Collision Library",
+    "url": "https://github.com/flexible-collision-library/fcl/archive/0.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://flexible-collision-library.github.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "libccd",
+            "build-depend": false
+        },
+        {
+            "depend": "octomap",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.0"
+}

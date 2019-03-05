@@ -1,0 +1,27 @@
+{
+    "name": "A2ps",
+    "description": "Any-to-PostScript filter",
+    "url": "https://ftp.gnu.org/gnu/a2ps/a2ps-4.14.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/a2ps/a2ps-4.14.tar.gz",
+    "homepage": "https://www.gnu.org/software/a2ps/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/0ae366e6/a2ps/patch-contrib_sample_Makefile.in",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/0ae366e6/a2ps/patch-lib__xstrrpl.c",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--sysconfdir=#{etc}\",",
+        "\"--with-lispdir=#{elisp}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.14"
+}

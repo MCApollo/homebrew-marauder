@@ -1,0 +1,38 @@
+{
+    "name": "GnuApl",
+    "description": "GNU implementation of the programming language APL",
+    "url": "https://ftp.gnu.org/gnu/apl/apl-1.7.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/apl/apl-1.7.tar.gz",
+    "homepage": "https://www.gnu.org/software/apl/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.delete(\"SDKROOT\") if DevelopmentTools.clang_build_version >= 900",
+        "system \"autoreconf\", \"-fiv\" if build.head?",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7"
+}

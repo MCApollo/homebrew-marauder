@@ -1,0 +1,16 @@
+{
+    "name": "Delta",
+    "description": "Programatically minimize files to isolate features of interest",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/d/delta/delta_2006.08.03.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/d/delta/delta_2006.08.03.orig.tar.gz",
+    "homepage": "http://delta.tigris.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"delta\", \"multidelta\", \"topformflat\""
+    ],
+    "version": "2006.08.03"
+}

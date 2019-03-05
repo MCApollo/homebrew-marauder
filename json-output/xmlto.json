@@ -1,0 +1,49 @@
+{
+    "name": "Xmlto",
+    "description": "Convert XML to another format (based on XSL or other tools)",
+    "url": "https://releases.pagure.org/xmlto/xmlto-0.0.28.tar.bz2",
+    "mirror": null,
+    "homepage": "https://pagure.io/xmlto/",
+    "depends": [
+        {
+            "depend": "docbook",
+            "build-depend": false
+        },
+        {
+            "depend": "docbook-xsl",
+            "build-depend": false
+        },
+        {
+            "depend": "gnu-getopt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- xmlto-0.0.25/xmlto.in.orig\n",
+                "+++ xmlto-0.0.25/xmlto.in\n",
+                "@@ -209,7 +209,7 @@\n",
+                " export VERBOSE\n",
+                " \n",
+                " # Disable network entities\n",
+                "-XSLTOPTS=\"$XSLTOPTS --nonet\"\n",
+                "+#XSLTOPTS=\"$XSLTOPTS --nonet\"\n",
+                " \n",
+                " # The names parameter for the XSLT stylesheet\n",
+                " XSLTPARAMS=\"\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV[\"GETOPT\"] = Formula[\"gnu-getopt\"].opt_bin/\"getopt\"",
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "ENV.deparallelize",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.28"
+}

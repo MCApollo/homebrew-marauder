@@ -1,0 +1,18 @@
+{
+    "name": "Mergelog",
+    "description": "Merges httpd logs from web servers behind round-robin DNS",
+    "url": "https://downloads.sourceforge.net/mergelog/mergelog-4.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://mergelog.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.5"
+}

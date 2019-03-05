@@ -1,0 +1,31 @@
+{
+    "name": "Bitchx",
+    "description": "Text-based, scriptable IRC client",
+    "url": "https://downloads.sourceforge.net/project/bitchx/ircii-pana/bitchx-1.2.1/bitchx-1.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://bitchx.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "plugins = %w[acro aim arcfour amp autocycle blowfish cavlink encrypt",
+        "fserv hint identd nap pkga possum qbx qmail]",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--with-ssl",
+        "--with-plugins=#{plugins * \",\"}",
+        "--enable-ipv6",
+        "--mandir=#{man}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.1"
+}

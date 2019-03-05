@@ -1,0 +1,18 @@
+{
+    "name": "Libpcap",
+    "description": "Portable library for network traffic capture",
+    "url": "https://www.tcpdump.org/release/libpcap-1.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.tcpdump.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--enable-ipv6\",",
+        "\"--disable-universal\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9.0"
+}

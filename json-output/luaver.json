@@ -1,0 +1,20 @@
+{
+    "name": "Luaver",
+    "description": "Manage and switch between versions of Lua, LuaJIT, and Luarocks",
+    "url": "https://github.com/DhavalKapil/luaver/archive/v1.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/DhavalKapil/luaver",
+    "depends": [
+        {
+            "depend": "wget",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"luaver\""
+    ],
+    "version": "1.1.0"
+}

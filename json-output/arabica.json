@@ -1,0 +1,36 @@
+{
+    "name": "Arabica",
+    "description": "XML toolkit written in C++",
+    "url": "https://github.com/jezhiggins/arabica/archive/2016-January.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.jezuk.co.uk/cgi-bin/view/arabica",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2016"
+}

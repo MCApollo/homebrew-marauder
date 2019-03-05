@@ -1,0 +1,21 @@
+{
+    "name": "PyenvVirtualenvwrapper",
+    "description": "Alternative to pyenv for managing virtualenvs",
+    "url": "https://github.com/pyenv/pyenv-virtualenvwrapper/archive/v20140609.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pyenv/pyenv-virtualenvwrapper",
+    "depends": [
+        {
+            "depend": "pyenv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PREFIX\"] = prefix",
+        "system \"./install.sh\""
+    ],
+    "version": "20140609"
+}

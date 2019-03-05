@@ -1,0 +1,22 @@
+{
+    "name": "Bash",
+    "description": "Bourne-Again SHell, a UNIX command interpreter",
+    "url": "https://ftp.gnu.org/gnu/bash/bash-5.0.tar.gz",
+    "mirror": "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.0.tar.gz",
+    "homepage": "https://www.gnu.org/software/bash/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://ftp.gnu.org/gnu/bash/bash-5.0-patches/bash50-#{p}",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "ENV.append_to_cflags \"-DSSH_SOURCE_BASHRC\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.0"
+}

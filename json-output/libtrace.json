@@ -1,0 +1,26 @@
+{
+    "name": "Libtrace",
+    "description": "Library for trace processing supporting multiple inputs",
+    "url": "https://research.wand.net.nz/software/libtrace/libtrace-4.0.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://research.wand.net.nz/software/libtrace.php",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "wandio",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0.4"
+}

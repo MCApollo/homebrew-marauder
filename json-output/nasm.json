@@ -1,0 +1,32 @@
+{
+    "name": "Nasm",
+    "description": "Netwide Assembler (NASM) is an 80x86 assembler",
+    "url": "https://www.nasm.us/pub/nasm/releasebuilds/2.14.02/nasm-2.14.02.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.nasm.us/",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"manpages\" if build.head?",
+        "system \"make\", \"rdf\"",
+        "system \"make\", \"install\", \"install_rdf\""
+    ],
+    "version": "2.14.02"
+}

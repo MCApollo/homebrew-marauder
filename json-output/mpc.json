@@ -1,0 +1,36 @@
+{
+    "name": "Mpc",
+    "description": "Command-line music player client for mpd",
+    "url": "https://www.musicpd.org/download/mpc/0/mpc-0.31.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.musicpd.org/clients/mpc/",
+    "depends": [
+        {
+            "depend": "meson",
+            "build-depend": true
+        },
+        {
+            "depend": "ninja",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libmpdclient",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"meson\", \"--prefix=#{prefix}\", \".\", \"output\"",
+        "system \"ninja\", \"-C\", \"output\"",
+        "system \"ninja\", \"-C\", \"output\", \"install\"",
+        "bash_completion.install \"contrib/mpc-completion.bash\" => \"mpc\"",
+        "rm share/\"doc/mpc/contrib/mpc-completion.bash\""
+    ],
+    "version": "0.31"
+}

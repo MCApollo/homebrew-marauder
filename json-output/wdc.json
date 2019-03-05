@@ -1,0 +1,32 @@
+{
+    "name": "Wdc",
+    "description": "WebDAV Client provides easy and convenient to work with WebDAV-servers",
+    "url": "https://github.com/designerror/webdav-client-cpp/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://designerror.github.io/webdav-client-cpp",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pugixml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pugixml = Formula[\"pugixml\"]",
+        "ENV.prepend \"CXXFLAGS\", \"-I#{pugixml.opt_include.children.first}\"",
+        "system \"cmake\", \".\", \"-DPUGIXML_INCLUDE_DIR=#{pugixml.opt_include}\",",
+        "\"-DPUGIXML_LIBRARY=#{pugixml.opt_lib}\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.1"
+}

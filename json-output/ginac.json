@@ -1,0 +1,30 @@
+{
+    "name": "Ginac",
+    "description": "Not a Computer algebra system",
+    "url": "https://www.ginac.de/ginac-1.7.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.ginac.de/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cln",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7.4"
+}

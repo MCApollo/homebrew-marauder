@@ -1,0 +1,41 @@
+{
+    "name": "Stubby",
+    "description": "DNS privacy enabled stub resolver service based on getdns",
+    "url": "https://github.com/getdnsapi/stubby/archive/v0.2.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://dnsprivacy.org/wiki/display/DP/DNS+Privacy+Daemon+-+Stubby",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "getdns",
+            "build-depend": false
+        },
+        {
+            "depend": "libyaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.5"
+}

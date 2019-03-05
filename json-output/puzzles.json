@@ -1,0 +1,23 @@
+{
+    "name": "Puzzles",
+    "description": "Collection of one-player puzzle games",
+    "url": "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/puzzles-20181213.ced51ad.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/puzzles/",
+    "depends": [
+        {
+            "depend": "halibut",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"mkfiles.pl\", /@osxarchs = .*/, \"@osxarchs = ('x86_64');\"",
+        "system \"perl\", \"mkfiles.pl\"",
+        "system \"make\", \"-d\", \"-f\", \"Makefile.osx\", \"all\"",
+        "prefix.install \"Puzzles.app\""
+    ],
+    "version": "20181213"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "Pagmo",
+    "description": "Scientific library for massively parallel optimization",
+    "url": "https://github.com/esa/pagmo2/archive/v2.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://esa.github.io/pagmo2/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "eigen",
+            "build-depend": false
+        },
+        {
+            "depend": "nlopt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"cmake\", \".\", \"-DPAGMO_WITH_EIGEN3=ON\", \"-DPAGMO_WITH_NLOPT=ON\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.10"
+}

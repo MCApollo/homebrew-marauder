@@ -1,0 +1,55 @@
+{
+    "name": "Reminiscence",
+    "description": "Flashback engine reimplementation",
+    "url": "http://cyxdown.free.fr/reminiscence/REminiscence-0.3.7.tar.bz2",
+    "mirror": null,
+    "homepage": "http://cyxdown.free.fr/reminiscence/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libmodplug",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "tremor",
+            "url": "https://git.xiph.org/tremor.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"tremor\").stage do",
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{libexec}\",",
+        "\"--disable-static\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.7"
+}

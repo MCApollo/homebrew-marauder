@@ -1,0 +1,37 @@
+{
+    "name": "Trafshow",
+    "description": "Continuous network traffic display",
+    "url": "https://pkg.freebsd.org/ports-distfiles/trafshow-5.2.3.tgz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/trafshow-5.2.3.tgz",
+    "homepage": "https://web.archive.org/web/20130707021442/soft.risp.ru/trafshow/index_en.shtml",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/be6fd4a/trafshow/patch-#{name}",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/7ad7c77/trafshow/patch-pcap-version-sierra.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "cp Dir[\"#{Formula[\"libtool\"].opt_pkgshare}/*/config.{guess,sub}\"], buildpath",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-slang\"",
+        "system \"make\"",
+        "bin.install \"trafshow\"",
+        "man1.install \"trafshow.1\"",
+        "etc.install \".trafshow\" => \"trafshow.default\""
+    ],
+    "version": "5.2.3"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Checkbashisms",
+    "description": "Checks for bashisms in shell scripts",
+    "url": "https://deb.debian.org/debian/pool/main/d/devscripts/devscripts_2.19.3.tar.xz",
+    "mirror": null,
+    "homepage": "https://launchpad.net/ubuntu/+source/devscripts/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"scripts/checkbashisms.pl\" do |s|",
+        "s.gsub! \"###VERSION###\", version",
+        "s.gsub! \"#!/usr/bin/perl\", \"#!/usr/bin/perl -T\""
+    ],
+    "version": "2.19.3"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Xtensor",
+    "description": "Multi-dimensional arrays with broadcasting and lazy computing",
+    "url": "https://github.com/QuantStack/xtensor/archive/0.19.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://quantstack.net/xtensor",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "xtl",
+            "url": "https://github.com/QuantStack/xtl/archive/0.5.4.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"xtl\").stage do",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.19.4"
+}

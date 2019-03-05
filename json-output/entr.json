@@ -1,0 +1,24 @@
+{
+    "name": "Entr",
+    "description": "Run arbitrary commands when files change",
+    "url": "http://entrproject.org/code/entr-4.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://entrproject.org/",
+    "depends": [
+        {
+            "depend": "mercurial",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PREFIX\"] = prefix",
+        "ENV[\"MANPREFIX\"] = man",
+        "system \"./configure\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.1"
+}

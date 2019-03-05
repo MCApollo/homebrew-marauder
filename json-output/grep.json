@@ -1,0 +1,38 @@
+{
+    "name": "Grep",
+    "description": "GNU grep, egrep and fgrep",
+    "url": "https://ftp.gnu.org/gnu/grep/grep-3.3.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/grep/grep-3.3.tar.xz",
+    "homepage": "https://www.gnu.org/software/grep/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-nls",
+        "--prefix=#{prefix}",
+        "--infodir=#{info}",
+        "--mandir=#{man}",
+        "--with-packager=Homebrew",
+        "--program-prefix=g",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "%w[grep egrep fgrep].each do |prog|",
+        "(libexec/\"gnubin\").install_symlink bin/\"g#{prog}\" => prog",
+        "(libexec/\"gnuman/man1\").install_symlink man1/\"g#{prog}.1\" => \"#{prog}.1\""
+    ],
+    "version": "3.3"
+}

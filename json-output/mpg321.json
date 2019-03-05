@@ -1,0 +1,67 @@
+{
+    "name": "Mpg321",
+    "description": "Command-line MP3 player",
+    "url": "https://downloads.sourceforge.net/project/mpg321/mpg321/0.3.2/mpg321_0.3.2.orig.tar.gz",
+    "mirror": null,
+    "homepage": "https://mpg321.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "libao",
+            "build-depend": false
+        },
+        {
+            "depend": "libid3tag",
+            "build-depend": false
+        },
+        {
+            "depend": "mad",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/mpg321.h\t2012-03-25 05:27:49.000000000 -0700\n",
+                "+++ b/mpg321.h\t2012-11-15 20:54:28.000000000 -0800\n",
+                "@@ -290,7 +290,7 @@\n",
+                " /* Shared total decoded frames */\n",
+                " decoded_frames *Decoded_Frames;\n",
+                " \n",
+                "-#if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED)\n",
+                "+#if defined(__GNU_LIBRARY__) && !defined(_SEM_SEMUN_UNDEFINED) || defined(__APPLE__)\n",
+                " /* */\n",
+                " #else\n",
+                " union semun {\n",
+                "--- a/network.c\t2012-03-25 05:27:49.000000000 -0700\n",
+                "+++ b/network.c\t2012-11-15 20:58:02.000000000 -0800\n",
+                "@@ -50,6 +50,13 @@\n",
+                " \n",
+                " #define IFVERB if(options.opt & MPG321_VERBOSE_PLAY)\n",
+                " \n",
+                "+/* The following defines are needed to emulate the Linux interface on\n",
+                "+ * BSD-based systems like FreeBSD and OS X */\n",
+                "+#if !defined(IPV6_ADD_MEMBERSHIP) && defined(IPV6_JOIN_GROUP)\n",
+                "+#define IPV6_ADD_MEMBERSHIP IPV6_JOIN_GROUP\n",
+                "+#define IPV6_DROP_MEMBERSHIP IPV6_LEAVE_GROUP\n",
+                "+#endif\n",
+                "+\n",
+                " int proxy_enable = 0;\n",
+                " char *proxy_server;\n",
+                " int auth_enable = 0;\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-debug\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-mpg123-symlink\",",
+        "\"--enable-ipv6\",",
+        "\"--disable-alsa\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "321_0.3.2"
+}

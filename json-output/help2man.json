@@ -1,0 +1,17 @@
+{
+    "name": "Help2man",
+    "description": "Automatically generate simple man pages",
+    "url": "https://ftp.gnu.org/gnu/help2man/help2man-1.47.8.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/help2man/help2man-1.47.8.tar.xz",
+    "homepage": "https://www.gnu.org/software/help2man/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.47.8"
+}

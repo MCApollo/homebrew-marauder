@@ -1,0 +1,22 @@
+{
+    "name": "Avanor",
+    "description": "Quick-growing roguelike game with easy ADOM-like UI",
+    "url": "https://downloads.sourceforge.net/project/avanor/avanor/0.5.8/avanor-0.5.8-src.tar.bz2",
+    "mirror": null,
+    "homepage": "https://avanor.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gist.githubusercontent.com/mistydemeo/64f47233ee64d55cb7d5/raw/c1847d7e3a134e6109ad30ce1968919dd962e727/avanor-clang.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"make\", \"DATA_DIR=#{pkgshare}/\", \"CC=#{ENV.cxx}\", \"LD=#{ENV.cxx}\"",
+        "bin.install \"avanor\"",
+        "pkgshare.install \"manual\""
+    ],
+    "version": "0.5.8"
+}

@@ -1,0 +1,28 @@
+{
+    "name": "Libnfc",
+    "description": "Low level NFC SDK and Programmers API",
+    "url": "https://bintray.com/artifact/download/nfc-tools/sources/libnfc-1.7.1.tar.bz2",
+    "mirror": null,
+    "homepage": "http://nfc-tools.org",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb-compat",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--enable-serial-autoprobe\",",
+        "\"--with-drivers=all\"",
+        "system \"make\", \"install\"",
+        "(prefix/\"etc/nfc/libnfc.conf\").write \"allow_intrusive_scan=yes\""
+    ],
+    "version": "1.7.1"
+}

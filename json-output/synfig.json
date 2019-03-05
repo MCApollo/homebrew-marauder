@@ -1,0 +1,80 @@
+{
+    "name": "Synfig",
+    "description": "Command-line renderer",
+    "url": "https://downloads.sourceforge.net/project/synfig/releases/1.0.2/source/synfig-1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://synfig.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "etl",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libsigc++",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "libxml++",
+            "build-depend": false
+        },
+        {
+            "depend": "mlt",
+            "build-depend": false
+        },
+        {
+            "depend": "openexr",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gist.githubusercontent.com/tschoonj/06d5de3cdc5d063f8612/raw/26fe46b6eedeecdc686b9fd5aac01de9f2756424/synfig.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.cxx11",
+        "boost = Formula[\"boost\"]",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-boost=#{boost.opt_prefix}\",",
+        "\"--without-jpeg\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.2"
+}

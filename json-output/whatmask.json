@@ -1,0 +1,19 @@
+{
+    "name": "Whatmask",
+    "description": "Network settings helper",
+    "url": "https://web.archive.org/web/20170107110521/downloads.laffeycomputer.com/current_builds/whatmask/whatmask-1.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.laffeycomputer.com/whatmask.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--mandir=#{man}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

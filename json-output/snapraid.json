@@ -1,0 +1,26 @@
+{
+    "name": "Snapraid",
+    "description": "Backup program for disk arrays",
+    "url": "https://github.com/amadvance/snapraid/releases/download/v11.3/snapraid-11.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://snapraid.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "11.3"
+}

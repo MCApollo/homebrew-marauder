@@ -1,0 +1,20 @@
+{
+    "name": "Idnits",
+    "description": "Looks for problems in internet draft formatting",
+    "url": "https://tools.ietf.org/tools/idnits/idnits-2.15.01.tgz",
+    "mirror": null,
+    "homepage": "https://tools.ietf.org/tools/idnits/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "test",
+            "url": "https://tools.ietf.org/id/draft-ietf-tcpm-undeployed-03.txt"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"idnits\""
+    ],
+    "version": "2.15.01"
+}

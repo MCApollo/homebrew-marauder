@@ -1,0 +1,22 @@
+{
+    "name": "Xmlsh",
+    "description": "XML shell",
+    "url": "https://downloads.sourceforge.net/project/xmlsh/xmlsh/1.2.5/xmlsh_1_2_5.zip",
+    "mirror": null,
+    "homepage": "http://www.xmlsh.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm_rf %w[win32 cygwin]",
+        "libexec.install Dir[\"*\"]",
+        "chmod 0755, \"#{libexec}/unix/xmlsh\"",
+        "(bin/\"xmlsh\").write <<~EOS",
+        "#!/bin/bash",
+        "export XMLSH=#{libexec}",
+        "exec #{libexec}/unix/xmlsh \"$@\"",
+        "EOS"
+    ],
+    "version": "1_2_5"
+}

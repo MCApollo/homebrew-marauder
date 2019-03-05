@@ -1,0 +1,72 @@
+{
+    "name": "Openjazz",
+    "description": "Open source Jazz Jackrabit engine",
+    "url": "https://github.com/AlisterT/openjazz/releases/download/20180522/openjazz-20180522.tar.xz",
+    "mirror": null,
+    "homepage": "http://www.alister.eu/jazz/oj/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libmodplug",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "shareware",
+            "url": "https://image.dosgamesarchive.com/games/jazz.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/io/network.cpp b/src/io/network.cpp\n",
+                "index 8af8775..362118e 100644\n",
+                "--- a/src/io/network.cpp\n",
+                "+++ b/src/io/network.cpp\n",
+                "@@ -53,6 +53,9 @@\n",
+                "\t\t#include <errno.h>\n",
+                "\t\t#include <string.h>\n",
+                "\t#endif\n",
+                "+ \t#ifdef __APPLE__\n",
+                "+ \t\t#define MSG_NOSIGNAL SO_NOSIGPIPE\n",
+                "+    #endif\n",
+                " #elif defined USE_SDL_NET\n",
+                "\t#include <arpa/inet.h>\n",
+                " #endif\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV.append_to_cflags \"-I#{Formula[\"libmodplug\"].opt_include}/libmodplug\"",
+        "system \"autoreconf\", \"-ivf\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--bindir=#{pkgshare}\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\"",
+        "(bin/\"OpenJazz\").write <<~EOS",
+        "#!/bin/sh",
+        "exec \"#{pkgshare}/OpenJazz\" \"$@\"",
+        "EOS",
+        "resource(\"shareware\").stage do",
+        "pkgshare.install Dir[\"*\"]"
+    ],
+    "version": "20180522"
+}

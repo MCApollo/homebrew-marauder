@@ -1,0 +1,15 @@
+{
+    "name": "Selecta",
+    "description": "Fuzzy text selector for files and anything else you need to select",
+    "url": "https://github.com/garybernhardt/selecta/archive/v0.0.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/garybernhardt/selecta",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"selecta\""
+    ],
+    "version": "0.0.7"
+}

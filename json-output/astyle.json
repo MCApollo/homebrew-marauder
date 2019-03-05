@@ -1,0 +1,17 @@
+{
+    "name": "Astyle",
+    "description": "Source code beautifier for C, C++, C#, and Java",
+    "url": "https://downloads.sourceforge.net/project/astyle/astyle/astyle%203.1/astyle_3.1_macos.tar.gz",
+    "mirror": null,
+    "homepage": "https://astyle.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"make\", \"CXX=#{ENV.cxx}\", \"-f\", \"../build/mac/Makefile\"",
+        "bin.install \"bin/astyle\""
+    ],
+    "version": "3.1"
+}

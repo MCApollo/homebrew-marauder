@@ -1,0 +1,18 @@
+{
+    "name": "Mr",
+    "description": "Multiple Repository management tool",
+    "url": "git://myrepos.branchable.com/",
+    "mirror": null,
+    "homepage": "https://myrepos.branchable.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"mr\", \"webcheckout\"",
+        "man1.install gzip(\"mr.1\", \"webcheckout.1\")",
+        "pkgshare.install Dir[\"lib/*\"]"
+    ],
+    "version": "1.0-u"
+}

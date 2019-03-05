@@ -1,0 +1,30 @@
+{
+    "name": "Vrpn",
+    "description": "Virtual reality peripheral network",
+    "url": "https://github.com/vrpn/vrpn/releases/download/version_07.34/vrpn_07.34.zip",
+    "mirror": null,
+    "homepage": "https://github.com/vrpn/vrpn/wiki",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.libstdcxx unless MacOS.version > :mavericks",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args,",
+        "\"-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}\",",
+        "\"-DVRPN_BUILD_CLIENTS:BOOL=OFF\",",
+        "\"-DVRPN_BUILD_JAVA:BOOL=OFF\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "07.34"
+}

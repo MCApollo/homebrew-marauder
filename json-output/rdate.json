@@ -1,0 +1,19 @@
+{
+    "name": "Rdate",
+    "description": "Set the system",
+    "url": "https://www.aelius.com/njh/rdate/rdate-1.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.aelius.com/njh/rdate/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5"
+}

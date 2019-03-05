@@ -1,0 +1,16 @@
+{
+    "name": "Modman",
+    "description": "Module deployment script geared towards Magento development",
+    "url": "https://github.com/colinmollenhour/modman/archive/1.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/colinmollenhour/modman",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"modman\"",
+        "bash_completion.install \"bash_completion\" => \"modman.bash\""
+    ],
+    "version": "1.12"
+}

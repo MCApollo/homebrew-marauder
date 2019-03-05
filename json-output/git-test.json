@@ -1,0 +1,17 @@
+{
+    "name": "GitTest",
+    "description": "Run tests on each distinct tree in a revision list",
+    "url": "https://github.com/spotify/git-test/archive/v1.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/spotify/git-test",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"git-test\"",
+        "man1.install \"git-test.1\"",
+        "pkgshare.install \"test.sh\""
+    ],
+    "version": "1.0.4"
+}

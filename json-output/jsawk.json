@@ -1,0 +1,20 @@
+{
+    "name": "Jsawk",
+    "description": "Like awk, but for JSON, using JavaScript objects and arrays",
+    "url": "https://github.com/micha/jsawk/archive/1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/micha/jsawk",
+    "depends": [
+        {
+            "depend": "spidermonkey",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"jsawk\""
+    ],
+    "version": "1.4"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Dbacl",
+    "description": "Digramic Bayesian classifier",
+    "url": "https://downloads.sourceforge.net/project/dbacl/dbacl/1.14.1/dbacl-1.14.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://dbacl.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14.1"
+}

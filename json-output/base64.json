@@ -1,0 +1,18 @@
+{
+    "name": "Base64",
+    "description": "Encode and decode base64 files",
+    "url": "https://www.fourmilab.ch/webtools/base64/base64-1.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.fourmilab.ch/webtools/base64/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\"",
+        "system \"make\"",
+        "bin.install \"base64\"",
+        "man1.install \"base64.1\""
+    ],
+    "version": "1.5"
+}

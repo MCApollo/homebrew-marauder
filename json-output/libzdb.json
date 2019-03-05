@@ -1,0 +1,33 @@
+{
+    "name": "Libzdb",
+    "description": "Database connection pool library",
+    "url": "https://tildeslash.com/libzdb/dist/libzdb-3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://tildeslash.com/libzdb/",
+    "depends": [
+        {
+            "depend": "mysql-client",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.1"
+}

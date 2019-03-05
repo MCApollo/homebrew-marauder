@@ -1,0 +1,30 @@
+{
+    "name": "Fondu",
+    "description": "Tools to convert between different font formats",
+    "url": "https://fondu.sourceforge.io/fondu_src-060102.tgz",
+    "mirror": null,
+    "homepage": "https://fondu.sourceforge.io/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "cminch.ttf",
+            "url": "http://mirrors.ctan.org/fonts/cm/ps-type1/bakoma/ttf/cminch.ttf"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "cspice",
+            "reason": "both install `tobin` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--exec-prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "man1.install Dir[\"*.1\"]"
+    ],
+    "version": "060102"
+}

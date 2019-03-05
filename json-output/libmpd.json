@@ -1,0 +1,30 @@
+{
+    "name": "Libmpd",
+    "description": "Higher level access to MPD functions",
+    "url": "https://www.musicpd.org/download/libmpd/11.8.17/libmpd-11.8.17.tar.gz",
+    "mirror": null,
+    "homepage": "https://gmpc.wikia.com/wiki/Gnome_Music_Player_Client",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "11.8.17"
+}

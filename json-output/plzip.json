@@ -1,0 +1,29 @@
+{
+    "name": "Plzip",
+    "description": "Data compressor",
+    "url": "https://download.savannah.gnu.org/releases/lzip/plzip/plzip-1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/lzip/plzip.html",
+    "depends": [
+        {
+            "depend": "lzlib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/68e2af8/plzip/pthread.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7"
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Stoken",
+    "description": "Tokencode generator compatible with RSA SecurID 128-bit (AES)",
+    "url": "https://downloads.sourceforge.net/project/stoken/stoken-0.92.tar.gz",
+    "mirror": null,
+    "homepage": "https://stoken.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "nettle",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-debug",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.92"
+}

@@ -1,0 +1,87 @@
+{
+    "name": "TinyFugue",
+    "description": "Programmable MUD client",
+    "url": "https://downloads.sourceforge.net/project/tinyfugue/tinyfugue/5.0%20beta%208/tf-50b8.tar.gz",
+    "mirror": null,
+    "homepage": "https://tinyfugue.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "libnet",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "tee-clc",
+            "reason": "both install a `tf` binary"
+        }
+    ],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/src/malloc.c\t2007-01-13 15:12:39.000000000 -0800\n",
+                "+++ b/src/malloc.c\t2012-10-26 08:23:30.000000000 -0700\n",
+                "@@ -7,6 +7,7 @@\n",
+                "  ************************************************************************/\n",
+                " static const char RCSid[] = \"$Id: malloc.c,v 35004.22 2007/01/13 23:12:39 kkeys Exp $\";\n",
+                " \n",
+                "+#include \"sys/types.h\"\n",
+                " #include \"tfconfig.h\"\n",
+                " #include \"port.h\"\n",
+                " #include \"signals.h\"\n",
+                "--- a/src/macro.c\t2007-01-13 15:12:39.000000000 -0800\n",
+                "+++ b/src/macro.c\t2012-10-26 08:15:31.000000000 -0700\n",
+                "@@ -893,7 +893,8 @@\n",
+                "     }\n",
+                "     spec->attr &= ~F_NONE;\n",
+                "     if (spec->nsubattr) {\n",
+                "-\tint n = pcre_info(spec->trig.ri->re, NULL, NULL);\n",
+                "+\tint n;\n",
+                "+\tpcre_fullinfo(spec->trig.ri->re, NULL, PCRE_INFO_CAPTURECOUNT, &n);\n",
+                " \tfor (i = 0; i < spec->nsubattr; i++) {\n",
+                " \t    spec->subattr[i].attr &= ~F_NONE;\n",
+                " \t    if (spec->subattr[i].subexp > n) {\n",
+                "--- a/src/pattern.c\t2007-01-13 15:12:39.000000000 -0800\n",
+                "+++ b/src/pattern.c\t2012-10-26 08:16:19.000000000 -0700\n",
+                "@@ -151,7 +151,7 @@\n",
+                " \t    emsg ? emsg : \"unknown error\");\n",
+                " \tgoto tf_reg_compile_error;\n",
+                "     }\n",
+                "-    n = pcre_info(ri->re, NULL, NULL);\n",
+                "+    pcre_fullinfo(ri->re, NULL, PCRE_INFO_CAPTURECOUNT, &n);\n",
+                "     if (n < 0) goto tf_reg_compile_error;\n",
+                "     ri->ovecsize = 3 * (n + 1);\n",
+                "     ri->ovector = dmalloc(NULL, sizeof(int) * ri->ovecsize, file, line);\n",
+                "--- a/src/pattern.h\t2007-01-13 15:12:39.000000000 -0800\n",
+                "+++ b/src/pattern.h\t2012-10-26 08:17:54.000000000 -0700\n",
+                "@@ -10,7 +10,7 @@\n",
+                " #ifndef PATTERN_H\n",
+                " #define PATTERN_H\n",
+                " \n",
+                "-#include \"pcre-2.08/pcre.h\"\n",
+                "+#include <pcre.h>\n",
+                " \n",
+                " typedef struct RegInfo {\n",
+                "     pcre *re;\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-getaddrinfo\",",
+        "\"--enable-termcap=ncurses\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.0"
+}

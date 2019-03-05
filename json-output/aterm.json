@@ -1,0 +1,19 @@
+{
+    "name": "Aterm",
+    "description": "Annotated Term for tree-like ADT exchange",
+    "url": "http://www.meta-environment.org/releases/aterm-2.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://strategoxt.org/Tools/ATermFormat",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "ENV.deparallelize ",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.8"
+}

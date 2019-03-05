@@ -1,0 +1,24 @@
+{
+    "name": "Jp2a",
+    "description": "Convert JPG images to ASCII",
+    "url": "https://downloads.sourceforge.net/project/jp2a/jp2a/1.0.6/jp2a-1.0.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://csl.name/jp2a/",
+    "depends": [
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"test\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.6"
+}

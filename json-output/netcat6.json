@@ -1,0 +1,18 @@
+{
+    "name": "Netcat6",
+    "description": "Rewrite of netcat that supports IPv6, plus other improvements",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/n/nc6/nc6_1.0.orig.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/n/nc6/nc6_1.0.orig.tar.gz",
+    "homepage": "https://www.deepspace6.net/projects/netcat6.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6_1.0"
+}

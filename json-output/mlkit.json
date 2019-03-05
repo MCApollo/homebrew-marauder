@@ -1,0 +1,33 @@
+{
+    "name": "Mlkit",
+    "description": "Compiler for the Standard ML programming language",
+    "url": "https://github.com/melsman/mlkit/archive/mlkit-4.3.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://melsman.github.io/mlkit",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "mlton",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"sh\", \"./autobuild\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "ENV.permit_arch_flags",
+        "system \"make\", \"mlkit\"",
+        "system \"make\", \"mlkit_libs\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.3.15"
+}

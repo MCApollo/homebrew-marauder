@@ -1,0 +1,24 @@
+{
+    "name": "Fastme",
+    "description": "Accurate and fast distance-based phylogeny inference program",
+    "url": "https://gite.lirmm.fr/atgc/FastME/raw/v2.1.6/tarball/fastme-2.1.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.atgc-montpellier.fr/fastme/",
+    "depends": [
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.6"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Zboy",
+    "description": "GameBoy emulator",
+    "url": "https://downloads.sourceforge.net/project/zboy/zBoy%20v0.60/zboy-0.60.tar.gz",
+    "mirror": null,
+    "homepage": "https://zboy.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "sdl2 = Formula[\"sdl2\"]",
+        "ENV.append_to_cflags \"-std=gnu89 -D__zboy4linux__ -DNETPLAY -DLFNAVAIL -I#{sdl2.include} -L#{sdl2.lib}\"",
+        "system \"make\", \"-f\", \"Makefile.linux\", \"CFLAGS=#{ENV.cflags}\"",
+        "bin.install \"zboy\""
+    ],
+    "version": "0.60"
+}

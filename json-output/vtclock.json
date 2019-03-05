@@ -1,0 +1,16 @@
+{
+    "name": "Vtclock",
+    "description": "Text-mode fullscreen digital clock",
+    "url": "https://webonastick.com/vtclock/vtclock-2005-02-20.tar.gz",
+    "mirror": null,
+    "homepage": "https://webonastick.com/vtclock/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"vtclock\""
+    ],
+    "version": "2005"
+}

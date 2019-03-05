@@ -1,0 +1,31 @@
+{
+    "name": "Nng",
+    "description": "Nanomsg-next-generation -- light-weight brokerless messaging",
+    "url": "https://github.com/nanomsg/nng/archive/v1.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://nanomsg.github.io/nng/",
+    "depends": [
+        {
+            "depend": "asciidoctor",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "ninja",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-GNinja\", \"-DNNG_ENABLE_DOC=ON\", \"-DBUILD_SHARED_LIBS=ON\", *std_cmake_args",
+        "system \"ninja\"",
+        "system \"ninja\", \"install\""
+    ],
+    "version": "1.1.1"
+}

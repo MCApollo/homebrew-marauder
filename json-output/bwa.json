@@ -1,0 +1,17 @@
+{
+    "name": "Bwa",
+    "description": "Burrow-Wheeler Aligner for pairwise alignment of DNA",
+    "url": "https://github.com/lh3/bwa/releases/download/v0.7.17/bwa-0.7.17.tar.bz2",
+    "mirror": null,
+    "homepage": "https://github.com/lh3/bwa",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"bwa\"",
+        "man1.install \"bwa.1\""
+    ],
+    "version": "0.7.17"
+}

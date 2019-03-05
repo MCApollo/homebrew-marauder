@@ -1,0 +1,50 @@
+{
+    "name": "Byobu",
+    "description": "Text-based window manager and terminal multiplexer",
+    "url": "https://launchpad.net/byobu/trunk/5.127/+download/byobu_5.127.orig.tar.gz",
+    "mirror": null,
+    "homepage": "http://byobu.co/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "coreutils",
+            "build-depend": false
+        },
+        {
+            "depend": "gnu-sed",
+            "build-depend": false
+        },
+        {
+            "depend": "newt",
+            "build-depend": false
+        },
+        {
+            "depend": "tmux",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "ctail",
+            "reason": "both install `ctail` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "cp \"./debian/changelog\", \"./ChangeLog\"",
+        "system \"autoreconf\", \"-fvi\"",
+        "end",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.127"
+}

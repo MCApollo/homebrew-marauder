@@ -1,0 +1,26 @@
+{
+    "name": "Dcm2niix",
+    "description": "DICOM to NIfTI converter",
+    "url": "https://github.com/rordenlab/dcm2niix/archive/v1.0.20181125.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "sample.dcm",
+            "url": "https://raw.githubusercontent.com/dangom/sample-dicom/master/MR000000.dcm"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.20181125"
+}

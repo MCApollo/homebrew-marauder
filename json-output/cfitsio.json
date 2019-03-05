@@ -1,0 +1,18 @@
+{
+    "name": "Cfitsio",
+    "description": "C access to FITS data files with optional Fortran wrappers",
+    "url": "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/cfitsio3450.tar.gz",
+    "mirror": null,
+    "homepage": "https://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--enable-reentrant\"",
+        "system \"make\", \"shared\"",
+        "system \"make\", \"install\"",
+        "(pkgshare/\"testprog\").install Dir[\"testprog*\"]"
+    ],
+    "version": "3450"
+}

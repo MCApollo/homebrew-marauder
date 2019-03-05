@@ -1,0 +1,22 @@
+{
+    "name": "Rename",
+    "description": "Perl-powered file rename script with many helpful built-ins",
+    "url": "https://github.com/ap/rename/archive/v1.600.tar.gz",
+    "mirror": null,
+    "homepage": "http://plasmasturm.org/code/rename",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "util-linux",
+            "reason": "both install `rename` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"pod2man\", \"rename\", \"rename.1\"",
+        "bin.install \"rename\"",
+        "man1.install \"rename.1\""
+    ],
+    "version": "1.600"
+}

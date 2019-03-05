@@ -1,0 +1,17 @@
+{
+    "name": "Mad",
+    "description": "MPEG audio decoder",
+    "url": "https://downloads.sourceforge.net/project/mad/libmad/0.15.1b/libmad-0.15.1b.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.underbit.com/products/mad/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debugging\", \"--enable-fpm=64bit\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"CFLAGS=#{ENV.cflags}\", \"LDFLAGS=#{ENV.ldflags}\", \"install\"",
+        "(lib+\"pkgconfig/mad.pc\").write pc_file"
+    ],
+    "version": "0.15.1"
+}

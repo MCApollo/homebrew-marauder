@@ -1,0 +1,45 @@
+{
+    "name": "Ahcpd",
+    "description": "Autoconfiguration protocol for IPv6 and IPv6/IPv4 networks",
+    "url": "https://www.irif.univ-paris-diderot.fr/~jch/software/files/ahcpd-0.53.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.irif.univ-paris-diderot.fr/~jch/software/ahcp/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/Makefile b/Makefile\n",
+                "index e52eeb7..28e1043 100644\n",
+                "--- a/Makefile\n",
+                "+++ b/Makefile\n",
+                "@@ -40,8 +40,8 @@ install.minimal: all\n",
+                "\tchmod +x $(TARGET)/etc/ahcp/ahcp-config.sh\n",
+                "\n",
+                " install: all install.minimal\n",
+                "-\tmkdir -p $(TARGET)$(PREFIX)/man/man8/\n",
+                "-\tcp -f ahcpd.man $(TARGET)$(PREFIX)/man/man8/ahcpd.8\n",
+                "+\tmkdir -p $(TARGET)$(PREFIX)/share/man/man8/\n",
+                "+\tcp -f ahcpd.man $(TARGET)$(PREFIX)/share/man/man8/ahcpd.8\n",
+                "\n",
+                " .PHONY: uninstall\n",
+                "\n",
+                "@@ -49,7 +49,7 @@ uninstall:\n",
+                "\t-rm -f $(TARGET)$(PREFIX)/bin/ahcpd\n",
+                "\t-rm -f $(TARGET)$(PREFIX)/bin/ahcp-config.sh\n",
+                "\t-rm -f $(TARGET)$(PREFIX)/bin/ahcp-dummy-config.sh\n",
+                "-\t-rm -f $(TARGET)$(PREFIX)/man/man8/ahcpd.8\n",
+                "+\t-rm -f $(TARGET)$(PREFIX)/share/man/man8/ahcpd.8\n",
+                "\n",
+                " .PHONY: clean\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"make\", \"LDLIBS=''\"",
+        "system \"make\", \"install\", \"PREFIX=\", \"TARGET=#{prefix}\""
+    ],
+    "version": "0.53"
+}

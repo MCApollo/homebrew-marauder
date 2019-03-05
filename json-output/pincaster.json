@@ -1,0 +1,29 @@
+{
+    "name": "Pincaster",
+    "description": "Nosql database with a HTTP/JSON interface",
+    "url": "https://download.pureftpd.org/pincaster/releases/pincaster-0.6.tar.bz2",
+    "mirror": null,
+    "homepage": "https://github.com/jedisct1/Pincaster",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "libevent",
+            "reason": "Pincaster embeds libevent"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--with-yajl=embedded\"",
+        "system \"make\", \"install\"",
+        "inreplace \"pincaster.conf\" do |s|",
+        "s.gsub! \"/var/db/pincaster/pincaster.db\", \"#{var}/db/pincaster/pincaster.db\"",
+        "s.gsub! \""
+    ],
+    "version": "0.6"
+}

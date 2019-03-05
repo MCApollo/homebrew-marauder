@@ -1,0 +1,26 @@
+{
+    "name": "Narwhal",
+    "description": "General purpose JavaScript platform for building applications",
+    "url": "https://github.com/280north/narwhal/archive/v0.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/280north/narwhal",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "spidermonkey",
+            "reason": "both install a js binary"
+        },
+        {
+            "conflict": "elixir-build",
+            "reason": "both install `json` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "rm Dir[\"bin/*.cmd\"]",
+        "libexec.install Dir[\"*\"]",
+        "bin.install_symlink Dir[\"#{libexec}/bin/*\"]"
+    ],
+    "version": "0.3.2"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "MixCompletion",
+    "description": "Elixir Mix completion plus shortcuts/colors",
+    "url": "https://github.com/davidhq/mix-power-completion/archive/0.8.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/davidhq/mix-power-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"mix\""
+    ],
+    "version": "0.8.2"
+}

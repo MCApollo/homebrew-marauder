@@ -1,0 +1,30 @@
+{
+    "name": "SuiteSparse",
+    "description": "Suite of Sparse Matrix Software",
+    "url": "http://faculty.cse.tamu.edu/davis/SuiteSparse/SuiteSparse-5.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://faculty.cse.tamu.edu/davis/suitesparse.html",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "metis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mongoose",
+            "reason": "suite-sparse vendors libmongoose.dylib"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "mkdir \"GraphBLAS/build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args"
+    ],
+    "version": "5.3.0"
+}

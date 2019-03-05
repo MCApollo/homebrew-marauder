@@ -1,0 +1,25 @@
+{
+    "name": "GitNow",
+    "description": "Light, temporary commits for git",
+    "url": "https://github.com/iwata/git-now.git",
+    "mirror": null,
+    "homepage": "https://github.com/iwata/git-now",
+    "depends": [
+        {
+            "depend": "gnu-getopt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{libexec}\", \"install\"",
+        "(bin/\"git-now\").write <<~EOS",
+        "#!/bin/sh",
+        "PATH=#{Formula[\"gnu-getopt\"].opt_bin}:$PATH #{libexec}/bin/git-now \"$@\"",
+        "EOS",
+        "zsh_completion.install \"etc/_git-now\""
+    ],
+    "version": "0.1.1.0-git-a07a0589"
+}

@@ -1,0 +1,55 @@
+{
+    "name": "Aview",
+    "description": "ASCII-art image browser and animation viewer",
+    "url": "https://downloads.sourceforge.net/aa-project/aview-1.3.0rc1.tar.gz",
+    "mirror": null,
+    "homepage": "https://aa-project.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "aalib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/image.c b/image.c\n",
+                "index 232b838..9780e61 100644\n",
+                "--- a/image.c\n",
+                "+++ b/image.c\n",
+                "@@ -1,6 +1,6 @@\n",
+                " #include <stdio.h>\n",
+                " #include <unistd.h>\n",
+                "-#include <malloc.h>\n",
+                "+#include <stdlib.h>\n",
+                " #include \"config.h\"\n",
+                " \n",
+                " int imgwidth, imgheight;\n",
+                "diff --git a/ui.c b/ui.c\n",
+                "index d316f7a..134a4ca 100644\n",
+                "--- a/ui.c\n",
+                "+++ b/ui.c\n",
+                "@@ -1,6 +1,6 @@\n",
+                " #include <stdio.h>\n",
+                " #include <ctype.h>\n",
+                "-#include <malloc.h>\n",
+                "+#include <stdlib.h>\n",
+                " #include <string.h>\n",
+                " #include <aalib.h>\n",
+                " #include \"shrink.h\"\n",
+                "\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.0"
+}

@@ -1,0 +1,26 @@
+{
+    "name": "RangeV3",
+    "description": "Experimental range library for C++11/14/17",
+    "url": "https://github.com/ericniebler/range-v3/archive/0.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://ericniebler.github.io/range-v3/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\",",
+        "\"-DRANGE_V3_TESTS=OFF\",",
+        "\"-DRANGE_V3_HEADER_CHECKS=OFF\",",
+        "\"-DRANGE_V3_EXAMPLES=OFF\",",
+        "\"-DRANGE_V3_PERF=OFF\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.0"
+}

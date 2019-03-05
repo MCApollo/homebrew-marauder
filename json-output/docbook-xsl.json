@@ -1,0 +1,28 @@
+{
+    "name": "DocbookXsl",
+    "description": "XML vocabulary to create presentation-neutral documents",
+    "url": "https://downloads.sourceforge.net/project/docbook/docbook-xsl/1.79.1/docbook-xsl-1.79.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://docbook.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "docbook",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "ns",
+            "url": "https://downloads.sourceforge.net/project/docbook/docbook-xsl-ns/1.79.1/docbook-xsl-ns-1.79.1.tar.bz2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "[prefix/\"docbook-xsl/catalog.xml\", prefix/\"docbook-xsl-ns/catalog.xml\"].each do |catalog|",
+        "system \"xmlcatalog\", \"--noout\", \"--del\", \"file://#{catalog}\", \"#{etc}/xml/catalog\"",
+        "system \"xmlcatalog\", \"--noout\", \"--add\", \"nextCatalog\", \"\", \"file://#{catalog}\", \"#{etc}/xml/catalog\""
+    ],
+    "version": "1.79.1"
+}

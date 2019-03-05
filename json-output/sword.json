@@ -1,0 +1,25 @@
+{
+    "name": "Sword",
+    "description": "Cross-platform tools to write Bible software",
+    "url": "https://www.crosswire.org/ftpmirror/pub/sword/source/v1.8/sword-1.8.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.crosswire.org/sword/index.jsp",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-debug",
+        "--disable-profile",
+        "--disable-tests",
+        "--with-curl",
+        "--without-icu",
+        "--without-clucene",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.1"
+}

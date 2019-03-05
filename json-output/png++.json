@@ -1,0 +1,20 @@
+{
+    "name": "Pngxx",
+    "description": "C++ wrapper for libpng library",
+    "url": "https://savannah.nongnu.org/download/pngpp/png++-0.2.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/pngpp/",
+    "depends": [
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "0.2.5"
+}

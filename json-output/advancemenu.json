@@ -1,0 +1,26 @@
+{
+    "name": "Advancemenu",
+    "description": "Frontend for AdvanceMAME/MESS",
+    "url": "https://github.com/amadvance/advancemame/releases/download/advancemenu-2.9/advancemenu-2.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.advancemame.it/menu-readme.html",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "advancemame",
+            "reason": "both install `advmenu` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\", \"LDFLAGS=#{ENV.ldflags}\", \"mandir=#{man}\""
+    ],
+    "version": "2.9"
+}

@@ -1,0 +1,49 @@
+{
+    "name": "Ffmpeg2theora",
+    "description": "Convert video files to Ogg Theora format",
+    "url": "https://v2v.cc/~j/ffmpeg2theora/downloads/ffmpeg2theora-0.30.tar.bz2",
+    "mirror": null,
+    "homepage": "https://v2v.cc/~j/ffmpeg2theora/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "scons",
+            "build-depend": true
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libkate",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "theora",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = [",
+        "\"prefix=#{prefix}\",",
+        "\"mandir=PREFIX/share/man\",",
+        "\"APPEND_LINKFLAGS=-headerpad_max_install_names\",",
+        "]",
+        "system \"scons\", \"install\", *args"
+    ],
+    "version": "0.30"
+}

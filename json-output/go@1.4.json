@@ -1,0 +1,25 @@
+{
+    "name": "GoAT14",
+    "description": "Go programming environment (1.4)",
+    "url": "https://github.com/golang/go.git",
+    "mirror": null,
+    "homepage": "https://golang.org",
+    "depends": [],
+    "resource": [
+        {
+            "name": "gotools",
+            "url": "https://go.googlesource.com/tools.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.refurbish_args",
+        "cd \"src\" do",
+        "ENV[\"GOROOT_FINAL\"] = libexec",
+        "ENV[\"GOOS\"]         = \"darwin\"",
+        "ENV[\"CGO_ENABLED\"]  = \"0\"",
+        "system \"./make.bash\", \"--no-clean\""
+    ],
+    "version": "1.0-git-3895b505"
+}

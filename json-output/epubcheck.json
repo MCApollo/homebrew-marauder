@@ -1,0 +1,17 @@
+{
+    "name": "Epubcheck",
+    "description": "Validate EPUB files, version 2.0 and later",
+    "url": "https://github.com/w3c/epubcheck/releases/download/v4.1.1/epubcheck-4.1.1.zip",
+    "mirror": null,
+    "homepage": "https://github.com/w3c/epubcheck",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "jarname = \"epubcheck.jar\"",
+        "libexec.install jarname, \"lib\"",
+        "bin.write_jar_script libexec/jarname, \"epubcheck\""
+    ],
+    "version": "4.1.1"
+}

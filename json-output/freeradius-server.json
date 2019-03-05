@@ -1,0 +1,25 @@
+{
+    "name": "FreeradiusServer",
+    "description": "High-performance and highly configurable RADIUS server",
+    "url": "https://github.com/FreeRADIUS/freeradius-server/archive/release_3_0_17.tar.gz",
+    "mirror": null,
+    "homepage": "https://freeradius.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "talloc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"run/radiusd\").mkpath",
+        "(var/\"log/radius\").mkpath"
+    ],
+    "version": "3_0_17"
+}

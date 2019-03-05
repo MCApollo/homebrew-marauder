@@ -1,0 +1,40 @@
+{
+    "name": "Lasso",
+    "description": "Library for Liberty Alliance and SAML protocols",
+    "url": "https://dev.entrouvert.org/releases/lasso/lasso-2.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://lasso.entrouvert.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libxmlsec1",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--disable-java\",",
+        "\"--disable-perl\",",
+        "\"--disable-php5\",",
+        "\"--disable-python\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-pkg-config=#{ENV[\"PKG_CONFIG_PATH\"]}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.0"
+}

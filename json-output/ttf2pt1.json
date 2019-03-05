@@ -1,0 +1,17 @@
+{
+    "name": "Ttf2pt1",
+    "description": "True Type Font to Postscript Type 1 converter",
+    "url": "https://downloads.sourceforge.net/ttf2pt1/ttf2pt1-3.4.4.tgz",
+    "mirror": null,
+    "homepage": "https://ttf2pt1.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\", \"INSTDIR=#{prefix}\"",
+        "bin.install \"ttf2pt1\"",
+        "man1.install \"ttf2pt1.1\""
+    ],
+    "version": "3.4.4"
+}

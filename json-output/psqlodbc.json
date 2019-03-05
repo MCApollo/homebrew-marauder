@@ -1,0 +1,44 @@
+{
+    "name": "Psqlodbc",
+    "description": "Official PostgreSQL ODBC driver",
+    "url": "https://ftp.postgresql.org/pub/odbc/versions/src/psqlodbc-10.03.0000.tar.gz",
+    "mirror": null,
+    "homepage": "https://odbc.postgresql.org",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        },
+        {
+            "depend": "unixodbc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-unixodbc=#{Formula[\"unixodbc\"].opt_prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "10.03.0000"
+}

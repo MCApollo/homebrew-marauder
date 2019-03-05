@@ -1,0 +1,17 @@
+{
+    "name": "Ipbt",
+    "description": "Program for recording a UNIX terminal session",
+    "url": "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/ipbt-20170831.3c40fd3.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/ipbt-20170831.tar.gz",
+    "homepage": "https://www.chiark.greenend.org.uk/~sgtatham/ipbt/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20170831.3"
+}

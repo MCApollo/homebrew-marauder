@@ -1,0 +1,61 @@
+{
+    "name": "R",
+    "description": "Software environment for statistical computing",
+    "url": "https://cran.r-project.org/src/base/R-3/R-3.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.r-project.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "openblas",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "gss",
+            "url": "https://cloud.r-project.org/src/contrib/gss_2.1-9.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "short_version =",
+        "`#{bin}/Rscript -e 'cat(as.character(getRversion()[1,1:2]))'`.strip",
+        "site_library = HOMEBREW_PREFIX/\"lib/R/#{short_version}/site-library\"",
+        "site_library.mkpath",
+        "ln_s site_library, lib/\"R/site-library\""
+    ],
+    "version": "3.5.2"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Samtools",
+    "description": "Tools for manipulating next-generation sequencing data",
+    "url": "https://github.com/samtools/samtools/releases/download/1.9/samtools-1.9.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.htslib.org/",
+    "depends": [
+        {
+            "depend": "htslib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-htslib=#{Formula[\"htslib\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9"
+}

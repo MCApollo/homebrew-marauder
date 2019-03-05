@@ -1,0 +1,30 @@
+{
+    "name": "Libyaml",
+    "description": "YAML Parser",
+    "url": "https://github.com/yaml/libyaml/archive/0.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/yaml/libyaml",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.1"
+}

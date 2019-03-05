@@ -1,0 +1,36 @@
+{
+    "name": "Rubberband",
+    "description": "Audio time stretcher tool and library",
+    "url": "https://breakfastquay.com/files/releases/rubberband-1.8.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://breakfastquay.com/rubberband/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libsamplerate",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-f\", \"Makefile.osx\"",
+        "bin.install \"bin/rubberband\"",
+        "lib.install \"lib/librubberband.dylib\" => \"librubberband.2.1.1.dylib\"",
+        "lib.install_symlink lib/\"librubberband.2.1.1.dylib\" => \"librubberband.2.dylib\"",
+        "lib.install_symlink lib/\"librubberband.2.1.1.dylib\" => \"librubberband.dylib\"",
+        "include.install \"rubberband\"",
+        "cp \"rubberband.pc.in\", \"rubberband.pc\"",
+        "inreplace \"rubberband.pc\", \"%PREFIX%\", opt_prefix",
+        "(lib/\"pkgconfig\").install \"rubberband.pc\""
+    ],
+    "version": "1.8.2"
+}

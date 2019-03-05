@@ -1,0 +1,196 @@
+{
+    "name": "Php",
+    "description": "General-purpose scripting language",
+    "url": "https://php.net/get/php-7.3.2.tar.xz/from/this/mirror",
+    "mirror": null,
+    "homepage": "https://secure.php.net/",
+    "depends": [
+        {
+            "depend": "httpd",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "apr",
+            "build-depend": false
+        },
+        {
+            "depend": "apr-util",
+            "build-depend": false
+        },
+        {
+            "depend": "argon2",
+            "build-depend": false
+        },
+        {
+            "depend": "aspell",
+            "build-depend": false
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": false
+        },
+        {
+            "depend": "curl-openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "freetds",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libpq",
+            "build-depend": false
+        },
+        {
+            "depend": "libsodium",
+            "build-depend": false
+        },
+        {
+            "depend": "libzip",
+            "build-depend": false
+        },
+        {
+            "depend": "openldap",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        },
+        {
+            "depend": "tidy-html5",
+            "build-depend": false
+        },
+        {
+            "depend": "unixodbc",
+            "build-depend": false
+        },
+        {
+            "depend": "webp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/acinclude.m4 b/acinclude.m4\n",
+                "index 168c465f8d..6c087d152f 100644\n",
+                "--- a/acinclude.m4\n",
+                "+++ b/acinclude.m4\n",
+                "@@ -441,7 +441,11 @@ dnl\n",
+                " dnl Adds a path to linkpath/runpath (LDFLAGS)\n",
+                " dnl\n",
+                " AC_DEFUN([PHP_ADD_LIBPATH],[\n",
+                "-  if test \"$1\" != \"/usr/$PHP_LIBDIR\" && test \"$1\" != \"/usr/lib\"; then\n",
+                "+  case \"$1\" in\n",
+                "+  \"/usr/$PHP_LIBDIR\"|\"/usr/lib\"[)] ;;\n",
+                "+  /Library/Developer/CommandLineTools/SDKs/*/usr/lib[)] ;;\n",
+                "+  /Applications/Xcode*.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/*/usr/lib[)] ;;\n",
+                "+  *[)]\n",
+                "     PHP_EXPAND_PATH($1, ai_p)\n",
+                "     ifelse([$2],,[\n",
+                "       _PHP_ADD_LIBPATH_GLOBAL([$ai_p])\n",
+                "@@ -452,8 +456,8 @@ AC_DEFUN([PHP_ADD_LIBPATH],[\n",
+                "       else\n",
+                "         _PHP_ADD_LIBPATH_GLOBAL([$ai_p])\n",
+                "       fi\n",
+                "-    ])\n",
+                "-  fi\n",
+                "+    ]) ;;\n",
+                "+  esac\n",
+                " ])\n",
+                "\n",
+                " dnl\n",
+                "@@ -487,7 +491,11 @@ dnl add an include path.\n",
+                " dnl if before is 1, add in the beginning of INCLUDES.\n",
+                " dnl\n",
+                " AC_DEFUN([PHP_ADD_INCLUDE],[\n",
+                "-  if test \"$1\" != \"/usr/include\"; then\n",
+                "+  case \"$1\" in\n",
+                "+  \"/usr/include\"[)] ;;\n",
+                "+  /Library/Developer/CommandLineTools/SDKs/*/usr/include[)] ;;\n",
+                "+  /Applications/Xcode*.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/*/usr/include[)] ;;\n",
+                "+  *[)]\n",
+                "     PHP_EXPAND_PATH($1, ai_p)\n",
+                "     PHP_RUN_ONCE(INCLUDEPATH, $ai_p, [\n",
+                "       if test \"$2\"; then\n",
+                "@@ -495,8 +503,8 @@ AC_DEFUN([PHP_ADD_INCLUDE],[\n",
+                "       else\n",
+                "         INCLUDES=\"$INCLUDES -I$ai_p\"\n",
+                "       fi\n",
+                "-    ])\n",
+                "-  fi\n",
+                "+    ]) ;;\n",
+                "+  esac\n",
+                " ])\n",
+                "\n",
+                " dnl internal, don't use\n",
+                "@@ -2411,7 +2419,8 @@ AC_DEFUN([PHP_SETUP_ICONV], [\n",
+                "     fi\n",
+                "\n",
+                "     if test -f $ICONV_DIR/$PHP_LIBDIR/lib$iconv_lib_name.a ||\n",
+                "-       test -f $ICONV_DIR/$PHP_LIBDIR/lib$iconv_lib_name.$SHLIB_SUFFIX_NAME\n",
+                "+       test -f $ICONV_DIR/$PHP_LIBDIR/lib$iconv_lib_name.$SHLIB_SUFFIX_NAME ||\n",
+                "+       test -f $ICONV_DIR/$PHP_LIBDIR/lib$iconv_lib_name.tbd\n",
+                "     then\n",
+                "       PHP_CHECK_LIBRARY($iconv_lib_name, libiconv, [\n",
+                "         found_iconv=yes\n"
+            ]
+        }
+    ],
+    "install": [
+        "pear_prefix = pkgshare/\"pear\"",
+        "pear_files = %W[",
+        "#{pear_prefix}/.depdblock",
+        "#{pear_prefix}/.filemap",
+        "#{pear_prefix}/.depdb",
+        "#{pear_prefix}/.lock",
+        "]",
+        "%W[",
+        "#{pear_prefix}/.channels",
+        "#{pear_prefix}/.channels/.alias",
+        "].each do |f|",
+        "chmod 0755, f",
+        "pear_files.concat(Dir[\"#{f}/*\"])"
+    ],
+    "version": "7.3.2"
+}

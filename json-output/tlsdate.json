@@ -1,0 +1,47 @@
+{
+    "name": "Tlsdate",
+    "description": "Secure rdate replacement",
+    "url": "https://github.com/ioerror/tlsdate/archive/tlsdate-0.0.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.github.com/ioerror/tlsdate/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libevent",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/ioerror/tlsdate/pull/160.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.13"
+}

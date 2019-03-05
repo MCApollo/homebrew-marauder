@@ -1,0 +1,17 @@
+{
+    "name": "Lcov",
+    "description": "Graphical front-end for GCC",
+    "url": "https://github.com/linux-test-project/lcov/releases/download/v1.14/lcov-1.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/linux-test-project/lcov",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace %w[bin/genhtml bin/geninfo bin/lcov],",
+        "\"/etc/lcovrc\", \"#{prefix}/etc/lcovrc\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"BIN_DIR=#{bin}\", \"MAN_DIR=#{man}\", \"install\""
+    ],
+    "version": "1.14"
+}

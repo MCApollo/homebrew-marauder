@@ -1,0 +1,82 @@
+{
+    "name": "AircrackNg",
+    "description": "Next-generation aircrack with lots of new features",
+    "url": "https://download.aircrack-ng.org/aircrack-ng-1.5.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://aircrack-ng.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/scripts/airodump-ng-oui-update\n",
+                "+++ b/scripts/airodump-ng-oui-update\n",
+                "@@ -20,25 +20,6 @@ fi\n",
+                "\n",
+                " AIRODUMP_NG_OUI=\"${OUI_PATH}/airodump-ng-oui.txt\"\n",
+                " OUI_IEEE=\"${OUI_PATH}/oui.txt\"\n",
+                "-USERID=\"\"\n",
+                "-\n",
+                "-\n",
+                "-# Make sure the user is root\n",
+                "-if [ x\"`which id 2> /dev/null`\" != \"x\" ]\n",
+                "-then\n",
+                "-\tUSERID=\"`id -u 2> /dev/null`\"\n",
+                "-fi\n",
+                "-\n",
+                "-if [ x$USERID = \"x\" -a x$(id -ru) != \"x\" ]\n",
+                "-then\n",
+                "-\tUSERID=$(id -ru)\n",
+                "-fi\n",
+                "-\n",
+                "-if [ x$USERID != \"x\" -a x$USERID != \"x0\" ]\n",
+                "-then\n",
+                "-\techo Run it as root ; exit ;\n",
+                "-fi\n",
+                "-\n",
+                " \n",
+                " if [ ! -d \"${OUI_PATH}\" ]; then\n",
+                " \tmkdir -p ${OUI_PATH}\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./autogen.sh\", \"--disable-silent-rules\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-experimental\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.2"
+}

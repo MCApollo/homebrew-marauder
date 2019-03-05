@@ -1,0 +1,25 @@
+{
+    "name": "AardvarkShellUtils",
+    "description": "Utilities to aid shell scripts or command-line users",
+    "url": "https://web.archive.org/web/20170106105512/downloads.laffeycomputer.com/current_builds/shellutils/aardvark_shell_utils-1.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.laffeycomputer.com/shellutils.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "coreutils",
+            "reason": "both install `realpath` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Libgraphqlparser",
+    "description": "GraphQL query parser in C++ with C and C++ APIs",
+    "url": "https://github.com/graphql/libgraphqlparser/archive/0.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/graphql/libgraphqlparser",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "libexec.install \"dump_json_ast\""
+    ],
+    "version": "0.7.0"
+}

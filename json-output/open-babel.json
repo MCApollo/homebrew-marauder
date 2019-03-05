@@ -1,0 +1,34 @@
+{
+    "name": "OpenBabel",
+    "description": "Chemical toolbox",
+    "url": "https://github.com/openbabel/openbabel/archive/openbabel-2-4-1.tar.gz",
+    "mirror": null,
+    "homepage": "https://openbabel.org",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "eigen",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %w[",
+        "-DCAIRO_LIBRARY:FILEPATH=",
+        "]",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "openbabel-2-41"
+}

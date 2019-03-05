@@ -1,0 +1,15 @@
+{
+    "name": "StormsshCompletion",
+    "description": "Completion for storm-ssh",
+    "url": "https://github.com/vigo/stormssh-completion/archive/0.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/vigo/stormssh-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"stormssh\""
+    ],
+    "version": "0.1.1"
+}

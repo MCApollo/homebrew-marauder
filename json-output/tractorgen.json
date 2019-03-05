@@ -1,0 +1,16 @@
+{
+    "name": "Tractorgen",
+    "description": "Generates ASCII tractor art",
+    "url": "http://www.kfish.org/software/tractorgen/dl/tractorgen-0.31.7.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.kfish.org/software/tractorgen/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.31.7"
+}

@@ -1,0 +1,28 @@
+{
+    "name": "MecabJumandic",
+    "description": "See mecab",
+    "url": "https://www.mirrorservice.org/sites/distfiles.macports.org/mecab/mecab-jumandic-7.0-20130310.tar.gz",
+    "mirror": "https://mirrors.ustc.edu.cn/macports/distfiles/mecab/mecab-jumandic-7.0-20130310.tar.gz",
+    "homepage": "https://taku910.github.io/mecab/",
+    "depends": [
+        {
+            "depend": "mecab",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--with-charset=utf8",
+        "--with-dicdir=#{lib}/mecab/dic/jumandic",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.0"
+}

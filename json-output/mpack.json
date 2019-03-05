@@ -1,0 +1,22 @@
+{
+    "name": "Mpack",
+    "description": "MIME mail packing and unpacking",
+    "url": "http://ftp.andrew.cmu.edu/pub/mpack/mpack-1.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://ftp.andrew.cmu.edu/pub/mpack/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/1ad38a9c/mpack/uudecode.c.patch",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6"
+}

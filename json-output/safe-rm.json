@@ -1,0 +1,15 @@
+{
+    "name": "SafeRm",
+    "description": "Wraps rm to prevent dangerous deletion of files",
+    "url": "https://launchpad.net/safe-rm/trunk/0.12/+download/safe-rm-0.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://launchpad.net/safe-rm",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"safe-rm\""
+    ],
+    "version": "0.12"
+}

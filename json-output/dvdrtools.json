@@ -1,0 +1,38 @@
+{
+    "name": "Dvdrtools",
+    "description": "Fork of cdrtools DVD writer support",
+    "url": "https://savannah.nongnu.org/download/dvdrtools/dvdrtools-0.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://savannah.nongnu.org/projects/dvdrtools/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "cdrtools",
+            "reason": null
+        }
+    ],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/8a41dd4/dvdrtools/patch-cdda2wav-cdda2wav.c",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/8a41dd4/dvdrtools/patch-cdrecord-cdrecord.c",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/8a41dd4/dvdrtools/patch-scsi-mac-iokit.c",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "ENV[\"LIBS\"] = \"-framework IOKit -framework CoreFoundation\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.1"
+}

@@ -1,0 +1,67 @@
+{
+    "name": "Thrift",
+    "description": "Framework for scalable cross-language services development",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=/thrift/0.12.0/thrift-0.12.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://thrift.apache.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "bison",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap.sh\" unless build.stable?",
+        "args = %W[",
+        "--disable-debug",
+        "--disable-tests",
+        "--prefix=#{prefix}",
+        "--libdir=#{lib}",
+        "--with-openssl=#{Formula[\"openssl\"].opt_prefix}",
+        "--without-erlang",
+        "--without-haskell",
+        "--without-java",
+        "--without-perl",
+        "--without-php",
+        "--without-php_extension",
+        "--without-python",
+        "--without-ruby",
+        "]",
+        "ENV.cxx11 if ENV.compiler == :clang",
+        "ENV[\"PY_PREFIX\"] = prefix",
+        "ENV[\"PHP_PREFIX\"] = prefix",
+        "ENV[\"JAVA_PREFIX\"] = buildpath",
+        "system \"./configure\", *args",
+        "ENV.deparallelize",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.12.0"
+}

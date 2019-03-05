@@ -1,0 +1,33 @@
+{
+    "name": "Fuego",
+    "description": "Collection of C++ libraries for the game of Go",
+    "url": "https://svn.code.sf.net/p/fuego/code/trunk",
+    "mirror": null,
+    "homepage": "https://fuego.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-boost=#{Formula[\"boost\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0-u"
+}

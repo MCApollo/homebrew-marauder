@@ -1,0 +1,24 @@
+{
+    "name": "ExcelCompare",
+    "description": "Command-line tool (and API) for diffing Excel Workbooks",
+    "url": "https://github.com/na-ka-na/ExcelCompare/releases/download/0.6.1/ExcelCompare-0.6.1.zip",
+    "mirror": null,
+    "homepage": "https://github.com/na-ka-na/ExcelCompare",
+    "depends": [],
+    "resource": [
+        {
+            "name": "sample_workbook",
+            "url": "https://github.com/na-ka-na/ExcelCompare/raw/0.6.1/test/resources/ss1.xlsx"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"bin/dist/*\"]",
+        "(bin/\"excel_cmp\").write <<~EOS",
+        "#!/bin/sh",
+        "java -ea -Xmx512m -cp \"#{libexec}/*\" com.ka.spreadsheet.diff.SpreadSheetDiffer \"$@\"",
+        "EOS"
+    ],
+    "version": "0.6.1"
+}

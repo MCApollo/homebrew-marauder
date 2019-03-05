@@ -1,0 +1,52 @@
+{
+    "name": "KnotResolver",
+    "description": "Minimalistic, caching, DNSSEC-validating DNS resolver",
+    "url": "https://secure.nic.cz/files/knot-resolver/knot-resolver-3.2.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.knot-resolver.cz",
+    "depends": [
+        {
+            "depend": "cmocka",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "knot",
+            "build-depend": false
+        },
+        {
+            "depend": "libuv",
+            "build-depend": false
+        },
+        {
+            "depend": "lmdb",
+            "build-depend": false
+        },
+        {
+            "depend": "luajit",
+            "build-depend": false
+        },
+        {
+            "depend": "nettle",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cp \"etc/root.hints\", buildpath",
+        "(etc/\"kresd\").install \"root.hints\"",
+        "%w[all lib-install daemon-install client-install modules-install",
+        "check].each do |target|",
+        "system \"make\", target, \"PREFIX=#{prefix}\", \"ETCDIR=#{etc}/kresd\""
+    ],
+    "version": "3.2.1"
+}

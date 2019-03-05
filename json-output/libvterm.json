@@ -1,0 +1,20 @@
+{
+    "name": "Libvterm",
+    "description": "C99 library which implements a VT220 or xterm terminal emulator",
+    "url": "http://www.leonerd.org.uk/code/libvterm/libvterm-0+bzr726.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.leonerd.org.uk/code/libvterm/",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "726"
+}

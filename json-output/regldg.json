@@ -1,0 +1,16 @@
+{
+    "name": "Regldg",
+    "description": "Regular expression grammar language dictionary generator",
+    "url": "https://regldg.com/regldg-1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://regldg.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"regldg\""
+    ],
+    "version": "1.0.0"
+}

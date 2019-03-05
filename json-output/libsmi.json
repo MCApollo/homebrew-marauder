@@ -1,0 +1,17 @@
+{
+    "name": "Libsmi",
+    "description": "Library to Access SMI MIB Information",
+    "url": "https://www.ibr.cs.tu-bs.de/projects/libsmi/download/libsmi-0.5.0.tar.gz",
+    "mirror": "https://www.mirrorservice.org/sites/distfiles.macports.org/libsmi/libsmi-0.5.0.tar.gz",
+    "homepage": "https://www.ibr.cs.tu-bs.de/projects/libsmi/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.0"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Bittwist",
+    "description": "Libcap-based Ethernet packet generator",
+    "url": "https://downloads.sourceforge.net/project/bittwist/Mac%20OS%20X/Bit-Twist%202.0/bittwist-macosx-2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://bittwist.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "2.0"
+}

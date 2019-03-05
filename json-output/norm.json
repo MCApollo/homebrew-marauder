@@ -1,0 +1,17 @@
+{
+    "name": "Norm",
+    "description": "NACK-Oriented Reliable Multicast",
+    "url": "https://downloads.pf.itd.nrl.navy.mil/norm/archive/src-norm-1.5r6.tgz",
+    "mirror": null,
+    "homepage": "https://www.nrl.navy.mil/itd/ncs/products/norm",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\"",
+        "system \"./waf\", \"install\"",
+        "include.install \"include/normApi.h\""
+    ],
+    "version": "1.5"
+}

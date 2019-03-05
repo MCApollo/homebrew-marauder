@@ -1,0 +1,22 @@
+{
+    "name": "Libestr",
+    "description": "C library for string handling (and a bit more)",
+    "url": "http://libestr.adiscon.com/files/download/libestr-0.1.10.tar.gz",
+    "mirror": null,
+    "homepage": "http://libestr.adiscon.com",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.10"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Wrangler",
+    "description": "Refactoring tool for Erlang with emacs and Eclipse integration",
+    "url": "https://github.com/RefactoringTools/wrangler/archive/wrangler1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cs.kent.ac.uk/projects/wrangler/Wrangler/",
+    "depends": [
+        {
+            "depend": "erlang@20",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/RefactoringTools/wrangler/commit/d81b888f.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

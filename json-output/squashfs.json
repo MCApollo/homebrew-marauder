@@ -1,0 +1,45 @@
+{
+    "name": "Squashfs",
+    "description": "Compressed read-only file system for Linux",
+    "url": "https://downloads.sourceforge.net/project/squashfs/squashfs/squashfs4.3/squashfs4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://squashfs.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "lz4",
+            "build-depend": false
+        },
+        {
+            "depend": "lzo",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/05ae0eb1/squashfs/squashfs-osx-bundle.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "args = %W[",
+        "EXTRA_CFLAGS=-std=gnu89",
+        "LZ4_SUPPORT=1",
+        "LZMA_XZ_SUPPORT=1",
+        "LZO_DIR=#{Formula[\"lzo\"].opt_prefix}",
+        "LZO_SUPPORT=1",
+        "XATTR_SUPPORT=0",
+        "XZ_DIR=#{Formula[\"xz\"].opt_prefix}",
+        "XZ_SUPPORT=1",
+        "]",
+        "cd \"squashfs-tools\" do",
+        "system \"make\", *args",
+        "bin.install %w[mksquashfs unsquashfs]"
+    ],
+    "version": "4.3"
+}

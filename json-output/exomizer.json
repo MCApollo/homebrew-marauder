@@ -1,0 +1,17 @@
+{
+    "name": "Exomizer",
+    "description": "6502 compressor with CBM PET 4032 support",
+    "url": "https://bitbucket.org/magli143/exomizer/wiki/downloads/exomizer-3.0.1.zip",
+    "mirror": null,
+    "homepage": "https://bitbucket.org/magli143/exomizer/wiki/Home",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"make\"",
+        "bin.install %w[exobasic exomizer]"
+    ],
+    "version": "3.0.1"
+}

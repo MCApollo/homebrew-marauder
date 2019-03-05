@@ -1,0 +1,24 @@
+{
+    "name": "OneMl",
+    "description": "Reboot of ML, unifying its core and (now first-class) module layers",
+    "url": "https://www.mpi-sws.org/~rossberg/1ml/1ml-0.1.zip",
+    "mirror": null,
+    "homepage": "https://www.mpi-sws.org/~rossberg/1ml/",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"OCAMLPARAM\"] = \"safe-string=0,_\" ",
+        "system \"make\"",
+        "bin.install \"1ml\"",
+        "(pkgshare/\"stdlib\").install Dir.glob(\"*.1ml\")",
+        "doc.install \"README.txt\""
+    ],
+    "version": "0.1"
+}

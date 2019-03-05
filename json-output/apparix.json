@@ -1,0 +1,17 @@
+{
+    "name": "Apparix",
+    "description": "File system navigation via bookmarking directories",
+    "url": "https://micans.org/apparix/src/apparix-11-062.tar.gz",
+    "mirror": null,
+    "homepage": "https://micans.org/apparix/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "062"
+}

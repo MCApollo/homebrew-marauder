@@ -1,0 +1,29 @@
+{
+    "name": "Libsvg",
+    "description": "Library for SVG files",
+    "url": "https://cairographics.org/snapshots/libsvg-0.1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://cairographics.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.4"
+}

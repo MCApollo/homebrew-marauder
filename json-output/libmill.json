@@ -1,0 +1,30 @@
+{
+    "name": "Libmill",
+    "description": "Go-style concurrency in C",
+    "url": "http://libmill.org/libmill-1.18.tar.gz",
+    "mirror": null,
+    "homepage": "http://libmill.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"all\", \"check\", \"install\""
+    ],
+    "version": "1.18"
+}

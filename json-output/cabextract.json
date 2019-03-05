@@ -1,0 +1,18 @@
+{
+    "name": "Cabextract",
+    "description": "Extract files from Microsoft cabinet files",
+    "url": "https://www.cabextract.org.uk/cabextract-1.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cabextract.org.uk/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9"
+}

@@ -1,0 +1,105 @@
+{
+    "name": "Smlnj",
+    "description": "Standard ML of New Jersey",
+    "url": "http://smlnj.cs.uchicago.edu/dist/working/110.84/config.tgz",
+    "mirror": null,
+    "homepage": "https://www.smlnj.org/",
+    "depends": [
+        {
+            "depend": "maximum_macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "cm",
+            "url": "https://www.smlnj.org/dist/working/110.84/cm.tgz"
+        },
+        {
+            "name": "compiler",
+            "url": "https://www.smlnj.org/dist/working/110.84/compiler.tgz"
+        },
+        {
+            "name": "runtime",
+            "url": "https://www.smlnj.org/dist/working/110.84/runtime.tgz"
+        },
+        {
+            "name": "system",
+            "url": "https://www.smlnj.org/dist/working/110.84/system.tgz"
+        },
+        {
+            "name": "bootstrap",
+            "url": "https://www.smlnj.org/dist/working/110.84/boot.x86-unix.tgz"
+        },
+        {
+            "name": "mlrisc",
+            "url": "https://www.smlnj.org/dist/working/110.84/MLRISC.tgz"
+        },
+        {
+            "name": "lib",
+            "url": "https://www.smlnj.org/dist/working/110.84/smlnj-lib.tgz"
+        },
+        {
+            "name": "ckit",
+            "url": "https://www.smlnj.org/dist/working/110.84/ckit.tgz"
+        },
+        {
+            "name": "nlffi",
+            "url": "https://www.smlnj.org/dist/working/110.84/nlffi.tgz"
+        },
+        {
+            "name": "cml",
+            "url": "https://www.smlnj.org/dist/working/110.84/cml.tgz"
+        },
+        {
+            "name": "exene",
+            "url": "https://www.smlnj.org/dist/working/110.84/eXene.tgz"
+        },
+        {
+            "name": "ml-lpt",
+            "url": "https://www.smlnj.org/dist/working/110.84/ml-lpt.tgz"
+        },
+        {
+            "name": "ml-lex",
+            "url": "https://www.smlnj.org/dist/working/110.84/ml-lex.tgz"
+        },
+        {
+            "name": "ml-yacc",
+            "url": "https://www.smlnj.org/dist/working/110.84/ml-yacc.tgz"
+        },
+        {
+            "name": "ml-burg",
+            "url": "https://www.smlnj.org/dist/working/110.84/ml-burg.tgz"
+        },
+        {
+            "name": "pgraph",
+            "url": "https://www.smlnj.org/dist/working/110.84/pgraph.tgz"
+        },
+        {
+            "name": "trace-debug-profile",
+            "url": "https://www.smlnj.org/dist/working/110.84/trace-debug-profile.tgz"
+        },
+        {
+            "name": "heap2asm",
+            "url": "https://www.smlnj.org/dist/working/110.84/heap2asm.tgz"
+        },
+        {
+            "name": "c",
+            "url": "https://www.smlnj.org/dist/working/110.84/smlnj-c.tgz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "ENV.m32 ",
+        "root = prefix/\"SMLNJ_HOME\"",
+        "root.mkpath",
+        "cp_r buildpath, root/\"config\"",
+        "rm root/\"config/targets\"",
+        "(root/\"config/targets\").write targets",
+        "%w[cm compiler runtime system].each do |name|",
+        "resource(name).stage { cp_r pwd, root/\"base\" }"
+    ],
+    "version": "110.84"
+}

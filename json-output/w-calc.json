@@ -1,0 +1,26 @@
+{
+    "name": "WCalc",
+    "description": "Very capable calculator",
+    "url": "https://downloads.sourceforge.net/w-calc/wcalc-2.5.tar.bz2",
+    "mirror": null,
+    "homepage": "https://w-calc.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "mpfr",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.5"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "The Haskell Tool Stack",
+    "url": "https://github.com/commercialhaskell/stack/releases/download/v1.9.3/stack-1.9.3-sdist-1.tar.gz",
+    "mirror": null,
+    "homepage": "https://haskellstack.org/",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "stack_lts_12_yaml",
+            "url": "https://raw.githubusercontent.com/commercialhaskell/stack/v1.9.3/stack-lts-12.yaml"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "buildpath.install resource(\"stack_lts_12_yaml\")",
+        "cabal_sandbox do",
+        "cabal_install \"happy\"",
+        "cabal_install",
+        "jobs = ENV.make_jobs",
+        "ENV.deparallelize",
+        "system \"stack\", \"-j#{jobs}\", \"--stack-yaml=stack-lts-12.yaml\",",
+        "\"--system-ghc\", \"--no-install-ghc\", \"setup\"",
+        "system \"stack\", \"-j#{jobs}\", \"--stack-yaml=stack-lts-12.yaml\",",
+        "\"--system-ghc\", \"--no-install-ghc\", \"--local-bin-path=#{bin}\",",
+        "\"install\""
+    ],
+    "version": "1.9.3"
+}

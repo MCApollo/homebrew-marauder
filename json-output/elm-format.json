@@ -1,0 +1,28 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Elm source code formatter, inspired by gofmt",
+    "url": "https://github.com/avh4/elm-format.git",
+    "mirror": null,
+    "homepage": "https://github.com/avh4/elm-format",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"elm-format\").install Dir[\"*\"]",
+        "cabal_sandbox do",
+        "cabal_sandbox_add_source \"elm-format\"",
+        "cabal_install \"--only-dependencies\", \"elm-format\"",
+        "cabal_install \"--prefix=#{prefix}\", \"elm-format\""
+    ],
+    "version": "0.8.1-git-e3f9eb71"
+}

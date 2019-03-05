@@ -1,0 +1,44 @@
+{
+    "name": "Gconf",
+    "description": "System for storing user application preferences",
+    "url": "https://download.gnome.org/sources/GConf/3.2/GConf-3.2.6.tar.xz",
+    "mirror": null,
+    "homepage": "https://projects.gnome.org/gconf/",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "dbus",
+            "build-depend": false
+        },
+        {
+            "depend": "dbus-glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "orbit",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system Formula[\"glib\"].opt_bin/\"gio-querymodules\", HOMEBREW_PREFIX/\"lib/gio/modules\""
+    ],
+    "version": "3.2.6"
+}

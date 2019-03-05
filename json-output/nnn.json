@@ -1,0 +1,23 @@
+{
+    "name": "Nnn",
+    "description": "Free, fast, friendly file browser",
+    "url": "https://github.com/jarun/nnn/archive/v2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jarun/nnn",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "bash_completion.install \"scripts/auto-completion/bash/nnn-completion.bash\"",
+        "zsh_completion.install \"scripts/auto-completion/zsh/_nnn\"",
+        "fish_completion.install \"scripts/auto-completion/fish/nnn.fish\""
+    ],
+    "version": "2.3"
+}

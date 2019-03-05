@@ -1,0 +1,15 @@
+{
+    "name": "Sic",
+    "description": "Minimal multiplexing IRC client",
+    "url": "https://dl.suckless.org/tools/sic-1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://tools.suckless.org/sic/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "1.2"
+}

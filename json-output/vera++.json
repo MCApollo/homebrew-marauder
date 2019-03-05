@@ -1,0 +1,41 @@
+{
+    "name": "Veraxx",
+    "description": "Programmable tool for C++ source code",
+    "url": "https://bitbucket.org/verateam/vera/downloads/vera++-1.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://bitbucket.org/verateam/vera",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "doc",
+            "url": "https://bitbucket.org/verateam/vera/downloads/vera++-1.3.0-doc.tar.gz"
+        },
+        {
+            "name": "boost",
+            "url": "https://downloads.sourceforge.net/project/boost/boost/1.56.0/boost_1_56_0.tar.bz2"
+        },
+        {
+            "name": "lua",
+            "url": "https://github.com/LuaDist/lua/archive/5.2.3.tar.gz"
+        },
+        {
+            "name": "luabind",
+            "url": "https://github.com/verateam/luabind/archive/vera-1.3.0.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"boost\").stage do",
+        "system \"./bootstrap.sh\", \"--prefix=#{buildpath}/3rdParty\",",
+        "\"--with-libraries=filesystem,system,program_options,regex,wave,python\"",
+        "system \"./b2\", \"install\", \"threading=multi\", \"link=static\", \"warnings=off\",",
+        "\"cxxflags=-DBOOST_WAVE_SUPPORT_MS_EXTENSIONS=1\", \"-s NO_BZIP2=1\""
+    ],
+    "version": "1.3.0"
+}

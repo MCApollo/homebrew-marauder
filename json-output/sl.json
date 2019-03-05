@@ -1,0 +1,17 @@
+{
+    "name": "Sl",
+    "description": "Prints a steam locomotive if you type sl instead of ls",
+    "url": "https://github.com/mtoyoda/sl/archive/5.02.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mtoyoda/sl",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-e\"",
+        "bin.install \"sl\"",
+        "man1.install \"sl.1\""
+    ],
+    "version": "5.02"
+}

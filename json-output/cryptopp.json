@@ -1,0 +1,17 @@
+{
+    "name": "Cryptopp",
+    "description": "Free C++ class library of cryptographic schemes",
+    "url": "https://github.com/weidai11/cryptopp/archive/CRYPTOPP_8_1_0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cryptopp.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"shared\", \"all\", \"CXX=#{ENV.cxx}\"",
+        "system \"./cryptest.exe\", \"v\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "8_1_0"
+}

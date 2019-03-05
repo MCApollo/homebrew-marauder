@@ -1,0 +1,28 @@
+{
+    "name": "Deheader",
+    "description": "Analyze C/C++ files for unnecessary headers",
+    "url": "http://www.catb.org/~esr/deheader/deheader-1.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.catb.org/~esr/deheader",
+    "depends": [
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "system \"/usr/bin/tar\", \"-xvqf\", \"deheader-1.6.tar.gz\",",
+        "\"deheader-1.6/deheader.1\"",
+        "system \"/usr/bin/tar\", \"-xvf\", \"deheader-1.6.tar.gz\", \"--exclude\",",
+        "\"deheader-1.6/deheader.1\"",
+        "cd \"deheader-1.6\" do",
+        "system \"make\"",
+        "bin.install \"deheader\"",
+        "man1.install \"deheader.1\""
+    ],
+    "version": "1.6"
+}

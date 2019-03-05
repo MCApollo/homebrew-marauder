@@ -1,0 +1,25 @@
+{
+    "name": "AppEnginePython",
+    "description": "Google App Engine",
+    "url": "https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.70.zip",
+    "mirror": null,
+    "homepage": "https://cloud.google.com/appengine/docs",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pkgshare.install Dir[\"*\"]",
+        "%w[",
+        "_python_runtime.py",
+        "_php_runtime.py",
+        "api_server.py",
+        "appcfg.py",
+        "backends_conversion.py",
+        "bulkload_client.py",
+        "bulkloader.py",
+        "dev_appserver.py",
+        "download_appstats.py"
+    ],
+    "version": "1.9.70"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "GitCrypt",
+    "description": "Enable transparent encryption/decryption of files in a git repo",
+    "url": "https://www.agwa.name/projects/git-crypt/downloads/git-crypt-0.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.agwa.name/projects/git-crypt/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"git-crypt\""
+    ],
+    "version": "0.6.0"
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Dosfstools",
+    "description": "Tools to create, check and label file systems of the FAT family",
+    "url": "https://github.com/dosfstools/dosfstools/releases/download/v4.1/dosfstools-4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/dosfstools",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/dosfstools/dosfstools/commit/1e76e577.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"autoreconf\", \"-f\", \"-i\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--without-udev\",",
+        "\"--enable-compat-symlinks\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.1"
+}

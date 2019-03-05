@@ -1,0 +1,19 @@
+{
+    "name": "Btparse",
+    "description": "BibTeX utility libraries",
+    "url": "https://www.gerg.ca/software/btOOL/btparse-0.34.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gerg.ca/software/btOOL/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.34"
+}

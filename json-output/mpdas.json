@@ -1,0 +1,25 @@
+{
+    "name": "Mpdas",
+    "description": "C++ client to submit tracks to audioscrobbler",
+    "url": "https://www.50hz.ws/mpdas/mpdas-0.4.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.50hz.ws/mpdas/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libmpdclient",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"MANPREFIX=#{man1}\", \"CONFIG=#{etc}\", \"install\"",
+        "etc.install \"mpdasrc.example\""
+    ],
+    "version": "0.4.5"
+}

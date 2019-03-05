@@ -1,0 +1,53 @@
+{
+    "name": "NordugridArc",
+    "description": "Grid computing middleware",
+    "url": "https://download.nordugrid.org/packages/nordugrid-arc/releases/5.0.2/src/nordugrid-arc-5.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.nordugrid.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "glibmm",
+            "build-depend": false
+        },
+        {
+            "depend": "globus-toolkit",
+            "build-depend": false
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gist.githubusercontent.com/tschoonj/065dabc33be5ec636058/raw/beee466cdf5fe56f93af0b07022532b1945e9d2e/nordugrid-arc.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-swig\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.0.2"
+}

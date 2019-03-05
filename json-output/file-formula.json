@@ -1,0 +1,52 @@
+{
+    "name": "FileFormula",
+    "description": "Utility to determine file types",
+    "url": "ftp://ftp.astron.com/pub/file/file-5.36.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.darwinsys.com/file/",
+    "depends": [
+        {
+            "depend": "libmagic",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/Makefile.in b/src/Makefile.in\n",
+                "index c096c71..583a0ba 100644\n",
+                "--- a/src/Makefile.in\n",
+                "+++ b/src/Makefile.in\n",
+                "@@ -115,7 +115,6 @@ libmagic_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \\\n",
+                " PROGRAMS = $(bin_PROGRAMS)\n",
+                " am_file_OBJECTS = file.$(OBJEXT) seccomp.$(OBJEXT)\n",
+                " file_OBJECTS = $(am_file_OBJECTS)\n",
+                "-file_DEPENDENCIES = libmagic.la\n",
+                " AM_V_P = $(am__v_P_@AM_V@)\n",
+                " am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)\n",
+                " am__v_P_0 = false\n",
+                "@@ -311,7 +310,7 @@ libmagic_la_LDFLAGS = -no-undefined -version-info 1:0:0\n",
+                " @MINGW_TRUE@MINGWLIBS = -lgnurx -lshlwapi\n",
+                " libmagic_la_LIBADD = $(LTLIBOBJS) $(MINGWLIBS)\n",
+                " file_SOURCES = file.c seccomp.c\n",
+                "-file_LDADD = libmagic.la\n",
+                "+file_LDADD = $(LDADD)\n",
+                " CLEANFILES = magic.h\n",
+                " EXTRA_DIST = magic.h.in\n",
+                " HDR = $(top_srcdir)/src/magic.h.in\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV.prepend \"LDFLAGS\", \"-L#{Formula[\"libmagic\"].opt_lib} -lmagic\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install-exec\"",
+        "system \"make\", \"-C\", \"doc\", \"install-man1\"",
+        "rm_r lib"
+    ],
+    "version": "5.36"
+}

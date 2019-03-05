@@ -1,0 +1,31 @@
+{
+    "name": "Modules",
+    "description": "Dynamic modification of a user",
+    "url": "https://downloads.sourceforge.net/project/modules/Modules/modules-4.1.4/modules-4.1.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://modules.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "grep",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_path \"PATH\", Formula[\"coreutils\"].opt_libexec/\"gnubin\"",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--datarootdir=#{share}",
+        "--disable-versioning",
+        "--with-tcl=#{MacOS.sdk_path}/System/Library/Frameworks/Tcl.framework",
+        "--without-x",
+        "CPPFLAGS=-DUSE_INTERP_ERRORLINE",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.1.4"
+}

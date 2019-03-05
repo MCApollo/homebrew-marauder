@@ -1,0 +1,21 @@
+{
+    "name": "AutoconfArchive",
+    "description": "Collection of over 500 reusable autoconf macros",
+    "url": "https://ftp.gnu.org/gnu/autoconf-archive/autoconf-archive-2019.01.06.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/autoconf-archive/autoconf-archive-2019.01.06.tar.xz",
+    "homepage": "https://savannah.gnu.org/projects/autoconf-archive/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2019.01.06"
+}

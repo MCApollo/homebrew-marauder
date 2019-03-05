@@ -1,0 +1,16 @@
+{
+    "name": "Bsdconv",
+    "description": "Charset/encoding converter library",
+    "url": "https://github.com/buganini/bsdconv/archive/11.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/buganini/bsdconv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "11.5"
+}

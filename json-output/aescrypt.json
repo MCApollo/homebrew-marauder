@@ -1,0 +1,17 @@
+{
+    "name": "Aescrypt",
+    "description": "Program for encryption/decryption",
+    "url": "https://aescrypt.sourceforge.io/aescrypt-0.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://aescrypt.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\"",
+        "system \"make\"",
+        "bin.install \"aescrypt\", \"aesget\""
+    ],
+    "version": "0.7"
+}

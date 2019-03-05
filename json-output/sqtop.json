@@ -1,0 +1,16 @@
+{
+    "name": "Sqtop",
+    "description": "Display information about active connections for a Squid proxy",
+    "url": "https://github.com/paleg/sqtop/archive/v2015-02-08.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/paleg/sqtop",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2015"
+}

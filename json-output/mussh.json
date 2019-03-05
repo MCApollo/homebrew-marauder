@@ -1,0 +1,16 @@
+{
+    "name": "Mussh",
+    "description": "Multi-host SSH wrapper",
+    "url": "https://downloads.sourceforge.net/project/mussh/mussh/1.0/mussh-1.0.tgz",
+    "mirror": null,
+    "homepage": "https://mussh.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"mussh\"",
+        "man1.install \"mussh.1\""
+    ],
+    "version": "1.0"
+}

@@ -1,0 +1,59 @@
+{
+    "name": "Neomutt",
+    "description": "E-mail reader with support for Notmuch, NNTP and much more",
+    "url": "https://github.com/neomutt/neomutt/archive/neomutt-20180716.tar.gz",
+    "mirror": null,
+    "homepage": "https://neomutt.org/",
+    "depends": [
+        {
+            "depend": "docbook-xsl",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gpgme",
+            "build-depend": false
+        },
+        {
+            "depend": "libidn",
+            "build-depend": false
+        },
+        {
+            "depend": "lmdb",
+            "build-depend": false
+        },
+        {
+            "depend": "notmuch",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "tokyo-cabinet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--enable-gpgme\",",
+        "\"--with-gpgme=#{Formula[\"gpgme\"].opt_prefix}\",",
+        "\"--gss\",",
+        "\"--lmdb\",",
+        "\"--notmuch\",",
+        "\"--sasl\",",
+        "\"--tokyocabinet\",",
+        "\"--with-ssl=#{Formula[\"openssl\"].opt_prefix}\",",
+        "\"--with-ui=ncurses\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20180716"
+}

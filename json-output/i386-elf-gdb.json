@@ -1,0 +1,20 @@
+{
+    "name": "I386ElfGdb",
+    "description": "GNU debugger for i386-elf cross development",
+    "url": "https://ftp.gnu.org/gnu/gdb/gdb-8.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.gnu.org/software/gdb/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"../configure\", \"--target=i386-elf\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-werror\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "8.2"
+}

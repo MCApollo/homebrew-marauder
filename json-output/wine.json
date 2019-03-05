@@ -1,0 +1,112 @@
+{
+    "name": "Wine",
+    "description": "Run Windows applications without a copy of Microsoft Windows",
+    "url": "https://dl.winehq.org/wine/source/4.0/wine-4.0.tar.xz",
+    "mirror": "https://downloads.sourceforge.net/project/wine/Source/wine-4.0.tar.xz",
+    "homepage": "https://www.winehq.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "makedepend",
+            "build-depend": true
+        },
+        {
+            "depend": "maximum_macos",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "mono",
+            "url": "https://dl.winehq.org/wine/wine-mono/4.7.5/wine-mono-4.7.5.msi"
+        },
+        {
+            "name": "gecko-x86",
+            "url": "https://dl.winehq.org/wine/wine-gecko/2.47/wine_gecko-2.47-x86.msi"
+        },
+        {
+            "name": "gecko-x86_64",
+            "url": "https://dl.winehq.org/wine/wine-gecko/2.47/wine_gecko-2.47-x86_64.msi"
+        },
+        {
+            "name": "openssl",
+            "url": "https://www.openssl.org/source/openssl-1.0.2q.tar.gz"
+        },
+        {
+            "name": "libtool",
+            "url": "https://ftp.gnu.org/gnu/libtool/libtool-2.4.6.tar.xz"
+        },
+        {
+            "name": "jpeg",
+            "url": "https://www.ijg.org/files/jpegsrc.v9c.tar.gz"
+        },
+        {
+            "name": "libtiff",
+            "url": "https://download.osgeo.org/libtiff/tiff-4.0.10.tar.gz"
+        },
+        {
+            "name": "little-cms2",
+            "url": "https://downloads.sourceforge.net/project/lcms/lcms/2.9/lcms2-2.9.tar.gz"
+        },
+        {
+            "name": "libpng",
+            "url": "https://downloads.sourceforge.net/libpng/libpng-1.6.36.tar.xz"
+        },
+        {
+            "name": "freetype",
+            "url": "https://downloads.sourceforge.net/project/freetype/freetype2/2.9.1/freetype-2.9.1.tar.bz2"
+        },
+        {
+            "name": "libusb",
+            "url": "https://github.com/libusb/libusb/releases/download/v1.0.22/libusb-1.0.22.tar.bz2"
+        },
+        {
+            "name": "webp",
+            "url": "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2.tar.gz"
+        },
+        {
+            "name": "fontconfig",
+            "url": "https://www.freedesktop.org/software/fontconfig/release/fontconfig-2.13.1.tar.bz2"
+        },
+        {
+            "name": "gd",
+            "url": "https://github.com/libgd/libgd/releases/download/gd-2.2.5/libgd-2.2.5.tar.xz"
+        },
+        {
+            "name": "libgphoto2",
+            "url": "https://downloads.sourceforge.net/project/gphoto/libgphoto/2.5.20/libgphoto2-2.5.20.tar.bz2"
+        },
+        {
+            "name": "net-snmp",
+            "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.8/net-snmp-5.8.tar.gz"
+        },
+        {
+            "name": "sane-backends",
+            "url": "https://deb.debian.org/debian/pool/main/s/sane-backends/sane-backends_1.0.27.orig.tar.gz"
+        },
+        {
+            "name": "mpg123",
+            "url": "https://downloads.sourceforge.net/project/mpg123/mpg123/1.25.10/mpg123-1.25.10.tar.bz2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ohai \"Regenerating font cache, this may take a while\"",
+        "system \"#{libexec}/bin/fc-cache\", \"-frv\"",
+        "(var/\"db/net-snmp_vendored_wine\").mkpath",
+        "(var/\"log\").mkpath"
+    ],
+    "version": "4.0"
+}

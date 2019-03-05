@@ -1,0 +1,17 @@
+{
+    "name": "Visitors",
+    "description": "Web server log analyzer",
+    "url": "http://www.hping.org/visitors/visitors-0.7.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.hping.org/visitors/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"visitors\"",
+        "man1.install \"visitors.1\""
+    ],
+    "version": "0.7"
+}

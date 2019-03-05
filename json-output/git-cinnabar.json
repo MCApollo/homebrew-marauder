@@ -1,0 +1,28 @@
+{
+    "name": "GitCinnabar",
+    "description": "Git remote helper to interact with mercurial repositories",
+    "url": "https://github.com/glandium/git-cinnabar/archive/0.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/glandium/git-cinnabar",
+    "depends": [
+        {
+            "depend": "mercurial",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "git-remote-hg",
+            "reason": "both install `git-remote-hg` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"helper\"",
+        "prefix.install \"cinnabar\"",
+        "bin.install \"git-cinnabar\", \"git-cinnabar-helper\", \"git-remote-hg\"",
+        "bin.env_script_all_files(libexec, :PYTHONPATH => prefix)"
+    ],
+    "version": "0.5.0"
+}

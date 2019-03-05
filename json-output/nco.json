@@ -1,0 +1,53 @@
+{
+    "name": "Nco",
+    "description": "Command-line operators for netCDF and HDF files",
+    "url": "https://downloads.sourceforge.net/project/nco/nco-4.7.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://nco.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "antlr@2",
+            "build-depend": false
+        },
+        {
+            "depend": "gsl",
+            "build-depend": false
+        },
+        {
+            "depend": "netcdf",
+            "build-depend": false
+        },
+        {
+            "depend": "texinfo",
+            "build-depend": false
+        },
+        {
+            "depend": "udunits",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "example_nc",
+            "url": "https://www.unidata.ucar.edu/software/netcdf/examples/WMI_Lear.nc"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-netcdf4\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.7.6"
+}

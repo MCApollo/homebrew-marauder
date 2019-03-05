@@ -1,0 +1,32 @@
+{
+    "name": "Enchant",
+    "description": "Spellchecker wrapping library",
+    "url": "https://github.com/AbiWord/enchant/releases/download/v2.2.3/enchant-2.2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://abiword.github.io/enchant/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "aspell",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-relocatable\"",
+        "system \"make\", \"install\"",
+        "ln_s \"enchant-2.pc\", lib/\"pkgconfig/enchant.pc\""
+    ],
+    "version": "2.2.3"
+}

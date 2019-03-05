@@ -1,0 +1,29 @@
+{
+    "name": "Winetricks",
+    "description": "Download and install various runtime libraries",
+    "url": "https://github.com/Winetricks/winetricks/archive/20181203.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Winetricks/winetricks",
+    "depends": [
+        {
+            "depend": "cabextract",
+            "build-depend": false
+        },
+        {
+            "depend": "p7zip",
+            "build-depend": false
+        },
+        {
+            "depend": "unrar",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"src/winetricks\"",
+        "man1.install \"src/winetricks.1\""
+    ],
+    "version": "20181203"
+}

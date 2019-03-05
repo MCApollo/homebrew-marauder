@@ -1,0 +1,24 @@
+{
+    "name": "Jbigkit",
+    "description": "JBIG1 data compression standard implementation",
+    "url": "https://www.cl.cam.ac.uk/~mgk25/jbigkit/download/jbigkit-2.1.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/j/jbigkit/jbigkit_2.1.orig.tar.gz",
+    "homepage": "https://www.cl.cam.ac.uk/~mgk25/jbigkit/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "netpbm",
+            "reason": "both install `pbm.5` and `pgm.5` files"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"CCFLAGS=#{ENV.cflags}\"",
+        "cd \"pbmtools\" do",
+        "bin.install %w[pbmtojbg jbgtopbm pbmtojbg85 jbgtopbm85]",
+        "man1.install %w[pbmtojbg.1 jbgtopbm.1]",
+        "man5.install %w[pbm.5 pgm.5]"
+    ],
+    "version": "2.1"
+}

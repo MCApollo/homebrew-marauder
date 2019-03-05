@@ -1,0 +1,85 @@
+{
+    "name": "Rlvm",
+    "description": "RealLive interpreter for VisualArts games",
+    "url": "https://github.com/eglaysher/rlvm/archive/release-0.14.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.rlvm.net/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "scons",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glew",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "mad",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/eglaysher/rlvm/commit/668863d2222b962ee8e7d9829e972ef05c990302.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "inreplace \"SConstruct\" do |s|",
+        "s.gsub! /(\"z\")/, '\\1, \"bz2\"'",
+        "s.gsub! /(CheckForSystemLibrary\\(config, library_dict), subcomponents/, '\\1, []'",
+        "s.gsub! \"jpeglib.h\", \"jconfig.h\"",
+        "s.gsub! /(msgfmt)/, \"#{Formula[\"gettext\"].bin}/\\\\1\""
+    ],
+    "version": "0.14"
+}

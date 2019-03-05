@@ -1,0 +1,32 @@
+{
+    "name": "Rlwrap",
+    "description": "Readline wrapper: adds readline support to tools that lack it",
+    "url": "https://github.com/hanslub42/rlwrap/archive/v0.43.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/hanslub42/rlwrap",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-v\", \"-i\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.43"
+}

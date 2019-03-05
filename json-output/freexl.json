@@ -1,0 +1,25 @@
+{
+    "name": "Freexl",
+    "description": "Library to extract data from Excel .xls files",
+    "url": "https://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-1.0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gaia-gis.it/fossil/freexl/index",
+    "depends": [
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\",",
+        "\"--disable-silent-rules\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\"",
+        "system \"doxygen\"",
+        "doc.install \"html\""
+    ],
+    "version": "1.0.5"
+}

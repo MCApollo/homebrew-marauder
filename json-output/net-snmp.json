@@ -1,0 +1,21 @@
+{
+    "name": "NetSnmp",
+    "description": "Implements SNMP v1, v2c, and v3, using IPv4 and IPv6",
+    "url": "https://downloads.sourceforge.net/project/net-snmp/net-snmp/5.8/net-snmp-5.8.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.net-snmp.org/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"db/net-snmp\").mkpath",
+        "(var/\"log\").mkpath"
+    ],
+    "version": "5.8"
+}

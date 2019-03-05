@@ -1,0 +1,27 @@
+{
+    "name": "Sntop",
+    "description": "Curses-based utility that polls hosts to determine connectivity",
+    "url": "https://pkg.freebsd.org/ports-distfiles/sntop-1.4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://sntop.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "fping",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--sysconfdir=#{etc}\"",
+        "etc.mkpath",
+        "bin.mkpath",
+        "man1.mkpath",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.3"
+}

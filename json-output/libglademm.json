@@ -1,0 +1,32 @@
+{
+    "name": "Libglademm",
+    "description": "C++ wrapper around libglade",
+    "url": "https://download.gnome.org/sources/libglademm/2.6/libglademm-2.6.7.tar.bz2",
+    "mirror": null,
+    "homepage": "https://gnome.org",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gtkmm",
+            "build-depend": false
+        },
+        {
+            "depend": "libglade",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.7"
+}

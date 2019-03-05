@@ -1,0 +1,16 @@
+{
+    "name": "GruntCompletion",
+    "description": "Bash and Zsh completion for Grunt",
+    "url": "https://github.com/gruntjs/grunt-cli/archive/v1.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://gruntjs.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"completion/bash\" => \"grunt\"",
+        "zsh_completion.install \"completion/zsh\" => \"_grunt\""
+    ],
+    "version": "1.3.2"
+}

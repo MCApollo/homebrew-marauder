@@ -1,0 +1,59 @@
+{
+    "name": "Gmsh",
+    "description": "3D finite element grid generator with CAD engine",
+    "url": "https://gmsh.info/src/gmsh-4.1.5-source.tgz",
+    "mirror": null,
+    "homepage": "https://gmsh.info/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "fltk",
+            "build-depend": false
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "open-mpi",
+            "build-depend": false
+        },
+        {
+            "depend": "opencascade",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %W[",
+        "-DENABLE_OS_SPECIFIC_INSTALL=0",
+        "-DGMSH_BIN=#{bin}",
+        "-DGMSH_LIB=#{lib}",
+        "-DGMSH_DOC=#{pkgshare}/gmsh",
+        "-DGMSH_MAN=#{man}",
+        "-DENABLE_BUILD_LIB=ON",
+        "-DENABLE_BUILD_SHARED=ON",
+        "-DENABLE_NATIVE_FILE_CHOOSER=ON",
+        "-DENABLE_PETSC=OFF",
+        "-DENABLE_SLEPC=OFF",
+        "-DENABLE_OCC=ON",
+        "]",
+        "ENV[\"CASROOT\"] = Formula[\"opencascade\"].opt_prefix",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "mkdir_p libexec",
+        "mv bin/\"onelab.py\", libexec"
+    ],
+    "version": "4.1.5"
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Rtmidi",
+    "description": "C++ classes that provide a common API for realtime MIDI input/output",
+    "url": "https://github.com/thestk/rtmidi/archive/v3.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.music.mcgill.ca/~gary/rtmidi/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\", \"--no-configure\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "lib.install Dir[\".libs/*.a\", \".libs/*.dylib\"]",
+        "include.install Dir[\"*.h\"]"
+    ],
+    "version": "3.0.0"
+}

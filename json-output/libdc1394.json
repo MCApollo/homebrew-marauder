@@ -1,0 +1,51 @@
+{
+    "name": "Libdc1394",
+    "description": "Provides API for IEEE 1394 cameras",
+    "url": "https://downloads.sourceforge.net/project/libdc1394/libdc1394-2/2.2.2/libdc1394-2.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://damien.douxchamps.net/ieee1394/libdc1394/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/b8275aa07f/libdc1394/capture.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "Dir.chdir(\"libdc1394\") if build.head?",
+        "system \"autoreconf\", \"-i\", \"-s\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-examples\",",
+        "\"--disable-sdltest\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1394"
+}

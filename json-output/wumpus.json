@@ -1,0 +1,25 @@
+{
+    "name": "Wumpus",
+    "description": "Exact clone of the ancient BASIC Hunt the Wumpus game",
+    "url": "http://www.catb.org/~esr/wumpus/wumpus-1.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.catb.org/~esr/wumpus/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gitlab.com/esr/wumpus/commit/ea272d4786a55dbaa493d016324b7a05b4f165b9.diff",
+            "strip": "1"
+        },
+        {
+            "url": "https://gitlab.com/esr/wumpus/commit/99022db86e54c3338d6a670f219a0845fd531530.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"prefix=#{prefix}\", \"install\""
+    ],
+    "version": "1.6"
+}

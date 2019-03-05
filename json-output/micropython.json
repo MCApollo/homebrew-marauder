@@ -1,0 +1,26 @@
+{
+    "name": "Micropython",
+    "description": "Python implementation for microcontrollers and constrained systems",
+    "url": "https://github.com/micropython/micropython.git",
+    "mirror": null,
+    "homepage": "https://www.micropython.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libffi",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"ports/unix\" do",
+        "system \"make\", \"axtls\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.10-git-3e25d611"
+}

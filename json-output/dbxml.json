@@ -1,0 +1,37 @@
+{
+    "name": "Dbxml",
+    "description": "Embeddable XML database with XQuery support and other advanced features",
+    "url": "https://download.oracle.com/berkeley-db/dbxml-6.1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.oracle.com/database/berkeley-db/xml.html",
+    "depends": [
+        {
+            "depend": "berkeley-db",
+            "build-depend": false
+        },
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        },
+        {
+            "depend": "xqilla",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/master/dbxml/c%2B%2B11.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.cxx11",
+        "inreplace \"dbxml/configure\" do |s|",
+        "s.gsub! \"lib/libdb-*.la | sed -e 's\\/.*db-\\\\\\(.*\\\\\\).la\", \"lib/libdb-*.a | sed -e 's/.*db-\\\\(.*\\\\).a\"",
+        "s.gsub! \"lib/libdb-*.la\", \"lib/libdb-*.a\"",
+        "s.gsub! \"libz.a\", \"libz.dylib\""
+    ],
+    "version": "6.1.4"
+}

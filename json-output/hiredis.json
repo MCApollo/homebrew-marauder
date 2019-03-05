@@ -1,0 +1,17 @@
+{
+    "name": "Hiredis",
+    "description": "Minimalistic client for Redis",
+    "url": "https://github.com/redis/hiredis/archive/v0.14.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/redis/hiredis",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"OBJARCH\"] = \"-arch #{MacOS.preferred_arch}\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "pkgshare.install \"examples\""
+    ],
+    "version": "0.14.0"
+}

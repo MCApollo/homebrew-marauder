@@ -1,0 +1,32 @@
+{
+    "name": "Cracklib",
+    "description": "LibCrack password checking library",
+    "url": "https://github.com/cracklib/cracklib/releases/download/cracklib-2.9.6/cracklib-2.9.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/cracklib/cracklib",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "cracklib-words",
+            "url": "https://github.com/cracklib/cracklib/releases/download/cracklib-2.9.6/cracklib-words-2.9.6.bz2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/cracklib/cracklib/commit/47e5dec.patch?full_index=1",
+            "strip": "2"
+        }
+    ],
+    "install": [
+        "(var/\"cracklib\").mkpath",
+        "cp share/\"cracklib-words-#{version}\", var/\"cracklib/cracklib-words\"",
+        "system \"#{bin}/cracklib-packer < #{var}/cracklib/cracklib-words\""
+    ],
+    "version": "2.9.6"
+}

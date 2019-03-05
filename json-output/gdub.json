@@ -1,0 +1,15 @@
+{
+    "name": "Gdub",
+    "description": "Gradlew/gradle wrapper",
+    "url": "https://github.com/dougborg/gdub/archive/v0.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gdub.rocks/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"bin/gw\""
+    ],
+    "version": "0.1.0"
+}

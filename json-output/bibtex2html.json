@@ -1,0 +1,26 @@
+{
+    "name": "Bibtex2html",
+    "description": "BibTeX to HTML converter",
+    "url": "https://www.lri.fr/~filliatr/ftp/bibtex2html/bibtex2html-1.99.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.lri.fr/~filliatr/bibtex2html/",
+    "depends": [
+        {
+            "depend": "hevea",
+            "build-depend": false
+        },
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"OCAMLPARAM\"] = \"safe-string=0,_\" ",
+        "inreplace \"Makefile.in\" do |s|",
+        "s.remove_make_var! \"STRLIB\""
+    ],
+    "version": "1.99"
+}

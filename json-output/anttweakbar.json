@@ -1,0 +1,26 @@
+{
+    "name": "Anttweakbar",
+    "description": "C/C++ library for adding GUIs to OpenGL apps",
+    "url": "https://downloads.sourceforge.net/project/anttweakbar/AntTweakBar_116.zip",
+    "mirror": null,
+    "homepage": "https://anttweakbar.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/62e79481/anttweakbar/anttweakbar.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "if DevelopmentTools.clang_build_version >= 900 ||",
+        "(MacOS.version == :el_capitan && MacOS::Xcode.version >= \"8.0\")",
+        "ENV.delete(\"SDKROOT\")",
+        "end",
+        "system \"make\", \"-C\", \"src\", \"-f\", \"Makefile.osx\"",
+        "lib.install \"lib/libAntTweakBar.dylib\", \"lib/libAntTweakBar.a\"",
+        "include.install \"include/AntTweakBar.h\""
+    ],
+    "version": "116"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Chcase",
+    "description": "Perl file-renaming script",
+    "url": "http://www.primaledge.ca/chcase",
+    "mirror": null,
+    "homepage": "http://www.primaledge.ca/chcase.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/chcase b/chcase\n",
+                "index 689fc79..93efae8\n",
+                "--- a/chcase\n",
+                "+++ b/chcase\n",
+                "@@ -1,3 +1,4 @@\n",
+                "+#!/bin/sh -- # -*- perl -*-\n",
+                " eval 'exec perl $0 ${1+\"$@\"}'\n",
+                " if 0;\n",
+                " # don't modify below here\n"
+            ]
+        }
+    ],
+    "install": [
+        "bin.install \"chcase\""
+    ],
+    "version": "1.0-u"
+}

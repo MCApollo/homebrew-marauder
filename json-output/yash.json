@@ -1,0 +1,32 @@
+{
+    "name": "Yash",
+    "description": "Yet another shell: a POSIX-compliant command-line shell",
+    "url": "https://dotsrc.dl.osdn.net/osdn/yash/69353/yash-2.47.tar.xz",
+    "mirror": null,
+    "homepage": "https://yash.osdn.jp/",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"sh\", \"./configure\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-array\",",
+        "\"--enable-dirstack\",",
+        "\"--enable-help\",",
+        "\"--enable-history\",",
+        "\"--enable-lineedit\",",
+        "\"--enable-nls\",",
+        "\"--enable-printf\",",
+        "\"--enable-socket\",",
+        "\"--enable-test\",",
+        "\"--enable-ulimit\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.47"
+}

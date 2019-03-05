@@ -1,0 +1,34 @@
+{
+    "name": "SpatialiteTools",
+    "description": "CLI tools supporting SpatiaLite",
+    "url": "https://www.gaia-gis.it/gaia-sins/spatialite-tools-sources/spatialite-tools-4.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gaia-gis.it/fossil/spatialite-tools/index",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libspatialite",
+            "build-depend": false
+        },
+        {
+            "depend": "readosm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-liconv\"",
+        "sqlite = Formula[\"sqlite\"]",
+        "ENV.append \"LDFLAGS\", \"-L#{sqlite.opt_lib}\"",
+        "ENV.append \"CFLAGS\", \"-I#{sqlite.opt_include}\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.3.0"
+}

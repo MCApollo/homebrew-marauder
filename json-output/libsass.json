@@ -1,0 +1,32 @@
+{
+    "name": "Libsass",
+    "description": "C implementation of a Sass compiler",
+    "url": "https://github.com/sass/libsass.git",
+    "mirror": null,
+    "homepage": "https://github.com/sass/libsass",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-silent-rules\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0-git-e1599c7b"
+}

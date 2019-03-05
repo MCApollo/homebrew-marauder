@@ -1,0 +1,20 @@
+{
+    "name": "Xmlstarlet",
+    "description": "XML command-line utilities",
+    "url": "https://downloads.sourceforge.net/project/xmlstar/xmlstarlet/1.6.1/xmlstarlet-1.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://xmlstar.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "bin.install_symlink \"xml\" => \"xmlstarlet\""
+    ],
+    "version": "1.6.1"
+}

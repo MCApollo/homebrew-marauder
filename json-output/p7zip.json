@@ -1,0 +1,26 @@
+{
+    "name": "P7zip",
+    "description": "7-Zip (high compression file archiver) implementation",
+    "url": "https://downloads.sourceforge.net/project/p7zip/p7zip/16.02/p7zip_16.02_src_all.tar.bz2",
+    "mirror": null,
+    "homepage": "https://p7zip.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/p/p7zip/p7zip_16.02+dfsg-6.debian.tar.xz",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "mv \"makefile.macosx_llvm_64bits\", \"makefile.machine\"",
+        "system \"make\", \"all3\",",
+        "\"CC=#{ENV.cc} $(ALLFLAGS)\",",
+        "\"CXX=#{ENV.cxx} $(ALLFLAGS)\"",
+        "system \"make\", \"DEST_HOME=#{prefix}\",",
+        "\"DEST_MAN=#{man}\",",
+        "\"install\""
+    ],
+    "version": "16.02"
+}

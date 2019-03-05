@@ -1,0 +1,86 @@
+{
+    "name": "Coreutils",
+    "description": "GNU File, Shell, and Text utilities",
+    "url": "https://ftp.gnu.org/gnu/coreutils/coreutils-8.30.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/coreutils/coreutils-8.30.tar.xz",
+    "homepage": "https://www.gnu.org/software/coreutils",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "bison",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "texinfo",
+            "build-depend": true
+        },
+        {
+            "depend": "wget",
+            "build-depend": true
+        },
+        {
+            "depend": "xz",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "aardvark_shell_utils",
+            "reason": "both install `realpath` binaries"
+        },
+        {
+            "conflict": "b2sum",
+            "reason": "both install `b2sum` binaries"
+        },
+        {
+            "conflict": "ganglia",
+            "reason": "both install `gstat` binaries"
+        },
+        {
+            "conflict": "gegl",
+            "reason": "both install `gcut` binaries"
+        },
+        {
+            "conflict": "idutils",
+            "reason": "both install `gid` and `gid.1`"
+        },
+        {
+            "conflict": "md5sha1sum",
+            "reason": "both install `md5sum` and `sha1sum` binaries"
+        },
+        {
+            "conflict": "truncate",
+            "reason": "both install `truncate` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "if MacOS.version == :el_capitan",
+        "ENV[\"gl_cv_func_getcwd_abort_bug\"] = \"no\"",
+        "inreplace \"lib/renameat2.c\", \"defined RENAME_EXCL\", \"defined UNDEFINED_GIBBERISH\"",
+        "end",
+        "system \"./bootstrap\" if build.head?",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--program-prefix=g",
+        "--without-gmp",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "coreutils_filenames(bin).each do |cmd|",
+        "(libexec/\"gnubin\").install_symlink bin/\"g#{cmd}\" => cmd"
+    ],
+    "version": "8.30"
+}

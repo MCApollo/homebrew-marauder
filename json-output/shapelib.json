@@ -1,0 +1,21 @@
+{
+    "name": "Shapelib",
+    "description": "Library for reading and writing ArcView Shapefiles",
+    "url": "https://download.osgeo.org/shapelib/shapelib-1.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://shapelib.maptools.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.1"
+}

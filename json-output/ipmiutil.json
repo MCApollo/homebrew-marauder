@@ -1,0 +1,62 @@
+{
+    "name": "Ipmiutil",
+    "description": "IPMI server management utility",
+    "url": "https://downloads.sourceforge.net/project/ipmiutil/ipmiutil-2.9.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://ipmiutil.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "renameutils",
+            "reason": "both install `icmd` binaries"
+        }
+    ],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff -u ./configure.bak ./configure\n",
+                "--- ./configure.bak       2015-02-04 22:15:07.000000000 +0100\n",
+                "+++ ./configure   2015-02-04 22:16:18.000000000 +0100\n",
+                "@@ -20739,7 +20739,7 @@\n",
+                "            echo \"Detected HP-UX\"\n",
+                "            os=hpux\n",
+                "            MD2_CFLAGS=\"-DSKIP_MD2\"\n",
+                "-           OS_CFLAGS=\"-DHPUX\"\n",
+                "+           OS_CFLAGS=\"-DHPUX $MD2_CFLAGS\"\n",
+                "            OS_LFLAGS=\"\"\n",
+                "            OS_DRIVERS=\"ipmimv.c\"\n",
+                "            drivers=\"open\"\n",
+                "@@ -20748,7 +20748,7 @@\n",
+                "            echo \"Detected MacOSX\"\n",
+                "            os=macos\n",
+                "            MD2_CFLAGS=\"-DSKIP_MD2\"\n",
+                "-           OS_CFLAGS=\"-DMACOS\"\n",
+                "+           OS_CFLAGS=\"-DMACOS $MD2_CFLAGS\"\n",
+                "            OS_LFLAGS=\"\"\n",
+                "           OS_DRIVERS=\"ipmimv.c ipmidir.c\"\n",
+                "           drivers=\"open direct\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-sha256\",",
+        "\"--enable-gpl\"",
+        "system \"make\", \"TMPDIR=#{ENV[\"TMPDIR\"]}\"",
+        "system \"make\", \"prefix=/\",",
+        "\"DESTDIR=#{prefix}\",",
+        "\"varto=#{var}/lib/#{name}\",",
+        "\"initto=#{etc}/init.d\",",
+        "\"sysdto=#{prefix}/#{name}\",",
+        "\"install\""
+    ],
+    "version": "2.9.5"
+}

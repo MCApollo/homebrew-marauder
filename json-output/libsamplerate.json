@@ -1,0 +1,43 @@
+{
+    "name": "Libsamplerate",
+    "description": "Library for sample rate conversion of audio data",
+    "url": "http://www.mega-nerd.com/SRC/libsamplerate-0.1.9.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.mega-nerd.com/SRC",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/examples/audio_out.c\t2011-07-12 16:57:31.000000000 -0700\n",
+                "+++ b/examples/audio_out.c\t2012-03-11 20:48:57.000000000 -0700\n",
+                "@@ -168,7 +168,7 @@\n",
+                " \n",
+                " #if (defined (__MACH__) && defined (__APPLE__)) /* MacOSX */\n",
+                " \n",
+                "-#include <Carbon.h>\n",
+                "+#include <Carbon/Carbon.h>\n",
+                " #include <CoreAudio/AudioHardware.h>\n",
+                " \n",
+                " #define\tMACOSX_MAGIC\tMAKE_MAGIC ('M', 'a', 'c', ' ', 'O', 'S', ' ', 'X')\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.9"
+}

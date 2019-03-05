@@ -1,0 +1,30 @@
+{
+    "name": "Vecx",
+    "description": "Vectrex emulator",
+    "url": "https://github.com/jhawthorn/vecx/archive/v1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jhawthorn/vecx",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_gfx",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_image",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace [\"e6809.c\", \"vecx.c\"], /__inline/, 'static \\1'",
+        "system \"make\"",
+        "bin.install \"vecx\""
+    ],
+    "version": "1.1"
+}

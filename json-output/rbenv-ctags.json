@@ -1,0 +1,24 @@
+{
+    "name": "RbenvCtags",
+    "description": "Automatically generate ctags for rbenv Ruby stdlibs",
+    "url": "https://github.com/tpope/rbenv-ctags/archive/v1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tpope/rbenv-ctags",
+    "depends": [
+        {
+            "depend": "ctags",
+            "build-depend": false
+        },
+        {
+            "depend": "rbenv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install Dir[\"*\"]"
+    ],
+    "version": "1.0.2"
+}

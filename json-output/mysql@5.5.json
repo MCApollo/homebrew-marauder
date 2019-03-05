@@ -1,0 +1,28 @@
+{
+    "name": "MysqlAT55",
+    "description": "Open source relational database management system",
+    "url": "https://dev.mysql.com/get/Downloads/MySQL-5.5/mysql-5.5.62.tar.gz",
+    "mirror": null,
+    "homepage": "https://dev.mysql.com/doc/refman/5.5/en/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "datadir.mkpath",
+        "unless (datadir/\"mysql/general_log.CSM\").exist?",
+        "ENV[\"TMPDIR\"] = nil",
+        "system bin/\"mysql_install_db\", \"--verbose\", \"--user=#{ENV[\"USER\"]}\",",
+        "\"--basedir=#{prefix}\", \"--datadir=#{datadir}\", \"--tmpdir=/tmp\""
+    ],
+    "version": "5.5.62"
+}

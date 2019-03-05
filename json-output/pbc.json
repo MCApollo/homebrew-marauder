@@ -1,0 +1,22 @@
+{
+    "name": "Pbc",
+    "description": "Pairing-based cryptography",
+    "url": "https://crypto.stanford.edu/pbc/files/pbc-0.5.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://crypto.stanford.edu/pbc/",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.14"
+}

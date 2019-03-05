@@ -1,0 +1,87 @@
+{
+    "name": "Caffe",
+    "description": "Fast open framework for deep learning",
+    "url": "https://github.com/BVLC/caffe/archive/1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://caffe.berkeleyvision.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "gflags",
+            "build-depend": false
+        },
+        {
+            "depend": "glog",
+            "build-depend": false
+        },
+        {
+            "depend": "hdf5",
+            "build-depend": false
+        },
+        {
+            "depend": "leveldb",
+            "build-depend": false
+        },
+        {
+            "depend": "lmdb",
+            "build-depend": false
+        },
+        {
+            "depend": "opencv",
+            "build-depend": false
+        },
+        {
+            "depend": "protobuf",
+            "build-depend": false
+        },
+        {
+            "depend": "snappy",
+            "build-depend": false
+        },
+        {
+            "depend": "szip",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "test_model_weights",
+            "url": "http://dl.caffe.berkeleyvision.org/bvlc_reference_caffenet.caffemodel"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/BVLC/caffe/pull/6638.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.cxx11",
+        "args = std_cmake_args + %w[",
+        "-DALLOW_LMDB_NOLOCK=OFF",
+        "-DBUILD_SHARED_LIBS=ON",
+        "-DBUILD_docs=OFF",
+        "-DBUILD_matlab=OFF",
+        "-DBUILD_python=OFF",
+        "-DBUILD_python_layer=OFF",
+        "-DCPU_ONLY=ON",
+        "-DUSE_LEVELDB=ON",
+        "-DUSE_LMDB=ON",
+        "-DUSE_NCCL=OFF",
+        "-DUSE_OPENCV=ON",
+        "-DUSE_OPENMP=OFF",
+        "]",
+        "system \"cmake\", \".\", *args",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"models\""
+    ],
+    "version": "1.0"
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Gengetopt",
+    "description": "Generate C code to parse command-line arguments via getopt_long",
+    "url": "https://ftp.gnu.org/gnu/gengetopt/gengetopt-2.22.6.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/gengetopt/gengetopt-2.22.6.tar.gz",
+    "homepage": "https://www.gnu.org/software/gengetopt/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.22.6"
+}

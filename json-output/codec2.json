@@ -1,0 +1,22 @@
+{
+    "name": "Codec2",
+    "description": "Open source speech codec",
+    "url": "https://hobbes1069.fedorapeople.org/freetel/codec2/codec2-0.8.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.rowetel.com/?page_id=452",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build_osx\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.1"
+}

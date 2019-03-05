@@ -1,0 +1,50 @@
+{
+    "name": "SdlMixer",
+    "description": "Sample multi-channel audio mixer library",
+    "url": "https://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libsdl.org/projects/SDL_mixer/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libmikmod",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "playwave",
+            "url": "https://hg.libsdl.org/SDL_mixer/raw-file/a4e9c53d9c30/playwave.c"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"SDL_mixer.pc.in\", \"@prefix@\", HOMEBREW_PREFIX",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--enable-music-ogg",
+        "--disable-music-ogg-shared",
+        "--disable-music-mod-shared",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.12"
+}

@@ -1,0 +1,66 @@
+{
+    "name": "Flactag",
+    "description": "Tag single album FLAC files with MusicBrainz CUE sheets",
+    "url": "https://downloads.sourceforge.net/project/flactag/v2.0.4/flactag-2.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://flactag.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "docbook-xsl",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libdiscid",
+            "build-depend": false
+        },
+        {
+            "depend": "libmusicbrainz",
+            "build-depend": false
+        },
+        {
+            "depend": "neon",
+            "build-depend": false
+        },
+        {
+            "depend": "s-lang",
+            "build-depend": false
+        },
+        {
+            "depend": "unac",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/ed0e680/flactag/jpeg9.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "ENV.append \"LDFLAGS\", \"-liconv\"",
+        "ENV.append \"LDFLAGS\", \"-lFLAC\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.4"
+}

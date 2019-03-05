@@ -1,0 +1,30 @@
+{
+    "name": "Gammu",
+    "description": "Command-line utility to control a phone",
+    "url": "https://dl.cihar.com/gammu/releases/gammu-1.39.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://wammu.eu/gammu/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DBASH_COMPLETION_COMPLETIONSDIR:PATH=#{bash_completion}\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.39.0"
+}

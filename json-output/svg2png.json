@@ -1,0 +1,28 @@
+{
+    "name": "Svg2png",
+    "description": "SVG to PNG converter",
+    "url": "https://cairographics.org/snapshots/svg2png-0.1.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://cairographics.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libsvg-cairo",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.3"
+}

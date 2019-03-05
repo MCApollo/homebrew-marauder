@@ -1,0 +1,38 @@
+{
+    "name": "Glui",
+    "description": "C++ user interface library",
+    "url": "https://downloads.sourceforge.net/project/glui/Source/2.36/glui-2.36.tgz",
+    "mirror": null,
+    "homepage": "https://glui.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/include/GL/glui.h b/src/include/GL/glui.h\n",
+                "index 01a5c75..5784e29 100644\n",
+                "--- a/src/include/GL/glui.h\n",
+                "+++ b/src/include/GL/glui.h\n",
+                "@@ -941,7 +941,7 @@ public:\n",
+                "         spacebar_mouse_click = true;    /* Does spacebar simulate a mouse click? */\n",
+                "         live_type      = GLUI_LIVE_NONE;\n",
+                "         text = \"\";\n",
+                "-        last_live_text == \"\";\n",
+                "+        last_live_text = \"\";\n",
+                "         live_inited    = false;\n",
+                "         collapsible    = false;\n",
+                "         is_open        = true;\n"
+            ]
+        }
+    ],
+    "install": [
+        "cd \"src\" do",
+        "system \"make\", \"setup\"",
+        "system \"make\", \"lib/libglui.a\"",
+        "lib.install \"lib/libglui.a\"",
+        "include.install \"include/GL\""
+    ],
+    "version": "2.36"
+}

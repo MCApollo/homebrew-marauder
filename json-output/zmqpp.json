@@ -1,0 +1,28 @@
+{
+    "name": "Zmqpp",
+    "description": "High-level C++ binding for zeromq",
+    "url": "https://github.com/zeromq/zmqpp/archive/4.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://zeromq.github.io/zmqpp/",
+    "depends": [
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "zeromq",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "system \"doxygen\"",
+        "(doc/\"html\").install Dir[\"docs/html/*.html\"]"
+    ],
+    "version": "4.2.0"
+}

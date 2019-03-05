@@ -1,0 +1,52 @@
+{
+    "name": "X11vnc",
+    "description": "VNC server for real X displays",
+    "url": "https://downloads.sourceforge.net/project/libvncserver/x11vnc/0.9.13/x11vnc-0.9.13.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.karlrunge.com/x11vnc/",
+    "depends": [
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/x11vnc/solid.c b/x11vnc/solid.c\n",
+                "index d6b0bda..0b2cfa9 100644\n",
+                "--- a/x11vnc/solid.c\n",
+                "+++ b/x11vnc/solid.c\n",
+                "@@ -177,7 +177,7 @@ unsigned long get_pixel(char *color) {\n",
+                " \n",
+                " XImage *solid_root(char *color) {\n",
+                " #if NO_X11\n",
+                "-\tRAWFB_RET_VOID\n",
+                "+\tRAWFB_RET(NULL)\n",
+                " \tif (!color) {}\n",
+                " \treturn NULL;\n",
+                " #else\n"
+            ]
+        }
+    ],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--mandir=#{man}",
+        "--without-x",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"MKDIRPROG=mkdir -p\", \"install\""
+    ],
+    "version": "0.9.13"
+}

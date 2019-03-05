@@ -1,0 +1,21 @@
+{
+    "name": "Xml2",
+    "description": "Makes XML and HTML more amenable to classic UNIX text tools",
+    "url": "https://web.archive.org/web/20160427221603/download.ofb.net/gale/xml2-0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://web.archive.org/web/20160730094113/www.ofb.net/~egnor/xml2/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5"
+}

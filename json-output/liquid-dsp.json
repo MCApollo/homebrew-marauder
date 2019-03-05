@@ -1,0 +1,30 @@
+{
+    "name": "LiquidDsp",
+    "description": "Digital signal processing library for software-defined radios",
+    "url": "https://github.com/jgaeddert/liquid-dsp/archive/v1.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://liquidsdr.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.1"
+}

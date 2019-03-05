@@ -1,0 +1,55 @@
+{
+    "name": "Tn5250",
+    "description": "5250 terminal and printer emulator",
+    "url": "https://downloads.sourceforge.net/project/tn5250/tn5250/0.17.4/tn5250-0.17.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://tn5250.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/curses/cursesterm.c b/curses/cursesterm.c\n",
+                "index bf20f05..b9c394c 100644\n",
+                "--- a/curses/cursesterm.c\n",
+                "+++ b/curses/cursesterm.c\n",
+                "@@ -22,6 +22,9 @@\n",
+                " #define _TN5250_TERMINAL_PRIVATE_DEFINED\n",
+                " #include \"tn5250-private.h\"\n",
+                " #include \"cursesterm.h\"\n",
+                "+#ifdef __APPLE__\n",
+                "+#include <term.h>\n",
+                "+#endif\n",
+                " \n",
+                " #ifdef USE_CURSES\n",
+                " \n",
+                "diff --git a/curses/tn5250.c b/curses/tn5250.c\n",
+                "index 30a1627..67392b1 100644\n",
+                "--- a/curses/tn5250.c\n",
+                "+++ b/curses/tn5250.c\n",
+                "@@ -19,6 +19,7 @@\n",
+                "  */\n",
+                " \n",
+                " #include \"tn5250-private.h\"\n",
+                "+#include \"cursesterm.h\"\n",
+                " \n",
+                " Tn5250Session *sess = NULL;\n",
+                " Tn5250Stream *stream = NULL;\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5250"
+}

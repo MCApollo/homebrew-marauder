@@ -1,0 +1,20 @@
+{
+    "name": "PcscLite",
+    "description": "Middleware to access a smart card using SCard API",
+    "url": "https://pcsclite.apdu.fr/files/pcsc-lite-1.8.23.tar.bz2",
+    "mirror": null,
+    "homepage": "https://pcsclite.apdu.fr/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--disable-libsystemd\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.23"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Libcanberra",
+    "description": "Implementation of XDG Sound Theme and Name Specifications",
+    "url": "http://0pointer.de/lennart/projects/libcanberra/libcanberra-0.30.tar.xz",
+    "mirror": null,
+    "homepage": "http://0pointer.de/lennart/projects/libcanberra/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gtk-doc",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--no-create\"",
+        "inreplace \"config.status\", \"-Wl,--as-needed -Wl,--gc-sections\", \"\"",
+        "system \"./config.status\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.30"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "Woff2",
+    "description": "Utilities to create and convert Web Open Font File (WOFF) files",
+    "url": "https://github.com/google/woff2/archive/v1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/woff2",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "brotli",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "roboto_1",
+            "url": "https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf"
+        },
+        {
+            "name": "roboto_2",
+            "url": "https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %W[",
+        "-DCMAKE_INSTALL_NAME_DIR=#{opt_lib}",
+        "-DCMAKE_BUILD_WITH_INSTALL_NAME_DIR=ON",
+        "]",
+        "system \"cmake\", \".\", *args",
+        "system \"make\", \"install\"",
+        "bin.install \"woff2_info\", \"woff2_decompress\", \"woff2_compress\""
+    ],
+    "version": "1.0.2"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "SqliteAnalyzer",
+    "description": "Analyze how space is allocated inside an SQLite file",
+    "url": "https://sqlite.org/2019/sqlite-src-3270100.zip",
+    "mirror": null,
+    "homepage": "https://www.sqlite.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "sdkprefix = MacOS.sdk_path_if_needed ? MacOS.sdk_path : \"\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--with-tcl=#{sdkprefix}/System/Library/Frameworks/Tcl.framework/\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"sqlite3_analyzer\"",
+        "bin.install \"sqlite3_analyzer\""
+    ],
+    "version": "3270100"
+}

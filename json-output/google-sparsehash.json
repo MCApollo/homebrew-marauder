@@ -1,0 +1,18 @@
+{
+    "name": "GoogleSparsehash",
+    "description": "Extremely memory-efficient hash_map implementation",
+    "url": "https://github.com/sparsehash/sparsehash/archive/sparsehash-2.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sparsehash/sparsehash",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.3"
+}

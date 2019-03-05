@@ -1,0 +1,30 @@
+{
+    "name": "Serialosc",
+    "description": "Opensound control server for monome devices",
+    "url": "https://github.com/monome/serialosc.git",
+    "mirror": null,
+    "homepage": "https://monome.org/docs/osc/",
+    "depends": [
+        {
+            "depend": "confuse",
+            "build-depend": false
+        },
+        {
+            "depend": "liblo",
+            "build-depend": false
+        },
+        {
+            "depend": "libmonome",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\"",
+        "system \"./waf\", \"build\"",
+        "system \"./waf\", \"install\""
+    ],
+    "version": "1.4.1-git-4fec6f11"
+}

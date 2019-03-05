@@ -1,0 +1,15 @@
+{
+    "name": "Dockutil",
+    "description": "Tool for managing dock items",
+    "url": "https://github.com/kcrawford/dockutil/archive/2.0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kcrawford/dockutil",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"scripts/dockutil\""
+    ],
+    "version": "2.0.5"
+}

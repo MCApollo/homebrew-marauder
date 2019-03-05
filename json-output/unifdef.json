@@ -1,0 +1,15 @@
+{
+    "name": "Unifdef",
+    "description": "Selectively process conditional C preprocessor directives",
+    "url": "https://dotat.at/prog/unifdef/unifdef-2.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://dotat.at/prog/unifdef/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{prefix}\", \"install\""
+    ],
+    "version": "2.11"
+}

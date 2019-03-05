@@ -1,0 +1,26 @@
+{
+    "name": "MdaLv2",
+    "description": "LV2 port of the MDA plugins",
+    "url": "https://download.drobilla.net/mda-lv2-1.2.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://drobilla.net/software/mda-lv2/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "lv2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\"",
+        "system \"./waf\"",
+        "system \"./waf\", \"install\""
+    ],
+    "version": "1.2.2"
+}

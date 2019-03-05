@@ -1,0 +1,45 @@
+{
+    "name": "ScummvmTools",
+    "description": "Collection of tools for ScummVM",
+    "url": "https://www.scummvm.org/frs/scummvm-tools/2.0.0/scummvm-tools-2.0.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.scummvm.org/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "mad",
+            "build-depend": false
+        },
+        {
+            "depend": "wxmac",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.0"
+}

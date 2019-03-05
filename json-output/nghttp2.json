@@ -1,0 +1,77 @@
+{
+    "name": "Nghttp2",
+    "description": "HTTP/2 C Library",
+    "url": "https://github.com/nghttp2/nghttp2/releases/download/v1.36.0/nghttp2-1.36.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://nghttp2.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "cunit",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "c-ares",
+            "build-depend": false
+        },
+        {
+            "depend": "jansson",
+            "build-depend": false
+        },
+        {
+            "depend": "jemalloc",
+            "build-depend": false
+        },
+        {
+            "depend": "libev",
+            "build-depend": false
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-silent-rules",
+        "--enable-app",
+        "--disable-python-bindings",
+        "--with-xml-prefix=/usr",
+        "]",
+        "args << \"--disable-threads\" if MacOS.version < :el_capitan",
+        "system \"autoreconf\", \"-ivf\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.36.0"
+}

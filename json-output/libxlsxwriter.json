@@ -1,0 +1,15 @@
+{
+    "name": "Libxlsxwriter",
+    "description": "C library for creating Excel XLSX files",
+    "url": "https://github.com/jmcnamara/libxlsxwriter/archive/RELEASE_0.8.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://libxlsxwriter.github.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"INSTALL_DIR=#{prefix}\", \"V=1\""
+    ],
+    "version": "0.8.5"
+}

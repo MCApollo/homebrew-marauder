@@ -1,0 +1,21 @@
+{
+    "name": "Libsquish",
+    "description": "Library for compressing images with the DXT standard",
+    "url": "https://downloads.sourceforge.net/project/libsquish/libsquish-1.15.tgz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/libsquish/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.15"
+}

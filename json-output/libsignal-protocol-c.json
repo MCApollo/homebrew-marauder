@@ -1,0 +1,29 @@
+{
+    "name": "LibsignalProtocolC",
+    "description": "Signal Protocol C Library",
+    "url": "https://github.com/signalapp/libsignal-protocol-c/archive/v2.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/signalapp/libsignal-protocol-c",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DBUILD_SHARED_LIBS=ON\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.2"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Par2",
+    "description": "Parchive: Parity Archive Volume Set for data recovery",
+    "url": "https://github.com/Parchive/par2cmdline/releases/download/v0.8.0/par2cmdline-0.8.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://github.com/Parchive/par2cmdline",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.0"
+}

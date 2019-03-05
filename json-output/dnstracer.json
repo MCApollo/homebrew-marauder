@@ -1,0 +1,20 @@
+{
+    "name": "Dnstracer",
+    "description": "Trace a chain of DNS servers to the source",
+    "url": "https://www.mavetju.org/download/dnstracer-1.9.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/d/dnstracer/dnstracer_1.9.orig.tar.gz",
+    "homepage": "https://www.mavetju.org/unix/dnstracer.php",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"LDFLAGS\", \"-lresolv\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9"
+}

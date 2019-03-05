@@ -1,0 +1,16 @@
+{
+    "name": "Pdfcrack",
+    "description": "PDF files password cracker",
+    "url": "https://downloads.sourceforge.net/project/pdfcrack/pdfcrack/pdfcrack-0.16/pdfcrack-0.16.tar.gz",
+    "mirror": null,
+    "homepage": "https://pdfcrack.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\"",
+        "bin.install \"pdfcrack\""
+    ],
+    "version": "0.16"
+}

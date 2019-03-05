@@ -1,0 +1,23 @@
+{
+    "name": "ProtobufAT25",
+    "description": "Protocol buffers (Google",
+    "url": "https://github.com/protocolbuffers/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://github.com/protocolbuffers/protobuf",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend \"CXXFLAGS\", \"-DNDEBUG\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-zlib\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\"",
+        "doc.install \"editors\", \"examples\""
+    ],
+    "version": "2.5.0"
+}

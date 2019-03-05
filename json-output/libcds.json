@@ -1,0 +1,29 @@
+{
+    "name": "Libcds",
+    "description": "C++ library of Concurrent Data Structures",
+    "url": "https://github.com/khizmax/libcds/archive/v2.3.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://libcds.sourceforge.io/doc/cds-api/index.html",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.3"
+}

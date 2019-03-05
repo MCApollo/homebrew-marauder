@@ -1,0 +1,25 @@
+{
+    "name": "Menhir",
+    "description": "LR(1) parser generator for the OCaml programming language",
+    "url": "http://cristal.inria.fr/~fpottier/menhir/menhir-20180905.tar.gz",
+    "mirror": null,
+    "homepage": "http://cristal.inria.fr/~fpottier/menhir",
+    "depends": [
+        {
+            "depend": "ocamlbuild",
+            "build-depend": true
+        },
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"all\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "20180905"
+}

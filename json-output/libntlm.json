@@ -1,0 +1,17 @@
+{
+    "name": "Libntlm",
+    "description": "Implements Microsoft",
+    "url": "https://www.nongnu.org/libntlm/releases/libntlm-1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/libntlm/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4"
+}

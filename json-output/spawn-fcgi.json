@@ -1,0 +1,17 @@
+{
+    "name": "SpawnFcgi",
+    "description": "Spawn fast-CGI processes",
+    "url": "https://www.lighttpd.net/download/spawn-fcgi-1.6.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://redmine.lighttpd.net/projects/spawn-fcgi",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.4"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Mobiledevice",
+    "description": "CLI for Apple",
+    "url": "https://github.com/imkira/mobiledevice/archive/v2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/imkira/mobiledevice",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/imkira/mobiledevice/pull/20.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "(buildpath/\"symlink_framework.sh\").chmod 0555",
+        "system \"make\", \"install\", \"CC=#{ENV.cc}\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.0.0"
+}

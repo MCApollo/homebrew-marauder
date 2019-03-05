@@ -1,0 +1,24 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Efficiently back up the notes you",
+    "url": "https://github.com/bdesham/pinboard-notes-backup/archive/v1.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/bdesham/pinboard-notes-backup",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package"
+    ],
+    "version": "1.0.3"
+}

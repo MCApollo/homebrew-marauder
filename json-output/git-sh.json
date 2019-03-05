@@ -1,0 +1,16 @@
+{
+    "name": "GitSh",
+    "description": "Customized Bash environment for git work",
+    "url": "https://github.com/rtomayko/git-sh/archive/1.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rtomayko/git-sh",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.3"
+}

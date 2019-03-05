@@ -1,0 +1,34 @@
+{
+    "name": "Gperftools",
+    "description": "Multi-threaded malloc() and performance analysis tools",
+    "url": "https://github.com/gperftools/gperftools/releases/download/gperftools-2.7/gperftools-2.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/gperftools/gperftools",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path if MacOS.version == :sierra",
+        "ENV.append_to_cflags \"-D_XOPEN_SOURCE\"",
+        "system \"autoreconf\", \"-fiv\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7"
+}

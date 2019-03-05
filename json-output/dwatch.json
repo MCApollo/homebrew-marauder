@@ -1,0 +1,22 @@
+{
+    "name": "Dwatch",
+    "description": "Watch programs and perform actions based on a configuration file",
+    "url": "http://siag.nu/pub/dwatch/dwatch-0.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://siag.nu/dwatch/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "man1.mkpath",
+        "system \"make\", \"install\",",
+        "\"CC=#{ENV.cc}\",",
+        "\"PREFIX=#{prefix}\",",
+        "\"MANDIR=#{man}\",",
+        "\"ETCDIR=#{etc}\"",
+        "etc.install \"dwatch.conf\""
+    ],
+    "version": "0.1.1"
+}

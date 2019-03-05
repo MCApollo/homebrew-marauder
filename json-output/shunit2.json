@@ -1,0 +1,15 @@
+{
+    "name": "Shunit2",
+    "description": "xUnit unit testing framework for Bourne-based shell scripts",
+    "url": "https://github.com/kward/shunit2/archive/v2.1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kward/shunit2",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"shunit2\""
+    ],
+    "version": "2.1.7"
+}

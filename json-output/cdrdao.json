@@ -1,0 +1,68 @@
+{
+    "name": "Cdrdao",
+    "description": "Record CDs in Disk-At-Once mode",
+    "url": "https://downloads.sourceforge.net/project/cdrdao/cdrdao-1.2.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://cdrdao.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "lame",
+            "build-depend": false
+        },
+        {
+            "depend": "libao",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "mad",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://sourceforge.net/p/cdrdao/patches/_discuss/thread/205354b0/141e/attachment/cdrdao-mac.patch",
+            "strip": "1"
+        },
+        {
+            "url": null,
+            "strip": "0"
+        },
+        {
+            "url": null,
+            "data": [
+                "--- dao/main.cc\t2013-11-26 12:00:00.000000000 -0400\n",
+                "+++ dao/main.cc\t2013-11-26 12:00:00.000000000 -0400\n",
+                "@@ -1242,7 +1242,7 @@\n",
+                " const char* getDefaultDevice(DaoDeviceType req)\n",
+                " {\n",
+                "     int i, len;\n",
+                "-    static char buf[128];\n",
+                "+    static char buf[1024];\n",
+                " \n",
+                "     // This function should not be called if the command issues\n",
+                "     // doesn't actually require a device.\n",
+                "@@ -1270,7 +1270,7 @@\n",
+                " \t    if (req == NEED_CDRW_W && !rww)\n",
+                " \t      continue;\n",
+                " \n",
+                "-\t    strncpy(buf, sdata[i].dev.c_str(), 128);\n",
+                "+\t    strncpy(buf, sdata[i].dev.c_str(), 1024);\n",
+                " \t    delete[] sdata;\n",
+                " \t    return buf;\n",
+                " \t}\n"
+            ]
+        }
+    ],
+    "install": [],
+    "version": "1.2.4"
+}

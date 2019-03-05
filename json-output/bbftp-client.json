@@ -1,0 +1,24 @@
+{
+    "name": "BbftpClient",
+    "description": "Secure file transfer software, optimized for large files",
+    "url": "https://software.in2p3.fr/bbftp/dist/bbftp-client-3.2.1.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/bbftp-client-3.2.1.tar.gz",
+    "homepage": "https://software.in2p3.fr/bbftp/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append_to_cflags \"-DHAVE_NTOHLL\" if MacOS.version >= :yosemite",
+        "cd \"bbftpc\" do",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--with-ssl=#{Formula[\"openssl\"].opt_prefix}\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.1"
+}

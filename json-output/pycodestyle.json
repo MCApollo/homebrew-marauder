@@ -1,0 +1,15 @@
+{
+    "name": "Pycodestyle",
+    "description": "Simple Python style checker in one Python file",
+    "url": "https://github.com/PyCQA/pycodestyle/archive/2.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://pycodestyle.pycqa.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"pycodestyle.py\" => \"pycodestyle\""
+    ],
+    "version": "2.5.0"
+}

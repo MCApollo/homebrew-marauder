@@ -1,0 +1,33 @@
+{
+    "name": "Libmwaw",
+    "description": "Library for converting legacy Mac document formats",
+    "url": "https://downloads.sourceforge.net/project/libmwaw/libmwaw/libmwaw-0.3.14/libmwaw-0.3.14.tar.xz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/p/libmwaw/wiki/Home/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "librevenge",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "test_document",
+            "url": "https://github.com/openpreserve/format-corpus/raw/825c8a5af012a93cf7aac408b0396e03a4575850/office-examples/Old%20Word%20file/NEWSSLID.DOC"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.14"
+}

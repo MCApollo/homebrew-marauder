@@ -1,0 +1,24 @@
+{
+    "name": "CrystalIcr",
+    "description": "Interactive console for Crystal programming language",
+    "url": "https://github.com/crystal-community/icr/archive/v0.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/crystal-community/icr",
+    "depends": [
+        {
+            "depend": "crystal",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.6.0"
+}

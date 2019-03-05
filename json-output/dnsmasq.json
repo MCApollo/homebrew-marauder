@@ -1,0 +1,23 @@
+{
+    "name": "Dnsmasq",
+    "description": "Lightweight DNS forwarder and DHCP server",
+    "url": "http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.80.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.thekelleys.org.uk/dnsmasq/doc.html",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"lib/misc/dnsmasq\").mkpath",
+        "(var/\"run/dnsmasq\").mkpath",
+        "(etc/\"dnsmasq.d/ppp\").mkpath",
+        "(etc/\"dnsmasq.d/dhcpc\").mkpath"
+    ],
+    "version": "2.80"
+}

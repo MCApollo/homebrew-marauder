@@ -1,0 +1,23 @@
+{
+    "name": "ReFlex",
+    "description": "The regex-centric, fast and flexible scanner generator for C++",
+    "url": "https://github.com/Genivia/RE-flex/archive/reflex-1.0.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.genivia.com/doc/reflex/html",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.12"
+}

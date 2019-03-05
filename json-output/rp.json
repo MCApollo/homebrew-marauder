@@ -1,0 +1,45 @@
+{
+    "name": "Rp",
+    "description": "Tool to find ROP sequences in PE/Elf/Mach-O x86/x64 binaries",
+    "url": "https://github.com/0vercl0k/rp/archive/v1.tar.gz",
+    "mirror": null,
+    "homepage": "https://0vercl0k.github.io/rp/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/CMakeLists.txt b/CMakeLists.txt\n",
+                "index 79d576b..34c2afa 100644\n",
+                "--- a/CMakeLists.txt\n",
+                "+++ b/CMakeLists.txt\n",
+                "@@ -36,12 +36,10 @@ set(RP_NAME \"${RP_NAME}-${RP_PLAT}\")\n",
+                "\n",
+                " if(CMAKE_SIZEOF_VOID_P EQUAL 8 AND NOT(optX86BUILD))\n",
+                "     set(FLAG_CXX \"-m64\")\n",
+                "-    set(RP_NAME \"${RP_NAME}-x64\")\n",
+                "     set(BEA_LIBRARY \"BeaEngine.x64.${RP_PLAT}.${EXTENSION_LIBRARY}\")\n",
+                "     set(ARGTABLE_LIBRARY \"argtable2.x64.${RP_PLAT}.${EXTENSION_LIBRARY}\")\n",
+                " else()\n",
+                "     set(FLAG_CXX \"-m32\")\n",
+                "-    set(RP_NAME \"${RP_NAME}-x86\")\n",
+                "     set(BEA_LIBRARY \"BeaEngine.x86.${RP_PLAT}.${EXTENSION_LIBRARY}\")\n",
+                "     set(ARGTABLE_LIBRARY \"argtable2.x86.${RP_PLAT}.${EXTENSION_LIBRARY}\")\n",
+                " endif(CMAKE_SIZEOF_VOID_P EQUAL 8 AND NOT(optX86BUILD))\n"
+            ]
+        }
+    ],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\"",
+        "system \"make\""
+    ],
+    "version": "1"
+}

@@ -1,0 +1,28 @@
+{
+    "name": "Geoserver",
+    "description": "Java server to share and edit geospatial data",
+    "url": "https://downloads.sourceforge.net/project/geoserver/GeoServer/2.13.2/geoserver-2.13.2-bin.zip",
+    "mirror": null,
+    "homepage": "http://geoserver.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "(bin/\"geoserver\").write <<~EOS",
+        "#!/bin/sh",
+        "if [ -z \"$1\" ]; then",
+        "echo \"Usage: $ geoserver path/to/data/dir\"",
+        "else",
+        "cd \"#{libexec}\" && java -DGEOSERVER_DATA_DIR=$1 -jar start.jar",
+        "fi",
+        "EOS",
+        "end",
+        "def caveats; <<~EOS",
+        "To start geoserver:",
+        "geoserver path/to/data/dir",
+        "EOS"
+    ],
+    "version": "2.13.2"
+}

@@ -1,0 +1,82 @@
+{
+    "name": "Qemu",
+    "description": "x86 and PowerPC Emulator",
+    "url": "https://download.qemu.org/qemu-3.1.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.qemu.org/",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libssh2",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        },
+        {
+            "depend": "ncurses",
+            "build-depend": false
+        },
+        {
+            "depend": "pixman",
+            "build-depend": false
+        },
+        {
+            "depend": "vde",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "test-image",
+            "url": "https://dl.bintray.com/homebrew/mirror/FD12FLOPPY.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"LIBTOOL\"] = \"glibtool\"",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--cc=#{ENV.cc}",
+        "--host-cc=#{ENV.cc}",
+        "--disable-bsd-user",
+        "--disable-guest-agent",
+        "--enable-curses",
+        "--enable-libssh2",
+        "--enable-vde",
+        "--extra-cflags=-DNCURSES_WIDECHAR=1",
+        "--enable-cocoa",
+        "--disable-sdl",
+        "--disable-gtk",
+        "]",
+        "args << \"--smbd=#{HOMEBREW_PREFIX}/sbin/samba-dot-org-smbd\"",
+        "system \"./configure\", *args",
+        "system \"make\", \"V=1\", \"install\""
+    ],
+    "version": "3.1.0"
+}

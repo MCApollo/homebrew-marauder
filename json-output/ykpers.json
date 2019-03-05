@@ -1,0 +1,35 @@
+{
+    "name": "Ykpers",
+    "description": "YubiKey personalization library and tool",
+    "url": "https://developers.yubico.com/yubikey-personalization/Releases/ykpers-1.19.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://developers.yubico.com/yubikey-personalization/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "libyubikey",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libyubikey_prefix = Formula[\"libyubikey\"].opt_prefix",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-libyubikey-prefix=#{libyubikey_prefix}\",",
+        "\"--with-backend=osx\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.19.0"
+}

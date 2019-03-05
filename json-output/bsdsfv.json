@@ -1,0 +1,34 @@
+{
+    "name": "Bsdsfv",
+    "description": "SFV utility tools",
+    "url": "https://downloads.sourceforge.net/project/bsdsfv/bsdsfv/1.18/bsdsfv-1.18.tar.gz",
+    "mirror": null,
+    "homepage": "https://bsdsfv.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/bsdsfv.c\t2012-09-25 07:31:03.000000000 -0500\n",
+                "+++ b/bsdsfv.c\t2012-09-25 07:31:08.000000000 -0500\n",
+                "@@ -44,5 +44,5 @@\n",
+                " typedef struct sfvtable {\n",
+                "\tchar filename[FNAMELEN];\n",
+                "-\tint crc;\n",
+                "+\tunsigned int crc;\n",
+                "\tint found;\n",
+                " } SFVTABLE;\n"
+            ]
+        }
+    ],
+    "install": [
+        "bin.mkpath",
+        "inreplace \"Makefile\" do |s|",
+        "s.change_make_var! \"INSTALL_PREFIX\", prefix",
+        "s.change_make_var! \"INDENT\", \"indent\"",
+        "s.gsub! \"\t${INSTALL_PROGRAM} bsdsfv ${INSTALL_PREFIX}/bin\", \"\t${INSTALL_PROGRAM} bsdsfv #{bin}/\""
+    ],
+    "version": "1.18"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "MediaInfo",
+    "description": "Unified display of technical and tag data for audio/video",
+    "url": "https://mediaarea.net/download/binary/mediainfo/18.12/MediaInfo_CLI_18.12_GNU_FromSource.tar.bz2",
+    "mirror": null,
+    "homepage": "https://mediaarea.net/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"ZenLib/Project/GNU/Library\" do",
+        "args = [\"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--enable-static\",",
+        "\"--enable-shared\",",
+        "\"--prefix=#{prefix}\"]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "18.12"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Distribution",
+    "description": "Create ASCII graphical histograms in the terminal",
+    "url": "https://github.com/philovivero/distribution/archive/1.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/philovivero/distribution",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"distribution.py\" => \"distribution\"",
+        "doc.install \"distributionrc\", \"screenshot.png\""
+    ],
+    "version": "1.3"
+}

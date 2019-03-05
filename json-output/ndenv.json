@@ -1,0 +1,24 @@
+{
+    "name": "Ndenv",
+    "description": "Node version manager",
+    "url": "https://github.com/riywo/ndenv/archive/v0.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/riywo/ndenv",
+    "depends": [
+        {
+            "depend": "node-build",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"libexec/ndenv\" do |s|",
+        "if HOMEBREW_PREFIX.to_s != \"/usr/local\"",
+        "s.gsub! \":/usr/local/etc/ndenv.d\", \\",
+        "\":#{HOMEBREW_PREFIX}/etc/ndenv.d\\\\0\"",
+        "end"
+    ],
+    "version": "0.4.0"
+}

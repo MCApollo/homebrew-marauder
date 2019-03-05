@@ -1,0 +1,63 @@
+{
+    "name": "Mydumper",
+    "description": "How MySQL DBA & support engineer would imagine ",
+    "url": "https://launchpad.net/mydumper/0.9/0.9.1/+download/mydumper-0.9.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://launchpad.net/mydumper",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "mysql-client",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "strip": "0"
+        },
+        {
+            "url": null,
+            "data": [
+                "--- cmake/modules/FindMySQL.cmake\t2015-09-16 16:11:34.000000000 -0400\n",
+                "+++ cmake/modules/FindMySQL.cmake\t2015-09-16 16:10:56.000000000 -0400\n",
+                "@@ -84,7 +84,7 @@\n",
+                " )\n",
+                "\n",
+                " set(TMP_MYSQL_LIBRARIES \"\")\n",
+                "-set(CMAKE_FIND_LIBRARY_SUFFIXES .so .a .lib)\n",
+                "+set(CMAKE_FIND_LIBRARY_SUFFIXES .so .lib .dylib)\n",
+                " foreach(MY_LIB ${MYSQL_ADD_LIBRARIES})\n",
+                "     find_library(\"MYSQL_LIBRARIES_${MY_LIB}\" NAMES ${MY_LIB}\n",
+                "         HINTS\n"
+            ]
+        }
+    ],
+    "install": [],
+    "version": "0.9.1"
+}

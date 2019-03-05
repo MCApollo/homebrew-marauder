@@ -1,0 +1,22 @@
+{
+    "name": "CernNdiff",
+    "description": "Numerical diff tool",
+    "url": "https://github.com/MethodicalAcceleratorDesign/MAD-X/archive/v5.04.02.tar.gz",
+    "mirror": null,
+    "homepage": "https://mad.web.cern.ch/mad/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"tools/numdiff\" do",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.04.02"
+}

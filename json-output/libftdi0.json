@@ -1,0 +1,32 @@
+{
+    "name": "Libftdi0",
+    "description": "Library to talk to FTDI chips",
+    "url": "https://www.intra2net.com/en/developer/libftdi/download/libftdi-0.20.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.intra2net.com/en/developer/libftdi",
+    "depends": [
+        {
+            "depend": "libusb-compat",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "cspice",
+            "reason": "both install `simple` binaries"
+        },
+        {
+            "conflict": "openhmd",
+            "reason": "both install `simple` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "mkdir \"libftdi-build\" do",
+        "system \"../configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.20"
+}

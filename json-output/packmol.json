@@ -1,0 +1,29 @@
+{
+    "name": "Packmol",
+    "description": "Packing optimization for molecular dynamics simulations",
+    "url": "https://github.com/leandromartinez98/packmol/archive/18.169.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.ime.unicamp.br/~martinez/packmol/",
+    "depends": [
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "examples",
+            "url": "https://www.ime.unicamp.br/~martinez/packmol/examples/examples.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\"",
+        "system \"make\"",
+        "bin.install(\"packmol\")",
+        "pkgshare.install \"solvate.tcl\"",
+        "(pkgshare/\"examples\").install resource(\"examples\")"
+    ],
+    "version": "18.169"
+}

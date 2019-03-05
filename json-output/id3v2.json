@@ -1,0 +1,23 @@
+{
+    "name": "Id3v2",
+    "description": "Command-line editor",
+    "url": "https://downloads.sourceforge.net/project/id3v2/id3v2/0.1.12/id3v2-0.1.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://id3v2.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "id3lib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"clean\"",
+        "bin.mkpath",
+        "man1.mkpath",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.1.12"
+}

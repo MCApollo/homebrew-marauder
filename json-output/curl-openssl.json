@@ -1,0 +1,86 @@
+{
+    "name": "CurlOpenssl",
+    "description": "Get a file from an HTTP, HTTPS or FTP server",
+    "url": "https://curl.haxx.se/download/curl-7.64.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://curl.haxx.se/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "brotli",
+            "build-depend": false
+        },
+        {
+            "depend": "c-ares",
+            "build-depend": false
+        },
+        {
+            "depend": "libidn",
+            "build-depend": false
+        },
+        {
+            "depend": "libmetalink",
+            "build-depend": false
+        },
+        {
+            "depend": "libssh2",
+            "build-depend": false
+        },
+        {
+            "depend": "nghttp2",
+            "build-depend": false
+        },
+        {
+            "depend": "openldap",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "rtmpdump",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./buildconf\" if build.head?",
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--enable-ares=#{Formula[\"c-ares\"].opt_prefix}",
+        "--with-ca-bundle=#{etc}/openssl/cert.pem",
+        "--with-ca-path=#{etc}/openssl/certs",
+        "--with-gssapi",
+        "--with-libidn2",
+        "--with-libmetalink",
+        "--with-librtmp",
+        "--with-libssh2",
+        "--with-ssl=#{Formula[\"openssl\"].opt_prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "libexec.install \"lib/mk-ca-bundle.pl\""
+    ],
+    "version": "7.64.0"
+}

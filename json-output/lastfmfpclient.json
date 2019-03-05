@@ -1,0 +1,38 @@
+{
+    "name": "Lastfmfpclient",
+    "description": "Last.fm fingerprint library",
+    "url": "https://github.com/lastfm/Fingerprinter/archive/9ee83a51ac9058ff53c9.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/lastfm/Fingerprinter",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        },
+        {
+            "depend": "libsamplerate",
+            "build-depend": false
+        },
+        {
+            "depend": "mad",
+            "build-depend": false
+        },
+        {
+            "depend": "taglib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace_fix",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "9058"
+}

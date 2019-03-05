@@ -1,0 +1,18 @@
+{
+    "name": "Stockfish",
+    "description": "Strong open-source chess engine",
+    "url": "https://github.com/official-stockfish/Stockfish/files/2629649/sf_10.zip",
+    "mirror": null,
+    "homepage": "https://stockfishchess.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "arch = if MacOS.version.requires_popcnt?",
+        "\"x86-64-modern\"",
+        "else",
+        "\"x86-64\""
+    ],
+    "version": "2629649"
+}

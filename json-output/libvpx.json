@@ -1,0 +1,30 @@
+{
+    "name": "Libvpx",
+    "description": "VP8/VP9 video codec",
+    "url": "https://github.com/webmproject/libvpx/archive/v1.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.webmproject.org/code/",
+    "depends": [
+        {
+            "depend": "yasm",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--disable-examples",
+        "--disable-unit-tests",
+        "--enable-pic",
+        "]",
+        "args << \"--disable-avx512\" if MacOS.version <= :el_capitan",
+        "mkdir \"macbuild\" do",
+        "system \"../configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.0"
+}

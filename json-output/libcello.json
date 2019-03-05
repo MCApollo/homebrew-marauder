@@ -1,0 +1,16 @@
+{
+    "name": "Libcello",
+    "description": "Higher-level programming in C",
+    "url": "http://libcello.org/static/libCello-2.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://libcello.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.1.0"
+}

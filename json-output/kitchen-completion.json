@@ -1,0 +1,15 @@
+{
+    "name": "KitchenCompletion",
+    "description": "Bash completion for Kitchen",
+    "url": "https://github.com/MarkBorcherding/test-kitchen-bash-completion/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/MarkBorcherding/test-kitchen-bash-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"kitchen-completion.bash\" => \"kitchen\""
+    ],
+    "version": "1.0.0"
+}

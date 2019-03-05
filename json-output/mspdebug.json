@@ -1,0 +1,25 @@
+{
+    "name": "Mspdebug",
+    "description": "Debugger for use with MSP430 MCUs",
+    "url": "https://github.com/dlbeer/mspdebug/archive/v0.25.tar.gz",
+    "mirror": null,
+    "homepage": "https://dlbeer.co.nz/mspdebug/",
+    "depends": [
+        {
+            "depend": "hidapi",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb-compat",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append_to_cflags \"-I#{Formula[\"hidapi\"].opt_include}/hidapi\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "0.25"
+}

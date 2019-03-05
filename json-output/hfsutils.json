@@ -1,0 +1,18 @@
+{
+    "name": "Hfsutils",
+    "description": "Tools for reading and writing Macintosh volumes",
+    "url": "ftp://ftp.mars.org/pub/hfs/hfsutils-3.2.6.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/old/hfsutils-3.2.6.tar.gz",
+    "homepage": "https://www.mars.org/home/rob/proj/hfs/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "bin.mkpath",
+        "man1.mkpath",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.6"
+}

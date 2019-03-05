@@ -1,0 +1,60 @@
+{
+    "name": "Pdftoedn",
+    "description": "Extract PDF document data and save the output in EDN format",
+    "url": "https://github.com/edporras/pdftoedn/archive/v0.36.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/edporras/pdftoedn",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "leptonica",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "poppler",
+            "build-depend": false
+        },
+        {
+            "depend": "rapidjson",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"autoreconf\", \"-i\"",
+        "system \"./configure\", \"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.36.6"
+}

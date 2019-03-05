@@ -1,0 +1,86 @@
+{
+    "name": "OpenSceneGraph",
+    "description": "3D graphics toolkit",
+    "url": "https://github.com/openscenegraph/OpenSceneGraph/archive/OpenSceneGraph-3.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/openscenegraph/OpenSceneGraph",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "doxygen",
+            "build-depend": true
+        },
+        {
+            "depend": "graphviz",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gtkglext",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/CMakeModules/FindGtkGl.cmake b/CMakeModules/FindGtkGl.cmake\n",
+                "index 321cede..6497589 100644\n",
+                "--- a/CMakeModules/FindGtkGl.cmake\n",
+                "+++ b/CMakeModules/FindGtkGl.cmake\n",
+                "@@ -10,7 +10,7 @@ IF(PKG_CONFIG_FOUND)\n",
+                "     IF(WIN32)\n",
+                "         PKG_CHECK_MODULES(GTKGL gtkglext-win32-1.0)\n",
+                "     ELSE()\n",
+                "-        PKG_CHECK_MODULES(GTKGL gtkglext-x11-1.0)\n",
+                "+        PKG_CHECK_MODULES(GTKGL gtkglext-quartz-1.0)\n",
+                "     ENDIF()\n",
+                "\n",
+                " ENDIF()\n"
+            ]
+        }
+    ],
+    "install": [
+        "if MacOS.version == :sierra || MacOS.version == :el_capitan",
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path",
+        "end",
+        "args = std_cmake_args + %w[",
+        "-DBUILD_DOCUMENTATION=ON",
+        "-DCMAKE_DISABLE_FIND_PACKAGE_FFmpeg=ON",
+        "-DCMAKE_DISABLE_FIND_PACKAGE_GDAL=ON",
+        "-DCMAKE_DISABLE_FIND_PACKAGE_TIFF=ON",
+        "-DCMAKE_DISABLE_FIND_PACKAGE_cairo=ON",
+        "-DCMAKE_CXX_FLAGS=-Wno-error=narrowing",
+        "-DCMAKE_OSX_ARCHITECTURES=x86_64",
+        "-DOSG_DEFAULT_IMAGE_PLUGIN_FOR_OSX=imageio",
+        "-DOSG_WINDOWING_SYSTEM=Cocoa",
+        "]",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\"",
+        "system \"make\", \"doc_openscenegraph\"",
+        "system \"make\", \"install\"",
+        "doc.install Dir[\"#{prefix}/doc/OpenSceneGraphReferenceDocs/*\"]"
+    ],
+    "version": "3.6.3"
+}

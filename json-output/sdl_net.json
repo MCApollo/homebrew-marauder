@@ -1,0 +1,26 @@
+{
+    "name": "SdlNet",
+    "description": "Sample cross-platform networking library",
+    "url": "https://www.libsdl.org/projects/SDL_net/release/SDL_net-1.2.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libsdl.org/projects/SDL_net/release-1.2.html",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--disable-sdltest\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.8"
+}

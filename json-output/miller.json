@@ -1,0 +1,33 @@
+{
+    "name": "Miller",
+    "description": "Like sed, awk, cut, join & sort for name-indexed data such as CSV",
+    "url": "https://github.com/johnkerl/miller/releases/download/5.4.0/mlr-5.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/johnkerl/miller",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-silent-rules\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.4.0"
+}

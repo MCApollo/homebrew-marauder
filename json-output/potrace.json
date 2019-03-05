@@ -1,0 +1,24 @@
+{
+    "name": "Potrace",
+    "description": "Convert bitmaps to vector graphics",
+    "url": "https://potrace.sourceforge.io/download/1.15/potrace-1.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://potrace.sourceforge.io/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "head.pbm",
+            "url": "https://potrace.sourceforge.io/img/head.pbm"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--with-libpotrace\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.15"
+}

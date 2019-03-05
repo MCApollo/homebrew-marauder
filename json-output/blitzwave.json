@@ -1,0 +1,53 @@
+{
+    "name": "Blitzwave",
+    "description": "C++ wavelet library",
+    "url": "https://github.com/oschulz/blitzwave/archive/v0.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://oschulz.github.io/blitzwave",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "blitz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/configure.ac b/configure.ac\n",
+                "index 8d28d78..2bfe06f 100644\n",
+                "--- a/configure.ac\n",
+                "+++ b/configure.ac\n",
+                "@@ -8,6 +8,7 @@ AM_INIT_AUTOMAKE([-Wall -Werror])\n",
+                " AC_PROG_CXX\n",
+                " AC_LIBTOOL_DLOPEN\n",
+                " AC_PROG_LIBTOOL\n",
+                "+AM_PROG_AR\n",
+                "\n",
+                " AC_CHECK_PROGS(DOXYGEN, doxygen, false)\n",
+                " AM_CONDITIONAL([COND_DOXYGEN], [test \"$DOXYGEN\" != \"false\"])\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.0"
+}

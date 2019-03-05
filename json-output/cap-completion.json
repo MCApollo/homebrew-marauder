@@ -1,0 +1,15 @@
+{
+    "name": "CapCompletion",
+    "description": "Bash completion for Capistrano",
+    "url": "https://github.com/bashaus/capistrano-autocomplete/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/bashaus/capistrano-autocomplete",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"cap\""
+    ],
+    "version": "1.0.0"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Httpflow",
+    "description": "Packet capture and analysis utility similar to tcpdump for HTTP",
+    "url": "https://github.com/six-ddc/httpflow/archive/0.0.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/six-ddc/httpflow",
+    "depends": [
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\", \"CXX=#{ENV.cxx}\""
+    ],
+    "version": "0.0.7"
+}

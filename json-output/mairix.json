@@ -1,0 +1,18 @@
+{
+    "name": "Mairix",
+    "description": "Email index and search tool",
+    "url": "https://downloads.sourceforge.net/project/mairix/mairix/0.24/mairix-0.24.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.rpcurnow.force9.co.uk/mairix/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.24"
+}

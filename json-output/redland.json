@@ -1,0 +1,47 @@
+{
+    "name": "Redland",
+    "description": "RDF Library",
+    "url": "http://download.librdf.org/source/redland-1.0.17.tar.gz",
+    "mirror": null,
+    "homepage": "http://librdf.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "raptor",
+            "build-depend": false
+        },
+        {
+            "depend": "rasqal",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        },
+        {
+            "depend": "unixodbc",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "bindings",
+            "url": "http://download.librdf.org/source/redland-bindings-1.0.17.1.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-bdb=no\",",
+        "\"--with-mysql=no\",",
+        "\"--with-sqlite=yes\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.17"
+}

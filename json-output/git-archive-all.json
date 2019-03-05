@@ -1,0 +1,15 @@
+{
+    "name": "GitArchiveAll",
+    "description": "Archive a project and its submodules",
+    "url": "https://github.com/Kentzo/git-archive-all/archive/1.19.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Kentzo/git-archive-all",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{prefix}\", \"install\""
+    ],
+    "version": "1.19.4"
+}

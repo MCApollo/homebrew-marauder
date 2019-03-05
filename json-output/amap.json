@@ -1,0 +1,24 @@
+{
+    "name": "Amap",
+    "description": "Perform application protocol detection",
+    "url": "https://www.thc.org/releases/amap-5.4.tar.gz",
+    "mirror": "https://downloads.sourceforge.net/project/slackbuildsdirectlinks/amap/amap-5.4.tar.gz",
+    "homepage": "https://www.thc.org/thc-amap/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "openssl = Formula[\"openssl\"]",
+        "inreplace \"configure\" do |s|",
+        "s.gsub! 'SSL_IPATH=\"\"', \"SSL_IPATH=\\\"#{openssl.opt_include}/openssl\\\"\"",
+        "s.gsub! 'SSL_PATH=\"\"', \"SSL_PATH=\\\"#{openssl.opt_lib}\\\"\"",
+        "s.gsub! 'CRYPTO_PATH=\"\"', \"CRYPTO_PATH=\\\"#{openssl.opt_lib}\\\"\""
+    ],
+    "version": "5.4"
+}

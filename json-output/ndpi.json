@@ -1,0 +1,39 @@
+{
+    "name": "Ndpi",
+    "description": "Deep Packet Inspection (DPI) library",
+    "url": "https://github.com/ntop/nDPI/archive/2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.ntop.org/products/deep-packet-inspection/ndpi/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2"
+}

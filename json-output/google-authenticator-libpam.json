@@ -1,0 +1,36 @@
+{
+    "name": "GoogleAuthenticatorLibpam",
+    "description": "PAM module for two-factor authentication",
+    "url": "https://github.com/google/google-authenticator-libpam/archive/1.05.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/google-authenticator-libpam",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "qrencode",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.05"
+}

@@ -1,0 +1,43 @@
+{
+    "name": "Pazpar2",
+    "description": "Metasearching middleware webservice",
+    "url": "http://ftp.indexdata.dk/pub/pazpar2/pazpar2-1.13.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.indexdata.com/pazpar2",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "yaz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./buildconf.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.13.1"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Inspircd",
+    "description": "Modular C++ Internet Relay Chat daemon",
+    "url": "https://github.com/inspircd/inspircd/archive/v2.0.27.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.inspircd.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"#{prefix}/org.inspircd.plist\", \"ircdaemon\", ENV[\"USER\"]"
+    ],
+    "version": "2.0.27"
+}

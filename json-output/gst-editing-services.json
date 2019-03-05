@@ -1,0 +1,36 @@
+{
+    "name": "GstEditingServices",
+    "description": "GStreamer Editing Services",
+    "url": "https://gstreamer.freedesktop.org/src/gst-editing-services/gstreamer-editing-services-1.14.4.tar.xz",
+    "mirror": null,
+    "homepage": "https://gstreamer.freedesktop.org/modules/gst-editing-services.html",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gst-plugins-base",
+            "build-depend": false
+        },
+        {
+            "depend": "gstreamer",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-gtk-doc\",",
+        "\"--disable-docbook\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14.4"
+}

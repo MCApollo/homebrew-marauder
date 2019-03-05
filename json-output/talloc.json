@@ -1,0 +1,19 @@
+{
+    "name": "Talloc",
+    "description": "Hierarchical, reference-counted memory pool with destructors",
+    "url": "https://www.samba.org/ftp/talloc/talloc-2.1.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://talloc.samba.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-rpath\",",
+        "\"--without-gettext\",",
+        "\"--disable-python\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.14"
+}

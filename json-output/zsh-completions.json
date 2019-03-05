@@ -1,0 +1,15 @@
+{
+    "name": "ZshCompletions",
+    "description": "Additional completion definitions for zsh",
+    "url": "https://github.com/zsh-users/zsh-completions/archive/0.30.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/zsh-users/zsh-completions",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pkgshare.install Dir[\"src/_*\"]"
+    ],
+    "version": "0.30.0"
+}

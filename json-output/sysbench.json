@@ -1,0 +1,43 @@
+{
+    "name": "Sysbench",
+    "description": "System performance benchmark tool",
+    "url": "https://github.com/akopytov/sysbench/archive/1.0.16.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/akopytov/sysbench",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "mysql-client",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "ENV[\"MACOSX_DEPLOYMENT_TARGET\"] = MacOS.version",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--with-mysql\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.16"
+}

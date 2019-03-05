@@ -1,0 +1,15 @@
+{
+    "name": "Sshrc",
+    "description": "Bring your .bashrc, .vimrc, etc. with you when you SSH",
+    "url": "https://github.com/Russell91/sshrc/archive/0.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Russell91/sshrc",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install %w[sshrc moshrc]"
+    ],
+    "version": "0.6.2"
+}

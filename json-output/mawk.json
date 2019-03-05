@@ -1,0 +1,21 @@
+{
+    "name": "Mawk",
+    "description": "Interpreter for the AWK Programming Language",
+    "url": "https://invisible-mirror.net/archives/mawk/mawk-1.3.4-20171017.tgz",
+    "mirror": null,
+    "homepage": "https://invisible-island.net/mawk/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-silent-rules\",",
+        "\"--with-readline=/usr/lib\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.4"
+}

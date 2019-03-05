@@ -1,0 +1,22 @@
+{
+    "name": "Dvdbackup",
+    "description": "Rip DVD",
+    "url": "https://downloads.sourceforge.net/dvdbackup/dvdbackup-0.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://dvdbackup.sourceforge.io",
+    "depends": [
+        {
+            "depend": "libdvdread",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--mandir=#{man}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.2"
+}

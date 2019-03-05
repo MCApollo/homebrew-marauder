@@ -1,0 +1,15 @@
+{
+    "name": "Findutils",
+    "description": "Collection of GNU find, xargs, and locate",
+    "url": "https://ftp.gnu.org/gnu/findutils/findutils-4.6.0.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/findutils/findutils-4.6.0.tar.gz",
+    "homepage": "https://www.gnu.org/software/findutils/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"locate\").mkpath"
+    ],
+    "version": "4.6.0"
+}

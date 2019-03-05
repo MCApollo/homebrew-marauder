@@ -1,0 +1,21 @@
+{
+    "name": "Debianutils",
+    "description": "Miscellaneous utilities specific to Debian",
+    "url": "https://deb.debian.org/debian/pool/main/d/debianutils/debianutils_4.8.6.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://packages.debian.org/sid/debianutils",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "bin.install \"run-parts\", \"ischroot\", \"tempfile\"",
+        "man1.install \"ischroot.1\", \"tempfile.1\"",
+        "man8.install \"run-parts.8\""
+    ],
+    "version": "4.8.6.1"
+}

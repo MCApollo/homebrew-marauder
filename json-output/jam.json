@@ -1,0 +1,21 @@
+{
+    "name": "Jam",
+    "description": "Make-like build tool",
+    "url": "https://swarm.workshop.perforce.com/projects/perforce_software-jam/download/main/jam-2.6.zip",
+    "mirror": null,
+    "homepage": "https://www.perforce.com/resources/documentation/jam",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "ftjam",
+            "reason": "both install a `jam` binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"CFLAGS=#{ENV.cflags}\", \"LOCATE_TARGET=bin\"",
+        "bin.install \"bin/jam\", \"bin/mkjambase\""
+    ],
+    "version": "2.6"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "TidyHtml5",
+    "description": "Granddaddy of HTML tools, with support for modern standards",
+    "url": "https://github.com/htacg/tidy-html5/archive/5.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.html-tidy.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"build/cmake\"",
+        "system \"cmake\", \"../..\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.6.0"
+}

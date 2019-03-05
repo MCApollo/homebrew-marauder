@@ -1,0 +1,17 @@
+{
+    "name": "Since",
+    "description": "Stateful tail: show changes to files since last check",
+    "url": "http://welz.org.za/projects/since/since-1.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://welz.org.za/projects/since",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "man1.mkpath",
+        "system \"make\", \"install\", \"prefix=#{prefix}\", \"INSTALL=install\""
+    ],
+    "version": "1.1"
+}

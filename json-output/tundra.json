@@ -1,0 +1,22 @@
+{
+    "name": "Tundra",
+    "description": "Code build system that tries to be fast for incremental builds",
+    "url": "https://github.com/deplinenoise/tundra/archive/v2.08.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/deplinenoise/tundra",
+    "depends": [],
+    "resource": [
+        {
+            "name": "gtest",
+            "url": "https://github.com/google/googletest/archive/release-1.8.0.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"unittest/googletest\").install resource(\"gtest\")",
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.08"
+}

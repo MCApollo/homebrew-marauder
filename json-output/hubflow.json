@@ -1,0 +1,17 @@
+{
+    "name": "Hubflow",
+    "description": "GitFlow for GitHub",
+    "url": "https://github.com/datasift/gitflow.git",
+    "mirror": null,
+    "homepage": "https://datasift.github.io/gitflow/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"INSTALL_INTO\"] = libexec",
+        "system \"./install.sh\", \"install\"",
+        "bin.write_exec_script libexec/\"git-hf\""
+    ],
+    "version": "1.5.3-git-ed032438"
+}

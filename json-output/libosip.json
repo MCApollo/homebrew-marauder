@@ -1,0 +1,17 @@
+{
+    "name": "Libosip",
+    "description": "Implementation of the eXosip2 stack",
+    "url": "https://ftp.gnu.org/gnu/osip/libosip2-5.0.0.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/osip/libosip2-5.0.0.tar.gz",
+    "homepage": "https://www.gnu.org/software/osip/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.0.0"
+}

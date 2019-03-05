@@ -1,0 +1,19 @@
+{
+    "name": "Abcmidi",
+    "description": "Converts abc music notation files to MIDI files",
+    "url": "https://ifdo.ca/~seymour/runabc/abcMIDI-2019.02.08.zip",
+    "mirror": null,
+    "homepage": "https://www.ifdo.ca/~seymour/runabc/top.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm \"makefile\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2019.02.08"
+}

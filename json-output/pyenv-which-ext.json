@@ -1,0 +1,21 @@
+{
+    "name": "PyenvWhichExt",
+    "description": "Integrate pyenv and system commands",
+    "url": "https://github.com/pyenv/pyenv-which-ext/archive/v0.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pyenv/pyenv-which-ext",
+    "depends": [
+        {
+            "depend": "pyenv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PREFIX\"] = prefix",
+        "system \"./install.sh\""
+    ],
+    "version": "0.0.2"
+}

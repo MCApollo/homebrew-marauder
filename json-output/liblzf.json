@@ -1,0 +1,19 @@
+{
+    "name": "Liblzf",
+    "description": "Very small, very fast data compression library",
+    "url": "http://dist.schmorp.de/liblzf/liblzf-3.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://oldhome.schmorp.de/marc/liblzf.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.6"
+}

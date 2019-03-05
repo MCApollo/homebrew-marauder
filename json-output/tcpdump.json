@@ -1,0 +1,28 @@
+{
+    "name": "Tcpdump",
+    "description": "Command-line packet analyzer",
+    "url": "https://www.tcpdump.org/release/tcpdump-4.9.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.tcpdump.org/",
+    "depends": [
+        {
+            "depend": "libpcap",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--enable-ipv6\",",
+        "\"--disable-smb\",",
+        "\"--disable-universal\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.9.2"
+}

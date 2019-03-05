@@ -1,0 +1,21 @@
+{
+    "name": "AutoconfAT213",
+    "description": "Automatic configure script builder",
+    "url": "https://ftp.gnu.org/gnu/autoconf/autoconf-2.13.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/autoconf/autoconf-2.13.tar.gz",
+    "homepage": "https://www.gnu.org/software/autoconf/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--program-suffix=213\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--infodir=#{pkgshare}/info\",",
+        "\"--datadir=#{pkgshare}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.13"
+}

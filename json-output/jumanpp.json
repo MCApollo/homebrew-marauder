@@ -1,0 +1,31 @@
+{
+    "name": "Jumanpp",
+    "description": "Japanese Morphological Analyzer based on RNNLM",
+    "url": "https://lotus.kuee.kyoto-u.ac.jp/nl-resource/jumanpp/jumanpp-1.02.tar.xz",
+    "mirror": null,
+    "homepage": "http://nlp.ist.i.kyoto-u.ac.jp/EN/index.php?JUMAN%2B%2B",
+    "depends": [
+        {
+            "depend": "boost-build",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "gperftools",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.02"
+}

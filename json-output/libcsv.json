@@ -1,0 +1,17 @@
+{
+    "name": "Libcsv",
+    "description": "CSV library in ANSI C89",
+    "url": "https://downloads.sourceforge.net/project/libcsv/libcsv/libcsv-3.0.3/libcsv-3.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/libcsv/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.3"
+}

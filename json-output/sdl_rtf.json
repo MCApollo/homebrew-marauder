@@ -1,0 +1,21 @@
+{
+    "name": "SdlRtf",
+    "description": "Sample library to display Rich Text Format (RTF) documents",
+    "url": "https://www.libsdl.org/projects/SDL_rtf/release/SDL_rtf-0.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libsdl.org/projects/SDL_rtf/",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.0"
+}

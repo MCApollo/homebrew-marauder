@@ -1,0 +1,24 @@
+{
+    "name": "Bashdb",
+    "description": "Bash shell debugger",
+    "url": "https://downloads.sourceforge.net/project/bashdb/bashdb/4.4-0.94/bashdb-4.4-0.94.tar.bz2",
+    "mirror": null,
+    "homepage": "https://bashdb.sourceforge.io",
+    "depends": [
+        {
+            "depend": "bash",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--with-bash=#{HOMEBREW_PREFIX}/bin/bash\",",
+        "\"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.4"
+}

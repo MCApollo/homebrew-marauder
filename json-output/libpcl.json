@@ -1,0 +1,17 @@
+{
+    "name": "Libpcl",
+    "description": "C library and API for coroutines",
+    "url": "http://xmailserver.org/pcl-1.12.tar.gz",
+    "mirror": null,
+    "homepage": "http://xmailserver.org/libpcl.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.12"
+}

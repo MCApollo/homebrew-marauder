@@ -1,0 +1,40 @@
+{
+    "name": "Bro",
+    "description": "Network security monitor",
+    "url": "https://www.bro.org/downloads/bro-2.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.bro.org",
+    "depends": [
+        {
+            "depend": "bison",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "swig",
+            "build-depend": true
+        },
+        {
+            "depend": "geoip",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\",",
+        "\"--localstatedir=#{var}\",",
+        "\"--conf-files-dir=#{etc}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.1"
+}

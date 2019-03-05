@@ -1,0 +1,49 @@
+{
+    "name": "Tmate",
+    "description": "Instant terminal sharing",
+    "url": "https://github.com/tmate-io/tmate/archive/2.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://tmate.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "libssh",
+            "build-depend": false
+        },
+        {
+            "depend": "msgpack",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"sh\", \"autogen.sh\"",
+        "ENV.append \"LDFLAGS\", \"-lresolv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2.1"
+}

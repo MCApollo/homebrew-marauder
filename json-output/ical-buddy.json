@@ -1,0 +1,19 @@
+{
+    "name": "IcalBuddy",
+    "description": "Get events and tasks from the macOS calendar database",
+    "url": "https://github.com/ali-rantakari/icalBuddy/archive/v1.8.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://hasseg.org/icalBuddy/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[icalBuddy icalBuddy.1 icalBuddyLocalization.1",
+        "icalBuddyConfig.1 COMPILER=#{ENV.cc}]",
+        "system \"make\", *args",
+        "bin.install \"icalBuddy\"",
+        "man1.install Dir[\"*.1\"]"
+    ],
+    "version": "1.8.10"
+}

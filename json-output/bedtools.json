@@ -1,0 +1,17 @@
+{
+    "name": "Bedtools",
+    "description": "Tools for genome arithmetic (set theory on the genome)",
+    "url": "https://github.com/arq5x/bedtools2/archive/v2.27.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/arq5x/bedtools2",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\"",
+        "prefix.install \"RELEASE_HISTORY\""
+    ],
+    "version": "2.27.1"
+}

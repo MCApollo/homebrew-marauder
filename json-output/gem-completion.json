@@ -1,0 +1,15 @@
+{
+    "name": "GemCompletion",
+    "description": "Bash completion for gem",
+    "url": "https://github.com/mernen/completion-ruby.git",
+    "mirror": null,
+    "homepage": "https://github.com/mernen/completion-ruby",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"completion-gem\" => \"gem\""
+    ],
+    "version": "1.0-u"
+}

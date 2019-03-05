@@ -1,0 +1,16 @@
+{
+    "name": "Cityhash",
+    "description": "Hash functions for strings",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cityhash/cityhash-1.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/cityhash",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.1"
+}

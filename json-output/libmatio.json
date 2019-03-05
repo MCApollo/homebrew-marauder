@@ -1,0 +1,33 @@
+{
+    "name": "Libmatio",
+    "description": "C library for reading and writing MATLAB MAT files",
+    "url": "https://downloads.sourceforge.net/project/matio/matio/1.5.12/matio-1.5.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://matio.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "hdf5",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "test_mat_file",
+            "url": "https://web.uvic.ca/~monahana/eos225/poc_data.mat.sfx"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--enable-extended-sparse=yes",
+        "--enable-mat73=yes",
+        "--with-hdf5=#{Formula[\"hdf5\"].opt_prefix}",
+        "--with-zlib=/usr",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.12"
+}

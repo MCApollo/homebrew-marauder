@@ -1,0 +1,65 @@
+{
+    "name": "Liblwgeom",
+    "description": "Allows SpatiaLite to support ST_MakeValid() like PostGIS",
+    "url": "https://download.osgeo.org/postgis/source/postgis-2.4.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://postgis.net/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gpp",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "geos",
+            "build-depend": false
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "proj",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path if MacOS.version == :sierra",
+        "args = [",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-nls\",",
+        "\"--with-projdir=#{HOMEBREW_PREFIX}\",",
+        "\"--with-jsondir=#{Formula[\"json-c\"].opt_prefix}\",",
+        "\"--without-pgconfig\",",
+        "\"--without-libiconv-prefix\",",
+        "\"--without-libintl-prefix\",",
+        "\"--without-raster\", ",
+        "\"--without-topology\",",
+        "]",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", *args",
+        "mkdir \"stage\"",
+        "cd \"liblwgeom\" do",
+        "system \"make\", \"install\", \"DESTDIR=#{buildpath}/stage\""
+    ],
+    "version": "2.4.4"
+}

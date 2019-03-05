@@ -1,0 +1,20 @@
+{
+    "name": "Libunistring",
+    "description": "C string library for manipulating Unicode strings",
+    "url": "https://ftp.gnu.org/gnu/libunistring/libunistring-0.9.10.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/libunistring/libunistring-0.9.10.tar.xz",
+    "homepage": "https://www.gnu.org/software/libunistring/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.10"
+}

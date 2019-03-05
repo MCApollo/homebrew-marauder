@@ -1,0 +1,33 @@
+{
+    "name": "Freediameter",
+    "description": "Open source Diameter (Authentication) protocol implementation",
+    "url": "http://www.freediameter.net/hg/freeDiameter/archive/1.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.freediameter.net",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "libidn",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "return if File.exist?(etc/\"freeDiameter.conf\")",
+        "cp doc/\"freediameter.conf.sample\", etc/\"freeDiameter.conf\""
+    ],
+    "version": "1.2.1"
+}

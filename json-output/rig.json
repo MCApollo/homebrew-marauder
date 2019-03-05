@@ -1,0 +1,17 @@
+{
+    "name": "Rig",
+    "description": "Provides fake name and address data",
+    "url": "https://downloads.sourceforge.net/project/rig/rig/1.11/rig-1.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://rig.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"rig\"",
+        "pkgshare.install Dir[\"data/*\"]"
+    ],
+    "version": "1.11"
+}

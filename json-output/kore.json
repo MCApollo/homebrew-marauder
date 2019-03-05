@@ -1,0 +1,29 @@
+{
+    "name": "Kore",
+    "description": "Web application framework for writing web APIs in C",
+    "url": "https://kore.io/releases/kore-3.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://kore.io/",
+    "depends": [
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend \"CFLAGS\", \"-I#{Formula[\"openssl\"].opt_include}\"",
+        "ENV.prepend \"LDFLAGS\", \"-L#{Formula[\"openssl\"].opt_lib}\"",
+        "inreplace \"src/cli.c\", \"/usr/local/opt/openssl/include\",",
+        "Formula[\"openssl\"].opt_include",
+        "system \"make\", \"PREFIX=#{prefix}\", \"TASKS=1\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "3.1.0"
+}

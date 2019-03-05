@@ -1,0 +1,25 @@
+{
+    "name": "OpensslAT11",
+    "description": "Cryptography and SSL/TLS Toolkit",
+    "url": "https://www.openssl.org/source/openssl-1.1.1b.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/openssl@1.1--1.1.1b.tar.gz",
+    "homepage": "https://openssl.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "keychains = %w[",
+        "/System/Library/Keychains/SystemRootCertificates.keychain",
+        "]",
+        "certs_list = `security find-certificate -a -p #{keychains.join(\" \")}`",
+        "certs = certs_list.scan(",
+        "/-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m,",
+        ")",
+        "valid_certs = certs.select do |cert|",
+        "IO.popen(\"#{bin}/openssl x509 -inform pem -checkend 0 -noout >/dev/null\", \"w\") do |openssl_io|",
+        "openssl_io.write(cert)",
+        "openssl_io.close_write"
+    ],
+    "version": "1.1.1"
+}

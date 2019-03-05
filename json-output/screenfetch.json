@@ -1,0 +1,16 @@
+{
+    "name": "Screenfetch",
+    "description": "Generate ASCII art with terminal, shell, and OS info",
+    "url": "https://github.com/KittyKatt/screenFetch/archive/v3.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/KittyKatt/screenFetch",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"screenfetch-dev\" => \"screenfetch\"",
+        "man1.install \"screenfetch.1\""
+    ],
+    "version": "3.8.0"
+}

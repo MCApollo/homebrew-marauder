@@ -1,0 +1,52 @@
+{
+    "name": "Netpbm",
+    "description": "Image manipulation",
+    "url": "https://svn.code.sf.net/p/netpbm/code/stable",
+    "mirror": null,
+    "homepage": "https://netpbm.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "jasper",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "jbigkit",
+            "reason": "both install `pbm.5` and `pgm.5` files"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "if MacOS.version == :sierra || MacOS.version == :el_capitan",
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path",
+        "end",
+        "cp \"config.mk.in\", \"config.mk\"",
+        "inreplace \"config.mk\" do |s|",
+        "s.remove_make_var! \"CC\"",
+        "s.change_make_var! \"CFLAGS_SHLIB\", \"-fno-common\"",
+        "s.change_make_var! \"NETPBMLIBTYPE\", \"dylib\"",
+        "s.change_make_var! \"NETPBMLIBSUFFIX\", \"dylib\"",
+        "s.change_make_var! \"LDSHLIB\", \"--shared -o $(SONAME)\"",
+        "s.change_make_var! \"TIFFLIB\", \"-ltiff\"",
+        "s.change_make_var! \"JPEGLIB\", \"-ljpeg\"",
+        "s.change_make_var! \"PNGLIB\", \"-lpng\"",
+        "s.change_make_var! \"ZLIB\", \"-lz\"",
+        "s.change_make_var! \"JASPERLIB\", \"-ljasper\"",
+        "s.change_make_var! \"JASPERHDR_DIR\", \"#{Formula[\"jasper\"].opt_include}/jasper\""
+    ],
+    "version": "1.0-u"
+}

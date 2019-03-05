@@ -1,0 +1,44 @@
+{
+    "name": "Libqalculate",
+    "description": "Library for Qalculate! program",
+    "url": "https://github.com/Qalculate/libqalculate/releases/download/v2.9.0/libqalculate-2.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://qalculate.github.io/",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gnuplot",
+            "build-depend": false
+        },
+        {
+            "depend": "mpfr",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--without-icu\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.9.0"
+}

@@ -1,0 +1,173 @@
+{
+    "name": "Ffmpeg",
+    "description": "Play, record, convert, and stream audio and video",
+    "url": "https://ffmpeg.org/releases/ffmpeg-4.1.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://ffmpeg.org/",
+    "depends": [
+        {
+            "depend": "nasm",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "texi2html",
+            "build-depend": true
+        },
+        {
+            "depend": "aom",
+            "build-depend": false
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "frei0r",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "lame",
+            "build-depend": false
+        },
+        {
+            "depend": "libass",
+            "build-depend": false
+        },
+        {
+            "depend": "libbluray",
+            "build-depend": false
+        },
+        {
+            "depend": "libsoxr",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "libvpx",
+            "build-depend": false
+        },
+        {
+            "depend": "opencore-amr",
+            "build-depend": false
+        },
+        {
+            "depend": "openjpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "opus",
+            "build-depend": false
+        },
+        {
+            "depend": "rtmpdump",
+            "build-depend": false
+        },
+        {
+            "depend": "rubberband",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "snappy",
+            "build-depend": false
+        },
+        {
+            "depend": "speex",
+            "build-depend": false
+        },
+        {
+            "depend": "tesseract",
+            "build-depend": false
+        },
+        {
+            "depend": "theora",
+            "build-depend": false
+        },
+        {
+            "depend": "x264",
+            "build-depend": false
+        },
+        {
+            "depend": "x265",
+            "build-depend": false
+        },
+        {
+            "depend": "xvid",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--enable-shared",
+        "--enable-pthreads",
+        "--enable-version3",
+        "--enable-hardcoded-tables",
+        "--enable-avresample",
+        "--cc=#{ENV.cc}",
+        "--host-cflags=#{ENV.cflags}",
+        "--host-ldflags=#{ENV.ldflags}",
+        "--enable-ffplay",
+        "--enable-gnutls",
+        "--enable-gpl",
+        "--enable-libaom",
+        "--enable-libbluray",
+        "--enable-libmp3lame",
+        "--enable-libopus",
+        "--enable-librubberband",
+        "--enable-libsnappy",
+        "--enable-libtesseract",
+        "--enable-libtheora",
+        "--enable-libvorbis",
+        "--enable-libvpx",
+        "--enable-libx264",
+        "--enable-libx265",
+        "--enable-libxvid",
+        "--enable-lzma",
+        "--enable-libfontconfig",
+        "--enable-libfreetype",
+        "--enable-frei0r",
+        "--enable-libass",
+        "--enable-libopencore-amrnb",
+        "--enable-libopencore-amrwb",
+        "--enable-libopenjpeg",
+        "--enable-librtmp",
+        "--enable-libspeex",
+        "--enable-videotoolbox",
+        "--disable-libjack",
+        "--disable-indev=jack",
+        "--enable-libaom",
+        "--enable-libsoxr",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "system \"make\", \"alltools\"",
+        "bin.install Dir[\"tools/*\"].select { |f| File.executable? f }"
+    ],
+    "version": "4.1.1"
+}

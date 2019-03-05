@@ -1,0 +1,49 @@
+{
+    "name": "Mysql",
+    "description": "Open source relational database management system",
+    "url": "https://cdn.mysql.com/Downloads/MySQL-8.0/mysql-boost-8.0.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://dev.mysql.com/doc/refman/8.0/en/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mysql-cluster",
+            "reason": null
+        },
+        {
+            "conflict": "mysql-connector-c",
+            "reason": null
+        },
+        {
+            "conflict": "mariadb-connector-c",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "datadir.mkpath",
+        "unless (datadir/\"mysql/general_log.CSM\").exist?",
+        "ENV[\"TMPDIR\"] = nil",
+        "system bin/\"mysqld\", \"--initialize-insecure\", \"--user=#{ENV[\"USER\"]}\",",
+        "\"--basedir=#{prefix}\", \"--datadir=#{datadir}\", \"--tmpdir=/tmp\""
+    ],
+    "version": "8.0.15"
+}

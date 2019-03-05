@@ -1,0 +1,54 @@
+{
+    "name": "Collectd",
+    "description": "Statistics collection and monitoring daemon",
+    "url": "https://collectd.org/files/collectd-5.8.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://collectd.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "net-snmp",
+            "build-depend": false
+        },
+        {
+            "depend": "riemann-client",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--localstatedir=#{var}",
+        "--disable-java",
+        "--enable-write_riemann",
+        "]",
+        "system \"./build.sh\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.8.1"
+}

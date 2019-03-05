@@ -1,0 +1,15 @@
+{
+    "name": "Woof",
+    "description": "Ad-hoc single-file webserver",
+    "url": "http://www.home.unix-ag.org/simon/woof-2012-05-31.py",
+    "mirror": null,
+    "homepage": "http://www.home.unix-ag.org/simon/woof.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"woof-2012-05-31.py\" => \"woof\""
+    ],
+    "version": "2012"
+}

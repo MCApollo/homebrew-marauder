@@ -1,0 +1,20 @@
+{
+    "name": "Ephemeralpg",
+    "description": "Run tests on an isolated, temporary Postgres database",
+    "url": "http://ephemeralpg.org/code/ephemeralpg-2.5.tar.gz",
+    "mirror": "https://bitbucket.org/eradman/ephemeralpg/get/ephemeralpg-2.5.tar.gz",
+    "homepage": "http://ephemeralpg.org",
+    "depends": [
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"MANPREFIX=#{man}\", \"install\""
+    ],
+    "version": "2.5"
+}

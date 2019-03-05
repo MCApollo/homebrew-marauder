@@ -1,0 +1,32 @@
+{
+    "name": "MathComp",
+    "description": "Mathematical Components for the Coq proof assistant",
+    "url": "https://github.com/math-comp/math-comp/archive/mathcomp-1.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://math-comp.github.io/math-comp/",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": true
+        },
+        {
+            "depend": "coq",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "coqlib = \"#{lib}/coq/\"",
+        "(buildpath/\"mathcomp/Makefile.coq.local\").write <<~EOS",
+        "COQLIB=#{coqlib}",
+        "EOS",
+        "cd \"mathcomp\" do",
+        "system \"make\", \"Makefile.coq\"",
+        "system \"make\", \"-f\", \"Makefile.coq\", \"MAKEFLAGS=#{ENV[\"MAKEFLAGS\"]}\"",
+        "system \"make\", \"install\", \"MAKEFLAGS=#{ENV[\"MAKEFLAGS\"]}\"",
+        "elisp.install \"ssreflect/pg-ssr.el\""
+    ],
+    "version": "1.7.0"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "Runcocoa",
+    "description": "Tools to run Cocoa/Objective-C and C code from the command-line",
+    "url": "https://github.com/michaeltyson/Commandline-Cocoa/archive/834f73b4b5d0d2be0d336c9869973f5f0db55949.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/michaeltyson/Commandline-Cocoa",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"runcocoa.sh\" => \"runcocoa\"",
+        "bin.install \"runc.sh\" => \"runc\""
+    ],
+    "version": "834"
+}

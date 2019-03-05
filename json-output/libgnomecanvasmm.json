@@ -1,0 +1,31 @@
+{
+    "name": "Libgnomecanvasmm",
+    "description": "C++ wrapper for libgnomecanvas",
+    "url": "https://download.gnome.org/sources/libgnomecanvasmm/2.26/libgnomecanvasmm-2.26.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://launchpad.net/libgnomecanvasmm",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gtkmm",
+            "build-depend": false
+        },
+        {
+            "depend": "libgnomecanvas",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.26.0"
+}

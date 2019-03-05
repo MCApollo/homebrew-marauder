@@ -1,0 +1,42 @@
+{
+    "name": "Opensaml",
+    "description": "Library for Security Assertion Markup Language",
+    "url": "https://shibboleth.net/downloads/c++-opensaml/3.0.0/opensaml-3.0.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://wiki.shibboleth.net/confluence/display/OpenSAML/Home",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "log4shib",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        },
+        {
+            "depend": "xml-security-c",
+            "build-depend": false
+        },
+        {
+            "depend": "xml-tooling-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-debug\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.0.0"
+}

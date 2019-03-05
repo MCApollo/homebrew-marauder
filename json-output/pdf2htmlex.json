@@ -1,0 +1,109 @@
+{
+    "name": "Pdf2htmlex",
+    "description": "PDF to HTML converter",
+    "url": "https://github.com/coolwanglu/pdf2htmlEX/archive/v0.14.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://coolwanglu.github.io/pdf2htmlEX/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": false
+        },
+        {
+            "depend": "automake",
+            "build-depend": false
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "giflib",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gnu-getopt",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "openjpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        },
+        {
+            "depend": "ttfautohint",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "fontforge",
+            "url": "https://github.com/coolwanglu/fontforge.git"
+        },
+        {
+            "name": "poppler",
+            "url": "https://poppler.freedesktop.org/poppler-0.57.0.tar.xz"
+        },
+        {
+            "name": "poppler-data",
+            "url": "https://poppler.freedesktop.org/poppler-data-0.4.8.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"fontforge\").stage do",
+        "inreplace \"gutils/gimagereadgif.c\", \"DGifCloseFile(gif)\", \"DGifCloseFile(gif, NULL)\"",
+        "ENV.append \"LDFLAGS\", \"-lintl\"",
+        "ENV[\"ARCHFLAGS\"] = \"-arch #{MacOS.preferred_arch}\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--prefix=#{libexec}/fontforge\",",
+        "\"--without-libzmq\",",
+        "\"--without-x\",",
+        "\"--without-iconv\",",
+        "\"--disable-python-scripting\",",
+        "\"--disable-python-extension\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.14.6"
+}

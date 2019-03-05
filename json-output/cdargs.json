@@ -1,0 +1,52 @@
+{
+    "name": "Cdargs",
+    "description": "Bookmarks for the shell",
+    "url": "https://www.skamphausen.de/downloads/cdargs/cdargs-1.35.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.skamphausen.de/cgi-bin/ska/CDargs",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/contrib/cdargs-bash.sh b/contrib/cdargs-bash.sh\n",
+                "index 8a197ef..f3da067 100644\n",
+                "--- a/contrib/cdargs-bash.sh\n",
+                "+++ b/contrib/cdargs-bash.sh\n",
+                "@@ -11,6 +11,12 @@\n",
+                " CDARGS_SORT=0   # set to 1 if you want mark to sort the list\n",
+                " CDARGS_NODUPS=1 # set to 1 if you want mark to delete dups\n",
+                " \n",
+                "+# Support ZSH via its BASH completion emulation\n",
+                "+if [ -n \"$ZSH_VERSION\" ]; then\n",
+                "+\tautoload bashcompinit\n",
+                "+\tbashcompinit\n",
+                "+fi\n",
+                "+\n",
+                " # --------------------------------------------- #\n",
+                " # Run the cdargs program to get the target      #\n",
+                " # directory to be used in the various context   #\n",
+                "@@ -166,7 +172,7 @@ function mark ()\n",
+                "     local tmpfile\n",
+                " \n",
+                "     # first clear any bookmarks with this same alias, if file exists\n",
+                "-    if [[ \"$CDARGS_NODUPS\" && -e \"$HOME/.cdargs\" ]]; then\n",
+                "+    if [ \"$CDARGS_NODUPS\" ] && [ -e \"$HOME/.cdargs\" ]; then\n",
+                "         tmpfile=`echo ${TEMP:-${TMPDIR:-/tmp}} | sed -e \"s/\\\\/$//\"`\n",
+                "         tmpfile=$tmpfile/cdargs.$USER.$$.$RANDOM\n",
+                "         grep -v \"^$1 \" \"$HOME/.cdargs\" > $tmpfile && 'mv' -f $tmpfile \"$HOME/.cdargs\";\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install-strip\"",
+        "rm Dir[\"contrib/Makefile*\"]",
+        "prefix.install \"contrib\"",
+        "bash_completion.install_symlink \"#{prefix}/contrib/cdargs-bash.sh\""
+    ],
+    "version": "1.35"
+}

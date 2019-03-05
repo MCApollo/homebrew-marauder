@@ -1,0 +1,18 @@
+{
+    "name": "SpringRoo",
+    "description": "Rapid application development tool for Java developers",
+    "url": "https://s3.amazonaws.com/spring-roo-repository.springsource.org/release/ROO/spring-roo-2.0.0.RELEASE.zip",
+    "mirror": null,
+    "homepage": "https://projects.spring.io/spring-roo/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm Dir[\"bin/*.bat\"]",
+        "libexec.install Dir[\"*\"]",
+        "mv \"#{libexec}/bin/roo.sh\", \"#{libexec}/bin/roo\"",
+        "bin.write_exec_script Dir[\"#{libexec}/bin/*\"]"
+    ],
+    "version": "2.0.0"
+}

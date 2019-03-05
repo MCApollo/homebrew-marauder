@@ -1,0 +1,22 @@
+{
+    "name": "Reop",
+    "description": "Encrypted keypair management",
+    "url": "https://web.archive.org/web/20170706070539/www.tedunangst.com/flak/files/reop-2.1.0.tgz",
+    "mirror": "https://bo.mirror.garr.it/OpenBSD/distfiles/reop-2.1.0.tgz",
+    "homepage": "https://web.archive.org/web/20170706070539/www.tedunangst.com/flak/post/reop",
+    "depends": [
+        {
+            "depend": "libsodium",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-f\", \"GNUmakefile\"",
+        "bin.install \"reop\"",
+        "man1.install \"reop.1\""
+    ],
+    "version": "2.1.0"
+}

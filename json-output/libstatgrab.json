@@ -1,0 +1,19 @@
+{
+    "name": "Libstatgrab",
+    "description": "Provides cross-platform access to statistics about the system",
+    "url": "https://ftp.i-scream.org/pub/i-scream/libstatgrab/libstatgrab-0.91.tar.gz",
+    "mirror": "https://www.mirrorservice.org/pub/i-scream/libstatgrab/libstatgrab-0.91.tar.gz",
+    "homepage": "https://www.i-scream.org/libstatgrab/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.91"
+}

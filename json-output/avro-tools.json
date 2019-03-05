@@ -1,0 +1,16 @@
+{
+    "name": "AvroTools",
+    "description": "Avro command-line tools and utilities",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=avro/avro-1.8.2/java/avro-tools-1.8.2.jar",
+    "mirror": null,
+    "homepage": "https://avro.apache.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"avro-tools-#{version}.jar\"",
+        "bin.write_jar_script libexec/\"avro-tools-#{version}.jar\", \"avro-tools\""
+    ],
+    "version": "1.8.2"
+}

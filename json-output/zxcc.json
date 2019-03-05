@@ -1,0 +1,18 @@
+{
+    "name": "Zxcc",
+    "description": "CP/M 2/3 emulator for cross-compiling and CP/M tools under UNIX",
+    "url": "https://www.seasip.info/Unix/Zxcc/zxcc-0.5.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.seasip.info/Unix/Zxcc/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.7"
+}

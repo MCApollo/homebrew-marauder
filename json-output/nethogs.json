@@ -1,0 +1,15 @@
+{
+    "name": "Nethogs",
+    "description": "Net top tool grouping bandwidth per process",
+    "url": "https://github.com/raboof/nethogs/archive/v0.8.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://raboof.github.io/nethogs/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.8.5"
+}

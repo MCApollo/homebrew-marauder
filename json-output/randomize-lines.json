@@ -1,0 +1,17 @@
+{
+    "name": "RandomizeLines",
+    "description": "Reads and randomize lines from a file (or STDIN)",
+    "url": "https://arthurdejong.org/rl/rl-0.2.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://arthurdejong.org/rl/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.7"
+}

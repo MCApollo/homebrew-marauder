@@ -1,0 +1,26 @@
+{
+    "name": "Pspg",
+    "description": "Unix pager optimized for psql",
+    "url": "https://github.com/okbob/pspg/archive/1.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/okbob/pspg",
+    "depends": [
+        {
+            "depend": "ncurses",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.3"
+}

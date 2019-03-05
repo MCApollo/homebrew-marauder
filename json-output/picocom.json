@@ -1,0 +1,17 @@
+{
+    "name": "Picocom",
+    "description": "Minimal dumb-terminal emulation program",
+    "url": "https://github.com/npat-efault/picocom/archive/3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/npat-efault/picocom",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"picocom\"",
+        "man1.install \"picocom.1\""
+    ],
+    "version": "3.1"
+}

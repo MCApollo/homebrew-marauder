@@ -1,0 +1,54 @@
+{
+    "name": "NestopiaUe",
+    "description": "Nestopia UE (Undead Edition): NES emulator",
+    "url": "https://downloads.sourceforge.net/project/nestopiaue/1.49/nestopia-1.49.tgz",
+    "mirror": null,
+    "homepage": "http://0ldsk00l.ca/nestopia/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf-archive",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libao",
+            "build-depend": false
+        },
+        {
+            "depend": "libarchive",
+            "build-depend": false
+        },
+        {
+            "depend": "libepoxy",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--datarootdir=#{pkgshare}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.49"
+}

@@ -1,0 +1,52 @@
+{
+    "name": "Gnutls",
+    "description": "GNU Transport Layer Security (TLS) Library",
+    "url": "https://gnupg.org/ftp/gcrypt/gnutls/v3.6/gnutls-3.6.6.tar.xz",
+    "mirror": "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnutls/v3.6/gnutls-3.6.6.tar.xz",
+    "homepage": "https://gnutls.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "libtasn1",
+            "build-depend": false
+        },
+        {
+            "depend": "libunistring",
+            "build-depend": false
+        },
+        {
+            "depend": "nettle",
+            "build-depend": false
+        },
+        {
+            "depend": "p11-kit",
+            "build-depend": false
+        },
+        {
+            "depend": "unbound",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "keychains = %w[",
+        "/System/Library/Keychains/SystemRootCertificates.keychain",
+        "]",
+        "certs_list = `security find-certificate -a -p #{keychains.join(\" \")}`",
+        "certs = certs_list.scan(/-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m)",
+        "valid_certs = certs.select do |cert|",
+        "IO.popen(\"openssl x509 -inform pem -checkend 0 -noout\", \"w\") do |openssl_io|",
+        "openssl_io.write(cert)",
+        "openssl_io.close_write"
+    ],
+    "version": "3.6.6"
+}

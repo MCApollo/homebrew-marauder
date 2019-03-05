@@ -1,0 +1,17 @@
+{
+    "name": "Unp64",
+    "description": "Generic C64 prg unpacker,",
+    "url": "http://iancoog.altervista.org/C/unp64_235_src.tar.bz2",
+    "mirror": null,
+    "homepage": "http://iancoog.altervista.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\"",
+        "system \"make\", \"unp64\"",
+        "bin.install \"Release/unp64\""
+    ],
+    "version": "64_235"
+}

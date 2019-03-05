@@ -1,0 +1,16 @@
+{
+    "name": "Nvm",
+    "description": "Manage multiple Node.js versions",
+    "url": "https://github.com/creationix/nvm/archive/v0.34.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/creationix/nvm",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install \"nvm.sh\", \"nvm-exec\"",
+        "bash_completion.install \"bash_completion\" => \"nvm\""
+    ],
+    "version": "0.34.0"
+}

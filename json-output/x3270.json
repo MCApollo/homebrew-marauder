@@ -1,0 +1,29 @@
+{
+    "name": "X3270",
+    "description": "IBM 3270 terminal emulator for the X Window System and Windows",
+    "url": "https://downloads.sourceforge.net/project/x3270/x3270/3.6ga5/suite3270-3.6ga5-src.tgz",
+    "mirror": null,
+    "homepage": "http://x3270.bgp.nu/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--enable-c3270",
+        "--enable-pr3287",
+        "--enable-s3270",
+        "--enable-tcl3270",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "system \"make\", \"install.man\""
+    ],
+    "version": "3270"
+}

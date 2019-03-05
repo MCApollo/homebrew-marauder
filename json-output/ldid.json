@@ -1,0 +1,23 @@
+{
+    "name": "Ldid",
+    "description": "Lets you manipulate the signature block in a Mach-O binary",
+    "url": "https://git.saurik.com/ldid.git",
+    "mirror": null,
+    "homepage": "https://cydia.saurik.com/info/ldid/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"make.sh\" do |s|",
+        "s.gsub! %r{^.*/Applications/Xcode-5.1.1.app.*}, \"\"",
+        "s.gsub! \"-mmacosx-version-min=10.4\", \"-mmacosx-version-min=#{MacOS.version}\"",
+        "s.gsub! \"for arch in i386 x86_64; do\", \"for arch in x86_64; do\" if MacOS.version >= :mojave"
+    ],
+    "version": "1.0-u"
+}

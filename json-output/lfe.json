@@ -1,0 +1,27 @@
+{
+    "name": "Lfe",
+    "description": "Concurrent Lisp for the Erlang VM",
+    "url": "https://github.com/rvirding/lfe/archive/v1.3.tar.gz",
+    "mirror": null,
+    "homepage": "http://lfe.io/",
+    "depends": [
+        {
+            "depend": "erlang",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"MANINSTDIR=#{man}\", \"install-man\"",
+        "system \"make\", \"emacs\"",
+        "libexec.install \"bin\", \"ebin\"",
+        "bin.install_symlink (libexec/\"bin\").children",
+        "doc.install Dir[\"doc/*.txt\"]",
+        "pkgshare.install \"dev\", \"examples\", \"test\"",
+        "elisp.install Dir[\"emacs/*.elc\"]"
+    ],
+    "version": "1.3"
+}

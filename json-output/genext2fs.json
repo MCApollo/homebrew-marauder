@@ -1,0 +1,19 @@
+{
+    "name": "Genext2fs",
+    "description": "Generates an ext2 filesystem as a normal (non-root) user",
+    "url": "https://downloads.sourceforge.net/project/genext2fs/genext2fs/1.4.1/genext2fs-1.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://genext2fs.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.1"
+}

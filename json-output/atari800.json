@@ -1,0 +1,27 @@
+{
+    "name": "Atari800",
+    "description": "Atari 8-bit machine emulator",
+    "url": "https://downloads.sourceforge.net/project/atari800/atari800/4.0.0/atari800-4.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://atari800.github.io/",
+    "depends": [
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-sdltest\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "800"
+}

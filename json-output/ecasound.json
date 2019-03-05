@@ -1,0 +1,22 @@
+{
+    "name": "Ecasound",
+    "description": "Multitrack-capable audio recorder and effect processor",
+    "url": "https://ecasound.seul.org/download/ecasound-2.9.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.eca.cx/ecasound/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--enable-rubyecasound=no",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.9.1"
+}

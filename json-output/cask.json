@@ -1,0 +1,25 @@
+{
+    "name": "Cask",
+    "description": "Emacs dependency management",
+    "url": "https://github.com/cask/cask/archive/v0.8.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://cask.readthedocs.org/",
+    "depends": [
+        {
+            "depend": "emacs",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"bin/cask\"",
+        "prefix.install \"templates\"",
+        "prefix.install Dir[\"*.el\"]",
+        "elisp.install_symlink \"#{prefix}/cask.el\"",
+        "elisp.install_symlink \"#{prefix}/cask-bootstrap.el\"",
+        "touch prefix/\".no-upgrade\""
+    ],
+    "version": "0.8.4"
+}

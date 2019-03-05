@@ -1,0 +1,21 @@
+{
+    "name": "Buildapp",
+    "description": "Creates executables with SBCL",
+    "url": "https://github.com/xach/buildapp/archive/release-1.5.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.xach.com/lisp/buildapp/",
+    "depends": [
+        {
+            "depend": "sbcl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "system \"make\", \"install\", \"DESTDIR=#{prefix}\""
+    ],
+    "version": "1.5.6"
+}

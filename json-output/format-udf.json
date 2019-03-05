@@ -1,0 +1,15 @@
+{
+    "name": "FormatUdf",
+    "description": "Bash script to format a block device to UDF",
+    "url": "https://github.com/JElchison/format-udf/archive/1.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/JElchison/format-udf",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"format-udf.sh\" => \"format-udf\""
+    ],
+    "version": "1.6.1"
+}

@@ -1,0 +1,60 @@
+{
+    "name": "Residualvm",
+    "description": "3D graphic adventure game interpreter",
+    "url": "https://downloads.sourceforge.net/project/residualvm/residualvm/0.2.1/residualvm-0.2.1-sources.tar.bz2",
+    "mirror": null,
+    "homepage": "https://residualvm.org/",
+    "depends": [
+        {
+            "depend": "faad2",
+            "build-depend": false
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "fluid-synth",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "mad",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "theora",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--enable-release\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "(share+\"icons\").rmtree",
+        "(share+\"pixmaps\").rmtree"
+    ],
+    "version": "0.2.1"
+}

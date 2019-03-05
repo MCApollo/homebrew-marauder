@@ -1,0 +1,31 @@
+{
+    "name": "Bibclean",
+    "description": "BibTeX bibliography file pretty printer and syntax checker",
+    "url": "http://ftp.math.utah.edu/pub/bibclean/bibclean-2.17.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/bibclean-2.17.tar.gz",
+    "homepage": "https://www.math.utah.edu/~beebe/software/bibclean/bibclean-03.html#HDR.3",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "inreplace \"Makefile\" do |s|",
+        "s.gsub! /[$][(]CP.*BIBCLEAN.*bindir.*BIBCLEAN[)]/,",
+        "\"mkdir -p $(bindir) && $(CP) $(BIBCLEAN) $(bindir)/$(BIBCLEAN)\"",
+        "s.gsub! /[$][(]CP.*bibclean.*mandir.*bibclean.*manext[)]/,",
+        "\"mkdir -p $(mandir) && $(CP) bibclean.man $(mandir)/bibclean.$(manext)\"",
+        "s.gsub! /mandir.*prefix.*man.*man1/, \"mandir = $(prefix)/share/man/man1\"",
+        "s.gsub! /install-ini.*uninstall-ini/,",
+        "\"install-ini:  uninstall-ini\\n\\tmkdir -p #{pkgshare}\"",
+        "s.gsub! /[$][(]bindir[)].*bibcleanrc/,",
+        "\"#{pkgshare}/.bibcleanrc\"",
+        "s.gsub! /[$][(]bindir[)].*bibclean.key/,",
+        "\"#{pkgshare}/.bibclean.key\"",
+        "s.gsub! /[$][(]bindir[)].*bibclean.isbn/,",
+        "\"#{pkgshare}/.bibclean.isbn\""
+    ],
+    "version": "2.17"
+}

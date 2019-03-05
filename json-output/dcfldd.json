@@ -1,0 +1,18 @@
+{
+    "name": "Dcfldd",
+    "description": "Enhanced version of dd for forensics and security",
+    "url": "https://downloads.sourceforge.net/project/dcfldd/dcfldd/1.3.4-1/dcfldd-1.3.4-1.tar.gz",
+    "mirror": null,
+    "homepage": "https://dcfldd.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.4"
+}

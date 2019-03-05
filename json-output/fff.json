@@ -1,0 +1,16 @@
+{
+    "name": "Fff",
+    "description": "Simple file manager written in bash",
+    "url": "https://github.com/dylanaraps/fff/archive/2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/dylanaraps/fff",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"fff\"",
+        "man1.install \"fff.1\""
+    ],
+    "version": "2.1"
+}

@@ -1,0 +1,28 @@
+{
+    "name": "Freeipmi",
+    "description": "In-band and out-of-band IPMI (v1.5/2.0) software",
+    "url": "https://ftp.gnu.org/gnu/freeipmi/freeipmi-1.6.2.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/freeipmi/freeipmi-1.6.2.tar.gz",
+    "homepage": "https://www.gnu.org/software/freeipmi/",
+    "depends": [
+        {
+            "depend": "argp-standalone",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"man/Makefile.in\",",
+        "\"$(CPP_FOR_BUILD) -nostdinc -w -C -P -I$(top_srcdir)/man $@.pre $@\",",
+        "\"clang -E -nostdinc -w -C -P -I$(top_srcdir)/man $@.pre > $@\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.2"
+}

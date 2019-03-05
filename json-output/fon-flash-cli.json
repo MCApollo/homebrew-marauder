@@ -1,0 +1,22 @@
+{
+    "name": "FonFlashCli",
+    "description": "Flash La Fonera and Atheros chipset compatible devices",
+    "url": "https://www.gargoyle-router.com/downloads/src/gargoyle_1.10.0-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gargoyle-router.com/wiki/doku.php?id=fon_flash",
+    "depends": [
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"fon-flash\" do",
+        "system \"make\", \"fon-flash\"",
+        "bin.install \"fon-flash\""
+    ],
+    "version": "1.10.0"
+}

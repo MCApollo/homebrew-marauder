@@ -1,0 +1,15 @@
+{
+    "name": "IpRelay",
+    "description": "TCP traffic shaping relay application",
+    "url": "http://www.stewart.com.au/ip_relay/ip_relay-0.71.tgz",
+    "mirror": null,
+    "homepage": "http://www.stewart.com.au/ip_relay/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"ip_relay.pl\" => \"ip_relay\""
+    ],
+    "version": "0.71"
+}

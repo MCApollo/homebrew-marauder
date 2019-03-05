@@ -1,0 +1,32 @@
+{
+    "name": "Libusb",
+    "description": "Library for USB device access",
+    "url": "https://github.com/libusb/libusb/releases/download/v1.0.22/libusb-1.0.22.tar.bz2",
+    "mirror": "https://downloads.sourceforge.net/project/libusb/libusb-1.0/libusb-1.0.22/libusb-1.0.22.tar.bz2",
+    "homepage": "https://libusb.info/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[--disable-dependency-tracking --prefix=#{prefix}]",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"examples\""
+    ],
+    "version": "1.0.22"
+}

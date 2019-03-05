@@ -1,0 +1,40 @@
+{
+    "name": "Eccodes",
+    "description": "Decode and encode messages in the GRIB 1/2 and BUFR 3/4 formats",
+    "url": "https://software.ecmwf.int/wiki/download/attachments/45757960/eccodes-2.12.0-Source.tar.gz",
+    "mirror": null,
+    "homepage": "https://confluence.ecmwf.int/display/ECC",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "jasper",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "grib-api",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "inreplace \"CMakeLists.txt\", \"find_package( OpenJPEG )\", \"\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DENABLE_NETCDF=OFF\", \"-DENABLE_PNG=ON\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.12.0"
+}

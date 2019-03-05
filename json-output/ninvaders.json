@@ -1,0 +1,18 @@
+{
+    "name": "Ninvaders",
+    "description": "Space Invaders in the terminal",
+    "url": "https://downloads.sourceforge.net/project/ninvaders/ninvaders/0.1.1/ninvaders-0.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://ninvaders.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize ",
+        "inreplace \"Makefile\" do |s|",
+        "s.change_make_var! \"CC\", ENV.cc",
+        "s.gsub! \"-o$@\", \"-o $@\""
+    ],
+    "version": "0.1.1"
+}

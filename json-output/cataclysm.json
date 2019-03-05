@@ -1,0 +1,66 @@
+{
+    "name": "Cataclysm",
+    "description": "Fork/variant of Cataclysm Roguelike",
+    "url": "https://github.com/CleverRaven/Cataclysm-DDA/archive/0.C.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/CleverRaven/Cataclysm-DDA",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = %W[",
+        "NATIVE=osx",
+        "RELEASE=1",
+        "OSX_MIN=#{MacOS.version}",
+        "LUA=1",
+        "USE_HOME_DIR=1",
+        "TILES=1",
+        "SOUND=1",
+        "]",
+        "args << \"CLANG=1\" if ENV.compiler == :clang",
+        "system \"make\", *args",
+        "libexec.install \"cataclysm-tiles\", \"data\", \"gfx\", \"lua\"",
+        "inreplace \"cataclysm-launcher\" do |s|",
+        "s.change_make_var! \"DIR\", libexec"
+    ],
+    "version": "1.0-u"
+}

@@ -1,0 +1,51 @@
+{
+    "name": "Rdup",
+    "description": "Utility to create a file list suitable for making backups",
+    "url": "https://github.com/miekg/rdup/archive/1.1.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/miekg/rdup",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libarchive",
+            "build-depend": false
+        },
+        {
+            "depend": "mcrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "nettle",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.15"
+}

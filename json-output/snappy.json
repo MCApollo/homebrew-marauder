@@ -1,0 +1,33 @@
+{
+    "name": "Snappy",
+    "description": "Compression/decompression library aiming for high speed",
+    "url": "https://github.com/google/snappy/archive/1.1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://google.github.io/snappy/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/google/snappy/pull/61.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "system \"make\", \"clean\"",
+        "system \"cmake\", \".\", \"-DBUILD_SHARED_LIBS=ON\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.7"
+}

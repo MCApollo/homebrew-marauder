@@ -1,0 +1,36 @@
+{
+    "name": "Iperf3",
+    "description": "Update of iperf: measures TCP, UDP, and SCTP bandwidth",
+    "url": "https://github.com/esnet/iperf/archive/3.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/esnet/iperf",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"clean\" ",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.6"
+}

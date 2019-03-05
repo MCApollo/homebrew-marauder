@@ -1,0 +1,71 @@
+{
+    "name": "Logstalgia",
+    "description": "Web server access log visualizer with retro style",
+    "url": "https://github.com/acaudwell/Logstalgia/releases/download/logstalgia-1.1.2/logstalgia-1.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://logstalgia.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "glm",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "glew",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.libcxx",
+        "ENV.append \"CXXFLAGS\", \"-I#{HOMEBREW_PREFIX}/include\"",
+        "system \"autoreconf\", \"-f\", \"-i\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-x\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.2"
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Rarian",
+    "description": "Documentation metadata library",
+    "url": "https://rarian.freedesktop.org/Releases/rarian-0.8.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://rarian.freedesktop.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "scrollkeeper",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.1"
+}

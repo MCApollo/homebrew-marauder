@@ -1,0 +1,15 @@
+{
+    "name": "Ipcalc",
+    "description": "Calculate various network masks, etc. from a given IP address",
+    "url": "http://jodies.de/ipcalc-archive/ipcalc-0.41.tar.gz",
+    "mirror": null,
+    "homepage": "http://jodies.de/ipcalc",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"ipcalc\""
+    ],
+    "version": "0.41"
+}

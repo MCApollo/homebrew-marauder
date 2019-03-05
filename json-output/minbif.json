@@ -1,0 +1,42 @@
+{
+    "name": "Minbif",
+    "description": "IRC-to-other-IM-networks gateway using Pidgin library",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/minbif/minbif_1.0.5+git20150505.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/m/minbif/minbif_1.0.5+git20150505.orig.tar.gz",
+    "homepage": "https://symlink.me/projects/minbif/wiki/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "pidgin",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"minbif.conf\" do |s|",
+        "s.gsub! \"users = /var\", \"users = #{var}\"",
+        "s.gsub! \"motd = /etc\", \"motd = #{etc}\""
+    ],
+    "version": "1.0.5"
+}

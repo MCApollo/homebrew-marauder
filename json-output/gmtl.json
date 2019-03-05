@@ -1,0 +1,69 @@
+{
+    "name": "Gmtl",
+    "description": "Lightweight math library",
+    "url": "https://downloads.sourceforge.net/project/ggt/Generic%20Math%20Template%20Library/0.6.1/gmtl-0.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://ggt.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "scons",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gist.githubusercontent.com/anonymous/c16cad998a4903e6b3a8/raw/e4669b3df0e14996c7b7b53937dd6b6c2cbc7c04/gmtl_Sconstruct.diff",
+            "strip": "1"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff --git a/SConstruct b/SConstruct\n",
+                "index 8326a89..2eb7ff0 100644\n",
+                "--- a/SConstruct\n",
+                "+++ b/SConstruct\n",
+                "@@ -126,7 +126,9 @@ def BuildDarwinEnvironment():\n",
+                "\n",
+                "    exp = re.compile('^(.*)\\/Python\\.framework.*$')\n",
+                "    m = exp.search(distutils.sysconfig.get_config_var('prefix'))\n",
+                "-   framework_opt = '-F' + m.group(1)\n",
+                "+   framework_opt = None\n",
+                "+   if m:\n",
+                "+      framework_opt = '-F' + m.group(1)\n",
+                "\n",
+                "    CXX = os.environ.get(\"CXX\", WhereIs('g++'))\n",
+                "\n",
+                "@@ -138,7 +140,10 @@ def BuildDarwinEnvironment():\n",
+                "\n",
+                "    LINK = CXX\n",
+                "    CXXFLAGS = ['-ftemplate-depth-256', '-DBOOST_PYTHON_DYNAMIC_LIB',\n",
+                "-               '-Wall', framework_opt, '-pipe']\n",
+                "+               '-Wall', '-pipe']\n",
+                "+\n",
+                "+   if framework_opt is not None:\n",
+                "+      CXXFLAGS.append(framework_opt)\n",
+                "\n",
+                "    compiler_ver       = match_obj.group(1)\n",
+                "    compiler_major_ver = int(match_obj.group(2))\n",
+                "@@ -152,7 +157,10 @@ def BuildDarwinEnvironment():\n",
+                "          CXXFLAGS += ['-Wno-long-double', '-no-cpp-precomp']\n",
+                "\n",
+                "    SHLIBSUFFIX = distutils.sysconfig.get_config_var('SO')\n",
+                "-   SHLINKFLAGS = ['-bundle', framework_opt, '-framework', 'Python']\n",
+                "+   SHLINKFLAGS = ['-bundle']\n",
+                "+\n",
+                "+   if framework_opt is not None:\n",
+                "+      SHLINKFLAGS.extend([framework_opt, '-framework', 'Python'])\n",
+                "    LINKFLAGS = []\n",
+                "\n",
+                "    # Enable profiling?\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"scons\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "0.6.1"
+}

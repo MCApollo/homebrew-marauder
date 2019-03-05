@@ -1,0 +1,21 @@
+{
+    "name": "Takt",
+    "description": "Text-based music programming language",
+    "url": "https://downloads.sourceforge.net/project/takt/takt-0.310-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://takt.sourceforge.io",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--with-lispdir=#{elisp}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.310"
+}

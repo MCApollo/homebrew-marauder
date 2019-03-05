@@ -1,0 +1,41 @@
+{
+    "name": "Lammps",
+    "description": "Molecular Dynamics Simulator",
+    "url": "https://lammps.sandia.gov/tars/lammps-12Dec18.tar.gz",
+    "mirror": null,
+    "homepage": "https://lammps.sandia.gov/",
+    "depends": [
+        {
+            "depend": "fftw",
+            "build-depend": false
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "open-mpi",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "%w[serial mpi].each do |variant|",
+        "cd \"src\" do",
+        "system \"make\", \"clean-all\"",
+        "system \"make\", \"yes-standard\"",
+        "%w[gpu kim kokkos latte mscg meam message mpiio poems reax voronoi].each do |package|",
+        "system \"make\", \"no-#{package}\""
+    ],
+    "version": "lammps12"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "Rzip",
+    "description": "File compression tool (like gzip or bzip2)",
+    "url": "https://rzip.samba.org/ftp/rzip/rzip-2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://rzip.samba.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\", \"INSTALL_MAN=#{man}\"",
+        "bin.install_symlink \"rzip\" => \"runzip\"",
+        "man1.install_symlink \"rzip.1\" => \"runzip.1\""
+    ],
+    "version": "2.1"
+}

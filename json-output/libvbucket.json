@@ -1,0 +1,19 @@
+{
+    "name": "Libvbucket",
+    "description": "Utility library providing mapping to virtual buckets",
+    "url": "https://s3.amazonaws.com/packages.couchbase.com/clients/c/libvbucket-1.8.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://couchbase.com/develop/c/current",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-docs\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.0.4"
+}

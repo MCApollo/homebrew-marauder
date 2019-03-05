@@ -1,0 +1,53 @@
+{
+    "name": "SdlSound",
+    "description": "Library to decode several popular sound file formats",
+    "url": "https://icculus.org/SDL_sound/downloads/SDL_sound-1.0.3.tar.gz",
+    "mirror": "https://mirrors.ocf.berkeley.edu/debian/pool/main/s/sdl-sound1.2/sdl-sound1.2_1.0.3.orig.tar.gz",
+    "homepage": "https://icculus.org/SDL_sound/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "inreplace \"bootstrap\", \"/usr/bin/glibtoolize\", \"#{Formula[\"libtool\"].opt_bin}/glibtoolize\"",
+        "system \"./bootstrap\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-sdltest\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.3"
+}

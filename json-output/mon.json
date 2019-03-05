@@ -1,0 +1,16 @@
+{
+    "name": "Mon",
+    "description": "Monitor hosts/services/whatever and alert about problems",
+    "url": "https://github.com/visionmedia/mon/archive/1.2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/visionmedia/mon",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.2.3"
+}

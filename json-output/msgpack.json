@@ -1,0 +1,21 @@
+{
+    "name": "Msgpack",
+    "description": "Library for a binary-based efficient data interchange format",
+    "url": "https://github.com/msgpack/msgpack-c/releases/download/cpp-3.1.1/msgpack-3.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://msgpack.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.1.1"
+}

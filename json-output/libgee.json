@@ -1,0 +1,36 @@
+{
+    "name": "Libgee",
+    "description": "Collection library providing GObject-based interfaces",
+    "url": "https://download.gnome.org/sources/libgee/0.20/libgee-0.20.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.gnome.org/Projects/Libgee",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "vala",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"gee/Makefile.in\" do |s|",
+        "s.gsub! \"@HAVE_INTROSPECTION_TRUE@girdir = @INTROSPECTION_GIRDIR@\",",
+        "\"@HAVE_INTROSPECTION_TRUE@girdir = $(datadir)/gir-1.0\"",
+        "s.gsub! \"@HAVE_INTROSPECTION_TRUE@typelibdir = @INTROSPECTION_TYPELIBDIR@\",",
+        "\"@HAVE_INTROSPECTION_TRUE@typelibdir = $(libdir)/girepository-1.0\""
+    ],
+    "version": "0.20.1"
+}

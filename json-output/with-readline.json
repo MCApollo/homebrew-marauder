@@ -1,0 +1,23 @@
+{
+    "name": "WithReadline",
+    "description": "Allow GNU Readline to be used with arbitrary programs",
+    "url": "https://www.greenend.org.uk/rjk/sw/with-readline-0.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.greenend.org.uk/rjk/sw/withreadline.html",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.1"
+}

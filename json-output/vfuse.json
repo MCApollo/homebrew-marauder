@@ -1,0 +1,15 @@
+{
+    "name": "Vfuse",
+    "description": "Convert bootable DMG images for use in VMware Fusion",
+    "url": "https://github.com/chilcote/vfuse/archive/2.0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/chilcote/vfuse",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install Dir[\"pkgroot/usr/local/vfuse/bin/*\"]"
+    ],
+    "version": "2.0.9"
+}

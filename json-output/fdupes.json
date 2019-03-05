@@ -1,0 +1,18 @@
+{
+    "name": "Fdupes",
+    "description": "Identify or delete duplicate files",
+    "url": "https://github.com/adrianlopezroche/fdupes/archive/v1.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/adrianlopezroche/fdupes",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", \"gcc\", \"#{ENV.cc} #{ENV.cflags}\"",
+        "system \"make\", \"fdupes\"",
+        "bin.install \"fdupes\"",
+        "man1.install \"fdupes.1\""
+    ],
+    "version": "1.6.1"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Docbook2x",
+    "description": "Convert DocBook to UNIX manpages and GNU TeXinfo",
+    "url": "https://downloads.sourceforge.net/docbook2x/docbook2X-0.8.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://docbook2x.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "docbook",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"perl/db2x_xsltproc.pl\", \"http://docbook2x.sf.net/latest/xslt\", \"#{share}/docbook2X/xslt\"",
+        "inreplace \"configure\", \"${prefix}\", prefix",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.8"
+}

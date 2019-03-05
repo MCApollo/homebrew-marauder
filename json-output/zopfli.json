@@ -1,0 +1,16 @@
+{
+    "name": "Zopfli",
+    "description": "New zlib (gzip, deflate) compatible compressor",
+    "url": "https://github.com/google/zopfli/archive/zopfli-1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/zopfli",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"zopfli\", \"zopflipng\"",
+        "bin.install \"zopfli\", \"zopflipng\""
+    ],
+    "version": "1.0.2"
+}

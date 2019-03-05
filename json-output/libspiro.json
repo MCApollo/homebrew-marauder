@@ -1,0 +1,33 @@
+{
+    "name": "Libspiro",
+    "description": "Library to simplify the drawing of curves",
+    "url": "https://github.com/fontforge/libspiro/releases/download/0.5.20150702/libspiro-0.5.20150702.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/fontforge/libspiro",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "system \"autoreconf\", \"-i\"",
+        "system \"automake\"",
+        "end",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.20150702"
+}

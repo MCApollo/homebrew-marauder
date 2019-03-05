@@ -1,0 +1,40 @@
+{
+    "name": "Libao",
+    "description": "Cross-platform Audio Library",
+    "url": "https://github.com/xiph/libao/archive/1.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.xiph.org/ao/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"AUTOMAKE_FLAGS\"] = \"--include-deps\"",
+        "system \"./autogen.sh\"",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--enable-static",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.2"
+}

@@ -1,0 +1,63 @@
+{
+    "name": "Haxe",
+    "description": "Multi-platform programming language",
+    "url": "https://github.com/HaxeFoundation/haxe.git",
+    "mirror": null,
+    "homepage": "https://haxe.org/",
+    "depends": [
+        {
+            "depend": "aspcud",
+            "build-depend": true
+        },
+        {
+            "depend": "opam",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "camlp4",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "ocaml",
+            "build-depend": true
+        },
+        {
+            "depend": "neko",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"OCAMLPARAM\"] = \"safe-string=0,_\" ",
+        "ENV.deparallelize",
+        "if build.head?",
+        "Dir.mktmpdir(\"opamroot\") do |opamroot|",
+        "ENV[\"OPAMROOT\"] = opamroot",
+        "ENV[\"OPAMYES\"] = \"1\"",
+        "system \"opam\", \"init\", \"--no-setup\"",
+        "system \"opam\", \"config\", \"exec\", \"--\",",
+        "\"opam\", \"pin\", \"add\", \"haxe\", buildpath, \"--no-action\"",
+        "system \"opam\", \"config\", \"exec\", \"--\",",
+        "\"opam\", \"install\", \"haxe\", \"--deps-only\"",
+        "system \"opam\", \"config\", \"exec\", \"--\",",
+        "\"make\", \"ADD_REVISION=1\"",
+        "end",
+        "else",
+        "system \"make\", \"OCAMLOPT=ocamlopt.opt\""
+    ],
+    "version": "3.1.1-git-2802b08c"
+}

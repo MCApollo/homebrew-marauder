@@ -1,0 +1,25 @@
+{
+    "name": "Sflowtool",
+    "description": "Utilities and scripts for analyzing sFlow data",
+    "url": "https://github.com/sflow/sflowtool/releases/download/v3.41/sflowtool-3.41.tar.gz",
+    "mirror": null,
+    "homepage": "https://inmon.com/technology/sflowTools.php",
+    "depends": [],
+    "resource": [
+        {
+            "name": "scripts",
+            "url": "https://inmon.com/bin/sflowutils.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\"",
+        "(prefix/\"contrib\").install resource(\"scripts\")"
+    ],
+    "version": "3.41"
+}

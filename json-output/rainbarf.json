@@ -1,0 +1,17 @@
+{
+    "name": "Rainbarf",
+    "description": "CPU/RAM/battery stats chart bar for tmux (and GNU screen)",
+    "url": "https://github.com/creaktive/rainbarf/archive/v1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/creaktive/rainbarf",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"pod2man\", \"rainbarf\", \"rainbarf.1\"",
+        "man1.install \"rainbarf.1\"",
+        "bin.install \"rainbarf\""
+    ],
+    "version": "1.4"
+}

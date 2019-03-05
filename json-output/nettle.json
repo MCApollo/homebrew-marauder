@@ -1,0 +1,30 @@
+{
+    "name": "Nettle",
+    "description": "Low-level cryptographic library",
+    "url": "https://ftp.gnu.org/gnu/nettle/nettle-3.4.1.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/nettle/nettle-3.4.1.tar.gz",
+    "homepage": "https://www.lysator.liu.se/~nisse/nettle/",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"testsuite/dlopen-test.c\", \"libnettle.so\", \"libnettle.dylib\"",
+        "if DevelopmentTools.clang_build_version >= 1000",
+        "inreplace \"testsuite/symbols-test\", \"get_pc_thunk\",",
+        "\"get_pc_thunk|(_*chkstk_darwin)\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-shared\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"check\""
+    ],
+    "version": "3.4.1"
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Mrboom",
+    "description": "Eight player Bomberman clone",
+    "url": "https://github.com/Javanaise/mrboom-libretro/archive/4.7.tar.gz",
+    "mirror": null,
+    "homepage": "http://mrboom.mumblecore.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libmodplug",
+            "build-depend": false
+        },
+        {
+            "depend": "minizip",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"mrboom\", \"LIBSDL2=1\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "4.7"
+}

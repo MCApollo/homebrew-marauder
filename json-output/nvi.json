@@ -1,0 +1,47 @@
+{
+    "name": "Nvi",
+    "description": "44BSD re-implementation of vi",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/n/nvi/nvi_1.81.6.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/n/nvi/nvi_1.81.6.orig.tar.gz",
+    "homepage": "https://sites.google.com/a/bostic.com/keithbostic/vi/",
+    "depends": [
+        {
+            "depend": "xz",
+            "build-depend": false
+        },
+        {
+            "depend": "berkeley-db",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/8ef45e8b/nvi/patch-common__db.h",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/8ef45e8b/nvi/patch-dist__port.h.in",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/8ef45e8b/nvi/patch-ex_script.c.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/n/nvi/nvi_1.81.6-13.debian.tar.xz",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "cd \"dist\" do",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--program-prefix=n\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.81.6"
+}

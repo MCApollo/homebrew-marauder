@@ -1,0 +1,37 @@
+{
+    "name": "Gambit",
+    "description": "Software tools for game theory",
+    "url": "https://github.com/gambitproject/gambit/archive/v15.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.gambit-project.org",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "wxmac",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"contrib\""
+    ],
+    "version": "15.1.1"
+}

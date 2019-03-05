@@ -1,0 +1,25 @@
+{
+    "name": "Hashcat",
+    "description": "World",
+    "url": "https://hashcat.net/files/hashcat-4.2.1.tar.gz",
+    "mirror": "https://hashcat.net/files_legacy/hashcat-4.2.1.tar.gz",
+    "homepage": "https://hashcat.net/hashcat/",
+    "depends": [
+        {
+            "depend": "gnu-sed",
+            "build-depend": true
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"install\", \"CC=#{ENV.cc}\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "4.2.1"
+}

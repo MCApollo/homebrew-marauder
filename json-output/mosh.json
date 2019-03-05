@@ -1,0 +1,41 @@
+{
+    "name": "Mosh",
+    "description": "Remote terminal application",
+    "url": "https://mosh.org/mosh-1.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://mosh.org",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "tmux",
+            "build-depend": true
+        },
+        {
+            "depend": "protobuf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "inreplace \"scripts/mosh.pl\", \"'mosh-client\", \"\\'#{bin}/mosh-client\"",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--enable-completion\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.2"
+}

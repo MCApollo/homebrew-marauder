@@ -1,0 +1,17 @@
+{
+    "name": "Tivodecode",
+    "description": "Convert .tivo to .mpeg",
+    "url": "https://downloads.sourceforge.net/project/tivodecode/tivodecode/0.2pre4/tivodecode-0.2pre4.tar.gz",
+    "mirror": null,
+    "homepage": "https://tivodecode.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2"
+}

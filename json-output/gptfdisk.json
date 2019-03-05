@@ -1,0 +1,23 @@
+{
+    "name": "Gptfdisk",
+    "description": "Text-mode partitioning tools",
+    "url": "https://downloads.sourceforge.net/project/gptfdisk/gptfdisk/1.0.4/gptfdisk-1.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.rodsbooks.com/gdisk/",
+    "depends": [
+        {
+            "depend": "popt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-f\", \"Makefile.mac\"",
+        "%w[cgdisk fixparts gdisk sgdisk].each do |program|",
+        "bin.install program",
+        "man8.install \"#{program}.8\""
+    ],
+    "version": "1.0.4"
+}

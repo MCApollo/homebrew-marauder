@@ -1,0 +1,15 @@
+{
+    "name": "GitOpen",
+    "description": "Open GitHub webpages from a terminal",
+    "url": "https://github.com/jeffreyiacono/git-open/archive/v1.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jeffreyiacono/git-open",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"git-open.sh\" => \"git-open\""
+    ],
+    "version": "1.3"
+}

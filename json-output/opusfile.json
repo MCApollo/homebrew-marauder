@@ -1,0 +1,52 @@
+{
+    "name": "Opusfile",
+    "description": "API for decoding and seeking in .opus files",
+    "url": "https://archive.mozilla.org/pub/opus/opusfile-0.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.opus-codec.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "opus",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "music_48kbps.opus",
+            "url": "https://www.opus-codec.org/examples/samples/music_48kbps.opus"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.11"
+}

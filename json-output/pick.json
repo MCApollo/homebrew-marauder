@@ -1,0 +1,19 @@
+{
+    "name": "Pick",
+    "description": "Utility to choose one option from a set of choices",
+    "url": "https://github.com/calleerlandsson/pick/releases/download/v2.0.2/pick-2.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/calleerlandsson/pick",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.2"
+}

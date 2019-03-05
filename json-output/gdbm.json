@@ -1,0 +1,22 @@
+{
+    "name": "Gdbm",
+    "description": "GNU database manager",
+    "url": "https://ftp.gnu.org/gnu/gdbm/gdbm-1.18.1.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/gdbm/gdbm-1.18.1.tar.gz",
+    "homepage": "https://www.gnu.org/software/gdbm/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--without-readline",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.18.1"
+}

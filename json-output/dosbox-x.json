@@ -1,0 +1,35 @@
+{
+    "name": "DosboxX",
+    "description": "DOSBox with accurate emulation and wide testing",
+    "url": "https://github.com/joncampbell123/dosbox-x/archive/dosbox-x-v0.82.15.tar.gz",
+    "mirror": null,
+    "homepage": "http://dosbox-x.com/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "fluid-synth",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-dependency-tracking",
+        "--disable-sdltest",
+        "]",
+        "system \"./build-macosx\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.82.15"
+}

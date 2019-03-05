@@ -1,0 +1,31 @@
+{
+    "name": "GfComplete",
+    "description": "Comprehensive Library for Galois Field Arithmetic",
+    "url": "http://lab.jerasure.org/jerasure/gf-complete/repository/archive.tar.gz?ref=v2.0",
+    "mirror": null,
+    "homepage": "http://jerasure.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0"
+}

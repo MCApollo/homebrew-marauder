@@ -1,0 +1,62 @@
+{
+    "name": "Freetds",
+    "description": "Libraries to talk to Microsoft SQL Server and Sybase databases",
+    "url": "http://www.freetds.org/files/stable/freetds-1.00.109.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.freetds.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "unixodbc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--with-tdsver=7.3",
+        "--mandir=#{man}",
+        "--sysconfdir=#{etc}",
+        "--with-unixodbc=#{Formula[\"unixodbc\"].opt_prefix}",
+        "--with-openssl=#{Formula[\"openssl\"].opt_prefix}",
+        "--enable-sybase-compat",
+        "--enable-krb5",
+        "--enable-odbc-wide",
+        "]",
+        "if build.head?",
+        "system \"./autogen.sh\", *args",
+        "else",
+        "system \"./configure\", *args",
+        "end",
+        "system \"make\"",
+        "ENV.deparallelize ",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.00.109"
+}

@@ -1,0 +1,50 @@
+{
+    "name": "Timidity",
+    "description": "Software synthesizer",
+    "url": "https://downloads.sourceforge.net/project/timidity/TiMidity++/TiMidity++-2.15.0/TiMidity++-2.15.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://timidity.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "libao",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "speex",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "freepats",
+            "url": "https://freepats.zenvoid.org/freepats-20060219.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--enable-audio=darwin,vorbis,flac,speex,ao\"",
+        "system \"make\", \"install\"",
+        "(share/\"freepats\").install resource(\"freepats\")",
+        "pkgshare.install_symlink share/\"freepats/Tone_000\",",
+        "share/\"freepats/Drum_000\",",
+        "share/\"freepats/freepats.cfg\" => \"timidity.cfg\""
+    ],
+    "version": "2.15.0"
+}

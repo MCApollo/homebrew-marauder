@@ -1,0 +1,28 @@
+{
+    "name": "Libdrawtext",
+    "description": "Library for anti-aliased text rendering in OpenGL",
+    "url": "https://github.com/jtsiomb/libdrawtext/archive/release_0.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://nuclear.mutantstargoat.com/sw/libdrawtext/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dbg\", \"--enable-opt\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"-C\", \"tools/font2glyphmap\"",
+        "system \"make\", \"-C\", \"tools/font2glyphmap\", \"PREFIX=#{prefix}\", \"install\"",
+        "pkgshare.install \"examples\""
+    ],
+    "version": "0.4"
+}

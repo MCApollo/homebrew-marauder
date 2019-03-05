@@ -1,0 +1,20 @@
+{
+    "name": "Lzo",
+    "description": "Real-time data compression library",
+    "url": "https://www.oberhumer.com/opensource/lzo/download/lzo-2.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.oberhumer.com/opensource/lzo/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-shared\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.10"
+}

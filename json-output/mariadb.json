@@ -1,0 +1,45 @@
+{
+    "name": "Mariadb",
+    "description": "Drop-in replacement for MySQL",
+    "url": "https://downloads.mariadb.org/f/mariadb-10.3.13/source/mariadb-10.3.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://mariadb.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mysql",
+            "reason": null
+        },
+        {
+            "conflict": "mysql-connector-c",
+            "reason": null
+        },
+        {
+            "conflict": "mytop",
+            "reason": "both install `mytop` binaries"
+        },
+        {
+            "conflict": "mariadb-connector-c",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "(var/\"mysql\").mkpath",
+        "unless File.exist? \"#{var}/mysql/mysql/user.frm\"",
+        "ENV[\"TMPDIR\"] = nil",
+        "system \"#{bin}/mysql_install_db\", \"--verbose\", \"--user=#{ENV[\"USER\"]}\",",
+        "\"--basedir=#{prefix}\", \"--datadir=#{var}/mysql\", \"--tmpdir=/tmp\""
+    ],
+    "version": "10.3.13"
+}

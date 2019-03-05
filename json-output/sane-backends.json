@@ -1,0 +1,44 @@
+{
+    "name": "SaneBackends",
+    "description": "Backends for scanner access",
+    "url": "https://mirrors.kernel.org/debian/pool/main/s/sane-backends/sane-backends_1.0.27.orig.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/sane-backends-1.0.27.tar.gz",
+    "homepage": "http://www.sane-project.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        },
+        {
+            "depend": "net-snmp",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"lock/sane\").mkpath"
+    ],
+    "version": "1.0.27"
+}

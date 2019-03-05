@@ -1,0 +1,25 @@
+{
+    "name": "Hana",
+    "description": "The Boost.Hana C++14 metaprogramming library",
+    "url": "https://github.com/boostorg/hana/archive/v1.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/boostorg/hana",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.0"
+}

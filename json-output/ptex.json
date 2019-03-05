@@ -1,0 +1,22 @@
+{
+    "name": "Ptex",
+    "description": "Texture mapping system",
+    "url": "https://github.com/wdas/ptex/archive/v2.1.33.tar.gz",
+    "mirror": null,
+    "homepage": "http://ptex.us",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{prefix}\"",
+        "system \"make\", \"test\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.1.33"
+}

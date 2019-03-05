@@ -1,0 +1,44 @@
+{
+    "name": "Zookeeper",
+    "description": "Centralized server for distributed coordination of services",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://zookeeper.apache.org/",
+    "depends": [
+        {
+            "depend": "ant",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "cppunit",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "system \"ant\", \"compile_jute\"",
+        "system \"autoreconf\", \"-fvi\", \"src/c\"",
+        "end",
+        "cd \"src/c\" do",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-cppunit\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.4.13"
+}

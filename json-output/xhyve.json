@@ -1,0 +1,26 @@
+{
+    "name": "Xhyve",
+    "description": "Lightweight macOS virtualization solution based on FreeBSD",
+    "url": "https://github.com/machyve/xhyve/archive/v0.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/machyve/xhyve",
+    "depends": [
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = []",
+        "args << \"GIT_VERSION=#{version}\" if build.stable?",
+        "system \"make\", *args",
+        "bin.install \"build/xhyve\"",
+        "pkgshare.install \"test/\"",
+        "pkgshare.install Dir[\"xhyverun*.sh\"]",
+        "man1.install \"xhyve.1\" if build.head?"
+    ],
+    "version": "0.2.0"
+}

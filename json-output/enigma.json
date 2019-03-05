@@ -1,0 +1,83 @@
+{
+    "name": "Enigma",
+    "description": "Puzzle game inspired by Oxyd and Rock",
+    "url": "https://downloads.sourceforge.net/project/enigma-game/Release%201.21/enigma-1.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/enigma/",
+    "depends": [
+        {
+            "depend": "texi2html",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "imagemagick",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "enet",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_ttf",
+            "build-depend": false
+        },
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/master/enigma/c%2B%2B11.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.cxx11",
+        "system \"./autogen.sh\" if build.head?",
+        "inreplace \"configure\" do |s|",
+        "s.gsub! /-framework (SDL(_(mixer|image|ttf))?)/, '-l\\1'",
+        "s.gsub! %r{\\${\\w+//\\\\\"/}/lib(freetype|png|xerces-c)\\.a}, '-l\\1'",
+        "s.gsub! %r{(LIBINTL)=\"\\${with_libintl_prefix}/lib/lib(intl)\\.a\"}, '\\1=-l\\2'",
+        "s.gsub! /^\\s+LIBENET_CFLAGS\\n.*LIBENET.*\\n\\s+LIBENET_LIBS\\n.*LIBENET.*$/, \"\""
+    ],
+    "version": "1.21"
+}

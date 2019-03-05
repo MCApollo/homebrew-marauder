@@ -1,0 +1,17 @@
+{
+    "name": "Lv2",
+    "description": "Portable plugin standard for audio systems",
+    "url": "http://lv2plug.in/spec/lv2-1.14.0.tar.bz2",
+    "mirror": null,
+    "homepage": "http://lv2plug.in",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./waf\", \"configure\", \"--prefix=#{prefix}\", \"--no-plugins\", \"--lv2dir=#{lib}\"",
+        "system \"./waf\", \"build\"",
+        "system \"./waf\", \"install\""
+    ],
+    "version": "1.14.0"
+}

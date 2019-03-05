@@ -1,0 +1,17 @@
+{
+    "name": "SignifyOsx",
+    "description": "Cryptographically sign and verify files",
+    "url": "https://github.com/jpouellet/signify-osx/archive/1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://man.openbsd.org/signify.1",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"test\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.4"
+}

@@ -1,0 +1,23 @@
+{
+    "name": "Rdfind",
+    "description": "Find duplicate files based on content (NOT file names)",
+    "url": "https://rdfind.pauldreik.se/rdfind-1.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://rdfind.pauldreik.se/",
+    "depends": [
+        {
+            "depend": "nettle",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.1"
+}

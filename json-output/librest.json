@@ -1,0 +1,38 @@
+{
+    "name": "Librest",
+    "description": "Library to access RESTful web services",
+    "url": "https://download.gnome.org/sources/rest/0.8/rest-0.8.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.gnome.org/Projects/Librest",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libsoup",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-gnome\",",
+        "\"--without-ca-certificates\",",
+        "\"--enable-introspection=yes\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.1"
+}

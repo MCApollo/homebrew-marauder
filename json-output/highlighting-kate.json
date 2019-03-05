@@ -1,0 +1,24 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Haskell syntax highlighting library, based on the Kate editor",
+    "url": "https://hackage.haskell.org/package/highlighting-kate-0.6.4/highlighting-kate-0.6.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jgm/highlighting-kate",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package \"-f\", \"executable\""
+    ],
+    "version": "0.6.4"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Grok",
+    "description": "Powerful pattern-matching/reacting too",
+    "url": "https://github.com/jordansissel/grok/archive/v0.9.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jordansissel/grok",
+    "depends": [
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "tokyo-cabinet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"grok\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.9.2"
+}

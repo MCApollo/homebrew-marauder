@@ -1,0 +1,69 @@
+{
+    "name": "Mu",
+    "description": "Tool for searching e-mail messages stored in the maildir-format",
+    "url": "https://github.com/djcb/mu/releases/download/v1.0/mu-1.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.djcbsoftware.nl/code/mu/",
+    "depends": [
+        {
+            "depend": "autoconf-archive",
+            "build-depend": true
+        },
+        {
+            "depend": "gmime",
+            "build-depend": false
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "emacs",
+            "build-depend": true
+        },
+        {
+            "depend": "libgpg-error",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "xapian",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "gmime",
+            "url": "https://download.gnome.org/sources/gmime/2.6/gmime-2.6.23.tar.xz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "unless build.head?",
+        "resource(\"gmime\").stage do",
+        "system \"./configure\", \"--prefix=#{prefix}/gmime\", \"--disable-introspection\"",
+        "system \"make\", \"install\"",
+        "ENV.append_path \"PKG_CONFIG_PATH\", \"#{prefix}/gmime/lib/pkgconfig\""
+    ],
+    "version": "1.0"
+}

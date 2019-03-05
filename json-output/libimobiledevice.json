@@ -1,0 +1,58 @@
+{
+    "name": "Libimobiledevice",
+    "description": "Library to communicate with iOS devices natively",
+    "url": "https://www.libimobiledevice.org/downloads/libimobiledevice-1.2.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.libimobiledevice.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libplist",
+            "build-depend": false
+        },
+        {
+            "depend": "libtasn1",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "usbmuxd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-cython\",",
+        "\"--enable-debug-code\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.0"
+}

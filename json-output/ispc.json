@@ -1,0 +1,25 @@
+{
+    "name": "Ispc",
+    "description": "Compiler for SIMD programming on the CPU",
+    "url": "https://github.com/ispc/ispc/archive/v1.9.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://ispc.github.io",
+    "depends": [
+        {
+            "depend": "bison",
+            "build-depend": true
+        },
+        {
+            "depend": "llvm@4",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"ispc\""
+    ],
+    "version": "1.9.2"
+}

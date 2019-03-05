@@ -1,0 +1,15 @@
+{
+    "name": "Prodigal",
+    "description": "Microbial gene prediction",
+    "url": "https://github.com/hyattpd/Prodigal/archive/v2.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/hyattpd/Prodigal",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"INSTALLDIR=#{bin}\""
+    ],
+    "version": "2.6.3"
+}

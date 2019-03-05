@@ -1,0 +1,38 @@
+{
+    "name": "ProofGeneral",
+    "description": "Emacs-based generic interface for theorem provers",
+    "url": "https://github.com/ProofGeneral/PG/archive/v4.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://proofgeneral.github.io",
+    "depends": [
+        {
+            "depend": "texi2html",
+            "build-depend": true
+        },
+        {
+            "depend": "texinfo",
+            "build-depend": true
+        },
+        {
+            "depend": "emacs",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize ",
+        "args = %W[",
+        "PREFIX=#{prefix}",
+        "DEST_PREFIX=#{prefix}",
+        "ELISPP=share/emacs/site-lisp/proof-general",
+        "ELISP_START=#{elisp}/site-start.d",
+        "EMACS=#{which \"emacs\"}",
+        "]",
+        "system \"make\", \"install\", *args",
+        "cd \"doc\" do",
+        "system \"make\", \"info\", \"html\""
+    ],
+    "version": "4.4"
+}

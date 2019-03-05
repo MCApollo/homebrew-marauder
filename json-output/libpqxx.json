@@ -1,0 +1,29 @@
+{
+    "name": "Libpqxx",
+    "description": "C++ connector for PostgreSQL",
+    "url": "https://github.com/jtv/libpqxx/archive/6.2.5.tar.gz",
+    "mirror": null,
+    "homepage": "http://pqxx.org/development/libpqxx/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        },
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--enable-shared\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.2.5"
+}

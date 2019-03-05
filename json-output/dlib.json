@@ -1,0 +1,50 @@
+{
+    "name": "Dlib",
+    "description": "C++ library for machine learning",
+    "url": "http://dlib.net/files/dlib-19.16.tar.bz2",
+    "mirror": null,
+    "homepage": "http://dlib.net/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "openblas",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = std_cmake_args + %W[",
+        "-DDLIB_USE_BLAS=ON",
+        "-DDLIB_USE_LAPACK=ON",
+        "-Dcblas_lib=#{Formula[\"openblas\"].opt_lib}/libopenblas.dylib",
+        "-Dlapack_lib=#{Formula[\"openblas\"].opt_lib}/libopenblas.dylib",
+        "-DDLIB_NO_GUI_SUPPORT=ON",
+        "-DUSE_SSE2_INSTRUCTIONS=ON",
+        "]",
+        "if MacOS.version.requires_sse4?",
+        "args << \"-DUSE_SSE4_INSTRUCTIONS=ON\"",
+        "end",
+        "mkdir \"dlib/build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "19.16"
+}

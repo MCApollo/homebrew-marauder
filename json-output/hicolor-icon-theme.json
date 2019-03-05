@@ -1,0 +1,30 @@
+{
+    "name": "HicolorIconTheme",
+    "description": "Fallback theme for FreeDesktop.org icon themes",
+    "url": "https://icon-theme.freedesktop.org/releases/hicolor-icon-theme-0.17.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/www/Software/icon-theme/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[--prefix=#{prefix} --disable-silent-rules]",
+        "if build.head?",
+        "system \"./autogen.sh\", *args",
+        "else",
+        "system \"./configure\", *args",
+        "end",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.17"
+}

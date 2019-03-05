@@ -1,0 +1,17 @@
+{
+    "name": "Kakasi",
+    "description": "Convert Kanji characters to Hiragana, Katakana, or Romaji",
+    "url": "http://kakasi.namazu.org/stable/kakasi-2.3.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://kakasi.namazu.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.6"
+}

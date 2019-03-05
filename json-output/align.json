@@ -1,0 +1,20 @@
+{
+    "name": "Align",
+    "description": "Text column alignment filter",
+    "url": "https://www.cs.indiana.edu/~kinzler/align/align-1.7.5.tgz",
+    "mirror": null,
+    "homepage": "https://www.cs.indiana.edu/~kinzler/align/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "speech-tools",
+            "reason": "both install `align` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"BINDIR=#{bin}\""
+    ],
+    "version": "1.7.5"
+}

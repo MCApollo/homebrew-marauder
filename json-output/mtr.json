@@ -1,0 +1,37 @@
+{
+    "name": "Mtr",
+    "description": "",
+    "url": "https://github.com/traviscross/mtr/archive/v0.92.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.bitwizard.nl/mtr/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"LIBS\"] = \"-lresolv\"",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--without-glib",
+        "--without-gtk",
+        "]",
+        "system \"./bootstrap.sh\"",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.92"
+}

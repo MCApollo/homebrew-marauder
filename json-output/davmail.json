@@ -1,0 +1,16 @@
+{
+    "name": "Davmail",
+    "description": "POP/IMAP/SMTP/Caldav/Carddav/LDAP exchange gateway",
+    "url": "https://downloads.sourceforge.net/project/davmail/davmail/5.2.0/davmail-5.2.0-2961.zip",
+    "mirror": null,
+    "homepage": "https://davmail.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "bin.write_jar_script libexec/\"davmail.jar\", \"davmail\", \"-Djava.awt.headless=true\""
+    ],
+    "version": "5.2.0"
+}

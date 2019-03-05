@@ -1,0 +1,52 @@
+{
+    "name": "StoneSoup",
+    "description": "Dungeon Crawl Stone Soup: a roguelike game",
+    "url": "https://crawl.develz.org/release/0.22/stone_soup-0.22.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://crawl.develz.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "lua@5.1",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "cd \"source\" do",
+        "args = %W[",
+        "prefix=#{prefix}",
+        "DATADIR=data",
+        "NO_PKGCONFIG=",
+        "BUILD_ZLIB=",
+        "BUILD_SQLITE=yes",
+        "BUILD_FREETYPE=",
+        "BUILD_LIBPNG=",
+        "BUILD_LUA=y",
+        "BUILD_SDL2=",
+        "BUILD_SDL2MIXER=",
+        "BUILD_SDL2IMAGE=",
+        "BUILD_PCRE=",
+        "USE_PCRE=y",
+        "]",
+        "args << \"NO_RDYNAMIC=y\" unless ENV.compiler == :clang",
+        "#",
+        "devdir = MacOS::Xcode.prefix.to_s",
+        "devdir += \"/\" unless MacOS::Xcode.installed?",
+        "system \"make\", \"install\",",
+        "\"DEVELOPER_DIR=#{devdir}\", \"SDKROOT=#{MacOS.sdk_path}\",",
+        "\"SDK_VER=#{MacOS.version}\", \"MARCH=#{MacOS.preferred_arch}\",",
+        "*args"
+    ],
+    "version": "0.22.1"
+}

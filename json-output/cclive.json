@@ -1,0 +1,39 @@
+{
+    "name": "Cclive",
+    "description": "Command-line video extraction utility",
+    "url": "https://downloads.sourceforge.net/project/cclive/0.7/cclive-0.7.16.tar.xz",
+    "mirror": null,
+    "homepage": "https://cclive.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "quvi",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "clozure-cl",
+            "reason": "both install a ccl binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.16"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "BpmTools",
+    "description": "Detect tempo of audio files using beats-per-minute (BPM)",
+    "url": "https://www.pogo.org.uk/~mark/bpm-tools/releases/bpm-tools-0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.pogo.org.uk/~mark/bpm-tools/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"bpm\""
+    ],
+    "version": "0.3"
+}

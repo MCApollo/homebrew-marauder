@@ -1,0 +1,40 @@
+{
+    "name": "Dgen",
+    "description": "Sega Genesis / Mega Drive emulator",
+    "url": "https://downloads.sourceforge.net/project/dgen/dgen/1.33/dgen-sdl-1.33.tar.gz",
+    "mirror": null,
+    "homepage": "https://dgen.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libarchive",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-silent-rules",
+        "--disable-dependency-tracking",
+        "--disable-sdltest",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.33"
+}

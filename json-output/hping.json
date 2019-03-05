@@ -1,0 +1,61 @@
+{
+    "name": "Hping",
+    "description": "Command-line oriented TCP/IP packet assembler/analyzer",
+    "url": "http://www.hping.org/hping3-20051105.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/hping-3.20051105.tar.gz",
+    "homepage": "http://www.hping.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/fc1d446f/hping/patch-libpcap_stuff.c.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/fc1d446f/hping/patch-ars.c.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/fc1d446f/hping/patch-sendip.c.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/fc1d446f/hping/patch-Makefile.in.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/fc1d446f/hping/patch-bytesex.h.diff",
+            "strip": "0"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff --git a/gethostname.c b/gethostname.c\n",
+                "index 3d0ea58..a8a9699 100644\n",
+                "--- a/gethostname.c\n",
+                "+++ b/gethostname.c\n",
+                "@@ -18,8 +18,6 @@\n",
+                " #include <arpa/inet.h>\n",
+                " #include <string.h>\n",
+                " \n",
+                "-size_t strlcpy(char *dst, const char *src, size_t siz);\n",
+                "-\n",
+                " char *get_hostname(char* addr)\n",
+                " {\n",
+                " \tstatic char answer[1024];\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--no-tcl\"",
+        "sbin.mkpath",
+        "man8.mkpath",
+        "system \"make\", \"CC=#{ENV.cc}\",",
+        "\"COMPILE_TIME=#{ENV.cflags}\",",
+        "\"INSTALL_PATH=#{prefix}\",",
+        "\"INSTALL_MANPATH=#{man}\",",
+        "\"install\""
+    ],
+    "version": "20051105"
+}

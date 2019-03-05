@@ -1,0 +1,18 @@
+{
+    "name": "Tclap",
+    "description": "Templatized C++ command-line parser library",
+    "url": "https://downloads.sourceforge.net/project/tclap/tclap-1.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://tclap.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.2"
+}

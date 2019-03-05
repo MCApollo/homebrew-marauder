@@ -1,0 +1,25 @@
+{
+    "name": "Snappystream",
+    "description": "C++ snappy stream realization (compatible with snappy)",
+    "url": "https://github.com/hoxnox/snappystream/archive/1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/hoxnox/snappystream",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "snappy",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args, \"-DBUILD_TESTS=ON\"",
+        "system \"make\", \"all\", \"test\", \"install\""
+    ],
+    "version": "1.0.0"
+}

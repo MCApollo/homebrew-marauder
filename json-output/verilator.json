@@ -1,0 +1,27 @@
+{
+    "name": "Verilator",
+    "description": "Verilog simulator",
+    "url": "https://www.veripool.org/ftp/verilator-4.010.tgz",
+    "mirror": null,
+    "homepage": "https://www.veripool.org/wiki/verilator",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoconf\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.010"
+}

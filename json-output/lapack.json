@@ -1,0 +1,30 @@
+{
+    "name": "Lapack",
+    "description": "Linear Algebra PACKage",
+    "url": "https://www.netlib.org/lapack/lapack-3.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.netlib.org/lapack/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.delete(\"MACOSX_DEPLOYMENT_TARGET\")",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\",",
+        "\"-DBUILD_SHARED_LIBS:BOOL=ON\",",
+        "\"-DLAPACKE:BOOL=ON\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.8.0"
+}

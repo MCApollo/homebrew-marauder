@@ -1,0 +1,27 @@
+{
+    "name": "IcarusVerilog",
+    "description": "Verilog simulation and synthesis tool",
+    "url": "ftp://icarus.com/pub/eda/verilog/v10/verilog-10.2.tar.gz",
+    "mirror": "https://deb.debian.org/debian/pool/main/i/iverilog/iverilog_10.2.orig.tar.gz",
+    "homepage": "http://iverilog.icarus.com/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "bison",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoconf\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\", \"BISON=#{Formula[\"bison\"].opt_bin}/bison\""
+    ],
+    "version": "10.2"
+}

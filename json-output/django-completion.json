@@ -1,0 +1,15 @@
+{
+    "name": "DjangoCompletion",
+    "description": "Bash completion for Django",
+    "url": "https://github.com/django/django/archive/2.1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/django/django",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"extras/django_bash_completion\" => \"django\""
+    ],
+    "version": "2.1.7"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "BoostAT157",
+    "description": "Collection of portable C++ source libraries",
+    "url": "https://downloads.sourceforge.net/project/boost/boost/1.57.0/boost_1_57_0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.boost.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "open(\"user-config.jam\", \"a\") do |file|",
+        "file.write \"using darwin : : #{ENV.cxx} ;\\n\""
+    ],
+    "version": "1_57_0"
+}

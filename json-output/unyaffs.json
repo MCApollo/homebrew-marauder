@@ -1,0 +1,16 @@
+{
+    "name": "Unyaffs",
+    "description": "Extract files from a YAFFS2 filesystem image",
+    "url": "https://github.com/ehlers/unyaffs/archive/0.9.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ehlers/unyaffs",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"unyaffs\""
+    ],
+    "version": "0.9.7"
+}

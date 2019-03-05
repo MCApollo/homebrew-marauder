@@ -1,0 +1,15 @@
+{
+    "name": "Miniupnpc",
+    "description": "UPnP IGD client library and daemon",
+    "url": "https://miniupnp.tuxfamily.org/files/download.php?file=miniupnpc-2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://miniupnp.tuxfamily.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"INSTALLPREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "2.1"
+}

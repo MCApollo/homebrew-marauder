@@ -1,0 +1,36 @@
+{
+    "name": "DatetimeFortran",
+    "description": "Fortran time and date manipulation library",
+    "url": "https://github.com/wavebitscientific/datetime-fortran/releases/download/v1.6.0/datetime-fortran-1.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/wavebitscientific/datetime-fortran",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-silent-rules\"",
+        "system \"make\", \"install\"",
+        "(pkgshare/\"test\").install \"src/tests/datetime_tests.f90\""
+    ],
+    "version": "1.6.0"
+}

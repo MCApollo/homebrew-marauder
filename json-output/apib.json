@@ -1,0 +1,27 @@
+{
+    "name": "Apib",
+    "description": "HTTP performance-testing tool",
+    "url": "https://github.com/apigee/apib/archive/APIB_1_0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/apigee/apib",
+    "depends": [
+        {
+            "depend": "apr",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "unless MacOS::CLT.installed?",
+        "inreplace \"configure\" do |s|",
+        "s.gsub! \"/usr/include/apr-1.0\", \"#{Formula[\"apr\"].opt_libexec}/include/apr-1\"",
+        "s.gsub! \"/usr/include/apr-1\", \"#{Formula[\"apr\"].opt_libexec}/include/apr-1\""
+    ],
+    "version": "1_0"
+}

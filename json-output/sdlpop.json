@@ -1,0 +1,41 @@
+{
+    "name": "Sdlpop",
+    "description": "Open-source port of Prince of Persia",
+    "url": "https://github.com/NagyD/SDLPoP/archive/v1.18.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/NagyD/SDLPoP",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-C\", \"src\"",
+        "doc.install Dir[\"doc/*\"]",
+        "libexec.install \"data\"",
+        "libexec.install \"prince\"",
+        "pkgvar = var/\"sdlpop\"",
+        "pkgvar.install \"SDLPoP.ini\" unless (pkgvar/\"SDLPoP.ini\").exist?",
+        "(bin/\"prince\").write <<~EOS",
+        "#!/bin/bash",
+        "cd \"#{pkgvar}\" && exec \"#{libexec}/prince\" $@",
+        "EOS"
+    ],
+    "version": "1.18.1"
+}

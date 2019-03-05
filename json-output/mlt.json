@@ -1,0 +1,54 @@
+{
+    "name": "Mlt",
+    "description": "Author, manage, and run multitrack audio/video compositions",
+    "url": "https://github.com/mltframework/mlt/archive/v6.12.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.mltframework.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "frei0r",
+            "build-depend": false
+        },
+        {
+            "depend": "libdv",
+            "build-depend": false
+        },
+        {
+            "depend": "libsamplerate",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sox",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-jackrack\",",
+        "\"--disable-swfdec\",",
+        "\"--disable-gtk\",",
+        "\"--enable-gpl\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.12.0"
+}

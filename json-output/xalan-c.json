@@ -1,0 +1,39 @@
+{
+    "name": "XalanC",
+    "description": "XSLT processor",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=xalan/xalan-c/sources/xalan_c-1.11-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://xalan.apache.org/xalan-c/",
+    "depends": [
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/master/xalan-c/xerces-char16.patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/master/xalan-c/locator-system-id.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.cxx11",
+        "ENV.deparallelize ",
+        "ENV[\"XALANCROOT\"] = \"#{buildpath}/c\"",
+        "ENV[\"XALAN_LOCALE_SYSTEM\"] = \"inmem\"",
+        "ENV[\"XALAN_LOCALE\"] = \"en_US\"",
+        "cd \"c\" do",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "rm Dir[\"#{lib}/*.dylib.*\"]"
+    ],
+    "version": "1.11"
+}

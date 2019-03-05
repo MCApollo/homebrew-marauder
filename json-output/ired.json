@@ -1,0 +1,16 @@
+{
+    "name": "Ired",
+    "description": "Minimalistic hexadecimal editor designed to be used in scripts",
+    "url": "https://github.com/radare/ired/archive/0.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/radare/ired",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.6"
+}

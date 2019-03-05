@@ -1,0 +1,17 @@
+{
+    "name": "TmuxinatorCompletion",
+    "description": "Shell completion for Tmuxinator",
+    "url": "https://github.com/tmuxinator/tmuxinator/archive/v0.15.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tmuxinator/tmuxinator",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"completion/tmuxinator.bash\" => \"tmuxinator\"",
+        "zsh_completion.install \"completion/tmuxinator.zsh\" => \"_tmuxinator\"",
+        "fish_completion.install Dir[\"completion/*.fish\"]"
+    ],
+    "version": "0.15.0"
+}

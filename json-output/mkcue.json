@@ -1,0 +1,19 @@
+{
+    "name": "Mkcue",
+    "description": "Generate a CUE sheet from a CD",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/mkcue/mkcue_1.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/m/mkcue/mkcue_1.orig.tar.gz",
+    "homepage": "https://packages.debian.org/sid/mkcue",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "bin.mkpath",
+        "system \"make\", \"install\""
+    ],
+    "version": "mkcue1"
+}

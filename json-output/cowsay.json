@@ -1,0 +1,16 @@
+{
+    "name": "Cowsay",
+    "description": "Configurable talking characters in ASCII art",
+    "url": "https://github.com/tnalpgge/rank-amateur-cowsay/archive/cowsay-3.04.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tnalpgge/rank-amateur-cowsay",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"/bin/sh\", \"install.sh\", prefix",
+        "mv prefix/\"man\", share"
+    ],
+    "version": "3.04"
+}

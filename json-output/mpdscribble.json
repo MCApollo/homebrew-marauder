@@ -1,0 +1,29 @@
+{
+    "name": "Mpdscribble",
+    "description": "Last.fm reporting client for mpd",
+    "url": "https://www.musicpd.org/download/mpdscribble/0.22/mpdscribble-0.22.tar.gz",
+    "mirror": null,
+    "homepage": "https://mpd.wikia.com/wiki/Client:Mpdscribble",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libmpdclient",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--sysconfdir=#{etc}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.22"
+}

@@ -1,0 +1,35 @@
+{
+    "name": "Tinyxml",
+    "description": "XML parser",
+    "url": "https://downloads.sourceforge.net/project/tinyxml/tinyxml/2.6.2/tinyxml_2_6_2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.grinninglizard.com/tinyxml/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/robotology/yarp/master/extern/tinyxml/patches/enforce-use-stl.patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/robotology/yarp/master/extern/tinyxml/patches/entity-encoding.patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://gist.githubusercontent.com/scpeters/6325123/raw/cfb079be67997cb19a1aee60449714a1dedefed5/tinyxml_CMakeLists.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "(lib+\"pkgconfig/tinyxml.pc\").write pc_file"
+    ],
+    "version": "2_6_2"
+}

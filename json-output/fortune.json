@@ -1,0 +1,21 @@
+{
+    "name": "Fortune",
+    "description": "Infamous electronic fortune-cookie generator",
+    "url": "https://www.ibiblio.org/pub/linux/games/amusements/fortune/fortune-mod-9708.tar.gz",
+    "mirror": "https://src.fedoraproject.org/repo/pkgs/fortune-mod/fortune-mod-9708.tar.gz/81a87a44f9d94b0809dfc2b7b140a379/fortune-mod-9708.tar.gz",
+    "homepage": "https://www.ibiblio.org/pub/linux/games/amusements/fortune/!INDEX.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "inreplace \"Makefile\" do |s|",
+        "s.change_make_var! \"CC\", ENV.cc",
+        "s.change_make_var! \"FORTDIR\", \"/usr/local/bin\"",
+        "s.gsub! \"/usr/local/man\", \"/usr/local/share/man\"",
+        "s.gsub! \"/usr/local\", prefix",
+        "s.change_make_var! \"REGEXDEFS\", \"-DHAVE_REGEX_H -DPOSIX_REGEX\""
+    ],
+    "version": "9708"
+}

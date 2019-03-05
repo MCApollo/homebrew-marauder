@@ -1,0 +1,15 @@
+{
+    "name": "Ncompress",
+    "description": "Fast, simple LZW file compressor",
+    "url": "https://github.com/vapier/ncompress/archive/v4.2.4.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/vapier/ncompress",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"BINDIR=#{bin}\", \"MANDIR=#{man1}\""
+    ],
+    "version": "4.2.4.5"
+}

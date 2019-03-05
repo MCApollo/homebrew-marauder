@@ -1,0 +1,25 @@
+{
+    "name": "Rawgl",
+    "description": "Rewritten engine for Another World",
+    "url": "https://github.com/cyxx/rawgl/archive/rawgl-0.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/cyxx/rawgl",
+    "depends": [
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"rawgl\""
+    ],
+    "version": "0.2.1"
+}

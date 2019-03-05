@@ -1,0 +1,41 @@
+{
+    "name": "Dbus",
+    "description": "Message bus system, providing inter-application communication",
+    "url": "https://dbus.freedesktop.org/releases/dbus/dbus-1.12.12.tar.gz",
+    "mirror": "https://deb.debian.org/debian/pool/main/d/dbus/dbus_1.12.12.orig.tar.gz",
+    "homepage": "https://wiki.freedesktop.org/www/Software/dbus",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf-archive",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/0a8a55872e/d-bus/org.freedesktop.dbus-session.plist.osx.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"#{bin}/dbus-uuidgen\", \"--ensure=#{var}/lib/dbus/machine-id\""
+    ],
+    "version": "1.12.12"
+}

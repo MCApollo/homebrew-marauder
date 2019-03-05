@@ -1,0 +1,15 @@
+{
+    "name": "Rtf2latex2e",
+    "description": "RTF-to-LaTeX translation",
+    "url": "https://downloads.sourceforge.net/project/rtf2latex2e/rtf2latex2e-unix/2-2/rtf2latex2e-2-2-3.tar.gz",
+    "mirror": null,
+    "homepage": "https://rtf2latex2e.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"prefix=#{prefix}\", \"CC=#{ENV.cc}\""
+    ],
+    "version": "rtf2latex2e-2-23"
+}

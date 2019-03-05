@@ -1,0 +1,16 @@
+{
+    "name": "Txt2tags",
+    "description": "Conversion tool to generating several file formats",
+    "url": "https://github.com/txt2tags/txt2tags/archive/2.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://txt2tags.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"txt2tags\"",
+        "man1.install \"doc/English/manpage.man\" => \"txt2tags.1\""
+    ],
+    "version": "2.6"
+}

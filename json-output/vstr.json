@@ -1,0 +1,24 @@
+{
+    "name": "Vstr",
+    "description": "C string library",
+    "url": "http://www.and.org/vstr/1.0.15/vstr-1.0.15.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.and.org/vstr/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CFLAGS\", \"--std=gnu89\" if ENV.compiler == :clang",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.15"
+}

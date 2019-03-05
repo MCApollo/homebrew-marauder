@@ -1,0 +1,42 @@
+{
+    "name": "EmacsClangCompleteAsync",
+    "description": "Emacs plugin using libclang to complete C/C++ code",
+    "url": "https://github.com/Golevka/emacs-clang-complete-async/archive/v0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Golevka/emacs-clang-complete-async",
+    "depends": [
+        {
+            "depend": "llvm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/yocchi/emacs-clang-complete-async/commit/5ce197b15d7b8c9abfc862596bf8d902116c9efe.diff?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": null,
+            "data": [
+                "--- a/src/completion.h\t2013-05-26 17:27:46.000000000 +0200\n",
+                "+++ b/src/completion.h\t2014-02-11 21:40:18.000000000 +0100\n",
+                "@@ -3,6 +3,7 @@\n",
+                "\n",
+                "\n",
+                " #include <clang-c/Index.h>\n",
+                "+#include <stdio.h>\n",
+                "\n",
+                "\n",
+                " typedef struct __completion_Session_struct\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"make\"",
+        "bin.install \"clang-complete\"",
+        "share.install \"auto-complete-clang-async.el\""
+    ],
+    "version": "0.5"
+}

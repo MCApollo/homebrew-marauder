@@ -1,0 +1,20 @@
+{
+    "name": "Cppi",
+    "description": "Indent C preprocessor directives to reflect their nesting",
+    "url": "https://ftp.gnu.org/gnu/cppi/cppi-1.18.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/cppi/cppi-1.18.tar.xz",
+    "homepage": "https://www.gnu.org/software/cppi/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.18"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Getxbook",
+    "description": "Tools to download ebooks from various sources",
+    "url": "https://njw.name/getxbook/getxbook-1.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://njw.name/getxbook",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"PREFIX=#{prefix}\"",
+        "bin.install \"getgbook\", \"getabook\", \"getbnbook\""
+    ],
+    "version": "1.2"
+}

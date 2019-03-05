@@ -1,0 +1,32 @@
+{
+    "name": "Bullet",
+    "description": "Physics SDK",
+    "url": "https://github.com/bulletphysics/bullet3/archive/2.88.tar.gz",
+    "mirror": null,
+    "homepage": "https://bulletphysics.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %W[",
+        "-DBUILD_BULLET2_DEMOS=OFF",
+        "-DBUILD_PYBULLET=OFF",
+        "-DBUILD_UNIT_TESTS=OFF",
+        "-DCMAKE_INSTALL_RPATH=#{lib}",
+        "-DINSTALL_EXTRA_LIBS=ON",
+        "]",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args, \"-DBUILD_SHARED_LIBS=ON\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"clean\"",
+        "system \"cmake\", \"..\", *args, \"-DBUILD_SHARED_LIBS=OFF\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.88"
+}

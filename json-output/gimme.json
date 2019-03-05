@@ -1,0 +1,15 @@
+{
+    "name": "Gimme",
+    "description": "Shell script to install any Go version",
+    "url": "https://github.com/travis-ci/gimme/archive/v1.5.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/travis-ci/gimme",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"gimme\""
+    ],
+    "version": "1.5.3"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Mdp",
+    "description": "Command-line based markdown presentation tool",
+    "url": "https://github.com/visit1985/mdp/archive/1.0.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/visit1985/mdp",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "pkgshare.install \"sample.md\""
+    ],
+    "version": "1.0.15"
+}

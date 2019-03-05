@@ -1,0 +1,29 @@
+{
+    "name": "Sdb",
+    "description": "Ondisk/memory hashtable based on CDB",
+    "url": "https://github.com/radare/sdb/archive/1.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/radare/sdb",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "vala",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.3.0"
+}

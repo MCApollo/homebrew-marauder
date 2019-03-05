@@ -1,0 +1,30 @@
+{
+    "name": "Cdparanoia",
+    "description": "Audio extraction tool for sampling CDs",
+    "url": "https://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz",
+    "mirror": null,
+    "homepage": "https://www.xiph.org/paranoia/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/2a22152/cdparanoia/osx_interface.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"autoconf\"",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--libdir=#{libexec}\"",
+        "system \"make\", \"all\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "10.2"
+}

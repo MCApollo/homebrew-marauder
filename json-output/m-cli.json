@@ -1,0 +1,20 @@
+{
+    "name": "MCli",
+    "description": "Swiss Army Knife for macOS",
+    "url": "https://github.com/rgcr/m-cli/archive/v0.2.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rgcr/m-cli",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install Dir[\"*\"]",
+        "inreplace prefix/\"m\" do |s|",
+        "s.gsub! /^\\[ -L.*|^\\s+\\|\\| pushd.*|^popd.*/, \"\"",
+        "s.gsub! /MPATH=.*/, \"MPATH=#{prefix}\"",
+        "s.gsub! /update_mcli \\&\\&.*/, \"printf \\\"Try: brew update && brew upgrade m-cli \\\\n\\\" && exit 0\"",
+        "s.gsub! /uninstall_mcli \\&\\&.*/, \"printf \\\"Try: brew uninstall m-cli \\\\n\\\" && exit 0\""
+    ],
+    "version": "0.2.5"
+}

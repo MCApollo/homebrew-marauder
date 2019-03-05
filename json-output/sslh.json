@@ -1,0 +1,25 @@
+{
+    "name": "Sslh",
+    "description": "Forward connections based on first data packet sent by client",
+    "url": "https://www.rutschle.net/tech/sslh/sslh-v1.19c.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.rutschle.net/tech/sslh.shtml",
+    "depends": [
+        {
+            "depend": "libconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.19"
+}

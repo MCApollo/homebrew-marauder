@@ -1,0 +1,22 @@
+{
+    "name": "Uncrustify",
+    "description": "Source code beautifier",
+    "url": "https://github.com/uncrustify/uncrustify/archive/uncrustify-0.68.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://uncrustify.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.68.1"
+}

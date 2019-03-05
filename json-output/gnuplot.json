@@ -1,0 +1,71 @@
+{
+    "name": "Gnuplot",
+    "description": "Command-driven, interactive function plotting",
+    "url": "https://downloads.sourceforge.net/project/gnuplot/gnuplot/5.2.6/gnuplot-5.2.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.gnuplot.info/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gd",
+            "build-depend": false
+        },
+        {
+            "depend": "libcerf",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--with-readline=#{Formula[\"readline\"].opt_prefix}",
+        "--without-tutorial",
+        "--disable-wxwidgets",
+        "--with-qt",
+        "--without-x",
+        "]",
+        "system \"./prepare\" if build.head?",
+        "system \"./configure\", *args",
+        "ENV.deparallelize ",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.2.6"
+}

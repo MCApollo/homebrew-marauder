@@ -1,0 +1,23 @@
+{
+    "name": "Httrack",
+    "description": "Website copier/offline browser",
+    "url": "https://mirror.httrack.com/historical/httrack-3.49.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.httrack.com/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "rm_rf Dir[\"#{share}/{applications,pixmaps}\"]"
+    ],
+    "version": "3.49.2"
+}

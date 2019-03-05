@@ -1,0 +1,22 @@
+{
+    "name": "Mmix",
+    "description": "64-bit RISC architecture designed by Donald Knuth",
+    "url": "http://mmix.cs.hm.edu/src/mmix-20160804.tgz",
+    "mirror": null,
+    "homepage": "http://mmix.cs.hm.edu/",
+    "depends": [
+        {
+            "depend": "cweb",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"all\"",
+        "bin.install \"mmix\", \"mmixal\", \"mmmix\", \"mmotype\""
+    ],
+    "version": "20160804"
+}

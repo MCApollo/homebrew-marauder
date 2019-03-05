@@ -1,0 +1,34 @@
+{
+    "name": "SNail",
+    "description": "Fork of Heirloom mailx",
+    "url": "https://www.sdaoden.eu/downloads/s-nail-14.9.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.sdaoden.eu/code.html",
+    "depends": [
+        {
+            "depend": "libidn",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"OPT_AUTOCC=no\",",
+        "\"CC=#{ENV.cc}\",",
+        "\"cc_maxtopt=1\",",
+        "\"OPT_NOMEMBDBG=1\",",
+        "\"C_INCLUDE_PATH=#{Formula[\"openssl\"].opt_include}\",",
+        "\"LDFLAGS=-L#{Formula[\"openssl\"].opt_lib}\",",
+        "\"VAL_PREFIX=#{prefix}\",",
+        "\"OPT_DOTLOCK=no\",",
+        "\"config\"",
+        "system \"make\", \"build\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "14.9.11"
+}

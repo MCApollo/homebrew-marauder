@@ -1,0 +1,21 @@
+{
+    "name": "Zlib",
+    "description": "General-purpose lossless data-compression library",
+    "url": "https://zlib.net/zlib-1.2.11.tar.gz",
+    "mirror": "https://downloads.sourceforge.net/project/libpng/zlib/1.2.11/zlib-1.2.11.tar.gz",
+    "homepage": "https://zlib.net/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "test_artifact",
+            "url": "https://zlib.net/zpipe.c"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.11"
+}

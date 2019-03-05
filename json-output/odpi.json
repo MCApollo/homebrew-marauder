@@ -1,0 +1,17 @@
+{
+    "name": "Odpi",
+    "description": "Oracle Database Programming Interface for Drivers and Applications",
+    "url": "https://github.com/oracle/odpi/archive/v3.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://oracle.github.io/odpi/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "lib.install Dir[\"lib/*\"]",
+        "include.install Dir[\"include/*\"]"
+    ],
+    "version": "3.1.2"
+}

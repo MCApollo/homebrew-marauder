@@ -1,0 +1,50 @@
+{
+    "name": "Burp",
+    "description": "Network backup and restore",
+    "url": "https://downloads.sourceforge.net/project/burp/burp-2.2.18/burp-2.2.18.tar.bz2",
+    "mirror": null,
+    "homepage": "https://burp.grke.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "librsync",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "uthash",
+            "url": "https://github.com/troydhanson/uthash.git"
+        },
+        {
+            "name": "uthash",
+            "url": "https://github.com/troydhanson/uthash.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"run\").mkpath",
+        "(var/\"spool/burp\").mkpath"
+    ],
+    "version": "2.2.18"
+}

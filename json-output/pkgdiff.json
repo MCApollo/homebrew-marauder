@@ -1,0 +1,28 @@
+{
+    "name": "Pkgdiff",
+    "description": "Tool for analyzing changes in software packages (e.g. RPM, DEB, TAR.GZ)",
+    "url": "https://github.com/lvc/pkgdiff/archive/1.7.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://lvc.github.io/pkgdiff/",
+    "depends": [
+        {
+            "depend": "binutils",
+            "build-depend": false
+        },
+        {
+            "depend": "gawk",
+            "build-depend": false
+        },
+        {
+            "depend": "wdiff",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"perl\", \"Makefile.pl\", \"--install\", \"--prefix=#{prefix}\""
+    ],
+    "version": "1.7.2"
+}

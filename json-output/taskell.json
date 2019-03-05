@@ -1,0 +1,27 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Command-line Kanban board/task manager with support for Trello",
+    "url": "https://github.com/smallhadroncollider/taskell/archive/1.3.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://taskell.app",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cabal_sandbox do",
+        "cabal_install \"hpack\"",
+        "system \"./.cabal-sandbox/bin/hpack\"",
+        "install_cabal_package"
+    ],
+    "version": "1.3.5"
+}

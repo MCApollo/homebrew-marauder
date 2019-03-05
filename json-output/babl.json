@@ -1,0 +1,35 @@
+{
+    "name": "Babl",
+    "description": "Dynamic, any-to-any, pixel format translation library",
+    "url": "https://download.gimp.org/pub/babl/0.1/babl-0.1.62.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.gegl.org/babl/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.62"
+}

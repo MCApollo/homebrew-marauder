@@ -1,0 +1,36 @@
+{
+    "name": "Xpdf",
+    "description": "PDF viewer",
+    "url": "https://xpdfreader-dl.s3.amazonaws.com/xpdf-4.00.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/xpdf-4.00.tar.gz",
+    "homepage": "https://www.xpdfreader.com/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "pdf2image",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "inreplace [\"xpdf/CMakeLists.txt\", \"xpdf-qt/CMakeLists.txt\"], \" man/\",",
+        "\" share/man/\"",
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.00"
+}

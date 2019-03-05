@@ -1,0 +1,21 @@
+{
+    "name": "Gvp",
+    "description": "Go versioning packager",
+    "url": "https://github.com/pote/gvp/archive/v0.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pote/gvp",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/pote/gvp/commit/11c4cefd.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.0"
+}

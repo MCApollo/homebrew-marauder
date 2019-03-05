@@ -1,0 +1,21 @@
+{
+    "name": "Tbox",
+    "description": "Glib-like multi-platform c library",
+    "url": "https://github.com/waruqi/tbox/archive/v1.6.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://tboox.org/",
+    "depends": [
+        {
+            "depend": "xmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"xmake\", \"config\", \"--charset=y\", \"--demo=n\", \"--small=y\", \"--xml=y\"",
+        "system \"xmake\", \"install\", \"-o\", prefix"
+    ],
+    "version": "1.6.3"
+}

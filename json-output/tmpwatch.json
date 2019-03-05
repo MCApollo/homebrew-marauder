@@ -1,0 +1,17 @@
+{
+    "name": "Tmpwatch",
+    "description": "Find and remove files not accessed in a specified time",
+    "url": "https://releases.pagure.org/tmpwatch/tmpwatch-2.11.tar.bz2",
+    "mirror": null,
+    "homepage": "https://pagure.io/tmpwatch",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.11"
+}

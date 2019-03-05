@@ -1,0 +1,21 @@
+{
+    "name": "Calabash",
+    "description": "XProc (XML Pipeline Language) implementation",
+    "url": "https://github.com/ndw/xmlcalabash1/releases/download/1.1.24-98/xmlcalabash-1.1.24-98.zip",
+    "mirror": null,
+    "homepage": "https://xmlcalabash.com/",
+    "depends": [
+        {
+            "depend": "saxon",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "bin.write_jar_script libexec/\"xmlcalabash-#{version}.jar\", \"calabash\", \"-Xmx1024m\""
+    ],
+    "version": "1.1.24"
+}

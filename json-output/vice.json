@@ -1,0 +1,86 @@
+{
+    "name": "Vice",
+    "description": "Versatile Commodore Emulator",
+    "url": "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://vice-emu.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "texinfo",
+            "build-depend": true
+        },
+        {
+            "depend": "xa",
+            "build-depend": true
+        },
+        {
+            "depend": "yasm",
+            "build-depend": true
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "giflib",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "lame",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "mpg123",
+            "build-depend": false
+        },
+        {
+            "depend": "portaudio",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-arch\",",
+        "\"--disable-bundle\",",
+        "\"--enable-external-ffmpeg\",",
+        "\"--enable-sdlui2\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.3"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "EbookTools",
+    "description": "Access and convert several ebook formats",
+    "url": "https://downloads.sourceforge.net/project/ebook-tools/ebook-tools/0.2.2/ebook-tools-0.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/ebook-tools/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libzip",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\",",
+        "\"-DLIBZIP_INCLUDE_DIR=#{Formula[\"libzip\"].lib}/libzip/include\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.2"
+}

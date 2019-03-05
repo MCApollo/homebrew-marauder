@@ -1,0 +1,17 @@
+{
+    "name": "Stgit",
+    "description": "Push/pop utility built on top of Git",
+    "url": "https://github.com/ctmarinas/stgit/archive/v0.19.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ctmarinas/stgit",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PYTHON\"] = \"python\" ",
+        "system \"make\", \"prefix=#{prefix}\", \"all\"",
+        "system \"make\", \"prefix=#{prefix}\", \"install\""
+    ],
+    "version": "0.19"
+}

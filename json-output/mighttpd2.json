@@ -1,0 +1,24 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "HTTP server",
+    "url": "https://hackage.haskell.org/package/mighttpd2-3.4.3/mighttpd2-3.4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.mew.org/~kazu/proj/mighttpd/en/",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package"
+    ],
+    "version": "3.4.3"
+}

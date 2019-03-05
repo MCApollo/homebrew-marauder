@@ -1,0 +1,26 @@
+{
+    "name": "Dwarfutils",
+    "description": "Dump and produce DWARF debug information in ELF objects",
+    "url": "https://www.prevanders.net/libdwarf-20180809.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.prevanders.net/dwarf.html",
+    "depends": [
+        {
+            "depend": "libelf",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\"",
+        "system \"make\"",
+        "bin.install \"dwarfdump/dwarfdump\"",
+        "man1.install \"dwarfdump/dwarfdump.1\"",
+        "lib.install \"libdwarf/.libs/libdwarf.a\"",
+        "include.install \"libdwarf/dwarf.h\"",
+        "include.install \"libdwarf/libdwarf.h\""
+    ],
+    "version": "20180809"
+}

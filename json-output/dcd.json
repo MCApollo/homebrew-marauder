@@ -1,0 +1,21 @@
+{
+    "name": "Dcd",
+    "description": "Auto-complete program for the D programming language",
+    "url": "https://github.com/dlang-community/DCD.git",
+    "mirror": null,
+    "homepage": "https://github.com/dlang-community/DCD",
+    "depends": [
+        {
+            "depend": "dmd",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"bin/dcd-client\", \"bin/dcd-server\""
+    ],
+    "version": "0.11.0-git-8a7a6c75"
+}

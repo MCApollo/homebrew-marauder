@@ -1,0 +1,47 @@
+{
+    "name": "Jmeter",
+    "description": "Load testing and performance measurement application",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=jmeter/binaries/apache-jmeter-5.0.tgz",
+    "mirror": null,
+    "homepage": "https://jmeter.apache.org/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "jmeterplugins-standard",
+            "url": "https://jmeter-plugins.org/downloads/file/JMeterPlugins-Standard-1.4.0.zip"
+        },
+        {
+            "name": "serveragent",
+            "url": "https://jmeter-plugins.org/downloads/file/ServerAgent-2.2.1.zip"
+        },
+        {
+            "name": "jmeterplugins-extras",
+            "url": "https://jmeter-plugins.org/downloads/file/JMeterPlugins-Extras-1.4.0.zip"
+        },
+        {
+            "name": "jmeterplugins-extraslibs",
+            "url": "https://jmeter-plugins.org/downloads/file/JMeterPlugins-ExtrasLibs-1.4.0.zip"
+        },
+        {
+            "name": "jmeterplugins-webdriver",
+            "url": "https://jmeter-plugins.org/downloads/file/JMeterPlugins-WebDriver-1.4.0.zip"
+        },
+        {
+            "name": "jmeterplugins-hadoop",
+            "url": "https://jmeter-plugins.org/downloads/file/JMeterPlugins-Hadoop-1.4.0.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm_f Dir[\"bin/*.bat\"]",
+        "prefix.install_metafiles",
+        "libexec.install Dir[\"*\"]",
+        "bin.write_exec_script libexec/\"bin/jmeter\"",
+        "resource(\"jmeterplugins-standard\").stage do",
+        "rm_f Dir[\"lib/ext/*.bat\"]",
+        "(libexec/\"lib/ext\").install Dir[\"lib/ext/*\"]",
+        "(libexec/\"licenses/plugins/standard\").install \"LICENSE\", \"README\""
+    ],
+    "version": "5.0"
+}

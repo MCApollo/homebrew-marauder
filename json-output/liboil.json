@@ -1,0 +1,38 @@
+{
+    "name": "Liboil",
+    "description": "C library of simple functions optimized for various CPUs",
+    "url": "https://liboil.freedesktop.org/download/liboil-0.3.17.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/liboil/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CFLAGS\", \"-fheinous-gnu-extensions\" if ENV.compiler == :clang",
+        "system \"autoreconf\", \"-fvi\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.17"
+}

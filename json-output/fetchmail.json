@@ -1,0 +1,21 @@
+{
+    "name": "Fetchmail",
+    "description": "Fetch mail from a POP, IMAP, ETRN, or ODMR-capable server",
+    "url": "https://downloads.sourceforge.net/project/fetchmail/branch_6.3/fetchmail-6.3.26.tar.xz",
+    "mirror": null,
+    "homepage": "http://www.fetchmail.info/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\", \"--with-ssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.3.26"
+}

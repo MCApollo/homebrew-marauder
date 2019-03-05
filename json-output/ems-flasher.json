@@ -1,0 +1,39 @@
+{
+    "name": "EmsFlasher",
+    "description": "Software for flashing the EMS Gameboy USB cart",
+    "url": "https://lacklustre.net/projects/ems-flasher/ems-flasher-0.03.tgz",
+    "mirror": null,
+    "homepage": "https://lacklustre.net/projects/ems-flasher/",
+    "depends": [
+        {
+            "depend": "coreutils",
+            "build-depend": true
+        },
+        {
+            "depend": "gawk",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "system \"./config.sh\", \"--prefix\", prefix",
+        "man1.mkpath",
+        "system \"make\", \"install\"",
+        "else",
+        "system \"make\"",
+        "bin.install \"ems-flasher\"",
+        "end"
+    ],
+    "version": "0.03"
+}

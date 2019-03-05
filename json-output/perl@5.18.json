@@ -1,0 +1,26 @@
+{
+    "name": "PerlAT518",
+    "description": "Highly capable, feature-rich programming language",
+    "url": "https://www.cpan.org/src/5.0/perl-5.18.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.perl.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = [",
+        "\"-des\",",
+        "\"-Dprefix=#{prefix}\",",
+        "\"-Dman1dir=#{man1}\",",
+        "\"-Dman3dir=#{man3}\",",
+        "\"-Duseshrplib\",",
+        "\"-Duselargefiles\",",
+        "\"-Dusethreads\",",
+        "]",
+        "system \"./Configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.18.4"
+}

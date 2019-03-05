@@ -1,0 +1,17 @@
+{
+    "name": "Zsync",
+    "description": "File transfer program",
+    "url": "http://zsync.moria.org.uk/download/zsync-0.6.2.tar.bz2",
+    "mirror": null,
+    "homepage": "http://zsync.moria.org.uk/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.2"
+}

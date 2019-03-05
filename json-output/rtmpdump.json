@@ -1,0 +1,33 @@
+{
+    "name": "Rtmpdump",
+    "description": "Tool for downloading RTMP streaming media",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/r/rtmpdump/rtmpdump_2.4+20151223.gitfa8646d.1.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/r/rtmpdump/rtmpdump_2.4%2b20151223.gitfa8646d.1.orig.tar.gz",
+    "homepage": "https://rtmpdump.mplayerhq.hu/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "flvstreamer",
+            "reason": "both install "
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"CC=#{ENV.cc}\",",
+        "\"XCFLAGS=#{ENV.cflags}\",",
+        "\"XLDFLAGS=#{ENV.ldflags}\",",
+        "\"MANDIR=#{man}\",",
+        "\"SYS=darwin\",",
+        "\"prefix=#{prefix}\",",
+        "\"sbindir=#{bin}\",",
+        "\"install\""
+    ],
+    "version": "2.4"
+}

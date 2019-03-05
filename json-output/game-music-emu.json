@@ -1,0 +1,21 @@
+{
+    "name": "GameMusicEmu",
+    "description": "Videogame music file emulator collection",
+    "url": "https://bitbucket.org/mpyne/game-music-emu/downloads/game-music-emu-0.6.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://bitbucket.org/mpyne/game-music-emu",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.2"
+}

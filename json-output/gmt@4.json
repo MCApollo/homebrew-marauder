@@ -1,0 +1,40 @@
+{
+    "name": "GmtAT4",
+    "description": "Manipulation of geographic and Cartesian data sets",
+    "url": "ftp://ftp.soest.hawaii.edu/gmt/gmt-4.5.18-src.tar.bz2",
+    "mirror": "https://fossies.org/linux/misc/GMT/gmt-4.5.18-src.tar.bz2",
+    "homepage": "https://gmt.soest.hawaii.edu/",
+    "depends": [
+        {
+            "depend": "gdal",
+            "build-depend": false
+        },
+        {
+            "depend": "netcdf",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "gshhg",
+            "url": "ftp://ftp.soest.hawaii.edu/gmt/gshhg-gmt-2.3.7.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize ",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--datadir=#{share}/gmt4\",",
+        "\"--enable-gdal=#{Formula[\"gdal\"].opt_prefix}\",",
+        "\"--enable-netcdf=#{Formula[\"netcdf\"].opt_prefix}\",",
+        "\"--enable-shared\",",
+        "\"--enable-triangle\",",
+        "\"--disable-xgrid\",",
+        "\"--disable-mex\"",
+        "system \"make\"",
+        "system \"make\", \"install-gmt\", \"install-data\", \"install-suppl\", \"install-man\"",
+        "(share/\"gmt4\").install resource(\"gshhg\")"
+    ],
+    "version": "4.5.18"
+}

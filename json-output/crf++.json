@@ -1,0 +1,16 @@
+{
+    "name": "Crfxx",
+    "description": "Conditional random fields for segmenting/labeling sequential data",
+    "url": "https://ftp.heanet.ie/mirrors/gentoo.org/distfiles/CRF++-0.58.tar.gz",
+    "mirror": "https://drive.google.com/uc?id=0B4y35FiV1wh7QVR6VXJ5dWExSTQ&export=download",
+    "homepage": "https://taku910.github.io/crfpp/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"CXXFLAGS=#{ENV.cflags}\", \"install\""
+    ],
+    "version": "0.58"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Zile",
+    "description": "Text editor development kit",
+    "url": "https://ftp.gnu.org/gnu/zile/zile-2.4.14.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/zile/zile-2.4.14.tar.gz",
+    "homepage": "https://www.gnu.org/software/zile/",
+    "depends": [
+        {
+            "depend": "help2man",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "bdw-gc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.14"
+}

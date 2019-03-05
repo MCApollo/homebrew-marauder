@@ -1,0 +1,15 @@
+{
+    "name": "Xcenv",
+    "description": "Xcode version manager",
+    "url": "https://github.com/xcenv/xcenv/archive/v1.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/xcenv/xcenv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install [\"bin\", \"libexec\"]"
+    ],
+    "version": "1.1.1"
+}

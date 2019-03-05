@@ -1,0 +1,34 @@
+{
+    "name": "Ecl",
+    "description": "Embeddable Common Lisp",
+    "url": "https://common-lisp.net/project/ecl/static/files/release/ecl-16.1.3.tgz",
+    "mirror": null,
+    "homepage": "https://common-lisp.net/project/ecl/",
+    "depends": [
+        {
+            "depend": "bdw-gc",
+            "build-depend": false
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "libffi",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--enable-threads=yes\",",
+        "\"--enable-boehm=system\",",
+        "\"--enable-gmp=system\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "16.1.3"
+}

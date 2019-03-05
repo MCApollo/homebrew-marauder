@@ -1,0 +1,21 @@
+{
+    "name": "Vimpager",
+    "description": "Use ViM as PAGER",
+    "url": "https://github.com/rkitover/vimpager/archive/2.06.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rkitover/vimpager",
+    "depends": [
+        {
+            "depend": "pandoc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"docs\""
+    ],
+    "version": "2.06"
+}

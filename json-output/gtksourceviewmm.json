@@ -1,0 +1,30 @@
+{
+    "name": "Gtksourceviewmm",
+    "description": "C++ bindings for gtksourceview",
+    "url": "https://download.gnome.org/sources/gtksourceviewmm/2.10/gtksourceviewmm-2.10.3.tar.xz",
+    "mirror": null,
+    "homepage": "https://developer.gnome.org/gtksourceviewmm/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gtkmm",
+            "build-depend": false
+        },
+        {
+            "depend": "gtksourceview",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.10.3"
+}

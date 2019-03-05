@@ -1,0 +1,31 @@
+{
+    "name": "Pound",
+    "description": "Reverse proxy, load balancer and HTTPS front-end for web servers",
+    "url": "http://www.apsis.ch/pound/Pound-2.8.tgz",
+    "mirror": null,
+    "homepage": "http://www.apsis.ch/pound",
+    "depends": [
+        {
+            "depend": "gperftools",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-tcmalloc\"",
+        "system \"make\"",
+        "sbin.install \"pound\", \"poundctl\"",
+        "man8.install \"pound.8\", \"poundctl.8\""
+    ],
+    "version": "2.8"
+}

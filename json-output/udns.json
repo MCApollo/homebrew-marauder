@@ -1,0 +1,57 @@
+{
+    "name": "Udns",
+    "description": "DNS resolver library",
+    "url": "http://www.corpit.ru/mjt/udns/udns-0.4.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.corpit.ru/mjt/udns.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- udns-0.4.orig/Makefile.in\t2014-01-23 02:45:31.000000000 -0800\n",
+                "+++ udns-0.4/Makefile.in\t2014-08-16 20:22:00.000000000 -0700\n",
+                "@@ -42,6 +42,11 @@\n",
+                " SOLIBV = lib$(NAME).so.$(SOVER)\n",
+                " SOLIBFL= -L. -l$(NAME)_s\n",
+                " \n",
+                "+DYLIB   = lib$(NAME).dylib\n",
+                "+DYLIBV = lib$(NAME).$(SOVER).dylib\n",
+                "+\n",
+                "+LIBS   = $(LIB) $(SOLIBV) $(DYLIB)\n",
+                "+\n",
+                " UTILS   = $(USRCS:.c=)\n",
+                " UOBJS   = $(USRCS:.c=.o)\n",
+                " SOUTILS = $(USRCS:.c=_s)\n",
+                "@@ -71,6 +76,14 @@\n",
+                " .c.o:\n",
+                " \t$(CC) $(CFLAGS) $(CDEFS) -c $<\n",
+                " \n",
+                "+dylib: $(DYLIB)\n",
+                "+\n",
+                "+$(DYLIBV): $(SOBJS)\n",
+                "+\t$(CC) -dynamiclib $(SOBJS) -o $(DYLIBV)\n",
+                "+$(DYLIB): $(DYLIBV)\n",
+                "+\trm -rf $@\n",
+                "+\tln -s $(DYLIBV) $@\n",
+                "+\n",
+                " shared: $(SOLIBV) $(SOUTILS)\n",
+                " sharedlib: $(SOLIBV)\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\"",
+        "system \"make\"",
+        "system \"make\", \"dylib\"",
+        "bin.install \"dnsget\", \"rblcheck\"",
+        "doc.install \"NOTES\", \"TODO\", \"ex-rdns.c\"",
+        "include.install \"udns.h\"",
+        "lib.install \"libudns.a\", \"libudns.0.dylib\", \"libudns.dylib\"",
+        "man1.install \"dnsget.1\", \"rblcheck.1\"",
+        "man3.install \"udns.3\""
+    ],
+    "version": "0.4"
+}

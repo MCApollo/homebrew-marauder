@@ -1,0 +1,33 @@
+{
+    "name": "GumboParser",
+    "description": "C99 library for parsing HTML5",
+    "url": "https://github.com/google/gumbo-parser/archive/v0.10.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/gumbo-parser",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.10.1"
+}

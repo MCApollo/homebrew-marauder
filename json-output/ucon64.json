@@ -1,0 +1,29 @@
+{
+    "name": "Ucon64",
+    "description": "ROM backup tool and emulator",
+    "url": "https://downloads.sourceforge.net/ucon64/ucon64-2.1.0-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://ucon64.sourceforge.io/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "super_bat_puncher_demo",
+            "url": "http://morphcat.de/superbatpuncher/Super%20Bat%20Puncher%20Demo.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"src/ucon64_misc.c\", 'PROPERTY_MODE_DIR (\"ucon64\") \"discmage.dylib\"',",
+        "\"\\\"#{opt_prefix}/libexec/libdiscmage.dylib\\\"\"",
+        "cd \"src\" do",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "bin.install \"ucon64\"",
+        "libexec.install \"libdiscmage/discmage.so\" => \"libdiscmage.dylib\""
+    ],
+    "version": "2.1.0"
+}

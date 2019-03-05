@@ -1,0 +1,33 @@
+{
+    "name": "VarnishAT4",
+    "description": "High-performance HTTP accelerator",
+    "url": "https://varnish-cache.org/_downloads/varnish-4.1.10.tgz",
+    "mirror": null,
+    "homepage": "https://www.varnish-cache.org/",
+    "depends": [
+        {
+            "depend": "docutils",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--localstatedir=#{var}\"",
+        "system \"make\", \"install\"",
+        "(etc/\"varnish\").install \"etc/example.vcl\" => \"default.vcl\"",
+        "(var/\"varnish\").mkpath"
+    ],
+    "version": "4.1.10"
+}

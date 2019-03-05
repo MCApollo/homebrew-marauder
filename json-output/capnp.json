@@ -1,0 +1,22 @@
+{
+    "name": "Capnp",
+    "description": "Data interchange format and capability-based RPC system",
+    "url": "https://capnproto.org/capnproto-c++-0.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://capnproto.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.0"
+}

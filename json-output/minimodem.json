@@ -1,0 +1,35 @@
+{
+    "name": "Minimodem",
+    "description": "General-purpose software audio FSK modem",
+    "url": "http://www.whence.com/minimodem/minimodem-0.24.tar.gz",
+    "mirror": "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/minimodem/minimodem_0.24.orig.tar.gz",
+    "homepage": "http://www.whence.com/minimodem/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "fftw",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        },
+        {
+            "depend": "pulseaudio",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-alsa\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.24"
+}

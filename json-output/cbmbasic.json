@@ -1,0 +1,16 @@
+{
+    "name": "Cbmbasic",
+    "description": "Commodore BASIC V2 as a scripting language",
+    "url": "https://downloads.sourceforge.net/project/cbmbasic/cbmbasic/1.0/cbmbasic-1.0.tgz",
+    "mirror": null,
+    "homepage": "https://github.com/mist64/cbmbasic",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CFLAGS=#{ENV.cflags}\", \"LDFLAGS=#{ENV.ldflags}\"",
+        "bin.install \"cbmbasic\""
+    ],
+    "version": "1.0"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Libmaa",
+    "description": "Low-level data structures including hash tables, sets, lists",
+    "url": "https://downloads.sourceforge.net/project/dict/libmaa/libmaa-1.4.2/libmaa-1.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.dict.org/",
+    "depends": [
+        {
+            "depend": "bmake",
+            "build-depend": true
+        },
+        {
+            "depend": "mk-configure",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"mkcmake\", \"install\", \"CC=#{ENV.cc}\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.4.2"
+}

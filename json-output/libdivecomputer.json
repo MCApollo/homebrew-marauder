@@ -1,0 +1,38 @@
+{
+    "name": "Libdivecomputer",
+    "description": "Library for communication with various dive computers",
+    "url": "https://www.libdivecomputer.org/releases/libdivecomputer-0.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libdivecomputer.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"--install\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.0"
+}

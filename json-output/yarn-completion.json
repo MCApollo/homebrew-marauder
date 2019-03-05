@@ -1,0 +1,15 @@
+{
+    "name": "YarnCompletion",
+    "description": "Bash completion for Yarn",
+    "url": "https://github.com/dsifford/yarn-completion/archive/v0.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/dsifford/yarn-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"yarn-completion.bash\" => \"yarn\""
+    ],
+    "version": "0.8.0"
+}

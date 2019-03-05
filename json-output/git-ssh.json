@@ -1,0 +1,16 @@
+{
+    "name": "GitSsh",
+    "description": "Proxy for serving git repositories over SSH",
+    "url": "https://github.com/lemarsu/git-ssh/archive/v0.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/lemarsu/git-ssh",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"bin/git-ssh\" do |s|",
+        "s.sub!(/path = .*$/, \"path = '#{libexec}'\")"
+    ],
+    "version": "0.2.0"
+}

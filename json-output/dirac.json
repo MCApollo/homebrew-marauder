@@ -1,0 +1,78 @@
+{
+    "name": "Dirac",
+    "description": "General-purpose video codec aimed at a range of resolutions",
+    "url": "https://downloads.sourceforge.net/project/dirac/dirac-codec/Dirac-1.0.2/dirac-1.0.2.tar.gz",
+    "mirror": "https://launchpad.net/ubuntu/+archive/primary/+files/dirac_1.0.2.orig.tar.gz",
+    "homepage": "https://sourceforge.net/projects/dirac/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gist.githubusercontent.com/mistydemeo/da8a53abcf057c58b498/raw/bde69c5f07d871542dcb24792110e29e6418d2a3/unititialized-memory.patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://gist.githubusercontent.com/mistydemeo/e729c459525d0d6e9e2d/raw/d9ff69c944b8bde006eef27650c0af36f51479f5/dirac-gcc-fixes.patch",
+            "strip": "1"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff --git a/configure b/configure\n",
+                "index 41329b9..8f5ed19 100755\n",
+                "--- a/configure\n",
+                "+++ b/configure\n",
+                "@@ -15903,30 +15903,8 @@ ACLOCAL_AMFLAGS=\"-I m4 $ACLOCAL_AMFLAGS\"\n",
+                " use_msvc=no\n",
+                "\n",
+                "\n",
+                "-case \"$CXX\" in\n",
+                "-\t\tcl*|CL*)\n",
+                "-\t\tCXXFLAGS=\"-nologo -W1 -EHsc -DWIN32\"\n",
+                "-\t\tif test x\"$enable_shared\" = \"xyes\"; then\n",
+                "-\t\t    LIBEXT=\".dll\";\n",
+                "-\t\t    LIBFLAGS=\"-DLL -INCREMENTAL:NO\"\n",
+                "-\t\t\tCXXFLAGS=\"$CXXFLAGS -D_WINDLL\"\n",
+                "-\t\telse\n",
+                "-\t\t    LIBEXT=\".lib\";\n",
+                "-\t\t    LIBFLAGS=\"-lib\"\n",
+                "-\t\tfi\n",
+                "-\t\tRANLIB=\"echo\"\n",
+                "-\t\tuse_msvc=yes\n",
+                "-\t\t;;\n",
+                "-\t*)\n",
+                "-\t\t;;\n",
+                "-esac\n",
+                "- if test x\"$use_msvc\" = \"xyes\"; then\n",
+                "-  USE_MSVC_TRUE=\n",
+                "-  USE_MSVC_FALSE='#'\n",
+                "-else\n",
+                "   USE_MSVC_TRUE='#'\n",
+                "   USE_MSVC_FALSE=\n",
+                "-fi\n",
+                "\n",
+                "\n",
+                "\n",
+                "@@ -22678,7 +22656,8 @@ $debug ||\n",
+                " if test -n \"$CONFIG_FILES\"; then\n",
+                "\n",
+                "\n",
+                "-ac_cr='\n",
+                "'\n",
+                "+ac_cr='\n",
+                "+'\n",
+                " ac_cs_awk_cr=`$AWK 'BEGIN { print \"a\\rb\" }' </dev/null 2>/dev/null`\n",
+                " if test \"$ac_cs_awk_cr\" = \"a${ac_cr}b\"; then\n",
+                "   ac_cs_awk_cr='\\\\r'\n"
+            ]
+        }
+    ],
+    "install": [
+        "inreplace \"doc/Makefile.in\", \"cp -dR\", \"cp -R\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.2"
+}

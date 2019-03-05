@@ -1,0 +1,31 @@
+{
+    "name": "Virtualpg",
+    "description": "Loadable dynamic extension for SQLite and SpatiaLite",
+    "url": "https://www.gaia-gis.it/gaia-sins/virtualpg-1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gaia-gis.it/fossil/virtualpg/index",
+    "depends": [
+        {
+            "depend": "libspatialite",
+            "build-depend": false
+        },
+        {
+            "depend": "postgis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"configure\",",
+        "\"shrext_cmds='`test .$module = .yes && echo .so || echo .dylib`'\",",
+        "\"shrext_cmds='.dylib'\"",
+        "system \"./configure\", \"--enable-shared=yes\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--with-pgconfig=#{Formula[\"postgresql\"].opt_bin}/pg_config\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.2"
+}

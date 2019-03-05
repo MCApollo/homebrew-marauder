@@ -1,0 +1,28 @@
+{
+    "name": "Fibjs",
+    "description": "JavaScript on Fiber",
+    "url": "https://github.com/fibjs/fibjs/releases/download/v0.26.1/fullsrc.zip",
+    "mirror": null,
+    "homepage": "http://fibjs.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "begin",
+        "env_ci = ENV.delete \"CI\"",
+        "system \"./build\", \"release\", \"-j#{ENV.make_jobs}\"",
+        "ensure",
+        "ENV[\"CI\"] = env_ci"
+    ],
+    "version": "0.26.1"
+}

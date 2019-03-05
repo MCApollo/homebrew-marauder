@@ -1,0 +1,22 @@
+{
+    "name": "Convertlit",
+    "description": "Convert Microsoft Reader format eBooks into open format",
+    "url": "http://www.convertlit.com/clit18src.zip",
+    "mirror": null,
+    "homepage": "http://www.convertlit.com/",
+    "depends": [
+        {
+            "depend": "libtommath",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"clit18/Makefile\" do |s|",
+        "s.gsub! \"-I ../libtommath-0.30\", \"#{HOMEBREW_PREFIX}/include\"",
+        "s.gsub! \"../libtommath-0.30/libtommath.a\", \"#{HOMEBREW_PREFIX}/lib/libtommath.a\""
+    ],
+    "version": "1.0-u"
+}

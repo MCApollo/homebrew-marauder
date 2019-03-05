@@ -1,0 +1,20 @@
+{
+    "name": "A52dec",
+    "description": "Library for decoding ATSC A/52 streams (AKA ",
+    "url": "https://liba52.sourceforge.io/files/a52dec-0.7.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://liba52.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-shared\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.4"
+}

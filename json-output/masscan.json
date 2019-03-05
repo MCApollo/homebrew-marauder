@@ -1,0 +1,19 @@
+{
+    "name": "Masscan",
+    "description": "TCP port scanner, scans entire Internet in under 5 minutes",
+    "url": "https://github.com/robertdavidgraham/masscan/archive/1.0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/robertdavidgraham/masscan/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if MacOS.version == :el_capitan && MacOS::Xcode.version >= \"8.0\"",
+        "inreplace \"src/pixie-timer.c\", \"#elif defined(CLOCK_MONOTONIC)\", \"#elif defined(NOT_A_MACRO)\"",
+        "end",
+        "system \"make\"",
+        "bin.install \"bin/masscan\""
+    ],
+    "version": "1.0.5"
+}

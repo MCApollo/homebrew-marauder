@@ -1,0 +1,25 @@
+{
+    "name": "Fail2ban",
+    "description": "Scan log files and ban IPs showing malicious signs",
+    "url": "https://github.com/fail2ban/fail2ban/archive/0.10.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.fail2ban.org/",
+    "depends": [
+        {
+            "depend": "help2man",
+            "build-depend": true
+        },
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(etc/\"fail2ban\").mkpath",
+        "(var/\"run/fail2ban\").mkpath"
+    ],
+    "version": "0.10.4"
+}

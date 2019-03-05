@@ -1,0 +1,23 @@
+{
+    "name": "Colormake",
+    "description": "Wrapper around make to colorize the output",
+    "url": "https://github.com/pagekite/Colormake/archive/0.9.20140503.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/pagekite/Colormake",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"colormake\", \"colormake.pl\", \"#{libexec}/colormake.pl\"",
+        "File.unlink \"colormake-short\", \"clmake\", \"clmake-short\"",
+        "File.symlink \"colormake\", \"colormake-short\"",
+        "File.symlink \"colormake\", \"clmake\"",
+        "File.symlink \"colormake\", \"clmake-short\"",
+        "File.symlink \"colormake.1\", \"clmake.1\"",
+        "libexec.install \"colormake.pl\"",
+        "bin.install \"colormake\", \"clmake\", \"colormake-short\", \"clmake-short\"",
+        "man1.install \"colormake.1\", \"clmake.1\""
+    ],
+    "version": "0.9.20140503"
+}

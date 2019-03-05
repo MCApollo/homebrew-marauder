@@ -1,0 +1,22 @@
+{
+    "name": "Qdbm",
+    "description": "Library of routines for managing a database",
+    "url": "https://fallabs.com/qdbm/qdbm-1.8.78.tar.gz",
+    "mirror": null,
+    "homepage": "https://fallabs.com/qdbm/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-bzip\",",
+        "\"--enable-zlib\",",
+        "\"--enable-iconv\"",
+        "system \"make\", \"mac\"",
+        "system \"make\", \"check-mac\"",
+        "system \"make\", \"install-mac\""
+    ],
+    "version": "1.8.78"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Disktype",
+    "description": "Detect content format of a disk or disk image",
+    "url": "https://downloads.sourceforge.net/project/disktype/disktype/9/disktype-9.tar.gz",
+    "mirror": null,
+    "homepage": "https://disktype.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"disktype\"",
+        "man1.install \"disktype.1\""
+    ],
+    "version": "disktype9"
+}

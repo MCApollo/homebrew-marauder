@@ -1,0 +1,26 @@
+{
+    "name": "Unp",
+    "description": "Unpack everything with one command",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/u/unp/unp_2.0~pre7+nmu1.tar.bz2",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/u/unp/unp_2.0~pre7+nmu1.tar.bz2",
+    "homepage": "https://packages.debian.org/source/stable/unp",
+    "depends": [
+        {
+            "depend": "p7zip",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install %w[unp ucat]",
+        "man1.install \"debian/unp.1\"",
+        "bash_completion.install \"bash_completion.d/unp\"",
+        "%w[COPYING CHANGELOG].each { |f| rm f }",
+        "mv \"debian/README.Debian\", \"README\"",
+        "mv \"debian/copyright\", \"COPYING\"",
+        "mv \"debian/changelog\", \"ChangeLog\""
+    ],
+    "version": "2.0"
+}

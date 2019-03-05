@@ -1,0 +1,24 @@
+{
+    "name": "Ophcrack",
+    "description": "Microsoft Windows password cracker using rainbow tables",
+    "url": "https://downloads.sourceforge.net/project/ophcrack/ophcrack/3.8.0/ophcrack-3.8.0.tar.bz2",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/o/ophcrack/ophcrack_3.8.0.orig.tar.bz2",
+    "homepage": "https://ophcrack.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-gui\",",
+        "\"--with-libssl=#{Formula[\"openssl\"].opt_prefix}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.8.0"
+}

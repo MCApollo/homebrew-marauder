@@ -1,0 +1,25 @@
+{
+    "name": "Unshield",
+    "description": "Extract files from InstallShield cabinet files",
+    "url": "https://github.com/twogood/unshield/archive/1.4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/twogood/unshield",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.3"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "Libxslt",
+    "description": "C XSLT library for GNOME",
+    "url": "http://xmlsoft.org/sources/libxslt-1.1.33.tar.gz",
+    "mirror": null,
+    "homepage": "http://xmlsoft.org/XSLT/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-python\",",
+        "\"--with-libxml-prefix=#{Formula[\"libxml2\"].opt_prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.33"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Composer",
+    "description": "Dependency Manager for PHP",
+    "url": "https://getcomposer.org/download/1.8.4/composer.phar",
+    "mirror": null,
+    "homepage": "https://getcomposer.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"composer.phar\" => \"composer\""
+    ],
+    "version": "1.8.4"
+}

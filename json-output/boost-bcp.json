@@ -1,0 +1,22 @@
+{
+    "name": "BoostBcp",
+    "description": "Utility for extracting subsets of the Boost library",
+    "url": "https://dl.bintray.com/boostorg/release/1.68.0/source/boost_1_68_0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.boost.org/doc/tools/bcp/",
+    "depends": [
+        {
+            "depend": "boost-build",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"tools/bcp\" do",
+        "system \"b2\"",
+        "prefix.install \"../../dist/bin\""
+    ],
+    "version": "1_68_0"
+}

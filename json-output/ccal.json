@@ -1,0 +1,16 @@
+{
+    "name": "Ccal",
+    "description": "Create Chinese calendars for print or browsing",
+    "url": "https://ccal.chinesebay.com/ccal/ccal-2.5.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://ccal.chinesebay.com/ccal",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-e\", \"BINDIR=#{bin}\", \"install\"",
+        "system \"make\", \"-e\", \"MANDIR=#{man}\", \"install-man\""
+    ],
+    "version": "2.5.3"
+}

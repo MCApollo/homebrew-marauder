@@ -1,0 +1,16 @@
+{
+    "name": "Foma",
+    "description": "Finite-state compiler and C library",
+    "url": "https://bitbucket.org/mhulden/foma/downloads/foma-0.9.18.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/p/foma/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "0.9.18"
+}

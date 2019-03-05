@@ -1,0 +1,16 @@
+{
+    "name": "Ipv6toolkit",
+    "description": "Security assessment and troubleshooting tool for IPv6",
+    "url": "https://www.si6networks.com/tools/ipv6toolkit/ipv6toolkit-v2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.si6networks.com/tools/ipv6toolkit/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"DESTDIR=#{prefix}\", \"PREFIX=\", \"MANPREFIX=/share\""
+    ],
+    "version": "2.0"
+}

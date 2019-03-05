@@ -1,0 +1,21 @@
+{
+    "name": "Snzip",
+    "description": "Compression/decompression tool based on snappy",
+    "url": "https://bintray.com/artifact/download/kubo/generic/snzip-1.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/kubo/snzip",
+    "depends": [
+        {
+            "depend": "snappy",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.4"
+}

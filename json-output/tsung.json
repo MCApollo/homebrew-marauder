@@ -1,0 +1,27 @@
+{
+    "name": "Tsung",
+    "description": "Load testing for HTTP, PostgreSQL, Jabber, and others",
+    "url": "http://tsung.erlang-projects.org/dist/tsung-1.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://tsung.erlang-projects.org/",
+    "depends": [
+        {
+            "depend": "erlang",
+            "build-depend": false
+        },
+        {
+            "depend": "gnuplot",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7.0"
+}

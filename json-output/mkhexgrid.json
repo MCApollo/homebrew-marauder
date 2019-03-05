@@ -1,0 +1,27 @@
+{
+    "name": "Mkhexgrid",
+    "description": "Fully-configurable hex grid generator",
+    "url": "http://www.nomic.net/~uckelman/mkhexgrid/releases/mkhexgrid-0.1.1.src.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.nomic.net/~uckelman/mkhexgrid/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "gd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\" do |s|",
+        "s.change_make_var! \"DESTDIR\", prefix",
+        "s.change_make_var! \"CC\", ENV.cc",
+        "s.gsub! \"-o 0 -g 0\", \"\""
+    ],
+    "version": "0.1.1"
+}

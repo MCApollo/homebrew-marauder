@@ -1,0 +1,15 @@
+{
+    "name": "Spark",
+    "description": "Sparklines for the shell",
+    "url": "https://github.com/holman/spark/archive/v1.0.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://zachholman.com/spark/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"spark\""
+    ],
+    "version": "1.0.1"
+}

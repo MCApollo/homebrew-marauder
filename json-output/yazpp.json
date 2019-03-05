@@ -1,0 +1,22 @@
+{
+    "name": "Yazpp",
+    "description": "C++ API for the Yaz toolkit",
+    "url": "http://ftp.indexdata.dk/pub/yazpp/yazpp-1.6.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.indexdata.com/yazpp",
+    "depends": [
+        {
+            "depend": "yaz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.5"
+}

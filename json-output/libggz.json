@@ -1,0 +1,32 @@
+{
+    "name": "Libggz",
+    "description": "The libggz library wraps many common low-level functions",
+    "url": "https://mirrors.dotsrc.org/ggzgamingzone/ggz/0.0.14.1/libggz-0.0.14.1.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.netbsd.org/pub/pkgsrc/distfiles/libggz-0.0.14.1.tar.gz",
+    "homepage": "http://dev.ggzgamingzone.org/libraries/libggz/",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append \"CPPFLAS\", \"-I#{Formula[\"gettext\"].opt_prefix}/include\"",
+        "ENV.append \"LDFLAGS\", \"-L#{Formula[\"gettext\"].opt_prefix}/lib\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-gcrypt\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.14.1"
+}

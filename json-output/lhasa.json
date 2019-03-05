@@ -1,0 +1,38 @@
+{
+    "name": "Lhasa",
+    "description": "LHA implementation to decompress .lzh and .lzs archives",
+    "url": "https://github.com/fragglet/lhasa/archive/v0.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://fragglet.github.io/lhasa/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "lha",
+            "reason": "both install a `lha` binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.1"
+}

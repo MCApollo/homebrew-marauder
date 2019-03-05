@@ -1,0 +1,30 @@
+{
+    "name": "Bastet",
+    "description": "Bastard Tetris",
+    "url": "https://github.com/fph/bastet/archive/0.43.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://fph.altervista.org/prog/bastet.html",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/fph/bastet/commit/0e03f8d4.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "inreplace %w[Config.cpp bastet.6], \"/var\", var",
+        "system \"make\", \"all\"",
+        "(var/\"games\").mkpath",
+        "touch \"#{var}/games/bastet.scores2\"",
+        "bin.install \"bastet\"",
+        "man6.install \"bastet.6\""
+    ],
+    "version": "0.43.2"
+}

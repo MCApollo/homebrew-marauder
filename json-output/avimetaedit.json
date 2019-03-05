@@ -1,0 +1,20 @@
+{
+    "name": "Avimetaedit",
+    "description": "Tool for embedding, validating, and exporting of AVI files metadata",
+    "url": "https://mediaarea.net/download/binary/avimetaedit/1.0.2/AVIMetaEdit_CLI_1.0.2_GNU_FromSource.tar.bz2",
+    "mirror": null,
+    "homepage": "https://mediaarea.net/AVIMetaEdit",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"Project/GNU/CLI\" do",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.2"
+}

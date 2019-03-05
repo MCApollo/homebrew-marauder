@@ -1,0 +1,32 @@
+{
+    "name": "Bcftools",
+    "description": "Tools for BCF/VCF files and variant calling from samtools",
+    "url": "https://github.com/samtools/bcftools/releases/download/1.9/bcftools-1.9.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.htslib.org/",
+    "depends": [
+        {
+            "depend": "gsl",
+            "build-depend": false
+        },
+        {
+            "depend": "htslib",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--with-htslib=#{Formula[\"htslib\"].opt_prefix}\",",
+        "\"--enable-libgsl\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"test/query.vcf\""
+    ],
+    "version": "1.9"
+}

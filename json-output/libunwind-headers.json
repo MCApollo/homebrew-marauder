@@ -1,0 +1,17 @@
+{
+    "name": "LibunwindHeaders",
+    "description": "C API for determining the call-chain of a program",
+    "url": "https://opensource.apple.com/tarballs/libunwind/libunwind-35.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://opensource.apple.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "include.install Dir[\"include/*\"]",
+        "(include/\"libunwind\").install Dir[\"src/*.h*\"]",
+        "(include/\"libunwind/libunwind_priv.h\").unlink"
+    ],
+    "version": "35.3"
+}

@@ -1,0 +1,79 @@
+{
+    "name": "Openrct2",
+    "description": "Open source re-implementation of RollerCoaster Tycoon 2",
+    "url": "https://github.com/OpenRCT2/OpenRCT2.git",
+    "mirror": null,
+    "homepage": "https://openrct2.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "jansson",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libzip",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_ttf",
+            "build-depend": false
+        },
+        {
+            "depend": "speexdsp",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "title-sequences",
+            "url": "https://github.com/OpenRCT2/title-sequences/releases/download/v0.1.2/title-sequence-v0.1.2.zip"
+        },
+        {
+            "name": "objects",
+            "url": "https://github.com/OpenRCT2/objects/releases/download/v1.0.6/objects.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"data/title\").install resource(\"title-sequences\")",
+        "(buildpath/\"data/object\").install resource(\"objects\")",
+        "tversion = resource(\"title-sequences\").version",
+        "mv buildpath/\"data/title/title-sequence-v#{tversion}.zip\", \"title-sequences.zip\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.1-git-8ac731e2"
+}

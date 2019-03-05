@@ -1,0 +1,28 @@
+{
+    "name": "Dcled",
+    "description": "Linux driver for dream cheeky USB message board",
+    "url": "https://www.jeffrika.com/~malakai/dcled/dcled-2.2.tgz",
+    "mirror": null,
+    "homepage": "https://www.jeffrika.com/~malakai/dcled/index.html",
+    "depends": [
+        {
+            "depend": "libhid",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\",",
+        "\"LIBUSB_CFLAGS=-I#{Formula[\"libusb\"].opt_include}/libusb-1.0\"",
+        "system \"make\", \"install\",",
+        "\"FONTDIR=#{share}/#{name}\",",
+        "\"INSTALLDIR=#{bin}\""
+    ],
+    "version": "2.2"
+}

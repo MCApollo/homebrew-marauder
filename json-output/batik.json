@@ -1,0 +1,18 @@
+{
+    "name": "Batik",
+    "description": "Java-based toolkit for SVG images",
+    "url": "https://www.apache.org/dist/xmlgraphics/batik/binaries/batik-bin-1.11.tar.gz",
+    "mirror": null,
+    "homepage": "https://xmlgraphics.apache.org/batik/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"lib\", Dir[\"*.jar\"]",
+        "bin.write_jar_script libexec/\"batik-rasterizer-#{version}.jar\", \"batik-rasterizer\"",
+        "bin.write_jar_script libexec/\"batik-#{version}.jar\", \"batik\"",
+        "bin.write_jar_script libexec/\"batik-ttf2svg-#{version}.jar\", \"batik-ttf2svg\""
+    ],
+    "version": "1.11"
+}

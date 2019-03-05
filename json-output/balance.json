@@ -1,0 +1,17 @@
+{
+    "name": "Balance",
+    "description": "Software load balancer",
+    "url": "https://www.inlab.net/wp-content/uploads/2018/05/balance-3.57.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.inlab.net/balance/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"balance\"",
+        "man1.install \"balance.1\""
+    ],
+    "version": "3.57"
+}

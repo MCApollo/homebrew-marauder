@@ -1,0 +1,23 @@
+{
+    "name": "Exempi",
+    "description": "Library to parse XMP metadata",
+    "url": "https://libopenraw.freedesktop.org/download/exempi-2.4.5.tar.bz2",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/libopenraw/Exempi/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-boost=#{HOMEBREW_PREFIX}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.5"
+}

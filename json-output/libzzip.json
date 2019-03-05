@@ -1,0 +1,31 @@
+{
+    "name": "Libzzip",
+    "description": "Library providing read access on ZIP-archives",
+    "url": "https://github.com/gdraheim/zziplib/archive/v0.13.69.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/gdraheim/zziplib",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "args = %W[",
+        "--without-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.13.69"
+}

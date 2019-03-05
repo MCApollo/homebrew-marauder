@@ -1,0 +1,53 @@
+{
+    "name": "Aldo",
+    "description": "Morse code learning tool released under GPL",
+    "url": "https://savannah.nongnu.org/download/aldo/aldo-0.7.7.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/aldo/",
+    "depends": [
+        {
+            "depend": "libao",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/menu.cc b/src/menu.cc\n",
+                "index 483b826..092d604 100644\n",
+                "--- a/src/menu.cc\n",
+                "+++ b/src/menu.cc\n",
+                "@@ -112,20 +112,17 @@ void Menu::add_item(id_type id, std::string c, Function2 f)\n",
+                " \n",
+                " void Menu::add_item_at(unsigned int pos, id_type id, std::string c, Function1 f)\n",
+                " {\n",
+                "-    IT it(&m_its[pos]);\n",
+                "-    m_its.insert(it, Item(id,c,f) );\n",
+                "+    m_its.insert(m_its.begin()+pos, Item(id,c,f) );\n",
+                " }\n",
+                " \n",
+                " void Menu::add_item_at(unsigned int pos, id_type id, std::string c, Function2 f)\n",
+                " {\n",
+                "-    IT it(&m_its[pos]);\n",
+                "-    m_its.insert(it, Item(id,c,f) );\n",
+                "+    m_its.insert(m_its.begin()+pos, Item(id,c,f) );\n",
+                " }\n",
+                " \n",
+                " void Menu::delete_item_at(unsigned int pos)\n",
+                " {\n",
+                "-    IT it(&m_its[pos]);\n",
+                "-    m_its.erase(it);\n",
+                "+    m_its.erase(m_its.begin()+pos);\n",
+                " }\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.7"
+}

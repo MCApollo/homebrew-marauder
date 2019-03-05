@@ -1,0 +1,17 @@
+{
+    "name": "Clockywock",
+    "description": "Ncurses analog clock",
+    "url": "https://soomka.com/clockywock-0.3.1a.tar.gz",
+    "mirror": null,
+    "homepage": "https://soomka.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"clockywock\"",
+        "man7.install \"clockywock.7\""
+    ],
+    "version": "0.3.1"
+}

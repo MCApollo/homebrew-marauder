@@ -1,0 +1,23 @@
+{
+    "name": "Avce00",
+    "description": "Make Arc/Info (binary) Vector Coverages appear as E00",
+    "url": "http://avce00.maptools.org/dl/avce00-2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://avce00.maptools.org/avce00/index.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "gdal",
+            "reason": "both install a cpl_conv.h header"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\"",
+        "bin.install \"avcimport\", \"avcexport\", \"avcdelete\", \"avctest\"",
+        "lib.install \"avc.a\"",
+        "include.install Dir[\"*.h\"]"
+    ],
+    "version": "2.0.0"
+}

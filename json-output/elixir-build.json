@@ -1,0 +1,21 @@
+{
+    "name": "ElixirBuild",
+    "description": "Elixir version of ruby-build",
+    "url": "https://github.com/mururu/elixir-build/archive/v20141001.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mururu/elixir-build",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "narwhal",
+            "reason": "both install `json` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV[\"PREFIX\"] = prefix",
+        "system \"./install.sh\""
+    ],
+    "version": "20141001"
+}

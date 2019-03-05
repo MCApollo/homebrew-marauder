@@ -1,0 +1,22 @@
+{
+    "name": "M4",
+    "description": "Macro processing language",
+    "url": "https://ftp.gnu.org/gnu/m4/m4-1.4.18.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/m4/m4-1.4.18.tar.xz",
+    "homepage": "https://www.gnu.org/software/m4",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/edf0ee1e2cf/devel/m4/files/secure_snprintf.patch",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.18"
+}

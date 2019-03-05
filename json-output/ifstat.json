@@ -1,0 +1,48 @@
+{
+    "name": "Ifstat",
+    "description": "Tool to report network interface bandwidth",
+    "url": "http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://gael.roualland.free.fr/ifstat/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/drivers.c b/drivers.c\n",
+                "index d5ac501..47fb320 100644\n",
+                "--- a/drivers.c\n",
+                "+++ b/drivers.c\n",
+                "@@ -593,7 +593,8 @@ static int get_ifcount() {\n",
+                "   int ifcount[] = {\n",
+                "     CTL_NET, PF_LINK, NETLINK_GENERIC, IFMIB_SYSTEM, IFMIB_IFCOUNT\n",
+                "   };\n",
+                "-  int count, size;\n",
+                "+  int count;\n",
+                "+  size_t size;\n",
+                "   \n",
+                "   size = sizeof(count);\n",
+                "   if (sysctl(ifcount, sizeof(ifcount) / sizeof(int), &count, &size, NULL, 0) < 0) {\n",
+                "@@ -607,7 +608,7 @@ static int get_ifdata(int index, struct ifmibdata * ifmd) {\n",
+                "   int ifinfo[] = {\n",
+                "     CTL_NET, PF_LINK, NETLINK_GENERIC, IFMIB_IFDATA, index, IFDATA_GENERAL\n",
+                "   };\n",
+                "-  int size = sizeof(*ifmd);\n",
+                "+  size_t size = sizeof(*ifmd);\n",
+                " \n",
+                "   if (sysctl(ifinfo, sizeof(ifinfo) / sizeof(int), ifmd, &size, NULL, 0) < 0)\n",
+                "     return 0;\n",
+                "\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1"
+}

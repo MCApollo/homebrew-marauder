@@ -1,0 +1,27 @@
+{
+    "name": "Oggz",
+    "description": "Command-line tool for manipulating Ogg files",
+    "url": "https://downloads.xiph.org/releases/liboggz/liboggz-1.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.xiph.org/oggz/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-debug\",",
+        "\"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.1"
+}

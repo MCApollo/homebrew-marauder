@@ -1,0 +1,26 @@
+{
+    "name": "Scamper",
+    "description": "Advanced traceroute and network measurement utility",
+    "url": "https://www.caida.org/tools/measurement/scamper/code/scamper-cvs-20180504.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.caida.org/tools/measurement/scamper/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20180504"
+}

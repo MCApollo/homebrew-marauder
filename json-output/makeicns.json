@@ -1,0 +1,21 @@
+{
+    "name": "Makeicns",
+    "description": "Create icns files from the command-line",
+    "url": "https://bitbucket.org/mkae/makeicns/downloads/makeicns-1.4.10a.tar.bz2",
+    "mirror": null,
+    "homepage": "https://bitbucket.org/mkae/makeicns",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/e59da9d/makeicns/patch-IconFamily.m.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"make\"",
+        "bin.install \"makeicns\""
+    ],
+    "version": "1.4.10"
+}

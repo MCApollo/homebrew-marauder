@@ -1,0 +1,29 @@
+{
+    "name": "Vit",
+    "description": "Front-end for Task Warrior",
+    "url": "https://taskwarrior.org/download/vit-1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://taskwarrior.org/news/news.20140406.html",
+    "depends": [
+        {
+            "depend": "task",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "Curses",
+            "url": "https://cpan.metacpan.org/authors/id/G/GI/GIRAFFED/Curses-1.31.tgz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec+\"lib/perl5\"",
+        "resource(\"Curses\").stage do",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2"
+}

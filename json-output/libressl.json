@@ -1,0 +1,38 @@
+{
+    "name": "Libressl",
+    "description": "Version of the SSL/TLS protocol forked from OpenSSL",
+    "url": "https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-2.8.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libressl.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "keychains = %w[",
+        "/System/Library/Keychains/SystemRootCertificates.keychain",
+        "]",
+        "certs_list = `security find-certificate -a -p #{keychains.join(\" \")}`",
+        "certs = certs_list.scan(",
+        "/-----BEGIN CERTIFICATE-----.*?-----END CERTIFICATE-----/m,",
+        ")",
+        "valid_certs = certs.select do |cert|",
+        "IO.popen(\"#{bin}/openssl x509 -inform pem -checkend 0 -noout\", \"w\") do |openssl_io|",
+        "openssl_io.write(cert)",
+        "openssl_io.close_write"
+    ],
+    "version": "2.8.3"
+}

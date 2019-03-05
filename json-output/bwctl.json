@@ -1,0 +1,26 @@
+{
+    "name": "Bwctl",
+    "description": "Command-line tool and daemon for network measuring tools",
+    "url": "https://software.internet2.edu/sources/bwctl/bwctl-1.5.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://software.internet2.edu/bwctl/",
+    "depends": [
+        {
+            "depend": "i2util",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"configure\", 'CFLAGS=\"-I$I2util_dir/include $CFLAGS\"', 'CFLAGS=\"-I$with_I2util/include $CFLAGS\"'",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--with-I2util=#{Formula[\"i2util\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.4"
+}

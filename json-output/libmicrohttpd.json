@@ -1,0 +1,28 @@
+{
+    "name": "Libmicrohttpd",
+    "description": "Light HTTP/1.1 server library",
+    "url": "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.62.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/libmicrohttpd/libmicrohttpd-0.9.62.tar.gz",
+    "homepage": "https://www.gnu.org/software/libmicrohttpd/",
+    "depends": [
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"doc/examples\""
+    ],
+    "version": "0.9.62"
+}

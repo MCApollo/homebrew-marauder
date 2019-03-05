@@ -1,0 +1,38 @@
+{
+    "name": "Libkml",
+    "description": "Library to parse, generate and operate on KML",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/libkml/libkml-1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/libkml/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gist.githubusercontent.com/dakcarto/7419882/raw/10ae08af224b3fee0617fa6288d806d3ccf37c0f/libkml-1.2-static-deps",
+            "strip": "1"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/kml/base/file_posix.cc b/src/kml/base/file_posix.cc\n",
+                "index 764ae55..8ee9892 100644\n",
+                "--- a/src/kml/base/file_posix.cc\n",
+                "+++ b/src/kml/base/file_posix.cc\n",
+                "@@ -29,6 +29,7 @@\n",
+                " #include \"kml/base/file.h\"\n",
+                " #include <stdlib.h>\n",
+                " #include <string.h>\n",
+                "+#include <unistd.h>\n",
+                " #include <sys/types.h>\n",
+                " #include <sys/stat.h>\n",
+                " \n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.0"
+}

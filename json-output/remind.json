@@ -1,0 +1,23 @@
+{
+    "name": "Remind",
+    "description": "Sophisticated calendar and alarm",
+    "url": "https://www.roaringpenguin.com/files/download/remind-03.01.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.roaringpenguin.com/products/remind",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "rem",
+            "reason": "both install `rem` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "inreplace \"configure\", \"sleep 1\", \"true\"",
+        "inreplace \"src/init.c\" do |s|",
+        "s.gsub! \"sleep(5);\", \"\"",
+        "s.gsub! /rkrphgvba\\(.\\);/, \"\""
+    ],
+    "version": "03.01.15"
+}

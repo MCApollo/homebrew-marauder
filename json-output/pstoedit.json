@@ -1,0 +1,34 @@
+{
+    "name": "Pstoedit",
+    "description": "Convert PostScript and PDF files to editable vector graphics",
+    "url": "https://downloads.sourceforge.net/project/pstoedit/pstoedit/3.73/pstoedit-3.73.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.pstoedit.net/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "ghostscript",
+            "build-depend": false
+        },
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        },
+        {
+            "depend": "plotutils",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.73"
+}

@@ -1,0 +1,53 @@
+{
+    "name": "Grpc",
+    "description": "Next generation open source RPC library and framework",
+    "url": "https://github.com/grpc/grpc/archive/v1.19.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.grpc.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "c-ares",
+            "build-depend": false
+        },
+        {
+            "depend": "gflags",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "protobuf",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "gtest",
+            "url": "https://github.com/google/googletest/archive/release-1.8.1.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"prefix=#{prefix}\"",
+        "system \"make\", \"install-plugins\", \"prefix=#{prefix}\"",
+        "(buildpath/\"third_party/googletest\").install resource(\"gtest\")",
+        "system \"make\", \"grpc_cli\", \"prefix=#{prefix}\"",
+        "bin.install \"bins/opt/grpc_cli\""
+    ],
+    "version": "1.19.0"
+}

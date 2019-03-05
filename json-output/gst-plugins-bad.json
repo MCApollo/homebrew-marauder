@@ -1,0 +1,86 @@
+{
+    "name": "GstPluginsBad",
+    "description": "GStreamer plugins less supported, not fully tested",
+    "url": "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.14.4.tar.xz",
+    "mirror": null,
+    "homepage": "https://gstreamer.freedesktop.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "faac",
+            "build-depend": false
+        },
+        {
+            "depend": "faad2",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gst-plugins-base",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libmms",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "opus",
+            "build-depend": false
+        },
+        {
+            "depend": "orc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-yadif",
+        "--disable-examples",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--enable-introspection=yes",
+        "]",
+        "if build.head?",
+        "ENV[\"NOCONFIGURE\"] = \"yes\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14.4"
+}

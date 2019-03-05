@@ -1,0 +1,16 @@
+{
+    "name": "Genders",
+    "description": "Static cluster configuration database for cluster management",
+    "url": "https://downloads.sourceforge.net/project/genders/genders/1.22-1/genders-1.22.tar.gz",
+    "mirror": null,
+    "homepage": "https://computing.llnl.gov/linux/genders.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--with-java-extensions=no\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.22"
+}

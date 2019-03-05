@@ -1,0 +1,44 @@
+{
+    "name": "RiemannClient",
+    "description": "C client library for the Riemann monitoring system",
+    "url": "https://github.com/algernon/riemann-c-client/archive/riemann-c-client-1.10.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/algernon/riemann-c-client",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "protobuf-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-i\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.10.4"
+}

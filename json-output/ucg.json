@@ -1,0 +1,50 @@
+{
+    "name": "Ucg",
+    "description": "Tool for searching large bodies of source code (like grep)",
+    "url": "https://github.com/gvansickle/ucg/releases/download/0.3.3/universalcodegrep-0.3.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/gvansickle/ucg",
+    "depends": [
+        {
+            "depend": "argp-standalone",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "pcre2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/00615b/ucg/xcode9.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"autoreconf\", \"-i\" if build.head?",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.3"
+}

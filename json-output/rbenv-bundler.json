@@ -1,0 +1,20 @@
+{
+    "name": "RbenvBundler",
+    "description": "Makes shims aware of bundle install paths",
+    "url": "https://github.com/carsomyr/rbenv-bundler/archive/1.00.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/carsomyr/rbenv-bundler",
+    "depends": [
+        {
+            "depend": "rbenv",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install Dir[\"*\"]"
+    ],
+    "version": "1.00"
+}

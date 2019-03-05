@@ -1,0 +1,18 @@
+{
+    "name": "Ape",
+    "description": "Ajax Push Engine",
+    "url": "https://github.com/APE-Project/APE_Server/archive/v1.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.ape-project.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./build.sh\"",
+        "(prefix+\"etc\").mkdir",
+        "inreplace \"Makefile\", \"bin/ape.conf $(bindir)\", \"bin/ape.conf $(prefix)/etc\"",
+        "system \"make\", \"install\", \"prefix=#{prefix}\""
+    ],
+    "version": "1.1.2"
+}

@@ -1,0 +1,28 @@
+{
+    "name": "Proctools",
+    "description": "pgrep, pkill, and pfind for OpenBSD and Darwin (macOS)",
+    "url": "https://downloads.sourceforge.net/project/proctools/proctools/0.4pre1/proctools-0.4pre1.tar.gz",
+    "mirror": null,
+    "homepage": "https://proctools.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "bsdmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/f411d167/proctools/patch-#{name}.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"bsdmake\", \"PREFIX=#{prefix}\"",
+        "[\"pgrep/pgrep\", \"pkill/pkill\", \"pfind/pfind\"].each do |prog|",
+        "bin.install prog",
+        "man1.install prog + \".1\""
+    ],
+    "version": "0.4"
+}

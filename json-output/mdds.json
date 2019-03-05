@@ -1,0 +1,28 @@
+{
+    "name": "Mdds",
+    "description": "Multi-dimensional data structure and indexing algorithm",
+    "url": "https://kohei.us/files/mdds/src/mdds-1.4.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://gitlab.com/mdds/mdds",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"configure.ac\", \"$CPPFLAGS -I/usr/include -I/usr/local/include\",",
+        "\"$CPPFLAGS -I/usr/local/include\"",
+        "system \"autoconf\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.2"
+}

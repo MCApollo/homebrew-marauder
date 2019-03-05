@@ -1,0 +1,15 @@
+{
+    "name": "SpringLoaded",
+    "description": "Java agent to enable class reloading in a running JVM",
+    "url": "https://repo.spring.io/simple/libs-release-local/org/springframework/springloaded/1.2.6.RELEASE/springloaded-1.2.6.RELEASE.jar",
+    "mirror": null,
+    "homepage": "https://github.com/spring-projects/spring-loaded",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(share/\"java\").install \"springloaded-#{version}.RELEASE.jar\" => \"springloaded.jar\""
+    ],
+    "version": "1.2.6"
+}

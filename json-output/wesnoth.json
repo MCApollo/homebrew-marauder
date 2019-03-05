@@ -1,0 +1,76 @@
+{
+    "name": "Wesnoth",
+    "description": "Single- and multi-player turn-based strategy game",
+    "url": "https://downloads.sourceforge.net/project/wesnoth/wesnoth-1.12/wesnoth-1.12.6/wesnoth-1.12.6.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.wesnoth.org/",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "scons",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "fribidi",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "pango",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_net",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mv \"scons/gettext.py\", \"scons/gettext_tool.py\"",
+        "inreplace \"SConstruct\", \", \\\"gettext\\\",\", \", \\\"gettext_tool\\\",\"",
+        "args = %W[prefix=#{prefix} docdir=#{doc} mandir=#{man} fifodir=#{var}/run/wesnothd gettextdir=#{Formula[\"gettext\"].opt_prefix}]",
+        "args << \"OS_ENV=true\"",
+        "args << \"install\"",
+        "args << \"wesnoth\"",
+        "args << \"wesnothd\"",
+        "args << \"-j#{ENV.make_jobs}\"",
+        "system \"scons\", *args"
+    ],
+    "version": "1.12.6"
+}

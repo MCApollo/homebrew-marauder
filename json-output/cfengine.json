@@ -1,0 +1,41 @@
+{
+    "name": "Cfengine",
+    "description": "Help manage and understand IT infrastructure",
+    "url": "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-3.12.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://cfengine.com/",
+    "depends": [
+        {
+            "depend": "lmdb",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "masterfiles",
+            "url": "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.12.1.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-workdir=#{var}/cfengine\",",
+        "\"--with-lmdb=#{Formula[\"lmdb\"].opt_prefix}\",",
+        "\"--with-pcre=#{Formula[\"pcre\"].opt_prefix}\",",
+        "\"--without-mysql\",",
+        "\"--without-postgresql\"",
+        "system \"make\", \"install\"",
+        "(pkgshare/\"CoreBase\").install resource(\"masterfiles\")"
+    ],
+    "version": "3.12.1"
+}

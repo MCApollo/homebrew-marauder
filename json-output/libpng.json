@@ -1,0 +1,33 @@
+{
+    "name": "Libpng",
+    "description": "Library for manipulating PNG images",
+    "url": "https://downloads.sourceforge.net/libpng/libpng-1.6.36.tar.xz",
+    "mirror": "https://sourceforge.mirrorservice.org/l/li/libpng/libpng16/1.6.36/libpng-1.6.36.tar.xz",
+    "homepage": "http://www.libpng.org/pub/png/libpng.html",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"test\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.36"
+}

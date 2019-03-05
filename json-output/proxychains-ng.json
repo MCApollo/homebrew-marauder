@@ -1,0 +1,18 @@
+{
+    "name": "ProxychainsNg",
+    "description": "Hook preloader",
+    "url": "https://github.com/rofl0r/proxychains-ng/archive/v4.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/proxychains-ng/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--sysconfdir=#{etc}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"install-config\""
+    ],
+    "version": "4.13"
+}

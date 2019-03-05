@@ -1,0 +1,49 @@
+{
+    "name": "Urweb",
+    "description": "Ur/Web programming language",
+    "url": "https://github.com/urweb/urweb/releases/download/20180616/urweb-20180616.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.impredicative.com/ur/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "mlton",
+            "build-depend": true
+        },
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--with-openssl=#{Formula[\"openssl\"].opt_prefix}",
+        "--prefix=#{prefix}",
+        "SITELISP=$prefix/share/emacs/site-lisp/urweb",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "20180616"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Tal",
+    "description": "Align line endings if they match",
+    "url": "https://www.mirrorservice.org/sites/download.salixos.org/x86_64/extra-14.2/source/misc/tal/tal-1.9.tar.gz",
+    "mirror": "https://web.archive.org/web/20160406172703/https://thomasjensen.com/software/tal/tal-1.9.tar.gz",
+    "homepage": "https://web.archive.org/web/20160406172703/https://thomasjensen.com/software/tal/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"linux\"",
+        "bin.install \"tal\"",
+        "man1.install \"tal.1\""
+    ],
+    "version": "1.9"
+}

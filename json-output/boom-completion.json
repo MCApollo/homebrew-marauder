@@ -1,0 +1,16 @@
+{
+    "name": "BoomCompletion",
+    "description": "Bash and Zsh completion for Boom",
+    "url": "https://github.com/holman/boom/archive/v0.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://zachholman.com/boom",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"completion/boom.bash\" => \"boom\"",
+        "zsh_completion.install \"completion/boom.zsh\" => \"_boom\""
+    ],
+    "version": "0.5.0"
+}

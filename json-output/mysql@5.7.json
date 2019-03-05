@@ -1,0 +1,28 @@
+{
+    "name": "MysqlAT57",
+    "description": "Open source relational database management system",
+    "url": "https://cdn.mysql.com/Downloads/MySQL-5.7/mysql-boost-5.7.25.tar.gz",
+    "mirror": null,
+    "homepage": "https://dev.mysql.com/doc/refman/5.7/en/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "datadir.mkpath",
+        "unless (datadir/\"mysql/general_log.CSM\").exist?",
+        "ENV[\"TMPDIR\"] = nil",
+        "system bin/\"mysqld\", \"--initialize-insecure\", \"--user=#{ENV[\"USER\"]}\",",
+        "\"--basedir=#{prefix}\", \"--datadir=#{datadir}\", \"--tmpdir=/tmp\""
+    ],
+    "version": "5.7.25"
+}

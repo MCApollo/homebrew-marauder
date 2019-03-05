@@ -1,0 +1,16 @@
+{
+    "name": "Sickle",
+    "description": "Windowed adaptive trimming for FASTQ files using quality",
+    "url": "https://github.com/najoshi/sickle/archive/v1.33.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/najoshi/sickle",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"sickle\""
+    ],
+    "version": "1.33"
+}

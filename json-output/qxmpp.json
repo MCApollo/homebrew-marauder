@@ -1,0 +1,22 @@
+{
+    "name": "Qxmpp",
+    "description": "Cross-platform C++ XMPP client and server library",
+    "url": "https://github.com/qxmpp-project/qxmpp/archive/v0.9.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/qxmpp-project/qxmpp/",
+    "depends": [
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"qmake\", \"-config\", \"release\", \"PREFIX=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.3"
+}

@@ -1,0 +1,98 @@
+{
+    "name": "Dspdfviewer",
+    "description": "Dual-Screen PDF Viewer for latex-beamer",
+    "url": "https://github.com/dannyedel/dspdfviewer/archive/v1.15.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://dspdfviewer.danny-edel.de/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "fontconfig",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        },
+        {
+            "depend": "openjpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "poppler",
+            "url": "https://poppler.freedesktop.org/poppler-0.65.0.tar.xz"
+        },
+        {
+            "name": "font-data",
+            "url": "https://poppler.freedesktop.org/poppler-data-0.4.9.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "resource(\"poppler\").stage do",
+        "system \"cmake\", \".\", *std_cmake_args,",
+        "\"-DCMAKE_INSTALL_PREFIX=#{libexec}\",",
+        "\"-DBUILD_GTK_TESTS=OFF\",",
+        "\"-DENABLE_CMS=none\",",
+        "\"-DENABLE_GLIB=ON\",",
+        "\"-DENABLE_QT5=ON\",",
+        "\"-DWITH_GObjectIntrospection=ON\",",
+        "\"-DENABLE_XPDF_HEADERS=ON\"",
+        "system \"make\", \"install\"",
+        "libpoppler = (libexec/\"lib/libpoppler.dylib\").readlink",
+        "to_fix = [\"#{libexec}/lib/libpoppler-cpp.dylib\", \"#{libexec}/lib/libpoppler-glib.dylib\",",
+        "\"#{libexec}/lib/libpoppler-qt5.dylib\", *Dir[\"#{libexec}/bin/*\"]]",
+        "to_fix.each do |f|",
+        "macho = MachO.open(f)",
+        "macho.change_dylib(\"@rpath/#{libpoppler}\", \"#{libexec}/lib/#{libpoppler}\")",
+        "macho.write!"
+    ],
+    "version": "1.15.1"
+}

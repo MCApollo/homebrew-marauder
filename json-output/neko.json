@@ -1,0 +1,46 @@
+{
+    "name": "Neko",
+    "description": "High-level, dynamically typed programming language",
+    "url": "https://github.com/HaxeFoundation/neko/archive/v2-2-0/neko-2.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://nekovm.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "ninja",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "bdw-gc",
+            "build-depend": false
+        },
+        {
+            "depend": "mbedtls",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-G\", \"Ninja\", \"-DSTATIC_DEPS=MariaDBConnector\",",
+        "\"-DRELOCATABLE=OFF\", \"-DRUN_LDCONFIG=OFF\", *std_cmake_args",
+        "system \"ninja\", \"install\""
+    ],
+    "version": "2.2.0"
+}

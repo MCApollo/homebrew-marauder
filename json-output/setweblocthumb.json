@@ -1,0 +1,16 @@
+{
+    "name": "Setweblocthumb",
+    "description": "Assigns custom icons to webloc files",
+    "url": "https://github.com/ali-rantakari/setWeblocThumb/archive/v1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://hasseg.org/setWeblocThumb/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"setWeblocThumb\""
+    ],
+    "version": "1.0.0"
+}

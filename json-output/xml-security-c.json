@@ -1,0 +1,31 @@
+{
+    "name": "XmlSecurityC",
+    "description": "Implementation of primary security standards for XML",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=/santuario/c-library/xml-security-c-2.0.2.tar.bz2",
+    "mirror": "https://archive.apache.org/dist/santuario/c-library/xml-security-c-2.0.2.tar.bz2",
+    "homepage": "https://santuario.apache.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "xerces-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.2"
+}

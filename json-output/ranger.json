@@ -1,0 +1,18 @@
+{
+    "name": "Ranger",
+    "description": "File browser",
+    "url": "https://ranger.github.io/ranger-1.9.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://ranger.github.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "man1.install \"doc/ranger.1\"",
+        "libexec.install \"ranger.py\", \"ranger\"",
+        "bin.install_symlink libexec+\"ranger.py\" => \"ranger\"",
+        "doc.install \"examples\""
+    ],
+    "version": "1.9.2"
+}

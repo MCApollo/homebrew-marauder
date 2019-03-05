@@ -1,0 +1,21 @@
+{
+    "name": "Homeworlds",
+    "description": "C++ framework for the game of Binary Homeworlds",
+    "url": "https://github.com/Quuxplusone/Homeworlds.git",
+    "mirror": null,
+    "homepage": "https://github.com/Quuxplusone/Homeworlds/",
+    "depends": [
+        {
+            "depend": "wxmac",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"wxgui\" => \"homeworlds-wx\", \"annotate\" => \"homeworlds-cli\""
+    ],
+    "version": "1.0-u"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "OrocosKdl",
+    "description": "Orocos Kinematics and Dynamics C++ library",
+    "url": "https://github.com/orocos/orocos_kinematics_dynamics/archive/v1.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.orocos.org/kdl",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "eigen",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"orocos_kdl\" do",
+        "system \"cmake\", \".\", \"-DEIGEN3_INCLUDE_DIR=#{Formula[\"eigen\"].opt_include}/eigen3\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.0"
+}

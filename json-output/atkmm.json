@@ -1,0 +1,30 @@
+{
+    "name": "Atkmm",
+    "description": "Official C++ interface for the ATK accessibility toolkit library",
+    "url": "https://download.gnome.org/sources/atkmm/2.28/atkmm-2.28.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.gtkmm.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "atk",
+            "build-depend": false
+        },
+        {
+            "depend": "glibmm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.28.0"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "PhoronixTestSuite",
+    "description": "Open-source automated testing/benchmarking software",
+    "url": "https://github.com/phoronix-test-suite/phoronix-test-suite/archive/v8.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.phoronix-test-suite.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm_rf [prefix/\"../etc\", prefix/\"../usr\"]"
+    ],
+    "version": "8.6.1"
+}

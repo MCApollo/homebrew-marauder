@@ -1,0 +1,21 @@
+{
+    "name": "Wgetpaste",
+    "description": "Automate pasting to a number of pastebin services",
+    "url": "https://wgetpaste.zlin.dk/wgetpaste-2.28.tar.bz2",
+    "mirror": null,
+    "homepage": "https://wgetpaste.zlin.dk/",
+    "depends": [
+        {
+            "depend": "wget",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"wgetpaste\"",
+        "zsh_completion.install \"_wgetpaste\""
+    ],
+    "version": "2.28"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Glibmm",
+    "description": "C++ interface to glib",
+    "url": "https://download.gnome.org/sources/glibmm/2.58/glibmm-2.58.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.gtkmm.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libsigc++",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.58.0"
+}

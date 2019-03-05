@@ -1,0 +1,15 @@
+{
+    "name": "Rfcmarkup",
+    "description": "Add HTML markup and links to internet-drafts and RFCs",
+    "url": "https://tools.ietf.org/tools/rfcmarkup/rfcmarkup-1.119.tgz",
+    "mirror": null,
+    "homepage": "https://tools.ietf.org/tools/rfcmarkup/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"rfcmarkup\""
+    ],
+    "version": "1.119"
+}

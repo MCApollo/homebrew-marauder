@@ -1,0 +1,27 @@
+{
+    "name": "Siege",
+    "description": "HTTP regression testing and benchmarking utility",
+    "url": "http://download.joedog.org/siege/siege-4.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.joedog.org/siege-home/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(prefix/\"etc\").mkdir",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--localstatedir=#{var}\",",
+        "\"--with-ssl=#{Formula[\"openssl\"].opt_prefix}\",",
+        "\"--with-zlib=#{MacOS.sdk_path_if_needed}/usr\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0.4"
+}

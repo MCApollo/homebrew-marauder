@@ -1,0 +1,19 @@
+{
+    "name": "Libserialport",
+    "description": "Cross-platform serial port C library",
+    "url": "https://sigrok.org/download/source/libserialport/libserialport-0.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://sigrok.org/wiki/Libserialport",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.1"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "VagrantCompletion",
+    "description": "Bash completion for Vagrant",
+    "url": "https://github.com/hashicorp/vagrant/archive/v2.2.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/hashicorp/vagrant",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"contrib/bash/completion.sh\" => \"vagrant\""
+    ],
+    "version": "2.2.4"
+}

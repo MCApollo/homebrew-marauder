@@ -1,0 +1,51 @@
+{
+    "name": "Harbour",
+    "description": "Portable, xBase-compatible programming language and environment",
+    "url": "https://downloads.sourceforge.net/harbour-project/source/3.0.0/harbour-3.0.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://harbour.github.io",
+    "depends": [
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/contrib/hbcurl/core.c b/contrib/hbcurl/core.c\n",
+                "index 00caaa8..53618ed 100644\n",
+                "--- a/contrib/hbcurl/core.c\n",
+                "+++ b/contrib/hbcurl/core.c\n",
+                "@@ -53,8 +53,12 @@\n",
+                "  */\n",
+                "\n",
+                " #include <curl/curl.h>\n",
+                "-#include <curl/types.h>\n",
+                "-#include <curl/easy.h>\n",
+                "+#if LIBCURL_VERSION_NUM < 0x070A03\n",
+                "+#  include <curl/easy.h>\n",
+                "+#endif\n",
+                "+#if LIBCURL_VERSION_NUM < 0x070C00\n",
+                "+#  include <curl/types.h>\n",
+                "+#endif\n",
+                "\n",
+                " #include \"hbapi.h\"\n",
+                " #include \"hbapiitm.h\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV[\"HB_INSTALL_PREFIX\"] = prefix",
+        "ENV[\"HB_WITH_X11\"] = \"no\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\"",
+        "rm Dir[bin/\"hbmk2.*.hbl\"]",
+        "rm bin/\"contrib.hbr\" if build.head?",
+        "rm bin/\"harbour.ucf\" if build.head?"
+    ],
+    "version": "3.0.0"
+}

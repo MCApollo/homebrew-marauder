@@ -1,0 +1,25 @@
+{
+    "name": "Ssss",
+    "description": "Shamir",
+    "url": "http://point-at-infinity.org/ssss/ssss-0.5.tar.gz",
+    "mirror": null,
+    "homepage": "http://point-at-infinity.org/ssss/",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "xmltoman",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\" do |s|",
+        "s.gsub! /\\-W /, \"-W -DNOMLOCK $(CFLAGS) $(LDFLAGS)\""
+    ],
+    "version": "0.5"
+}

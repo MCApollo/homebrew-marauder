@@ -1,0 +1,21 @@
+{
+    "name": "Flvmeta",
+    "description": "Manipulate Adobe flash video files (FLV)",
+    "url": "https://www.flvmeta.com/download.php?file=flvmeta-1.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.flvmeta.com/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.1"
+}

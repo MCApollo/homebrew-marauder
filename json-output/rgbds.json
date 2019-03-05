@@ -1,0 +1,24 @@
+{
+    "name": "Rgbds",
+    "description": "Rednex GameBoy Development System",
+    "url": "https://github.com/rednex/rgbds/archive/v0.3.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rednex/rgbds",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\", \"mandir=#{man}\""
+    ],
+    "version": "0.3.8"
+}

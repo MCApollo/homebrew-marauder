@@ -1,0 +1,15 @@
+{
+    "name": "Antigen",
+    "description": "Plugin manager for zsh, inspired by oh-my-zsh and vundle",
+    "url": "https://github.com/zsh-users/antigen/releases/download/v2.2.3/v2.2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://antigen.sharats.me/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pkgshare.install \"bin/antigen.zsh\""
+    ],
+    "version": "2.2.3"
+}

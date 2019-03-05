@@ -1,0 +1,19 @@
+{
+    "name": "Genstats",
+    "description": "Generate statistics about stdin or textfiles",
+    "url": "https://www.vanheusden.com/genstats/genstats-1.2.tgz",
+    "mirror": null,
+    "homepage": "https://www.vanheusden.com/genstats/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"br.cpp\", /if \\(_XOPEN_VERSION >= 600\\)/,",
+        "\"if (_XOPEN_VERSION >= 600) && !__APPLE__\"",
+        "system \"make\"",
+        "bin.install \"genstats\"",
+        "man.install \"genstats.1\""
+    ],
+    "version": "1.2"
+}

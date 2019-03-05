@@ -1,0 +1,30 @@
+{
+    "name": "Libconfig",
+    "description": "Configuration file processing library",
+    "url": "https://github.com/hyperrealm/libconfig/archive/v1.7.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://hyperrealm.github.io/libconfig/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7.2"
+}

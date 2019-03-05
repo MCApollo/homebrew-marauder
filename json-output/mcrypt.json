@@ -1,0 +1,51 @@
+{
+    "name": "Mcrypt",
+    "description": "Replacement for the old crypt package and crypt(1) command",
+    "url": "https://downloads.sourceforge.net/project/mcrypt/MCrypt/2.6.8/mcrypt-2.6.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://mcrypt.sourceforge.io",
+    "depends": [
+        {
+            "depend": "mhash",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "libmcrypt",
+            "url": "https://downloads.sourceforge.net/project/mcrypt/Libmcrypt/2.5.8/libmcrypt-2.5.8.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/src/rfc2440.c b/src/rfc2440.c\n",
+                "index 5a1f296..aeb501c 100644\n",
+                "--- a/src/rfc2440.c\n",
+                "+++ b/src/rfc2440.c\n",
+                "@@ -23,7 +23,12 @@\n",
+                " #include <zlib.h>\n",
+                " #endif\n",
+                " #include <stdio.h>\n",
+                "+\n",
+                "+#ifdef __APPLE__\n",
+                "+#include <malloc/malloc.h>\n",
+                "+#else\n",
+                " #include <malloc.h>\n",
+                "+#endif\n",
+                "\n",
+                " #include \"xmalloc.h\"\n",
+                " #include \"keys.h\"\n"
+            ]
+        }
+    ],
+    "install": [
+        "resource(\"libmcrypt\").stage do",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.8"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "ProtobufC",
+    "description": "Protocol buffers library",
+    "url": "https://github.com/protobuf-c/protobuf-c/releases/download/v1.3.1/protobuf-c-1.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/protobuf-c/protobuf-c",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "protobuf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/protobuf-c/protobuf-c/pull/342.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.1"
+}

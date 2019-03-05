@@ -1,0 +1,77 @@
+{
+    "name": "Mame",
+    "description": "Multiple Arcade Machine Emulator",
+    "url": "https://github.com/mamedev/mame/archive/mame0205.tar.gz",
+    "mirror": null,
+    "homepage": "https://mamedev.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "macos",
+            "build-depend": false
+        },
+        {
+            "depend": "portaudio",
+            "build-depend": false
+        },
+        {
+            "depend": "portmidi",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        },
+        {
+            "depend": "utf8proc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"scripts/src/osd/sdl.lua\", \"--static\", \"\"",
+        "ENV.append \"CPPFLAGS\", \"-I#{Formula[\"lua\"].opt_include}/lua\"",
+        "system \"make\", \"USE_LIBSDL=1\",",
+        "\"USE_SYSTEM_LIB_EXPAT=1\",",
+        "\"USE_SYSTEM_LIB_ZLIB=1\",",
+        "\"USE_SYSTEM_LIB_JPEG=1\",",
+        "\"USE_SYSTEM_LIB_FLAC=1\",",
+        "\"USE_SYSTEM_LIB_LUA=1\",",
+        "\"USE_SYSTEM_LIB_SQLITE3=1\",",
+        "\"USE_SYSTEM_LIB_PORTMIDI=1\",",
+        "\"USE_SYSTEM_LIB_PORTAUDIO=1\",",
+        "\"USE_SYSTEM_LIB_UTF8PROC=1\"",
+        "bin.install \"mame64\" => \"mame\"",
+        "cd \"docs\" do",
+        "system \"make\", \"text\"",
+        "doc.install Dir[\"build/text/*\"]",
+        "system \"make\", \"man\"",
+        "man1.install \"build/man/MAME.1\" => \"mame.1\""
+    ],
+    "version": "0205"
+}

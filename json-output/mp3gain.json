@@ -1,0 +1,21 @@
+{
+    "name": "Mp3gain",
+    "description": "Lossless mp3 normalizer with statistical analysis",
+    "url": "https://downloads.sourceforge.net/project/mp3gain/mp3gain/1.6.2/mp3gain-1_6_2-src.zip",
+    "mirror": null,
+    "homepage": "https://mp3gain.sourceforge.io",
+    "depends": [
+        {
+            "depend": "mpg123",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"mp3gain\""
+    ],
+    "version": "1_6_2"
+}

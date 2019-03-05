@@ -1,0 +1,15 @@
+{
+    "name": "DyldHeaders",
+    "description": "Header files for the dynamic linker",
+    "url": "https://opensource.apple.com/tarballs/dyld/dyld-635.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://opensource.apple.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "include.install Dir[\"include/*\"]"
+    ],
+    "version": "635.2"
+}

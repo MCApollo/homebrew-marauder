@@ -1,0 +1,54 @@
+{
+    "name": "Couchdb",
+    "description": "Document database server",
+    "url": "https://www.apache.org/dyn/closer.cgi?path=/couchdb/source/1.7.2/apache-couchdb-1.7.2.tar.gz",
+    "mirror": "https://archive.apache.org/dist/couchdb/source/1.7.2/apache-couchdb-1.7.2.tar.gz",
+    "homepage": "https://couchdb.apache.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "autoconf-archive",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "help2man",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "erlang@19",
+            "build-depend": false
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "spidermonkey",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"lib/couchdb\").mkpath",
+        "(var/\"log/couchdb\").mkpath",
+        "(var/\"run/couchdb\").mkpath"
+    ],
+    "version": "1.7.2"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "PipCompletion",
+    "description": "Bash completion for Pip",
+    "url": "https://github.com/ekalinin/pip-bash-completion.git",
+    "mirror": null,
+    "homepage": "https://github.com/ekalinin/pip-bash-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"pip\""
+    ],
+    "version": "1.0-u"
+}

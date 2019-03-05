@@ -1,0 +1,21 @@
+{
+    "name": "Hss",
+    "description": "Interactive parallel SSH client",
+    "url": "https://github.com/six-ddc/hss/archive/1.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/six-ddc/hss",
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"install\", \"INSTALL_BIN=#{bin}\""
+    ],
+    "version": "1.8"
+}

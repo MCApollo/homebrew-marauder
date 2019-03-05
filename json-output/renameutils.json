@@ -1,0 +1,93 @@
+{
+    "name": "Renameutils",
+    "description": "Tools for file renaming",
+    "url": "https://download.savannah.gnu.org/releases/renameutils/renameutils-0.12.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nongnu.org/renameutils/",
+    "depends": [
+        {
+            "depend": "coreutils",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "ipmiutil",
+            "reason": "both install `icmd` binaries"
+        },
+        {
+            "conflict": "irods",
+            "reason": "both install `icp` and `imv` binaries"
+        }
+    ],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/src/apply.c\n",
+                "+++ b/src/apply.c\n",
+                "@@ -72,9 +72,9 @@ perform_command(FileSpec *spec)\n",
+                "     if (force_command != NULL)\n",
+                "         command = force_command;\n",
+                "     else if (strcmp(program, \"qmv\") == 0)\n",
+                "-        command = \"mv\";\n",
+                "+        command = \"gmv\";\n",
+                "     else\n",
+                "-        command = \"cp\";\n",
+                "+        command = \"gcp\";\n",
+                " \n",
+                "     child = fork();\n",
+                "     if (child < 0) {\n",
+                "--- a/src/icmd.c\n",
+                "+++ b/src/icmd.c\n",
+                "@@ -45,8 +45,8 @@\n",
+                " #include \"common/string-utils.h\"\n",
+                " #include \"common/common.h\"\n",
+                " \n",
+                "-#define MV_COMMAND \"mv\"\n",
+                "-#define CP_COMMAND \"cp\"\n",
+                "+#define MV_COMMAND \"gmv\"\n",
+                "+#define CP_COMMAND \"gcp\"\n",
+                " /* This list should be up to date with mv and cp!\n",
+                "  * It was last updated on 2007-11-30 for\n",
+                "  * Debian coreutils 5.97-5.4 in unstable.\n",
+                "--- a/src/qcmd.c\t2011-08-21 10:15:51.000000000 -0700\n",
+                "+++ b/src/qcmd.c\t2012-06-28 15:51:48.000000000 -0700\n",
+                "@@ -239,7 +239,7 @@\n",
+                "     editor_program = xstrdup(editor_program);\n",
+                " \n",
+                "     if (ls_program == NULL)\n",
+                "-        ls_program = xstrdup(\"ls\");\n",
+                "+        ls_program = xstrdup(\"gls\");\n",
+                " \n",
+                "     /* Parse format options */\n",
+                "     if (format_options != NULL && !format->parse_options(format_options))\n",
+                "--- a/src/Makefile.in\t2012-04-23 04:24:10.000000000 -0700\n",
+                "+++ b/src/Makefile.in\t2012-06-29 00:42:45.000000000 -0700\n",
+                "@@ -1577,7 +1577,7 @@\n",
+                " \t@[ -f icp ] || (echo $(LN_S) icmd icp ; $(LN_S) icmd icp)\n",
+                " \n",
+                " install-exec-local:\n",
+                "-\t$(mkdir_p) $(DESTDIR)($bindir)\n",
+                "+\t$(mkdir_p) $(DESTDIR)$(bindir)\n",
+                " \t@[ -f $(DESTDIR)$(bindir)/qmv ] || (echo $(LN_S) qcmd $(DESTDIR)$(bindir)/qmv ; $(LN_S) qcmd $(DESTDIR)$(bindir)/qmv)\n",
+                " \t@[ -f $(DESTDIR)$(bindir)/qcp ] || (echo $(LN_S) qcmd $(DESTDIR)$(bindir)/qcp ; $(LN_S) qcmd $(DESTDIR)$(bindir)/qcp)\n",
+                " \t@[ -f $(DESTDIR)$(bindir)/imv ] || (echo $(LN_S) icmd $(DESTDIR)$(bindir)/imv ; $(LN_S) icmd $(DESTDIR)$(bindir)/imv)\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-packager=Homebrew\"",
+        "system \"make\"",
+        "ENV.deparallelize ",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.12.0"
+}

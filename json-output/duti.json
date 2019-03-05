@@ -1,0 +1,27 @@
+{
+    "name": "Duti",
+    "description": "Select default apps for documents and URL schemes on macOS",
+    "url": "https://github.com/moretension/duti/archive/duti-1.5.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/moretension/duti/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/moretension/duti/pull/32.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"autoreconf\", \"-vfi\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.4"
+}

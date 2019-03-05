@@ -1,0 +1,19 @@
+{
+    "name": "Htpdate",
+    "description": "Synchronize time with remote web servers",
+    "url": "http://www.vervest.org/htp/archive/c/htpdate-0.9.1.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.vervest.org/htp/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{prefix}\",",
+        "\"STRIP=/usr/bin/strip\",",
+        "\"CC=#{ENV.cc}\",",
+        "\"CFLAGS=#{ENV.cflags}\",",
+        "\"install\""
+    ],
+    "version": "0.9.1"
+}

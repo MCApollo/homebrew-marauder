@@ -1,0 +1,28 @@
+{
+    "name": "Qdae",
+    "description": "Quick and Dirty Apricot Emulator",
+    "url": "https://www.seasip.info/Unix/QDAE/qdae-0.0.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.seasip.info/Unix/QDAE/",
+    "depends": [
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.10"
+}

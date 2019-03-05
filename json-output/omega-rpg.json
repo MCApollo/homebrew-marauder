@@ -1,0 +1,15 @@
+{
+    "name": "OmegaRpg",
+    "description": "The classic Roguelike game",
+    "url": "http://www.alcyone.com/binaries/omega/omega-0.80.2-src.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.alcyone.com/max/projects/omega/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ln_s prefix/\"license.txt\", libexec/\"license.txt\""
+    ],
+    "version": "0.80.2"
+}

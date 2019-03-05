@@ -1,0 +1,93 @@
+{
+    "name": "Mapserver",
+    "description": "Publish spatial data and interactive mapping apps to the web",
+    "url": "https://download.osgeo.org/mapserver/mapserver-7.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://mapserver.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "swig",
+            "build-depend": true
+        },
+        {
+            "depend": "cairo",
+            "build-depend": false
+        },
+        {
+            "depend": "fcgi",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "gd",
+            "build-depend": false
+        },
+        {
+            "depend": "gdal",
+            "build-depend": false
+        },
+        {
+            "depend": "geos",
+            "build-depend": false
+        },
+        {
+            "depend": "giflib",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        },
+        {
+            "depend": "proj",
+            "build-depend": false
+        },
+        {
+            "depend": "protobuf-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args + %w[",
+        "-DPYTHON_EXECUTABLE:FILEPATH=/usr/bin/python",
+        "-DWITH_CLIENT_WFS=ON",
+        "-DWITH_CLIENT_WMS=ON",
+        "-DWITH_CURL=ON",
+        "-DWITH_FCGI=ON",
+        "-DWITH_FRIBIDI=OFF",
+        "-DWITH_GDAL=ON",
+        "-DWITH_GEOS=ON",
+        "-DWITH_HARFBUZZ=OFF",
+        "-DWITH_KML=ON",
+        "-DWITH_OGR=ON",
+        "-DWITH_POSTGIS=ON",
+        "-DWITH_PROJ=ON",
+        "-DWITH_PYTHON=ON",
+        "-DWITH_SOS=ON",
+        "-DWITH_WFS=ON",
+        "-WITH_CAIRO=ON",
+        "]",
+        "inreplace \"mapscript/python/CMakeLists.txt\" do |s|",
+        "s.gsub! \"${PYTHON_SITE_PACKAGES}\", lib/\"python2.7/site-packages\"",
+        "s.gsub! \"${PYTHON_LIBRARIES}\", \"-Wl,-undefined,dynamic_lookup\""
+    ],
+    "version": "7.2.1"
+}

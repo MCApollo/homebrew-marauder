@@ -1,0 +1,50 @@
+{
+    "name": "Fpc",
+    "description": "Free Pascal: multi-architecture Pascal compiler",
+    "url": "https://downloads.sourceforge.net/project/freepascal/Source/3.0.4/fpc-3.0.4.source.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.freepascal.org/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "bootstrap",
+            "url": "https://downloads.sourceforge.net/project/freepascal/Bootstrap/3.0.0/x86_64-macosx-10.7-ppcx64.tar.bz2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/compiler/systems/t_bsd.pas b/compiler/systems/t_bsd.pas\n",
+                "index b35a78ae..61d0817d 100644\n",
+                "--- a/compiler/systems/t_bsd.pas\n",
+                "+++ b/compiler/systems/t_bsd.pas\n",
+                "@@ -310,7 +310,10 @@ begin\n",
+                "   if startupfile<>'' then\n",
+                "     begin\n",
+                "      if not librarysearchpath.FindFile(startupfile,false,result) then\n",
+                "-       result:='/usr/lib/'+startupfile\n",
+                "+       if sysutils.fileexists('/usr/lib/'+startupfile) then\n",
+                "+         result:='/usr/lib/'+startupfile\n",
+                "+       else if sysutils.fileexists('/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/') then\n",
+                "+         result:='/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib/'+startupfile\n",
+                "     end\n",
+                "   else\n",
+                "     result:='';\n"
+            ]
+        }
+    ],
+    "install": [
+        "fpc_bootstrap = buildpath/\"bootstrap\"",
+        "resource(\"bootstrap\").stage { fpc_bootstrap.install Dir[\"*\"] }",
+        "fpc_compiler = fpc_bootstrap/\"ppcx64\"",
+        "args = (MacOS.version >= :mojave) ? ['OPT=\"-XR/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk\"'] : []",
+        "system \"make\", \"build\", \"PP=#{fpc_compiler}\", *args",
+        "system \"make\", \"install\", \"PP=#{fpc_compiler}\", \"PREFIX=#{prefix}\"",
+        "bin.install_symlink lib/\"#{name}/#{version}/ppcx64\"",
+        "rm_f Dir[bin/\"*.rsj\"]",
+        "system \"#{bin}/fpcmkcfg\", \"-p\", \"-d\", \"basepath=#{lib}/fpc/#{version}\", \"-o\", \"#{prefix}/etc/fpc.cfg\""
+    ],
+    "version": "3.0.4"
+}

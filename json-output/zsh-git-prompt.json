@@ -1,0 +1,15 @@
+{
+    "name": "ZshGitPrompt",
+    "description": "Informative git prompt for zsh",
+    "url": "https://github.com/olivierverdier/zsh-git-prompt/archive/v0.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/olivierverdier/zsh-git-prompt",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "prefix.install Dir[\"*.{sh,py}\"]"
+    ],
+    "version": "0.5"
+}

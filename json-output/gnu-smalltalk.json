@@ -1,0 +1,73 @@
+{
+    "name": "GnuSmalltalk",
+    "description": "GNU Smalltalk interpreter and image",
+    "url": "https://ftp.gnu.org/gnu/smalltalk/smalltalk-3.2.5.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/smalltalk/smalltalk-3.2.5.tar.xz",
+    "homepage": "http://smalltalk.gnu.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gawk",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gdbm",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "libffi",
+            "build-depend": false
+        },
+        {
+            "depend": "libsigsegv",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if MacOS.version == \"10.11\" && MacOS::Xcode.version >= \"8.0\"",
+        "ENV[\"ac_cv_search_clock_gettime\"] = \"no\"",
+        "end",
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--with-lispdir=#{elisp}",
+        "--disable-gtk",
+        "--with-readline=#{Formula[\"readline\"].opt_lib}",
+        "--without-tcl",
+        "--without-tk",
+        "--without-x",
+        "]",
+        "system \"autoreconf\", \"-ivf\"",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.2.5"
+}

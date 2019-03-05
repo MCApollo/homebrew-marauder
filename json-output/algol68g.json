@@ -1,0 +1,16 @@
+{
+    "name": "Algol68g",
+    "description": "Algol 68 compiler-interpreter",
+    "url": "https://jmvdveer.home.xs4all.nl/algol68g-2.8.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://jmvdveer.home.xs4all.nl/algol.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.8.4"
+}

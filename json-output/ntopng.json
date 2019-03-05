@@ -1,0 +1,84 @@
+{
+    "name": "Ntopng",
+    "description": "Next generation version of the original ntop",
+    "url": "https://github.com/ntop/ntopng/archive/3.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.ntop.org/products/traffic-analysis/ntop/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": true
+        },
+        {
+            "depend": "json-glib",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "zeromq",
+            "build-depend": true
+        },
+        {
+            "depend": "geoip",
+            "build-depend": false
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "libmaxminddb",
+            "build-depend": false
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "mysql-client",
+            "build-depend": false
+        },
+        {
+            "depend": "redis",
+            "build-depend": false
+        },
+        {
+            "depend": "rrdtool",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "nDPI",
+            "url": "https://github.com/ntop/nDPI/archive/2.6.tar.gz"
+        },
+        {
+            "name": "nDPI",
+            "url": "https://github.com/ntop/nDPI.git"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"nDPI\").stage do",
+        "system \"./autogen.sh\"",
+        "system \"make\"",
+        "(buildpath/\"nDPI\").install Dir[\"*\"]"
+    ],
+    "version": "3.8"
+}

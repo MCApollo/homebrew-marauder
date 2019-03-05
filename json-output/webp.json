@@ -1,0 +1,44 @@
+{
+    "name": "Webp",
+    "description": "Image format providing lossless and lossy compression for web images",
+    "url": "https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://developers.google.com/speed/webp/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-gif\",",
+        "\"--disable-gl\",",
+        "\"--enable-libwebpdecoder\",",
+        "\"--enable-libwebpdemux\",",
+        "\"--enable-libwebpmux\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.2"
+}

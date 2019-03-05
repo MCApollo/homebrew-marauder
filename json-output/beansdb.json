@@ -1,0 +1,29 @@
+{
+    "name": "Beansdb",
+    "description": "Yet another distributed key-value storage system",
+    "url": "https://github.com/douban/beansdb/archive/v0.7.1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/douban/beansdb",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "(var/\"db/beansdb\").mkpath",
+        "(var/\"log\").mkpath"
+    ],
+    "version": "0.7.1.4"
+}

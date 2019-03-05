@@ -1,0 +1,16 @@
+{
+    "name": "Trace2html",
+    "description": "Utility from Google Trace Viewer to convert JSON traces to HTML",
+    "url": "https://github.com/google/trace-viewer/archive/2015-07-07.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/trace-viewer",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install Dir[\"*\"]",
+        "bin.install_symlink libexec/\"tracing/trace2html\""
+    ],
+    "version": "2015"
+}

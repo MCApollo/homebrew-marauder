@@ -1,0 +1,24 @@
+{
+    "name": "Easyengine",
+    "description": "Command-line control panel to manage WordPress sites",
+    "url": "https://github.com/EasyEngine/easyengine/releases/download/v4.0.10/easyengine.phar",
+    "mirror": null,
+    "homepage": "https://easyengine.io/",
+    "depends": [
+        {
+            "depend": "dnsmasq",
+            "build-depend": false
+        },
+        {
+            "depend": "php",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"easyengine.phar\" => \"ee\""
+    ],
+    "version": "4.0.10"
+}

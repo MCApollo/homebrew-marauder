@@ -1,0 +1,25 @@
+{
+    "name": "Glulxe",
+    "description": "Portable VM like the Z-machine",
+    "url": "https://eblong.com/zarf/glulx/glulxe-054.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.eblong.com/zarf/glulx/",
+    "depends": [
+        {
+            "depend": "glktermw",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "glk = Formula[\"glktermw\"]",
+        "inreplace \"Makefile\", \"GLKINCLUDEDIR = ../cheapglk\", \"GLKINCLUDEDIR = #{glk.include}\"",
+        "inreplace \"Makefile\", \"GLKLIBDIR = ../cheapglk\", \"GLKLIBDIR = #{glk.lib}\"",
+        "inreplace \"Makefile\", \"Make.cheapglk\", \"Make.#{glk.name}\"",
+        "system \"make\"",
+        "bin.install \"glulxe\""
+    ],
+    "version": "054"
+}

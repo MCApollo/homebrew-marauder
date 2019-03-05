@@ -1,0 +1,71 @@
+{
+    "name": "EasyrpgPlayer",
+    "description": "RPG Maker 2000/2003 games interpreter",
+    "url": "https://easyrpg.org/downloads/player/easyrpg-player-0.5.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://easyrpg.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "harfbuzz",
+            "build-depend": false
+        },
+        {
+            "depend": "liblcf",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "libxmp",
+            "build-depend": false
+        },
+        {
+            "depend": "mpg123",
+            "build-depend": false
+        },
+        {
+            "depend": "pixman",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_mixer",
+            "build-depend": false
+        },
+        {
+            "depend": "speexdsp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.3"
+}

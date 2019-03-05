@@ -1,0 +1,38 @@
+{
+    "name": "Htop",
+    "description": "Improved top (interactive process viewer)",
+    "url": "https://hisham.hm/htop/releases/2.2.0/htop-2.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://hisham.hm/htop/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "ncurses",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2.0"
+}

@@ -1,0 +1,49 @@
+{
+    "name": "Ykneomgr",
+    "description": "CLI and C library to interact with the CCID-part of the YubiKey NEO",
+    "url": "https://developers.yubico.com/libykneomgr/Releases/libykneomgr-0.1.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://developers.yubico.com/libykneomgr/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gengetopt",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "help2man",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libzip",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"autoreconf\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.8"
+}

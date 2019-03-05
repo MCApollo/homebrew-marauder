@@ -1,0 +1,62 @@
+{
+    "name": "Atk",
+    "description": "GNOME accessibility toolkit",
+    "url": "https://download.gnome.org/sources/atk/2.30/atk-2.30.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://library.gnome.org/devel/atk/",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "meson-internal",
+            "build-depend": true
+        },
+        {
+            "depend": "ninja",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/meson.build b/meson.build\n",
+                "index 59abf5e..7af4f12 100644\n",
+                "--- a/meson.build\n",
+                "+++ b/meson.build\n",
+                "@@ -73,11 +73,6 @@ if host_machine.system() == 'linux'\n",
+                "   common_ldflags += cc.get_supported_link_arguments(test_ldflags)\n",
+                " endif\n",
+                "\n",
+                "-# Maintain compatibility with autotools on macOS\n",
+                "-if host_machine.system() == 'darwin'\n",
+                "-  common_ldflags += [ '-compatibility_version 1', '-current_version 1.0', ]\n",
+                "-endif\n",
+                "-\n",
+                " # Functions\n",
+                " checked_funcs = [\n",
+                "   'bind_textdomain_codeset',\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV.refurbish_args",
+        "mkdir \"build\" do",
+        "system \"meson\", \"--prefix=#{prefix}\", \"..\"",
+        "system \"ninja\"",
+        "system \"ninja\", \"install\""
+    ],
+    "version": "2.30.0"
+}

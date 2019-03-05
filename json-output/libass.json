@@ -1,0 +1,52 @@
+{
+    "name": "Libass",
+    "description": "Subtitle renderer for the ASS/SSA subtitle format",
+    "url": "https://github.com/libass/libass/releases/download/0.14.0/libass-0.14.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://github.com/libass/libass",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "nasm",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "fribidi",
+            "build-depend": false
+        },
+        {
+            "depend": "harfbuzz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-i\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-fontconfig\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.14.0"
+}

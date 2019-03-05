@@ -1,0 +1,34 @@
+{
+    "name": "Traildb",
+    "description": "Blazingly-fast database for log-structured data",
+    "url": "https://github.com/traildb/traildb/archive/0.6.tar.gz",
+    "mirror": null,
+    "homepage": "http://traildb.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libarchive",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "judy",
+            "url": "https://downloads.sourceforge.net/project/judy/judy/Judy-1.0.5/Judy-1.0.5.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "judyprefix = \"#{buildpath}/resources/judy\"",
+        "resource(\"judy\").stage do",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--disable-shared\", \"--prefix=#{judyprefix}\"",
+        "ENV.deparallelize do",
+        "system \"make\", \"-j1\", \"install\""
+    ],
+    "version": "0.6"
+}

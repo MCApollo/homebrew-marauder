@@ -1,0 +1,32 @@
+{
+    "name": "Leveldb",
+    "description": "Key-value storage library with ordered mapping",
+    "url": "https://github.com/google/leveldb/archive/v1.20.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/leveldb/",
+    "depends": [
+        {
+            "depend": "gperftools",
+            "build-depend": false
+        },
+        {
+            "depend": "snappy",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "include.install \"include/leveldb\"",
+        "bin.install \"out-static/leveldbutil\"",
+        "lib.install \"out-static/libleveldb.a\"",
+        "lib.install \"out-shared/libleveldb.dylib.1.20\" => \"libleveldb.1.20.dylib\"",
+        "lib.install_symlink lib/\"libleveldb.1.20.dylib\" => \"libleveldb.dylib\"",
+        "lib.install_symlink lib/\"libleveldb.1.20.dylib\" => \"libleveldb.1.dylib\"",
+        "MachO::Tools.change_dylib_id(\"#{lib}/libleveldb.1.dylib\", \"#{lib}/libleveldb.1.20.dylib\")"
+    ],
+    "version": "1.20"
+}

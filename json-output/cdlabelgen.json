@@ -1,0 +1,16 @@
+{
+    "name": "Cdlabelgen",
+    "description": "CD/DVD inserts and envelopes",
+    "url": "https://www.aczoom.com/pub/tools/cdlabelgen-4.3.0.tgz",
+    "mirror": null,
+    "homepage": "https://www.aczoom.com/tools/cdinsert/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "man1.mkpath",
+        "system \"make\", \"install\", \"BASE_DIR=#{prefix}\""
+    ],
+    "version": "4.3.0"
+}

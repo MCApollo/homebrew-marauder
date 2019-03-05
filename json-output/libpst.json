@@ -1,0 +1,39 @@
+{
+    "name": "Libpst",
+    "description": "Utilities for the PST file format",
+    "url": "https://www.five-ten-sg.com/libpst/packages/libpst-0.6.72.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.five-ten-sg.com/libpst/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "libgsf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--disable-python",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.72"
+}

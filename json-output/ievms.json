@@ -1,0 +1,20 @@
+{
+    "name": "Ievms",
+    "description": "Automated installation of Microsoft IE AppCompat virtual machines",
+    "url": "https://github.com/xdissent/ievms/archive/v0.3.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://xdissent.github.io/ievms/",
+    "depends": [
+        {
+            "depend": "unar",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"ievms.sh\" => \"ievms\""
+    ],
+    "version": "0.3.3"
+}

@@ -1,0 +1,51 @@
+{
+    "name": "Exult",
+    "description": "Recreation of Ultima 7",
+    "url": "https://github.com/exult/exult.git",
+    "mirror": null,
+    "homepage": "https://exult.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/c9cb2e28/exult/clang9.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "inreplace \"files/utils.cc\" do |s|",
+        "s.gsub! /(gamehome_dir)\\(\"\\.\"\\)/, '\\1(home_dir)'",
+        "s.gsub! /(gamehome_dir) =/, '\\1 +='"
+    ],
+    "version": "1.4.9-git-243b4001"
+}

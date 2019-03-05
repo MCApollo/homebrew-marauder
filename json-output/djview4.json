@@ -1,0 +1,48 @@
+{
+    "name": "Djview4",
+    "description": "Viewer for the DjVu image format",
+    "url": "https://downloads.sourceforge.net/project/djvu/DjView/4.10/djview-4.10.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://djvu.sourceforge.io/djview4.html",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "djvulibre",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"src/djview.pro\", \"10.6\", MacOS.version",
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-x=no\",",
+        "\"--disable-nsdejavu\",",
+        "\"--disable-desktopfiles\"",
+        "system \"make\", \"CC=#{ENV.cc}\", \"CXX=#{ENV.cxx}\"",
+        "prefix.install \"src/djview.app\""
+    ],
+    "version": "4.10.6"
+}

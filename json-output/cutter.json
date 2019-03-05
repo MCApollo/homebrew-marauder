@@ -1,0 +1,38 @@
+{
+    "name": "Cutter",
+    "description": "Unit Testing Framework for C and C++",
+    "url": "https://downloads.sourceforge.net/project/cutter/cutter/1.2.6/cutter-1.2.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://cutter.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-glibtest\",",
+        "\"--disable-goffice\",",
+        "\"--disable-gstreamer\",",
+        "\"--disable-libsoup\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.6"
+}

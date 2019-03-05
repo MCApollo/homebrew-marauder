@@ -1,0 +1,27 @@
+{
+    "name": "Aften",
+    "description": "Audio encoder which generates ATSC A/52 compressed audio streams",
+    "url": "https://downloads.sourceforge.net/aften/aften-0.0.8.tar.bz2",
+    "mirror": null,
+    "homepage": "https://aften.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "sample_wav",
+            "url": "https://www.mediacollege.com/audio/tone/files/1kHz_44100Hz_16bit_05sec.wav"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"default\" do",
+        "system \"cmake\", \"-DSHARED=ON\", \"..\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.8"
+}

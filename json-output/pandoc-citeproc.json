@@ -1,0 +1,28 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Library and executable for using citeproc with pandoc",
+    "url": "https://hackage.haskell.org/package/pandoc-citeproc-0.16.1/pandoc-citeproc-0.16.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jgm/pandoc-citeproc",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        },
+        {
+            "depend": "pandoc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package"
+    ],
+    "version": "0.16.1"
+}

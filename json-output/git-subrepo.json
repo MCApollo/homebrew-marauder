@@ -1,0 +1,22 @@
+{
+    "name": "GitSubrepo",
+    "description": "Git Submodule Alternative",
+    "url": "https://github.com/ingydotnet/git-subrepo/archive/0.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ingydotnet/git-subrepo",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.mkpath",
+        "system \"make\", \"PREFIX=#{prefix}\", \"INSTALL_LIB=#{libexec}\", \"install\"",
+        "bin.install_symlink libexec/\"git-subrepo\"",
+        "inreplace \"share/zsh-completion/_git-subrepo\",",
+        "/^if [[ -z $GIT_SUBREPO_ROOT ]].*?^fi$/m, \"\"",
+        "mv \"share/completion.bash\", \"share/git-subrepo\"",
+        "bash_completion.install \"share/git-subrepo\"",
+        "zsh_completion.install \"share/zsh-completion/_git-subrepo\""
+    ],
+    "version": "0.4.0"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Libfreenect",
+    "description": "Drivers and libraries for the Xbox Kinect device",
+    "url": "https://github.com/OpenKinect/libfreenect/archive/v0.5.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://openkinect.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args,",
+        "\"-DBUILD_OPENNI2_DRIVER=ON\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.7"
+}

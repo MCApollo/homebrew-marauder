@@ -1,0 +1,23 @@
+{
+    "name": "Camlp5",
+    "description": "Preprocessor and pretty-printer for OCaml",
+    "url": "https://github.com/camlp5/camlp5/archive/rel707.tar.gz",
+    "mirror": null,
+    "homepage": "https://camlp5.github.io/",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix\", prefix, \"--mandir\", man",
+        "system \"make\", \"world.opt\"",
+        "system \"make\", \"install\"",
+        "(lib/\"ocaml/camlp5\").install \"etc/META\""
+    ],
+    "version": "707"
+}

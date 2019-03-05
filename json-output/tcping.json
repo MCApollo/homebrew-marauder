@@ -1,0 +1,16 @@
+{
+    "name": "Tcping",
+    "description": "TCP connect to the given IP/port combo",
+    "url": "https://mirrors.kernel.org/gentoo/distfiles/tcping-1.3.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://web.archive.org/web/20171102193822/linuxco.de/tcping/tcping.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"tcping\""
+    ],
+    "version": "1.3.5"
+}

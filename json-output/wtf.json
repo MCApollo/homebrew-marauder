@@ -1,0 +1,19 @@
+{
+    "name": "Wtf",
+    "description": "Translate common Internet acronyms",
+    "url": "https://downloads.sourceforge.net/project/bsdwtf/wtf-20190224.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/bsdwtf/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace %w[wtf wtf.6], \"/usr/share\", share",
+        "bin.install \"wtf\"",
+        "man6.install \"wtf.6\"",
+        "(share+\"misc\").install %w[acronyms acronyms.comp]",
+        "(share+\"misc\").install \"acronyms-o.real\" => \"acronyms-o\""
+    ],
+    "version": "20190224"
+}

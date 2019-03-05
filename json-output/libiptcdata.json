@@ -1,0 +1,22 @@
+{
+    "name": "Libiptcdata",
+    "description": "Virtual package provided by libiptcdata0",
+    "url": "https://downloads.sourceforge.net/project/libiptcdata/libiptcdata/1.0.4/libiptcdata-1.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://libiptcdata.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.4"
+}

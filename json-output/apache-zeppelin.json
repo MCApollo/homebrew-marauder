@@ -1,0 +1,17 @@
+{
+    "name": "ApacheZeppelin",
+    "description": "Web-based notebook that enables interactive data analytics",
+    "url": "https://www.apache.org/dyn/closer.lua?path=zeppelin/zeppelin-0.8.0/zeppelin-0.8.0-bin-all.tgz",
+    "mirror": null,
+    "homepage": "https://zeppelin.apache.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "rm_f Dir[\"bin/*.cmd\"]",
+        "libexec.install Dir[\"*\"]",
+        "bin.write_exec_script Dir[\"#{libexec}/bin/*\"]"
+    ],
+    "version": "0.8.0"
+}

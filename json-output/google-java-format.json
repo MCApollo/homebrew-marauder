@@ -1,0 +1,23 @@
+{
+    "name": "GoogleJavaFormat",
+    "description": "Reformats Java source code to comply with Google Java Style",
+    "url": "https://github.com/google/google-java-format/archive/google-java-format-1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/google/google-java-format",
+    "depends": [
+        {
+            "depend": "maven",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"mvn\", \"versions:set\", \"-DnewVersion=#{version}\"",
+        "system \"mvn\", \"install\", \"-DskipTests=true\", \"-Dmaven.javadoc.skip=true\", \"-B\"",
+        "libexec.install \"core/target/google-java-format-#{version}-all-deps.jar\"",
+        "bin.write_jar_script libexec/\"google-java-format-#{version}-all-deps.jar\", \"google-java-format\""
+    ],
+    "version": "1.7"
+}

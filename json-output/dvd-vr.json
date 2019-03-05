@@ -1,0 +1,15 @@
+{
+    "name": "DvdVr",
+    "description": "Utility to identify and extract recordings from DVD-VR files",
+    "url": "https://www.pixelbeat.org/programs/dvd-vr/dvd-vr-0.9.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.pixelbeat.org/programs/dvd-vr/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "0.9.7"
+}

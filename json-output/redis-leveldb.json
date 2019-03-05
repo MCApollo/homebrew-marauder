@@ -1,0 +1,35 @@
+{
+    "name": "RedisLeveldb",
+    "description": "Redis-protocol compatible frontend to leveldb",
+    "url": "https://github.com/KDr2/redis-leveldb/archive/v1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/KDr2/redis-leveldb",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "leveldb",
+            "build-depend": false
+        },
+        {
+            "depend": "libev",
+            "build-depend": false
+        },
+        {
+            "depend": "snappy",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"src/Makefile\", \"../vendor/libleveldb.a\", Formula[\"leveldb\"].opt_lib+\"libleveldb.a\"",
+        "ENV.prepend \"LDFLAGS\", \"-lsnappy\"",
+        "system \"make\"",
+        "bin.install \"redis-leveldb\""
+    ],
+    "version": "1.4"
+}

@@ -1,0 +1,52 @@
+{
+    "name": "Rocksdb",
+    "description": "Embeddable, persistent key-value store for fast storage",
+    "url": "https://github.com/facebook/rocksdb/archive/v5.18.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://rocksdb.org/",
+    "depends": [
+        {
+            "depend": "gflags",
+            "build-depend": false
+        },
+        {
+            "depend": "lz4",
+            "build-depend": false
+        },
+        {
+            "depend": "snappy",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "ENV[\"PORTABLE\"] = \"1\"",
+        "ENV[\"DEBUG_LEVEL\"] = \"0\"",
+        "ENV[\"USE_RTTI\"] = \"1\"",
+        "ENV[\"ROCKSDB_DISABLE_ALIGNED_NEW\"] = \"1\" if MacOS.version <= :sierra",
+        "ENV[\"DISABLE_JEMALLOC\"] = \"1\" ",
+        "system \"make\", \"clean\"",
+        "system \"make\", \"static_lib\"",
+        "system \"make\", \"shared_lib\"",
+        "system \"make\", \"tools\"",
+        "system \"make\", \"install\", \"INSTALL_PATH=#{prefix}\"",
+        "bin.install \"sst_dump\" => \"rocksdb_sst_dump\"",
+        "bin.install \"db_sanity_test\" => \"rocksdb_sanity_test\"",
+        "bin.install \"db_stress\" => \"rocksdb_stress\"",
+        "bin.install \"write_stress\" => \"rocksdb_write_stress\"",
+        "bin.install \"ldb\" => \"rocksdb_ldb\"",
+        "bin.install \"db_repl_stress\" => \"rocksdb_repl_stress\"",
+        "bin.install \"rocksdb_dump\"",
+        "bin.install \"rocksdb_undump\"",
+        "ENV.append_to_cflags \"-DROCKSDB_LITE=1\"",
+        "ENV[\"LIBNAME\"] = \"librocksdb_lite\"",
+        "system \"make\", \"clean\"",
+        "system \"make\", \"static_lib\"",
+        "system \"make\", \"shared_lib\"",
+        "system \"make\", \"install\", \"INSTALL_PATH=#{prefix}\""
+    ],
+    "version": "5.18.3"
+}

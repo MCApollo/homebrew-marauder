@@ -1,0 +1,23 @@
+{
+    "name": "Le",
+    "description": "Text editor with block and binary operations",
+    "url": "https://github.com/lavv17/le/releases/download/v1.16.5/le-1.16.5.tar.xz",
+    "mirror": null,
+    "homepage": "https://github.com/lavv17/le",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "logentries",
+            "reason": "both install a le binary"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.16.5"
+}

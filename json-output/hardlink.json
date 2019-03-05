@@ -1,0 +1,28 @@
+{
+    "name": "Hardlink",
+    "description": "Replace file copies using hardlinks",
+    "url": "https://jak-linux.org/projects/hardlink/hardlink_0.3.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://jak-linux.org/projects/hardlink/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gnu-getopt",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"MANDIR=#{man}\", \"BINDIR=#{bin}\", \"install\""
+    ],
+    "version": "0.3.0"
+}

@@ -1,0 +1,43 @@
+{
+    "name": "Flac123",
+    "description": "Command-line program for playing FLAC audio files",
+    "url": "https://downloads.sourceforge.net/project/flac-tools/flac123/flac123-0.0.12-release.tar.gz",
+    "mirror": null,
+    "homepage": "https://flac-tools.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "flac",
+            "build-depend": false
+        },
+        {
+            "depend": "libao",
+            "build-depend": false
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "popt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\", \"CC=#{ENV.cc}\",",
+        "\"ACLOCAL=${SHELL} #{buildpath}/missing --run aclocal\",",
+        "\"AUTOMAKE=${SHELL} #{buildpath}/missing --run automake\""
+    ],
+    "version": "123"
+}

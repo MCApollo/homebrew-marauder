@@ -1,0 +1,17 @@
+{
+    "name": "Concurrencykit",
+    "description": "Aid design and implementation of concurrent systems",
+    "url": "http://concurrencykit.org/releases/ck-0.6.0.tar.gz",
+    "mirror": "https://github.com/concurrencykit/ck/archive/0.6.0.tar.gz",
+    "homepage": "http://concurrencykit.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.0"
+}

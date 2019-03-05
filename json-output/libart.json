@@ -1,0 +1,17 @@
+{
+    "name": "Libart",
+    "description": "Library for high-performance 2D graphics",
+    "url": "https://download.gnome.org/sources/libart_lgpl/2.3/libart_lgpl-2.3.21.tar.bz2",
+    "mirror": null,
+    "homepage": "https://people.gnome.org/~mathieu/libart/libart.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.21"
+}

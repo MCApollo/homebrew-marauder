@@ -1,0 +1,20 @@
+{
+    "name": "Xz",
+    "description": "General-purpose data compression with high compression ratio",
+    "url": "https://downloads.sourceforge.net/project/lzmautils/xz-5.2.4.tar.gz",
+    "mirror": "https://tukaani.org/xz/xz-5.2.4.tar.gz",
+    "homepage": "https://tukaani.org/xz/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.2.4"
+}

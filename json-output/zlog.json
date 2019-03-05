@@ -1,0 +1,16 @@
+{
+    "name": "Zlog",
+    "description": "High-performance C logging library",
+    "url": "https://github.com/HardySimpson/zlog/archive/1.2.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/HardySimpson/zlog",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "1.2.12"
+}

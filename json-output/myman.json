@@ -1,0 +1,35 @@
+{
+    "name": "Myman",
+    "description": "Text-mode videogame inspired by Namco",
+    "url": "https://downloads.sourceforge.net/project/myman/myman-cvs/myman-cvs-2009-10-30/myman-wip-2009-10-30.tar.gz",
+    "mirror": null,
+    "homepage": "https://myman.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "coreutils",
+            "build-depend": true
+        },
+        {
+            "depend": "gnu-sed",
+            "build-depend": true
+        },
+        {
+            "depend": "groff",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"RMDIR\"] = \"grmdir\"",
+        "ENV[\"SED\"] = \"gsed\"",
+        "ENV[\"INSTALL\"] = \"ginstall\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2009"
+}

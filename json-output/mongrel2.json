@@ -1,0 +1,29 @@
+{
+    "name": "Mongrel2",
+    "description": "Application, language, and network architecture agnostic web server",
+    "url": "https://github.com/mongrel2/mongrel2/releases/download/v1.11.0/mongrel2-v1.11.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://mongrel2.org/",
+    "depends": [
+        {
+            "depend": "zeromq",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/mongrel2/mongrel2/commit/7cb8532e2ecc341d77885764b372a363fbc72eff.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.deparallelize",
+        "ENV[\"OPTFLAGS\"] = \"#{ENV.cflags} #{ENV.cppflags}\"",
+        "ENV[\"OPTLIBS\"] = \"#{ENV.ldflags} -undefined dynamic_lookup\"",
+        "system \"make\", \"all\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "1.11.0"
+}

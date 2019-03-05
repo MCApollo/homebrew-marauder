@@ -1,0 +1,25 @@
+{
+    "name": "Nikto",
+    "description": "Web server scanner",
+    "url": "https://github.com/sullo/nikto/archive/2.1.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://cirt.net/nikto2",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"program\" do",
+        "inreplace \"nikto.pl\", \"/etc/nikto.conf\", \"#{etc}/nikto.conf\"",
+        "inreplace \"nikto.conf\" do |s|",
+        "s.gsub! \"",
+        "s.gsub! \"",
+        "\"PLUGINDIR=#{pkgshare}/plugins\"",
+        "s.gsub! \"",
+        "\"DBDIR=#{var}/lib/nikto/databases\"",
+        "s.gsub! \"",
+        "\"TEMPLATEDIR=#{pkgshare}/templates\"",
+        "s.gsub! \""
+    ],
+    "version": "2.1.6"
+}

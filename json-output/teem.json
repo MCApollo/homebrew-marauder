@@ -1,0 +1,29 @@
+{
+    "name": "Teem",
+    "description": "Libraries for scientific raster data",
+    "url": "https://downloads.sourceforge.net/project/teem/teem/1.11.0/teem-1.11.0-src.tar.gz",
+    "mirror": null,
+    "homepage": "https://teem.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", *std_cmake_args,",
+        "\"-DBUILD_SHARED_LIBS:BOOL=ON\",",
+        "\"-DTeem_USE_LIB_INSTALL_SUBDIR:BOOL=ON\"",
+        "system \"make\", \"install\"",
+        "lib.install_symlink Dir.glob(lib/\"Teem-#{version}/*.dylib\")",
+        "(lib/\"cmake/teem\").install_symlink Dir.glob(lib/\"Teem-#{version}/*.cmake\")"
+    ],
+    "version": "1.11.0"
+}

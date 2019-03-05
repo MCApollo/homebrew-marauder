@@ -1,0 +1,25 @@
+{
+    "name": "Vorbisgain",
+    "description": "Add Replay Gain volume tags to Ogg Vorbis files",
+    "url": "https://sjeng.org/ftp/vorbis/vorbisgain-0.37.tar.gz",
+    "mirror": null,
+    "homepage": "https://sjeng.org/vorbisgain.html",
+    "depends": [
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.37"
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Clac",
+    "description": "Command-line, stack-based calculator with postfix notation",
+    "url": "https://github.com/soveran/clac/archive/0.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/soveran/clac",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "0.3.2"
+}

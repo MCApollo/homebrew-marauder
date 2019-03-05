@@ -1,0 +1,21 @@
+{
+    "name": "Cafeobj",
+    "description": "New generation algebraic specification and programming language",
+    "url": "https://cafeobj.org/files/1.5.9/cafeobj-1.5.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://cafeobj.org/",
+    "depends": [
+        {
+            "depend": "sbcl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--with-lisp=sbcl\", \"--prefix=#{prefix}\", \"--with-lispdir=#{share}/emacs/site-lisp/cafeobj\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5.9"
+}

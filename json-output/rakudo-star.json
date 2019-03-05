@@ -1,0 +1,47 @@
+{
+    "name": "RakudoStar",
+    "description": "Perl 6 compiler",
+    "url": "https://rakudo.perl6.org/downloads/star/rakudo-star-2018.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://rakudo.org/",
+    "depends": [
+        {
+            "depend": "gmp",
+            "build-depend": false
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "libffi",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "parrot",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "libffi = Formula[\"libffi\"]",
+        "ENV.remove \"CPPFLAGS\", \"-I#{libffi.include}\"",
+        "ENV.prepend \"CPPFLAGS\", \"-I#{libffi.lib}/libffi-#{libffi.version}/include\"",
+        "ENV.deparallelize ",
+        "system \"perl\", \"Configure.pl\", \"--prefix=#{prefix}\",",
+        "\"--backends=moar\", \"--gen-moar\"",
+        "system \"make\"",
+        "ENV[\"NO_NETWORK_TESTING\"] = \"1\"",
+        "system \"make\", \"install\"",
+        "bin.install_symlink Dir[share/\"perl6/site/bin/*\"]",
+        "mv \"#{prefix}/man\", share if File.directory?(\"#{prefix}/man\")"
+    ],
+    "version": "2018.10"
+}

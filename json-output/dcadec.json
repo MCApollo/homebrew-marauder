@@ -1,0 +1,22 @@
+{
+    "name": "Dcadec",
+    "description": "DTS Coherent Acoustics decoder with support for HD extensions",
+    "url": "https://github.com/foo86/dcadec.git",
+    "mirror": null,
+    "homepage": "https://github.com/foo86/dcadec",
+    "depends": [],
+    "resource": [
+        {
+            "name": "sample",
+            "url": "https://github.com/foo86/dcadec-samples/raw/fa7dcf8c98c6d/xll_71_24_96_768.dtshd"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "0.2.0-git-0e074384"
+}

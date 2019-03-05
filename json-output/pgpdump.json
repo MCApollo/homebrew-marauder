@@ -1,0 +1,16 @@
+{
+    "name": "Pgpdump",
+    "description": "PGP packet visualizer",
+    "url": "https://github.com/kazu-yamamoto/pgpdump/archive/v0.33.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.mew.org/~kazu/proj/pgpdump/en/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.33"
+}

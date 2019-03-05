@@ -1,0 +1,33 @@
+{
+    "name": "Glyr",
+    "description": "Music related metadata search engine with command-line interface and C API",
+    "url": "https://github.com/sahib/glyr/archive/1.0.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sahib/glyr",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.10"
+}

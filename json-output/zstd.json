@@ -1,0 +1,23 @@
+{
+    "name": "Zstd",
+    "description": "Zstandard is a real-time compression algorithm",
+    "url": "https://github.com/facebook/zstd/releases/download/v1.3.8/zstd-1.3.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://facebook.github.io/zstd/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}/\"",
+        "system \"make\", \"-C\", \"contrib/pzstd\", \"googletest\"",
+        "system \"make\", \"-C\", \"contrib/pzstd\", \"PREFIX=#{prefix}\"",
+        "bin.install \"contrib/pzstd/pzstd\""
+    ],
+    "version": "1.3.8"
+}

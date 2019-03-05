@@ -1,0 +1,16 @@
+{
+    "name": "N",
+    "description": "Node version management",
+    "url": "https://github.com/tj/n/archive/v2.1.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tj/n",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkdir",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "2.1.12"
+}

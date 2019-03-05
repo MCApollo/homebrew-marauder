@@ -1,0 +1,15 @@
+{
+    "name": "DropboxUploader",
+    "description": "Bash script for interacting with Dropbox",
+    "url": "https://github.com/andreafabrizi/Dropbox-Uploader/archive/1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.andreafabrizi.it/2016/01/01/Dropbox-Uploader/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"dropbox_uploader.sh\", \"dropShell.sh\""
+    ],
+    "version": "1.0"
+}

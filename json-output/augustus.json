@@ -1,0 +1,35 @@
+{
+    "name": "Augustus",
+    "description": "Predict genes in eukaryotic genomic sequences",
+    "url": "http://bioinf.uni-greifswald.de/augustus/binaries/augustus-3.3.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://bioinf.uni-greifswald.de/augustus/",
+    "depends": [
+        {
+            "depend": "bamtools",
+            "build-depend": false
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"auxprogs/Makefile\", \"cd bam2wig; make;\", \"#cd bam2wig; make;\"",
+        "inreplace \"auxprogs/bam2hints/Makefile\",",
+        "\"INCLUDES = /usr/include/bamtools\",",
+        "\"INCLUDES = #{Formula[\"bamtools\"].include/\"bamtools\"}\"",
+        "inreplace \"auxprogs/filterBam/src/Makefile\",",
+        "\"BAMTOOLS = /usr/include/bamtools\",",
+        "\"BAMTOOLS= #{Formula[\"bamtools\"].include/\"bamtools\"}\"",
+        "inreplace \"Makefile\", %r{ln -sf.*/usr/local/bin/}, \"#ln -sf\"",
+        "system \"make\", \"clean\"",
+        "system \"make\"",
+        "system \"make\", \"install\", \"INSTALLDIR=#{prefix}\"",
+        "bin.env_script_all_files libexec/\"bin\", :AUGUSTUS_CONFIG_PATH => prefix/\"config\""
+    ],
+    "version": "3.3.2"
+}

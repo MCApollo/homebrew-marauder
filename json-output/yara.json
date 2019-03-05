@@ -1,0 +1,50 @@
+{
+    "name": "Yara",
+    "description": "Malware identification and classification tool",
+    "url": "https://github.com/VirusTotal/yara/archive/v3.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/VirusTotal/yara/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "jansson",
+            "build-depend": false
+        },
+        {
+            "depend": "libmagic",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap.sh\"",
+        "system \"./configure\", \"--disable-silent-rules\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-dotnet\",",
+        "\"--enable-cuckoo\",",
+        "\"--enable-magic\",",
+        "\"--enable-macho\",",
+        "\"--enable-dex\",",
+        "\"--with-crpyto\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.9.0"
+}

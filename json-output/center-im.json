@@ -1,0 +1,54 @@
+{
+    "name": "CenterIm",
+    "description": "Text-mode multi-protocol instant messaging client",
+    "url": "https://www.centerim.org/download/releases/centerim-4.22.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.centerim.org/index.php/Main_Page",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/677cb38/center-im/patch-libjabber_jconn.c.diff",
+            "strip": "0"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff --git a/libicq2000/libicq2000/sigslot.h b/libicq2000/libicq2000/sigslot.h\n",
+                "index b7509c0..024774f 100644\n",
+                "--- a/libicq2000/libicq2000/sigslot.h\n",
+                "+++ b/libicq2000/libicq2000/sigslot.h\n",
+                "@@ -82,6 +82,7 @@\n",
+                " #ifndef SIGSLOT_H__\n",
+                " #define SIGSLOT_H__\n",
+                "\n",
+                "+#include <cstdlib>\n",
+                " #include <set>\n",
+                " #include <list>\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-msn\",",
+        "\"--with-openssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\"",
+        "inreplace bin/\"cimformathistory\", \"/bin/gawk\", \"/usr/bin/awk\""
+    ],
+    "version": "4.22.10"
+}

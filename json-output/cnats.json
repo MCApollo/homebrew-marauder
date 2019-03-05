@@ -1,0 +1,34 @@
+{
+    "name": "Cnats",
+    "description": "C client for the NATS messaging system",
+    "url": "https://github.com/nats-io/cnats/archive/v1.8.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/nats-io/cnats",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "libuv",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DNATS_INSTALL_PREFIX=#{prefix}\",",
+        "\"-DBUILD_TESTING=OFF\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.0"
+}

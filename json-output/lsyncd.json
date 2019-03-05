@@ -1,0 +1,33 @@
+{
+    "name": "Lsyncd",
+    "description": "Synchronize local directories with remote targets",
+    "url": "https://github.com/axkibe/lsyncd/archive/release-2.2.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/axkibe/lsyncd",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "xnu",
+            "url": "https://opensource.apple.com/tarballs/xnu/#{tarball}"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"CMakeLists.txt\", \"DESTINATION man\", \"DESTINATION share/man/man1\"",
+        "resource(\"xnu\").stage buildpath/\"xnu\"",
+        "system \"cmake\", \".\", \"-DWITH_INOTIFY=OFF\", \"-DWITH_FSEVENTS=ON\",",
+        "\"-DXNU_DIR=#{buildpath}/xnu\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2.3"
+}

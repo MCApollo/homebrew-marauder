@@ -1,0 +1,20 @@
+{
+    "name": "Phpunit",
+    "description": "Programmer-oriented testing framework for PHP",
+    "url": "https://phar.phpunit.de/phpunit-8.0.4.phar",
+    "mirror": null,
+    "homepage": "https://phpunit.de",
+    "depends": [
+        {
+            "depend": "php",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"phpunit-#{version}.phar\" => \"phpunit\""
+    ],
+    "version": "8.0.4"
+}

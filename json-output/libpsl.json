@@ -1,0 +1,26 @@
+{
+    "name": "Libpsl",
+    "description": "C library for the Public Suffix List",
+    "url": "https://github.com/rockdaboot/libpsl/releases/download/libpsl-0.20.2/libpsl-0.20.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://rockdaboot.github.io/libpsl",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libidn2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.20.2"
+}

@@ -1,0 +1,38 @@
+{
+    "name": "Fifechan",
+    "description": "C++ GUI library designed for games",
+    "url": "https://github.com/fifengine/fifechan/archive/0.1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://fifengine.github.io/fifechan/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "allegro",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_ttf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DENABLE_SDL_CONTRIB=ON\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.4"
+}

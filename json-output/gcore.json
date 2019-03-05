@@ -1,0 +1,16 @@
+{
+    "name": "Gcore",
+    "description": "Produce a snapshot (core dump) of a running process",
+    "url": "https://osxbook.com/book/bonus/chapter8/core/download/gcore-1.3.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/gcore-1.3.tar.gz",
+    "homepage": "https://osxbook.com/book/bonus/chapter8/core/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"gcore\""
+    ],
+    "version": "1.3"
+}

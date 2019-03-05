@@ -1,0 +1,25 @@
+{
+    "name": "Spdlog",
+    "description": "Super fast C++ logging library",
+    "url": "https://github.com/gabime/spdlog/archive/v1.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/gabime/spdlog",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "mkdir \"spdlog-build\" do",
+        "args = std_cmake_args",
+        "args << \"-Dpkg_config_libdir=#{lib}\" << \"-DSPDLOG_BUILD_BENCH=OFF\" << \"-DSPDLOG_BUILD_TESTS=OFF\" << \"..\"",
+        "system \"cmake\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.1"
+}

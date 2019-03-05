@@ -1,0 +1,17 @@
+{
+    "name": "Dvorak7min",
+    "description": "Dvorak (simplified keyboard layout) typing tutor",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/d/dvorak7min/dvorak7min_1.6.1+repack.orig.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/d/dvorak7min/dvorak7min_1.6.1+repack.orig.tar.gz",
+    "homepage": "https://web.archive.org/web/dvorak7min.sourcearchive.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"clean\"",
+        "system \"make\"",
+        "system \"make\", \"INSTALL=#{bin}\", \"install\""
+    ],
+    "version": "1.6.1"
+}

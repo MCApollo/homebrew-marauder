@@ -1,0 +1,32 @@
+{
+    "name": "Asn1c",
+    "description": "Compile ASN.1 specifications into C source code",
+    "url": "https://github.com/vlm/asn1c/releases/download/v0.9.28/asn1c-0.9.28.tar.gz",
+    "mirror": null,
+    "homepage": "https://lionet.info/asn1c/blog/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-iv\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.28"
+}

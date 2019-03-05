@@ -1,0 +1,16 @@
+{
+    "name": "Z80dasm",
+    "description": "Disassembler for the Zilog Z80 microprocessor and compatibles",
+    "url": "https://www.tablix.org/~avian/z80dasm/z80dasm-1.1.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.tablix.org/~avian/blog/articles/z80dasm/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.5"
+}

@@ -1,0 +1,49 @@
+{
+    "name": "Usbmuxd",
+    "description": "USB multiplexor daemon for iPhone and iPod Touch devices",
+    "url": "https://www.libimobiledevice.org/downloads/libusbmuxd-1.0.10.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.libimobiledevice.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libplist",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/libimobiledevice/libusbmuxd/commit/4397b3376dc4.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.10"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Httping",
+    "description": "Ping-like tool for HTTP requests",
+    "url": "https://www.vanheusden.com/httping/httping-2.5.tgz",
+    "mirror": null,
+    "homepage": "https://www.vanheusden.com/httping/",
+    "depends": [
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace %w[configure Makefile], \"ncursesw\", \"ncurses\"",
+        "ENV.append \"LDFLAGS\", \"-lintl\"",
+        "inreplace \"Makefile\", \"cp nl.mo $(DESTDIR)/$(PREFIX)/share/locale/nl/LC_MESSAGES/httping.mo\", \"\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.5"
+}

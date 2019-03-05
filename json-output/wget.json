@@ -1,0 +1,53 @@
+{
+    "name": "Wget",
+    "description": "Internet file retriever",
+    "url": "https://ftp.gnu.org/gnu/wget/wget-1.20.1.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/wget/wget-1.20.1.tar.gz",
+    "homepage": "https://www.gnu.org/software/wget/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "xz",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libidn2",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\", \"--skip-po\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--with-ssl=openssl\",",
+        "\"--with-libssl-prefix=#{Formula[\"openssl\"].opt_prefix}\",",
+        "\"--disable-debug\",",
+        "\"--disable-pcre\",",
+        "\"--disable-pcre2\",",
+        "\"--without-libpsl\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.20.1"
+}

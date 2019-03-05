@@ -1,0 +1,27 @@
+{
+    "name": "Urlview",
+    "description": "URL extractor/launcher",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/u/urlview/urlview_0.9.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/u/urlview/urlview_0.9.orig.tar.gz",
+    "homepage": "https://packages.debian.org/sid/misc/urlview",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/u/urlview/urlview_0.9-20.diff.gz",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "inreplace \"urlview.man\", \"/etc/urlview/url_handler.sh\", \"open\"",
+        "inreplace \"urlview.c\",",
+        "'#define DEFAULT_COMMAND \"/etc/urlview/url_handler.sh %s\"',",
+        "'#define DEFAULT_COMMAND \"open %s\"'",
+        "man1.mkpath",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9"
+}

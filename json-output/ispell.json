@@ -1,0 +1,21 @@
+{
+    "name": "Ispell",
+    "description": "International Ispell",
+    "url": "https://www.cs.hmc.edu/~geoff/tars/ispell-3.4.00.tar.gz",
+    "mirror": "https://mirrors.kernel.org/debian/pool/main/i/ispell/ispell_3.4.00.orig.tar.gz",
+    "homepage": "https://lasr.cs.ucla.edu/geoff/ispell.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "cp \"local.h.macos\", \"local.h\"",
+        "chmod 0644, \"local.h\"",
+        "inreplace \"local.h\" do |s|",
+        "s.gsub! \"/usr/local\", prefix",
+        "s.gsub! \"/man/man\", \"/share/man/man\"",
+        "s.gsub! \"/lib\", \"/lib/ispell\""
+    ],
+    "version": "3.4.00"
+}

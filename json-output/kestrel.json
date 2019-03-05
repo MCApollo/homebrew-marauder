@@ -1,0 +1,17 @@
+{
+    "name": "Kestrel",
+    "description": "Distributed message queue",
+    "url": "https://twitter-archive.github.io/kestrel/download/kestrel-2.4.1.zip",
+    "mirror": null,
+    "homepage": "https://twitter-archive.github.io/kestrel/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"log/kestrel\").mkpath",
+        "(var/\"run/kestrel\").mkpath",
+        "(var/\"spool/kestrel\").mkpath"
+    ],
+    "version": "2.4.1"
+}

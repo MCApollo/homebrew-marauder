@@ -1,0 +1,29 @@
+{
+    "name": "Restund",
+    "description": "Modular STUN/TURN server",
+    "url": "http://www.creytiv.com/pub/restund-0.4.12.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.creytiv.com",
+    "depends": [
+        {
+            "depend": "libre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libre = Formula[\"libre\"]",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\",",
+        "\"LIBRE_MK=#{libre.opt_share}/re/re.mk\",",
+        "\"LIBRE_INC=#{libre.opt_include}/re\",",
+        "\"LIBRE_SO=#{libre.opt_lib}\"",
+        "system \"make\", \"config\", \"DESTDIR=#{prefix}\",",
+        "\"PREFIX=#{prefix}\",",
+        "\"LIBRE_MK=#{libre.opt_share}/re/re.mk\",",
+        "\"LIBRE_INC=#{libre.opt_include}/re\",",
+        "\"LIBRE_SO=#{libre.opt_lib}\""
+    ],
+    "version": "0.4.12"
+}

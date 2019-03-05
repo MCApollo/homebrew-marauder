@@ -1,0 +1,17 @@
+{
+    "name": "Acpica",
+    "description": "OS-independent implementation of the ACPI specification",
+    "url": "https://acpica.org/sites/acpica/files/acpica-unix-20180810.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.acpica.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"make\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "20180810"
+}

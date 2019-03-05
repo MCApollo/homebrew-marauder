@@ -1,0 +1,17 @@
+{
+    "name": "Esniper",
+    "description": "Snipe eBay auctions from the command-line",
+    "url": "https://downloads.sourceforge.net/project/esniper/esniper/2.35.0/esniper-2-35-0.tgz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/esniper/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.35.0"
+}

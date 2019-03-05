@@ -1,0 +1,46 @@
+{
+    "name": "Yconalyzer",
+    "description": "TCP traffic analyzer",
+    "url": "https://downloads.sourceforge.net/project/yconalyzer/yconalyzer-1.0.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/yconalyzer/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "strip": "0"
+        },
+        {
+            "url": null,
+            "data": [
+                "--- yconalyzer.cc.orig\t2014-01-12 14:15:17.000000000 +0800\n",
+                "+++ yconalyzer.cc\t2014-01-12 14:17:49.000000000 +0800\n",
+                "@@ -76,19 +76,11 @@\n",
+                "\n",
+                " #include <string>\n",
+                "\n",
+                "-#if __GNUC__ > 2\n",
+                " #include <map>\n",
+                "-using namespace _GLIBCXX_STD;\n",
+                "+using namespace std;\n",
+                " // Linux gcc-3 is not too happy with the format strings we use in BSD.\n",
+                " #define KEY_FMT_STRING \"%#8x%#4x\"\n",
+                "\n",
+                "-#else\t/* We are using gnu-c <= 2 */\n",
+                "-\n",
+                "-#include <hash_map.h>\n",
+                "-#define KEY_FMT_STRING \"%8ux%4hx\"\n",
+                "-\n",
+                "-#endif\n",
+                "-\n",
+                " static int debug = 0;\n",
+                " static u_short port = 0;\n",
+                " static int nbuckets;\n"
+            ]
+        }
+    ],
+    "install": [],
+    "version": "1.0.4"
+}

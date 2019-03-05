@@ -1,0 +1,42 @@
+{
+    "name": "Docbook",
+    "description": "Standard SGML representation system for technical documents",
+    "url": "https://docbook.org/xml/5.0/docbook-5.0.zip",
+    "mirror": null,
+    "homepage": "https://docbook.org/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "xml412",
+            "url": "https://docbook.org/xml/4.1.2/docbkx412.zip"
+        },
+        {
+            "name": "xml42",
+            "url": "https://docbook.org/xml/4.2/docbook-xml-4.2.zip"
+        },
+        {
+            "name": "xml43",
+            "url": "https://docbook.org/xml/4.3/docbook-xml-4.3.zip"
+        },
+        {
+            "name": "xml44",
+            "url": "https://docbook.org/xml/4.4/docbook-xml-4.4.zip"
+        },
+        {
+            "name": "xml45",
+            "url": "https://docbook.org/xml/4.5/docbook-xml-4.5.zip"
+        },
+        {
+            "name": "xml50",
+            "url": "https://docbook.org/xml/5.0/docbook-5.0.zip"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "unless File.file?(\"#{etc}/xml/catalog\")",
+        "system \"xmlcatalog\", \"--noout\", \"--create\", \"#{etc}/xml/catalog\""
+    ],
+    "version": "5.0"
+}

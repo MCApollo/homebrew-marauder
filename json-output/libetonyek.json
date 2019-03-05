@@ -1,0 +1,44 @@
+{
+    "name": "Libetonyek",
+    "description": "Interpret and import Apple Keynote presentations",
+    "url": "https://dev-www.libreoffice.org/src/libetonyek/libetonyek-0.1.8.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.documentfoundation.org/DLP/Libraries/libetonyek",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glm",
+            "build-depend": false
+        },
+        {
+            "depend": "librevenge",
+            "build-depend": false
+        },
+        {
+            "depend": "mdds",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "liblangtag",
+            "url": "https://bitbucket.org/tagoh/liblangtag/downloads/liblangtag-0.6.2.tar.bz2"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resource(\"liblangtag\").stage do",
+        "system \"./configure\", \"--prefix=#{libexec}\", \"--enable-modules=no\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.8"
+}

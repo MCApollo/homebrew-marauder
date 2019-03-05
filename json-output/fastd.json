@@ -1,0 +1,51 @@
+{
+    "name": "Fastd",
+    "description": "Fast and Secure Tunnelling Daemon",
+    "url": "https://projects.universe-factory.net/attachments/download/86/fastd-18.tar.xz",
+    "mirror": null,
+    "homepage": "https://projects.universe-factory.net/projects/fastd",
+    "depends": [
+        {
+            "depend": "bison",
+            "build-depend": false
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "json-c",
+            "build-depend": false
+        },
+        {
+            "depend": "libsodium",
+            "build-depend": false
+        },
+        {
+            "depend": "libuecc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/c2c6049/fastd/patch-xcode8-clock_gettime.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "args = std_cmake_args",
+        "args << \"-DENABLE_LTO=ON\"",
+        "args << \"-DWITH_CIPHER_AES128_CTR_NACL=OFF\"",
+        "mkdir \"fastd-build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "fastd18"
+}

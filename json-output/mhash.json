@@ -1,0 +1,17 @@
+{
+    "name": "Mhash",
+    "description": "Uniform interface to a large number of hash algorithms",
+    "url": "https://downloads.sourceforge.net/project/mhash/mhash/0.9.9.9/mhash-0.9.9.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://mhash.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.9.9"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Tinyproxy",
+    "description": "HTTP/HTTPS proxy for POSIX systems",
+    "url": "https://github.com/tinyproxy/tinyproxy/releases/download/1.10.0/tinyproxy-1.10.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.banu.com/tinyproxy/",
+    "depends": [
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "docbook-xsl",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(var/\"log/tinyproxy\").mkpath",
+        "(var/\"run/tinyproxy\").mkpath"
+    ],
+    "version": "1.10.0"
+}

@@ -1,0 +1,30 @@
+{
+    "name": "Plotutils",
+    "description": "C/C++ function library for exporting 2-D vector graphics",
+    "url": "https://ftp.gnu.org/gnu/plotutils/plotutils-2.6.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/plotutils/plotutils-2.6.tar.gz",
+    "homepage": "https://www.gnu.org/software/plotutils/",
+    "depends": [
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"libplot/z_write.c\", \"png_ptr->jmpbuf\", \"png_jmpbuf (png_ptr)\"",
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--enable-libplotter",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6"
+}

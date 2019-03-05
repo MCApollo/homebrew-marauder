@@ -1,0 +1,30 @@
+{
+    "name": "Libwpg",
+    "description": "Library for reading and parsing Word Perfect Graphics format",
+    "url": "https://dev-www.libreoffice.org/src/libwpg-0.3.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://libwpg.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "librevenge",
+            "build-depend": false
+        },
+        {
+            "depend": "libwpd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.2"
+}

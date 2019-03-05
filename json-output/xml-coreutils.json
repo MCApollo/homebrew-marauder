@@ -1,0 +1,22 @@
+{
+    "name": "XmlCoreutils",
+    "description": "Powerful interactive system for text processing",
+    "url": "https://www.lbreyer.com/gpl/xml-coreutils-0.8.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.lbreyer.com/xml-coreutils.html",
+    "depends": [
+        {
+            "depend": "s-lang",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.8.1"
+}

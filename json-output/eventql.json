@@ -1,0 +1,31 @@
+{
+    "name": "Eventql",
+    "description": "Database for large-scale event analytics",
+    "url": "https://github.com/eventql/eventql/releases/download/v0.4.1/eventql-0.4.1.tgz",
+    "mirror": null,
+    "homepage": "https://eventql.io",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.1"
+}

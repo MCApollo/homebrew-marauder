@@ -1,0 +1,37 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Command-line tools for OpenPGP-related operations",
+    "url": "https://hackage.haskell.org/package/hopenpgp-tools-0.21.2/hopenpgp-tools-0.21.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://hackage.haskell.org/package/hopenpgp-tools",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "nettle",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "homebrew-key.gpg",
+            "url": "https://gist.githubusercontent.com/zmwangx/be307671d11cd78985bd3a96182f15ea/raw/c7e803814efc4ca96cc9a56632aa542ea4ccf5b3/homebrew-key.gpg"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package :using => [\"alex\", \"happy\"]"
+    ],
+    "version": "0.21.2"
+}

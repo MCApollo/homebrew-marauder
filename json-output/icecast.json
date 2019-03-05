@@ -1,0 +1,32 @@
+{
+    "name": "Icecast",
+    "description": "Streaming MP3 audio server",
+    "url": "https://downloads.xiph.org/releases/icecast/icecast-2.4.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://icecast.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "(prefix+\"var/log/icecast\").mkpath",
+        "touch prefix+\"var/log/icecast/error.log\""
+    ],
+    "version": "2.4.3"
+}

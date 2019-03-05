@@ -1,0 +1,31 @@
+{
+    "name": "Ogmtools",
+    "description": "OGG media streams manipulation tools",
+    "url": "https://www.bunkus.org/videotools/ogmtools/ogmtools-1.5.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.bunkus.org/videotools/ogmtools/",
+    "depends": [
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/e4957439/ogmtools/common.h.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.5"
+}

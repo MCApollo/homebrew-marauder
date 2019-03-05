@@ -1,0 +1,20 @@
+{
+    "name": "JpegArchive",
+    "description": "Utilities for archiving JPEGs for long term storage",
+    "url": "https://github.com/danielgtaylor/jpeg-archive/archive/v2.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/danielgtaylor/jpeg-archive",
+    "depends": [
+        {
+            "depend": "mozjpeg",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "2.2.0"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "Nsd",
+    "description": "Name server daemon",
+    "url": "https://www.nlnetlabs.nl/downloads/nsd/nsd-4.1.26.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.nlnetlabs.nl/projects/nsd/",
+    "depends": [
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--localstatedir=#{var}\",",
+        "\"--with-libevent=#{Formula[\"libevent\"].opt_prefix}\",",
+        "\"--with-ssl=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.1.26"
+}

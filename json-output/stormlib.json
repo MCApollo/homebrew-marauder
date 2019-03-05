@@ -1,0 +1,41 @@
+{
+    "name": "Stormlib",
+    "description": "Library for handling Blizzard MPQ archives",
+    "url": "https://github.com/ladislav-zezula/StormLib/archive/v9.22.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.zezula.net/en/mpq/stormlib.html",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/CMakeLists.txt b/CMakeLists.txt\n",
+                "index 76c6aa9..4fd0a46 100644\n",
+                "--- a/CMakeLists.txt\n",
+                "+++ b/CMakeLists.txt\n",
+                "@@ -297,7 +297,6 @@ target_include_directories(${LIBRARY_NAME} PUBLIC src/)\n",
+                " set_target_properties(${LIBRARY_NAME} PROPERTIES PUBLIC_HEADER \"src/StormLib.h;src/StormPort.h\")\n",
+                " if(BUILD_SHARED_LIBS)\n",
+                "     if(APPLE)\n",
+                "-        set_target_properties(${LIBRARY_NAME} PROPERTIES FRAMEWORK true)\n",
+                "         set_target_properties(${LIBRARY_NAME} PROPERTIES LINK_FLAGS \"-framework Carbon\")\n",
+                "     endif()\n",
+                "     if(UNIX)\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "system \"cmake\", \".\", \"-DBUILD_SHARED_LIBS=ON\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "9.22"
+}

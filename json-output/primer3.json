@@ -1,0 +1,18 @@
+{
+    "name": "Primer3",
+    "description": "Program for designing PCR primers",
+    "url": "https://downloads.sourceforge.net/project/primer3/primer3/2.4.0/primer3-2.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://primer3.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"make\"",
+        "bin.install %w[primer3_core ntdpal ntthal oligotm long_seq_tm_test]",
+        "pkgshare.install \"primer3_config\""
+    ],
+    "version": "2.4.0"
+}

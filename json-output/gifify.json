@@ -1,0 +1,24 @@
+{
+    "name": "Gifify",
+    "description": "Turn movies into GIFs",
+    "url": "https://github.com/jclem/gifify/archive/v4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jclem/gifify",
+    "depends": [
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "imagemagick",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"gifify.sh\" => \"gifify\""
+    ],
+    "version": "4.0"
+}

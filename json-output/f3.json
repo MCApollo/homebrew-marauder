@@ -1,0 +1,23 @@
+{
+    "name": "F3",
+    "description": "Test various flash cards",
+    "url": "https://github.com/AltraMayor/f3/archive/v7.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://oss.digirati.com.br/f3/",
+    "depends": [
+        {
+            "depend": "argp-standalone",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\", \"ARGP=#{Formula[\"argp-standalone\"].opt_prefix}\"",
+        "bin.install %w[f3read f3write]",
+        "man1.install \"f3read.1\"",
+        "man1.install_symlink \"f3read.1\" => \"f3write.1\""
+    ],
+    "version": "7.1"
+}

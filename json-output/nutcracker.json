@@ -1,0 +1,32 @@
+{
+    "name": "Nutcracker",
+    "description": "Proxy for memcached and redis",
+    "url": "https://github.com/twitter/twemproxy/archive/v0.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/twitter/twemproxy",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-ivf\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"conf\", \"notes\", \"scripts\""
+    ],
+    "version": "0.4.1"
+}

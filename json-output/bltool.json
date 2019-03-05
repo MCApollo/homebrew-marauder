@@ -1,0 +1,27 @@
+{
+    "name": "Bltool",
+    "description": "Tool for command-line interaction with backloggery.com",
+    "url": "https://github.com/ToxicFrog/bltool/releases/download/v0.2.4/bltool-0.2.4.zip",
+    "mirror": null,
+    "homepage": "https://github.com/ToxicFrog/bltool",
+    "depends": [
+        {
+            "depend": "leiningen",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "system \"lein\", \"uberjar\"",
+        "bltool_jar = Dir[\"target/bltool-*-standalone.jar\"][0]",
+        "else",
+        "bltool_jar = \"bltool.jar\"",
+        "end",
+        "libexec.install bltool_jar",
+        "bin.write_jar_script libexec/File.basename(bltool_jar), \"bltool\""
+    ],
+    "version": "0.2.4"
+}

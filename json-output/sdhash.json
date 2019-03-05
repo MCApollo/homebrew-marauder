@@ -1,0 +1,23 @@
+{
+    "name": "Sdhash",
+    "description": "Tool for correlating binary blobs of data",
+    "url": "http://roussev.net/sdhash/releases/packages/sdhash-3.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://roussev.net/sdhash/sdhash.html",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\" do |s|",
+        "s.change_make_var! \"LDFLAGS\",",
+        "\"-L. -L./external/stage/lib -lboost_regex -lboost_system -lboost_filesystem \" \\",
+        "\"-lboost_program_options -lc -lm -lcrypto -lboost_thread -lpthread\""
+    ],
+    "version": "3.1"
+}

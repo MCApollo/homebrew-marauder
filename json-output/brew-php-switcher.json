@@ -1,0 +1,21 @@
+{
+    "name": "BrewPhpSwitcher",
+    "description": "Switch Apache / Valet / CLI configs between PHP versions",
+    "url": "https://github.com/philcook/brew-php-switcher/archive/v2.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/philcook/php-switcher",
+    "depends": [
+        {
+            "depend": "php",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"phpswitch.sh\"",
+        "bin.install_symlink \"phpswitch.sh\" => \"brew-php-switcher\""
+    ],
+    "version": "2.1.1"
+}

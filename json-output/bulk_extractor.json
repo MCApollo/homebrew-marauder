@@ -1,0 +1,29 @@
+{
+    "name": "BulkExtractor",
+    "description": "Stream-based forensics tool",
+    "url": "https://digitalcorpora.org/downloads/bulk_extractor/bulk_extractor-1.5.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/simsong/bulk_extractor/wiki",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "(pkgshare/\"doc\").install Dir[\"doc/*.{html,txt,pdf}\"]",
+        "(lib/\"python2.7/site-packages\").install Dir[\"python/*.py\"]"
+    ],
+    "version": "1.5.5"
+}

@@ -1,0 +1,31 @@
+{
+    "name": "Figlet",
+    "description": "Banner-like program prints strings as ASCII art",
+    "url": "http://ftp.figlet.org/pub/figlet/program/unix/figlet-2.2.5.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/figlet-2.2.5.tar.gz",
+    "homepage": "http://www.figlet.org/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "contrib",
+            "url": "http://ftp.figlet.org/pub/figlet/fonts/contributed.tar.gz"
+        },
+        {
+            "name": "intl",
+            "url": "http://ftp.figlet.org/pub/figlet/fonts/international.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(pkgshare/\"fonts\").install resource(\"contrib\"), resource(\"intl\")",
+        "chmod 0666, %w[Makefile showfigfonts]",
+        "man6.mkpath",
+        "bin.mkpath",
+        "system \"make\", \"prefix=#{prefix}\",",
+        "\"DEFAULTFONTDIR=#{pkgshare}/fonts\",",
+        "\"MANDIR=#{man}\",",
+        "\"install\""
+    ],
+    "version": "2.2.5"
+}

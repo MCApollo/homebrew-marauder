@@ -1,0 +1,17 @@
+{
+    "name": "Rmcast",
+    "description": "IP Multicast library",
+    "url": "http://www.land.ufrj.br/tools/rmcast/download/rmcast-2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.land.ufrj.br/tools/rmcast/rmcast.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.0"
+}

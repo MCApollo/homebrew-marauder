@@ -1,0 +1,29 @@
+{
+    "name": "Alpine",
+    "description": "News and email agent",
+    "url": "https://ftp.osuosl.org/pub/blfs/conglomeration/alpine/alpine-2.21.tar.xz",
+    "mirror": "https://fossies.org/linux/misc/alpine-2.21.tar.xz",
+    "homepage": "https://repo.or.cz/alpine.git",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "args = %W[",
+        "--disable-debug",
+        "--with-ssl-dir=#{Formula[\"openssl\"].opt_prefix}",
+        "--with-ssl-certs-dir=#{etc}/openssl",
+        "--prefix=#{prefix}",
+        "--with-passfile=.pine-passfile",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.21"
+}

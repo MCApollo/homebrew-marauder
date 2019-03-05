@@ -1,0 +1,36 @@
+{
+    "name": "Libsbol",
+    "description": "Read and write files in the Synthetic Biology Open Language (SBOL)",
+    "url": "https://github.com/SynBioDex/libSBOL/archive/v2.3.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://synbiodex.github.io/libSBOL",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jsoncpp",
+            "build-depend": false
+        },
+        {
+            "depend": "raptor",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DCMAKE_CXX_FLAGS=-I/System/Library/Frameworks/Python.framework/Headers\",",
+        "\"-DSBOL_BUILD_SHARED=TRUE\",",
+        "\"-DSBOL_BUILD_STATIC=FALSE\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.0.0"
+}

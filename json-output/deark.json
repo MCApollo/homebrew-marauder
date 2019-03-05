@@ -1,0 +1,16 @@
+{
+    "name": "\"base64\"",
+    "description": "File conversion utility for older formats",
+    "url": "https://entropymine.com/deark/releases/deark-1.5.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://entropymine.com/deark/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"deark\""
+    ],
+    "version": "1.5.0"
+}

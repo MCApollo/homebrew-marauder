@@ -1,0 +1,62 @@
+{
+    "name": "Openconnect",
+    "description": "Open client for Cisco AnyConnect VPN",
+    "url": "ftp://ftp.infradead.org/pub/openconnect/openconnect-8.02.tar.gz",
+    "mirror": "https://fossies.org/linux/privat/openconnect-8.02.tar.gz",
+    "homepage": "https://www.infradead.org/openconnect/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "stoken",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "vpnc-script",
+            "url": "http://git.infradead.org/users/dwmw2/vpnc-scripts.git/blob_plain/1000e0f6dd7d6bff163169a46359211c1fc3a6d2:/vpnc-script"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "etc.install resource(\"vpnc-script\")",
+        "chmod 0755, \"#{etc}/vpnc-script\"",
+        "if build.head?",
+        "ENV[\"LIBTOOLIZE\"] = \"glibtoolize\"",
+        "system \"./autogen.sh\"",
+        "end",
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--sbindir=#{bin}",
+        "--localstatedir=#{var}",
+        "--with-vpnc-script=#{etc}/vpnc-script",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "8.02"
+}

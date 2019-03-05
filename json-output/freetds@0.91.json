@@ -1,0 +1,39 @@
+{
+    "name": "FreetdsAT091",
+    "description": "Libraries to talk to Microsoft SQL Server & Sybase",
+    "url": "http://www.freetds.org/files/stable/freetds-0.91.112.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.freetds.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "unixodbc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--mandir=#{man}",
+        "--enable-krb5",
+        "--with-openssl=#{Formula[\"openssl\"].opt_prefix}",
+        "--with-tdsver=7.1",
+        "--with-unixodbc=#{Formula[\"unixodbc\"].opt_prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "ENV.deparallelize ",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.91.112"
+}

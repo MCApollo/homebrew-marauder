@@ -1,0 +1,58 @@
+{
+    "name": "Netris",
+    "description": "Networked variant of tetris",
+    "url": "https://deb.debian.org/debian/pool/main/n/netris/netris_0.52.orig.tar.gz",
+    "mirror": null,
+    "homepage": "https://web.archive.org/web/20071223041235/www.netris.be/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/01_multi-games-with-scoring",
+            "strip": "1"
+        },
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/02_line-count-patch",
+            "strip": "1"
+        },
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/03_staircase-effect-fix",
+            "strip": "1"
+        },
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/04_robot-close-fixup",
+            "strip": "1"
+        },
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/05_init-static-vars",
+            "strip": "1"
+        },
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/06_curses.c-include-term.h",
+            "strip": "1"
+        },
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/07_curses.c-include-time.h",
+            "strip": "1"
+        },
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/08_various-fixes",
+            "strip": "1"
+        },
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/09_ipv6",
+            "strip": "1"
+        },
+        {
+            "url": "https://git.deb.at/w/pkg/netris.git/blob_plain/90991bd0137a2510f93ec126a8642f48eb3738be:/debian/patches/10_fix-memory-leak",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"sh\", \"Configure\"",
+        "system \"make\"",
+        "bin.install \"netris\""
+    ],
+    "version": "0.52"
+}

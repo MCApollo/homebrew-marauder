@@ -1,0 +1,27 @@
+{
+    "name": "Ncdu",
+    "description": "NCurses Disk Usage",
+    "url": "https://dev.yorhel.nl/download/ncdu-1.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://dev.yorhel.nl/ncdu",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-i\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14"
+}

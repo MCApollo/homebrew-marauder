@@ -1,0 +1,15 @@
+{
+    "name": "BrewCaskCompletion",
+    "description": "Fish completion for brew-cask",
+    "url": "https://github.com/xyb/homebrew-cask-completion/archive/v2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/xyb/homebrew-cask-completion",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "fish_completion.install \"brew-cask.fish\""
+    ],
+    "version": "2.1"
+}

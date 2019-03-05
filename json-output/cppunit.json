@@ -1,0 +1,16 @@
+{
+    "name": "Cppunit",
+    "description": "Unit testing framework for C++",
+    "url": "https://dev-www.libreoffice.org/src/cppunit-1.14.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/www/Software/cppunit/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14.0"
+}

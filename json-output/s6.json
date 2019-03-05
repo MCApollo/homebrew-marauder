@@ -1,0 +1,36 @@
+{
+    "name": "S6",
+    "description": "Small & secure supervision software suite",
+    "url": "https://skarnet.org/software/s6/s6-2.7.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://skarnet.org/software/s6/",
+    "depends": [],
+    "resource": [
+        {
+            "name": "skalibs",
+            "url": "https://skarnet.org/software/skalibs/skalibs-2.7.0.0.tar.gz"
+        },
+        {
+            "name": "execline",
+            "url": "https://skarnet.org/software/execline/execline-2.5.0.1.tar.gz"
+        },
+        {
+            "name": "skalibs",
+            "url": "git://git.skarnet.org/skalibs"
+        },
+        {
+            "name": "execline",
+            "url": "git://git.skarnet.org/execline"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "resources.each { |r| r.stage(buildpath/r.name) }",
+        "build_dir = buildpath/\"build\"",
+        "cd \"skalibs\" do",
+        "system \"./configure\", \"--disable-shared\", \"--prefix=#{build_dir}\", \"--libdir=#{build_dir}/lib\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7.2.0"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Apng2gif",
+    "description": "Convert APNG animations into animated GIF format",
+    "url": "https://downloads.sourceforge.net/apng2gif/apng2gif-1.8-src.zip",
+    "mirror": null,
+    "homepage": "https://apng2gif.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"apng2gif\""
+    ],
+    "version": "1.8"
+}

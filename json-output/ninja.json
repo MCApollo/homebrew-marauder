@@ -1,0 +1,21 @@
+{
+    "name": "Ninja",
+    "description": "Small build system for use with gyp or CMake",
+    "url": "https://github.com/ninja-build/ninja/archive/v1.9.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://ninja-build.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"python\", \"configure.py\", \"--bootstrap\"",
+        "system \"./configure.py\"",
+        "system \"./ninja\", \"ninja_test\"",
+        "system \"./ninja_test\", \"--gtest_filter=-SubprocessTest.SetWithLots\"",
+        "bin.install \"ninja\"",
+        "bash_completion.install \"misc/bash-completion\" => \"ninja-completion.sh\"",
+        "zsh_completion.install \"misc/zsh-completion\" => \"_ninja\""
+    ],
+    "version": "1.9.0"
+}

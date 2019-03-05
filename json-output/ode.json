@@ -1,0 +1,40 @@
+{
+    "name": "Ode",
+    "description": "Simulating articulated rigid body dynamics",
+    "url": "https://bitbucket.org/odedevs/ode/downloads/ode-0.15.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.ode.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libccd",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"bootstrap\", \"libtoolize\", \"glibtoolize\"",
+        "system \"./bootstrap\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--enable-libccd\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.15.2"
+}

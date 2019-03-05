@@ -1,0 +1,37 @@
+{
+    "name": "Sparkey",
+    "description": "Constant key-value store, best for frequent read/infrequent write uses",
+    "url": "https://github.com/spotify/sparkey/archive/sparkey-1.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/spotify/sparkey/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "snappy",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"--install\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0.0"
+}

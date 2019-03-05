@@ -1,0 +1,16 @@
+{
+    "name": "Polyglot",
+    "description": "Protocol adapter to run UCI engines under XBoard",
+    "url": "http://hgm.nubati.net/releases/polyglot-2.0.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://chessprogramming.wikispaces.com/PolyGlot",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.4"
+}

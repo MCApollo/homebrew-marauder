@@ -1,0 +1,17 @@
+{
+    "name": "Peg",
+    "description": "Program to perform pattern matching on text",
+    "url": "http://piumarta.com/software/peg/peg-0.1.18.tar.gz",
+    "mirror": null,
+    "homepage": "http://piumarta.com/software/peg/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\"",
+        "bin.install %w[peg leg]",
+        "man1.install gzip(\"src/peg.1\")"
+    ],
+    "version": "0.1.18"
+}

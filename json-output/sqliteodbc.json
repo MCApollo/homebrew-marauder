@@ -1,0 +1,29 @@
+{
+    "name": "Sqliteodbc",
+    "description": "SQLite ODBC driver",
+    "url": "https://ch-werner.homepage.t-online.de/sqliteodbc/sqliteodbc-0.9996.tar.gz",
+    "mirror": null,
+    "homepage": "https://ch-werner.homepage.t-online.de/sqliteodbc/",
+    "depends": [
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        },
+        {
+            "depend": "unixodbc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path if MacOS.version == :sierra",
+        "lib.mkdir",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--with-odbc=#{Formula[\"unixodbc\"].opt_prefix}\", \"--with-sqlite3=#{Formula[\"sqlite\"].opt_prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "lib.install_symlink \"#{lib}/libsqlite3odbc.dylib\" => \"libsqlite3odbc.so\""
+    ],
+    "version": "0.9996"
+}

@@ -1,0 +1,17 @@
+{
+    "name": "Ripmime",
+    "description": "Extract attachments out of MIME encoded email packages",
+    "url": "https://pldaniels.com/ripmime/ripmime-1.4.0.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://pldaniels.com/ripmime/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"LIBS=-liconv\", \"CFLAGS=#{ENV.cflags}\"",
+        "bin.install \"ripmime\"",
+        "man1.install \"ripmime.1\""
+    ],
+    "version": "1.4.0.10"
+}

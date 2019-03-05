@@ -1,0 +1,17 @@
+{
+    "name": "Pstree",
+    "description": "Show ps output as a tree",
+    "url": "ftp://ftp.thp.uni-duisburg.de/pub/source/pstree-2.39.tar.gz",
+    "mirror": "https://fossies.org/linux/misc/pstree-2.39.tar.gz",
+    "homepage": "http://www.thp.uni-duisburg.de/pstree/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"pstree\"",
+        "bin.install \"pstree\"",
+        "man1.install \"pstree.1\""
+    ],
+    "version": "2.39"
+}

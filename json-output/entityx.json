@@ -1,0 +1,21 @@
+{
+    "name": "Entityx",
+    "description": "Fast, type-safe C++ Entity Component System",
+    "url": "https://github.com/alecthomas/entityx/archive/1.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/alecthomas/entityx",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DENTITYX_BUILD_SHARED=off\", \"-DENTITYX_BUILD_TESTING=off\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.3.0"
+}

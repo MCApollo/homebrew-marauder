@@ -1,0 +1,22 @@
+{
+    "name": "Phpmyadmin",
+    "description": "Web interface for MySQL and MariaDB",
+    "url": "https://files.phpmyadmin.net/phpMyAdmin/4.8.5/phpMyAdmin-4.8.5-all-languages.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.phpmyadmin.net",
+    "depends": [
+        {
+            "depend": "php",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "pkgshare.install Dir[\"*\"]",
+        "etc.install pkgshare/\"config.sample.inc.php\" => \"phpmyadmin.config.inc.php\"",
+        "ln_s etc/\"phpmyadmin.config.inc.php\", pkgshare/\"config.inc.php\""
+    ],
+    "version": "4.8.5"
+}

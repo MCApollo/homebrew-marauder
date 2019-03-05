@@ -1,0 +1,27 @@
+{
+    "name": "Opam",
+    "description": "The OCaml package manager",
+    "url": "https://github.com/ocaml/opam/releases/download/2.0.3/opam-full-2.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://opam.ocaml.org",
+    "depends": [
+        {
+            "depend": "ocaml",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
+        "system \"make\", \"lib-ext\"",
+        "system \"make\"",
+        "system \"make\", \"man\"",
+        "system \"make\", \"install\"",
+        "bash_completion.install \"src/state/shellscripts/complete.sh\"",
+        "zsh_completion.install \"src/state/shellscripts/complete.zsh\" => \"_opam\""
+    ],
+    "version": "2.0.3"
+}

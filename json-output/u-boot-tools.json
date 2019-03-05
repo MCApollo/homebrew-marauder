@@ -1,0 +1,24 @@
+{
+    "name": "UBootTools",
+    "description": "Universal boot loader",
+    "url": "http://ftp.denx.de/pub/u-boot/u-boot-2018.07.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.denx.de/wiki/U-Boot/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"sandbox_defconfig\"",
+        "system \"make\", \"tools\"",
+        "bin.install \"tools/mkimage\"",
+        "bin.install \"tools/dumpimage\"",
+        "man1.install \"doc/mkimage.1\""
+    ],
+    "version": "2018.07"
+}

@@ -1,0 +1,28 @@
+{
+    "name": "XarMackyle",
+    "description": "eXtensible ARchiver",
+    "url": "https://github.com/downloads/mackyle/xar/xar-1.6.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://mackyle.github.io/xar/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{libexec}\"",
+        "system \"make\"",
+        "ENV.deparallelize { system \"make\", \"install\" }",
+        "bin.install_symlink libexec/\"bin/xar\" => \"xar-mackyle\"",
+        "man1.install_symlink libexec/\"share/man/man1/xar.1\" => \"xar-mackyle.1\""
+    ],
+    "version": "1.6.1"
+}

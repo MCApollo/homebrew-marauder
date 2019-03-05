@@ -1,0 +1,24 @@
+{
+    "name": "Mercury",
+    "description": "Logic/functional programming language",
+    "url": "https://dl.mercurylang.org/release/mercury-srcdist-14.01.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://mercurylang.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = [\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--infodir=#{info}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--enable-java-grade\"]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\", \"PARALLEL=-j\",",
+        "\"INSTALL_MAN_DIR=#{man}\",",
+        "\"INSTALL_INFO_DIR=#{info}\"",
+        "rm Dir.glob(\"#{bin}/*.bat\")"
+    ],
+    "version": "14.01.1"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Sz81",
+    "description": "ZX80/81 emulator",
+    "url": "https://downloads.sourceforge.net/project/sz81/sz81/2.1.7/sz81-2.1.7-source.tar.gz",
+    "mirror": null,
+    "homepage": "https://sz81.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "sdl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "PREFIX=#{prefix}",
+        "BINDIR=#{bin}",
+        "]",
+        "system \"make\", *args",
+        "system \"make\", \"install\", *args"
+    ],
+    "version": "2.1.7"
+}

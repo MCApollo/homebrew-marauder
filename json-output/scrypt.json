@@ -1,0 +1,30 @@
+{
+    "name": "Scrypt",
+    "description": "Encrypt and decrypt files using memory-hard password function",
+    "url": "https://www.tarsnap.com/scrypt/scrypt-1.2.1.tgz",
+    "mirror": null,
+    "homepage": "https://www.tarsnap.com/scrypt.html",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fvi\" if build.head?",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.1"
+}

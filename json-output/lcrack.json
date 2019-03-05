@@ -1,0 +1,19 @@
+{
+    "name": "Lcrack",
+    "description": "Generic password cracker",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/l/lcrack/lcrack_20040914.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/l/lcrack/lcrack_20040914.orig.tar.gz",
+    "homepage": "https://packages.debian.org/sid/lcrack",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\"",
+        "system \"make\"",
+        "bin.install \"lcrack\"",
+        "%w[mktbl mkword regex].each do |prog|",
+        "bin.install prog => \"lcrack_#{prog}\""
+    ],
+    "version": "20040914"
+}

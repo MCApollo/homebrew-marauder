@@ -1,0 +1,35 @@
+{
+    "name": "Zzuf",
+    "description": "Transparent application input fuzzer",
+    "url": "https://github.com/samhocevar/zzuf/releases/download/v0.15/zzuf-0.15.tar.bz2",
+    "mirror": null,
+    "homepage": "http://caca.zoy.org/wiki/zzuf",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.15"
+}

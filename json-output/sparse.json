@@ -1,0 +1,16 @@
+{
+    "name": "Sparse",
+    "description": "Static C code analysis tool",
+    "url": "https://www.kernel.org/pub/software/devel/sparse/dist/sparse-0.5.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://sparse.wiki.kernel.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", /PREFIX=\\$\\(HOME\\)/, \"PREFIX=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.2"
+}

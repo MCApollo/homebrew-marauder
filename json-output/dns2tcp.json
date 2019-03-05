@@ -1,0 +1,16 @@
+{
+    "name": "Dns2tcp",
+    "description": "TCP over DNS tunnel",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/d/dns2tcp/dns2tcp_0.5.2.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/d/dns2tcp/dns2tcp_0.5.2.orig.tar.gz",
+    "homepage": "https://packages.debian.org/sid/dns2tcp",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.5.2"
+}

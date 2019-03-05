@@ -1,0 +1,15 @@
+{
+    "name": "WpCli",
+    "description": "Command-line interface for WordPress",
+    "url": "https://github.com/wp-cli/wp-cli/releases/download/v2.1.0/wp-cli-2.1.0.phar",
+    "mirror": null,
+    "homepage": "https://wp-cli.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"wp-cli-#{version}.phar\" => \"wp\""
+    ],
+    "version": "2.1.0"
+}

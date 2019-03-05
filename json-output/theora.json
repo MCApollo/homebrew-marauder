@@ -1,0 +1,51 @@
+{
+    "name": "Theora",
+    "description": "Open video compression format",
+    "url": "https://downloads.xiph.org/releases/theora/libtheora-1.1.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.theora.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libogg",
+            "build-depend": false
+        },
+        {
+            "depend": "libvorbis",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cp Dir[\"#{Formula[\"libtool\"].opt_share}/libtool/*/config.{guess,sub}\"], buildpath",
+        "system \"./autogen.sh\" if build.head?",
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--disable-oggtest",
+        "--disable-vorbistest",
+        "--disable-examples",
+        "]",
+        "args << \"--disable-asm\" if build.head?",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.1.1"
+}

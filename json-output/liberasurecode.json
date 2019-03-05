@@ -1,0 +1,37 @@
+{
+    "name": "Liberasurecode",
+    "description": "Erasure Code API library written in C with pluggable backends",
+    "url": "https://github.com/openstack/liberasurecode/archive/1.6.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/openstack/liberasurecode",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "jerasure",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.6.0"
+}

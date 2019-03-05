@@ -1,0 +1,27 @@
+{
+    "name": "Ncp",
+    "description": "File copy tool for LANs",
+    "url": "https://dl.fefe.de/ncp-1.2.4.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.fefe.de/ncp/",
+    "depends": [
+        {
+            "depend": "libowfat",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://gist.githubusercontent.com/plumbojumbo/9331146/raw/560e46a688ac9493ffbc1464e59cc062c0940532/GNUmakefile.diff",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\",",
+        "\"LIBOWFAT_PREFIX=#{Formula[\"libowfat\"].opt_prefix}\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "1.2.4"
+}

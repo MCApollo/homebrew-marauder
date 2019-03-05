@@ -1,0 +1,56 @@
+{
+    "name": "Asdf",
+    "description": "Extendable version manager with support for Ruby, Node.js, Erlang & more",
+    "url": "https://github.com/asdf-vm/asdf/archive/v0.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/asdf-vm",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": false
+        },
+        {
+            "depend": "automake",
+            "build-depend": false
+        },
+        {
+            "depend": "coreutils",
+            "build-depend": false
+        },
+        {
+            "depend": "libtool",
+            "build-depend": false
+        },
+        {
+            "depend": "libyaml",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        },
+        {
+            "depend": "unixodbc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "homeshick",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "bash_completion.install \"completions/asdf.bash\"",
+        "fish_completion.install \"completions/asdf.fish\"",
+        "libexec.install \"bin/private\"",
+        "prefix.install Dir[\"*\"]"
+    ],
+    "version": "0.7.0"
+}

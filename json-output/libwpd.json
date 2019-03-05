@@ -1,0 +1,34 @@
+{
+    "name": "Libwpd",
+    "description": "General purpose library for reading WordPerfect files",
+    "url": "https://dev-www.libreoffice.org/src/libwpd-0.10.2.tar.xz",
+    "mirror": null,
+    "homepage": "https://libwpd.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "libgsf",
+            "build-depend": false
+        },
+        {
+            "depend": "librevenge",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.10.2"
+}

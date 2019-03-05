@@ -1,0 +1,18 @@
+{
+    "name": "Blink1",
+    "description": "Control blink(1) indicator light",
+    "url": "https://github.com/todbot/blink1-tool.git",
+    "mirror": null,
+    "homepage": "https://blink1.thingm.com/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"blink1-tool\"",
+        "lib.install \"libBlink1.dylib\"",
+        "include.install \"blink1-lib.h\""
+    ],
+    "version": "2.0.2-git-ddea9337"
+}

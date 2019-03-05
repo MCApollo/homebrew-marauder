@@ -1,0 +1,18 @@
+{
+    "name": "Diffstat",
+    "description": "Produce graph of changes introduced by a diff file",
+    "url": "https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz",
+    "mirror": "https://deb.debian.org/debian/pool/main/d/diffstat/diffstat_1.62.orig.tar.gz",
+    "homepage": "https://invisible-island.net/diffstat/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.62"
+}

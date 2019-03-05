@@ -1,0 +1,69 @@
+{
+    "name": "GstValidate",
+    "description": "Tools to validate GstElements from GStreamer",
+    "url": "https://gstreamer.freedesktop.org/src/gst-validate/gst-validate-1.14.4.tar.xz",
+    "mirror": null,
+    "homepage": "https://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-validate/html/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gst-plugins-base",
+            "build-depend": false
+        },
+        {
+            "depend": "gstreamer",
+            "build-depend": false
+        },
+        {
+            "depend": "json-glib",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "]",
+        "if build.head?",
+        "ENV[\"NOCONFIGURE\"] = \"yes\"",
+        "cd \"validate\" do",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "end",
+        "else",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.14.4"
+}

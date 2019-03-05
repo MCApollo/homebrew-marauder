@@ -1,0 +1,16 @@
+{
+    "name": "Hr",
+    "description": "<hr />, for your terminal window",
+    "url": "https://github.com/LuRsT/hr/archive/1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/LuRsT/hr",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"hr\"",
+        "man1.install \"hr.1\""
+    ],
+    "version": "1.2"
+}

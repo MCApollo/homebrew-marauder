@@ -1,0 +1,17 @@
+{
+    "name": "Logcheck",
+    "description": "Mail anomalies in the system logfiles to the administrator",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/l/logcheck/logcheck_1.3.19.tar.xz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/l/logcheck/logcheck_1.3.19.tar.xz",
+    "homepage": "https://packages.debian.org/sid/logcheck",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"Makefile\", \"$(DESTDIR)/$(CONFDIR)\", \"$(CONFDIR)\"",
+        "system \"make\", \"install\", \"--always-make\", \"DESTDIR=#{prefix}\",",
+        "\"SBINDIR=sbin\", \"BINDIR=bin\", \"CONFDIR=#{etc}/logcheck\""
+    ],
+    "version": "1.3.19"
+}

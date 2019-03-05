@@ -1,0 +1,41 @@
+{
+    "name": "Rtags",
+    "description": "Source code cross-referencer like ctags with a clang frontend",
+    "url": "https://github.com/Andersbakken/rtags.git",
+    "mirror": null,
+    "homepage": "https://github.com/Andersbakken/rtags",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "emacs",
+            "build-depend": false
+        },
+        {
+            "depend": "llvm",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.append(\"LDFLAGS\", \"-lc++abi\")",
+        "args = std_cmake_args << \"-DRTAGS_NO_BUILD_CLANG=ON\"",
+        "if MacOS.version == \"10.11\" && MacOS::Xcode.version >= \"8.0\"",
+        "args << \"-DHAVE_CLOCK_MONOTONIC_RAW:INTERNAL=0\"",
+        "args << \"-DHAVE_CLOCK_MONOTONIC:INTERNAL=0\"",
+        "end",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.21-git-12499509"
+}

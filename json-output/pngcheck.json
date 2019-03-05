@@ -1,0 +1,16 @@
+{
+    "name": "Pngcheck",
+    "description": "Print info and check PNG, JNG, and MNG files",
+    "url": "https://downloads.sourceforge.net/project/png-mng/pngcheck/2.3.0/pngcheck-2.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.libpng.org/pub/png/apps/pngcheck.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"-f\", \"Makefile.unx\", \"ZINC=\", \"ZLIB=-lz\"",
+        "bin.install %w[pngcheck pngsplit png-fix-IDAT-windowsize]"
+    ],
+    "version": "2.3.0"
+}

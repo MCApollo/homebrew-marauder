@@ -1,0 +1,29 @@
+{
+    "name": "Imapfilter",
+    "description": "IMAP message processor/filter",
+    "url": "https://github.com/lefcha/imapfilter/archive/v2.6.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/lefcha/imapfilter/",
+    "depends": [
+        {
+            "depend": "lua",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"src/Makefile\" do |s|",
+        "s.change_make_var! \"CFLAGS\", \"#{s.get_make_var \"CFLAGS\"} #{ENV.cflags}\""
+    ],
+    "version": "2.6.12"
+}

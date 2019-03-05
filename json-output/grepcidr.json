@@ -1,0 +1,17 @@
+{
+    "name": "Grepcidr",
+    "description": "Filter IP addresses matching IPv4 CIDR/network specification",
+    "url": "http://www.pc-tools.net/files/unix/grepcidr-2.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.pc-tools.net/unix/grepcidr/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"grepcidr\"",
+        "man1.install \"grepcidr.1\""
+    ],
+    "version": "2.0"
+}

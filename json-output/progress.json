@@ -1,0 +1,15 @@
+{
+    "name": "Progress",
+    "description": "Progress: Coreutils Progress Viewer",
+    "url": "https://github.com/Xfennec/progress/archive/v0.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/Xfennec/progress",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+    ],
+    "version": "0.14"
+}

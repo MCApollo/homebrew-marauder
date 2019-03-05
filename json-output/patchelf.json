@@ -1,0 +1,23 @@
+{
+    "name": "Patchelf",
+    "description": "Modify dynamic ELF executables",
+    "url": "https://nixos.org/releases/patchelf/patchelf-0.9/patchelf-0.9.tar.gz",
+    "mirror": null,
+    "homepage": "https://nixos.org/patchelf.html",
+    "depends": [],
+    "resource": [
+        {
+            "name": "hellworld",
+            "url": "http://timelessname.com/elfbin/helloworld.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9"
+}

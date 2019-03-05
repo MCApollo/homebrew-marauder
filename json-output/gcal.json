@@ -1,0 +1,18 @@
+{
+    "name": "Gcal",
+    "description": "Program for calculating and printing calendars",
+    "url": "https://ftp.gnu.org/gnu/gcal/gcal-4.1.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/gcal/gcal-4.1.tar.xz",
+    "homepage": "https://www.gnu.org/software/gcal/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"-C\", \"doc/en\", \"html\"",
+        "doc.install \"doc/en/gcal.html\""
+    ],
+    "version": "4.1"
+}

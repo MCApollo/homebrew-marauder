@@ -1,0 +1,25 @@
+{
+    "name": "Libofx",
+    "description": "Library to support OFX command responses",
+    "url": "https://downloads.sourceforge.net/project/libofx/libofx/libofx-0.9.13.tar.gz",
+    "mirror": null,
+    "homepage": "https://libofx.sourceforge.io",
+    "depends": [
+        {
+            "depend": "open-sp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "opensp = Formula[\"open-sp\"]",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--with-opensp-includes=#{opensp.opt_include}/OpenSP\",",
+        "\"--with-opensp-libs=#{opensp.opt_lib}\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.9.13"
+}

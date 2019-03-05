@@ -1,0 +1,26 @@
+{
+    "name": "Spandsp",
+    "description": "DSP functions library for telephony",
+    "url": "https://www.soft-switch.org/downloads/spandsp/spandsp-0.0.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.soft-switch.org/",
+    "depends": [
+        {
+            "depend": "libtiff",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.6"
+}

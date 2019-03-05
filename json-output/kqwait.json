@@ -1,0 +1,16 @@
+{
+    "name": "Kqwait",
+    "description": "Wait for events on files or directories on macOS",
+    "url": "https://github.com/sschober/kqwait/archive/kqwait-v1.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/sschober/kqwait",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"kqwait\""
+    ],
+    "version": "1.0.3"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "Quex",
+    "description": "Generate lexical analyzers",
+    "url": "https://downloads.sourceforge.net/project/quex/quex-0.69.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://quex.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"quex\", \"quex-exe.py\"",
+        "doc.install \"README\", \"demo\"",
+        "(bin/\"quex\").write <<~EOS",
+        "#!/bin/bash",
+        "QUEX_PATH=\"#{libexec}\" \"#{libexec}/quex-exe.py\" \"$@\"",
+        "EOS",
+        "if build.head?",
+        "man1.install \"doc/manpage/quex.1\"",
+        "else",
+        "man1.install \"manpage/quex.1\"",
+        "end"
+    ],
+    "version": "0.69.3"
+}

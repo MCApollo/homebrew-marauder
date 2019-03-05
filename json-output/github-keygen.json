@@ -1,0 +1,15 @@
+{
+    "name": "GithubKeygen",
+    "description": "Bootstrap GitHub SSH configuration",
+    "url": "https://github.com/dolmen/github-keygen/archive/v1.304.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/dolmen/github-keygen",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"github-keygen\""
+    ],
+    "version": "1.304"
+}

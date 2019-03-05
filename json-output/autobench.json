@@ -1,0 +1,24 @@
+{
+    "name": "Autobench",
+    "description": "Automatic webserver benchmark tool",
+    "url": "http://www.xenoclast.org/autobench/downloads/autobench-2.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.xenoclast.org/autobench/",
+    "depends": [
+        {
+            "depend": "httperf",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\",",
+        "\"MANDIR=#{man1}\",",
+        "\"CC=#{ENV.cc}\",",
+        "\"CFLAGS=#{ENV.cflags}\",",
+        "\"install\""
+    ],
+    "version": "2.1.2"
+}

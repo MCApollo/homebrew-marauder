@@ -1,0 +1,38 @@
+{
+    "name": "Fcgi",
+    "description": "Protocol for interfacing interactive programs with a web server",
+    "url": "https://downloads.sourceforge.net/project/slackbuildsdirectlinks/fcgi/fcgi-2.4.0.tar.gz",
+    "mirror": "https://fossies.org/linux/www/old/fcgi-2.4.0.tar.gz",
+    "homepage": "https://fastcgi-archives.github.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/libfcgi/fcgi_stdio.c\n",
+                "+++ b/libfcgi/fcgi_stdio.c\n",
+                "@@ -40,7 +40,12 @@\n",
+                "\n",
+                " #ifndef _WIN32\n",
+                "\n",
+                "+#if defined(__APPLE__)\n",
+                "+#include <crt_externs.h>\n",
+                "+#define environ (*_NSGetEnviron())\n",
+                "+#else\n",
+                " extern char **environ;\n",
+                "+#endif\n",
+                "\n",
+                " #ifdef HAVE_FILENO_PROTO\n",
+                " #include <stdio.h>\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.0"
+}

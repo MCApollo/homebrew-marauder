@@ -1,0 +1,22 @@
+{
+    "name": "Viennacl",
+    "description": "Linear algebra library for many-core architectures and multi-core CPUs",
+    "url": "https://downloads.sourceforge.net/project/viennacl/1.7.x/ViennaCL-1.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://viennacl.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\"",
+        "libexec.install \"#{buildpath}/examples/benchmarks/dense_blas-bench-cpu\" => \"test\""
+    ],
+    "version": "1.7.1"
+}

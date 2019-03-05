@@ -1,0 +1,20 @@
+{
+    "name": "BzrBuilder",
+    "description": "Bazaar plugin to construct a branch based on a recipe",
+    "url": "https://launchpad.net/bzr-builder/trunk/0.7.3/+download/bzr-builder-0.7.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://launchpad.net/bzr-builder",
+    "depends": [
+        {
+            "depend": "bazaar",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(share/\"bazaar/plugins/builder\").install Dir[\"*\"]"
+    ],
+    "version": "0.7.3"
+}

@@ -1,0 +1,27 @@
+{
+    "name": "JpegTurbo",
+    "description": "JPEG image codec that aids compression and decompression",
+    "url": "https://downloads.sourceforge.net/project/libjpeg-turbo/2.0.0/libjpeg-turbo-2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libjpeg-turbo.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "nasm",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", \"-DWITH_JPEG8=1\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"test\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.0.0"
+}

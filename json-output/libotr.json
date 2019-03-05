@@ -1,0 +1,23 @@
+{
+    "name": "Libotr",
+    "description": "Off-The-Record (OTR) messaging library",
+    "url": "https://otr.cypherpunks.ca/libotr-4.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://otr.cypherpunks.ca/",
+    "depends": [
+        {
+            "depend": "libgcrypt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.1.1"
+}

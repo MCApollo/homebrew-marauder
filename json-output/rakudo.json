@@ -1,0 +1,26 @@
+{
+    "name": "Rakudo",
+    "description": "Perl 6 compiler targeting MoarVM",
+    "url": "https://rakudo.perl6.org/downloads/rakudo/rakudo-2018.12.tar.gz",
+    "mirror": null,
+    "homepage": "https://rakudo.org",
+    "depends": [
+        {
+            "depend": "nqp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"perl\", \"Configure.pl\",",
+        "\"--backends=moar\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-nqp=#{Formula[\"nqp\"].bin}/nqp\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "bin.install \"tools/install-dist.p6\" => \"perl6-install-dist\""
+    ],
+    "version": "2018.12"
+}

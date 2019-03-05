@@ -1,0 +1,18 @@
+{
+    "name": "StyleCheck",
+    "description": "Parses latex-formatted text in search of forbidden phrases",
+    "url": "https://www.cs.umd.edu/~nspring/software/style-check-0.14.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.cs.umd.edu/~nspring/software/style-check-readme.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"style-check.rb\", \"/etc/style-check.d/\", etc/\"style-check.d/\"",
+        "system \"make\", \"PREFIX=#{prefix}\",",
+        "\"SYSCONFDIR=#{etc}/style-check.d\",",
+        "\"install\""
+    ],
+    "version": "0.14"
+}

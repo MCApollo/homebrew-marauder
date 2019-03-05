@@ -1,0 +1,17 @@
+{
+    "name": "Chadwick",
+    "description": "Tools for parsing Retrosheet MLB play-by-play files",
+    "url": "https://downloads.sourceforge.net/project/chadwick/chadwick-0.6/chadwick-0.6.5/chadwick-0.6.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://chadwick.sourceforge.io",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-debug\", \"--disable-dependency-tracking\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.6.5"
+}

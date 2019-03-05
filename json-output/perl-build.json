@@ -1,0 +1,153 @@
+{
+    "name": "PerlBuild",
+    "description": "Perl builder",
+    "url": "https://github.com/tokuhirom/Perl-Build/archive/1.25.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tokuhirom/Perl-Build",
+    "depends": [],
+    "resource": [
+        {
+            "name": "inc::latest",
+            "url": "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/inc-latest-0.500.tar.gz"
+        },
+        {
+            "name": "Module::Build",
+            "url": "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4222.tar.gz"
+        },
+        {
+            "name": "Module::Build::Tiny",
+            "url": "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-Tiny-0.039.tar.gz"
+        },
+        {
+            "name": "ExtUtils::Config",
+            "url": "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-Config-0.008.tar.gz"
+        },
+        {
+            "name": "ExtUtils::Helpers",
+            "url": "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-Helpers-0.026.tar.gz"
+        },
+        {
+            "name": "ExtUtils::InstallPaths",
+            "url": "https://cpan.metacpan.org/authors/id/L/LE/LEONT/ExtUtils-InstallPaths-0.012.tar.gz"
+        },
+        {
+            "name": "HTTP::Tinyish",
+            "url": "https://cpan.metacpan.org/authors/id/M/MI/MIYAGAWA/HTTP-Tinyish-0.14.tar.gz"
+        },
+        {
+            "name": "common::sense",
+            "url": "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/common-sense-3.74.tar.gz"
+        },
+        {
+            "name": "Perl::Strip",
+            "url": "https://cpan.metacpan.org/authors/id/M/ML/MLEHMANN/Perl-Strip-1.1.tar.gz"
+        },
+        {
+            "name": "App::FatPacker",
+            "url": "https://cpan.metacpan.org/authors/id/M/MS/MSTROUT/App-FatPacker-0.010007.tar.gz"
+        },
+        {
+            "name": "CPAN::Perl::Releases",
+            "url": "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/CPAN-Perl-Releases-3.72.tar.gz"
+        },
+        {
+            "name": "CPAN::Perl::Releases::MetaCPAN",
+            "url": "https://cpan.metacpan.org/authors/id/S/SK/SKAJI/CPAN-Perl-Releases-MetaCPAN-0.006.tar.gz"
+        },
+        {
+            "name": "File::pushd",
+            "url": "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/File-pushd-1.014.tar.gz"
+        },
+        {
+            "name": "HTTP::Tiny",
+            "url": "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/HTTP-Tiny-0.070.tar.gz"
+        },
+        {
+            "name": "IO::File",
+            "url": "https://cpan.metacpan.org/authors/id/G/GB/GBARR/IO-1.25.tar.gz"
+        },
+        {
+            "name": "MIME::Base64",
+            "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/MIME-Base64-3.15.tar.gz"
+        },
+        {
+            "name": "XSLoader",
+            "url": "https://cpan.metacpan.org/authors/id/S/SA/SAPER/XSLoader-0.24.tar.gz"
+        },
+        {
+            "name": "Module::Pluggable",
+            "url": "https://cpan.metacpan.org/authors/id/S/SI/SIMONW/Module-Pluggable-5.2.tar.gz"
+        },
+        {
+            "name": "Exporter",
+            "url": "https://cpan.metacpan.org/authors/id/T/TO/TODDR/Exporter-5.72.tar.gz"
+        },
+        {
+            "name": "Carp",
+            "url": "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/Carp-1.38.tar.gz"
+        },
+        {
+            "name": "ExtUtils::MakeMaker",
+            "url": "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/ExtUtils-MakeMaker-7.24.tar.gz"
+        },
+        {
+            "name": "Data::Dumper",
+            "url": "https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Data-Dumper-2.161.tar.gz"
+        },
+        {
+            "name": "Encode",
+            "url": "https://cpan.metacpan.org/authors/id/D/DA/DANKOGAI/Encode-2.89.tar.gz"
+        },
+        {
+            "name": "parent",
+            "url": "https://cpan.metacpan.org/authors/id/C/CO/CORION/parent-0.236.tar.gz"
+        },
+        {
+            "name": "PathTools",
+            "url": "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/PathTools-3.62.tar.gz"
+        },
+        {
+            "name": "Scalar-List-Utils",
+            "url": "https://cpan.metacpan.org/authors/id/P/PE/PEVANS/Scalar-List-Utils-1.47.tar.gz"
+        },
+        {
+            "name": "if",
+            "url": "https://cpan.metacpan.org/authors/id/R/RJ/RJBS/if-0.0606.tar.gz"
+        },
+        {
+            "name": "Devel::PatchPerl",
+            "url": "https://cpan.metacpan.org/authors/id/B/BI/BINGOS/Devel-PatchPerl-1.48.tar.gz"
+        },
+        {
+            "name": "File::Temp",
+            "url": "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/File-Temp-0.2304.tar.gz"
+        },
+        {
+            "name": "Getopt::Long",
+            "url": "https://cpan.metacpan.org/authors/id/J/JV/JV/Getopt-Long-2.49.1.tar.gz"
+        },
+        {
+            "name": "Pod::Text",
+            "url": "https://cpan.metacpan.org/authors/id/R/RR/RRA/podlators-4.09.tar.gz"
+        },
+        {
+            "name": "Pod::Usage",
+            "url": "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Usage-1.69.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.prepend_create_path \"PERL5LIB\", libexec/\"lib/perl5\"",
+        "(buildpath/\"perl-build\").unlink",
+        "(buildpath/\"bin/perl-build\").unlink",
+        "build_pl = [\"Module::Build::Tiny\", \"CPAN::Perl::Releases::MetaCPAN\"]",
+        "resources.each do |r|",
+        "r.stage do",
+        "next if build_pl.include? r.name",
+        "system \"perl\", \"Makefile.PL\", \"INSTALL_BASE=#{libexec}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.25"
+}

@@ -1,0 +1,41 @@
+{
+    "name": "Tor",
+    "description": "Anonymizing overlay network for TCP",
+    "url": "https://www.torproject.org/dist/tor-0.3.5.8.tar.gz",
+    "mirror": "https://www.torservers.net/mirrors/torproject.org/dist/tor-0.3.5.8.tar.gz",
+    "homepage": "https://www.torproject.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libevent",
+            "build-depend": false
+        },
+        {
+            "depend": "libscrypt",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--sysconfdir=#{etc}",
+        "--localstatedir=#{var}",
+        "--with-openssl-dir=#{Formula[\"openssl\"].opt_prefix}",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3.5.8"
+}

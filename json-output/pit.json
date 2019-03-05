@@ -1,0 +1,31 @@
+{
+    "name": "Pit",
+    "description": "Project manager from hell (integrates with Git)",
+    "url": "https://github.com/michaeldv/pit/archive/0.1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/michaeldv/pit",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/michaeldv/pit/commit/f64978d6c2628e1d4897696997b551f6b186d4bc.diff?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/michaeldv/pit/commit/e378582f4d04760d1195675ab034aac5d7908d8d.diff?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/michaeldv/pit/commit/5d81148349cc442d81cc98779a4678f03f59df67.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "bin.mkpath",
+        "system \"make\"",
+        "system \"make\", \"test\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.1.0"
+}

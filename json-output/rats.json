@@ -1,0 +1,18 @@
+{
+    "name": "Rats",
+    "description": "Rough auditing tool for security",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/rough-auditing-tool-for-security/rats-2.4.tgz",
+    "mirror": null,
+    "homepage": "https://security.web.cern.ch/security/recommendations/en/codetools/rats.shtml",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--infodir=#{info}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4"
+}

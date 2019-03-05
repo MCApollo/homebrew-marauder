@@ -1,0 +1,42 @@
+{
+    "name": "Proj",
+    "description": "Cartographic Projections Library",
+    "url": "https://download.osgeo.org/proj/proj-5.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://proj4.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [
+        {
+            "name": "datumgrid",
+            "url": "https://download.osgeo.org/proj/proj-datumgrid-1.8.zip"
+        }
+    ],
+    "conflicts": [
+        {
+            "conflict": "blast",
+            "reason": "both install a `libproj.a` library"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "(buildpath/\"nad\").install resource(\"datumgrid\")",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "5.2.0"
+}

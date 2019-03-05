@@ -1,0 +1,16 @@
+{
+    "name": "SfPwgen",
+    "description": "Generate passwords using SecurityFoundation framework",
+    "url": "https://github.com/anders/pwgen/archive/v1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/anders/pwgen/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"sf-pwgen\""
+    ],
+    "version": "1.4"
+}

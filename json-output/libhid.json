@@ -1,0 +1,55 @@
+{
+    "name": "Libhid",
+    "description": "Library to access and interact with USB HID devices",
+    "url": "https://pkg.freebsd.org/ports-distfiles/libhid-0.2.16.tar.gz",
+    "mirror": null,
+    "homepage": "https://directory.fsf.org/wiki/Libhid",
+    "depends": [
+        {
+            "depend": "libusb",
+            "build-depend": false
+        },
+        {
+            "depend": "libusb-compat",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- libhid-0.2.16/src/Makefile.am.org\t2014-01-02 19:20:33.000000000 +0200\n",
+                "+++ libhid-0.2.16/src/Makefile.am\t2014-01-02 19:21:15.000000000 +0200\n",
+                "@@ -17,7 +17,7 @@ else\n",
+                " if OS_DARWIN\n",
+                " OS_SUPPORT_SOURCE = darwin.c\n",
+                " AM_CFLAGS += -no-cpp-precomp\n",
+                "-AM_LDFLAGS += -lIOKit -framework \"CoreFoundation\"\n",
+                "+AM_LDFLAGS += -framework IOKit -framework \"CoreFoundation\"\n",
+                " else\n",
+                " OS_SUPPORT =\n",
+                " endif\n",
+                "--- libhid-0.2.16/src/Makefile.in.org\t2014-01-02 19:20:35.000000000 +0200\n",
+                "+++ libhid-0.2.16/src/Makefile.in\t2014-01-02 19:21:24.000000000 +0200\n",
+                "@@ -39,7 +39,7 @@ POST_UNINSTALL = :\n",
+                " build_triplet = @build@\n",
+                " host_triplet = @host@\n",
+                " @OS_BSD_FALSE@@OS_DARWIN_TRUE@@OS_LINUX_FALSE@@OS_SOLARIS_FALSE@am__append_1 = -no-cpp-precomp\n",
+                "-@OS_BSD_FALSE@@OS_DARWIN_TRUE@@OS_LINUX_FALSE@@OS_SOLARIS_FALSE@am__append_2 = -lIOKit -framework \"CoreFoundation\"\n",
+                "+@OS_BSD_FALSE@@OS_DARWIN_TRUE@@OS_LINUX_FALSE@@OS_SOLARIS_FALSE@am__append_2 = -framework IOKit -framework \"CoreFoundation\"\n",
+                " bin_PROGRAMS = libhid-detach-device$(EXEEXT)\n",
+                " subdir = src\n",
+                " DIST_COMMON = $(include_HEADERS) $(srcdir)/Makefile.am \\\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-swig\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.2.16"
+}

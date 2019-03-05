@@ -1,0 +1,23 @@
+{
+    "name": "Nopoll",
+    "description": "Open-source C WebSocket toolkit",
+    "url": "https://www.aspl.es/nopoll/downloads/nopoll-0.4.6.b400.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.aspl.es/nopoll/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.4.6"
+}

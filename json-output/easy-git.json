@@ -1,0 +1,15 @@
+{
+    "name": "EasyGit",
+    "description": "Wrapper to simplify learning and using git",
+    "url": "https://people.gnome.org/~newren/eg/download/1.7.5.2/eg",
+    "mirror": null,
+    "homepage": "https://people.gnome.org/~newren/eg/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"eg\""
+    ],
+    "version": "1.7.5.2"
+}

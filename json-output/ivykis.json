@@ -1,0 +1,30 @@
+{
+    "name": "Ivykis",
+    "description": "Async I/O-assisting library",
+    "url": "https://downloads.sourceforge.net/project/libivykis/0.42.3/ivykis-0.42.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/libivykis",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-i\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.42.3"
+}

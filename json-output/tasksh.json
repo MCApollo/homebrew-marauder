@@ -1,0 +1,25 @@
+{
+    "name": "Tasksh",
+    "description": "Shell wrapper for Taskwarrior commands",
+    "url": "https://taskwarrior.org/download/tasksh-1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://tasktools.org/projects/tasksh.html",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "task",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.2.0"
+}

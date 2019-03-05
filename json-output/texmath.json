@@ -1,0 +1,25 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Haskell library for converting LaTeX math to MathML",
+    "url": "https://hackage.haskell.org/package/texmath-0.11.1.1/texmath-0.11.1.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://johnmacfarlane.net/texmath.html",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package \"--enable-tests\", :flags => [\"executable\"] do",
+        "system \"cabal\", \"test\""
+    ],
+    "version": "0.11.1.1"
+}

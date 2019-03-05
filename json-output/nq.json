@@ -1,0 +1,21 @@
+{
+    "name": "Nq",
+    "description": "Unix command-line queue utility",
+    "url": "https://github.com/chneukirchen/nq/archive/v0.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/chneukirchen/nq",
+    "depends": [
+        {
+            "depend": "macos",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\", \"PREFIX=#{prefix}\"",
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+    ],
+    "version": "0.3.1"
+}

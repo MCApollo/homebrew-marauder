@@ -1,0 +1,19 @@
+{
+    "name": "XmlrpcC",
+    "description": "Lightweight RPC library (based on XML and HTTP)",
+    "url": "https://downloads.sourceforge.net/project/xmlrpc-c/Xmlrpc-c%20Super%20Stable/1.39.12/xmlrpc-c-1.39.12.tgz",
+    "mirror": null,
+    "homepage": "https://xmlrpc-c.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.deparallelize",
+        "system \"./configure\", \"--enable-libxml2-backend\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.39.12"
+}

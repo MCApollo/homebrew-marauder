@@ -1,0 +1,26 @@
+{
+    "name": "Dnsperf",
+    "description": "Measure DNS performance by simulating network conditions",
+    "url": "https://www.dns-oarc.net/files/dnsperf/dnsperf-2.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.dns-oarc.net/tools/dnsperf",
+    "depends": [
+        {
+            "depend": "bind",
+            "build-depend": false
+        },
+        {
+            "depend": "libxml2",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"SDKROOT\"] = MacOS.sdk_path if MacOS.version == :sierra",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2.1"
+}

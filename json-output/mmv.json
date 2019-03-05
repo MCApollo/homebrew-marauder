@@ -1,0 +1,25 @@
+{
+    "name": "Mmv",
+    "description": "Move, copy, append, and link multiple files",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/mmv/mmv_1.01b.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/m/mmv/mmv_1.01b.orig.tar.gz",
+    "homepage": "https://packages.debian.org/unstable/utils/mmv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/m/mmv/mmv_1.01b-15.diff.gz",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"LDFLAGS=\"",
+        "bin.install \"mmv\"",
+        "man1.install \"mmv.1\"",
+        "%w[mcp mad mln].each do |mxx|",
+        "bin.install_symlink \"mmv\" => mxx",
+        "man1.install_symlink \"mmv.1\" => \"#{mxx}.1\""
+    ],
+    "version": "1.01"
+}

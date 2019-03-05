@@ -1,0 +1,40 @@
+{
+    "name": "Dropbear",
+    "description": "Small SSH server/client for POSIX-based system",
+    "url": "https://matt.ucc.asn.au/dropbear/releases/dropbear-2018.76.tar.bz2",
+    "mirror": null,
+    "homepage": "https://matt.ucc.asn.au/dropbear/dropbear.html",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://secure.ucc.asn.au/hg/dropbear/raw-rev/5d2d1021ca00",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "ENV.deparallelize",
+        "if build.head?",
+        "system \"autoconf\"",
+        "system \"autoheader\"",
+        "end",
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--enable-pam\",",
+        "\"--enable-zlib\",",
+        "\"--enable-bundled-libtom\",",
+        "\"--sysconfdir=#{etc}/dropbear\"",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2018.76"
+}

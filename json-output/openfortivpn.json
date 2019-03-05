@@ -1,0 +1,36 @@
+{
+    "name": "Openfortivpn",
+    "description": "Open Fortinet client for PPP+SSL VPN tunnel services",
+    "url": "https://github.com/adrienverge/openfortivpn/archive/v1.8.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/adrienverge/openfortivpn",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.1"
+}

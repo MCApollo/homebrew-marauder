@@ -1,0 +1,17 @@
+{
+    "name": "Ccd2iso",
+    "description": "Convert CloneCD images to ISO images",
+    "url": "https://downloads.sourceforge.net/project/ccd2iso/ccd2iso/ccd2iso-0.3/ccd2iso-0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://ccd2iso.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.3"
+}

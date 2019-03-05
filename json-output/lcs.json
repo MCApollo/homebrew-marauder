@@ -1,0 +1,26 @@
+{
+    "name": "Lcs",
+    "description": "Satirical console-based political role-playing/strategy game",
+    "url": "https://svn.code.sf.net/p/lcsgame/code/trunk",
+    "mirror": null,
+    "homepage": "https://sourceforge.net/projects/lcsgame/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap\"",
+        "system \"./configure\", \"LIBS=-liconv\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.0-u"
+}

@@ -1,0 +1,20 @@
+{
+    "name": "PhpCsFixer",
+    "description": "Tool to automatically fix PHP coding standards issues",
+    "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/releases/download/v2.14.0/php-cs-fixer.phar",
+    "mirror": null,
+    "homepage": "https://cs.sensiolabs.org/",
+    "depends": [
+        {
+            "depend": "php",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"php-cs-fixer.phar\" => \"php-cs-fixer\""
+    ],
+    "version": "2.14.0"
+}

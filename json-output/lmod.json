@@ -1,0 +1,44 @@
+{
+    "name": "Lmod",
+    "description": "Lua-based environment modules system to modify PATH variable",
+    "url": "https://github.com/TACC/Lmod/archive/7.8.21.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.tacc.utexas.edu/research-development/tacc-projects/lmod",
+    "depends": [
+        {
+            "depend": "luarocks",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "lua",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "luafilesystem",
+            "url": "https://github.com/keplerproject/luafilesystem/archive/v1_7_0_2.tar.gz"
+        },
+        {
+            "name": "luaposix",
+            "url": "https://github.com/luaposix/luaposix/archive/v34.0.4.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "luapath = libexec/\"vendor\"",
+        "ENV[\"LUA_PATH\"] = \"?.lua;\" \\",
+        "\"#{luapath}/share/lua/5.3/?.lua;\" \\",
+        "\"#{luapath}/share/lua/5.3/?/init.lua\"",
+        "ENV[\"LUA_CPATH\"] = \"#{luapath}/lib/lua/5.3/?.so\"",
+        "resources.each do |r|",
+        "r.stage do",
+        "system \"luarocks\", \"make\", \"--tree=#{luapath}\""
+    ],
+    "version": "7.8.21"
+}

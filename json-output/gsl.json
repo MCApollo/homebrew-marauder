@@ -1,0 +1,17 @@
+{
+    "name": "Gsl",
+    "description": "Numerical library for C and C++",
+    "url": "https://ftp.gnu.org/gnu/gsl/gsl-2.5.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/gsl/gsl-2.5.tar.gz",
+    "homepage": "https://www.gnu.org/software/gsl/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\" ",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.5"
+}

@@ -1,0 +1,70 @@
+{
+    "name": "Unac",
+    "description": "C library and command that removes accents from a string",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/u/unac/unac_1.8.0.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/u/unac/unac_1.8.0.orig.tar.gz",
+    "homepage": "https://savannah.nongnu.org/projects/unac",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?msg=5;filename=patch-libunac1.txt;att=1;bug=623340",
+            "strip": "0"
+        },
+        {
+            "url": "https://bugs.debian.org/cgi-bin/bugreport.cgi?msg=10;filename=patch-unaccent.c.txt;att=1;bug=623340",
+            "strip": "0"
+        },
+        {
+            "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/u/unac/unac_1.8.0-6.diff.gz",
+            "strip": "1"
+        },
+        {
+            "url": null,
+            "data": [
+                "diff --git a/configure.ac b/configure.ac\n",
+                "index 4a4eab6..9f25d50 100644\n",
+                "--- a/configure.ac\n",
+                "+++ b/configure.ac\n",
+                "@@ -49,6 +49,7 @@ AM_MAINTAINER_MODE\n",
+                "\n",
+                " AM_ICONV\n",
+                "\n",
+                "+LIBS=\"$LIBS -liconv\"\n",
+                " AC_CHECK_FUNCS(iconv_open,,AC_MSG_ERROR([\n",
+                " iconv_open not found try to install replacement from\n",
+                " http://www.gnu.org/software/libiconv/\n"
+            ]
+        }
+    ],
+    "install": [
+        "chmod 0755, \"configure\"",
+        "touch \"config.rpath\"",
+        "inreplace \"autogen.sh\", \"libtool\", \"glibtool\"",
+        "system \"./autogen.sh\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.8.0"
+}

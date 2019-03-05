@@ -1,0 +1,20 @@
+{
+    "name": "Surfraw",
+    "description": "Shell Users",
+    "url": "https://ftp.openbsd.org/pub/OpenBSD/distfiles/surfraw-2.3.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://packages.debian.org/sid/surfraw",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--sysconfdir=#{etc}\",",
+        "\"--with-graphical-browser=open\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.3.0"
+}

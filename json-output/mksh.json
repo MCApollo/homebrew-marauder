@@ -1,0 +1,17 @@
+{
+    "name": "Mksh",
+    "description": "MirBSD Korn Shell",
+    "url": "https://www.mirbsd.org/MirOS/dist/mir/mksh/mksh-R56c.tgz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/mksh-56c.tgz",
+    "homepage": "https://www.mirbsd.org/mksh.htm",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"sh\", \"./Build.sh\", \"-r\", \"-c\", (ENV.compiler == :clang) ? \"lto\" : \"combine\"",
+        "bin.install \"mksh\"",
+        "man1.install \"mksh.1\""
+    ],
+    "version": "1.0-u"
+}

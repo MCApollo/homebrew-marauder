@@ -1,0 +1,16 @@
+{
+    "name": "Yuicompressor",
+    "description": "Yahoo! JavaScript and CSS compressor",
+    "url": "https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.zip",
+    "mirror": null,
+    "homepage": "https://yui.github.io/yuicompressor/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "libexec.install \"yuicompressor-#{version}.jar\"",
+        "bin.write_jar_script libexec/\"yuicompressor-#{version}.jar\", \"yuicompressor\""
+    ],
+    "version": "2.4.8"
+}

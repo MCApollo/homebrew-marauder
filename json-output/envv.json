@@ -1,0 +1,17 @@
+{
+    "name": "Envv",
+    "description": "Shell-independent handling of environment variables",
+    "url": "https://github.com/jakewendt/envv/archive/v1.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/jakewendt/envv#readme",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"envv\"",
+        "man1.install \"envv.1\""
+    ],
+    "version": "1.7"
+}

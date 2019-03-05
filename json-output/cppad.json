@@ -1,0 +1,23 @@
+{
+    "name": "Cppad",
+    "description": "Differentiation of C++ Algorithms",
+    "url": "https://github.com/coin-or/CppAD/archive/20180000.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.coin-or.org/CppAD",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *std_cmake_args,",
+        "\"-Dcppad_prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "20180000.0"
+}

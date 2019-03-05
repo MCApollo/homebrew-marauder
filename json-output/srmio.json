@@ -1,0 +1,34 @@
+{
+    "name": "Srmio",
+    "description": "C library to access the PowerControl of a SRM bike power meter",
+    "url": "http://www.zuto.de/project/files/srmio/srmio-0.1.1~git1.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.zuto.de/project/srmio/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "if build.head?",
+        "chmod 0755, \"genautomake.sh\"",
+        "system \"./genautomake.sh\"",
+        "end",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.1"
+}

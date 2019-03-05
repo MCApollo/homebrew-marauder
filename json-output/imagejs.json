@@ -1,0 +1,16 @@
+{
+    "name": "Imagejs",
+    "description": "Tool to hide JavaScript inside valid image files",
+    "url": "https://github.com/jklmnn/imagejs/archive/0.7.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://jklmnn.de/imagejs/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"imagejs\""
+    ],
+    "version": "0.7.2"
+}

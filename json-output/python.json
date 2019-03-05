@@ -1,0 +1,71 @@
+{
+    "name": "Python",
+    "description": "Interpreted, interactive, object-oriented programming language",
+    "url": "https://www.python.org/ftp/python/3.7.2/Python-3.7.2.tgz",
+    "mirror": null,
+    "homepage": "https://www.python.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gdbm",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        },
+        {
+            "depend": "xz",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "setuptools",
+            "url": "https://files.pythonhosted.org/packages/c2/f7/c7b501b783e5a74cf1768bc174ee4fb0a8a6ee5af6afa92274ff964703e0/setuptools-40.8.0.zip"
+        },
+        {
+            "name": "pip",
+            "url": "https://files.pythonhosted.org/packages/4c/4d/88bc9413da11702cbbace3ccc51350ae099bb351febae8acc85fec34f9af/pip-19.0.2.tar.gz"
+        },
+        {
+            "name": "wheel",
+            "url": "https://files.pythonhosted.org/packages/d9/7d/86df15e317027f6e87aa68ea854abf8437e796b4c0fadd3ae5ee67b77cb2/wheel-0.33.0.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.delete \"PYTHONPATH\"",
+        "xy = (prefix/\"Frameworks/Python.framework/Versions\").children.min.basename.to_s",
+        "site_packages = HOMEBREW_PREFIX/\"lib/python#{xy}/site-packages\"",
+        "site_packages_cellar = prefix/\"Frameworks/Python.framework/Versions/#{xy}/lib/python#{xy}/site-packages\"",
+        "site_packages.mkpath",
+        "site_packages_cellar.unlink if site_packages_cellar.exist?",
+        "site_packages_cellar.parent.install_symlink site_packages",
+        "rm_rf Dir[\"#{site_packages}/sitecustomize.py[co]\"]",
+        "(site_packages/\"sitecustomize.py\").atomic_write(sitecustomize)",
+        "rm_rf Dir[\"#{site_packages}/setuptools*\"]",
+        "rm_rf Dir[\"#{site_packages}/distribute*\"]",
+        "rm_rf Dir[\"#{site_packages}/pip[-_.][0-9]*\", \"#{site_packages}/pip\"]",
+        "%w[setuptools pip wheel].each do |pkg|",
+        "(libexec/pkg).cd do",
+        "system bin/\"python3\", \"-s\", \"setup.py\", \"--no-user-cfg\", \"install\",",
+        "\"--force\", \"--verbose\", \"--install-scripts=#{bin}\",",
+        "\"--install-lib=#{site_packages}\",",
+        "\"--single-version-externally-managed\",",
+        "\"--record=installed.txt\""
+    ],
+    "version": "3.7.2"
+}

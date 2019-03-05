@@ -1,0 +1,21 @@
+{
+    "name": "Soundpipe",
+    "description": "Lightweight music DSP library",
+    "url": "https://github.com/PaulBatchelor/soundpipe/archive/v1.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://paulbatchelor.github.io/proj/soundpipe.html",
+    "depends": [
+        {
+            "depend": "libsndfile",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "pkgshare.install \"examples\", \"test\""
+    ],
+    "version": "1.7.0"
+}

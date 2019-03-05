@@ -1,0 +1,53 @@
+{
+    "name": "Gts",
+    "description": "GNU triangulated surface library",
+    "url": "https://downloads.sourceforge.net/project/gts/gts/0.7.6/gts-0.7.6.tar.gz",
+    "mirror": null,
+    "homepage": "https://gts.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "netpbm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/examples/happrox.c b/examples/happrox.c\n",
+                "index 88770a8..11f140d 100644\n",
+                "--- a/examples/happrox.c\n",
+                "+++ b/examples/happrox.c\n",
+                "@@ -21,7 +21,7 @@\n",
+                " #include <stdlib.h>\n",
+                " #include <locale.h>\n",
+                " #include <string.h>\n",
+                "-#include <pgm.h>\n",
+                "+#include <netpbm/pgm.h>\n",
+                " #include \"config.h\"\n",
+                " #ifdef HAVE_GETOPT_H\n",
+                " #  include <getopt.h>\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.7.6"
+}

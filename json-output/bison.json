@@ -1,0 +1,17 @@
+{
+    "name": "Bison",
+    "description": "Parser generator",
+    "url": "https://ftp.gnu.org/gnu/bison/bison-3.3.2.tar.xz",
+    "mirror": "https://ftpmirror.gnu.org/bison/bison-3.3.2.tar.xz",
+    "homepage": "https://www.gnu.org/software/bison/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.3.2"
+}

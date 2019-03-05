@@ -1,0 +1,20 @@
+{
+    "name": "Pgformatter",
+    "description": "PostgreSQL syntax beautifier",
+    "url": "https://github.com/darold/pgFormatter/archive/v3.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://sqlformat.darold.net/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"perl\", \"Makefile.PL\", \"DESTDIR=.\"",
+        "system \"make\", \"install\"",
+        "prefix.install (buildpath/\"usr/local\").children",
+        "(libexec/\"lib\").install \"blib/lib/pgFormatter\"",
+        "libexec.install bin/\"pg_format\"",
+        "bin.install_symlink libexec/\"pg_format\""
+    ],
+    "version": "3.3"
+}

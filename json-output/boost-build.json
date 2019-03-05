@@ -1,0 +1,21 @@
+{
+    "name": "BoostBuild",
+    "description": "C++ build system",
+    "url": "https://github.com/boostorg/build/archive/boost-1.68.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.boost.org/build/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "b2-tools",
+            "reason": "both install `b2` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./bootstrap.sh\"",
+        "system \"./b2\", \"--prefix=#{prefix}\", \"install\""
+    ],
+    "version": "1.68.0"
+}

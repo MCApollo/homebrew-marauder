@@ -1,0 +1,17 @@
+{
+    "name": "Sqldiff",
+    "description": "Displays the differences between SQLite databases",
+    "url": "https://sqlite.org/2019/sqlite-src-3270100.zip",
+    "mirror": null,
+    "homepage": "https://www.sqlite.org/sqldiff.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"sqldiff\"",
+        "bin.install \"sqldiff\""
+    ],
+    "version": "3270100"
+}

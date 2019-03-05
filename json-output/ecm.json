@@ -1,0 +1,17 @@
+{
+    "name": "Ecm",
+    "description": "Prepare CD image files so they compress better",
+    "url": "https://web.archive.org/web/20091021035854/www.neillcorlett.com/downloads/ecm100.zip",
+    "mirror": null,
+    "homepage": "https://web.archive.org/web/20140227165748/www.neillcorlett.com/ecm/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system ENV.cc, \"-o\", \"ecm\", \"ecm.c\"",
+        "system ENV.cc, \"-o\", \"unecm\", \"unecm.c\"",
+        "bin.install \"ecm\", \"unecm\""
+    ],
+    "version": "100"
+}

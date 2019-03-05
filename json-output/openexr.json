@@ -1,0 +1,37 @@
+{
+    "name": "Openexr",
+    "description": "High dynamic-range image file format",
+    "url": "https://savannah.nongnu.org/download/openexr/openexr-2.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.openexr.com/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "ilmbase",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "exr",
+            "url": "https://github.com/openexr/openexr-images/raw/master/TestImages/AllHalfValues.exr"
+        }
+    ],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/f1a3ea4f69b7a54d8123e2f16488864d52202de8/openexr/64bit_types.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.2.0"
+}

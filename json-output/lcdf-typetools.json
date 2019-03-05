@@ -1,0 +1,18 @@
+{
+    "name": "LcdfTypetools",
+    "description": "Manipulate OpenType and multiple-master fonts",
+    "url": "https://www.lcdf.org/type/lcdf-typetools-2.107.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.lcdf.org/type/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--without-kpathsea\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.107"
+}

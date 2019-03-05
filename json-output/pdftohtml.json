@@ -1,0 +1,21 @@
+{
+    "name": "Pdftohtml",
+    "description": "PDF to HTML converter (based on xpdf)",
+    "url": "https://downloads.sourceforge.net/project/pdftohtml/Experimental%20Versions/pdftohtml%200.40/pdftohtml-0.40a.tar.gz",
+    "mirror": null,
+    "homepage": "https://pdftohtml.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "poppler",
+            "reason": "both install `pdftohtml` binaries"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"src/pdftohtml\""
+    ],
+    "version": "0.40"
+}

@@ -1,0 +1,44 @@
+{
+    "name": "Healpix",
+    "description": "Hierarchical Equal Area isoLatitude Pixelization of a sphere",
+    "url": "https://downloads.sourceforge.net/project/healpix/Healpix_3.50/Healpix_3.50_2018Dec10.tar.gz",
+    "mirror": null,
+    "homepage": "https://healpix.jpl.nasa.gov",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "cfitsio",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "configure_args = %W[",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "]",
+        "cd \"src/C/autotools\" do",
+        "system \"autoreconf\", \"--install\"",
+        "system \"./configure\", *configure_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.50_2018"
+}

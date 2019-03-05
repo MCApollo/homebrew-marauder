@@ -1,0 +1,28 @@
+{
+    "name": "MecabIpadic",
+    "description": "IPA dictionary compiled for MeCab",
+    "url": "https://mirrors.ocf.berkeley.edu/debian/pool/main/m/mecab-ipadic/mecab-ipadic_2.7.0-20070801+main.orig.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/m/mecab-ipadic/mecab-ipadic_2.7.0-20070801+main.orig.tar.gz",
+    "homepage": "https://taku910.github.io/mecab/",
+    "depends": [
+        {
+            "depend": "mecab",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--prefix=#{prefix}",
+        "--with-charset=utf8",
+        "--with-dicdir=#{lib}/mecab/dic/ipadic",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7.0"
+}

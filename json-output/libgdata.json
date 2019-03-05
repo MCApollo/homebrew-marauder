@@ -1,0 +1,74 @@
+{
+    "name": "Libgdata",
+    "description": "GLib-based library for accessing online service APIs",
+    "url": "https://download.gnome.org/sources/libgdata/0.16/libgdata-0.16.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.gnome.org/Projects/libgdata",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "json-glib",
+            "build-depend": false
+        },
+        {
+            "depend": "liboauth",
+            "build-depend": false
+        },
+        {
+            "depend": "libsoup",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/gdata/gdata.symbols b/gdata/gdata.symbols\n",
+                "index bba24ec..c80a642 100644\n",
+                "--- a/gdata/gdata.symbols\n",
+                "+++ b/gdata/gdata.symbols\n",
+                "@@ -966,9 +966,6 @@ gdata_documents_entry_get_quota_used\n",
+                " gdata_documents_service_copy_document\n",
+                " gdata_documents_service_copy_document_async\n",
+                " gdata_documents_service_copy_document_finish\n",
+                "-gdata_goa_authorizer_get_type\n",
+                "-gdata_goa_authorizer_new\n",
+                "-gdata_goa_authorizer_get_goa_object\n",
+                " gdata_documents_document_get_thumbnail_uri\n",
+                " gdata_tasks_task_get_type\n",
+                " gdata_tasks_task_new\n",
+                "@@ -1089,8 +1086,6 @@ gdata_freebase_topic_value_is_image\n",
+                " gdata_freebase_topic_result_get_type\n",
+                " gdata_freebase_topic_result_new\n",
+                " gdata_freebase_topic_result_dup_object\n",
+                "-gdata_freebase_result_error_get_type\n",
+                "-gdata_freebase_result_error_quark\n",
+                " gdata_freebase_result_get_type\n",
+                " gdata_freebase_result_new\n",
+                " gdata_freebase_result_dup_variant\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-gnome\",",
+        "\"--disable-tests\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.16.1"
+}

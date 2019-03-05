@@ -1,0 +1,32 @@
+{
+    "name": "Osmosis",
+    "description": "Command-line OpenStreetMap data processor",
+    "url": "https://bretth.dev.openstreetmap.org/osmosis-build/osmosis-0.45.zip",
+    "mirror": null,
+    "homepage": "https://wiki.openstreetmap.org/wiki/Osmosis",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "--- a/bin/osmosis 2010-11-16 06:58:44.000000000 +0100\n",
+                "+++ b/bin/osmosis  2010-11-23 12:13:01.000000000 +0100\n",
+                "@@ -83,6 +83,7 @@\n",
+                " saveddir=`pwd`\n",
+                " MYAPP_HOME=`dirname \"$PRG\"`/..\n",
+                " MYAPP_HOME=`cd \"$MYAPP_HOME\" && pwd`\n",
+                "+MYAPP_HOME=\"$MYAPP_HOME/libexec\"\n",
+                " cd \"$saveddir\"\n",
+                " \n",
+                " # Build up the classpath of required jar files via classworlds launcher.\n"
+            ]
+        }
+    ],
+    "install": [
+        "bin.install \"bin/osmosis\"",
+        "libexec.install %w[lib config script]"
+    ],
+    "version": "0.45"
+}

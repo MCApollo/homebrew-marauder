@@ -1,0 +1,21 @@
+{
+    "name": "GitExtras",
+    "description": "Small git utilities",
+    "url": "https://github.com/tj/git-extras/archive/4.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/tj/git-extras",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "git-utils",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"make\", \"PREFIX=#{prefix}\", \"INSTALL_VIA=brew\", \"install\"",
+        "pkgshare.install \"etc/git-extras-completion.zsh\""
+    ],
+    "version": "4.7.0"
+}

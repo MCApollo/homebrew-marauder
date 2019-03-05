@@ -1,0 +1,34 @@
+{
+    "name": "Shellinabox",
+    "description": "Export command-line tools to web based terminal emulator",
+    "url": "https://github.com/shellinabox/shellinabox/archive/v2.20.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/shellinabox/shellinabox",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.20"
+}

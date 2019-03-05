@@ -1,0 +1,23 @@
+{
+    "name": "Mruby",
+    "description": "Lightweight implementation of the Ruby language",
+    "url": "https://github.com/mruby/mruby/archive/2.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://mruby.org/",
+    "depends": [
+        {
+            "depend": "bison",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "cd \"build/host/\" do",
+        "lib.install Dir[\"lib/*.a\"]",
+        "prefix.install %w[bin mrbgems mrblib]"
+    ],
+    "version": "2.0.0"
+}

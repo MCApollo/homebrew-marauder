@@ -1,0 +1,36 @@
+{
+    "name": "Hydra",
+    "description": "Network logon cracker which supports many services",
+    "url": "https://github.com/vanhauser-thc/thc-hydra/archive/v8.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/vanhauser-thc/thc-hydra",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "libssh",
+            "build-depend": false
+        },
+        {
+            "depend": "mysql-client",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"configure\" do |s|",
+        "s.gsub! \"/opt/local/lib\", Formula[\"openssl\"].opt_lib",
+        "s.gsub! \"/opt/local/*ssl\", Formula[\"openssl\"].opt_lib",
+        "s.gsub! \"/opt/*ssl/include\", Formula[\"openssl\"].opt_include",
+        "s.gsub! \"libsvn\", \"oh_no_you_dont\""
+    ],
+    "version": "8.8"
+}

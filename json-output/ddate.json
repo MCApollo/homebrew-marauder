@@ -1,0 +1,17 @@
+{
+    "name": "Ddate",
+    "description": "Converts boring normal dates to fun Discordian Date",
+    "url": "https://github.com/bo0ts/ddate/archive/v0.2.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/bo0ts/ddate",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system ENV.cc, \"ddate.c\", \"-o\", \"ddate\"",
+        "bin.install \"ddate\"",
+        "man1.install \"ddate.1\""
+    ],
+    "version": "0.2.2"
+}

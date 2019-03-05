@@ -1,0 +1,34 @@
+{
+    "name": "Libbpg",
+    "description": "Image format meant to improve on JPEG quality and file size",
+    "url": "https://bellard.org/bpg/libbpg-0.9.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://bellard.org/bpg/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "yasm",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.mkpath",
+        "system \"make\", \"install\", \"prefix=#{prefix}\", \"CONFIG_APPLE=y\"",
+        "pkgshare.install Dir[\"html/bpgdec*.js\"]"
+    ],
+    "version": "0.9.8"
+}

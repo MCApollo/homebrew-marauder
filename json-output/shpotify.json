@@ -1,0 +1,15 @@
+{
+    "name": "Shpotify",
+    "description": "Command-line interface for Spotify on a Mac",
+    "url": "https://github.com/hnarayanan/shpotify/archive/2.0.3.tar.gz",
+    "mirror": null,
+    "homepage": "https://harishnarayanan.org/projects/shpotify/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"spotify\""
+    ],
+    "version": "2.0.3"
+}

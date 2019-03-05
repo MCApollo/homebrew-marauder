@@ -1,0 +1,59 @@
+{
+    "name": "Arpack",
+    "description": "Routines to solve large scale eigenvalue problems",
+    "url": "https://github.com/opencollab/arpack-ng/archive/3.7.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/opencollab/arpack-ng",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gcc",
+            "build-depend": false
+        },
+        {
+            "depend": "open-mpi",
+            "build-depend": false
+        },
+        {
+            "depend": "veclibfort",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--disable-dependency-tracking",
+        "--prefix=#{libexec}",
+        "--with-blas=-L#{Formula[\"veclibfort\"].opt_lib}\\ -lvecLibFort",
+        "F77=mpif77",
+        "-enable-mpi",
+        "]",
+        "system \"./bootstrap\"",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "lib.install_symlink Dir[\"#{libexec}/lib/*\"].select { |f| File.file?(f) }",
+        "(lib/\"pkgconfig\").install_symlink Dir[\"#{libexec}/lib/pkgconfig/*\"]",
+        "pkgshare.install \"TESTS/testA.mtx\", \"TESTS/dnsimp.f\",",
+        "\"TESTS/mmio.f\", \"TESTS/debug.h\"",
+        "(libexec/\"bin\").install (buildpath/\"PARPACK/EXAMPLES/MPI\").children"
+    ],
+    "version": "3.7.0"
+}

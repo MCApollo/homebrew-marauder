@@ -1,0 +1,27 @@
+{
+    "name": "Latex2html",
+    "description": "LaTeX-to-HTML translator",
+    "url": "http://mirrors.ctan.org/support/latex2html/latex2html-2018.tar.gz",
+    "mirror": "https://ftp.gnome.org/mirror/CTAN/support/latex2html/latex2html-2018.tar.gz",
+    "homepage": "https://www.ctan.org/pkg/latex2html",
+    "depends": [
+        {
+            "depend": "ghostscript",
+            "build-depend": false
+        },
+        {
+            "depend": "netpbm",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--without-mktexlsr\",",
+        "\"--with-texpath=#{share}/texmf/tex/latex/html\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2018"
+}

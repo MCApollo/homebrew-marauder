@@ -1,0 +1,17 @@
+{
+    "name": "Pcapplusplus",
+    "description": "C++ network sniffing, packet parsing and crafting framework",
+    "url": "https://github.com/seladb/PcapPlusPlus/archive/v18.08.tar.gz",
+    "mirror": null,
+    "homepage": "https://seladb.github.io/PcapPlusPlus-Doc",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure-mac_os_x.sh\", \"--install-dir\", prefix",
+        "system \"make\", \"all\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "18.08"
+}

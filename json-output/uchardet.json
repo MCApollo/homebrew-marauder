@@ -1,0 +1,23 @@
+{
+    "name": "Uchardet",
+    "description": "Encoding detector library",
+    "url": "https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.6.tar.xz",
+    "mirror": null,
+    "homepage": "https://www.freedesktop.org/wiki/Software/uchardet/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args",
+        "args << \"-DCMAKE_INSTALL_NAME_DIR=#{lib}\"",
+        "system \"cmake\", \".\", *args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.0.6"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "Scale2x",
+    "description": "Real-time graphics effect",
+    "url": "https://github.com/amadvance/scale2x/releases/download/v4.0/scale2x-4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.scale2x.it/",
+    "depends": [
+        {
+            "depend": "libpng",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"CPPFLAGS=-I/usr/include/malloc/\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.0"
+}

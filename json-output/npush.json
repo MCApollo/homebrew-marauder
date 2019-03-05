@@ -1,0 +1,20 @@
+{
+    "name": "Npush",
+    "description": "Logic game simliar to Sokoban and Boulder Dash",
+    "url": "https://downloads.sourceforge.net/project/npush/npush/0.7/npush-0.7.tgz",
+    "mirror": null,
+    "homepage": "https://npush.sourceforge.io/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "pkgshare.install [\"npush\", \"levels\"]",
+        "(bin/\"npush\").write <<~EOS",
+        "#!/bin/sh",
+        "cd \"#{pkgshare}\" && exec ./npush $@",
+        "EOS"
+    ],
+    "version": "0.7"
+}

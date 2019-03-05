@@ -1,0 +1,113 @@
+{
+    "name": "SpatialiteGui",
+    "description": "GUI tool supporting SpatiaLite",
+    "url": "https://www.gaia-gis.it/gaia-sins/spatialite-gui-sources/spatialite_gui-1.7.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gaia-gis.it/fossil/spatialite_gui/index",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "freexl",
+            "build-depend": false
+        },
+        {
+            "depend": "geos",
+            "build-depend": false
+        },
+        {
+            "depend": "libgaiagraphics",
+            "build-depend": false
+        },
+        {
+            "depend": "libspatialite",
+            "build-depend": false
+        },
+        {
+            "depend": "proj",
+            "build-depend": false
+        },
+        {
+            "depend": "sqlite",
+            "build-depend": false
+        },
+        {
+            "depend": "wxmac",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "For some strange reason, wxWidgets does not take the required steps to register\n",
+                "programs as GUI apps like other toolkits do. This necessitates the creation of\n",
+                "an app bundle on OS X.\n",
+                "\n",
+                "This clever hack sidesteps the headache of packing simple programs into app\n",
+                "bundles:\n",
+                "\n",
+                "  https://www.miscdebris.net/blog/2010/03/30/\n",
+                "    solution-for-my-mac-os-x-gui-program-doesnt-get-focus-if-its-outside-an-application-bundle\n",
+                "---\n",
+                " Main.cpp |   21 +++++++++++++++++++++\n",
+                " 1 files changed, 21 insertions(+), 0 deletions(-)\n",
+                "\n",
+                "diff --git a/Main.cpp b/Main.cpp\n",
+                "index a857e8a..9c90afb 100644\n",
+                "--- a/Main.cpp\n",
+                "+++ b/Main.cpp\n",
+                "@@ -71,6 +71,12 @@\n",
+                " #define unlink\t_unlink\n",
+                " #endif\n",
+                "\n",
+                "+#ifdef __WXMAC__\n",
+                "+// Allow the program to run and recieve focus without creating an app bundle.\n",
+                "+#include <Carbon/Carbon.h>\n",
+                "+extern \"C\" { void CPSEnableForegroundOperation(ProcessSerialNumber* psn); }\n",
+                "+#endif\n",
+                "+\n",
+                " IMPLEMENT_APP(MyApp)\n",
+                "      bool MyApp::OnInit()\n",
+                " {\n",
+                "@@ -86,6 +92,21 @@ IMPLEMENT_APP(MyApp)\n",
+                "   frame->Show(true);\n",
+                "   SetTopWindow(frame);\n",
+                "   frame->LoadConfig(path);\n",
+                "+\n",
+                "+#ifdef __WXMAC__\n",
+                "+  // Acquire the necessary resources to run as a GUI app without being inside\n",
+                "+  // an app bundle.\n",
+                "+  //\n",
+                "+  // Credit for this hack goes to:\n",
+                "+  //\n",
+                "+  //   https://www.miscdebris.net/blog/2010/03/30/solution-for-my-mac-os-x-gui-program-doesnt-get-focus-if-its-outside-an-application-bundle\n",
+                "+  ProcessSerialNumber psn;\n",
+                "+\n",
+                "+  GetCurrentProcess( &psn );\n",
+                "+  CPSEnableForegroundOperation( &psn );\n",
+                "+  SetFrontProcess( &psn );\n",
+                "+#endif\n",
+                "+\n",
+                "   return true;\n",
+                " }\n",
+                "\n",
+                "--\n",
+                "1.7.9\n"
+            ]
+        }
+    ],
+    "install": [
+        "sqlite = Formula[\"sqlite\"]",
+        "ENV.prepend \"LDFLAGS\", \"-L#{sqlite.opt_lib} -lsqlite3\"",
+        "ENV.prepend \"CFLAGS\", \"-I#{sqlite.opt_include}\"",
+        "inreplace \"configure\", \"WX_LIBS=\\\"$(wx-config --libs)\\\"\", \"WX_LIBS=\\\"$(wx-config --libs std,aui)\\\"\"",
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.7.1"
+}

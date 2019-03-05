@@ -1,0 +1,50 @@
+{
+    "name": "Czmq",
+    "description": "High-level C binding for ZeroMQ",
+    "url": "https://github.com/zeromq/czmq/releases/download/v4.2.0/czmq-4.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "http://czmq.zeromq.org/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "asciidoc",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "xmlto",
+            "build-depend": true
+        },
+        {
+            "depend": "zeromq",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"XML_CATALOG_FILES\"] = \"#{etc}/xml/catalog\"",
+        "system \"./autogen.sh\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "system \"make\", \"ZSYS_INTERFACE=lo0\", \"check-verbose\"",
+        "system \"make\", \"install\"",
+        "rm Dir[\"#{bin}/*.gsl\"]"
+    ],
+    "version": "4.2.0"
+}

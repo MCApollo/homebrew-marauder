@@ -1,0 +1,25 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Swiss-army knife of markup format conversion",
+    "url": "https://hackage.haskell.org/package/pandoc-2.7/pandoc-2.7.tar.gz",
+    "mirror": null,
+    "homepage": "https://pandoc.org/",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cabal_sandbox do",
+        "install_cabal_package"
+    ],
+    "version": "2.7"
+}

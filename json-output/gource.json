@@ -1,0 +1,70 @@
+{
+    "name": "Gource",
+    "description": "Version Control Visualization Tool",
+    "url": "https://github.com/acaudwell/Gource/releases/download/gource-0.49/gource-0.49.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/acaudwell/Gource",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "glm",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "boost",
+            "build-depend": false
+        },
+        {
+            "depend": "freetype",
+            "build-depend": false
+        },
+        {
+            "depend": "glew",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "pcre",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2",
+            "build-depend": false
+        },
+        {
+            "depend": "sdl2_image",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.libcxx",
+        "system \"autoreconf\", \"-f\", \"-i\" if build.head?",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-boost=#{Formula[\"boost\"].opt_prefix}\",",
+        "\"--without-x\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.49"
+}

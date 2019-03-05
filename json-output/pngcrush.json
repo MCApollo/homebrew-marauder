@@ -1,0 +1,19 @@
+{
+    "name": "Pngcrush",
+    "description": "Optimizer for PNG files",
+    "url": "https://downloads.sourceforge.net/project/pmt/pngcrush/1.8.13/pngcrush-1.8.13.tar.xz",
+    "mirror": null,
+    "homepage": "https://pmt.sourceforge.io/pngcrush",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\",",
+        "\"LD=#{ENV.cc}\",",
+        "\"CFLAGS=#{ENV.cflags}\",",
+        "\"LDFLAGS=#{ENV.ldflags}\"",
+        "bin.install \"pngcrush\""
+    ],
+    "version": "1.8.13"
+}

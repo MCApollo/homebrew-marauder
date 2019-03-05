@@ -1,0 +1,19 @@
+{
+    "name": "Cifer",
+    "description": "Work on automating classical cipher cracking in C",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/cifer/cifer-1.2.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://code.google.com/p/cifer/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"prefix=#{prefix}\",",
+        "\"CC=#{ENV.cc}\",",
+        "\"CFLAGS=#{ENV.cflags}\",",
+        "\"LDFLAGS=#{ENV.ldflags}\",",
+        "\"install\""
+    ],
+    "version": "1.2.0"
+}

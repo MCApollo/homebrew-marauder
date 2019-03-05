@@ -1,0 +1,22 @@
+{
+    "name": "Veclibfort",
+    "description": "GNU Fortran compatibility for Apple",
+    "url": "https://github.com/mcg1969/vecLibFort/archive/0.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/mcg1969/vecLibFort",
+    "depends": [
+        {
+            "depend": "gcc",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"all\"",
+        "system \"make\", \"PREFIX=#{prefix}\", \"install\"",
+        "pkgshare.install \"tester.f90\""
+    ],
+    "version": "0.4.2"
+}

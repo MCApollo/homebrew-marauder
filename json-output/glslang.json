@@ -1,0 +1,22 @@
+{
+    "name": "Glslang",
+    "description": "OpenGL and OpenGL ES reference compiler for shading languages",
+    "url": "https://github.com/KhronosGroup/glslang/archive/7.11.3113.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.khronos.org/opengles/sdk/tools/Reference-Compiler/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.11.3113"
+}

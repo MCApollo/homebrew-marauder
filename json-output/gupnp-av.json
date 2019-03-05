@@ -1,0 +1,35 @@
+{
+    "name": "GupnpAv",
+    "description": "Library to help implement UPnP A/V profiles",
+    "url": "https://download.gnome.org/sources/gupnp-av/0.12/gupnp-av-0.12.11.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.gnome.org/GUPnP/",
+    "depends": [
+        {
+            "depend": "intltool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        },
+        {
+            "depend": "gupnp",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"ax_cv_check_cflags__Wl___no_as_needed\"] = \"no\"",
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.12.11"
+}

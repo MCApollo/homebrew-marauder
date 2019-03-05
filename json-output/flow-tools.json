@@ -1,0 +1,17 @@
+{
+    "name": "FlowTools",
+    "description": "Collect, send, process, and generate NetFlow data reports",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/flow-tools/flow-tools-0.68.5.1.tar.bz2",
+    "mirror": null,
+    "homepage": "https://code.google.com/archive/p/flow-tools/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.68.5.1"
+}

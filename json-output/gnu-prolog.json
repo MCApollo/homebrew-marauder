@@ -1,0 +1,19 @@
+{
+    "name": "GnuProlog",
+    "description": "Prolog compiler with constraint solving",
+    "url": "http://www.gprolog.org/gprolog-1.4.5.tar.gz",
+    "mirror": "https://deb.debian.org/debian/pool/main/g/gprolog/gprolog_1.4.5.orig.tar.gz",
+    "homepage": "http://www.gprolog.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"src\" do",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--with-doc-dir=#{doc}\"",
+        "ENV.deparallelize",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.4.5"
+}

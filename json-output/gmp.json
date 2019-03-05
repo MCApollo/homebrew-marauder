@@ -1,0 +1,20 @@
+{
+    "name": "Gmp",
+    "description": "GNU multiple precision arithmetic library",
+    "url": "https://gmplib.org/download/gmp/gmp-6.1.2.tar.xz",
+    "mirror": "https://ftp.gnu.org/gnu/gmp/gmp-6.1.2.tar.xz",
+    "homepage": "https://gmplib.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[--prefix=#{prefix} --enable-cxx --with-pic]",
+        "args << \"--build=#{Hardware.oldest_cpu}-apple-darwin#{`uname -r`.to_i}\"",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "6.1.2"
+}

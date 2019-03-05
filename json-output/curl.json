@@ -1,0 +1,45 @@
+{
+    "name": "Curl",
+    "description": "Get a file from an HTTP, HTTPS or FTP server",
+    "url": "https://curl.haxx.se/download/curl-7.64.0.tar.bz2",
+    "mirror": null,
+    "homepage": "https://curl.haxx.se/",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./buildconf\" if build.head?",
+        "args = %W[",
+        "--disable-debug",
+        "--disable-dependency-tracking",
+        "--disable-silent-rules",
+        "--prefix=#{prefix}",
+        "--with-darwinssl",
+        "--without-ca-bundle",
+        "--without-ca-path",
+        "]",
+        "system \"./configure\", *args",
+        "system \"make\", \"install\"",
+        "system \"make\", \"install\", \"-C\", \"scripts\"",
+        "libexec.install \"lib/mk-ca-bundle.pl\""
+    ],
+    "version": "7.64.0"
+}

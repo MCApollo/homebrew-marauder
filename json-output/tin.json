@@ -1,0 +1,25 @@
+{
+    "name": "Tin",
+    "description": "Threaded, NNTP-, and spool-based UseNet newsreader",
+    "url": "http://ftp.cuhk.edu.hk/pub/packages/news/tin/v2.4/tin-2.4.2.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.tin.org",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "mutt",
+            "reason": "both install mmdf.5 and mbox.5 man pages"
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\", \"build\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.2"
+}

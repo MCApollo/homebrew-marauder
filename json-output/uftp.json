@@ -1,0 +1,22 @@
+{
+    "name": "Uftp",
+    "description": "Secure, reliable, efficient multicast file transfer program",
+    "url": "https://downloads.sourceforge.net/project/uftp-multicast/source-tar/uftp-4.9.8.tar.gz",
+    "mirror": null,
+    "homepage": "https://uftp-multicast.sourceforge.io/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"OPENSSL=#{Formula[\"openssl\"].opt_prefix}\", \"DESTDIR=#{prefix}\", \"install\"",
+        "prefix.install Dir[\"#{prefix}/usr/*\"]",
+        "(prefix/\"usr\").unlink"
+    ],
+    "version": "4.9.8"
+}

@@ -1,0 +1,24 @@
+{
+    "name": "HowardHinnantDate",
+    "description": "C++ library for date and time operations based on <chrono>",
+    "url": "https://github.com/HowardHinnant/date/archive/v2.4.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/HowardHinnant/date",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"cmake\", \".\", *std_cmake_args,",
+        "\"-DENABLE_DATE_TESTING=OFF\",",
+        "\"-DUSE_SYSTEM_TZ_DB=ON\",",
+        "\"-DBUILD_SHARED_LIBS=ON\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.4.1"
+}

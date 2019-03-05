@@ -1,0 +1,46 @@
+{
+    "name": "Xspin",
+    "description": "Software verification tool (developed at Bell Labs)",
+    "url": "https://spinroot.com/spin/Src/xspin525.tcl",
+    "mirror": null,
+    "homepage": "https://spinroot.com/spin/Src/index.html",
+    "depends": [
+        {
+            "depend": "spin",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/xspin525.tcl b/xspin525.tcl\n",
+                "old mode 100644\n",
+                "new mode 100755\n",
+                "index 73fc6bf..444b0ad\n",
+                "--- a/xspin525.tcl\n",
+                "+++ b/xspin525.tcl\n",
+                "@@ -1,8 +1,9 @@\n",
+                "-#!/bin/sh\n",
+                "+#!/usr/bin/wish -f\n",
+                " # the next line restarts using wish \\\n",
+                "-exec wish c:/cygwin/bin/xspin -- $*\n",
+                "+exec wish CELLAR/bin/xspin -- $*\n",
+                "+\n",
+                "+ cd\t;# enable to cd to home directory by default\n",
+                " \n",
+                "-# cd\t;# enable to cd to home directory by default\n",
+                " \n",
+                " # on PCs:\n",
+                " # adjust the first argument to wish above with the name and\n"
+            ]
+        }
+    ],
+    "install": [
+        "inreplace \"xspin525.tcl\", \"CELLAR\", prefix",
+        "bin.install \"xspin525.tcl\" => \"xspin\""
+    ],
+    "version": "525"
+}

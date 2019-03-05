@@ -1,0 +1,22 @@
+{
+    "name": "BisonAT27",
+    "description": "Parser generator",
+    "url": "https://ftp.gnu.org/gnu/bison/bison-2.7.1.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/bison/bison-2.7.1.tar.gz",
+    "homepage": "https://www.gnu.org/software/bison/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/b76d1e48dac/editors/nano/files/secure_snprintf.patch",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.7.1"
+}

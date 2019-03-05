@@ -1,0 +1,49 @@
+{
+    "name": "Neon",
+    "description": "HTTP and WebDAV client library with a C interface",
+    "url": "https://mirrorservice.org/sites/distfiles.macports.org/neon/neon-0.30.2.tar.gz",
+    "mirror": "https://fossies.org/linux/www/neon-0.30.2.tar.gz",
+    "homepage": "https://web.archive.org/web/webdav.org/neon/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/configure b/configure\n",
+                "index d7702d2..5c3b5a3 100755\n",
+                "--- a/configure\n",
+                "+++ b/configure\n",
+                "@@ -4224,7 +4224,6 @@ fi\n",
+                " $as_echo \"$ne_cv_os_uname\" >&6; }\n",
+                "\n",
+                " if test \"$ne_cv_os_uname\" = \"Darwin\"; then\n",
+                "-  CPPFLAGS=\"$CPPFLAGS -no-cpp-precomp\"\n",
+                "   LDFLAGS=\"$LDFLAGS -flat_namespace\"\n",
+                "   # poll has various issues in various Darwin releases\n",
+                "   if test x${ac_cv_func_poll+set} != xset; then\n"
+            ]
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-shared\",",
+        "\"--disable-static\",",
+        "\"--disable-nls\",",
+        "\"--with-ssl=openssl\",",
+        "\"--with-libs=#{Formula[\"openssl\"].opt_prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.30.2"
+}

@@ -1,0 +1,18 @@
+{
+    "name": "Xorriso",
+    "description": "ISO9660+RR manipulation tool",
+    "url": "https://ftp.gnu.org/gnu/xorriso/xorriso-1.4.8.tar.gz",
+    "mirror": "https://ftpmirror.gnu.org/xorriso/xorriso-1.4.8.tar.gz",
+    "homepage": "https://www.gnu.org/software/xorriso/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\"",
+        "ENV.deparallelize { system \"make\", \"install\" }"
+    ],
+    "version": "1.4.8"
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Ucommon",
+    "description": "GNU C++ runtime library for threads, sockets, and parsing",
+    "url": "https://ftp.gnu.org/gnu/commonc++/ucommon-7.0.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.gnu.org/software/commoncpp/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/77f0d9d2/ucommon/cachelinesize.patch",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\", \"--enable-socks\",",
+        "\"--with-sslstack=gnutls\", \"--with-pkg-config\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "7.0.0"
+}

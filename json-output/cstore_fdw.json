@@ -1,0 +1,29 @@
+{
+    "name": "CstoreFdw",
+    "description": "Columnar store for analytics with Postgres",
+    "url": "https://github.com/citusdata/cstore_fdw/archive/v1.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/citusdata/cstore_fdw",
+    "depends": [
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        },
+        {
+            "depend": "protobuf-c",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"PG_CONFIG\"] = Formula[\"postgresql\"].opt_bin/\"pg_config\"",
+        "system \"make\", \"libpq=-L#{Formula[\"postgresql\"].opt_lib} -lpq\"",
+        "mkdir \"stage\"",
+        "system \"make\", \"install\", \"DESTDIR=#{buildpath}/stage\"",
+        "lib.install Dir[\"stage/**/lib/*\"]",
+        "(share/\"postgresql/extension\").install Dir[\"stage/**/share/postgresql/extension/*\"]"
+    ],
+    "version": "1.6.2"
+}

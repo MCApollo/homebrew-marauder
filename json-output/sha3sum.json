@@ -1,0 +1,22 @@
+{
+    "name": "Sha3sum",
+    "description": "Keccak, SHA-3, SHAKE, and RawSHAKE checksum utilities",
+    "url": "https://github.com/maandree/sha3sum/archive/1.1.5.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/maandree/sha3sum",
+    "depends": [
+        {
+            "depend": "libkeccak",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"install\", \"PREFIX=#{prefix}\"",
+        "inreplace \"test\", \"./\", \"#{bin}/\"",
+        "pkgshare.install \"test\""
+    ],
+    "version": "1.1.5"
+}

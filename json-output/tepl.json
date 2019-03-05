@@ -1,0 +1,39 @@
+{
+    "name": "Tepl",
+    "description": "GNOME Text Editor Product Line",
+    "url": "https://download.gnome.org/sources/tepl/4.2/tepl-4.2.0.tar.xz",
+    "mirror": null,
+    "homepage": "https://wiki.gnome.org/Projects/Tepl",
+    "depends": [
+        {
+            "depend": "gobject-introspection",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "amtk",
+            "build-depend": false
+        },
+        {
+            "depend": "gtksourceview4",
+            "build-depend": false
+        },
+        {
+            "depend": "uchardet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.2.0"
+}

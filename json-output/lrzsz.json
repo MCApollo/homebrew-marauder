@@ -1,0 +1,42 @@
+{
+    "name": "Lrzsz",
+    "description": "Tools for zmodem/xmodem/ymodem file transfer",
+    "url": "https://www.ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/lrzsz-0.12.20.tar.gz",
+    "homepage": "https://www.ohse.de/uwe/software/lrzsz.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/2319730/comms/lrzsz/files/patch-man-lsz.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/2319730/comms/lrzsz/files/patch-po-Makefile.in.in.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/2319730/comms/lrzsz/files/patch-src-Makefile.in.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/ed7e89d/comms/lrzsz/files/patch-zglobal.h.diff",
+            "strip": "0"
+        },
+        {
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/2319730/comms/lrzsz/files/patch-CVE-2018-10195.diff",
+            "strip": "0"
+        }
+    ],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--disable-nls\"",
+        "system \"make\"",
+        "bin.install \"src/lrz\", \"src/lsz\"",
+        "system \"make\", \"install\"",
+        "bin.install_symlink \"lrz\" => \"rz\", \"lsz\" => \"sz\""
+    ],
+    "version": "0.12.20"
+}

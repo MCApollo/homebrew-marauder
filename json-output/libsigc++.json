@@ -1,0 +1,19 @@
+{
+    "name": "Libsigcxx",
+    "description": "Callback framework for C++",
+    "url": "https://download.gnome.org/sources/libsigc++/2.10/libsigc++-2.10.1.tar.xz",
+    "mirror": null,
+    "homepage": "https://libsigcplusplus.github.io/libsigcplusplus/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV.cxx11",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--disable-dependency-tracking\"",
+        "system \"make\"",
+        "system \"make\", \"check\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.10.1"
+}

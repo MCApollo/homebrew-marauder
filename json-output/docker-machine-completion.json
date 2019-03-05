@@ -1,0 +1,21 @@
+{
+    "name": "DockerMachineCompletion",
+    "description": "Docker-machine completion script",
+    "url": "https://github.com/docker/machine/archive/v0.16.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://docs.docker.com/machine/completion/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "docker-machine",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "bash_completion.install Dir[\"contrib/completion/bash/*.bash\"]",
+        "zsh_completion.install \"contrib/completion/zsh/_docker-machine\""
+    ],
+    "version": "0.16.1"
+}

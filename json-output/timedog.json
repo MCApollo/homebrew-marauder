@@ -1,0 +1,15 @@
+{
+    "name": "Timedog",
+    "description": "Lists files that were saved by a backup of the macOS Time Machine",
+    "url": "https://github.com/nlfiedler/timedog/archive/v1.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/nlfiedler/timedog",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"timedog\""
+    ],
+    "version": "1.4"
+}

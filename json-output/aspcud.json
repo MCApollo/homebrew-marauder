@@ -1,0 +1,38 @@
+{
+    "name": "Aspcud",
+    "description": "Package dependency solver",
+    "url": "https://github.com/potassco/aspcud/archive/v1.9.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://potassco.org/aspcud/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "re2c",
+            "build-depend": true
+        },
+        {
+            "depend": "clingo",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = std_cmake_args",
+        "args << \"-DASPCUD_GRINGO_PATH=#{Formula[\"clingo\"].opt_bin}/gringo\"",
+        "args << \"-DASPCUD_CLASP_PATH=#{Formula[\"clingo\"].opt_bin}/clasp\"",
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.9.4"
+}

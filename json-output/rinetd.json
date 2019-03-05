@@ -1,0 +1,17 @@
+{
+    "name": "Rinetd",
+    "description": "Internet TCP redirection server",
+    "url": "https://www.boutell.com/rinetd/http/rinetd.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.boutell.com/rinetd/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "inreplace \"rinetd.c\" do |s|",
+        "s.gsub! \"/etc/rinetd.conf\", \"#{etc}/rinetd.conf\"",
+        "s.gsub! \"/var/run/rinetd.pid\", \"#{var}/rinetd.pid\""
+    ],
+    "version": "1.0-u"
+}

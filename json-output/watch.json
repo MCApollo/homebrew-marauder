@@ -1,0 +1,47 @@
+{
+    "name": "Watch",
+    "description": "Executes a program periodically, showing output fullscreen",
+    "url": "https://gitlab.com/procps-ng/procps.git",
+    "mirror": null,
+    "homepage": "https://gitlab.com/procps-ng/procps",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "gettext",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "visionmedia-watch",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "system \"autoreconf\", \"-fiv\"",
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--disable-nls\"",
+        "system \"make\", \"watch\"",
+        "bin.install \"watch\"",
+        "man1.install \"watch.1\""
+    ],
+    "version": "3.3.15-git-7bb949bc"
+}

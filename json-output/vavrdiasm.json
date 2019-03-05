@@ -1,0 +1,44 @@
+{
+    "name": "Vavrdiasm",
+    "description": "8-bit Atmel AVR disassembler",
+    "url": "https://github.com/vsergeev/vavrdisasm/archive/v3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/vsergeev/vAVRdisasm",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": null,
+            "data": [
+                "diff --git a/Makefile b/Makefile\n",
+                "index 3b61942..f1c94fc 100644\n",
+                "--- a/Makefile\n",
+                "+++ b/Makefile\n",
+                "@@ -1,5 +1,5 @@\n",
+                " PROGNAME = vavrdisasm\n",
+                "-PREFIX = /usr\n",
+                "+PREFIX ?= /usr\n",
+                " BINDIR = $(PREFIX)/bin\n",
+                "\n",
+                " ################################################################################\n",
+                "@@ -35,7 +35,8 @@ test: $(PROGNAME)\n",
+                " \tpython2 crazy_test.py\n",
+                "\n",
+                " install: $(PROGNAME)\n",
+                "-\tinstall -D -s -m 0755 $(PROGNAME) $(DESTDIR)$(BINDIR)/$(PROGNAME)\n",
+                "+\tmkdir -p $(DESTDIR)$(BINDIR)\n",
+                "+\tinstall -s -m 0755 $(PROGNAME) $(DESTDIR)$(BINDIR)/$(PROGNAME)\n",
+                "\n",
+                " uninstall:\n",
+                " \trm -f $(DESTDIR)$(BINDIR)/$(PROGNAME)\n"
+            ]
+        }
+    ],
+    "install": [
+        "ENV[\"PREFIX\"] = prefix",
+        "system \"make\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.1"
+}

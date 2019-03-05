@@ -1,0 +1,28 @@
+{
+    "name": "GlibOpenssl",
+    "description": "OpenSSL GIO module for glib",
+    "url": "https://download.gnome.org/sources/glib-openssl/2.50/glib-openssl-2.50.8.tar.xz",
+    "mirror": null,
+    "homepage": "https://launchpad.net/glib-networking",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system Formula[\"glib\"].opt_bin/\"gio-querymodules\", HOMEBREW_PREFIX/\"lib/gio/modules\""
+    ],
+    "version": "2.50.8"
+}

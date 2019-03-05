@@ -1,0 +1,32 @@
+{
+    "name": "Dict",
+    "description": "Dictionary Server Protocol (RFC2229) client",
+    "url": "https://downloads.sourceforge.net/project/dict/dictd/dictd-1.12.1/dictd-1.12.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://www.dict.org/",
+    "depends": [
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "libmaa",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"LIBTOOL\"] = \"glibtool\"",
+        "system \"./configure\", \"--prefix=#{prefix}\", \"--sysconfdir=#{etc}\",",
+        "\"--mandir=#{man}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "(prefix+\"etc/dict.conf\").write <<~EOS",
+        "server localhost",
+        "server dict.org",
+        "EOS"
+    ],
+    "version": "1.12.1"
+}

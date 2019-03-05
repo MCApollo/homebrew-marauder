@@ -1,0 +1,19 @@
+{
+    "name": "Scalaenv",
+    "description": "Command-line tool to manage Scala environments",
+    "url": "https://github.com/scalaenv/scalaenv/archive/version/0.1.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/scalaenv/scalaenv",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "var_lib = HOMEBREW_PREFIX/\"var/lib/scalaenv\"",
+        "%w[plugins versions].each do |dir|",
+        "var_dir = \"#{var_lib}/#{dir}\"",
+        "mkdir_p var_dir",
+        "ln_sf var_dir, \"#{prefix}/#{dir}\""
+    ],
+    "version": "0.1.2"
+}

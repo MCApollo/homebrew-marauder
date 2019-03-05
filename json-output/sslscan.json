@@ -1,0 +1,24 @@
+{
+    "name": "Sslscan",
+    "description": "Test SSL/TLS enabled services to discover supported cipher suites",
+    "url": "https://github.com/rbsec/sslscan/archive/1.11.12-rbsec.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/rbsec/sslscan",
+    "depends": [],
+    "resource": [
+        {
+            "name": "insecure-openssl",
+            "url": "https://github.com/openssl/openssl/archive/OpenSSL_1_0_2f.tar.gz"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "(buildpath/\"openssl\").install resource(\"insecure-openssl\")",
+        "inreplace \"Makefile\", \"openssl/Makefile: .openssl.is.fresh\",",
+        "\"openssl/Makefile:\"",
+        "ENV.deparallelize do",
+        "system \"make\", \"static\""
+    ],
+    "version": "1.11.12"
+}

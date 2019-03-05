@@ -1,0 +1,40 @@
+{
+    "name": "Libheif",
+    "description": "ISO/IEC 23008-12:2017 HEIF file format decoder and encoder",
+    "url": "https://github.com/strukturag/libheif/releases/download/v1.4.0/libheif-1.4.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.libde265.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "jpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "libde265",
+            "build-depend": false
+        },
+        {
+            "depend": "libpng",
+            "build-depend": false
+        },
+        {
+            "depend": "x265",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\"",
+        "pkgshare.install \"examples/example.heic\""
+    ],
+    "version": "1.4.0"
+}

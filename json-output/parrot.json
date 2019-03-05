@@ -1,0 +1,35 @@
+{
+    "name": "Parrot",
+    "description": "Open source virtual machine (for Perl6, et al.)",
+    "url": "http://ftp.parrot.org/releases/supported/8.1.0/parrot-8.1.0.tar.bz2",
+    "mirror": null,
+    "homepage": "http://www.parrot.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "rakudo-star",
+            "reason": null
+        }
+    ],
+    "patches": [
+        {
+            "url": "https://github.com/parrot/parrot/commit/7524bf5384ddebbb3ba06a040f8acf972aa0a3ba.diff?full_index=1",
+            "strip": "1"
+        },
+        {
+            "url": "https://github.com/parrot/parrot/commit/854aec65d6de8eaf5282995ab92100a2446f0cde.diff?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"perl\", \"Configure.pl\", \"--prefix=#{prefix}\",",
+        "\"--mandir=#{man}\",",
+        "\"--debugging=0\",",
+        "\"--cc=#{ENV.cc}\"",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "rm_rf lib/\"VERSION\""
+    ],
+    "version": "8.1.0"
+}

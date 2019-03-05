@@ -1,0 +1,21 @@
+{
+    "name": "Picoc",
+    "description": "C interpreter for scripting",
+    "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/picoc/picoc-2.1.tar.bz2",
+    "mirror": "https://dl.bintray.com/homebrew/mirror/picoc-2.1.tar.bz2",
+    "homepage": "https://github.com/zsaleeba/picoc",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [
+        {
+            "url": "https://github.com/zsaleeba/picoc/commit/ed54c51.patch?full_index=1",
+            "strip": "1"
+        }
+    ],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"CFLAGS=#{ENV.cflags} -DUNIX_HOST\"",
+        "bin.install \"picoc\""
+    ],
+    "version": "2.1"
+}

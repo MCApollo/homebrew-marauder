@@ -1,0 +1,35 @@
+{
+    "name": "Libnice",
+    "description": "GLib ICE implementation",
+    "url": "https://nice.freedesktop.org/releases/libnice-0.1.15.tar.gz",
+    "mirror": null,
+    "homepage": "https://wiki.freedesktop.org/nice/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "glib",
+            "build-depend": false
+        },
+        {
+            "depend": "gnutls",
+            "build-depend": false
+        },
+        {
+            "depend": "gstreamer",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.1.15"
+}

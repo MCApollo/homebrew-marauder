@@ -1,0 +1,40 @@
+{
+    "name": "Postgresql",
+    "description": "Object-relational database system",
+    "url": "https://ftp.postgresql.org/pub/source/v11.2/postgresql-11.2.tar.bz2",
+    "mirror": null,
+    "homepage": "https://www.postgresql.org/",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "icu4c",
+            "build-depend": false
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        },
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [
+        {
+            "conflict": "postgres-xc",
+            "reason": null
+        }
+    ],
+    "patches": [],
+    "install": [
+        "(var/\"log\").mkpath",
+        "(var/\"postgres\").mkpath",
+        "unless File.exist? \"#{var}/postgres/PG_VERSION\"",
+        "system \"#{bin}/initdb\", \"#{var}/postgres\""
+    ],
+    "version": "11.2"
+}

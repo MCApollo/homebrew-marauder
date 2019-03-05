@@ -1,0 +1,15 @@
+{
+    "name": "NicovideoDl",
+    "description": "Command-line program to download videos from www.nicovideo.jp",
+    "url": "https://dotsrc.dl.osdn.net/osdn/nicovideo-dl/56304/nicovideo-dl-0.0.20120212.tar.gz",
+    "mirror": null,
+    "homepage": "https://osdn.net/projects/nicovideo-dl/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "bin.install \"nicovideo-dl\""
+    ],
+    "version": "0.0.20120212"
+}

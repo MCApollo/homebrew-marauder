@@ -1,0 +1,48 @@
+{
+    "name": "TclTk",
+    "description": "Tool Command Language",
+    "url": "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.9/tcl8.6.9-src.tar.gz",
+    "mirror": "https://ftp.osuosl.org/pub/blfs/conglomeration/tcl/tcl8.6.9-src.tar.gz",
+    "homepage": "https://www.tcl.tk/",
+    "depends": [
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "critcl",
+            "url": "https://github.com/andreas-kupries/critcl/archive/3.1.17.tar.gz"
+        },
+        {
+            "name": "tcllib",
+            "url": "https://downloads.sourceforge.net/project/tcllib/tcllib/1.19/tcllib-1.19.tar.gz"
+        },
+        {
+            "name": "tcltls",
+            "url": "https://core.tcl.tk/tcltls/uv/tcltls-1.7.16.tar.gz"
+        },
+        {
+            "name": "tk",
+            "url": "https://raw.githubusercontent.com/macports/macports-ports/0a883ad388b/x11/tk/files/patch-macosx-tkMacOSXXStubs.c.diff"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "args = %W[",
+        "--prefix=#{prefix}",
+        "--mandir=#{man}",
+        "--enable-threads",
+        "--enable-64bit",
+        "]",
+        "cd \"unix\" do",
+        "system \"./configure\", *args",
+        "system \"make\"",
+        "system \"make\", \"install\"",
+        "system \"make\", \"install-private-headers\"",
+        "ln_s bin/\"tclsh#{version.to_f}\", bin/\"tclsh\""
+    ],
+    "version": "8.6.9"
+}

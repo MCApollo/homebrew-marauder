@@ -1,0 +1,16 @@
+{
+    "name": "RegexOpt",
+    "description": "Perl-compatible regular expression optimizer",
+    "url": "https://bisqwit.iki.fi/src/arch/regex-opt-1.2.4.tar.gz",
+    "mirror": null,
+    "homepage": "https://bisqwit.iki.fi/source/regexopt.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\", \"CC=#{ENV.cc}\", \"CXX=#{ENV.cxx}\"",
+        "bin.install \"regex-opt\""
+    ],
+    "version": "1.2.4"
+}

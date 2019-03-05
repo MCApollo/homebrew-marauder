@@ -1,0 +1,16 @@
+{
+    "name": "Jython",
+    "description": "Python implementation written in Java (successor to JPython)",
+    "url": "https://search.maven.org/remotecontent?filepath=org/python/jython-installer/2.7.1/jython-installer-2.7.1.jar",
+    "mirror": null,
+    "homepage": "https://www.jython.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"java\", \"-jar\", cached_download, \"-s\", \"-d\", libexec",
+        "bin.install_symlink libexec/\"bin/jython\""
+    ],
+    "version": "2.7.1"
+}

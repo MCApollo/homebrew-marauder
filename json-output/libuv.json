@@ -1,0 +1,40 @@
+{
+    "name": "Libuv",
+    "description": "Multi-platform support library with a focus on asynchronous I/O",
+    "url": "https://github.com/libuv/libuv/archive/v1.26.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/libuv/libuv",
+    "depends": [
+        {
+            "depend": "autoconf",
+            "build-depend": true
+        },
+        {
+            "depend": "automake",
+            "build-depend": true
+        },
+        {
+            "depend": "libtool",
+            "build-depend": true
+        },
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "sphinx-doc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "cd \"docs\" do",
+        "system \"make\", \"man\"",
+        "system \"make\", \"singlehtml\"",
+        "man1.install \"build/man/libuv.1\"",
+        "doc.install Dir[\"build/singlehtml/*\"]"
+    ],
+    "version": "1.26.0"
+}

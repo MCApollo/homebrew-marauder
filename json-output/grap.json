@@ -1,0 +1,21 @@
+{
+    "name": "Grap",
+    "description": "Language for typesetting graphs",
+    "url": "https://www.lunabase.org/~faber/Vault/software/grap/grap-1.45.tar.gz",
+    "mirror": "https://mirrorservice.org/sites/ftp.debian.org/debian/pool/main/g/grap/grap_1.45.orig.tar.gz",
+    "homepage": "https://www.lunabase.org/~faber/Vault/software/grap/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--with-example-dir=#{pkgshare}/examples\"",
+        "system \"make\"",
+        "ENV.deparallelize",
+        "system \"make\", \"install\""
+    ],
+    "version": "1.45"
+}

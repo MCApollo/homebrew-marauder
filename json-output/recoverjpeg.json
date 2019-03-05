@@ -1,0 +1,17 @@
+{
+    "name": "Recoverjpeg",
+    "description": "Tool to recover JPEG images from a file system image",
+    "url": "https://www.rfc1149.net/download/recoverjpeg/recoverjpeg-2.6.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.rfc1149.net/devel/recoverjpeg.html",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "2.6.2"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "\"language/haskell\"",
+    "description": "Haskell source code suggestions",
+    "url": "https://hackage.haskell.org/package/hlint-2.1.10/hlint-2.1.10.tar.gz",
+    "mirror": null,
+    "homepage": "https://github.com/ndmitchell/hlint",
+    "depends": [
+        {
+            "depend": "cabal-install",
+            "build-depend": true
+        },
+        {
+            "depend": "ghc",
+            "build-depend": true
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "install_cabal_package :using => \"happy\"",
+        "man1.install \"data/hlint.1\""
+    ],
+    "version": "2.1.10"
+}

@@ -1,0 +1,37 @@
+{
+    "name": "Sysdig",
+    "description": "System-level exploration and troubleshooting tool",
+    "url": "https://github.com/draios/sysdig/archive/0.24.2.tar.gz",
+    "mirror": null,
+    "homepage": "https://www.sysdig.org/",
+    "depends": [
+        {
+            "depend": "cmake",
+            "build-depend": true
+        },
+        {
+            "depend": "jsoncpp",
+            "build-depend": false
+        },
+        {
+            "depend": "luajit",
+            "build-depend": false
+        }
+    ],
+    "resource": [
+        {
+            "name": "sample_file",
+            "url": "https://gist.githubusercontent.com/juniorz/9986999/raw/a3556d7e93fa890a157a33f4233efaf8f5e01a6f/sample.scap"
+        }
+    ],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "mkdir \"build\" do",
+        "system \"cmake\", \"..\", \"-DSYSDIG_VERSION=#{version}\",",
+        "\"-DUSE_BUNDLED_DEPS=OFF\",",
+        "*std_cmake_args",
+        "system \"make\", \"install\""
+    ],
+    "version": "0.24.2"
+}

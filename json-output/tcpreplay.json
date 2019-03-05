@@ -1,0 +1,25 @@
+{
+    "name": "Tcpreplay",
+    "description": "Replay saved tcpdump files at arbitrary speeds",
+    "url": "https://github.com/appneta/tcpreplay/releases/download/v4.3.1/tcpreplay-4.3.1.tar.gz",
+    "mirror": null,
+    "homepage": "https://tcpreplay.appneta.com/",
+    "depends": [
+        {
+            "depend": "libdnet",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\",",
+        "\"--disable-dependency-tracking\",",
+        "\"--disable-silent-rules\",",
+        "\"--prefix=#{prefix}\",",
+        "\"--enable-dynamic-link\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "4.3.1"
+}

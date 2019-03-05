@@ -1,0 +1,18 @@
+{
+    "name": "Hmmer",
+    "description": "Build profile HMMs and scan against sequence databases",
+    "url": "http://eddylab.org/software/hmmer/hmmer-3.2.1.tar.gz",
+    "mirror": null,
+    "homepage": "http://hmmer.org/",
+    "depends": [],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--prefix=#{prefix}\"",
+        "system \"make\" ",
+        "system \"make\", \"install\"",
+        "doc.install \"Userguide.pdf\", \"tutorial\""
+    ],
+    "version": "3.2.1"
+}

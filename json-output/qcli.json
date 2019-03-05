@@ -1,0 +1,35 @@
+{
+    "name": "Qcli",
+    "description": "Report audiovisual metrics via libavfilter",
+    "url": "https://github.com/bavc/qctools/archive/v1.0.tar.gz",
+    "mirror": null,
+    "homepage": "https://bavc.org/preserve-media/preservation-tools",
+    "depends": [
+        {
+            "depend": "pkg-config",
+            "build-depend": true
+        },
+        {
+            "depend": "ffmpeg",
+            "build-depend": false
+        },
+        {
+            "depend": "qt",
+            "build-depend": false
+        },
+        {
+            "depend": "qwt",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "ENV[\"QCTOOLS_USE_BREW\"]=\"true\"",
+        "cd \"Project/QtCreator/qctools-lib\" do",
+        "system \"qmake\", \"qctools-lib.pro\"",
+        "system \"make\""
+    ],
+    "version": "1.0"
+}

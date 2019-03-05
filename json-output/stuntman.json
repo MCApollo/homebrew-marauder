@@ -1,0 +1,25 @@
+{
+    "name": "Stuntman",
+    "description": "Implementation of the STUN protocol",
+    "url": "http://www.stunprotocol.org/stunserver-1.2.13.tgz",
+    "mirror": null,
+    "homepage": "http://www.stunprotocol.org/",
+    "depends": [
+        {
+            "depend": "boost",
+            "build-depend": true
+        },
+        {
+            "depend": "openssl",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"make\"",
+        "bin.install \"stunserver\", \"stunclient\", \"stuntestcode\""
+    ],
+    "version": "1.2.13"
+}

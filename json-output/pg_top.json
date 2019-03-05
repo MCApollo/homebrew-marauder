@@ -1,0 +1,23 @@
+{
+    "name": "PgTop",
+    "description": "Monitor PostgreSQL processes",
+    "url": "https://ftp.postgresql.org/pub/projects/pgFoundry/ptop/pg_top/3.7.0/pg_top-3.7.0.tar.bz2",
+    "mirror": "https://mirrorservice.org/sites/ftp.postgresql.org/projects/pgFoundry/ptop/pg_top/3.7.0/pg_top-3.7.0.tar.bz2",
+    "homepage": "https://git.postgresql.org/gitweb/?p=pg_top.git",
+    "depends": [
+        {
+            "depend": "postgresql",
+            "build-depend": false
+        }
+    ],
+    "resource": [],
+    "conflicts": [],
+    "patches": [],
+    "install": [
+        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
+        "\"--prefix=#{prefix}\"",
+        "(buildpath/\"config.h\").append_lines \"#define HAVE_DECL_STRLCPY 1\"",
+        "system \"make\", \"install\""
+    ],
+    "version": "3.7.0"
+}
