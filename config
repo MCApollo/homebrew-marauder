@@ -1,0 +1,90 @@
+# CONFIG START
+# Needed vars:
+HOST="arm64-apple-darwin18.2.0"
+MAINTAINER="MCApollo <34170230+MCApollo@users.noreply.github.com>"
+TARGET="aarch64-apple-darwin17"
+architecture='iphoneos-arm'
+
+# Paths
+#BUILDDIR=${TMPDIR:-/tmp}
+PKGDIR=${PWD}
+
+# Options
+
+NAMEPREFIX='com.mc' # nnn -> com.mc.nnn
+PKGPREFIX='/usr/local'
+# DPKGDEB_ARGS='-Zlzma'
+
+# custom functions:
+# custom() gets called before building.
+
+CMAKE_TOOLCHAIN_FILE=${HOME}/toolchain-arm64.cmake
+SDK=${HOME}/toolchain/SDK
+
+custom(){
+
+	pkg:configsub(){
+		rm config.sub || return 1
+		curl 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub' -o config.sub
+		chmod +x config.sub
+	}
+
+	pkg:extrainclude(){
+		echo "-I$HOME/iPhone-include"
+	}
+
+	pkg:configure(){
+		cfg=( "${PKG_CONF:-./configure}"	\
+			--build="${HOST}"		\
+			--host="${TARGET}"		\
+			--sysconfdir=/etc		\
+			${SHARED:---enable-shared}	\
+			${STATIC:---disable-static}	\
+			"$@" )
+		echo "${cfg[@]}"
+		"${cfg[@]}"
+	}
+
+	pkg:cmake(){
+		cm=(	cmake		\
+			-DCMAKE_TOOLCHAIN_FILE="${CMAKE_TOOLCHAIN}"	\
+			"$@" )
+		echo "${cm[@]}"
+		"${cm[@]}"
+	}
+
+	pkg:setenv(){
+			export CC=${TARGET}-clang
+			export LD=${TARGET}-ld
+			export CXX=${TARGET}-clang++
+			export STRIP=${TARGET}-strip
+			export AR=${TARGET}-ar
+			export RANLIB=${TARGET}-ranlib
+			export CCTOOLS_CLANG_AS_TARGET_TRIPLE=arm64-${TARGET#*-}
+			export AS=${TARGET}-as
+	}
+
+	pkg:make(){
+		make CC="clang --sysroot=/usr/SDK" LD="ld --sysroot=/usr/SDK" "$@"
+	}
+}
+
+finalizepkg(){
+	if (( STRIP )); then
+		find -type f | while read binary; do
+			x="$(file $binary)"
+			case "$x" in
+				*': Mach-O'*'executable') ;;
+				*) continue ;;
+			esac
+			${TARGET}-strip -S - $binary # Debug symbols
+		done
+	fi
+
+	find -type f -exec ldid -K/usr/share/jailbreak/signcert.p12 -S/usr/share/entitlements/global.xml {} 2> /dev/null \;
+	find -type f -iname '.ldid*' -exec rm -f {} 2> /dev/null \;
+
+}
+export -f custom
+export -f finalizepkg
+
