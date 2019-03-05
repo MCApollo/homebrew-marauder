@@ -1,0 +1,1 @@
+exec ./marauder/convertto.py "$@"

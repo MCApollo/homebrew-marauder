@@ -78,12 +78,20 @@ def writer(file, outfile):
 
 if __name__ == "__main__":
     import sys
+    from os import mkdir
     argv = sys.argv[1:]
     if len(argv) == 0:
         print("usage: file.json")
         exit()
     file = path.realpath(argv[0])
-    tempdir = tempfile.mkdtemp()
-    chdir(tempdir)
-    writer(file, 'LOOTFILE')
-    print(f'Created {tempdir}/LOOTFILE')
+    name = path.basename(file)[:-5]
+    mkdir(name)
+    chdir(name)
+    try:
+        writer(file, 'LOOTFILE')
+    except KeyError:
+        from shutil import rmtree
+        chdir('../')
+        rmtree(name)
+        raise
+    print(f'Created {name}/LOOTFILE')
