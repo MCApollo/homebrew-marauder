@@ -599,6 +599,7 @@ else # (( INFAKEROOT || BREW ))
         _patches
         _cd "${srcdir}"/"${EXTRACTDIR}"
         _run_func_safe "brew"
+
     fi
 
     if declare -f "package" &>/dev/null; then
@@ -658,9 +659,10 @@ fi
 # Save a headace here by going with the lowercase name.
 [[ ! -z ${MAINTAINER} ]] && \
     maintainer="${MAINTAINER}"
+priority="${priority:-optional}"
 # Because of $_control
 _control=('package' 'name' 'version' 'section'
-            'author' 'maintainer' 'priority' 'architecture'
+           'author' 'maintainer' 'priority' 'architecture'
            'homepage' 'tags' 'depends' 'conflicts'
            'description')
 
