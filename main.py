@@ -7,7 +7,6 @@ import glob
 import bullet as b
 from bullet import colors
 
-
 def refresh():
     print("\033c")
     refresh.height = os.get_terminal_size().lines
@@ -258,11 +257,13 @@ def _convert(location=None, file=None):
 
 
 if __name__ == "__main__":
+    i = os.path.split(os.path.abspath(__file__))[0] + '/'
+    sys.path.append(i)
     c = ['1 - Download & convert to JSON.',   # To JSON
          '2 - Update JSON',
          '3 - Select and Edit JSON.',
          '4 - Edit JSON without marauder data.']
-    path = "json-output/"
+    path = i + "json-output/"
     choice = prompt(items=c, prompt="Select a action.")
     choice = choice[:1]
 
@@ -276,13 +277,13 @@ if __name__ == "__main__":
         q = b.YesNo(prompt="Are you sure? ").launch()
         if not q:
             exit()
-        _json(update=True)
+        _json(location=path, update=True)
         exit()
     elif choice == '3':
-        _convert()
+        _convert(location=path)
         exit()
     elif choice == '4':
-        for m in sorted(glob.glob('json-output/*')):
+        for m in sorted(glob.glob(path + '*')):
             with open(m, 'r') as fp:
                 if 'marauder' in json.load(fp):
                     continue

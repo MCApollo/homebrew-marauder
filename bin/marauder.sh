@@ -541,6 +541,8 @@ _patches(){  # brew() needs this.
             file=`realpath $(_download ${x[1]})`
             echo "patch -${x[0]} < ${file}"
             # ${x[0]} will be 'p[0-9]'
+            [[ ! -f ${file} ]] && \
+            	_warning "${file} is missing!"
             patch -${x[0]} < ${file} &>/dev/null || \
                 { _error "Failed to apply patch"; exit ${_EXIT_INTERNAL}; }
         fi

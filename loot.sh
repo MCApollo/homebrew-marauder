@@ -1,1 +1,2 @@
-exec ./marauder/convertto.py "$@"
+A="$(dirname ${0})"
+exec ${A}/marauder/convertto.py "$@"
