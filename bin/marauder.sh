@@ -542,6 +542,8 @@ _patches(){  # brew() needs this.
             file=`realpath $(_download ${x[1]})`
             echo "patch -${x[0]} < ${file}"
             # ${x[0]} will be 'p[0-9]'
+            [[ ! -f ${file} ]] && \
+            	_warning "${file} is missing!"
             patch -${x[0]} < ${file} &>/dev/null || \
                 { _error "Failed to apply patch ${file##*/}"; exit ${_EXIT_INTERNAL}; }
         fi
@@ -598,6 +600,7 @@ else # (( INFAKEROOT || BREW ))
         _patches
         _cd "${srcdir}"/"${EXTRACTDIR}"
         _run_func_safe "brew"
+
     fi
 
     if declare -f "package" &>/dev/null; then
@@ -657,9 +660,10 @@ fi
 # Save a headace here by going with the lowercase name.
 [[ ! -z ${MAINTAINER} ]] && \
     maintainer="${MAINTAINER}"
+priority="${priority:-optional}"
 # Because of $_control
 _control=('package' 'name' 'version' 'section'
-            'author' 'maintainer' 'priority' 'architecture'
+           'author' 'maintainer' 'priority' 'architecture'
            'homepage' 'tags' 'depends' 'conflicts'
            'description')
 
