@@ -125,6 +125,7 @@ def _convert(location=None, file=None):
     import shutil  # for rmtree
     import tempfile
     import textwrap
+    from time import sleep
 
     def editor():
         """ Guesses the default editor """
@@ -181,7 +182,7 @@ def _convert(location=None, file=None):
                                    '3 - Write.',
                                    '4 - Remove.',
                                    '5 - Quit.',
-                                   '6 - Skip.',
+                                   '6 - Skip/Next.',
                                    '7 - Misc'],
                           prompt="Choose a option.",
                           bullet="★",
@@ -229,7 +230,8 @@ def _convert(location=None, file=None):
             with open(file, 'w') as fp:
                 json.dump(data, fp, indent=4)
                 print(f'Wrote to {file}')
-            break
+                sleep(1)
+            continue
         elif choice == '4':  # Remove
             os.remove(file)
             break

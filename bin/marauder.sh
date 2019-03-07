@@ -260,9 +260,10 @@ SDK=\${HOME}/toolchain/SDK
 custom(){
 
 	pkg:configsub(){
-		rm config.sub || return 1
-		curl 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub' -o config.sub
-		chmod +x config.sub
+		f=\${1:-config.sub}
+		rm \$1 || return 1
+		curl 'https://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub' -o \$1
+		chmod +x \$1
 	}
 
 	pkg:extrainclude(){
@@ -542,7 +543,7 @@ _patches(){  # brew() needs this.
             echo "patch -${x[0]} < ${file}"
             # ${x[0]} will be 'p[0-9]'
             patch -${x[0]} < ${file} &>/dev/null || \
-                { _error "Failed to apply patch"; exit ${_EXIT_INTERNAL}; }
+                { _error "Failed to apply patch ${file##*/}"; exit ${_EXIT_INTERNAL}; }
         fi
     done
     popd &>/dev/null
