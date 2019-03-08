@@ -16,5 +16,8 @@
     "install": [
         "bin.install \"ansiweather\""
     ],
-    "version": "1.13.0"
+    "version": "1.13.0",
+    "marauder": [
+        "bin.install \"ansiweather\""
+    ]
 }

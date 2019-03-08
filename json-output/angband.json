@@ -12,6 +12,10 @@
         {
             "depend": "automake",
             "build-depend": true
+        },
+        {
+            "depend": "ncurses",
+            "build-depend": false
         }
     ],
     "resource": [],
@@ -19,17 +23,16 @@
     "patches": [],
     "install": [
         "ENV[\"NCURSES_CONFIG\"] = \"#{MacOS.sdk_path}/usr/bin/ncurses5.4-config\"",
-        "system \"./autogen.sh\"",
-        "system \"./configure\", \"--prefix=#{prefix}\",",
-        "\"--bindir=#{bin}\",",
-        "\"--libdir=#{libexec}\",",
-        "\"--enable-curses\",",
-        "\"--disable-ncursestest\",",
-        "\"--disable-sdltest\",",
-        "\"--disable-x11\",",
-        "\"--with-ncurses-prefix=#{MacOS.sdk_path}/usr\"",
-        "system \"make\"",
-        "system \"make\", \"install\""
+        "./autogen.sh",
+        "pkg:configure --bindir=#{bin} --libdir=#{libexec} --enable-curses --disable-ncursestest --disable-sdltest --disable-x11 --with-ncurses-prefix=#{MacOS.sdk_path}/usr",
+        "make",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "4.1.3"
+    "version": "4.1.3",
+    "marauder": [
+        "./autogen.sh",
+        "pkg:configure --enable-curses --disable-ncursestest --disable-sdltest --disable-x11",
+        "make",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

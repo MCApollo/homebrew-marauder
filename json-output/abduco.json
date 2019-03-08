@@ -10,7 +10,11 @@
     "patches": [],
     "install": [
         "ENV.append_to_cflags \"-D_DARWIN_C_SOURCE\"",
-        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+        "make PREFIX=$PKGPREFIX DESTDIR=$pkgdir install"
     ],
-    "version": "0.6"
+    "version": "0.6",
+    "marauder": [
+        "export CFLAGS=\"${CFLAGS} -O2 -D_DARWIN_C_SOURCE\"",
+        "pkg:make PREFIX=$PKGPREFIX DESTDIR=$pkgdir install"
+    ]
 }

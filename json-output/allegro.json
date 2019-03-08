@@ -46,9 +46,15 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "mkdir \"build\" do",
-        "system \"cmake\", \"..\", *std_cmake_args, \"-DWANT_DOCS=OFF\"",
-        "system \"make\", \"install\""
+        "mkdir \"build\" && cd build",
+        "cmake .. -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE} -DWANT_DOCS=OFF",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "5.2.4.0"
+    "version": "5.2.4.0",
+    "marauder": [
+        "# Untested",
+        "mkdir \"build\" && cd build",
+        "cmake .. -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE} -DWANT_DOCS=OFF",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

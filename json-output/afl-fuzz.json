@@ -9,8 +9,18 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\", \"PREFIX=#{prefix}\"",
-        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+        "make PREFIX=$PKGPREFIX",
+        "make DESTDIR=$pkgdir install PREFIX=$PKGPREFIX"
     ],
-    "version": "2.52"
+    "version": "2.52",
+    "marauder": [
+        "# Doesn't work due to shmget (IPC/sys v memory) not working",
+        "# export LLVM_CONFIG=/usr/bin/llvm-config-*",
+        "sed -i 's/shell uname/shell echo Darwin/' llvm_mode/Makefile",
+        "sed -i 's/test_build all_done//' llvm_mode/Makefile",
+        "sed -i 's/error/warning/' afl-as.c",
+        "pkg:setenv",
+        "make PREFIX=$PKGPREFIX AFL_NO_X86=1",
+        "LLVM_CONFIG=\"true\" make DESTDIR=$pkgdir install PREFIX=$PKGPREFIX AFL_NO_X86=1"
+    ]
 }

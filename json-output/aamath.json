@@ -4,7 +4,12 @@
     "url": "http://fuse.superglue.se/aamath/aamath-0.3.tar.gz",
     "mirror": null,
     "homepage": "http://fuse.superglue.se/aamath/",
-    "depends": [],
+    "depends": [
+        {
+            "depend": "readline",
+            "build-depend": false
+        }
+    ],
     "resource": [],
     "conflicts": [],
     "patches": [
@@ -77,11 +82,16 @@
         }
     ],
     "install": [
-        "ENV.deparallelize",
-        "system \"make\"",
+        "pkg:make",
         "bin.install \"aamath\"",
         "man1.install \"aamath.1\"",
         "prefix.install \"testcases\""
     ],
-    "version": "0.3"
+    "version": "0.3",
+    "marauder": [
+        "pkg:make",
+        "bin.install \"aamath\"",
+        "man1.install \"aamath.1\"",
+        "prefix.install \"testcases\""
+    ]
 }

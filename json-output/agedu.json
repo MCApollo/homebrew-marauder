@@ -22,9 +22,14 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"./mkauto.sh\"",
-        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
-        "system \"make\", \"install\""
+        "./mkauto.sh",
+        "pkg:configure --disable-dependency-tracking",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "20180918.80"
+    "version": "20180918.80",
+    "marauder": [
+        "./mkauto.sh",
+        "pkg:configure --disable-dependency-tracking ac_cv_func_lstat64=no ac_cv_func_stat64=no",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

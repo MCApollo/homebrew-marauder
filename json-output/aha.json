@@ -9,7 +9,11 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+        "make DESTDIR=$pkgdir install PREFIX=$PKGPREFIX"
     ],
-    "version": "0.5"
+    "version": "0.5",
+    "marauder": [
+        "pkg:setenv",
+        "make DESTDIR=$pkgdir install PREFIX=$PKGPREFIX"
+    ]
 }

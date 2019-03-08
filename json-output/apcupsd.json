@@ -19,8 +19,14 @@
     "patches": [],
     "install": [
         "sysconfdir = etc/name",
-        "cd \"src/apcagent\" do",
+        "cd \"src/apcagent\" ",
         "inreplace \"Makefile\", \"Applications\", prefix"
     ],
-    "version": "3.14.14"
+    "version": "3.14.14",
+    "marauder": [
+        "# Untested",
+        "sysconfdir = etc/name",
+        "cd \"src/apcagent\" ",
+        "inreplace \"Makefile\", \"Applications\", prefix"
+    ]
 }

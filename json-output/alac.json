@@ -9,8 +9,12 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\", \"CFLAGS=#{ENV.cflags}\", \"CC=#{ENV.cc}\"",
+        "make CFLAGS=${PKGCFLAGS} CC=$TARGET-clang",
         "bin.install \"alac\""
     ],
-    "version": "0.2.0"
+    "version": "0.2.0",
+    "marauder": [
+        "pkg:make",
+        "bin.install \"alac\""
+    ]
 }

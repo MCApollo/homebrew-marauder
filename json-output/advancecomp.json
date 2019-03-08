@@ -22,10 +22,14 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"autoreconf\", \"-fiv\"",
-        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
-        "\"--enable-bzip2\", \"--prefix=#{prefix}\", \"--mandir=#{man}\"",
-        "system \"make\", \"install\""
+        "autoreconf -fiv",
+        "pkg:configure --disable-debug --disable-dependency-tracking --enable-bzip2",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "2.1"
+    "version": "2.1",
+    "marauder": [
+        "autoreconf -fiv",
+        "pkg:configure --disable-debug --disable-dependency-tracking --enable-bzip2",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

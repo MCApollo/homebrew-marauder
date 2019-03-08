@@ -10,8 +10,16 @@
     "patches": [],
     "install": [
         "ENV.deparallelize",
-        "system \"make\", \"PREFIX=#{prefix}\"",
-        "system \"make\", \"install\", \"PREFIX=#{prefix}\""
+        "make PREFIX=$PKGPREFIX",
+        "make DESTDIR=$pkgdir install PREFIX=$PKGPREFIX"
     ],
-    "version": "20180810"
+    "version": "20180810",
+    "marauder": [
+        "export HOST=_APPLE",
+        "LDFLAGS=-lpthread",
+        "export UNAME_S=Darwin",
+        "export CFLAGS=-Wno-error=unknown-warning-option",
+        "pkg:make PREFIX=$PKGPREFIX",
+        "pkg:make DESTDIR=$pkgdir install PREFIX=$PKGPREFIX"
+    ]
 }

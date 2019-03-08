@@ -15,15 +15,13 @@
     "patches": [],
     "install": [
         "ENV.deparallelize",
-        "args = %W[",
-        "--disable-debug",
-        "--with-ssl-dir=#{Formula[\"openssl\"].opt_prefix}",
-        "--with-ssl-certs-dir=#{etc}/openssl",
-        "--prefix=#{prefix}",
-        "--with-passfile=.pine-passfile",
-        "]",
-        "system \"./configure\", *args",
-        "system \"make\", \"install\""
+        "args = %W[--disable-debug --with-ssl-dir=#{Formula[\"openssl\"].opt_prefix} --with-ssl-certs-dir=#{etc}/openssl --prefix=#{prefix} --with-passfile=.pine-passfile ]",
+        "pkg:configure *args",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "2.21"
+    "version": "2.21",
+    "marauder": [
+        "pkg:configure --with-passfile=.pine-passfile --with-ssl-certs-dir=/etc/ssl",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

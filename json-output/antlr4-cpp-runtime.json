@@ -14,8 +14,12 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"cmake\", \".\", *std_cmake_args",
-        "system \"make\", \"install\""
+        "cmake . -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "4.7.2"
+    "version": "4.7.2",
+    "marauder": [
+        "cmake . -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

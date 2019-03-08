@@ -26,10 +26,17 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "cd \"c_glib\" do",
-        "system \"./configure\", \"--prefix=#{prefix}\"",
-        "system \"make\"",
-        "system \"make\", \"install\""
+        "cd \"c_glib\" ",
+        "pkg:configure",
+        "make",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "0.12.1"
+    "version": "0.12.1",
+    "marauder": [
+        "# Untested",
+        "cd \"c_glib\" ",
+        "pkg:configure",
+        "make",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

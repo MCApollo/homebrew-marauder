@@ -30,14 +30,19 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"sh\", \"./autogen.sh\" if build.head?",
-        "system \"./configure\", \"--disable-lfs\",",
-        "\"--disable-static\",",
-        "\"--with-curl\",",
-        "\"--with-zlib\",",
-        "\"--sysconfdir=#{etc}\",",
-        "\"--prefix=#{prefix}\"",
-        "system \"make\", \"install\""
+        "pkg:configure --disable-lfs --disable-static --with-curl --with-zlib",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "0.16"
+    "version": "0.16",
+    "marauder": [
+        "# Untested",
+        "for p in /usr/bin /usr/local/bin; do",
+        "\tif test -f ${SDK:-/nonexist}/$p/curl-config; then",
+        "\t\tCURL_CONFIG=${SDK:-/nonexist}/$p/curl-config",
+        "\tfi",
+        "done",
+        "sed -i '1s/^/\\#include \"fopen.h\"\\n/' src/db.c # url_fclose is undefined",
+        "ac_cv_path_curlconfig=${CURL_CONFIG:-/dev/null} pkg:configure --disable-lfs --disable-static --with-curl --with-zlib",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

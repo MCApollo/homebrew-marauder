@@ -9,9 +9,16 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"./configure\"",
-        "system \"make\"",
+        "pkg:configure",
+        "make",
         "bin.install \"aescrypt\", \"aesget\""
     ],
-    "version": "0.7"
+    "version": "0.7",
+    "marauder": [
+        "pkg:setenv",
+        "ac_cv_sizeof_int=4 ac_cv_sizeof_long=8 ac_cv_c_bigendian=no pkg:configure",
+        "make",
+        "mkdir -p ${pkgdir}/${PKGPREFIX}/bin",
+        "cp -f aescrypt aesget ${pkgdir}/${PKGPREFIX}/bin"
+    ]
 }

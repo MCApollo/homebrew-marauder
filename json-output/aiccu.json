@@ -85,9 +85,17 @@
     ],
     "install": [
         "inreplace \"doc/aiccu.conf\", \"daemonize true\", \"daemonize false\"",
-        "system \"make\", \"prefix=#{prefix}\"",
-        "system \"make\", \"install\", \"prefix=#{prefix}\"",
+        "make prefix=$PKGPREFIX",
+        "make DESTDIR=$pkgdir install prefix=$PKGPREFIX",
         "etc.install \"doc/aiccu.conf\""
     ],
-    "version": "20070115"
+    "version": "20070115",
+    "marauder": [
+        "sed -i 's/daemonize true/daemonize false/' doc/aiccu.conf",
+        "sed -i \"s/strip \\$@/${TARGET}-strip \\$@/\" unix-console/Makefile",
+        "sed -i 's/shell uname/shell echo Darwin/' unix-console/Makefile",
+        "pkg:make prefix=$PKGPREFIX",
+        "pkg:make DESTDIR=$pkgdir install prefix=$PKGPREFIX",
+        "etc.install \"doc/aiccu.conf\""
+    ]
 }

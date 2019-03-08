@@ -15,14 +15,18 @@
     "patches": [],
     "install": [
         "inreplace \"antiword.h\", \"/usr/share/antiword\", pkgshare",
-        "system \"make\", \"CC=#{ENV.cc}\",",
-        "\"LD=#{ENV.cc}\",",
-        "\"CFLAGS=#{ENV.cflags} -DNDEBUG\",",
-        "\"GLOBAL_INSTALL_DIR=#{bin}\",",
-        "\"GLOBAL_RESOURCES_DIR=#{pkgshare}\"",
+        "make CC=$TARGET-clang LD=$TARGET-clang CFLAGS=${PKGCFLAGS} -DNDEBUG GLOBAL_INSTALL_DIR=#{bin} GLOBAL_RESOURCES_DIR=$PKGPREFIX/share",
         "bin.install \"antiword\"",
         "pkgshare.install Dir[\"Resources/*\"]",
         "man1.install \"Docs/antiword.1\""
     ],
-    "version": "0.37"
+    "version": "0.37",
+    "marauder": [
+        "p=$(echo ${PKGPREFIX} | sed 's_/_\\\\/_g')",
+        "sed -i \"s/\\/usr\\/share\\/antiword/$p/\" antiword.h",
+        "pkg:make LD=${TARGET}-clang CFLAGS=-DNDEBUG GLOBAL_INSTALL_DIR=${PKGPREFIX}/bin GLOBAL_RESOURCES_DIR=${PKGPREFIX}/share",
+        "bin.install \"antiword\"",
+        "pkgshare.install Resources/*",
+        "man1.install Docs/antiword.1"
+    ]
 }

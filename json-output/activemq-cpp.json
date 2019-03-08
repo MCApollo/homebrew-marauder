@@ -22,9 +22,14 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"./configure\", \"--prefix=#{prefix}\"",
-        "system \"make\"",
-        "system \"make\", \"install\""
+        "pkg:configure",
+        "make",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "3.9.5"
+    "version": "3.9.5",
+    "marauder": [
+        "pkg:configure",
+        "make",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

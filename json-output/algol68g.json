@@ -9,8 +9,13 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"./configure\", \"--prefix=#{prefix}\"",
-        "system \"make\", \"install\""
+        "pkg:configure",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "2.8.4"
+    "version": "2.8.4",
+    "marauder": [
+        "pkg:configsub",
+        "pkg:configure",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

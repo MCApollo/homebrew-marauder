@@ -9,10 +9,12 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"./configure\", \"--disable-dependency-tracking\",",
-        "\"--disable-silent-rules\",",
-        "\"--prefix=#{prefix}\"",
-        "system \"make\", \"install\""
+        "pkg:configure --disable-dependency-tracking --disable-silent-rules",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "0.98.3"
+    "version": "0.98.3",
+    "marauder": [
+        "pkg:configure --disable-dependency-tracking --disable-silent-rules",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

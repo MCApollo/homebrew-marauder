@@ -11,5 +11,8 @@
     "install": [
         "prefix.install %w[bin completions libexec]"
     ],
-    "version": "1.0.1"
+    "version": "1.0.1",
+    "marauder": [
+        "prefix.install bin completions libexec"
+    ]
 }

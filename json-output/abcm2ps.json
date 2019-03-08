@@ -14,8 +14,16 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"./configure\", \"--prefix=#{prefix}\"",
-        "system \"make\", \"install\""
+        "sed -i \"s/CC=gcc/CC=${TARGET}-clang/\" configure",
+        "sed -i \"s/pkg-config/${TARGET}-pkg-config/\" configure",
+        "pkg:configure",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "8.14.2"
+    "version": "8.14.2",
+    "marauder": [
+        "sed -i \"s/CC=gcc/CC=${TARGET}-clang/\" configure",
+        "sed -i \"s/pkg-config/${TARGET}-pkg-config/\" configure",
+        "pkg:configure",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

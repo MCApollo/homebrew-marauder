@@ -10,10 +10,14 @@
     "patches": [],
     "install": [
         "rm \"makefile\"",
-        "system \"./configure\", \"--disable-debug\",",
-        "\"--prefix=#{prefix}\",",
-        "\"--mandir=#{man}\"",
-        "system \"make\", \"install\""
+        "pkg:configure --disable-debug",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "2019.02.08"
+    "version": "2019.02.08",
+    "marauder": [
+        "rm \"makefile\" || :\t# Brew came with this",
+        "rm \"Makefile\" || :\t# Makefile exists, but not `makefile`?",
+        "CFLAGS=\"-Wno-error=implicit-function-declaration\" pkg:configure --disable-debug",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

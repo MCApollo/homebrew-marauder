@@ -9,8 +9,12 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\", \"PREFIX=#{prefix}\"",
-        "system \"make\", \"PREFIX=#{prefix}\", \"install\""
+        "make PREFIX=$PKGPREFIX",
+        "make PREFIX=$PKGPREFIX DESTDIR=$pkgdir install"
     ],
-    "version": "2.13"
+    "version": "2.13",
+    "marauder": [
+        "pkg:make PREFIX=$PKGPREFIX LDFLAGS=\"-lc++\"",
+        "pkg:make PREFIX=$PKGPREFIX LDFLAGS=\"-lc++\" DESTDIR=$pkgdir install"
+    ]
 }

@@ -46,8 +46,13 @@
         }
     ],
     "install": [
-        "system \"./configure\", \"--disable-dependency-tracking\", \"--prefix=#{prefix}\"",
-        "system \"make\", \"install\""
+        "pkg:configure --disable-dependency-tracking",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "0.7.7"
+    "version": "0.7.7",
+    "marauder": [
+        "# Untested",
+        "pkg:configure --disable-dependency-tracking",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

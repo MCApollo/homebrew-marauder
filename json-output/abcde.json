@@ -42,7 +42,10 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\", \"install\", \"prefix=#{prefix}\", \"sysconfdir=#{etc}\""
+        "make DESTDIR=$pkgdir install prefix=$PKGPREFIX sysconfdir=#{etc}"
     ],
-    "version": "2.9.3"
+    "version": "2.9.3",
+    "marauder": [
+        "make DESTDIR=$pkgdir install prefix=$PKGPREFIX sysconfdir=#{etc}"
+    ]
 }

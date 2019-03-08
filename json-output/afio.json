@@ -9,12 +9,25 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\", \"DESTDIR=#{prefix}\"",
+        "make DESTDIR=$PKGPREFIX",
         "bin.install \"afio\"",
         "man1.install \"afio.1\"",
         "prefix.install \"ANNOUNCE-2.5.1\" => \"ANNOUNCE\"",
         "prefix.install %w[INSTALLATION SCRIPTS]",
         "share.install Dir[\"script*\"]"
     ],
-    "version": "2.5.2"
+    "version": "2.5.2",
+    "marauder": [
+        "echo \"",
+        "#include <sys/types.h>",
+        "#include <utime.h>",
+        "#include <signal.h>",
+        "#include <strings.h>",
+        "#include <sys/wait.h>",
+        "\" >> afio.h",
+        "pkg:make DESTDIR=$PKGPREFIX",
+        "bin.install \"afio\"",
+        "man1.install \"afio.1\"",
+        "share.install script*"
+    ]
 }

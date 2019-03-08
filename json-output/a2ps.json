@@ -9,19 +9,23 @@
     "conflicts": [],
     "patches": [
         {
-            "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/0ae366e6/a2ps/patch-contrib_sample_Makefile.in",
-            "strip": "0"
-        },
-        {
             "url": "https://raw.githubusercontent.com/Homebrew/formula-patches/0ae366e6/a2ps/patch-lib__xstrrpl.c",
             "strip": "0"
         }
     ],
     "install": [
-        "system \"./configure\", \"--disable-debug\", \"--disable-dependency-tracking\",",
-        "\"--prefix=#{prefix}\", \"--sysconfdir=#{etc}\",",
-        "\"--with-lispdir=#{elisp}\"",
-        "system \"make\", \"install\""
+        "pkg:configsub */config.sub",
+        "CFLAGS=\"-include stdlib.h\" jm_cv_func_working_realloc=yes jm_cv_func_working_malloc=yes ac_cv_func_rename=yes ac_cv_func_rename_works=yes ac_cv_func_on_exit=yes ac_cv_check_symbol_sys_siglist=yes ac_cv_func_atexit=yes \\",
+        "\tpkg:configure --disable-debug --disable-dependency-tracking # --with-lispdir=#{elisp}",
+        "echo -e \"#include <string.h>\\n#include <sys/ioctl.h>\" >> config.h",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "4.14"
+    "version": "4.14",
+    "marauder": [
+        "pkg:configsub */config.sub",
+        "CFLAGS=\"-include stdlib.h\" jm_cv_func_working_realloc=yes jm_cv_func_working_malloc=yes ac_cv_func_rename=yes ac_cv_func_rename_works=yes ac_cv_func_on_exit=yes ac_cv_check_symbol_sys_siglist=yes ac_cv_func_atexit=yes \\",
+        "\tpkg:configure --disable-debug --disable-dependency-tracking # --with-lispdir=#{elisp}",
+        "echo -e \"#include <string.h>\\n#include <sys/ioctl.h>\" >> config.h",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

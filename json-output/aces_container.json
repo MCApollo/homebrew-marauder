@@ -14,9 +14,14 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "mkdir \"build\" do",
-        "system \"cmake\", \"..\", *std_cmake_args",
-        "system \"make\", \"install\""
+        "mkdir \"build\" && cd build",
+        "cmake .. -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "1.0.2"
+    "version": "1.0.2",
+    "marauder": [
+        "mkdir \"build\" && cd build",
+        "cmake .. -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE} -DCMAKE_CXX_FLAGS=\"-std=c++98\"",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

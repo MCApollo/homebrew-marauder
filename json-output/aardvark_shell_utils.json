@@ -14,12 +14,14 @@
     ],
     "patches": [],
     "install": [
-        "system \"./configure\", \"--disable-debug\",",
-        "\"--disable-dependency-tracking\",",
-        "\"--prefix=#{prefix}\",",
-        "\"--mandir=#{man}\"",
-        "system \"make\"",
-        "system \"make\", \"install\""
+        "pkg:configure --disable-debug --disable-dependency-tracking",
+        "make",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "1.0"
+    "version": "1.0",
+    "marauder": [
+        "pkg:configure --disable-debug --disable-dependency-tracking",
+        "make",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

@@ -9,12 +9,16 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"./configure\", \"--disable-debug\",",
-        "\"--disable-dependency-tracking\",",
-        "\"--prefix=#{prefix}\",",
-        "\"--enable-shared\",",
-        "\"--mandir=#{man}\"",
-        "system \"make\", \"install\""
+        "pkg:configsub ./autotools/config.sub",
+        "CFLAGS=\"-ffast-math -std=gnu89\" STAIC=--enable-static pkg:configure --disable-debug --disable-dependency-tracking",
+        "# The CFLAGS are very important!",
+        "make DESTDIR=$pkgdir install AR=${TARGET}-ar RANLIB=${TARGET}-ranlib"
     ],
-    "version": "0.7.4"
+    "version": "0.7.4",
+    "marauder": [
+        "pkg:configsub ./autotools/config.sub",
+        "CFLAGS=\"-ffast-math -std=gnu89\" STAIC=--enable-static pkg:configure --disable-debug --disable-dependency-tracking",
+        "# The CFLAGS are very important!",
+        "make DESTDIR=$pkgdir install AR=${TARGET}-ar RANLIB=${TARGET}-ranlib"
+    ]
 }

@@ -17,12 +17,16 @@
         "bin.mkpath",
         "man1.mkpath",
         "inreplace \"Makefile.in\", \"$(prefix)/man/man1\", \"$(prefix)/share/man/man1\"",
-        "system \"./configure\", \"--disable-debug\",",
-        "\"--disable-dependency-tracking\",",
-        "\"--prefix=#{prefix}\"",
-        "system \"make\", \"CFLAGS=#{ENV.cflags}\",",
-        "\"LDFLAGS=#{ENV.ldflags}\",",
-        "\"install\""
+        "pkg:configure --disable-debug --disable-dependency-tracking",
+        "make CFLAGS=${PKGCFLAGS} LDFLAGS=${PKGLDFLAGS} DESTDIR=$pkgdir install"
     ],
-    "version": "1.6"
+    "version": "1.6",
+    "marauder": [
+        "mkdir -p ${pkgdir}/${PKGPREFIX}/{bin,share/man/man1}",
+        "sed -i 's/\\$(prefix)\\/man\\/man1/\\$(prefix)\\/share\\/man\\/man1/' Makefile.in",
+        "sed -i 's/prefix = @prefix@/prefix = \\$(DESTDIR)@prefix@/' Makefile.in",
+        "pkg:setenv",
+        "pkg:configure --disable-debug --disable-dependency-tracking",
+        "pkg:make DESTDIR=$pkgdir install"
+    ]
 }

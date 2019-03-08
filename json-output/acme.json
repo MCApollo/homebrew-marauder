@@ -9,8 +9,13 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\", \"-C\", \"src\", \"install\", \"BINDIR=#{bin}\"",
+        "make -C src DESTDIR=$pkgdir install BINDIR=#{bin}",
         "doc.install Dir[\"docs/*\"]"
     ],
-    "version": "1.0-u"
+    "version": "1.0-u",
+    "marauder": [
+        "# SVN doesn't work",
+        "make -C src DESTDIR=$pkgdir install # BINDIR=#{bin}",
+        "doc.install docs/*"
+    ]
 }

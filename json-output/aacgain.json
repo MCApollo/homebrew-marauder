@@ -9,10 +9,14 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"./configure\", \"--disable-debug\",",
-        "\"--disable-dependency-tracking\",",
-        "\"--prefix=#{prefix}\"",
-        "system \"make\", \"install\""
+        "pkg:configsub",
+        "CXXFLAGS=\"-std=c++98\" pkg:configure --disable-debug --disable-dependency-tracking",
+        "make DESTDIR=$pkgdir install"
     ],
-    "version": "1.8"
+    "version": "1.8",
+    "marauder": [
+        "pkg:configsub",
+        "CXXFLAGS=\"-std=c++98\" pkg:configure --disable-debug --disable-dependency-tracking",
+        "make DESTDIR=$pkgdir install"
+    ]
 }

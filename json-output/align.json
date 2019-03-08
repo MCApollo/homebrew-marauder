@@ -14,7 +14,12 @@
     ],
     "patches": [],
     "install": [
-        "system \"make\", \"install\", \"BINDIR=#{bin}\""
+        "make DESTDIR=$pkgdir install BINDIR=#{bin}"
     ],
-    "version": "1.7.5"
+    "version": "1.7.5",
+    "marauder": [
+        "BINDIR=${pkgdir}/${PKGPREFIX}/bin",
+        "mkdir -p $BINDIR",
+        "make DESTDIR=$pkgdir install BINDIR=$BINDIR"
+    ]
 }

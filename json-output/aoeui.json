@@ -9,7 +9,10 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\", \"INST_DIR=#{prefix}\", \"install\""
+        "make INST_DIR=$PKGPREFIX DESTDIR=$pkgdir install"
     ],
-    "version": "1.6"
+    "version": "1.6",
+    "marauder": [
+        "pkg:make INST_DIR=${pkgdir}/${PKGPREFIX} install"
+    ]
 }

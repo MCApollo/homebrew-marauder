@@ -38,8 +38,12 @@
         }
     ],
     "install": [
-        "system \"make\", \"LDLIBS=''\"",
-        "system \"make\", \"install\", \"PREFIX=\", \"TARGET=#{prefix}\""
+        "make LDLIBS=''",
+        "make DESTDIR=$pkgdir install PREFIX= TARGET=$PKGPREFIX"
     ],
-    "version": "0.53"
+    "version": "0.53",
+    "marauder": [
+        "pkg:make LDLIBS=''",
+        "pkg:make TARGET=$pkgdir install PREFIX=$PKGPREFIX"
+    ]
 }
