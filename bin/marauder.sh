@@ -341,27 +341,47 @@ _brew_commands(){
 
     function bin.install(){
         mkdir -p ${pkgdir}/${PKGPREFIX}/bin
-        cp "$@" ${pkgdir}${PKGPREFIX}/bin
+        cp -r "$@" ${pkgdir}${PKGPREFIX}/bin
     }
 
     function man1.install(){
         mkdir -p ${pkgdir}${PKGPREFIX}/share/man1
-        cp "$@" ${pkgdir}${PKGPREFIX}/bin
+        cp -r "$@" ${pkgdir}${PKGPREFIX}/share/man1
     }
 
     function prefix.install(){
         mkdir -p ${pkgdir}${PKGPREFIX}/share/
-        cp "$@" ${pkgdir}${PKGPREFIX}/bin
+        cp -r "$@" ${pkgdir}${PKGPREFIX}/share/
     }
 
     function lib.install(){
         mkdir -p ${pkgdir}${PKGPREFIX}/lib
-        cp "$@" ${pkgdir}${PKGPREFIX}/lib
+        cp -r "$@" ${pkgdir}${PKGPREFIX}/lib
     }
 
     function include.install(){
         mkdir -p ${pkgdir}${PKGPREFIX}/include
-        cp "$@" ${pkgdir}${PKGPREFIX}/include
+        cp -r "$@" ${pkgdir}${PKGPREFIX}/include
+    }
+
+    function pkgshare.install(){
+        mkdir -p ${pkgdir}${PKGPREFIX}/share/${name,,}
+        cp -r "$@" ${pkgdir}${PKGPREFIX}/share/${name,,}
+    }
+
+    function share.install(){
+        mkdir -p ${pkgdir}${PKGPREFIX}/share/${name,,}
+        cp -r "$@" ${pkgdir}${PKGPREFIX}/share/${name,,}
+    }
+
+    function doc.install(){
+        mkdir -p ${pkgdir}${PKGPREFIX}/share/${name,,}
+        cp -r "$@" ${pkgdir}${PKGPREFIX}/share/${name,,}
+    }
+
+    function etc.install(){
+        mkdir -p ${pkgdir}/etc
+        cp -r "$@" ${pkgdir}/etc/
     }
 }
 
@@ -531,21 +551,26 @@ _patches(){  # brew() needs this.
                 # Patch will prompt if it detects a tty
                 echo "patch -p${z} < ${srcdir}/${x[1]}"
                 if patch -p${z} < ${srcdir}/${x[1]} &>/dev/null; then
+                    rm ${srcdir}/${x[1]} || :
                     break
                 else
                     _error "patch ${x[1]} failed to stick. -p ${z}"
                 fi
                 _error "Failed to patch local patch"
+		sleep 3
                 exit ${_EXIT_INTERNAL};
             done
         else
             file=`realpath $(_download ${x[1]})`
+            file=${file:-*.diff*} # If all goes wrong, this should catch it.
+            file=${file:-*.patch*}
             echo "patch -${x[0]} < ${file}"
             # ${x[0]} will be 'p[0-9]'
             [[ ! -f ${file} ]] && \
             	_warning "${file} is missing!"
             patch -${x[0]} < ${file} &>/dev/null || \
-                { _error "Failed to apply patch ${file##*/}"; exit ${_EXIT_INTERNAL}; }
+                { _error "Failed to apply patch ${file##*/}"; sleep 3; exit ${_EXIT_INTERNAL}; }
+           rm ${file} || :
         fi
     done
     popd &>/dev/null
