@@ -673,6 +673,24 @@ if [[ ! -z ${NAMEPREFIX} ]]; then
     # NAMEPREFIX can be set to prefix the package name.
     # A name of `nnn` would become com.foo.nnn for example
     package="${NAMEPREFIX}.${name,,}"
+    # Assume the conflicts are for the NAMEPREFIX
+    # Packages with ':' are left alone.
+    for ((x=0; x<${#depends[*]}; x++)); do
+	if [[ ${depends[$x]} =~ ^:+ ]]; then
+		depends[$x]=${depends[$x]//:/}
+		continue
+	else
+		depends[$x]="${NAMEPREFIX}.${depends[$x]}"
+	fi
+    done
+    for ((x=0; x<${#conflicts[*]}; x++)); do
+        if [[ ${conflicts[$x]} =~ ^:+ ]]; then
+		conflicts[$x]=${conflicts[$x]//:/}
+                continue
+        else
+                conflicts[$x]="${NAMEPREFIX}.${depends[$x]}"
+        fi
+    done
 else
     package="${name,,}"
 fi
@@ -701,7 +719,7 @@ for var in ${_control[@]}; do
 		elif [[ "$(eval echo \${!$var[*]})" != '0' ]]; then
 			# Loop for array
 			printf -- "%s: "  "${var^}" >> $CONTROL
-			_var="$(eval echo "\${NAMEPREFIX}\${$var[@]}")"
+			_var="$(eval echo "\${$var[@]}")"
 			printf -- '%s\n' "${_var[@]// /, }" >> $CONTROL
 		else
 			printf -- '%s\n' "${var^}: $(eval echo -e "\$$var")" >> $CONTROL
