@@ -282,6 +282,15 @@ custom(){
 		"\${cfg[@]}"
 	}
 
+	pkg:patch(){
+		for diff in \${srcdir}/*.diff \${srcdir}/*.patch; do
+			if ! [[ -e \${diff} ]]; then
+				continue
+			fi
+			patch -p\${1:-1} < "\${diff}"
+		done
+	}
+
 	pkg:cmake(){
 		cm=(	cmake		\\
 			-DCMAKE_TOOLCHAIN_FILE="\${CMAKE_TOOLCHAIN}"	\\
