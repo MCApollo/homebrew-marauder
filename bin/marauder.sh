@@ -6,6 +6,7 @@
 # Steals binaries from builds
 
 unset CD_PATH
+trap "sleep 3" TERM EXIT # For reading errors until _clean_up gets created.
 
 
 # Anything that this script itself uses start with the prefix `_`
@@ -661,7 +662,7 @@ fi
 
 for script in 'postinst' 'preinst' 'postrm' 'prerm' '_extrainst'; do
     if test -f ${LOOTDIR:-nonexist}/${script}; then
-        cp -- "$script" "$pkgdir"/DEBIAN
+        cp -- ${LOOTDIR:-nonexist}/${script} "$pkgdir"/DEBIAN/
         chmod +x "$pkgdir"/DEBIAN/"$script"
     fi
     unset script
@@ -695,6 +696,8 @@ else
     package="${name,,}"
 fi
 
+# TODO: Prepend on dpkg.
+
 if [[ ! -z ${DESCRIPTION} ]]; then
    # Config can set this to give a tagline to all packages
    description="${DESCRIPTION}\n\t${description}" # On purpose.
@@ -708,6 +711,7 @@ priority="${priority:-optional}"
 _control=('package' 'name' 'version' 'section'
            'author' 'maintainer' 'priority' 'architecture'
            'homepage' 'tags' 'depends' 'conflicts'
+           'predepends' 'replaces'
            'description')
 
 printf '' > ${CONTROL}
