@@ -9,10 +9,33 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"./build.sh\"",
+        "./build.sh",
         "(prefix+\"etc\").mkdir",
         "inreplace \"Makefile\", \"bin/ape.conf $(bindir)\", \"bin/ape.conf $(prefix)/etc\"",
-        "system \"make\", \"install\", \"prefix=#{prefix}\""
+        "make DESTDIR=$pkgdir install prefix=$PKGPREFIX"
     ],
-    "version": "1.1.2"
+    "version": "1.1.2",
+    "marauder": [
+        "# Not working",
+        "echo \"#define USE_KQUEUE_HANDLER\" > ./src/configure.h",
+        "echo \"DARWIN_BUILD = 1\" > ./modules/plateform.mk",
+        "pushd ./deps/udns-0.0.9/",
+        "sed -i 's/ac_fatal \"cannot find libraries needed for sockets\"/true/' ./configure",
+        "sed -i 's/ac_run .\\/conftest/true/' ./configure.lib",
+        "pkg:setenv",
+        "./configure",
+        "pkg:make",
+        "popd",
+        "echo \"HAS_MYSQL = 0\" > ./modules/mysql.mk",
+        "echo \"#undef _USE_MYSQL\" >> ./src/configure.h",
+        "pushd ./deps/js/src/",
+        "pkg:configsub ./build/autoconf/config.sub",
+        "HOST_CC=${HOST_CC:-/usr/bin/cc} pkg:configure",
+        "make",
+        "popd",
+        "pkg:make",
+        "pushd ./modules/; pkg:make; popd",
+        "inreplace \"Makefile\", \"bin/ape.conf $(bindir)\", \"bin/ape.conf $(prefix)/etc\"",
+        "make DESTDIR=$pkgdir install prefix=$PKGPREFIX"
+    ]
 }

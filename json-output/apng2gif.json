@@ -18,8 +18,12 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\"",
+        "make",
         "bin.install \"apng2gif\""
     ],
-    "version": "1.8"
+    "version": "1.8",
+    "marauder": [
+        "pkg:make",
+        "bin.install \"apng2gif\""
+    ]
 }

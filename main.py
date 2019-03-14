@@ -219,17 +219,22 @@ def _convert(location=None, file=None):
                 convert.writer(fp.name, 'LOOTFILE')
 
                 p = subprocess.Popen("marauder -L LOOTFILE --homebrew --debug-failure".split()
-                                     ).wait()
+                                     )
+                p.wait()
+                if p.returncode > 0:
+                    sleep(3)
             os.chdir(cwd)  # popd
             shutil.rmtree(tempdir)
             continue
         elif choice == '3':  # Write
             data['marauder'] = data['install']
+            d = data['install']
             data['install'] = _data
             with open(file, 'w') as fp:
                 json.dump(data, fp, indent=4)
                 print(f'Wrote to {file}')
                 sleep(1)
+            data['install'] = d
             continue
         elif choice == '4':  # Remove
             os.remove(file)

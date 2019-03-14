@@ -119,16 +119,20 @@ _run_func_safe(){
 
 _download(){
     # Vars that can passed:
-	local url="$1"
+	local url=("$1")
 	local proto="${url#*::}"
 	local filename="${url##*/}"
 	local clone=0 # Don't try to extract a git dir.
 	local cmd=""
 
 	[[ $url = *://*.git ]] && proto="git"
+	# TODO: Fix this:
+	# For now, seperate the url variable. $url should be the url and everything else is a argument to the command
+	# Meant for git really:
+	# url='https://example.com/example.git --branch foobar'
 
 	case "$proto" in
-		git)	filename=${filename%%.git}; cmd=("git" "clone" "$url" "$filename"); clone=1 ;;
+		git)	filename=${filename%%.git}; cmd=("git" "clone" "$url" "$filename" "${url[@]:1}"); clone=1 ;;
 		http*)	cmd=("wget" "$url" "-O" "$filename") ;;
 		ftp*)	cmd=("wget" "$url" "-O" "$filename") ;;
 		svn)	cmd=("svn" "co" "$url" "$filename"); clone=1 ;;
@@ -142,12 +146,22 @@ _download(){
 
 	[[ ! -f "${filename}" ]] && \
 		_warning "_download() - Missing ${filename}"
-	printf "${filename}"
+
+	filename=(${filename})
+	if (( ${clone} )); then
+		printf '%s %s' "${filename[0]}" "git"
+	else
+		printf '%s' "${filename[0]}"
+	fi
 	return
 }
 
 _extract(){
-	local file=$1
+	local file=($1) # Break up spaces
+	# TODO: Fix the way we do git clones
+	[[ "${file[1]}" == "git" ]] && \
+		{ printf "${file[0]}"; return; }
+
 	local cmd=""
 	local ext=${file##*.}
 	local file_type=$(file -bizL "$file")

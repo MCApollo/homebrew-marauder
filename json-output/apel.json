@@ -9,8 +9,11 @@
     "conflicts": [],
     "patches": [],
     "install": [
-        "system \"make\", \"install\", \"PREFIX=#{prefix}\",",
-        "\"LISPDIR=#{elisp}\", \"VERSION_SPECIFIC_LISPDIR=#{elisp}\""
+        "make DESTDIR=$pkgdir install PREFIX=$PKGPREFIX LISPDIR=#{elisp} VERSION_SPECIFIC_LISPDIR=#{elisp}"
     ],
-    "version": "10.8"
+    "version": "10.8",
+    "marauder": [
+        "# Untested - Host requires emacs",
+        "pkg:make DESTDIR=$pkgdir install PREFIX=$PKGPREFIX # LISPDIR=#{elisp} VERSION_SPECIFIC_LISPDIR=#{elisp}"
+    ]
 }

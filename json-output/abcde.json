@@ -46,6 +46,6 @@
     ],
     "version": "2.9.3",
     "marauder": [
-        "make DESTDIR=$pkgdir install prefix=$PKGPREFIX sysconfdir=#{etc}"
+        "make DESTDIR=$pkgdir install prefix=$PKGPREFIX sysconfdir=/etc"
     ]
 }
